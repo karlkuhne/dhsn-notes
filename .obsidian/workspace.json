@@ -11,10 +11,14 @@
             "id": "806e996a8b48d2f0",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "SEM1/🧮 MAA/Merkteil.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Merkteil"
             }
           }
         ]
@@ -192,6 +196,7 @@
   },
   "active": "806e996a8b48d2f0",
   "lastOpenFiles": [
+    "SEM1/🧮 MAA/Cheatsheet.md",
     "SEM1/🖥️ IMPP/Übungen Luntovsky.md",
     "SEM1/📚 MG/2. Rhetorische Kommunikation/3. Reden.md",
     "SEM1/🧮 MAA/LaTeX Cheatsheet.md",
@@ -207,7 +212,6 @@
     "Untitled.base",
     "SEM1/🧮 MAA/Merkteil.md",
     "SEM1/🧮 MAA/Übungen.md",
-    "SEM1/🧮 MAA/Cheatsheet.md",
     "Images/Pasted image 20260113080712.png",
     "Pasted image 20260113080642.png",
     "SEM1/⚙️ TGI/7. Algorithmik.md",
