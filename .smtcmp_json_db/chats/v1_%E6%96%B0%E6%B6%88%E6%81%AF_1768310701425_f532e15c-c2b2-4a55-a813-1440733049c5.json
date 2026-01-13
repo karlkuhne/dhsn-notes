@@ -1,0 +1,66 @@
+{
+  "id": "f532e15c-c2b2-4a55-a813-1440733049c5",
+  "title": "新消息",
+  "messages": [
+    {
+      "role": "user",
+      "content": {
+        "root": {
+          "children": [
+            {
+              "children": [
+                {
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": "",
+                  "text": "5 reasons",
+                  "type": "text",
+                  "version": 1
+                }
+              ],
+              "direction": "ltr",
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "version": 1,
+              "textFormat": 0,
+              "textStyle": ""
+            }
+          ],
+          "direction": "ltr",
+          "format": "",
+          "indent": 0,
+          "type": "root",
+          "version": 1
+        }
+      },
+      "promptContent": null,
+      "id": "18012cf3-e626-40ac-89da-c4825aac27d7",
+      "mentionables": []
+    },
+    {
+      "role": "assistant",
+      "content": "I can certainly give you 5 reasons, but I need to know **what** you'd like reasons for!\n\nPlease tell me the topic or subject, for example:\n\n*   \"5 reasons to drink water daily\"\n*   \"5 reasons why cats make good pets\"\n*   \"5 reasons to learn a new language\"\n\nOnce you provide the topic, I'll be happy to give you the reasons!",
+      "id": "23e12573-e75b-4af4-a2bc-c3d2e3c2c0be",
+      "metadata": {
+        "model": {
+          "providerType": "gemini",
+          "providerId": "gemini",
+          "id": "gemini/gemini-2.5-flash",
+          "model": "gemini-2.5-flash",
+          "enable": true
+        },
+        "usage": {
+          "prompt_tokens": 5,
+          "completion_tokens": 88,
+          "total_tokens": 663
+        }
+      }
+    }
+  ],
+  "createdAt": 1768310701425,
+  "updatedAt": 1768310701425,
+  "schemaVersion": 1,
+  "overrides": null
+}

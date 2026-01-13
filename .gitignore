@@ -1,0 +1,5 @@
+# Ignore data.json file
+.obsidian/plugins/obsidian-yolo/data.json
+
+# Misc
+.DS_Store
