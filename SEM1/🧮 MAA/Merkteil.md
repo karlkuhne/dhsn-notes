@@ -83,6 +83,18 @@ Bsp: A = "Es regnet", B = "Die Straße ist nass"
 Bsp. 2: A = "Ich trinke ein Bier", B="In Paris scheint die Sonne"
 D.h. A und B müssen nicht zwingend einen kausalen Zusammenhang haben
 
+### 2.1.7 Die Antivalenz $\oplus$
+
+Die Antivalenz ist das logische ausschließende ODER (XOR).
+Logischer Ausdruck: $A \oplus B$
+Sie ist wahr, wenn genau eine der beiden Aussagen wahr ist.
+
+| $A$ | $B$ | $A \oplus B$ |
+| :-: | :-: | :----------: |
+|  1  |  1  |      0       |
+|  1  |  0  |      1       |
+|  0  |  1  |      1       |
+|  0  |  0  |      0       |
 ### 2.1.7 De  Morgansche Gesetze
 
 __1. De Morgansches Gesetz__
@@ -655,6 +667,9 @@ Damit ist der Induktionsschritt erfolgreich gezeigt, da dies genau der Form des 
 
 $\Rightarrow$ binomischer Lehrsatz nachgewiesen
 
+> [!info]- Zusammenfassung
+Der Beweis des binomischen Lehrsatzes $(a+b)^n = \sum_{k=0}^{n} \binom{n}{k} a^{n-k} b^k$ erfolgt mittels vollständiger Induktion für $n \in \mathbb{N}_0$. Für den Induktionsanfang wird die Gültigkeit für $n=0, 1, 2$ überprüft: Für $n=0$ ist $(a+b)^0 = \binom{0}{0}a^0b^0 = 1$. Für $n=1$ ist $(a+b)^1 = \binom{1}{0}a^1b^0 + \binom{1}{1}a^0b^1 = a+b$. Für $n=2$ ergibt sich $(a+b)^2 = \binom{2}{0}a^2 + \binom{2}{1}ab + \binom{2}{2}b^2 = a^2+2ab+b^2$, was den bekannten binomischen Formeln entspricht. Als Induktionsvoraussetzung wird angenommen, dass der Satz für ein beliebiges $n \in \mathbb{N}_0$ gilt: $(a+b)^n = \sum_{k=0}^{n} \binom{n}{k} a^{n-k} b^k$. Vor dem Induktionsschritt wird die Hilfsbeziehung $\binom{n+1}{k} = \binom{n}{k}+\binom{n}{k-1}$ bewiesen. Hierzu werden die Summanden der rechten Seite, $\frac{n!}{k!(n-k)!}$ und $\frac{n!}{(k-1)!(n-k+1)!}$, auf den gemeinsamen Nenner $k!(n-k+1)!$ gebracht, indem der erste Bruch mit $(n-k+1)$ und der zweite Bruch mit $k$ erweitert wird. Anschließend werden die Zähler addiert und $n!$ ausgeklammert, was zu $\frac{n!(n-k+1+k)}{k!(n-k+1)!} = \frac{n!(n+1)}{k!(n-k+1)!} = \frac{(n+1)!}{k!((n+1)-k)!} = \binom{n+1}{k}$ vereinfacht wird. Im Induktionsschritt muss gezeigt werden, dass die Formel auch für $n+1$ gilt: $(a+b)^{n+1} = \sum_{k=0}^{n+1} \binom{n+1}{k} a^{n+1-k} b^k$. Man beginnt mit $(a+b)^{n+1} = (a+b)(a+b)^n$. Durch Einsetzen der Induktionsvoraussetzung und Ausmultiplizieren erhält man $a \sum_{k=0}^{n} \binom{n}{k} a^{n-k} b^k + b \sum_{k=0}^{n} \binom{n}{k} a^{n-k} b^k$. Dies wird zu $\sum_{k=0}^{n} \binom{n}{k} a^{n-k+1} b^k + \sum_{k=0}^{n} \binom{n}{k} a^{n-k} b^{k+1}$. Nun werden die Randterme der Summen abgespalten: $a^{n+1}$ (für $k=0$ in der ersten Summe) und $b^{n+1}$ (für $k=n$ in der zweiten Summe). Die verbleibenden Summen sind $\sum_{k=1}^{n} \binom{n}{k} a^{n-k+1} b^k$ und $\sum_{k=0}^{n-1} \binom{n}{k} a^{n-k} b^{k+1}$. Durch eine Indexverschiebung $j=k+1$ in der zweiten Summe wird diese zu $\sum_{j=1}^{n} \binom{n}{j-1} a^{n-(j-1)} b^j$. Benennt man $j$ wieder in $k$ um, können beide Summen zusammengefasst werden: $a^{n+1} + \sum_{k=1}^{n} \left[\binom{n}{k} + \binom{n}{k-1}\right] a^{n-k+1} b^k + b^{n+1}$. Mithilfe der zuvor bewiesenen Hilfsbeziehung wird dies zu $a^{n+1} + \sum_{k=1}^{n} \binom{n+1}{k} a^{n-k+1} b^k + b^{n+1}$. Die Terme $a^{n+1}$ und $b^{n+1}$ können als $\binom{n+1}{0} a^{n+1} b^0$ und $\binom{n+1}{n+1} a^0 b^{n+1}$ in die Summe integriert werden, was die gewünschte Form $\sum_{k=0}^{n+1} \binom{n+1}{k} a^{(n+1)-k} b^k$ ergibt und den binomischen Lehrsatz beweist.
+
 ## 6.3 Das Pascalsche Dreieck
 
 Statt der Formel $\binom{n}{k} = \frac{n!}{k!(n-k)!}$ kann man auch das Pascalsche Dreieck benutzen:
@@ -712,6 +727,9 @@ $$= \binom{n}{k} \cdot \frac{k+1+n-k}{k+1}$$
 Der Term im Zähler wird vereinfacht:
 $$= \binom{n}{k} \cdot \frac{n+1}{k+1}$$
 $\Rightarrow$ Da die linke und rechte Seite übereinstimmen, ist die Beziehung bewiesen.
+
+> [!info]- Zusammenfassung
+> Der aktuelle Beweis zeigt die Gültigkeit der Pascalschen Identität $\binom{n+1}{k+1} = \binom{n}{k} + \binom{n}{k+1}$, welche besagt, dass ein Eintrag im Pascalschen Dreieck die Summe der beiden direkt darüberliegenden Einträge ist. Zuerst wird die linke Seite $\binom{n+1}{k+1}$ betrachtet: Sie wird gemäß der Definition des Binomialkoeffizienten als $\frac{(n+1)!}{(k+1)!(n-k)!}$ erweitert. Durch Umschreiben von $(n+1)! = (n+1)n!$ und $(k+1)! = (k+1)k!$ lässt sich dieser Ausdruck zu $\frac{n+1}{k+1} \cdot \frac{n!}{k!(n-k)!}$ umformen, was letztlich $\frac{n+1}{k+1} \binom{n}{k}$ ergibt. Anschließend wird die rechte Seite $\binom{n}{k} + \binom{n}{k+1}$ vereinfacht. Der zweite Term $\binom{n}{k+1}$ wird ebenfalls nach Definition als $\frac{n!}{(k+1)!(n-k-1)!}$ ausgedrückt. Um gemeinsame Terme zu schaffen, wird der Zähler und Nenner dieses Bruchs mit $(n-k)$ erweitert, wodurch der Nenner $(k+1)!(n-k)!$ wird. Durch Umschreiben von $(k+1)!$ als $(k+1)k!$ kann der zweite Term als $\frac{n-k}{k+1} \binom{n}{k}$ geschrieben werden. Nun können beide Terme der rechten Seite zusammengefasst werden: $\binom{n}{k} + \frac{n-k}{k+1} \binom{n}{k} = \binom{n}{k} \left(1 + \frac{n-k}{k+1}\right)$. Die Terme in der Klammer werden auf den gemeinsamen Nenner $k+1$ gebracht: $\binom{n}{k} \left(\frac{k+1+n-k}{k+1}\right) = \binom{n}{k} \frac{n+1}{k+1}$. Da sowohl die linke als auch die rechte Seite zu $\frac{n+1}{k+1} \binom{n}{k}$ vereinfacht werden können, ist die Beziehung bewiesen.
 
 # 7. Die Dreiecksungleichung für reelle Zahlen
 
@@ -897,6 +915,9 @@ $$\Rightarrow |a-b| < 2 \left(\frac{|a-b|}{2}\right)$$
 $$|a-b| < |a-b|$$
 Widerspruch!
 Also: Der Grenzwert einer Folge für $n \rightarrow \infty$ ist eindeutig bestimmt.
+
+> [!info]- Zusammenfassung
+> Der Beweis der Eindeutigkeit des Grenzwerts einer Zahlenfolge wird durch einen Widerspruch geführt. Man nimmt an, es existieren zwei verschiedene Grenzwerte $a$ und $b$ für eine Folge $(a_n)$ mit $a \neq b$. Gemäß der $\epsilon$-Definition der Konvergenz bedeutet dies, dass für jedes $\epsilon > 0$ ein $n_1$ existiert, sodass für alle $n \ge n_1$ gilt: $|a_n - a| < \epsilon$. Ebenso existiert für dasselbe $\epsilon > 0$ ein $n_2$, sodass für alle $n \ge n_2$ gilt: $|a_n - b| < \epsilon$. Man wählt dann einen Index $n_0 = \max(n_1, n_2)$, um sicherzustellen, dass ab diesem Punkt beide Bedingungen gleichzeitig erfüllt sind. Der Abstand zwischen den angenommenen Grenzwerten, $|a-b|$, wird betrachtet und durch die geschickte Addition und Subtraktion von $a_n$ umgeformt: $|a-b| = |a-b + a_n - a_n| = |(a_n - a) + (b - a_n)|$. Unter Anwendung der Dreiecksungleichung, welche besagt, dass $|x+y| \le |x|+|y|$, ergibt sich: $|(a_n - a) + (b - a_n)| \le |a_n - a| + |b - a_n|$. Da $|b - a_n|$ gleich $|a_n - b|$ ist, folgt daraus die Ungleichung: $|a-b| \le |a_n - a| + |a_n - b|$. Für alle $n \ge n_0$ ist nach unserer Annahme $|a_n - a| < \epsilon$ und $|a_n - b| < \epsilon$, sodass man substituieren kann zu: $|a-b| < \epsilon + \epsilon = 2\epsilon$. Wird nun $\epsilon$ speziell als $\epsilon = \frac{|a-b|}{2}$ gewählt, führt dies zu einem direkten Widerspruch: $|a-b| < 2 \left(\frac{|a-b|}{2}\right) \implies |a-b| < |a-b|$. Da diese Ungleichung mathematisch unmöglich ist, muss die ursprüngliche Annahme, dass $a \neq b$, falsch sein. Folglich ist der Grenzwert einer Folge für $n \rightarrow \infty$ eindeutig bestimmt.
 
 #### 8.4.0.2 Beschränkung konvergenter Folgen
 
