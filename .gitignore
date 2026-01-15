@@ -3,3 +3,7 @@
 
 # Misc
 .DS_Store
+
+# YOLO logs
+.smtcmp_json_db
+.smtcmp_vector_db.tar.gz
