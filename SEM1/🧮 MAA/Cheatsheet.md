@@ -1,4 +1,4 @@
-	# 1. Aussagenlogik
+# 1. Aussagenlogik
 
 $\land$ - AND
 $\lor$ - OR
