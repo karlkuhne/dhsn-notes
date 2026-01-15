@@ -1,3 +1,4 @@
+selfservice@campus-dual.de
 8BiN8N-ZTRYP
 C:\MinGW\bin\gcc.exe
 /usr/bin/gcc

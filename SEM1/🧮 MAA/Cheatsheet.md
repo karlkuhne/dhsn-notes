@@ -1,4 +1,4 @@
-# 1. Aussagenlogik
+	# 1. Aussagenlogik
 
 $\land$ - AND
 $\lor$ - OR
@@ -309,3 +309,7 @@ $$\sum_{k=1}^{\infty} \frac{1}{k} \quad \text{divergiert}$$
 $\Rightarrow$ nach dem Majorantenkriterium konvergiert $\sum_{k=1}^{\infty} \frac{1 + \sqrt{k}}{k}$ ebenfalls
 
 # Funktionen
+
+
+$$(\frac{(n+1)((n+1)+1)}{2})^2$$
+$$(\frac{n(n+1)}{2})^2 + (n+1)^3$$

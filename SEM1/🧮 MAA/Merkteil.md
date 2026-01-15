@@ -72,7 +72,7 @@ $A \Leftrightarrow B$
 A impliziert B (umgangssprachlich: daraus folgt)
 $A \Rightarrow B$
 
-Bsp: A = "Es regnet", B = "Die Straße ist nass"
+Beispiel: A = "Es regnet", B = "Die Straße ist nass"
 
 | $A$ | $B$ | $A \Rightarrow B$ |
 | :-: | :-: | :---------------: |
@@ -80,7 +80,7 @@ Bsp: A = "Es regnet", B = "Die Straße ist nass"
 |  1  |  0  |         0         |
 |  0  |  1  |         1         |
 |  0  |  0  |         1         |
-Bsp. 2: A = "Ich trinke ein Bier", B="In Paris scheint die Sonne"
+Beispiel. 2: A = "Ich trinke ein Bier", B="In Paris scheint die Sonne"
 D.h. A und B müssen nicht zwingend einen kausalen Zusammenhang haben
 
 ### 2.1.7 Die Antivalenz $\oplus$
@@ -450,7 +450,7 @@ __4. Schlussfolgerung:__
 Da die Aussage für $n = 0$ bzw. $n = 1$ gilt und aus der Gültigkeit von $f(n)$ auch die Gültigkeit von $f(n + 1)$ folgt, gilt die Annahme für alle folgenden Schritt: $n + 2, n + 3, \dots$
 
 
-__Bsp.: Addition von $n$ Zahlen von 1 bis $n$__
+__Beispiel.: Addition von $n$ Zahlen von 1 bis $n$__
 $$z_n = 1 + 2 + 3 + \dots + n, n \in \mathbb{N} = \frac{n(n + 1)}{2}$$
 bzw.
 $$\sum_{k=1}^{n} k = \frac{n(n+1)}{2}, n \in \mathbb{N}$$
@@ -485,7 +485,7 @@ Passt!
 Die Potenzmenge ist die Menge aller Teilmengen einer beliebigen Menge $M$.
 Dann ist $P(M)$ die Potenzmenge von $M$.
 
-Bsp.:
+Beispiel.:
 $M = \{ 2, 4, 6 \}$
 $P(M) = \{ \varnothing, \{2\}, \{4\}, \{6\}, \{2, 4\}, \{2, 6\}, \{4, 6\}, M \}$
 
@@ -752,7 +752,7 @@ Eine Menge $M \subseteq \mathbb{R}$ heißt beschränkt, wenn es eine positive Za
 Dies lässt sich im Reellen für einen $K > 0, K \in \mathbb{R}$ wie folgt formulieren:
 $$x_m \in M$$
 $$|x| \le K$$
-Bsp.: $M = \{ -3, -1, 2, 4 \} \Rightarrow K = 4$
+Beispiel.: $M = \{ -3, -1, 2, 4 \} \Rightarrow K = 4$
 
 äquivalente Formulierung für $a$ und $b$, $a, b \in \mathbb{R}$
 $$a \le |x| \le b$$
@@ -766,7 +766,7 @@ Die kleinste obere Schranke ist das Supremum.
 
 Bemerkung: Ist das Supremum Element der Menge selbst,  ist es das Maximum der Menge.
 
-Bsp.: $M = \lceil -\infty, 2 \rceil$
+Beispiel.: $M = \lceil -\infty, 2 \rceil$
 M ist nach unten unbeschränkt.
 M ist durch 2 nach oben beschränkt, aber auch durch 100, 1000, ...
 2 ist die kleinste Zahl, die nicht überschritten wird $\Rightarrow$ 2 ist die kleinste obere Schranke $\Rightarrow \sup(M) = 2$
@@ -789,8 +789,8 @@ Unter einer Folge versteht man eine geordnete Auflistung von endlich oder unendl
 
 $a: \mathbb{N} \rightarrow \mathbb{R}$
 
-Bsp.: Endliche Folge $(5, 2, 8)$
-Bsp.: Unendliche Folge $(2, 3, 5, 7, 11, 13, \dots)$
+Beispiel.: Endliche Folge $(5, 2, 8)$
+Beispiel.: Unendliche Folge $(2, 3, 5, 7, 11, 13, \dots)$
 
 
 __Definition: Reelle Zahlenfolge__
@@ -808,7 +808,7 @@ $(a_n)_{n \in 1, \dots, N}$
 $a: \mathbb{N} \rightarrow \mathbb{X}, n \mapsto a_n$
 als Funktion: $a_n = f(n)$
 
-Bsp.: $a_n = \frac{1}{n}$
+Beispiel.: $a_n = \frac{1}{n}$
 
 ## 8.3 Beschränktheit von Zahlenfolgen
 
@@ -1411,7 +1411,7 @@ $p_n = s_0 + s_1 + s_2 + \dots + s_n$
 >Bei endlichen Reihen handelt es sich um eine Summation von endlich vielen Termen.
 
 
-__Bsp.: Gaußsche Summenformel__
+__Beispiel.: Gaußsche Summenformel__
 $$\sum_{k+1}^{n} k = 1 + 2 + \dots + n = \frac{n(n+1)}{2}$$
 
 ## 9.2 Unendliche Reihen
@@ -1471,7 +1471,7 @@ $$\lim_{n \to \infty} (s_n) = s \ \ (|s| < \infty)$$
 
 __Unbestimmte Divergenz__
 (Weder bestimmt divergent noch konvergent.)
-$$\text{Bsp.:} \sum_{k=0}^{n} (-1)^k \cdot k$$
+$$\text{Beispiel.:} \sum_{k=0}^{n} (-1)^k \cdot k$$
 
 ## 9.4 Konvergenz unendlicher Reihen
 
@@ -1488,7 +1488,7 @@ $$\sum_{k=0}^{\infty} a_k$$$$\lim_{k \to \infty} (a_k) = 0$$
 Die Terme müssen **schnell genug** gegen Null gehen.
 
 
-__Bsp. 1: Geometrische Reihe (konvergent)__
+__Beispiel. 1: Geometrische Reihe (konvergent)__
 
 $$\sum_{k=0}^{\infty} q^k, \quad |q| < 1$$
 
@@ -1501,7 +1501,7 @@ Die Terme werden **exponentiell schnell** kleiner (jeder Term ist um Faktor $q$ 
 Beispiel für $q = \frac{1}{2}$: $1 + \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \cdots = 2$
 
 
-__Bsp. 2: Harmonische Reihe (divergent)__
+__Beispiel. 2: Harmonische Reihe (divergent)__
 
 $$\sum_{k=1}^{\infty} \frac{1}{k}$$
 
@@ -1799,7 +1799,7 @@ $\Rightarrow$ nach dem Majorantenkriterium konvergiert $\sum_{k=1}^{\infty} \fra
 
 $$f: \mathbb{R} \rightarrow \mathbb{R}$$
 $$f: x \mapsto f(x)$$
-Bsp.: $f(x) = x^2$
+Beispiel.: $f(x) = x^2$
 
 ## 10.1 Lineare Funktionen
 
