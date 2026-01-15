@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "823b35cdb24981cf",
+        "id": "d52d1580711ab4a4",
         "type": "tabs",
         "children": [
           {
-            "id": "806e996a8b48d2f0",
+            "id": "e7500b6dddaa35af",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -180,7 +180,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 327.5
+    "width": 673.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -194,13 +194,25 @@
       "yolo:Open chat": false
     }
   },
-  "active": "3bad6b8469eb6cdb",
+  "active": "e7500b6dddaa35af",
   "lastOpenFiles": [
+    "Pasted image 20260115093213.png",
+    "SEM1/🧮 MAA/LaTeX Cheatsheet.md",
     "SEM1/🧮 MAA/Merkteil.md",
+    "Images/Pasted image 20251217144402.png",
+    "Images/Pasted image 20251217153114.png",
+    "Images/Pasted image 20251217155535.png",
+    "Images/Pasted image 20260105121733.png",
+    "Images/Pasted image 20260105150131.png",
+    "Images/Pasted image 20260105150148.png",
+    "Images/Pasted image 20260106101211.png",
+    "Images/Pasted image 20260113080712.png",
+    "Images/pq.PAP.png",
+    "Images/Venn und Euler Diagramme.png",
+    "Images/2021_01_28_Dijkstra-Algorithmik.mp4",
     "SEM1/🧮 MAA/Cheatsheet.md",
     "SEM1/🖥️ IMPP/Übungen Luntovsky.md",
     "SEM1/📚 MG/2. Rhetorische Kommunikation/3. Reden.md",
-    "SEM1/🧮 MAA/LaTeX Cheatsheet.md",
     "SEM1/📚 MG/Web- und Printdesign.md",
     "Reasons to quit Uni.md",
     "SEM1/⚙️ TGI/0. Informatik-Grundbegriffe.md",
@@ -212,8 +224,6 @@
     "SEM1/⚙️ TGI/Übungen.md",
     "Untitled.base",
     "SEM1/🧮 MAA/Übungen.md",
-    "Images/Pasted image 20260113080712.png",
-    "Pasted image 20260113080642.png",
     "SEM1/⚙️ TGI/7. Algorithmik.md",
     "SEM1/⚙️ TGI/8. Komplexität.md",
     "SEM1/⚙️ TGI/3. Graphentheorie.md",
@@ -224,16 +234,6 @@
     "SEM1/🧮 MAA/Merkteil(1).md",
     "5. Die Potenzmenge.md",
     "Vollständige Induktion.md",
-    "Images/Pasted image 20260109091241.png",
-    "Images/Pasted image 20260109091124 1.png",
-    "Images/Pasted image 20260109091124.png",
-    "Images/Pasted image 20260109085413.png",
-    "Pasted image 20260109085323.png",
-    "Pasted image 20260109084516.png",
-    "SEM1/🖥️ IMPP/3. Ausdrücke.md",
-    "Images/Pasted image 20251217144402.png",
-    "Images/Pasted image 20260106101211.png",
-    "Images/2021_01_28_Dijkstra-Algorithmik.mp4",
     "Untitled 1.base",
     "SEM1/📚 MG/2. Rhetorische Kommunikation",
     "SEM1/📚 MG/1. Wahrnehmungspsychologie",

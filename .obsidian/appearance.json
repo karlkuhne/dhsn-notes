@@ -1,4 +1,7 @@
 {
   "textFontFamily": "",
-  "showViewHeader": true
+  "showViewHeader": true,
+  "enabledCssSnippets": [
+    "desmos"
+  ]
 }

@@ -1803,7 +1803,9 @@ Bsp.: $f(x) = x^2$
 
 ## 10.1 Lineare Funktionen
 
-![[Pasted image 20260109085413.png]]
+```desmos-graph
+y=x
+```
 
 $$y = f(x) = mx +n$$
 m = Anstieg
@@ -1821,16 +1823,251 @@ $$\Rightarrow n = y_1 - mx_1$$
 $$\Rightarrow y = f(x) = \underbrace{\frac{y_2 - y_1}{x_2 - x_1}}_{m} x + \underbrace{y_1 - mx_1}_{n}$$
 ### 10.1.1 Horizontale Geraden/Konstanten
 
-![[Pasted image 20260109091124.png]]
+```desmos-graph
+y=3
+```
 
 $$\Rightarrow y = f(x) = c$$
 hier gilt $m=1$
 
 ### 10.1.2 Vertikale Geraden
 
-![[Pasted image 20260109091241.png]]
+```desmos-graph
+x=5
+```
 
 $y = f(x) = mx+n$ kann nicht zur Beschreibung verwendet werden, weil $m=\infty$ wäre
 
 Richtige Darstellung:
 $$x = x_0$$
+Fehlt
+### 10.2.1 Normalparabel
+
+Normalparabel:
+$$f(x) = x^2 \quad (a=1, b=0, c=0)$$
+
+__Streckung und Stauchung der Normalparabel:__
+
+$$f(x) = ax^2$$
+$$a<1 \text{ Stauchung}$$
+$$a>1 \text{ Strckung}$$
+
+__Vertikale Verschiebung der Normalparabel:__
+$$f(x) = x^2 \Rightarrow (x-x_v)^2$$
+$$x_v < 0 \text{ Verschiebung nach links}$$
+$$x_v > 0 \text{ Verschiebung nach rechts}$$
+
+__Vertikale Verschiebung der Normalparabel:__
+$$f(x) = x^2 +  b$$
+$$b < 0 \text{ Verschiebung nach unten}$$
+$$b > 0 \text{ Verschiebung nach oben}$$
+
+### 10.2.2 Verschiebung der allgemeinen Parabelfunktion
+$$f(x) = a(x-x_v)^2 + b(x-x_v) + c$$
+
+## 10.3 Kubische Funktionen
+$$f(x) = ax^3 + bx^2 + cx + d$$
+einfachste Variante:
+$$a=1, \quad b,c,d=0$$
+$$\Rightarrow f(x) = x^3$$
+$$\text{allgemein: } a(x-x_v)^3 + b(x-x_v)^2 + c(x-x_v) + d$$
+## 10.4 Symmetrien
+
+### 10.4.1 Achsensymmetrie
+
+auch: Spiegelsymmetrie zur y-Achse
+
+```desmos-graph
+y=x^2
+```
+
+__Kriterium für Achsensymmetrie:__
+$$f(x) = f(-x)$$
+
+__Beispiele:__
+1 ) $f(x) = x^2$ : $(-x)^2 = x^2$
+2 ) $f(x) = 4x^4$ : $4(-x)^4 = 4x^4$
+3 ) $f(x) = \cos{x}$ : $\cos{-x} = \cos{x}$
+
+### 10.4.2 Punktsymmetrie zum Ursprung
+
+```desmos-graph
+y=x^3
+```
+
+__Kriterium für Punktsymmetrie:__
+$$f(-x) = -f(x)$$
+__Beispiele:__
+1 ) $f(x) = x^3 \quad f(-x) = (-x)^3 = -x^3 = -f(x)$
+2 ) $\sin{(-x)} = -\sin{(x)}$
+3 ) $f(x) = x^{-5} = \frac{1}{x^5} \Rightarrow f(-x) = \frac{1}{(-x)^5} = -\frac{1}{x^5} = -x^{-5} = -f(x)$
+
+### 10.4.3 Symmetriebeziehungen
+$$f(x) = f(-x) \Rightarrow \text{Achsensymmetrie zur y-Achse} \Rightarrow \text{gerade}$$
+$$f(-x) = -f(x) \Rightarrow \text{Punktsymmetrie zum Ursprung} \Rightarrow \text{ungerade}$$
+
+$\text{"gerade } \cdot \text{ gerade = gerade"}$
+$u(x) \text{ sei gerade } \Rightarrow u(-x) = u(x)$
+$v(x) \text{ sei gerade } \Rightarrow v(-x) = v(x)$
+$f(x) = u(x) \cdot v(x)$
+$f(-x) = u(-x) \cdot v(-x) = u(x) \cdot v(x) = f(x)$
+$\Rightarrow f(x)$ ist auch gerade
+
+$\text{"gerade } \cdot \text{ ungerade = ungerade"}$
+$u(x) \text{ sei gerade } : u(-x) = u(x)$
+$v(x) \text{ sei ungerade } : v(-x) = -v(x)$
+$f(x) = u(x) \cdot v(x)$
+$f(-x) = u(-x) \cdot v(-x) = u(x) (-v(x)) = \underbrace{-u(x) v(x)}_{f(x)}$
+$\Rightarrow f(-x) = -f(x)$
+
+$\text{"ungerade } \cdot \text{ ungerade = gerade"}$
+$u(x) \text{ sei ungerade } : u(-x) = -u(x)$
+$v(x) \text{ sei ungerade } : v(-x) = -v(x)$
+$f(x) = u(x) \cdot v(x)$
+$f(-x) = u(-x) \cdot v(-x) = (-u(x)) \cdot (-v(x)) = u(x) v(x)$
+$\Rightarrow f(-x) = f(x)$
+$\Rightarrow f(x)$ ist auch gerade
+
+# 11. Differentialrechnung
+
+>Zweck: Bestimmung des Anstiegs einer Funktion
+
+## 11.1 Der Differenzenquotient
+
+Anstieg der Sekanten:
+$$m = \frac{y_2 - y_1}{x_2 - x_1} = \frac{\Delta y}{\Delta x}$$
+
+## 11.2 Der Differentialquotient
+
+Anstieg der Sekanten:
+$$\frac{\Delta y}{\Delta x} = \frac{f(x+k)-f(x)}{x+h-x} = \frac{f(x+h)-f(x)}{h}$$
+Für $h \to 0$ kippt die Sekante so lange, bis sie zur Tangenten wird.
+$$f'(x) = \lim_{h \to 0} \frac{f(x+h)-f(x)}{h} = \frac{dy}{dx}$$
+
+### 11.2.1 Ableitung einer Konstanten
+
+$$f(x) = c \quad , \quad f(x+h) = c$$
+$$\Rightarrow f'(x) = \frac{f(x+h)-f(x)}{h} = 0$$
+
+### 11.2.3 Die Summenregel
+$$f(x) = u(x) + v(x)$$$$f(x+h) = u(x+h) + v(x+h)$$
+$$\Rightarrow f'(x) = \lim_{h \to 0} \frac{u(x+h) + v(x+h) - (u(x) + v(x))}{h}$$
+$$= \lim_{h \to 0} \frac{u(x+h) + v(x+h) - u(x) - v(x)}{h}$$
+$$= \lim_{h \to 0} \frac{u(x+h) - u(x) + v(x+h) - v(x)}{h}$$
+$$= \lim_{h \to 0} \left( \frac{u(x+h)-u(x)}{h} + \frac{v(x+h)-v(x)}{h} \right)$$
+$$= \underbrace{\lim_{h \to 0} \frac{u(x+h)-u(x)}{h}}_{= u'(x)} + \underbrace{\lim_{h \to 0} \frac{v(x+h)-v(x)}{h}}_{= v'(x)}$$
+$$\Rightarrow \boxed{(u(x) + v(x))' = u'(x) + v'(x)}$$
+
+__Beispiel:__
+$f(x) = x^2 + \cos{(x)}$
+
+### 11.2.3 Die Differenzregel
+
+$$\boxed{(u(x) - v(x))' = u'(x) - v'(x)}$$
+
+### 11.2.4 Die Produktregel
+$$f(x) = u(x) \cdot v(x)$$
+$$f(x+h) = u(x+h)v(x+h)$$
+$$f'(x) = \lim_{h \to 0} \frac{u(x+h)v(x+h) - u(x)v(x)}{h}$$
+$$= \lim_{h \to 0} \frac{u(x+h)v(x+h) - u(x)v(x) + u(x)v(x+h) - u(x)v(x+h)}{h}$$
+$$= \lim_{h \to 0} \frac{(u(x+h)-u(x))v(x+h) + u(x)(v(x+h)-v(x))}{h}$$
+$$= \lim_{h \to 0} \left( v(x+h) \cdot \frac{u(x+h)-u(x)}{h} + u(x) \frac{v(x+h)-v(x)}{h} \right)$$
+$$= \lim_{h \to 0} \left( v(x+h) \cdot \frac{u(x+h)-u(x)}{h} \right) + \lim_{h \to 0} \left( u(x) \cdot \frac{v(x+h)-v(x)}{h} \right)$$
+$$= \lim_{h \to 0} v(x+h) \cdot \lim_{h \to 0} \frac{u(x+h)-u(x)}{h} + u(x) \lim_{h \to 0} \frac{v(x+h)-v(x)}{h}$$
+$$\boxed{(u(x) \cdot v(x))' = u'(x) \cdot v(x) + v'(x) \cdot u(x)}$$
+frage
+### 11.2.5 Die Quotientenregel
+$$\boxed{\left( \frac{u(x)}{v(x)} \right)' =  \frac{u'(x)v(x) - v'(x)u(x)}{v(x)^2}}$$
+
+### 11.2.6 Die Kettenregel
+
+$$\boxed{( \ u(v(x)) \ )' = u'(v(x)) \cdot v'(x)}$$
+
+1 ) innere Funktion bestimmen
+2 ) äußere Funktion nach der inneren Funktion ableiten
+3 ) innere Funktion einsetzen
+4 ) Multiplizieren mit der Ableitung der inneren Funktion
+
+
+__Beispiel:__
+
+$f(x) = e^{x^2}$
+$v(x) = x^2$
+$u(v) = e^v$
+$v'(x) = 2x$
+$u'(v) = (e^v)' = e^v$
+$u'(v(x)) = e^{x^2}$
+$f'(x) = u'(v(x)) \cdot v'(x) = e^{x^2} \cdot 2x$
+$\Rightarrow f'(x) = 2x e^{x^2}$
+
+$(\sin{(\cos{(x^2)})}'$
+
+## 11.3 Extrempunkte
+
+```desmos-graph
+f(x)=x^2 -1
+g(x)=f'(x)
+h(x)=f''(x)
+```
+
+Notwendige Bedingung:
+$$f'(x) = 0$$
+
+__Beispiel:__
+
+$f(x) = x^2 -1$
+$f'(x)=2x$
+$0 = 2x$
+$\Rightarrow x_E = 0$
+
+Hinreichende Bedingung
+$$f''(x) \ne 0$$
+$$f''(x) \begin{cases}
+= 0 & \Rightarrow \text{Sattelpunkt} \\
+> 0 & \Rightarrow \text{Tiefpunkt} \\
+< 0 & \Rightarrow \text{Hochpunkt}
+\end{cases}$$
+
+Zu unserem Bsp:
+$f''(x) = 2 > 0 \Rightarrow$ Tiefpunkt
+
+
+## 11.4 Wendepunkte
+
+```desmos-graph
+f(x)=x^3
+g(x)=f'(x)
+h(x)=f''(x)
+i(x)=f'''(x)
+```
+
+Notwendige Bedingung:
+$$f''(x) = 0$$
+
+__Beispiel:__
+
+$f(x)=x^3$
+$f'(x) = 3x^2$
+$f''(x) = 6x \Rightarrow x_W = 0$
+$f'''(x) = 6 > 0$
+
+
+Art des Wendepunktes:
+$$f'''(x) \begin{cases}
+> 0 & \Rightarrow \text{Rechts-nach-Linkskurve} \\
+< 0 & \Rightarrow \text{Links-nach-Rechtskurve} \\
+= 0 & \Rightarrow \text{kein Wendepunkt}
+\end{cases}$$
+
+# 12. Die Taylorreihe
+
+$f(x)$ soll angenähert werden, um se lokal zu vereinfachen.
+
+Ansatz: Näherung von $f(x)$ an einen Entwicklungspunkt $x_0$ durch ein Polynom
+$$f(x) = a_0 + a_1x + a_2x^2 + a_3x^3 +  a_4x^4 + \dots$$
+
+Realisierung der Verschiebbarkeit:
+$$f(x) = a_0 + a_1(x-x_0) + a_2(x-x_0)^2 + a_3(x-x_0)^3 + a_4(x-x_0)^4 + \dots$$
+$$f(x_0) = a_0$$
+$$f'(x) = a_1 + 2a_2(x-x_0) + 3a_3(x-x_0)^2 + 4a_4(x-x_0)^3$$
+
