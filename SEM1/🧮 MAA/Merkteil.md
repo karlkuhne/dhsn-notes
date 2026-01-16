@@ -2152,7 +2152,7 @@ $$\Rightarrow F'(x) = \lim_{h \to 0} \frac{\int_a^{x+h} f(x') dx' + \int_x^a f(x
 $$= \lim_{h \to 0} \frac{\int_x^{x+h} f(x') dx'}{h}$$
 $$=lim_{h \to 0} \frac{(x+h-x)\cdot f(\xi)}{h}$$
 $$\lim_{h \to 0} \frac{h \cdot f(\xi)}{h} = \lim_{h \to 0} f(\xi) = f(x)$$
-$$\Rightarrow \boxed{F'(x) = f(x)}$$
+$$\Rightarrow F'(x) = f(x)$$
 
 __Bildungsvorschrift:__
 $$\boxed{\int_a^b f(x) dx = F(b) - F(a)}$$
@@ -2168,3 +2168,44 @@ $F(x) = \frac{x^2}{2} + C$
 $F(2) - F(1) = 2 - 0.5 = 1.5$
 
 
+## 13.4 Die partielle Integration
+
+>Die partielle Integration ist eine Integrationstechnik, die zur Berechnung von Integralen von Produkten zweier Funktionen verwendet wird. 
+
+$$\boxed{\int_a^b u'(x) \cdot v(x) dx = [u(x) \cdot v(x)]_a^b - \int_a^b u(x) \cdot v'(x) dx}$$
+
+__Beispiele:__
+
+$\int_o^\pi x \cdot \cos{(x)} dx$
+$v(x) = x \Rightarrow v'(x) = 1$
+$u(x) = \sin{(x)} \Leftarrow u'(x) = \cos{(x})$
+
+$\Rightarrow [x \sin{(x)}]_0^\pi - \int_0^\pi 1 \cdot \cos{(x)} dx$
+$= \left( \pi \sin(\pi) - 0 \cdot \sin(0) \right) - \int_0^\pi \cos(x) \, dx$
+$= - \int_0^\pi \cos(x) \, dx = -[\sin(x)]_0^\pi = -(\sin(\pi) - \sin(0)) = \underline{\underline{0}}$
+
+## 13.5 Die Substitution
+
+>Die Substitution ist eine Integrationstechnik, die verwendet wird, um komplexe Integrale durch Einführung einer neuen Variablen zu vereinfachen.
+
+$$\int_{x_1}^{x_2} x e^{x^2} dx$$
+Substitution:
+$$\underline{v = x^2}$$
+$$\frac{dv}{dx} = 2x$$
+Nach $dx$ umstellen
+$$\underline{\Rightarrow dx = \frac{1}{2x}dv}$$
+In ursprüngliche Formel einsetzen
+$$\int_{v_1}^{v_2} x e^v \frac{1}{2x} dv$$
+$$=\frac{1}{2} \int_{v_1}^{v_2} e^v dv = \frac{1}{2} [e^v]_{v_1}^{v_2}$$
+
+__Beispiel:__
+
+$\int_0^{\sqrt[3]{\pi}} x^2 \cos{(x^3)} dx$
+$v = x^3$
+$\frac{dv}{dx} = 3x^2 \Rightarrow dx = \frac{1}{3x^2} dv$
+
+$\int_0^\pi \centernot{x^2} \cos{(v)} \frac{1}{3 \centernot{x^2}} dv$
+$= \frac{1}{3} \int_0^\pi cos(v) dv$
+$= \frac{1}{3} [\sin{(v)}]_0^\pi$
+$= \frac{1}{3} (0)$
+$\underline{\underline{=0}}$

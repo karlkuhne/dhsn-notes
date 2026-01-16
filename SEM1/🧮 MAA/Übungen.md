@@ -493,3 +493,18 @@ Da der Grenzwert der Folgenglieder nicht 0 ist, ist die Reihe nicht konvergent.
 # 9.1.25
 
 Berechnen Sie aus $P_1$ und $P_2$ die Geradengleichung und überprüfen sie, ob $P_3$ auch auf der Geraden liegt
+
+# 16.1.25
+
+__Substitution__
+
+$\int_0^{\sqrt{\pi}} x \cdot \sin{(x^2)} dx$
+$v = x^2$
+$\Rightarrow \frac{dv}{dx} = 2x \mid \cdot dx \quad /2x$
+$\Rightarrow dx = \frac{1}{2x} dv$
+$\Rightarrow \int_{v_1}^{v_2} \centernot{x} \cdot sin{(v)} \frac{1}{2 \centernot{x}} dv = \frac{1}{2} \int_0^\pi \sin{(v)} dv$
+
+$x_1 = 0 \Rightarrow v_1 = x_1^2 = 0$
+$x_2 = \sqrt{\pi} \Rightarrow v_2 = x_2^2 = \sqrt{\pi}^2 = \pi$
+$\Rightarrow \int_0^{\sqrt{\pi}} x \sin(x^2) dx = -\frac{1}{2}[\cos x]_0^\pi$
+$= -\frac{1}{2}(\underbrace{\cos(\pi)}_{-1} - \underbrace{\cos(0)}_{1}) = -\frac{1}{2} \cdot (-2) = \underline{\underline{1}}$
