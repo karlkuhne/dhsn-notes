@@ -2067,7 +2067,104 @@ Ansatz: Näherung von $f(x)$ an einen Entwicklungspunkt $x_0$ durch ein Polynom
 $$f(x) = a_0 + a_1x + a_2x^2 + a_3x^3 +  a_4x^4 + \dots$$
 
 Realisierung der Verschiebbarkeit:
-$$f(x) = a_0 + a_1(x-x_0) + a_2(x-x_0)^2 + a_3(x-x_0)^3 + a_4(x-x_0)^4 + \dots$$
+$$f(x) = a_0 + a_1(x-x_0) + a_2(x-x_0)^2 + a_3(x-x_0)^3 + a_4(x-x_0)^4 + a_5(x-x_0)^5 + a_6(x-x_0)^6\dots$$
 $$f(x_0) = a_0$$
-$$f'(x) = a_1 + 2a_2(x-x_0) + 3a_3(x-x_0)^2 + 4a_4(x-x_0)^3$$
+$$f^{(1)}(x) = a_1 + 2a_2(x-x_0) + 3a_3(x-x_0)^2 + 4a_4(x-x_0)^3 + 5a_5(x-x_0)^4 + 6a_6(x-x_0)^5 + \dots$$
+$$f^{(1)}(x_0) = a_1$$
+$$f^{(2)}(x) = 2a_2 + 6a_3(x-x_0) + 12a_4(x-x_0)^2 + 20a_5(x-x_0)^3 + 30a_6(x-x_0)^4 + \dots$$
+$$f^{(2)}(x_0) = 2a_2$$
+$$f^{(3)}(x) = 6a_3 + 24a_4(x-x_0) + 60a_5(x-x_0)^2 + 120a_6(x-x_0)^3 + \dots$$
+$$f^{(3)}(x_0) = 6a_3$$
+$$f^{(4)}(x) = 24a_4 + 120a_5(x-x_0) + 360a_6(x-x_0)^2 + \dots$$
+$$f^{(4)}(x_0) = 24a_4$$
+$$f^{(5)}(x) = 120a_5 + 720(x-x_0) + \dots$$
+$$f^{(5)}(x_0) = 120a_5$$
+$$f^{(6)}(x) = 720a_6 + \dots$$
+$$f^{(6)} = 720a_6$$
+
+__Gefundene Entwicklungskoeffizienten:__
+$$a_0 = \frac{1}{1} f(x_0) = \frac{1}{0!}f(x_0)$$
+$$a_1 = \frac{1}{1} f^{(1)}(x_0) = \frac{1}{1!}f^{(1)}(x_0)$$
+$$a_2 = \frac{1}{2} f^{(2)}(x_0) = \frac{1}{2!}f^{(2)}(x_0)$$
+$$a_3 = \frac{1}{6} f^{(3)}(x_0) = \frac{1}{3!}f^{(3)}(x_0)$$
+$$a_4 = \frac{1}{24} f^{(4)}(x_0) = \frac{1}{4!}f^{(4)}(x_0)$$
+$$a_5 = \frac{1}{120} f^{(5)}(x_0) = \frac{1}{5!}f^{(5)}(x_0)$$
+$$a_6 = \frac{1}{720} f^{(6)}(x_0) = \frac{1}{6!}f^{(6)}(x_0)$$
+Vereinfachung vom $f(x)$ per Taylor-Polynom. D.h. die originale, unendliche Reihe wird nach der Ordnung $n$ abgebrochen.
+$$ T_n(x) = \sum_{k=0}^{n} a_k (x-x_0)^k $$
+$$ T_n(x) = \sum_{k=0}^{n} \frac{f^k(x_0)}{k!} (x-x_0)^k $$
+
+__Beispiel 1:__
+
+```desmos-graph
+f(x)=\sin{x}
+g(x)=0
+h(x)=x
+i(x)=x
+j(x)=x-\frac{1}{6}x^3
+```
+
+$f(x) = \sin{(x)} \quad , \quad x_0=0$
+
+$T_0(x) = \sum_{k=0}^{0} \frac{f^k(0)}{k!} (x-x_0)^k$
+$=\frac{\sin{(0)}}{0!} (x-x_0)^0 =0$
+$T_0(x) = 0$
+
+$T_1(x) = \sum_{k=0}^{1} \frac{f^k(0)}{k!} (x-x_0)^k$
+$=\underbrace{\frac{\sin{(0)}}{0!} (x-x_0)^0}_{0} + \underbrace{\frac{\cos{(0)}}{1!}}_{1} \underbrace{(x-x_0)^1}_{x} = x$
+$T_1(x) = x$
+
+$T_2(x) = \sum_{k=0}^{2} \frac{f^k(0)}{k!} (x-x_0)^k$
+$=\underbrace{\frac{\sin{(0)}}{0!} (x-x_0)^0}_{0} + \underbrace{\frac{\cos{(0)}}{1!}}_{1} \underbrace{(x-x_0)^1}_{x} - \frac{\sin{(0)}}{2!} (x-x_0)^2 = x$
+$T_2(x) = x$
+
+$T_3(x) = \sum_{k=0}^{3} \frac{f^k(0)}{k!} (x-x_0)^k$
+$=\underbrace{\frac{\sin{(0)}}{0!} (x-x_0)^0}_{0} + \underbrace{\frac{\cos{(0)}}{1!}}_{1} \underbrace{(x-x_0)^1}_{x} - \frac{\sin{(0)}}{2!} (x-x_0)^2 - \frac{\cos{(0)}}{3!} (x-x_0)^3 = x - \frac{1}{6}x^3$
+$T_3(x) = x - \frac{1}{6}x^3$
+
+
+# 13. Die Integralrechnung
+
+Die Integralrechnung dient zur Flächenberechnung der Flächen zwischen den Funktionen und der x-Achse.
+
+## 13.1 Das Riemann-Integral
+
+Jedes Rechteck hat die konstante Breite $\Delta x = x_{k+1} -x_k$.
+$$A = \sum_{k=1}^N \Delta x \cdot f(x_k)$$
+Unterteilung der Gesamtfläche in $N$ gleich breite Rechtecke mit
+$$\Delta x = \frac{b-a}{N}$$
+$$\Rightarrow I = \lim_{N \to \infty, \Delta x \to 0} \sum_{k=1}^N \Delta x \cdot f(x_k) = \int_a^b f(x) dx$$
+
+## 13.2 Der Mittelwertsatz der Integralrechnung
+
+![[Pasted image 20260116123223.png]]
+
+$$\Rightarrow \int_a^b f(x) dx = (b-a) \cdot f(\xi)$$
+
+## 13.3 Hauptsatz der Differential- und Integralrechnung
+
+$$F(x) = \int_a^x f(x') dx'$$
+$$F(x+h) = \int_a^{x+h} f(x') dx'$$
+$$F'(x) = \lim_{h \to 0} \frac{F(x+h) - F(x)}{h}$$
+$$= \lim_{h \to 0} \frac{\int_a^{x+h} f(x') dx' - \int_a^x f(x') dx'}{h}$$
+Werden bei einem Integral die Grenzen vertauscht, wechselt das Vorzeichen
+$$\Rightarrow F'(x) = \lim_{h \to 0} \frac{\int_a^{x+h} f(x') dx' + \int_x^a f(x') dx'}{h}$$
+$$= \lim_{h \to 0} \frac{\int_x^{x+h} f(x') dx'}{h}$$
+$$=lim_{h \to 0} \frac{(x+h-x)\cdot f(\xi)}{h}$$
+$$\lim_{h \to 0} \frac{h \cdot f(\xi)}{h} = \lim_{h \to 0} f(\xi) = f(x)$$
+$$\Rightarrow \boxed{F'(x) = f(x)}$$
+
+__Bildungsvorschrift:__
+$$\boxed{\int_a^b f(x) dx = F(b) - F(a)}$$
+
+__Potenzregel der Integration:__
+$$\boxed{f(x) = x^n \Rightarrow F(x) = \frac{1}{n+1}x^{n+1} +C}$$
+
+__Beispiel:__
+
+$\int_{1}^{2} x \, dx = \frac{1}{2} \left[x^2\right]_{1}^{2} = \frac{1}{2}(4-1) = \frac{3}{2}$
+bzw.
+$F(x) = \frac{x^2}{2} + C$
+$F(2) - F(1) = 2 - 0.5 = 1.5$
+
 
