@@ -1,5 +1,5 @@
 # Ignore obsidian files
-.obsidian\workspace.json
+.obsidian/workspace.json
 .obsidian/plugins/obsidian-yolo/data.json
 
 # Misc
