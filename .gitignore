@@ -4,6 +4,7 @@
 
 # Misc
 .DS_Store
+.exe
 
 # YOLO logs
 .smtcmp_json_db
