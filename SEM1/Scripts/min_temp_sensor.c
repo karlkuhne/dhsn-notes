@@ -8,7 +8,7 @@ int main() {
     char delimiter[] = " ,";
     char *ptr;
 
-    FILE *file = fopen("C:\\Users\\karlk\\Dokumente\\DHSN\\dhsn-notes\\SEM1\\Scripts\\temps_2026_01_07.log", "r"); // Mac: /Users/karlkuhne/Documents/DHSN/dhsn-notes/SEM1/Scripts/temps_2026_01_07.log
+    FILE *file = fopen("C:\\Users\\karlk\\Dokumente\\DHSN\\dhsn-notes\\SEM1\\Scripts\\Files\\temps_2026_01_07.log", "r"); // Mac: /Users/karlkuhne/Documents/DHSN/dhsn-notes/SEM1/Scripts/Files/temps_2026_01_07.log
     if (file == NULL) {
         fprintf(stderr, "Ich kann die Quell-Datei nicht oeffnen.\n");
         return -1;

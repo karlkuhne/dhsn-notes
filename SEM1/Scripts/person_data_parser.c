@@ -31,7 +31,7 @@ int main() {
 	char *ptr;
 	//CSV-Datei 
 	FILE *file = 
-	fopen("C:\\Users\\karlk\\Dokumente\\DHSN\\dhsn-notes\\SEM1\\Scripts\\Elena.txt", "r"); 
+	fopen("C:\\Users\\karlk\\Dokumente\\DHSN\\dhsn-notes\\SEM1\\Scripts\\Files\\Elena.txt", "r"); 
 	if (file == NULL) {
 	       printf("Ich kann die Quell-Datei nicht oeffnen.\n");
 	       return -1;
@@ -161,7 +161,7 @@ int XML(PERSON *array, int anz)
 {
 	FILE *fp;
 	int i;
-	char fn[] = "C:\\Users\\karlk\\Dokumente\\DHSN\\dhsn-notes\\SEM1\\Scripts\\Elena.XML";
+	char fn[] = "C:\\Users\\karlk\\Dokumente\\DHSN\\dhsn-notes\\SEM1\\Scripts\\Files\\Elena.XML";
 	fp = fopen(fn, "w");
 	if(fp == NULL) 
 	{
