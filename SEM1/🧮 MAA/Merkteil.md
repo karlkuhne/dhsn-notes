@@ -2186,7 +2186,7 @@ $= - \int_0^\pi \cos(x) \, dx = -[\sin(x)]_0^\pi = -(\sin(\pi) - \sin(0)) = \und
 
 ## 13.5 Die Substitution
 
->Die Substitution ist eine Integrationstechnik, die verwendet wird, um komplexe Integrale durch Einführung einer neuen Variablen zu vereinfachen.
+>Die Substitution ist eine Integrationstechnik, die verwendet wird, um komplexe Integrale (wo man nicht leicht eine Stammfunktion findet) durch Einführung einer neuen Variablen zu vereinfachen.
 
 $$\int_{x_1}^{x_2} x e^{x^2} dx$$
 Substitution:
@@ -2209,3 +2209,76 @@ $= \frac{1}{3} \int_0^\pi cos(v) dv$
 $= \frac{1}{3} [\sin{(v)}]_0^\pi$
 $= \frac{1}{3} (0)$
 $\underline{\underline{=0}}$
+
+# 14. Komplexe Zahlen $\mathbb{C}$
+
+__Motivation:__
+
+$x^2 - 2x + 5 = 0$
+p-q-Formel:
+$x_{1/2} = 1 \pm \sqrt{1-5}$
+$= 1 \pm \sqrt{-4} = 1 \pm \sqrt{-1 \cdot 4}$
+$= 1 \pm \sqrt{-1} \cdot 2$
+$= 1 \pm j \cdot 2$
+
+## 14.1 Imaginäre Einheit
+
+$$j=\sqrt{-1}$$
+## 14.2 Allgemeine Darstellung einer komplexen Zahl
+
+$$z = Re(z) + j \ Im(z)$$
+$$Re(z), Im(z) \in \mathbb{R}$$
+Bsp.: $z = 2 + 3j$
+$Re(z)$ = Realteil
+$Im(z)$ = Imaginärteil
+
+## 14.3 Komplexe Konjugation
+
+Eine komplexe Zahl kann in der komplexen Ebene dargestellt werden.
+
+(Screenshot)
+
+Eine komplexe Zahl wird komplex konjugiert, indem vor jedem auftretenden $j$ das Vorzeichen gewechselt wird.
+$$z = a + jb \quad \Rightarrow \quad z* = a-jb$$
+(Screenshot)
+$z*$ ist an der reellen Achse gespiegelt, da der Imaginärteil das Vorzeichen wechselt.
+
+>__Polarkoordinaten__ In der Ebene werden $(x,y)$ durch Radius und Winkel ausgedrückt
+
+$$cos(\xi) = \frac{Re(z)}{|z|} \quad \Rightarrow \quad Re(z) = |z|\cos{\xi}$$
+$$sin(\xi) = \frac{Im(z)}{|z|} \quad \Rightarrow \quad Im(z) = |z|\sin{\xi}$$
+
+__Betrag einer Komplexen Zahl:__
+
+$$\boxed{|z| = \sqrt{Re(z)^2 + Im(z)^2}}$$
+
+__Außerdem:__
+$$z = a+bj \quad , \quad z^* = a-bj$$
+$$(z \cdot z^*) = (a+bj)(a-bj)$$
+$$= a^2 - abj + abj - b^2j^2 = a^2 - b^2\underbrace{j^2}_{=-1}$$
+$$= a^2+b^2$$
+$$\Rightarrow \boxed{z \cdot z^* = |z|^2}$$
+
+__Addition komplexer Zahlen:__
+$$z_1 = a_1 + b_1j$$
+$$z_2 = a_2 + b_2j$$
+$$\boxed{z_1 + z_2 = (a_1+a_2) + j(b_1+b_2)}$$
+
+__Multiplikation komplexer Zahlen:___
+$$z_1 \cdot z_2 = (a_1+b_1j)(a_2+b_2j)$$
+$$= a_1a_2 + a_1b_2j + a_2b_1j + b_1b_2\underbrace{j^2}_{=-1}$$
+$$\boxed{z_1 \cdot z_2 = (a_1a_2 - b_1b_2)+j(a_1b_2+a_2b_1)}$$
+
+__Division komplexer Zahlen:__
+$$\frac{z_1}{z_2} = \frac{a_1 + jb_1}{a_2+jb_2}$$
+Reellmachen des Nenners:
+Erweitern mit dem komplex konjugierten des Nenners
+$$\frac{z_1}{z_2} = \frac{a_1 + jb_1}{a_2+jb_2} \cdot \frac{a_2-jb_2}{a_2-jb_2}$$
+$$= \frac{a_1a_2-ja_1b_2+ja_2b_1-b_1b_2j^2}{a_2^2 + b_2^2}$$
+$$= \frac{a_1a_2 + b_1b_2 + j(a_2b_1-a_1b_2}{a_2^2 + b_2^2}$$
+$$\boxed{\frac{z_1}{z_2}= \frac{a_1a_2+b_1b_2}{a_2^2 + b_2^2} + j\frac{a_2b_1-a_1b_2}{a_2^2 + b_2^2}}$$
+
+__Beispiel:__
+$z = \frac{2+j}{1+3j} = \frac{2+j}{1+3j} \cdot \frac{1-3j}{1-3j}$
+$= \frac{2-6j+j-3j^2}{10} = \frac{5-5j}{10} = \underline{\underline{\frac{1}{2} - \frac{1}{2}j}}$
+
