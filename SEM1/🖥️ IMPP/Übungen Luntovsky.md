@@ -435,7 +435,7 @@ int main() {
 	while (fabs(summand)>0.000005) { // Genauigkeit
 		erg += summand;
 		printf("i: %2d, Summand: %8.6lf, Erg: %8.6lf \n",i,summand,erg);
-		summand *= ((0.5 - i) / (i + 1)) * x;
+		summand *= (-1) * x * (2*i - 1) / (2*i + 2);
 		i++;
 	}
 	
