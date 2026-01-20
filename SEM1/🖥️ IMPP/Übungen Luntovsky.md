@@ -444,6 +444,32 @@ int main() {
 }
 ````
 
+### 1.10.6 Übung: Weitere Formeln
+
+$$ a) \quad e^x = \sum_{n=0}^{\infty} \frac{x^n}{n!} \quad \Rightarrow \quad n: \frac{x^n}{n!} \quad ; \quad n+1: \frac{x^{n+1}}{(n+1)!} $$
+
+$$ \Rightarrow a_{n+1} = a_n \cdot \frac{x}{n+1} $$
+
+$$ b) \quad \frac{1}{1-x} = \sum_{n=0}^{\infty} x^n \quad \Rightarrow \quad n: x^n \quad ; \quad n+1: x^{n+1} $$
+
+$$ \Rightarrow a_{n+1} = a_n \cdot x $$
+
+$$ c) \quad \cos(x) = \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n}}{(2n)!} \quad \Rightarrow \quad n: (-1)^n \frac{x^{2n}}{(2n)!} \quad ; \quad n+1: (-1)^{n+1} \frac{x^{2n+2}}{(2n+2)!} $$
+
+$$ \Rightarrow a_{n+1} = a_n \cdot (-1) \cdot \frac{x^2}{(2n+1)(2n+2)} $$
+
+$$ d) \quad \sinh(x) = \sum_{n=0}^{\infty} \frac{x^{2n+1}}{(2n+1)!} \quad \Rightarrow \quad n: \frac{x^{2n+1}}{(2n+1)!} \quad ; \quad n+1: \frac{x^{2n+3}}{(2n+3)!} $$
+
+$$ \Rightarrow a_{n+1} = a_n \cdot \frac{x^2}{(2n+2)(2n+3)} $$
+
+$$ e) \quad \arctan(x) = \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n+1}}{2n+1} \quad \Rightarrow \quad n: (-1)^n \frac{x^{2n+1}}{2n+1} \quad ; \quad n+1: (-1)^{n+1} \frac{x^{2n+3}}{2n+3} $$
+
+$$ \Rightarrow a_{n+1} = a_n \cdot (-1) \cdot x^2 \cdot \frac{2n+1}{2n+3} $$
+
+$$ f) \quad \ln\left(\frac{1+x}{1-x}\right) = 2\sum_{n=0}^{\infty} \frac{x^{2n+1}}{2n+1} \quad \Rightarrow \quad n: \frac{x^{2n+1}}{2n+1} \quad ; \quad n+1: \frac{x^{2n+3}}{2n+3} $$
+
+$$ \Rightarrow a_{n+1} = a_n \cdot x^2 \cdot \frac{2n+1}{2n+3} $$
+
 # 2.1 Ostern-Formel nach O Beirne
 
 ```run-c
