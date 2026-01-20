@@ -444,24 +444,6 @@ int main() {
 }
 ````
 
-## 1.11 Mathematische Grundfunktionen und Dateiarbeit in C
-
-```run-c
-#include <stdio.h>
-#include <stdlib.h>
-
-int main(void) {
-	int zustand = 0;
-	char eingabe;
-	
-	while(eingabe != '0') {
-		
-	}
-}
-
-```
-
-
 # 2.1 Ostern-Formel nach O Beirne
 
 ```run-c
