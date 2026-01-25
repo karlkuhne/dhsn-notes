@@ -2270,7 +2270,7 @@ $$= a_1a_2 + a_1b_2j + a_2b_1j + b_1b_2\underbrace{j^2}_{=-1}$$
 $$\boxed{z_1 \cdot z_2 = (a_1a_2 - b_1b_2)+j(a_1b_2+a_2b_1)}$$
 
 __Division komplexer Zahlen:__
-$$\frac{z_1}{z_2} = \frac{a_1 + jb_1}{a_2+jb_2}$$
+$$\boxed{\frac{z_1}{z_2} = \frac{a_1 + jb_1}{a_2+jb_2}}$$
 Reellmachen des Nenners:
 Erweitern mit dem komplex konjugierten des Nenners
 $$\frac{z_1}{z_2} = \frac{a_1 + jb_1}{a_2+jb_2} \cdot \frac{a_2-jb_2}{a_2-jb_2}$$
@@ -2282,7 +2282,225 @@ __Beispiel:__
 $z = \frac{2+j}{1+3j} = \frac{2+j}{1+3j} \cdot \frac{1-3j}{1-3j}$
 $= \frac{2-6j+j-3j^2}{10} = \frac{5-5j}{10} = \underline{\underline{\frac{1}{2} - \frac{1}{2}j}}$
 
-fehlt
+## 14.4 Exponentialdarstellung
+
+>Jede komplexe Zahl $z= a+jb$ hat einen Betrag $|z| = \sqrt{a^2 + b^2}$ der ihren Abstand vom Ursprung der komplexen Ebene angibt und einen Winkel $\varphi = \arctan{(\frac{b}{a})}$, der die Richtung der komplexen Zahl relativ zur positiven reellen Achse beschreibt.
+>Daher kann eine komplexe Zahl nicht nur über ihre kartesischen Koordinaten $(a,b)$, sondern auch über diese Polarkoordinaten $|z|$ und $\varphi$ dargestellt werden.
+
+$$z = |z|\cos{(\varphi)} + j \sin{(\varphi)}$$
+Durch die Eulersche Formel ergibt sich:
+$$\boxed{\Rightarrow z = |z| e^{j\varphi}}$$
+
+__Beispiel:__
+
+$z=1+j$
+$|z|=\sqrt{1^2 + 1^2} = \sqrt{2}$
+$\varphi = \arctan{(\frac{1}{1})} = \arctan{(1)} = 45 \degree \Rightarrow \frac{\pi}{4}$
+$\Rightarrow z = \sqrt{2} e^{j \frac{\pi}{4}}$
+
+### 14.4.1 Herleitung
+
+Entwickeln der Funktionen $\sin{(x)}, \ \cos{(x)}, \ e^{jx}$ in ein Taylorpolynom 10. Ordnung um $x_0=0$.
+
+$$T_n(x) = \sum_{k=0}^n \frac{f^{(k)} (x_0)}{k!}(x-x_0)^k$$
+$$= \sum_{k=0}^n \frac{f^{(k)} (0)}{k!}x^k$$
+
+__sin(x)__
+$\sin(x)^{(0)} = \sin(x) \Rightarrow \sin(0) = 0$
+$\sin(x)^{(1)} = \cos(x) \Rightarrow \cos(0) = 1$
+$\sin(x)^{(2)} = -\sin(x) \Rightarrow -\sin(0) = 0$
+$\sin(x)^{(3)} = -\cos(x) \Rightarrow -\cos(0) = -1$
+$\sin(x)^{(4)} = \sin(x) \Rightarrow \sin(0) = 0$
+$\sin(x)^{(5)} = \cos(x) \Rightarrow \cos(0) = 1$
+$\sin(x)^{(6)} = -\sin(x) \Rightarrow -\sin(0) = 0$
+$\sin(x)^{(7)} = -\cos(x) \Rightarrow -\cos(0) = -1$
+$\sin(x)^{(8)} = \sin(x) \Rightarrow \sin(0) = 0$
+$\sin(x)^{(9)} = \cos(x) \Rightarrow \cos(0) = 1$
+$\sin(x)^{(10)} = -\sin(x) \Rightarrow -\sin(0) = 0$
+
+__cos(x)__
+$\cos(x)^{(0)} = -\sin(x) \Rightarrow -\sin(0) = 0$
+$\cos(x)^{(1)} = -\cos(x) \Rightarrow -\cos(0) = -1$
+$\cos(x)^{(2)} = \sin(x) \Rightarrow \sin(0) = 0$
+$\cos(x)^{(3)} = \cos(x) \Rightarrow \cos(0) = 1$
+$\cos(x)^{(4)} = -\sin(x) \Rightarrow -\sin(0) = 0$
+$\cos(x)^{(5)} = -\cos(x) \Rightarrow -\cos(0) = -1$
+$\cos(x)^{(6)} = \sin(x) \Rightarrow \sin(0) = 0$
+$\cos(x)^{(7)} = \cos(x) \Rightarrow \cos(0) = 1$
+$\cos(x)^{(8)} = -\sin(x) \Rightarrow -\sin(0) = 0$
+$\cos(x)^{(9)} = -\cos(x) \Rightarrow -\cos(0) = -1$
+$\cos(x)^{(10)} = \sin(x) \Rightarrow \sin(0) = 0$
+
+$e^{jx}$
+$(e^{jx})^{(0)} = e^{jx} \Rightarrow e^{jx}\Big|_{0} = 1$
+$(e^{jx})^{(1)} = \text{j}e^{jx} \Rightarrow \text{j}e^{jx}\Big|_{0} = \text{j}$
+$(e^{jx})^{(2)} = -e^{jx} \Rightarrow -e^{jx}\Big|_{0} = -1$
+$(e^{jx})^{(3)} = -\text{j}e^{jx} \Rightarrow -\text{j}e^{jx}\Big|_{0} = -\text{j}$
+$(e^{jx})^{(4)} = e^{jx} \Rightarrow e^{jx}\Big|_{0} = 1$
+$(e^{jx})^{(5)} = \text{j}e^{jx} \Rightarrow \text{j}e^{jx}\Big|_{0} = \text{j}$
+
+$$\Rightarrow e^{jx} = \underbrace{(\dots\dots\dots)}_{\cos(x)} + j \underbrace{(\dots\dots\dots)}_{\sin(x)}$$
+$$\Rightarrow z = |z| e^{j\varphi}$$
+dabei gilt:
+$$|e^{j\varphi}| = \underbrace{\cos(\varphi)}_{Re} + j \underbrace{\sin(\varphi)}_{Im}$$
+$$|z| = \sqrt{Re(z)^2 + Im(z)^2}$$
+$$\Rightarrow |e^{j\varphi}| = \sqrt{\cos^2(\varphi) + \sin^2(\varphi)} = 1$$
+
+### 14.4.2 Bestimmung des Quadranten
+
+![[Darstellungsformen-komplexer-Zahlen-1.jpg]]
+![[Pasted image 20260125215753.png]]
+
+Da $\arctan$ nur Winkel im 1. und 4. Quadranten korrekt bestimmt, müssen wir immer zuerst den Quadranten von $z$ prüfen:
+
+| Quadrant        | Bedingung    | Korrektur für φ | Beispiel                                                        |
+| --------------- | ------------ | --------------- | --------------------------------------------------------------- |
+| **1. Quadrant** | a > 0, b > 0 | **φ = α**       | $z = 1 + j$<br>$α = \arctan{(1/1)} = π/4$<br>$φ = π/4$          |
+| **2. Quadrant** | a < 0, b > 0 | **φ = α + π**   | $z = −1 + j$<br>$α = \arctan{(1/(−1))} = −π/4$<br>$φ = 3π/4$    |
+| **3. Quadrant** | a < 0, b < 0 | **φ = α − π**   | $z = −1 − j$<br>$α = \arctan{((−1)/(−1))} = π/4$<br>$φ = −3π/4$ |
+| **4. Quadrant** | a > 0, b < 0 | **φ = α**       | $z = 1 − j$<br>$α = \arctan{((−1)/1)} = −π/4$<br>$φ = −π/4$     |
+
+# 15. Vektorrechnung
+
+>Ein Vektor ist eine gerichtete Größe mit Betrag.
+
+
+__Komponenten eines Vektors__
+$$\vec{a} = \begin{pmatrix} a_x \\ a_y \end{pmatrix}$$
+
+__Verschiebung eines Vektors__
+Parallelverschiebung von Vektoren ändert die Vektoren nicht.
+
+
+__Multiplikation mit einem Skalar__
+$$q \begin{pmatrix} a_x \\ a_y \end{pmatrix} = \begin{pmatrix} qa_x \\ qa_y \end{pmatrix}$$
+
+__Betrag eines Vektors und Einheitsvektor__
+$$|\vec{a}| = \sqrt{a_x^2 + a_2^2}$$
+Definition: Einheitsvektor $|\vec{e_a}| = 1$
+$|\vec{a}| \neq 1 \quad \Rightarrow \quad \vec{e_a} = \frac{1}{|\vec{a}|} \vec{a}$
+
+__Addition von Vektoren__
+$$\vec{a} = \begin{pmatrix} a_x \\ a_y \end{pmatrix}, \vec{b} = \begin{pmatrix} b_x \\ b_y \end{pmatrix} \Rightarrow \vec{a}+\vec{b} = \begin{pmatrix} a_x+b_x \\ a_y+b_y \end{pmatrix}$$
+
+__Subtraktion von Vektoren__
+$$\vec{a} = \begin{pmatrix} a_x \\ a_y \end{pmatrix}, \vec{b} = \begin{pmatrix} b_x \\ b_y \end{pmatrix} \Rightarrow \vec{a}-\vec{b} = \begin{pmatrix} a_x-b_x \\ a_y-b_y \end{pmatrix}$$
+
+## 15.1 Lineare Abhängigkeit/Unabhängigkeit
+
+Zwei Vektoren sind linear abhängig, wenn sie in dieselbe oder in entgegengesetzte Richtungen zeigen, wenn also ein Vektor sich als __Vielfaches__ des jeweils anderen darstellen lässt.
+
+Bsp: $\vec{a} = \begin{pmatrix} 1 \\ 1 \end{pmatrix} \quad \vec{b} = \begin{pmatrix} 2 \\ 2 \end{pmatrix} \Rightarrow \vec{b}=2\vec{a}$
+
+$\Rightarrow \vec{a}$ und $\vec{b}$ sind linear abhängig
+
+Ein Satz von m Vektoren heißt linear unabhängig, wenn
+$$\sum_{k=1}^{m} \lambda_k \vec{a}_k = \vec{0} \quad \Leftrightarrow \quad \lambda_k = 0 \ \forall k \quad \lambda_k \in \mathbb{R}$$
+
+## 15.2 Das Skalarprodukt
+
+$$\vec{a} = \begin{pmatrix} a_x \\ a_y \end{pmatrix}, \vec{b} = \begin{pmatrix} b_x \\ b_y \end{pmatrix}$$
+$$\boxed{\vec{a} \bullet \vec{b} = a_x b_x + a_y b_y}$$
+Per Kosinussatz kann man zeigen:
+$$\boxed{\vec{a} \bullet \vec{b} = |\vec{a}| \cdot |\vec{b}| \cdot \cos(\varphi)}$$
+
+
+__Die Richtungsprojektion__
+
+![[Pasted image 20260125225642.png]]
+
+$P_{ba}$ = Projektion von $\vec{b}$ auf die Richtung von $\vec{a}$
+$P_{ab}$ = Projektion von $\vec{a}$ auf die Richtung von $\vec{b}$
+
+Aus dem rechtwinkligen Dreieck der Skizze ergibt sich:
+$$\cos(\varphi) = \frac{P_{ba}}{|\vec{b}|} \Rightarrow P_{ba} = |\vec{b}| \cdot \cos(\varphi)$$
+
+Die Definition des Skalarprodukts ist:
+$$\vec{a} \bullet \vec{b} = |\vec{a}| \cdot |\vec{b}| \cdot \cos(\varphi)$$
+
+Wenn wir die Gleichung für das Skalarprodukt nach $|\vec{b}| \cdot \cos(\varphi)$ umstellen, erhalten wir:
+$$\frac{\vec{a} \bullet \vec{b}}{|\vec{a}|} = |\vec{b}| \cdot \cos(\varphi)$$
+
+Durch Einsetzen in die Formel erhalten wir die allgemeine Formel für die Vektorprojektion:
+$$\boxed{P_{ba} = \frac{\vec{a} \bullet \vec{b}}{|\vec{a}|} = \frac{\vec{a}}{|\vec{a}|} \bullet \vec{b}}$$
+$$\boxed{P_{ab} = \frac{\vec{a} \bullet \vec{b}}{|\vec{b}|} = \vec{a} \bullet \frac{\vec{b}}{|\vec{b}|}}$$
+
+Beispiel:
+$\vec{a} = \begin{pmatrix} 2 \\ 2 \end{pmatrix}$ und $\vec{b} = \begin{pmatrix} 2 \\ 0 \end{pmatrix}$.
+$|\vec{a}| = \sqrt{2^2 + 2^2} = \sqrt{4+4} = \sqrt{8}$.
+$P_{ba} = \frac{1}{\sqrt{8}} \begin{pmatrix} 2 \\ 2 \end{pmatrix} \bullet \begin{pmatrix} 2 \\ 0 \end{pmatrix} = \frac{1}{\sqrt{8}} (2 \cdot 2 + 2 \cdot 0) = \frac{1}{\sqrt{8}} \cdot 4 = \frac{4}{\sqrt{8}} = \frac{4}{\sqrt{2}\sqrt{4}} = \frac{\sqrt{4}}{\sqrt{2}} = \underline{\underline{\sqrt{2}}}$
+
+### 15.3. Das Kreuzprodukt
+
+>Das Kreuzprodukt erstellt aus $\vec{a} \ne \vec{0}$ und $\vec{b} \ne \vec{0}$ einen Vektor, der zu $\vec{a}$ und $\vec{b}$ gleichzeitig orthogonal ist.
+
+Bemerkung: Das Kreuzprodukt ist antikommutativ: $\vec{a} \times \vec{b} = -\vec{b} \times \vec{a}$
+
+
+$$\vec{a} = \begin{pmatrix} a_x \\ a_y \\ a_z \end{pmatrix} \quad \vec{b} = \begin{pmatrix} b_x \\ b_y \\ b_z \end{pmatrix}$$
+$$\Rightarrow \vec{a} \times \vec{b} = \begin{pmatrix} a_y b_z - a_z b_y \\ a_z b_x - a_x b_z \\ a_x b_y - a_y b_x \end{pmatrix}$$
+![[Pasted image 20260125233017.png]]
+
+## 15.4 Geraden
+
+### 15.4.1 Parameterform
+$$\vec{g} = \vec{s} + a \vec{r}$$
+
+![[Pasted image 20260125233217.png]]
+
+### 15.4.2 Die Hessesche Normalenform
+
+>Die Hessesche Normalenform ist eine spezielle Darstellungsweise einer Geraden, die es besonders einfach macht, den Abstand der Geraden zum Ursprung zu bestimmen und festzustellen, ob ein Punkt auf der Geraden liegt.
+
+In dieser Form gilt:
+*   $d$ = Abstand der Geraden zum Ursprung
+*   $\vec{n_0}$ orthonormaler Einheitsvektor (steht senkrecht auf der Geraden)
+
+
+**Die Hessesche Normalenform lautet:**
+$$\boxed{\vec{g} \bullet \vec{n_0} - d = 0}$$
+Hierbei ist $\vec{g}$ der **Ortsvektor eines beliebigen Punktes** auf der Geraden. Wenn ein Punkt $\vec{x}$ auf der Geraden liegt, dann erfüllt er die Gleichung $\vec{x} \bullet \vec{n_0} - d = 0$.
+
+**Eine weitere wichtige Eigenschaft:**
+Da der Vektor $\vec{n_0}$ orthogonal zur Geraden steht und $\vec{r}$ der Richtungsvektor der Geraden ist, muss das Skalarprodukt dieser beiden Vektoren Null sein:
+$$\vec{n_0} \bullet \vec{r} = 0$$
+
+
+__Beispiel:__
+
+Gegeben ist die Gerade in Parameterform:
+$\vec{g} = \begin{pmatrix} 1 \\ 0 \end{pmatrix} + a \begin{pmatrix} -2 \\ 2 \end{pmatrix}$
+
+Der Richtungsvektor $\begin{pmatrix} -2 \\ 2 \end{pmatrix}$ wird um 90° gedreht, um den Normalenvektor zu erhalten.
+$\vec{n} = \begin{pmatrix} 2 \\ -2 \end{pmatrix}$
+
+Der Normalenvektor wird durch seine Länge $|\vec{n}| = \sqrt{2^2 + (-2)^2} = \sqrt{8} = 2\sqrt{2}$ geteilt, um den Einheitsnormalenvektor zu erhalten.
+$\vec{n_0} = \frac{1}{\sqrt{8}} \begin{pmatrix} 2 \\ -2 \end{pmatrix} = \frac{1}{2\sqrt{2}} \begin{pmatrix} 2 \\ -2 \end{pmatrix}$
+
+Ein Punkt auf der Geraden (hier der Stützvektor $\vec{s} = \begin{pmatrix} 1 \\ 0 \end{pmatrix}$) wird mit dem Einheitsnormalenvektor skalar multipliziert, um den Abstand $d$ vom Ursprung zu berechnen.
+$d = |\vec{s} \bullet \vec{n_0}| = \begin{pmatrix} 1 \\ 0 \end{pmatrix} \bullet \frac{1}{2\sqrt{2}} \begin{pmatrix} 2 \\ -2 \end{pmatrix} = \frac{1}{2\sqrt{2}} \cdot 2 = \frac{2}{2\sqrt{2}} = \frac{1}{\sqrt{2}}$
+
+Die Hessesche Normalenform unserer Geraden ist somit:
+$\vec{x} \bullet \frac{1}{2\sqrt{2}} \begin{pmatrix} 2 \\ -2 \end{pmatrix} - \frac{1}{\sqrt{2}}= 0$
+
+### 15.4.3 Koordinatenform
+
+Die Koordinatenform entsteht, wenn man die Hessesche Normalenform komponentenweise auswertet.
+
+$$\vec{g} \bullet \vec{n_0} - d = 0$$
+$$\Rightarrow \begin{pmatrix} x \\ y \end{pmatrix} \bullet \begin{pmatrix} n_0^{(x)} \\ n_0^{(y)} \end{pmatrix} - d = 0$$
+$$\Rightarrow x n_0^{(x)} + y n_0^{(y)} - d = 0$$
+
+__Beispiel:__
+
+Gegeben ist die Hessesche Normalenform:
+$\vec{g} \bullet \frac{1}{\sqrt{8}} \begin{pmatrix} 2 \\ -2 \end{pmatrix} - \frac{1}{\sqrt{2}} = 0$
+Ersetzen wir $\vec{g}$ durch den allgemeinen Ortsvektor $\begin{pmatrix} x \\ y \end{pmatrix}$:
+$\frac{1}{\sqrt{8}} \begin{pmatrix} x \\ y \end{pmatrix} \bullet \begin{pmatrix} 2 \\ -2 \end{pmatrix} - \frac{1}{\sqrt{2}} = 0$
+Berechnen des Skalarprodukts:
+$\frac{1}{\sqrt{8}} (2x - 2y) - \frac{1}{\sqrt{2}} = 0$
+Multiplizieren der Klammer mit dem Faktor davor:
+$\frac{2}{\sqrt{8}} x - \frac{2}{\sqrt{8}} y - \frac{1}{\sqrt{2}} = 0$
 
 ### 15.4.4 Schnittpunkte von Geraden
 
