@@ -2282,3 +2282,53 @@ __Beispiel:__
 $z = \frac{2+j}{1+3j} = \frac{2+j}{1+3j} \cdot \frac{1-3j}{1-3j}$
 $= \frac{2-6j+j-3j^2}{10} = \frac{5-5j}{10} = \underline{\underline{\frac{1}{2} - \frac{1}{2}j}}$
 
+fehlt
+
+### 15.4.4 Schnittpunkte von Geraden
+
+Es seien $g_1$ und $g_2$ nicht parallel
+$$g_1 = \vec{s_1} + a \vec{r_1} \quad , \quad g_2 = \vec{s_2} + a \vec{r_2}$$
+Gleichsetzen als lineares Gleichungssystem
+$$\vec{s_1} + a \vec{r_1} = \vec{s_2} + a \vec{r_2}$$
+
+__Beispiel:__
+$$\vec{g_1} = a \begin{pmatrix} 1 \\ 1 \end{pmatrix}$$
+
+$$\vec{g_1} = b \begin{pmatrix} 1 \\ 0 \end{pmatrix}$$
+Gleichsetzen
+$$a \begin{pmatrix} 1 \\ 1 \end{pmatrix} = b \begin{pmatrix} 1 \\ 0 \end{pmatrix}$$
+Zeilenweises Auslesen
+$$I: a=b$$
+$$II: a=0$$
+fehlt
+
+$a$ in $g_1$ oder $b$ in $g_2$ einsetzen
+
+fehlt
+
+### 15.4.5 Lagebeziehungen von Geraden
+
+__Parallelität__
+$$g_1 = \vec{s_1} + a \vec{r_1} \quad , \quad g_2 = \vec{s_2} + a \vec{r_2}$$
+$g_1$ und $g_2$ sind parallel, wenn die Richtungsvektoren linear abhängig sind oder
+$$\vec{r_1} \times \vec{r_2} = \vec{0}$$
+$$|\vec{r_1} \times \vec{r_2}| = |\vec{r_1}| \cdot |\vec{r_2}| \cdot \sin{(\xi)}$$
+
+__Beispiel:__
+$g_1 = \begin{pmatrix} 1 \\ 5 \end{pmatrix} + a \begin{pmatrix} 1 \\ 1 \end{pmatrix}$
+$\vec{g_2} = \begin{pmatrix} 5 \\ 1 \end{pmatrix} + b \begin{pmatrix} 2 \\ 2 \end{pmatrix}$
+$\vec{r_1} = \frac{1}{2} \vec{r_2} \Rightarrow \vec{r_1}, \vec{r_2}$ linear abhängig
+
+
+__Identität__
+
+Voraussetzung: Geraden sind parallel
+Falls Identität vorliegt, führt das lineare Gleichungssystem ausschließlich zu wahren Aussagen
+
+
+__Beispiel:__
+$\vec{g_1} = a \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix}$
+$\vec{g_2} = \begin{pmatrix} 0 \\ 0 \\ -2 \end{pmatrix} + b \begin{pmatrix} 0 \\ 0 \\ 3 \end{pmatrix}$
+$\vec{g_1} = \vec{g_2}$
+$\Rightarrow a \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ -2 \end{pmatrix} + b \begin{pmatrix} 0 \\ 0 \\ 3 \end{pmatrix}$
+fehlt
