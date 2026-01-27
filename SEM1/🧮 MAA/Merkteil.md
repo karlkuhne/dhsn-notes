@@ -2549,4 +2549,119 @@ $\vec{g_1} = a \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix}$
 $\vec{g_2} = \begin{pmatrix} 0 \\ 0 \\ -2 \end{pmatrix} + b \begin{pmatrix} 0 \\ 0 \\ 3 \end{pmatrix}$
 $\vec{g_1} = \vec{g_2}$
 $\Rightarrow a \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ -2 \end{pmatrix} + b \begin{pmatrix} 0 \\ 0 \\ 3 \end{pmatrix}$
+
 fehlt
+
+# 16. Funktionen mehrerer Variablen
+
+$$f = f(x_1, x_2, \dots, x_n)$$
+__Bsp.:__ $\quad \text{Anzahl der Follower} = F ( \text{Attraktivität der Posts, Kontroversität, } \dots)$
+
+Zur besseren Anschauung:
+$$f(x,y) = z(x,y)$$
+
+__Beispiel:__ Paraboloid
+![[Pasted image 20260127142516.png]]
+
+## 16.1 Die Partielle Ableitung
+
+Während die anderen Variablen festgehalten werden, wird nach einer Variablen abgeleitet.
+$$f(x,y) \quad , \quad x=1$$
+$$f_x = \left(\frac{\partial f(x,y)}{\partial x}\right)_y, f_y = \left(\frac{\partial f(x,y)}{\partial y}\right)_x$$
+
+Allgemein für $n$ unabhängige Variablen:
+$$f=f(x_1, x_2, \dots, x_n)$$
+$$f_{x_k} = \left(\frac{\partial f(x_1, x_2, \dots, x_n)}{\partial x_k}\right)_{x_1, \dots, x_{k-1}, x_{k+1}, \dots, x_n}$$
+$$f_{x_n} = \left(\frac{\partial f(x_1, x_2, \dots, x_n)}{\partial x_n}\right)_{x_1, \dots, x_{n-1}}$$
+
+__Beispiel:__ Partielle Ableitung Paraboloid
+
+![[Pasted image 20260127143137.png]]
+
+## 16.2 Totales/vollständiges Differential
+
+$$f(x, y)$$
+$$df = \left(\frac{\partial f(x,y)}{\partial x}\right)_y + \left(\frac{\partial f(x,y)}{\partial y}\right)_x$$
+
+Allgemein:
+
+$$f=f(x_1, x_2, \dots, x_n)$$
+$$df = \frac{\partial f(x_1, x_2, \dots, x_n)}{\partial x_1} dx_1 + \frac{\partial f(x_1, x_2, \dots, x_n)}{\partial x_2} dx_2 + \dots + \frac{\partial f}{\partial x_n} dx_n$$
+
+__Beispiele:__
+Berechne das vollständige Differential von $f(x, y)$
+
+$f(x,y) = \sin(x) \cos(y)$
+$\left(\frac{\partial f}{\partial x}\right)_y = \cos(x) \cos(y)$ $\quad \rightarrow x$ ableiten, $y$ bleibt konstant
+$\left(\frac{\partial f}{\partial y}\right)_x = \sin(x)(-\sin(y))$ $\quad \rightarrow x$ bleibt konstant, $y$ ableiten
+$\Rightarrow df = \cos(x) \cos(y) \, dx + \sin(x)(-\sin(y)) \, dy$
+
+$f(x,y) = \ln(x \cdot y) = \ln(x) + \ln(y)$
+$\left(\frac{\partial f}{\partial x}\right)_y = \frac{1}{x}$ $\quad \rightarrow y$-Konstante ist ein Summand und fällt daher bei der Ableitung weg
+$\left(\frac{\partial f}{\partial y}\right)_x =\frac{1}{y}$ $\quad \rightarrow x$-Konstante ist ein Summand und fällt daher bei der Ableitung weg
+$\Rightarrow df = \frac{1}{x} dx + \frac{1}{y} dy$
+
+$f(x,y) = \frac{\sin(xy)}{\cos(xy)}$
+$\left(\frac{\partial f}{\partial x}\right)_y = \frac{y\cos^2(xy) + y\sin^2(xy)}{\cos^2(xy)} = \frac{y(\cos^2(xy)+\sin^2(xy))}{\cos^2(xy)} = \frac{y}{\cos^2(xy)}$
+$\left(\frac{\partial f}{\partial y}\right)_x = \frac{x\cos^2(xy) + x\sin^2(xy)}{\cos^2(xy)} = \frac{x(\cos^2(xy)+\sin^2(xy))}{\cos^2(xy)} = \frac{x}{\cos^2(xy)}$
+$\Rightarrow df = \frac{y}{\cos^2(xy)} \, dx + \frac{x}{\cos^2(xy)} \, dy$
+
+### 16.2.1 Satz von Schwarz
+
+$$f(x,y) = \sin(xy) \cos(xy)$$
+$$\frac{\partial}{\partial x}\left(\frac{\partial f}{\partial y}\right)_x = \frac{\partial}{\partial x}\left(x(\cos{(xy)}^2 - \sin{(xy)}^2)\right)$$
+$$= \cos^2(xy) - \sin^2(xy) + x \left( - 2 \cos(xy) \cdot \sin(xy) y \right. \left. - 2 \sin^2(xy) \cos(xy) y \right)$$
+
+Satz vom Schwarz: Bei stetigen Funktionen sind die gemischten Ableitungen gleich.
+$$\frac{\partial}{\partial x} \left(\frac{\partial f}{\partial y}\right) = \frac{\partial}{\partial y} \left(\frac{\partial f}{\partial x}\right)$
+$\frac{\partial^2 f}{\partial x \partial y} = \frac{\partial^2 f}{\partial y \partial x}$$
+
+Für 3 Variablen:
+$$\frac{\partial^3 f}{\partial x \partial y \partial z} = \frac{\partial^3 f}{\partial x \partial z \partial y} = \dots$$
+
+>Der Satz von Schwarz kann auch mal nicht funktionieren!
+
+fehlt
+# 17. Differentialgleichungen (DGL)
+
+Ein DGL enthält eine Funktion und deren beliebig hohe Ableitungen.
+
+Allgemeine Form:
+$$a_0 y(x) + a_1 y'(x) + \dots + a_n y^{(n)} (x) = \underbrace{s(x)}_{\text{Störterm}}$$
+gesucht: $y(x)$
+
+
+__Klassifikation von Differentialgleichungen:__
+
+__Linearität:__
+Eine DGL heißt linear, wenn $y(x)$ und seine Ableitungen mit einer Potenz von höchstens $1$ eingehen.
+
+Beispiele:
+$y(x)^2 \rightarrow$ keine Linearität
+$y'(x)^2 \rightarrow$ keine Linearität
+$y(x)^2 \cdot y'(x)^2 \rightarrow$ keine Linearität
+$2y'' + y = 1 \rightarrow$ linear
+
+
+__Ordnung:__
+Die Ordnung ist die höchste auftretende Ableitung.
+$y'' + 3y' -y =1 \Rightarrow$ Ordnung ist $2$
+
+
+__Homogenität:__
+$a_0 y(x) + a_1 y'(x) + \dots + a_n y^{(n)} (x) = \underbrace{s(x)}_{\text{Störterm}}$
+$s(x)=0 \rightarrow$ homogen
+$s(x) \neq 0 \rightarrow$ inhomogen
+
+Beispiele:
+$2y - y' = 0 \rightarrow$ homogen
+$2y - y' = 3 \rightarrow$ inhomogen
+
+
+__Gewöhnlich/partiell:__
+Gewöhnlich: $y(x)$
+Bsp.: $y(x) + 3y' =0$
+
+Partiell: $y(x_1, x_2, \dots)$
+Bsp.: $y(x_1, x_2) + \frac{\partial y}{\partial x_1} \cdot \frac{\partial y}{\partial x_2} = x_1$
+
