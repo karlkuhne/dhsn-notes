@@ -762,7 +762,8 @@ __Definition: Supremum__
 $M \subseteq \mathbb{R}$ heißt nach oben beschränkt, wenn gilt:
 $$\exists b \in \mathbb{R} : x \le b \forall x \in M$$
 $b$ ist obere Schranke von $M$.
-Die kleinste obere Schranke ist das Supremum.
+
+>Die kleinste obere Schranke ist das Supremum.
 
 Bemerkung: Ist das Supremum Element der Menge selbst,  ist es das Maximum der Menge.
 
@@ -777,7 +778,8 @@ __Definition: Infinum__
 Eine Menge $M \subseteq \mathbb{R}$ heißt nach unten beschränkt, wenn gilt:
 $$\exists a \in \mathbb{R}: x \ge a \forall x \in M$$
 $a$ heißt untere Schranke von $M$.
-Die größte untere Schranke von $M$ ist das Infimum.
+
+> Die größte untere Schranke von $M$ ist das Infimum.
 
 Bemerkung: Ist das Infimum Element der Menge selbst, ist es auch ihr Minimum.
 
@@ -2204,7 +2206,7 @@ $\int_0^{\sqrt[3]{\pi}} x^2 \cos{(x^3)} dx$
 $v = x^3$
 $\frac{dv}{dx} = 3x^2 \Rightarrow dx = \frac{1}{3x^2} dv$
 
-$\int_0^\pi \centernot{x^2} \cos{(v)} \frac{1}{3 \centernot{x^2}} dv$
+$\int_0^\pi \centernot{x^2} \cos{(v)} \frac{1}{3 \centernot{x^2}} dv \quad$ $v=x^3$ auf Intervalgrenzen anwenden
 $= \frac{1}{3} \int_0^\pi cos(v) dv$
 $= \frac{1}{3} [\sin{(v)}]_0^\pi$
 $= \frac{1}{3} (0)$
@@ -2664,4 +2666,124 @@ Bsp.: $y(x) + 3y' =0$
 
 Partiell: $y(x_1, x_2, \dots)$
 Bsp.: $y(x_1, x_2) + \frac{\partial y}{\partial x_1} \cdot \frac{\partial y}{\partial x_2} = x_1$
+
+```mermaid
+graph TD
+    DG((Differentialgleichungen))
+
+    Gewoehnlich((gewöhnlich))
+    Partiell((partiell))
+
+    Linear((linear))
+    NichtLinear((nicht linear))
+
+    KonstanteKoeff[konstante koeffizienten]
+    VariableKoeff[variable koeffizienten]
+
+    Homogen((homogen))
+    Inhomogen((inhomogen))
+
+    DG --> Gewoehnlich
+    DG --> Partiell
+
+    Gewoehnlich --> Linear
+    Gewoehnlich --> NichtLinear
+
+    Linear --> KonstanteKoeff
+    Linear --> VariableKoeff
+    NichtLinear --> KonstanteKoeff
+    NichtLinear --> VariableKoeff
+
+    KonstanteKoeff --> Homogen
+    KonstanteKoeff --> Inhomogen
+    VariableKoeff --> Homogen
+    VariableKoeff --> Inhomogen
+```
+## 17.1 Der Exponentialansatz
+
+Wird verwendet für lineare Differentialgleichungen mit konstanten Koeffizienten.
+
+$$a_0 + a_1y' + a_2y'' + \dots + a_n y^{(n)} = 0$$
+$$\boxed{y = c e^{\lambda x} \quad , \quad y' = c \lambda e^{\lambda x} \quad , \quad y' = c \lambda^2 e^{\lambda x}}$$
+$$\boxed{y(x) = c_1 e^{\lambda_1 x} + c_2 e^{\lambda_2 x}}$$
+
+__Beispiel:__
+
+$y'' + 5y' + 2y = 0$
+
+**1. Charakteristische Gleichung aufstellen:**
+$\lambda^2 + 5\lambda + 2 = 0$
+
+**2. Lösungen für $\lambda$ finden:**
+$\lambda_{1,2} = \frac{-5 \pm \sqrt{17}}{2}$
+$\lambda_1 = \frac{-5 + \sqrt{17}}{2}$
+$\lambda_2 = \frac{-5 - \sqrt{17}}{2}$
+
+**3. Allgemeine Lösung:**
+Die allgemeine Lösung lautet:
+$y(x) = C_1 e^{\lambda_1 x} + C_2 e^{\lambda_2 x}$
+$y(x) = C_1 e^{\left(\frac{-5 + \sqrt{17}}{2}\right)x} + C_2 e^{\left(\frac{-5 - \sqrt{17}}{2}\right)x}$
+
+**4. Anfangsbedingung anwenden: $y(x=0)=1$**
+Wir setzen $x=0$ in die allgemeine Lösung ein:
+$y(0) = C_1 e^{\lambda_1 \cdot 0} + C_2 e^{\lambda_2 \cdot 0}$
+$y(0) = C_1 e^0 + C_2 e^0$
+$y(0) = C_1 \cdot 1 + C_2 \cdot 1$
+$y(0) = C_1 + C_2$
+
+Da $y(0)=1$ sein soll:
+$C_1 + C_2 = 1$
+$\Rightarrow C = \frac{1}{2}$
+
+**6. Gesamtlösung:**
+Einsetzen in $y(x) = C_1 e^{\lambda_1 x} + C_2 e^{\lambda_2 x}$
+$y(x) = \frac{1}{2} \left( e^{\left(\frac{-5 + \sqrt{17}}{2}\right)x} + e^{\left(\frac{-5 - \sqrt{17}}{2}\right)x} \right)$
+
+### 17.1.1 Herleitung
+$$y = c \cdot e^{\lambda} \quad , \quad c, \lambda \in \mathbb{R} \text{ und konstant}$$
+$$y^{(n)} = c \lambda ^n e^{\lambda x}$$
+Einsetzen in die originale/ursprüngliche DGL
+$$\Rightarrow a_0ce^{\lambda x} + a_1ce^{\lambda x} + \dots + a_nce^{\lambda x} = 0$$
+$/e^{\lambda x}$
+$$\Rightarrow a_0c + \lambda a_1c + + \lambda^2 a_2c + \dots + \lambda^n a_nc = 0$$
+$/c$
+Charakteristisches Polynom:
+$$\Rightarrow a_0 + \lambda a_1 + \lambda ^2 a_2 + \dots + \lambda^n a_n = 0$$
+Auflösen nach $\lambda$ und in den Ansatz einsetzen
+$$\Rightarrow y = c \cdot e^{\lambda x}$$
+Bestimmung von $c$ per Anfangsbedingung
+$$y(x_0) = y_0$$
+Einsetzen der Anfangsbedingung in den Exponentialansatz
+$$\Rightarrow y_0 = c \cdot e^{\lambda x}$$
+$/e^{\lambda x}$
+$$\Rightarrow c = \frac{y_0}{e^{\lambda x}}$$
+$$\Rightarrow y = \frac{y_0}{e^{\lambda x_0}} \cdot e^{\lambda x}$$
+Superposition bei mehreren $\lambda$ (z.B. entstehen bei einem quadratischen charakteristischen Polynom 2. Graded per p-q-Formel zwei $\lambda$)
+$$\boxed{y = c (e^{\lambda_1 x} + e^{\lambda_2 x})}$$
+
+## 17.2 Trennung  der Variablen
+
+Dient zur Lösung von Differentialgleichungen der Form
+$$y' = f(y) g(x)$$
+$$\Rightarrow \frac{dy}{dx} = f(y) g(x)$$
+$$\Rightarrow \frac{dy}{f(y)} = g(x) dx$$
+$$\Rightarrow \frac{1}{f(y)} dy = g(x) dx$$
+$\int$
+$$\boxed{\Rightarrow \int \frac{1}{f(y)} dy = \int g(x) dx}$$
+
+
+__Beispiel:__
+$y' = xy \qquad f(y) = y \quad g(x) = x$
+
+$\int \frac{1}{y} \, dy = \int x \, dx$
+$\Rightarrow \ln(y) + C_1 = \frac{1}{2}x^2 + C_2 \quad / -C_1$
+$\Rightarrow \ln(y) = \frac{1}{2}x^2 + \underbrace{C_2 - C_1}_{C_3}$
+$\Rightarrow \ln(y) = \frac{1}{2}x^2 + C_3 \quad / e^{\hat{}}$
+$\Rightarrow e^{\ln(y)} = y = e^{\frac{1}{2}x^2 + C_3}$
+$= e^{\frac{1}{2}x^2} \cdot \underbrace{e^{C_3}}_{C_4}$
+$\Rightarrow y = C_4 e^{\frac{1}{2}x^2}$
+
+mit $y(x=0) = 1$
+$\Rightarrow y(x=0) = C_4 = 1$
+$\underline{\underline{\Rightarrow y = e^{\frac{1}{2}x^2}}}$
 
