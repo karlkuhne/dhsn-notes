@@ -14,6 +14,7 @@ int main() {
         return -1;
     }
 
+    // zeilenweise
     while (fgets(string, MAX, file) != NULL) {
         string[strlen(string) - 1] = 0; // /n entfernen
         ptr = strtok(string, delimiter);
