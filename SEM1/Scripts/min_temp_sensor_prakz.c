@@ -17,7 +17,7 @@ int main() {
     // zeilenweise
     while (fgets(string, MAX, file) != NULL) {
         string[strlen(string) - 1] = 0; // /n entfernen
-        ptr = strtok(string, delimiter);
+        ptr = strtok(string, delimiter); // erster Aufruf: findet erstes Token
 
         int i = 0;
         int currentHours, currentMinutes, lowSensor;
@@ -27,7 +27,7 @@ int main() {
             switch(i) {
                 case 1:
                     printf("Uhrzeit: %s\n", ptr); // hat die Form HH:MM:
-                    sscanf(ptr, "%d:%d:", &currentHours, &currentMinutes);
+                    sscanf(ptr, "%d:%d:", &currentHours, &currentMinutes); // liest formatierte Daten aus einem String ein
                     break;
                 default:
                     printf("Temperatur %d: %s\n", i-1, ptr);
@@ -38,8 +38,8 @@ int main() {
                     }
                     break;
             }
-            // naechsten Abschnitt erstellen
-            ptr = strtok(NULL, delimiter);
+            // weitere Aufrufe: findet nächste Tokens
+            ptr = strtok(NULL, delimiter); // NULL, weil weiter im selben String gesucht wird
         }
         printf("Die niedrigste gemessene Temperatur um %02d:%02d Uhr: %.2f Grad (gemessen von Sensor %d)", currentHours, currentMinutes, lowTemp, lowSensor);
         puts("");
