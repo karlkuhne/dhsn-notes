@@ -7,8 +7,13 @@ typedef struct {
   char *phone;
 } tpers;
 
-tpers* readPers(FILE *fp);
+tpers* readPers(FILE *file);
 void putPers(const tpers *person);
 void freePers(tpers *person);
+
+// Erweiterung Aufg 2
+tpers** readAllPers(FILE *file, int *count);
+void putAllPers(tpers **allPers, int count);
+void freeAllPers(tpers **allPers, int count);
 
 #endif
