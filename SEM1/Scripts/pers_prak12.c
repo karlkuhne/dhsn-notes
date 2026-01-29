@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "pers.h"
 
 static char* readStr(FILE *file) {
@@ -62,10 +63,20 @@ void freeAllPers(tpers **allPers, int count) {
     free(allPers);
 }
 
+void qsort (void *base, size_t nitems, size_t size, int (*compar)(const void *, const void *));
+
+int comparePers(const void *a, const void *b) {
+    // ((tpers*)a) bei normalen Arrays
+    // (*((tpers**)a) bei Pointer-Arrays, da erst dereferenziert werden muss
+    return strcmp((*((tpers**)a))->name, (*((tpers**)b))->name);
+}
+
 int main() {
     FILE *file = fopen("C:\\Users\\karlk\\Dokumente\\DHSN\\dhsn-notes\\SEM1\\Scripts\\Files\\phone.dat", "r");
     int count;
     tpers **allPers = readAllPers(file, &count);
+
+    qsort(allPers, count, sizeof(tpers*), comparePers);
 
     putAllPers(allPers, count);
     freeAllPers(allPers, count);
