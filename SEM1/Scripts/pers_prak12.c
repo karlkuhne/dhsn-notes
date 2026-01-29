@@ -71,13 +71,61 @@ int comparePers(const void *a, const void *b) {
     return strcmp((*((tpers**)a))->name, (*((tpers**)b))->name);
 }
 
+void writePers(FILE *file, const tpers *pers) {
+    int len = strlen(pers->name);
+    fputc(len, file); // schreibt ein Byte (Länge des Strings)
+    fwrite(pers->name, 1, len, file); // schreibt den String selbst
+
+    len = strlen(pers->surname);
+    fputc(len, file);
+    fwrite(pers->surname, 1, len, file);
+
+    len = strlen(pers->phone);
+    fputc(len, file);
+    fwrite(pers->phone, 1, len, file);
+}
+
 int main() {
     FILE *file = fopen("C:\\Users\\karlk\\Dokumente\\DHSN\\dhsn-notes\\SEM1\\Scripts\\Files\\phone.dat", "r");
     int count;
     tpers **allPers = readAllPers(file, &count);
+    
+    char input[128];
+
+    puts("Personendaten erfolgreich eingelesen.");
+    
+    while (1) {
+        puts("Neue Personendaten eingeben (Format: Name Nachname Telefonnummer) oder 'exit' zum Beenden:");
+        fgets(input, sizeof(input), stdin);
+        if (strcmp(input, "exit\n") == 0) break;
+
+        input[strcspn(input, "\n")] = '\0';
+
+        // strtok gibt Adresse zurück, daher chars als pointer definieren
+        char *newName = strtok(input, " ");
+        char *newSurname = strtok(NULL, " ");
+        char *newPhone = strtok(NULL, "");
+
+        if (!newName || !newSurname || !newPhone) {
+            puts("Ungültiges Format. Bitte erneut versuchen.");
+            continue;
+        }
+
+        tpers *newPers = malloc(sizeof(tpers));
+        newPers->name = strdup(newName);
+        newPers->surname = strdup(newSurname);
+        newPers->phone = strdup(newPhone);
+
+        file = fopen("C:\\Users\\karlk\\Dokumente\\DHSN\\dhsn-notes\\SEM1\\Scripts\\Files\\phone.dat", "ab");
+        writePers(file, newPers);
+        fclose(file);
+
+        allPers = realloc(allPers, (count + 1) * sizeof(tpers*));
+        allPers[count] = newPers;
+        count++;
+    }
 
     qsort(allPers, count, sizeof(tpers*), comparePers);
-
     putAllPers(allPers, count);
     freeAllPers(allPers, count);
 
