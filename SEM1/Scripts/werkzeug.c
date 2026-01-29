@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #define MAX 100
+#define FILEPATH "C:\\Users\\karlk\\Dokumente\\DHSN\\dhsn-notes\\SEM1\\Scripts\\Files\\werkzeug.txt"
 
 typedef struct {
     char *name;
@@ -58,7 +59,7 @@ void addTools(ttool ***allTools, int *count) {
         strcpy(newTool->marke, newMarke);
         newTool->preis = malloc(sizeof(float));
         *(newTool->preis) = atof(newPreis);
-        file = fopen("C:\\Users\\karlk\\Dokumente\\DHSN\\dhsn-notes\\SEM1\\Scripts\\Files\\werkzeug.txt", "a");
+        file = fopen(FILEPATH, "a");
         fprintf(file, "%s %s %.2f\n", newTool->name, newTool->marke, *(newTool->preis));
         fclose(file);
         *allTools = realloc(*allTools, sizeof(ttool *) * (*count + 1));
@@ -89,7 +90,7 @@ void freeAllTools(ttool **allTools, int count) {
 }
 
 int main() {
-    FILE *datei = fopen("C:\\Users\\karlk\\Dokumente\\DHSN\\dhsn-notes\\SEM1\\Scripts\\Files\\werkzeug.txt", "r");
+    FILE *datei = fopen(FILEPATH, "r");
     int count;
     ttool **allTools = readAllTools(datei, &count);
     puts("Werkzeugdaten erfolgreich eingelesen.");
