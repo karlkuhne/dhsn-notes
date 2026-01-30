@@ -1,6 +1,7 @@
-# Ignore obsidian files
+# Obsidian files
 .obsidian/workspace.json
 .obsidian/plugins/obsidian-yolo/data.json
+.obsidian/plugins/execute-code/data.json
 
 # Misc
 .DS_Store
