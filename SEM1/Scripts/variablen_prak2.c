@@ -1,33 +1,40 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#define MAX 100
 
-char vBuf[128];
+char input[MAX];
+char delimiter[] = " ";
 
 void main() {
-    signed char my_sc;
-    unsigned char my_uc;
-    signed short my_ss;
-    unsigned short my_us;
     signed int my_si;
     unsigned int my_ui;
-    signed long my_sl;
-    unsigned long my_ul;
+    float my_f;
+    char my_ci;
+    char my_cz;
+    char my_s[MAX];
+    char my_s1[MAX];
+    char my_s2[MAX];
 
-    fgets(vBuf, 128, stdin); my_sc=atoi(vBuf);
-    fgets(vBuf, 128, stdin); my_uc=atoi(vBuf);
-    fgets(vBuf, 128, stdin); my_ss=atoi(vBuf);
-    fgets(vBuf, 128, stdin); my_us=atoi(vBuf);
-    fgets(vBuf, 128, stdin); my_si=atoi(vBuf);
-    fgets(vBuf, 128, stdin); my_ui=atoi(vBuf);
-    fgets(vBuf, 128, stdin); my_sl=atol(vBuf);
-    fgets(vBuf, 128, stdin); my_ul=atol(vBuf);
+    fgets(input, MAX, stdin); my_si = (signed int)atoi(input);
+    fgets(input, MAX, stdin); my_ui = (unsigned int)atoi(input);
+    fgets(input, MAX, stdin); my_f = (float)atof(input);
+    fgets(input, MAX, stdin); my_ci = (char)atoi(input);
+    fgets(input, MAX, stdin); my_cz = (char)input[0];
+    fgets(input, MAX, stdin);
+    input[strcspn(input, "\n")] = '\0';
+    strcpy(my_s, input);
+    fgets(input, MAX, stdin);
+    input[strcspn(input, "\n")] = '\0';
+    char *token = strtok(input, delimiter); strcpy(my_s1, token);
+    token = strtok(NULL, delimiter); strcpy(my_s2, token);
 
-    printf("signed   char:  %p %d %X\n", &my_sc, my_sc, my_sc);
-    printf("unsigned char:  %p %d %X\n", &my_uc, my_uc, my_uc);
-    printf("signed   short: %p %d %X\n", &my_ss, my_ss, my_ss);
-    printf("unsigned short: %p %d %X\n", &my_us, my_us, my_us);
-    printf("signed   int:   %p %d %X\n", &my_si, my_si, my_si);
-    printf("unsigned int:   %p %d %X\n", &my_ui, my_ui, my_ui);
-    printf("signed   long:  %p %d %X\n", &my_sl, my_sl, my_sl);
-    printf("unsigned long:  %p %d %X\n", &my_ul, my_ul, my_ul);
+    printf("signed int: %-10p %-10d\n", &my_si, my_si);
+    printf("unsigned int: %-10p %-10u\n", &my_ui, my_ui);
+    printf("float: %-10p %.02f\n", &my_f, my_f);
+    printf("char (int): %-10p %-10d '%c'\n", &my_ci, my_ci, my_ci);
+    printf("char (zeichen): %-10p %-10d '%c'\n", &my_cz, my_cz, my_cz);
+    printf("string: %-10p %s\n", &my_s, my_s);
+    printf("string 1: %-10p %s\n", &my_s1, my_s1);
+    printf("string 2: %-10p %s", &my_s2, my_s2);
 }

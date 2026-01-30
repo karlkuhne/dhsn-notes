@@ -21,7 +21,12 @@ int main(int argc, char *argv[]) {
 
     // wortweise
     while (fscanf(file, "%s", wort) == 1) {
-        laengen[strlen(wort)]++;
+        int len = strlen(wort);
+        if (len <= 10) {
+            laengen[len]++;
+        } else {
+            laengen[11]++;
+        }
     }
 
     fclose(file);
