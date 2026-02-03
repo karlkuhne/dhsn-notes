@@ -2636,7 +2636,7 @@ gesucht: $y(x)$
 __Klassifikation von Differentialgleichungen:__
 
 __Linearität:__
-Eine DGL heißt linear, wenn $y(x)$ und seine Ableitungen mit einer Potenz von höchstens $1$ eingehen.
+Eine DGL heißt linear, wenn $y(x)$ und seine Ableitungen mit nur eine Potenz von höchstens $1$ haben.
 
 Beispiele:
 $y(x)^2 \rightarrow$ keine Linearität
@@ -2662,9 +2662,11 @@ $2y - y' = 3 \rightarrow$ inhomogen
 
 __Gewöhnlich/partiell:__
 Gewöhnlich: $y(x)$
+Hängt von einer einzigen unabhängigen Variablen ab
 Bsp.: $y(x) + 3y' =0$
 
 Partiell: $y(x_1, x_2, \dots)$
+Hängt von mehreren unabhängigen Variablen ab $(x_1, x_2, \dots)$
 Bsp.: $y(x_1, x_2) + \frac{\partial y}{\partial x_1} \cdot \frac{\partial y}{\partial x_2} = x_1$
 
 ```mermaid
