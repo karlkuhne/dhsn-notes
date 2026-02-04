@@ -91,19 +91,19 @@ int Wuerfel() {
 int x = 304, y = 28;
 
 int ggT(int x, int y) {
-    int r = x % y;
-    printf("%d mod %d = %d\n", x, y, r);
-    if (r == 0) {
-        return y;
-    } else {
-        return ggT(y, r);
-    }
+    int r = x % y;
+    printf("%d mod %d = %d\n", x, y, r);
+    if (r == 0) {
+        return y;
+    } else {
+        return ggT(y, r);
+    }
 }
 
 int main() {
-	int ergebnis = ggT(x, y);
-    printf("ggT von %d und %d ist %d\n", x, y, ergebnis);
-    return 0;
+    int ergebnis = ggT(x, y);
+    printf("ggT von %d und %d ist %d\n", x, y, ergebnis);
+    return 0;
 }
 ```
 

@@ -7,14 +7,14 @@ char input[MAX];
 char delimiter[] = " ";
 
 void main() {
-    signed int my_si;
-    unsigned int my_ui;
-    float my_f;
-    char my_ci;
-    char my_cz;
-    char my_s[MAX];
-    char my_s1[MAX];
-    char my_s2[MAX];
+    signed int my_si; // -1
+    unsigned int my_ui; // 1
+    float my_f; // 1.23
+    char my_ci; // 65
+    char my_cz; // 'A'
+    char my_s[MAX]; // "Hallo Welt"
+    char my_s1[MAX]; // "Hallo"
+    char my_s2[MAX]; // "Welt"
 
     fgets(input, MAX, stdin); my_si = (signed int)atoi(input);
     fgets(input, MAX, stdin); my_ui = (unsigned int)atoi(input);
