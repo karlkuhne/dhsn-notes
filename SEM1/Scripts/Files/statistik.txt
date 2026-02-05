@@ -1,0 +1,3 @@
+Der Gesamtwert aller Produkte betraegt 21816.85
+Das teuerste Produkt ist Laptop (kostet $899.99)
+Der Durchschnittpreis aller 120 Produkte betraegt 181.81
