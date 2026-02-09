@@ -2545,14 +2545,188 @@ __Identität__
 Voraussetzung: Geraden sind parallel
 Falls Identität vorliegt, führt das lineare Gleichungssystem ausschließlich zu wahren Aussagen
 
-
 __Beispiel:__
 $\vec{g_1} = a \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix}$
 $\vec{g_2} = \begin{pmatrix} 0 \\ 0 \\ -2 \end{pmatrix} + b \begin{pmatrix} 0 \\ 0 \\ 3 \end{pmatrix}$
 $\vec{g_1} = \vec{g_2}$
 $\Rightarrow a \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ -2 \end{pmatrix} + b \begin{pmatrix} 0 \\ 0 \\ 3 \end{pmatrix}$
 
-fehlt
+Zeilenweises Auslesen: 
+$I: 0 = 0 \text{ w.A.}$
+$II. 0 = 0 \text{ w.A.}$
+$III. a = -2 + 3b$
+
+Da für $a$ und $b$ nur jeweils eine Gleichung vorliegt, kann für $b$ jeder beliebige Wert eingesetzt werden und $a$ ergibt sich.
+$g_1, g_2$ sind identisch
+
+
+__Orthogonalität__
+
+>Skalarprodukt der Richtungsvektoren ergibt $0$
+
+
+__Windschief__
+
+>Zwei Geraden sind windschief, wenn sie nicht parallel sind, aber keinen Schnittpunkt haben.
+
+## 15.5 Ebenen
+
+### 15.5.1 Die Parameterform
+
+$$\boxed{\vec{E} = \vec{s} + a \vec{r_1} + b\vec{r_2}}$$
+
+### 15.5.2 Hessesche Normalenform
+
+Normalenvektor einer Ebene
+$$\vec{n} = \vec{r_1} \times \vec{r_2}$$
+Normaleneinheitsvektor
+$$|\vec{n_0}| = 1 \quad , \quad \vec{n_0} = \frac{\vec{r_1} \times \vec{r_2}}{|\vec{r_1} \times \vec{r_2}|}$$
+$$\boxed{(\vec{E} - \vec{s}) \bullet \vec{n_0} = 0}$$
+$\vec{E}$ ist ein zu testender Punkt, $\vec{s}$ ist ein bekannter Punkt
+
+### 15.5.3 Koordinatenform
+
+Mit der Koordinatenform kann man schnell prüfen, ob ein Punkt $d$ auf der Ebene liegt
+$$E: ax_1 + bx_2 + cx_3 = d$$
+
+__Parameterform zu Koordinatenform__
+
+$\vec{E} = \begin{pmatrix} 1 \\ 2 \\ 5 \end{pmatrix} + a \begin{pmatrix} 2 \\ 3 \\ -4 \end{pmatrix} + b \begin{pmatrix} 1 \\ -1 \\ 6 \end{pmatrix}$
+$\vec{n} = \begin{pmatrix} 2 \\ 3 \\ -4 \end{pmatrix} \times \begin{pmatrix} 1 \\ -1 \\ 6 \end{pmatrix} = \begin{pmatrix} 22 \\ -8 \\ -5 \end{pmatrix}$
+$22x_1 - 8x_2 - 5x_3 = a$
+Punkt einsetzen
+$E: 22x_1 - 8x_2 - 5x_3 =-19$
+
+
+__Koordinatenform zu Normalenform__
+
+$E: 2x_1 + 3x_2 + 4x_3 + 12 = 0$
+Nun müssen drei beliebige Punkte gefunden werden, die die Gleichung erfüllen
+aus $x_1 = 0$ und $x_2=0$ ergibt sich für $x_3=-3 \quad \Rightarrow P_1(0, 0, -3)$  
+aus $x_2 = 0$ und $x_2=0$ ergibt sich für $x_1=-6 \quad \Rightarrow P_2(-6, 0, 0)$
+aus aus $x_1 = 0$ und $x_3=0$ ergibt sich für $x_2=-4 \quad \Rightarrow P_3(0, -4, 0)$
+Anhand dieser Punkte kann man nun Stützvektor und Spannvektoren ablesen.
+
+## 15.6 Lagebeziehungen von Ebenen
+
+__Parallelität__
+
+> Zwei Ebenen sind parallel, wenn ihre Normalenvektoren linear abhängig sind bzw.
+> $\vec{n_1} \times \vec{n_2} = 0$ gilt bzw.
+> das Skalarprodukt des Normalenvektors einer Ebene mit jeden Richtungsvektor der anderen Ebene $0$ wird.
+
+
+__Orthogonalität__
+
+>Zwei Ebenen sind orthogonal, wenn $\vec{n_1} \bullet \vec{n_2} =0$ gilt
+
+
+__Parallelität von Gerade und Ebene__
+$$\vec{g} = \vec{s_g} + a \vec{r_g}$$
+$$\vec{E} = \vec{s_e} + b \vec{r_1} + c \vec{r_2}$$
+$$\boxed{\vec{n} \bullet \vec{r_g} = 0}$$
+
+__Orthogonalität von Gerade und Ebene__
+
+>Gerade und Ebene sind orthogonal, wenn der Richtungsvektor der Geraden und der Normalenvektor der Ebene linear abhängig sind bzw.
+>$\vec{r_g} \bullet \vec{r_1} = 0$ bzw. $\vec{r_g} \bullet \vec{r_2} = 0$
+
+
+__Schnittwinkel Gerade Ebene__
+
+$$\boxed{\varphi = \arccos{(\frac{\vec{r_g} \bullet \vec{n}}{|\vec{r_g}| |\vec{n}|})}}$$
+
+## 15.8 Schnittgeraden von Ebenen
+
+Sind zwei Ebenen nicht parallel, bilden sie eine Schnittgerade.
+
+$$\vec{E_1} = \vec{s_1} + a_1 \vec{u_1} + b_1 \vec{v_1}$$
+$$\vec{E_2} = \vec{s_2} + a_2 \vec{u_2} + b_2 \vec{v_2}$$
+$$\vec{E_1} \nparallel \vec{E_2}$$
+
+Herausfinden der Schnittgerade durch LGS
+
+
+__Beispiel__
+
+$\vec{E_1} = \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix} + a_1 \begin{pmatrix} 2 \\ 1 \\ 0 \end{pmatrix} + b_1 \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix}$
+$\vec{E_2} = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix} + a_2 \begin{pmatrix} 1 \\ 5 \\ 2 \end{pmatrix} + b_2 \begin{pmatrix} 1 \\ 3 \\ 2 \end{pmatrix}$
+
+$\vec{E_1} = \vec{E_2}$
+$\Rightarrow \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix} + a_1 \begin{pmatrix} 2 \\ 1 \\ 0 \end{pmatrix} + b_1 \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix} = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix} + a_2 \begin{pmatrix} 1 \\ 5 \\ 2 \end{pmatrix} + b_2 \begin{pmatrix} 1 \\ 3 \\ 2 \end{pmatrix}$
+
+$I: 1 + 2a_1 + 0b_1 = 1 + a_2 + b_2 \quad / -1$
+$II: 1 + a_1 + 0b_1 = 2 + 5a_2 + 3b_2 \quad / -1$
+$III: 1 + 0a_1 + b_1 = 3 + 2a_2 + 2b_2 \quad / -1$
+
+$I: 2a_1 = a_2 + b_2$
+$II: a_1 = 1 + 5a_2 + 3b_2$
+$III: b_1 = 2 + 2a_2 + 2b_2$
+
+$I: a_2 = 2a_1-b_2$
+$III: b_1 = 2 + 2(2a_1-b_2) + 2b_2$
+$b_1 = 2 + 4a_1 - 2b_2 + 2b_2$
+$b_1 = 2 + 4a_1$
+
+$II: a_1 = 1 + 5(2a_1 - b_2) + 3b_2$
+$a_1 = 1 + 10a_1 - 5b_2 + 3b_2$
+$a_1 = 1 + 10a_1 - 2b_2 \quad / -10a_1$
+$-9a_1 = 1 - 2b_2$
+$2b_2 = 1 + 9a_1$
+$b_2 = \frac{1}{2} + \frac{9}{2}a_1$
+
+$I: b_1 = 2 + 4a_1$
+$b_1 = 2+4(1+5a_2+3b_2)$
+$b_1 = 2+4+20a_2+12b_2$
+$b_1 = 6+20a_2+12b_2$
+
+$III: \frac{1}{2}b_1 = 1+a_2+b_2$
+$I \ einsetzen \Rightarrow \frac{1}{2}b_1 = 1+2a_1-b_1 \quad / -b_1$
+$\Rightarrow -\frac{1}{2}b_1 = 1+2a_1 \quad / -1$
+$\Rightarrow -1 - \frac{1}{2}b_1 = 2a_1 \quad / :2$
+$\Rightarrow a_1 = -\frac{1}{2} - \frac{1}{4}b_1$
+
+$Einsetzen \ im \ g_1$
+$\vec{g_s} = \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix} + (-\frac{1}{2} - \frac{1}{4}b_1) \begin{pmatrix} 2 \\ 1 \\ 0 \end{pmatrix} + b_1 \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix}$
+$= \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix} - \frac{1}{2} \begin{pmatrix} 2 \\ 1 \\ 0 \end{pmatrix} - \frac{1}{4}b_1 \begin{pmatrix} 2 \\ 1 \\ 0 \end{pmatrix} + b_1 \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix}$
+$= \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix} - \begin{pmatrix} 1 \\ 1/2 \\ 0 \end{pmatrix} + b_1 \begin{pmatrix} -1/2 \\ -1/4 \\ 1 \end{pmatrix}$
+$= \underline{\underline{\begin{pmatrix} 0 \\ 1/2 \\ 1 \end{pmatrix} + b_1 \begin{pmatrix} -1/2 \\ -1/4 \\ 1 \end{pmatrix}}}$
+
+> [!info]- Erklärung
+> Eine Schnittgerade von zwei nicht parallelen Ebenen $E_1$ und $E_2$ wird durch Gleichsetzen ihrer Parameterformen $\vec{E_1} = \vec{E_2}$ gefunden. Dies führt zu einem linearen Gleichungssystem, dessen Lösung einen Parameter (z.B. $a_1$) in Abhängigkeit eines freien Parameters (z.B. $b_1$) ausdrückt. Durch Einsetzen dieser Beziehung in eine der Ebenengleichungen erhält man die Schnittgerade in Parameterform.
+
+## 15.9 Durchstoßpunkt Gerade Ebene
+
+Sind eine Ebene und eine Gerade nicht parallel, gibt es einen Durchstoßpunkt.
+
+$$\vec{E_1} = \vec{s_E} + a_E \vec{u} + b_E \vec{v}$$
+$$\vec{E_2} = \vec{s_g} + a_g \vec{w}$$
+$$\vec{E} \nparallel \vec{g}$$
+
+Herausfinden des Durchstoßpunktes durch LGS
+
+
+__Beispiel
+
+$\vec{E} = \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix} + a \begin{pmatrix} 2 \\ 1 \\ 2 \end{pmatrix} + b \begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix}$
+$\vec{g} = \begin{pmatrix} 1 \\ 0 \\ 1 \end{pmatrix} + c \begin{pmatrix} 0 \\ 2 \\ 1 \end{pmatrix}$
+
+$I: 1 + 2a + b = 1 \quad / -1$
+$\Rightarrow 2a + b = 0$
+
+$II: 1 + a + b = 2c$
+
+$III: 1 + 2a = 1 + c \quad / -1$
+$\Rightarrow 2a = c$
+
+$I - II$: $-1 + a = -2c$
+$\Rightarrow -1 + \frac{1}{2}c = -2c \quad / +2c \quad / +1$
+$\Rightarrow \frac{5}{2}c = 1 \quad \Rightarrow c = \frac{2}{5}$
+
+$Einsetzen \ in \ die \ Geradengleichung:$
+$\vec{D} = \begin{pmatrix} 1 \\ 0 \\ 1 \end{pmatrix} + \frac{2}{5} \begin{pmatrix} 0 \\ 2 \\ 1 \end{pmatrix} = \begin{pmatrix} 1 \\ 4/5 \\ 7/5 \end{pmatrix}$
+$D\left(1 \middle| \frac{4}{5} \middle| \frac{7}{5}\right)$
+
 
 # 16. Funktionen mehrerer Variablen
 
