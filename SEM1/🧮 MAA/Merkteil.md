@@ -1,3 +1,16 @@
+# 0. Terme vereinfachen
+
+$e^{\ln(x)} = x$
+$\ln{(e^x)} = x$
+$\ln{(1)} = 0$ weil $e^0 = 1$
+$\sin^2{x} + \cos^2{x} = 1$
+$\sin(x)\cos(x) = \frac{1}{2}\sin(2x)$
+
+$x^2 + px + q = 0$
+$x_{1,2} = -\frac{p}{2} \pm \sqrt{\left(\frac{p}{2}\right)^2 - q}$
+
+![[Pasted image 20260210093933.png]]
+![[Pasted image 20260210093957.png]]
 # 1.  Zahlen
 
 - Natürliche Zahlen $\mathbb{N}$
@@ -1977,7 +1990,7 @@ $$= \lim_{h \to 0} \left( v(x+h) \cdot \frac{u(x+h)-u(x)}{h} + u(x) \frac{v(x+h)
 $$= \lim_{h \to 0} \left( v(x+h) \cdot \frac{u(x+h)-u(x)}{h} \right) + \lim_{h \to 0} \left( u(x) \cdot \frac{v(x+h)-v(x)}{h} \right)$$
 $$= \lim_{h \to 0} v(x+h) \cdot \lim_{h \to 0} \frac{u(x+h)-u(x)}{h} + u(x) \lim_{h \to 0} \frac{v(x+h)-v(x)}{h}$$
 $$\boxed{(u(x) \cdot v(x))' = u'(x) \cdot v(x) + v'(x) \cdot u(x)}$$
-frage
+
 ### 11.2.5 Die Quotientenregel
 $$\boxed{\left( \frac{u(x)}{v(x)} \right)' =  \frac{u'(x)v(x) - v'(x)u(x)}{v(x)^2}}$$
 
@@ -2063,7 +2076,9 @@ $$f'''(x) \begin{cases}
 
 # 12. Die Taylorreihe
 
-$f(x)$ soll angenähert werden, um se lokal zu vereinfachen.
+>Mit der Taylorreihe kann man sich einer bestimmte Funktion $f(x)$ annähern, um sie lokal zu vereinfachen.
+$$ T_n(x) = \sum_{k=0}^{n} \frac{f^k(x_0)}{k!} (x-x_0)^k $$
+## 12. 1 Herleitung
 
 Ansatz: Näherung von $f(x)$ an einen Entwicklungspunkt $x_0$ durch ein Polynom
 $$f(x) = a_0 + a_1x + a_2x^2 + a_3x^3 +  a_4x^4 + \dots$$
@@ -2096,7 +2111,9 @@ Vereinfachung vom $f(x)$ per Taylor-Polynom. D.h. die originale, unendliche Reih
 $$ T_n(x) = \sum_{k=0}^{n} a_k (x-x_0)^k $$
 $$ T_n(x) = \sum_{k=0}^{n} \frac{f^k(x_0)}{k!} (x-x_0)^k $$
 
-__Beispiel 1:__
+## 12.2 Anwendung
+
+__Beispiel 1__
 
 ```desmos-graph
 f(x)=\sin{x}
@@ -2108,20 +2125,20 @@ j(x)=x-\frac{1}{6}x^3
 
 $f(x) = \sin{(x)} \quad , \quad x_0=0$
 
-$T_0(x) = \sum_{k=0}^{0} \frac{f^k(0)}{k!} (x-x_0)^k$
+$T_0(x) = \sum_{k=0}^{0} \frac{f^k(0)}{k!} (x-0)^k$
 $=\frac{\sin{(0)}}{0!} (x-x_0)^0 =0$
 $T_0(x) = 0$
 
-$T_1(x) = \sum_{k=0}^{1} \frac{f^k(0)}{k!} (x-x_0)^k$
+$T_1(x) = \sum_{k=0}^{1} \frac{f^k(0)}{k!} (x-0)^k$
 $=\underbrace{\frac{\sin{(0)}}{0!} (x-x_0)^0}_{0} + \underbrace{\frac{\cos{(0)}}{1!}}_{1} \underbrace{(x-x_0)^1}_{x} = x$
 $T_1(x) = x$
 
-$T_2(x) = \sum_{k=0}^{2} \frac{f^k(0)}{k!} (x-x_0)^k$
-$=\underbrace{\frac{\sin{(0)}}{0!} (x-x_0)^0}_{0} + \underbrace{\frac{\cos{(0)}}{1!}}_{1} \underbrace{(x-x_0)^1}_{x} - \frac{\sin{(0)}}{2!} (x-x_0)^2 = x$
+$T_2(x) = \sum_{k=0}^{2} \frac{f^k(0)}{k!} (x_0)^k$
+$=\underbrace{\frac{\sin{(0)}}{0!} (x-x_0)^0}_{0} + \underbrace{\frac{\cos{(0)}}{1!}}_{1} \underbrace{(x-x_0)^1}_{x} - \underbrace{\frac{\sin{(0)}}{2!} (x-x_0)^2}_0 = x$
 $T_2(x) = x$
 
-$T_3(x) = \sum_{k=0}^{3} \frac{f^k(0)}{k!} (x-x_0)^k$
-$=\underbrace{\frac{\sin{(0)}}{0!} (x-x_0)^0}_{0} + \underbrace{\frac{\cos{(0)}}{1!}}_{1} \underbrace{(x-x_0)^1}_{x} - \frac{\sin{(0)}}{2!} (x-x_0)^2 - \frac{\cos{(0)}}{3!} (x-x_0)^3 = x - \frac{1}{6}x^3$
+$T_3(x) = \sum_{k=0}^{3} \frac{f^k(0)}{k!} (x-0)^k$
+$=\underbrace{\frac{\sin{(0)}}{0!} (x-x_0)^0}_{0} + \underbrace{\frac{\cos{(0)}}{1!}}_{1} \underbrace{(x-x_0)^1}_{x} \underbrace{- \frac{\sin{(0)}}{2!} (x-x_0)^2}_0 - \underbrace{\frac{\cos{(0)}}{3!} (x-x_0)^3}_{- \frac{1}{6}x^3} = x - \frac{1}{6}x^3$
 $T_3(x) = x - \frac{1}{6}x^3$
 
 
@@ -2180,7 +2197,7 @@ __Beispiele:__
 
 $\int_o^\pi x \cdot \cos{(x)} dx$
 $v(x) = x \Rightarrow v'(x) = 1$
-$u(x) = \sin{(x)} \Leftarrow u'(x) = \cos{(x})$
+$u'(x) = \cos{(x}) \Rightarrow u(x) = \sin{(x)}$
 
 $\Rightarrow [x \sin{(x)}]_0^\pi - \int_0^\pi 1 \cdot \cos{(x)} dx$
 $= \left( \pi \sin(\pi) - 0 \cdot \sin(0) \right) - \int_0^\pi \cos(x) \, dx$
@@ -2206,9 +2223,11 @@ $\int_0^{\sqrt[3]{\pi}} x^2 \cos{(x^3)} dx$
 $v = x^3$
 $\frac{dv}{dx} = 3x^2 \Rightarrow dx = \frac{1}{3x^2} dv$
 
-$\int_0^\pi \centernot{x^2} \cos{(v)} \frac{1}{3 \centernot{x^2}} dv \quad$ $v=x^3$ auf Intervalgrenzen anwenden
+$v=x^3$ auf Intervalgrenzen anwenden
+$\int_0^\pi \centernot{x^2} \cos{(v)} \frac{1}{3 \centernot{x^2}} dv \quad$
 $= \frac{1}{3} \int_0^\pi cos(v) dv$
 $= \frac{1}{3} [\sin{(v)}]_0^\pi$
+$= \frac{1}{3} [\sin{(\pi)} - sin{(0)}]$
 $= \frac{1}{3} (0)$
 $\underline{\underline{=0}}$
 
@@ -2273,23 +2292,33 @@ $$\boxed{z_1 \cdot z_2 = (a_1a_2 - b_1b_2)+j(a_1b_2+a_2b_1)}$$
 
 __Division komplexer Zahlen:__
 $$\boxed{\frac{z_1}{z_2} = \frac{a_1 + jb_1}{a_2+jb_2}}$$
-Reellmachen des Nenners:
+
+__Reellmachen des Nenners:__
 Erweitern mit dem komplex konjugierten des Nenners
 $$\frac{z_1}{z_2} = \frac{a_1 + jb_1}{a_2+jb_2} \cdot \frac{a_2-jb_2}{a_2-jb_2}$$
 $$= \frac{a_1a_2-ja_1b_2+ja_2b_1-b_1b_2j^2}{a_2^2 + b_2^2}$$
 $$= \frac{a_1a_2 + b_1b_2 + j(a_2b_1-a_1b_2}{a_2^2 + b_2^2}$$
 $$\boxed{\frac{z_1}{z_2}= \frac{a_1a_2+b_1b_2}{a_2^2 + b_2^2} + j\frac{a_2b_1-a_1b_2}{a_2^2 + b_2^2}}$$
 
+__Leichter formuliert:__
+
+Der Nenner hat nach dem Erweitern die Form $(x+yj)(x-yj) = x^2 - (yj)^2$.
+Da gilt $j^2 = -1$, dreht sich das Vorzeichen des zweiten Terms um.
+Also ergibt bspw. $(-3 + 2j)(-3-2j) = 9 + 4 = 13.$
+
+
+
 __Beispiel:__
-$z = \frac{2+j}{1+3j} = \frac{2+j}{1+3j} \cdot \frac{1-3j}{1-3j}$
-$= \frac{2-6j+j-3j^2}{10} = \frac{5-5j}{10} = \underline{\underline{\frac{1}{2} - \frac{1}{2}j}}$
+$$z = \frac{2+i}{-1+i} = \frac{(2+i)(-1-i)}{(-1+i)(-1-i)} = \frac{-2 -2i -i -i^2}{1+1} = \frac{-2-3i -1}{2} = \frac{-1-3i}{2} = \underline{\underline{-0.5 - 1.5i}}$$
+Wenn in Nenner kein Realteil steht, genügt es mit $i$ zu erweitern
+$$z = \frac{(a+bi)(a-bi)}{ai+bi} = \frac{a^2 + b^2}{(a+b)i} = \frac{(a^2+b^2)i}{(a+b)i^2} = \frac{(a^2+b^2)i}{(a+b)(-1)} = \underline{\underline{0 - \frac{a^2 + b^2}{a+b}i}}$$
 
 ## 14.4 Exponentialdarstellung
 
 >Jede komplexe Zahl $z= a+jb$ hat einen Betrag $|z| = \sqrt{a^2 + b^2}$ der ihren Abstand vom Ursprung der komplexen Ebene angibt und einen Winkel $\varphi = \arctan{(\frac{b}{a})}$, der die Richtung der komplexen Zahl relativ zur positiven reellen Achse beschreibt.
 >Daher kann eine komplexe Zahl nicht nur über ihre kartesischen Koordinaten $(a,b)$, sondern auch über diese Polarkoordinaten $|z|$ und $\varphi$ dargestellt werden.
 
-$$z = |z|\cos{(\varphi)} + j \sin{(\varphi)}$$
+$$\boxed{z = |z| \cdot (\cos{(\varphi)} + j \sin{(\varphi)})}$$
 Durch die Eulersche Formel ergibt sich:
 $$\boxed{\Rightarrow z = |z| e^{j\varphi}}$$
 
@@ -2299,6 +2328,14 @@ $z=1+j$
 $|z|=\sqrt{1^2 + 1^2} = \sqrt{2}$
 $\varphi = \arctan{(\frac{1}{1})} = \arctan{(1)} = 45 \degree \Rightarrow \frac{\pi}{4}$
 $\Rightarrow z = \sqrt{2} e^{j \frac{\pi}{4}}$
+
+$z = e^{i \pi}$
+$z = 1 \cdot (\cos(\pi) + j \sin(\pi))$
+$z = -1 + 0j$
+
+$z = -j^{-j}$
+$z = (e^{-j \frac{\pi}{2}})^{-j}$
+$z = e^{-\frac{\pi}{2}}$ weil im Exponenten $j^2 = -1$ gilt
 
 ### 14.4.1 Herleitung
 
@@ -2347,6 +2384,7 @@ dabei gilt:
 $$|e^{j\varphi}| = \underbrace{\cos(\varphi)}_{Re} + j \underbrace{\sin(\varphi)}_{Im}$$
 $$|z| = \sqrt{Re(z)^2 + Im(z)^2}$$
 $$\Rightarrow |e^{j\varphi}| = \sqrt{\cos^2(\varphi) + \sin^2(\varphi)} = 1$$
+
 
 ### 14.4.2 Bestimmung des Quadranten
 
@@ -2883,37 +2921,40 @@ $$a_0 + a_1y' + a_2y'' + \dots + a_n y^{(n)} = 0$$
 $$\boxed{y = c e^{\lambda x} \quad , \quad y' = c \lambda e^{\lambda x} \quad , \quad y' = c \lambda^2 e^{\lambda x}}$$
 $$\boxed{y(x) = c_1 e^{\lambda_1 x} + c_2 e^{\lambda_2 x}}$$
 
-__Beispiel:__
+__Beispiel 1:__
 
 $y'' + 5y' + 2y = 0$
 
-**1. Charakteristische Gleichung aufstellen:**
 $\lambda^2 + 5\lambda + 2 = 0$
-
-**2. Lösungen für $\lambda$ finden:**
 $\lambda_{1,2} = \frac{-5 \pm \sqrt{17}}{2}$
 $\lambda_1 = \frac{-5 + \sqrt{17}}{2}$
 $\lambda_2 = \frac{-5 - \sqrt{17}}{2}$
 
-**3. Allgemeine Lösung:**
-Die allgemeine Lösung lautet:
 $y(x) = C_1 e^{\lambda_1 x} + C_2 e^{\lambda_2 x}$
 $y(x) = C_1 e^{\left(\frac{-5 + \sqrt{17}}{2}\right)x} + C_2 e^{\left(\frac{-5 - \sqrt{17}}{2}\right)x}$
 
-**4. Anfangsbedingung anwenden: $y(x=0)=1$**
-Wir setzen $x=0$ in die allgemeine Lösung ein:
 $y(0) = C_1 e^{\lambda_1 \cdot 0} + C_2 e^{\lambda_2 \cdot 0}$
 $y(0) = C_1 e^0 + C_2 e^0$
-$y(0) = C_1 \cdot 1 + C_2 \cdot 1$
 $y(0) = C_1 + C_2$
 
-Da $y(0)=1$ sein soll:
-$C_1 + C_2 = 1$
-$\Rightarrow C = \frac{1}{2}$
+$C_1 + C_2 = 1 \quad \Rightarrow C_{1,2} = \frac{1}{2}$
 
-**6. Gesamtlösung:**
-Einsetzen in $y(x) = C_1 e^{\lambda_1 x} + C_2 e^{\lambda_2 x}$
 $y(x) = \frac{1}{2} \left( e^{\left(\frac{-5 + \sqrt{17}}{2}\right)x} + e^{\left(\frac{-5 - \sqrt{17}}{2}\right)x} \right)$
+
+
+__Beispiel 2:__
+
+$3y'' - 3y' + \frac{3}{4}y = 0 \quad \text{mit} \quad y(0) = 1$
+$3\lambda^2 - 3\lambda + \frac{3}{4} = 0 \quad /3$
+$\lambda^2 - \lambda + \frac{1}{4} = 0$
+$\lambda_{1,2} = -\left(-\frac{1}{2}\right) \pm \sqrt{\left(\frac{1}{2}\right)^2 - \frac{1}{4}}$
+$\lambda_{1,2} = \frac{1}{2} \pm \sqrt{\frac{1}{4} - \frac{1}{4}}$
+$\lambda_{1,2} = \frac{1}{2}$
+$y(x) = C_1 \cdot e^{\frac{1}{2}x} + C_2 \cdot x \cdot e^{\frac{1}{2}x}$
+$y(x) = (C_1 + C_2 \cdot x) \cdot e^{\frac{1}{2}x}$
+$y(0) = (C_1 + C_2 \cdot 0) \cdot e^{0} = 1$
+$C_1 = 1$
+$y(x) = (1 + C_2 x) e^{0,5x}$
 
 ### 17.1.1 Herleitung
 $$y = c \cdot e^{\lambda} \quad , \quad c, \lambda \in \mathbb{R} \text{ und konstant}$$
@@ -2948,18 +2989,35 @@ $\int$
 $$\boxed{\Rightarrow \int \frac{1}{f(y)} dy = \int g(x) dx}$$
 
 
-__Beispiel:__
-$y' = xy \qquad f(y) = y \quad g(x) = x$
+__Beispiele:__
 
+$y' = xy$
+$\frac{dy}{dx} = xy$
 $\int \frac{1}{y} \, dy = \int x \, dx$
-$\Rightarrow \ln(y) + C_1 = \frac{1}{2}x^2 + C_2 \quad / -C_1$
-$\Rightarrow \ln(y) = \frac{1}{2}x^2 + \underbrace{C_2 - C_1}_{C_3}$
-$\Rightarrow \ln(y) = \frac{1}{2}x^2 + C_3 \quad / e^{\hat{}}$
-$\Rightarrow e^{\ln(y)} = y = e^{\frac{1}{2}x^2 + C_3}$
-$= e^{\frac{1}{2}x^2} \cdot \underbrace{e^{C_3}}_{C_4}$
-$\Rightarrow y = C_4 e^{\frac{1}{2}x^2}$
-
-mit $y(x=0) = 1$
-$\Rightarrow y(x=0) = C_4 = 1$
+$\ln(y) = \frac{1}{2}x^2 + C \quad / e ^{\hat{}}$
+$e^{\ln(y)} = y = e^{\frac{1}{2}x^2 + C}$
+$y = e^{\frac{1}{2}x^2} \cdot \underbrace{e^C}_{\tilde{C}}$
+$y = \tilde{C} e^{\frac{1}{2}x^2}$
+mit $y(0) = 1$
+$\tilde{C} = 1$
 $\underline{\underline{\Rightarrow y = e^{\frac{1}{2}x^2}}}$
 
+
+$y' \cdot y = 2x \quad \text{mit} \quad y(0) = 1$
+$\frac{dy}{dx} \cdot y = 2x$
+$y \, dy = 2x \, dx$
+$\int y \, dy = \int 2x \, dx$
+$\frac{1}{2}y^2 = x^2 + C$
+Formel nach $y$ umstellen
+$y^2 = 2x^2 + 2C$
+$y(x) = \sqrt{2x^2 + \tilde{C}}$
+$1 = \sqrt{2(0)^2 + \tilde{C}} \implies \tilde{C} = 1$
+$\underline{\underline{y(x) = \sqrt{2x^2 + 1}}}$
+
+$y' - x = 0 \quad \text{mit} \quad y(0) = 1$
+$\frac{dy}{dx} = x$
+$dy = x \, dx$
+$\int 1 \, dy = \int x \, dx$
+$y(x) = \frac{1}{2}x^2 + C$
+$1 = \frac{1}{2}(0)^2 + C \implies C = 1$
+$y(x) = \frac{1}{2}x^2 + 1$
