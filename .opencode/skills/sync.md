@@ -68,7 +68,13 @@ Analysiere `$ARGUMENTS` und den Inhalt von `raw/`:
 
 4. **OCR/Extraktionsfehler korrigieren**: Wenn bei der PDF-Extraktion Zeichen falsch erscheinen (z.B. "热血" oder "?"), ersetze sie durch das korrekte Zeichen basierend auf dem Kontext.
 
-### 4.2 NOTIZ ERSTELLEN
+### 4.2 EINE PDF = EINE NOTIZ
+
+**Wichtig:** Eine einzelne PDF-Datei ergibt IMMER eine einzelne Notiz. Nicht eine Seite = eine Datei, nicht ein Kapitel = eine Datei. Eine PDF = eine Datei.
+
+Bei PDFs mit mehreren Themen/Kapiteln: Alle Inhalte in einer Datei zusammenfassen und abspeichern.
+
+### 4.3 NOTIZ ERSTELLEN
 
 Ermittle die nächste freie Nummer im Ziel-Fachordner.
 
