@@ -78,7 +78,11 @@ Erstelle `wiki/SEM{n}/{emoji} {KÜRZEL}/{N}. {Thema}.md`:
 ---
 tags: [sem{n}, {kürzel_kleingeschrieben}]
 type: lecture
+date: {YYYY-MM-DD}
+updated: {YYYY-MM-DD}
 ---
+**{DD.MM.YY}**
+
 ## {N}.1 {Erster Abschnitt}
 
 {Inhalt}
@@ -88,18 +92,23 @@ type: lecture
 {Inhalt}
 ```
 
+- `date`: Erstellungsdatum der Notiz. `updated`: wird bei jeder Änderung aktualisiert. Beide ISO-Format.
+- **`**DD.MM.YY**`** als Fetttext-Marker (kein `#`) vor jedem neuen Inhaltsblock — erscheint nicht im Inhaltsverzeichnis.
+
 #### Neue Übungs-Notiz / Bestehende erweitern
 
 Prüfe ob bereits eine `Übungen.md` (oder ähnlich) im Fachordner existiert.
-- **Falls ja**: Inhalt am Ende anhängen, mit Datumsüberschrift `# DD.MM.YY`
+- **Falls ja**: `updated`-Property aktualisieren, Inhalt am Ende anhängen mit `**DD.MM.YY**` als Fetttext-Trenner
 - **Falls nein**: Neue Datei erstellen:
 
 ```markdown
 ---
 tags: [sem{n}, {kürzel_kleingeschrieben}]
 type: exercise
+date: {YYYY-MM-DD}
+updated: {YYYY-MM-DD}
 ---
-# {Datum oder Überschrift}
+**{DD.MM.YY}**
 
 {Aufgaben}
 ```
@@ -107,9 +116,22 @@ type: exercise
 #### Bestehende Vorlesungs-Notiz erweitern
 
 Wenn neuer Stoff zu einem existierenden Thema passt:
-- Bestehende Datei lesen
-- Neue Inhalte als Unterabschnitte am Ende einfügen
-- Bestehende Nummerierung fortsetzen (z.B. wenn `## 3.4` der letzte Abschnitt ist, beginne mit `## 3.5`)
+1. Bestehende Datei lesen
+2. `updated`-Property im Frontmatter auf das heutige Datum setzen
+3. Letzte Subsection-Nummer ermitteln (z.B. `## 5.3` → nächste ist `## 5.4`)
+4. **`**DD.MM.YY**`** als Fetttext-Trenner vor dem neuen Inhalt einfügen
+5. Neue Inhalte mit fortlaufender Nummerierung anhängen
+
+Beispiel — Notiz endet bei `## 5.3`, neue Sitzung am 10.04.26:
+```markdown
+## 5.3 Bisheriger letzter Abschnitt
+...
+
+**10.04.26**
+
+## 5.4 Neuer Abschnitt
+...
+```
 
 #### Große Dateien aufteilen
 
