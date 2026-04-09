@@ -13,6 +13,7 @@ This is an **Obsidian vault** containing university lecture notes (DHSN — Dual
 - `images/` — embedded images and media referenced from notes
 - `raw/` — staging area for unprocessed files
 - `.claude/commands/` — Claude Code custom slash commands
+  - **`/sync`** — Hauptcommand: verarbeitet Rohmaterialien aus `raw/`, legt neue Fächer an, erstellt/aktualisiert Notizen, setzt Verlinkungen, räumt auf und committet
 
 ## Conventions
 
@@ -21,3 +22,9 @@ This is an **Obsidian vault** containing university lecture notes (DHSN — Dual
 - **Wikilinks**: Internal links use Obsidian's `[[Page Name]]` syntax, not standard Markdown links
 - Subject abbreviations are uppercase (IMPP, MAA, TGI, MG)
 - Topic files are numbered sequentially (e.g. `1. Variablen.md`, `2. Gleitkommazahlen.md`)
+
+## Workflow
+
+1. Rohmaterialien (PDFs, Fotos, Textdateien) in `raw/` ablegen
+2. `/sync` ausführen — optional mit Kontext in natürlicher Sprache (z.B. `/sync Das sind MAA-Vorlesungen`)
+3. Der Skill verarbeitet alles automatisch: liest Dateien, erstellt Notizen, aktualisiert Indizes, setzt Querverweise, räumt `raw/` auf und erstellt einen Git-Commit
