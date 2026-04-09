@@ -257,7 +257,7 @@ Die Nummerierung innerhalb der Notiz MUSS immer bei .1 beginnen. Jeder neue Them
 
 ---
 
-## SCHRITT 5: VERLINKUNG
+## SCHRITT 5: VERLINKUNG (INTELLIGENT & KONTEXTUELL)
 
 ### 5.1 Index aktualisieren
 
@@ -265,9 +265,38 @@ In `{emoji} {KÜRZEL}.md`:
 - Vorlesungen: `- [[{N}. {Thema}]]`
 - Übungen: `- [[Übungen]]`
 
-### 5.2 Querverweise
+### 5.2 Cross-Subject Scan & Link (Top-of-File)
 
-`## Siehe auch` am Ende mit Wikilinks zu verwandten Notizen.
+**DAS IST ESSENZIELL**: Bevor du die Notiz finalisierst, scanne den gesamten `wiki/`-Ordner nach dem aktuellen Thema.
+
+1.  **Identische Themen**: Falls das Thema (z.B. "Logik", "Mengenlehre") bereits in einem anderen Fach existiert, füge **ganz oben** (direkt nach dem Frontmatter) einen Hinweis ein:
+    ```markdown
+    > [!info] Dieses Thema existiert auch in: [[Andere Notiz]] ({ANDERE_FACH_KÜRZEL})
+    ```
+2.  **Thematische Verwandtschaft**: Falls ein Thema die theoretische Grundlage für ein praktisches Thema ist (z.B. TGI Algorithmik für IMPP Rekursion), verlinke es ebenfalls oben:
+    ```markdown
+    > [!info] Theoretische Grundlagen zu diesem Thema: [[7. Algorithmik]] (TGI)
+    ```
+
+### 5.3 In-Text Verlinkung (Kontextuelles Linking)
+
+**KEINE "Siehe auch" Sektion am Ende der Notiz erstellen.** Das Ziel ist ein integrierter Lesefluss.
+
+Befolge dieses **Linking-Protokoll**:
+1.  **Begriffs-Scan**: Während du den Inhalt schreibst, identifiziere Fachbegriffe, zu denen bereits Notizen existieren (z.B. "Potenzmenge", "Vollständige Induktion", "Pointer", "Komplexität").
+2.  **Präzise Platzierung**: Setze den Wikilink (`[[Notiz]]`) direkt beim ersten Vorkommen im Text oder — noch besser — innerhalb einer Definition oder Überschrift.
+3.  **Kontextuelle Aliase**: Nutze Aliase `[[Zieltitel|Anzeigetext]]`, damit der Link perfekt in den Satz passt (z.B. "...wird mittels [[4. Die vollständige Induktion|vollständiger Induktion]] bewiesen").
+4.  **Anwendungs-Verweise**: Wenn in einer mathematischen Notiz (MAA) ein Verfahren erklärt wird, das in der Informatik (TGI/IMPP) angewendet wird, füge einen "Anwendungen"-Abschnitt oder einen inline Hinweis ein (z.B. "Beweis der Mächtigkeit in [[5. Die Potenzmenge]]").
+5.  **Kontext-Ergänzung**: Füge bei Bedarf das Fachkürzel in Klammern hinter den Link an, wenn der Link in ein anderes Fach führt: `[[6. Pointer]] (IMPP)`.
+
+### 5.4 Bidirektionale Verlinkung (Back-Linking)
+
+**DAS IST DER ENTSCHEIDENDE SCHRITT FÜR EIN "SECOND BRAIN"**: Eine Verlinkung ist erst vollständig, wenn sie in beide Richtungen existiert.
+
+1.  **Bestand scannen**: Nutze `grep` oder die Suchfunktion, um im gesamten `wiki/`-Ordner nach dem Titel oder den Kernbegriffen der **neuen** Notiz zu suchen.
+2.  **Referenzen nachpflegen**: Wenn die neue Notiz ein Thema vertieft, das in einer alten Notiz nur am Rand erwähnt wurde (z.B. neue Notiz "Dijkstra-Algorithmus" wird erstellt -> alte Notiz "Algorithmik" erwähnt Dijkstra nur als Stichpunkt), dann **editiere die alte Notiz** und setze dort den Link auf die neue Notiz.
+3.  **Top-of-File Info**: Falls die neue Notiz ein identisches oder sehr ähnliches Thema in einem anderen Fach behandelt (siehe 5.2), füge auch in der **alten Notiz** ganz oben die Info-Box hinzu, die auf die neue Notiz verweist.
+4.  **Konsistenz**: Achte darauf, dass auch in den alten Notizen die Links kontextuell (inline) gesetzt werden und keine neuen "Siehe auch" Sektionen entstehen. Entferne dabei ggf. vorhandene "Siehe auch" Reste in den editierten Dateien.
 
 ---
 
