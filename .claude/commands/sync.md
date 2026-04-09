@@ -25,7 +25,11 @@ Analysiere `$ARGUMENTS` und den Inhalt von `raw/`:
 - **Modus B**: Raw-Dateien verarbeiten — Dateien vorhanden
 - **Modus C**: Beides
 
-**Fehlende Infos aktiv erfragen** mit dem question-Tool.
+### 2.1 DATEI-ZUORDNUNG (MAPPING)
+Ordne jede Datei in `raw/` einem Fach zu:
+1. Prüfe Dateinamen (z.B. "MAA_V01.pdf" -> MAA).
+2. Falls unklar: Lese Seite 1 der Datei und identifiziere das Fach inhaltlich.
+3. Falls immer noch unklar: Nutze das `question`-Tool und frage den Benutzer.
 
 ---
 
@@ -85,15 +89,17 @@ Analysiere `$ARGUMENTS` und den Inhalt von `raw/`:
 
 4. **OCR/Extraktionsfehler korrigieren**: Wenn bei der PDF-Extraktion Zeichen falsch erscheinen (z.B. "热血" oder "?"), ersetze sie durch das korrekte Zeichen basierend auf dem Kontext.
 
-### 4.2 EINE PDF = EINE NOTIZ
+### 4.2 EINE PDF = EINE NOTIZ (ODER UPDATE)
+**Wichtig:** 
+- Eine PDF-Datei ergibt eine logische Notiz.
+- **Prüfung auf Existenz**: Falls eine Notiz zum selben thema bereits existiert (z.B. Teil 1 war schon da, jetzt kommt Teil 2), entscheide:
+    - Ist es eine Fortsetzung? -> Hänge den Inhalt an die existierende Notiz an (Update `updated` Datum).
+    - Ist es eine neue Version? -> Ersetze die Notiz (nach Rückfrage).
+    - Ist es ein neues Thema? -> Erstelle neue Datei.
 
-**Wichtig:** Eine einzelne PDF-Datei ergibt IMMER eine einzelne Notiz. Nicht eine Seite = eine Datei, nicht ein Kapitel = eine Datei. Eine PDF = eine Datei.
-
-Bei PDFs mit mehreren Themen/Kapiteln: Alle Inhalte in einer Datei zusammenfassen und abspeichern.
-
-### 4.3 NOTIZ ERSTELLEN
-
-Ermittle die nächste freie Nummer im Ziel-Fachordner.
+### 4.3 NOTIZ ERSTELLEN / TITEL FINDEN
+Extrahiere den **inhaltlichen Titel** aus der ersten Seite (nicht den Dateinamen!).
+Ermittle die nächste freie Nummer `{N}` im Ziel-Fachordner.
 
 Erstelle `wiki/SEM{n}/{emoji} {KÜRZEL}/{N}. {Thema}.md`:
 
@@ -123,6 +129,15 @@ updated: {YYYY-MM-DD}
 ### {N}.2.1 {Erster Unterpunkt}
 
 {Inhalt}
+
+---
+## Review & Learning
+> [!summary] Zusammenfassung
+> {Kompakte Zusammenfassung der wichtigsten Punkte in 3-5 Sätzen}
+
+> [!question] Mögliche Prüfungsfragen
+> - {Frage 1}
+> - {Frage 2}
 ```
 
 ---
