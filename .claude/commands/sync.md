@@ -6,16 +6,18 @@ Argumente: $ARGUMENTS (optional - Kontext des Benutzers)
 
 ---
 
-## SCHRITT 1: INVENTAR
+## SCHRITT 1: INVENTAR & KONTEXT-SCAN
 
 Führe **parallel** aus:
 1. `ls raw/` — welche Dateien warten auf Verarbeitung?
 2. `ls wiki/SEM*/` — welche Semester und Fächer existieren?
 3. Für jedes existierende Fach: zähle die höchste Themennummer
 
+**WICHTIG bei mehreren Dateien**: Falls mehrere Dateien in `raw/` liegen, scanne erst alle Dateien (Titel, erste Seite, Metadaten), um Zusammenhänge zu verstehen (z.B. Teil 1 & Teil 2 einer Vorlesung, oder Vorlesung + Übungsblatt). Verarbeite sie als logische Einheit, anstatt blind eine Datei nach der anderen abzuarbeiten.
+
 ---
 
-## SCHRITT 2: MODUS BESTIMMEN
+## SCHRITT 2: MODUS & GRUPPIERUNG BESTIMMEN
 
 Analysiere `$ARGUMENTS` und den Inhalt von `raw/`:
 
@@ -61,12 +63,12 @@ Analysiere `$ARGUMENTS` und den Inhalt von `raw/`:
    - **Eigenständige Grafiken/Diagramme** → Speichere nach `images/{fach}/{N}-{bildname}.png` und bette ein mit `![[bildname.png]]`
    - **Tafel-Fotos / eingescannte Folien** → Extrahiere Text/Formeln und schreibe sie in die Notizen (wie regulären Seiteninhalt). Rekonstruiere Diagramme ggf. als Mermaid
 
-3. **Direkte Bilddateien** (Fotos von Tafel, Whiteboard, Skizzen):
+3. **Direkte Bilddateien** (Fotos von Tafel, Whiteboard, Skizzen, Handschrift):
    - Unterstützte Formate: .png, .jpg, .jpeg, .gif, .webp
    - Beschreibe JEDES Bild vollständig: Objekte, Beschriftungen, Pfeile, Farben
-   - **Text auf Tafel/Folien** → Extrahiere jeden Text, jede Formel in die Notizen
+   - **Text auf Tafel/Folien/Handschrift** → Extrahiere jeden Text, jede Formel in die Notizen
    - **Diagramme/Strukturen** → Rekonstruiere als Mermaid (flowchart, classDiagram, etc.)
-   - **Skizzen** → Beschreibe Zeichnung und erstelle ggf. Visualisierung
+   - **Skizzen/Komplexe Grafiken** → Falls Mermaid zu komplex ist oder Details verloren gehen: Speichere Bild nach `images/` und bette es ein. Beschreibe trotzdem den Inhalt.
 
 4. **Für JEDE einzelne Seite musst du erfassen:**
    - Jeden Titel und jede Überschrift
@@ -99,6 +101,7 @@ Erstelle `wiki/SEM{n}/{emoji} {KÜRZEL}/{N}. {Thema}.md`:
 ---
 tags: [sem{n}, {kürzel_kleingeschrieben}]
 type: lecture
+sources: ["{Dateiname der Quelldatei}"]
 date: {YYYY-MM-DD}
 updated: {YYYY-MM-DD}
 ---
@@ -135,7 +138,9 @@ updated: {YYYY-MM-DD}
 2. **Umformulieren ist erlaubt und erwünscht.** Du darfst Sätze umbauen, Synonyme verwenden, Sätze kürzen ABER nur wenn dabei KEINE Information verloren geht. "Kürzen" bedeutet: gleiche Information, weniger Worte. NICHT: weniger Information.
 
 3. **Struktur je nach Inhalt:**
-   - Definitionen → Als Blockquote oder fett, dann Erklärung
+   - Definitionen → Als Blockquote oder fett, dann Erklärung. Nutze Obsidian Callouts: `> [!abstract] Definition: {Begriff}`
+   - Wichtige Infos/Merksätze → `> [!tip] Merke: {Inhalt}`
+   - Warnungen/Beachten → `> [!warning] Zu beachten: {Inhalt}`
    - Eigenschaften/Fakten → Bulletpoints
    - Verfahren/Algorithmen → Nummerierte Schritte
    - Beweise → Mit Wahrheitstabelle oder Mathe-Ableitung
