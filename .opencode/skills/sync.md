@@ -53,7 +53,19 @@ Analysiere `$ARGUMENTS` und den Inhalt von `raw/`:
 
 1. **PDFs**: Lese jede Seite einzeln. Bei mehreren Seiten: lese Seite 1, dann Seite 2, dann Seite 3 usw. Überspringe keine Seite.
 
-2. **Für JEDE einzelne Seite musst du erfassen:**
+2. **Bilder in PDFs**: Nach dem Extrahieren: Prüfe ob eingebettete Bilder vorhanden sind.
+
+   - **Eigenständige Grafiken/Diagramme** → Speichere nach `images/{fach}/{N}-{bildname}.png` und bette ein mit `![[bildname.png]]`
+   - **Tafel-Fotos / eingescannte Folien** → Extrahiere Text/Formeln und schreibe sie in die Notizen (wie regulären Seiteninhalt). Rekonstruiere Diagramme ggf. als Mermaid
+
+3. **Direkte Bilddateien** (Fotos von Tafel, Whiteboard, Skizzen):
+   - Unterstützte Formate: .png, .jpg, .jpeg, .gif, .webp
+   - Beschreibe JEDES Bild vollständig: Objekte, Beschriftungen, Pfeile, Farben
+   - **Text auf Tafel/Folien** → Extrahiere jeden Text, jede Formel in die Notizen
+   - **Diagramme/Strukturen** → Rekonstruiere als Mermaid (flowchart, classDiagram, etc.)
+   - **Skizzen** → Beschreibe Zeichnung und erstelle ggf. Visualisierung
+
+4. **Für JEDE einzelne Seite musst du erfassen:**
    - Jeden Titel und jede Überschrift
    - Jeden Absatz, jeden Satz, jede Zeile Text
    - Jede Formel, Gleichung, jedes Symbol
