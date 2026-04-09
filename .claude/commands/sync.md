@@ -184,6 +184,8 @@ Inhalt...
 
 Die Nummerierung innerhalb der Notiz MUSS immer bei .1 beginnen. Jeder neue Themenblock bekommt eine neue Hauptnummer (`.1`, `.2`, `.3`...). Unterpunkte bekommen Subnummern (`.1.1`, `.1.2`, `.2.1`...).
 
+**WICHTIG: Die führende Nummer in Überschriften darf nicht über die Hauptnummer der Datei hinausgehen.** Beispiel: Eine Datei `0. Einführung.md` darf nur Überschriften mit führender 0 haben (z.B. `## 0.1`, `### 0.1.1`). Überschriften mit führender 1, 2, etc. sind nicht erlaubt. Bei Bedarf als fett markieren (`**Titel**`).
+
 ### 4.5 FORMATIERUNG
 
 - **Sprache**: Deutsch. Fachbegriffe englisch ok.
@@ -192,7 +194,7 @@ Die Nummerierung innerhalb der Notiz MUSS immer bei .1 beginnen. Jeder neue Them
 - **Wikilinks**: `[[Seitenname]]`
 - **Bilder**: `![[bildname.png]]`
 - **Code**: ` ```sprache ` mit Kommentaren auf Deutsch
-- **Überschriften**: `## {N}.{x}.{y} Titel` (siehe 4.4)
+- **Überschriften**: NUR nummerierte Überschriften (z.B. `## 0.1`, `### 1.2.3`) sind Überschriften. Überschriften müssen eine Nummer haben (z.B. `0.1`, `1.2.3`). Unnummerierte Zwischenüberschriften werden als fett markiert: `**Titel**`
 
 ---
 
