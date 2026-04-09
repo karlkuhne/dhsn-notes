@@ -196,7 +196,7 @@ Die Nummerierung innerhalb der Notiz MUSS immer bei .1 beginnen. Jeder neue Them
 - **Code**: ` ```sprache ` mit Kommentaren auf Deutsch
 - **Überschriften**: NUR nummerierte Überschriften (z.B. `## 0.1`, `### 1.2.3`) sind Überschriften. Überschriften müssen eine Nummer haben (z.B. `0.1`, `1.2.3`). Unnummerierte Zwischenüberschriften werden als fett markiert: `**Titel**`
 
-### 4.6 DIAGRAMME
+### 4.6 VISUALISIERUNGEN
 
 **Wann Mermaid nutzen:**
 - Prozessabläufe (Compiler → Bytecode → JVM)
@@ -208,6 +208,17 @@ Die Nummerierung innerhalb der Notiz MUSS immer bei .1 beginnen. Jeder neue Them
 - ` ```mermaid flowchart LR/TB ` — für Flussdiagramme
 - ` ```mermaid classDiagram ` — für UML-Klassendiagramme
 - ` ```mermaid sequenceDiagram ` — für Sequenzdiagramme
+- ` ```mermaid stateDiagram ` — für Zustandsdiagramme
+
+**Wann obsidian-charts nutzen:**
+- Tortendiagramme (Pie Charts)
+- Balkendiagramme (Bar Charts)
+- Liniendiagramme (Line Charts)
+- Streudiagramme (Scatter Plots)
+
+**Wann obsidian-desmos nutzen:**
+- Mathematische Funktionsgraphen
+- Parametrische Kurven
 
 ---
 
