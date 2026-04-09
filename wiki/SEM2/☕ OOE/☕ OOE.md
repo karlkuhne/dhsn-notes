@@ -4,6 +4,6 @@ Vorlesungsnotizen zur objektorientierten Programmierung in Java: Grundkonzepte d
 
 ## Vorlesungen
 
-- [[1. Einführung, Applikationen, GUI]]
+- [[0. Einführung, Applikationen, GUI]]
 
 ## Übungen
