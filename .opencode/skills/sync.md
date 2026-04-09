@@ -62,7 +62,7 @@ Analysiere `$ARGUMENTS` und den Inhalt von `raw/`:
    - Jede Fußnote, jede Quellenangabe
    - Jeden Namen, jedes Datum, jede Nummer
    - Jede Randnotiz, jeder Stern-Hinweis, jeder "Merke:"-Kasten
-   - Jedes Diagram, jeder Box-Titel
+   - Jedes Diagramm, jeder Box-Titel
 
 3. **NICHTS weglassen.** Wenn du dir nicht sicher bist ob etwas wichtig ist — nimm es auf. Im Zweifel lieber zu viel als zu wenig.
 
@@ -133,7 +133,7 @@ updated: {YYYY-MM-DD}
 - ❌ Nicht Beispiele weglassen
 - ❌ Nicht Code-Beispiele kürzen
 - ❌ Nicht Tabellen auf wenige Zeilen reduzieren
-- ❌ Nicht "usw." schreiben wenn mehr kommt auf den Folien
+- ❌ Nicht "usw." schreiben wo auf Folien mehr steht
 
 **Beispiel für korrektes Umformulieren:**
 
