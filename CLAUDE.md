@@ -12,7 +12,7 @@ This is an **Obsidian vault** containing university lecture notes (DHSN — Dual
 - Each subject folder has an index file named identically to the folder (e.g. `🧮 MAA.md`) listing all topic pages
 - `images/` — embedded images and media referenced from notes
 - `raw/` — staging area for unprocessed files
-- `claude/commands/` — Claude Code custom slash commands
+- `.claude/commands/` — Claude Code custom slash commands
 
 ## Conventions
 
