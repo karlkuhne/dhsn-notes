@@ -137,7 +137,71 @@ Beispiel — Notiz endet bei `## 5.3`, neue Sitzung am 10.04.26:
 
 Wenn eine Datei (z.B. langes PDF) mehrere klar getrennte Themen enthält, erstelle separate Notiz-Dateien für jedes Thema.
 
-### 4.4 Formatierungsregeln
+### 4.4 Vorlesungsfolien umformulieren
+
+Wenn das Rohmaterial **Vorlesungsfolien eines Professors** sind (erkennbar an: Folientitel, Grafiken ohne Kontext), formuliere den Inhalt in den persönlichen Schreibstil des Vault-Besitzers um. Übernimm NICHT den Folienstil 1:1.
+
+#### Stilrichtlinien (abgeleitet aus den bestehenden Notizen)
+
+**Ton**: Schreibe wie ein Student, der Kommilitonen den Stoff erklärt — fachlich korrekt, aber zugänglich. Nicht wie ein Lehrbuch und nicht wie Folien-Stichpunkte.
+
+**Definitionen**: Formale Definition zuerst (fett oder als Blockquote), dann sofort 2-3 Bulletpoints die erklären was es *praktisch* bedeutet:
+```
+__Definition: Grenzwert__
+> Eine Folge $(a_n)$ konvergiert gegen $a$, wenn...
+
+- **$\epsilon$**: Eine beliebig kleine, positive Zahl...
+- $|a_n - a| < \epsilon$ bedeutet: der Abstand wird beliebig klein
+```
+
+**Struktur je nach Inhalt**:
+- **Eigenschaften/Fakten** → Bulletpoints
+- **Verfahren/Algorithmen** → Nummerierte Schritte
+- **Beweise/Herleitungen** → Fließtext mit eingebetteter Mathematik
+
+**Beweise**: Aussage → Beweisstrategie kurz nennen → Dichte Mathe-Ableitung → Ergebnis → Zusammenfassung als eingeklappter Callout:
+```
+> [!info]- Zusammenfassung
+> Kurze Erklärung in eigenen Worten, warum der Beweis funktioniert
+```
+
+**Beispiele**: Direkt beim Konzept einbetten, nicht in separaten Abschnitten. Label: `__Bsp.:__` oder `__Beispiel:__`
+
+**Persönliche Marker verwenden**:
+- `Merke:` — für nicht-offensichtliche Fakten
+- `Problem:` — für praktische Stolperfallen
+- `Zu beachten:` — für wichtige Randbedingungen
+- `Passt!` — wenn ein Ergebnis aufgeht / eine Probe stimmt
+
+**Mathe im Text verweben**: Mathe ist nicht beiläufig — $\epsilon$-Notation, Variablen und Symbole gehören in den Satzfluss:
+- Gut: "Man nimmt die Ungleichung $|a_n - a| < \epsilon$ und löst nach $n$ auf"
+- Schlecht: "Man nimmt die Ungleichung und löst sie auf (siehe Formel unten)"
+
+**Emphasis-Hierarchie**:
+- `__fett__` für Definitionen und Schlüsselbegriffe
+- `**fett**` für rhetorische Betonung im Fließtext
+- `$mathe$` für technische Terme auch mitten im Satz
+
+**Code-Beispiele** (bei Informatik-Fächern):
+- Vollständige, lauffähige Beispiele mit ` ```run-c ` o.ä.
+- Kommentare im Code auf Deutsch
+- Ausgabe realistisch als Bash-Block mit `$`-Prompt zeigen
+
+**Querverweise**: Am Ende `## Siehe auch` mit kurzer Erklärung:
+```
+## Siehe auch
+- [[3. Mengenlehre]] — Mengenlehre mit Operationen und Beweisen (TGI)
+```
+
+#### Was NICHT tun
+
+- **Nicht** den Folienstil übernehmen (kryptische Stichpunkte, Kontextlose Aufzählungen)
+- **Nicht** Inhalte erfinden die nicht auf den Folien stehen
+- **Nicht** zu akademisch/steif formulieren — der Ton ist studentisch-zugänglich
+- **Nicht** Formeln vereinfachen oder weglassen — alle Mathe exakt übertragen
+- **NIEMALS Inhalte weglassen** — jede Folie, jede Zeile, jedes Beispiel, jede Randnotiz muss in den Notizen landen. Umformulieren und neu strukturieren ist gewünscht, aber kürzen oder zusammenfassen auf Kosten von Details ist verboten.
+
+### 4.5 Allgemeine Formatierung
 
 - **Sprache**: Deutsch. Fachbegriffe dürfen englisch bleiben.
 - **Inline-Mathe**: `$...$` — z.B. `$\frac{a}{b}$`
@@ -146,7 +210,6 @@ Wenn eine Datei (z.B. langes PDF) mehrere klar getrennte Themen enthält, erstel
 - **Bilder einbetten**: `![[bildname.png]]` (ohne Pfad — Obsidian löst das auf)
 - **Code-Blöcke**: Mit Sprach-Tag, z.B. ` ```c `
 - **Überschriften**: `## {N}.{sub} Titel` innerhalb von Themen-Dateien
-- **Keine Inhalte erfinden** — nur das notieren, was in den Quellen steht
 - **Mathe sorgfältig** — LaTeX-Formeln exakt übertragen, nichts vereinfachen oder weglassen
 
 ## Schritt 5: Verlinkung
@@ -194,8 +257,9 @@ Beispiele:
 
 ## Wichtige Regeln
 
-1. **Nie raten, immer fragen** — wenn Fach, Semester oder Zuordnung unklar ist, frage den Benutzer
-2. **Bestehende Konventionen einhalten** — Frontmatter-Format, Ordnerstruktur, Nummerierung exakt wie im Vault
-3. **Keine Inhalte erfinden** — nur niederschreiben was in den Quellen steht
-4. **Mathe exakt übertragen** — LaTeX-Formeln sorgfältig und vollständig
-5. **Qualität vor Geschwindigkeit** — lieber sauber als schnell
+1. **NICHTS WEGLASSEN** — Jede einzelne Information aus den Rohmaterialien muss sich in den fertigen Notizen wiederfinden. Keine Zeile, keine Formel, kein Beispiel, kein Nebensatz darf verloren gehen. Umformulieren ja, kürzen nein. Im Zweifel lieber zu viel als zu wenig.
+2. **Nie raten, immer fragen** — wenn Fach, Semester oder Zuordnung unklar ist, frage den Benutzer
+3. **Bestehende Konventionen einhalten** — Frontmatter-Format, Ordnerstruktur, Nummerierung exakt wie im Vault
+4. **Keine Inhalte erfinden** — nur niederschreiben was in den Quellen steht
+5. **Mathe exakt übertragen** — LaTeX-Formeln sorgfältig und vollständig
+6. **Qualität vor Geschwindigkeit** — lieber sauber als schnell
