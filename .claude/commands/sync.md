@@ -52,6 +52,9 @@ Analysiere `$ARGUMENTS` und den Inhalt von `raw/`:
 **Das ist der KRITISCHE Schritt. Befolge diese Anweisungen EXAKT:**
 
 1. **PDFs**: Lese jede Seite einzeln. Bei mehreren Seiten: lese Seite 1, dann Seite 2, dann Seite 3 usw. Überspringe keine Seite.
+   - **WICHTIG**: Nutze beim Lesen von PDFs unbedingt die **Multimodalität** (die Screenshots im Read-Tool).
+   - Verlasse dich **NIEMALS nur auf den extrahierten Text (OCR)**.
+   - Viele Informationen (Diagramme, Formeln in Formen, Skizzen) sind nur visuell erkennbar. Analysiere jeden Screenshot exakt.
 
 2. **Bilder in PDFs**: Nach dem Extrahieren: Prüfe ob eingebettete Bilder vorhanden sind.
 
