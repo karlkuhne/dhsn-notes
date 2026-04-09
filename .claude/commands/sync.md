@@ -84,11 +84,19 @@ updated: {YYYY-MM-DD}
 
 **{DD.MM.YY}**
 
-## {N}.1 {Erster Abschnitt}
+## {N}.1 {Erster Themenblock}
+
+### {N}.1.1 {Erster Unterpunkt}
 
 {Inhalt — SIEHE STILRICHTLINIEN UNTEN}
 
-## {N}.2 {Zweiter Abschnitt}
+### {N}.1.2 {Zweiter Unterpunkt}
+
+{Inhalt}
+
+## {N}.2 {Zweiter Themenblock}
+
+### {N}.2.1 {Erster Unterpunkt}
 
 {Inhalt}
 ```
@@ -148,7 +156,29 @@ NICHT erlaubt:
 
 ---
 
-### 4.4 FORMATIERUNG
+### 4.4 INHALT STRUKTURIEREN
+
+**Abschnitte innerhalb einer Notiz IMMER durchnummerieren:**
+
+```markdown
+## {N}.1 {Erster Themenblock}
+
+### {N}.1.1 {Erster Unterpunkt}
+
+Inhalt...
+
+### {N}.1.2 {Zweiter Unterpunkt}
+
+Inhalt...
+
+## {N}.2 {Zweiter Themenblock}
+
+### {N}.2.1 {Erster Unterpunkt}
+```
+
+Die Nummerierung innerhalb der Notiz MUSS immer bei .1 beginnen. Jeder neue Themenblock bekommt eine neue Hauptnummer (`.1`, `.2`, `.3`...). Unterpunkte bekommen Subnummern (`.1.1`, `.1.2`, `.2.1`...).
+
+### 4.5 FORMATIERUNG
 
 - **Sprache**: Deutsch. Fachbegriffe englisch ok.
 - **Inline-Mathe**: `$...$` — z.B. `$\frac{a}{b}$`
@@ -156,7 +186,7 @@ NICHT erlaubt:
 - **Wikilinks**: `[[Seitenname]]`
 - **Bilder**: `![[bildname.png]]`
 - **Code**: ` ```sprache ` mit Kommentaren auf Deutsch
-- **Überschriften**: `## {N}.{sub} Titel`
+- **Überschriften**: `## {N}.{x}.{y} Titel` (siehe 4.4)
 
 ---
 
