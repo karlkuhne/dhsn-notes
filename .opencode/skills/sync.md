@@ -1,39 +1,32 @@
 # Sync Skill
 
-Verarbeite Rohmaterialien aus dem `raw/`-Ordner und arbeite sie in die Obsidian-Vault-Struktur ein. Kann auch neue Fächer anlegen.
+Verarbeite Rohmaterialien aus dem `raw/`-Ordner und arbeite sie in die Obsidian-Vault-Struktur ein.
 
 Argumente: $ARGUMENTS (optional - Kontext des Benutzers)
 
 ---
 
-## SCHRITT 1: INVENTAR & KONTEXT-SCAN
+## SCHRITT 1: SCAN
 
 Führe **parallel** aus:
 1. `ls raw/` — welche Dateien warten auf Verarbeitung?
 2. `ls wiki/SEM*/` — welche Semester und Fächer existieren?
-3. Für jedes existierende Fach: zähle die höchste Themennummer
-
-**WICHTIG bei mehreren Dateien**: Falls mehrere Dateien in `raw/` liegen, scanne erst alle Dateien (Titel, erste Seite, Metadaten), um Zusammenhänge zu verstehen (z.B. Teil 1 & Teil 2 einer Vorlesung, oder Vorlesung + Übungsblatt). Verarbeite sie als logische Einheit, anstatt blind eine Datei nach der anderen abzuarbeiten.
 
 ---
 
-## SCHRITT 2: MODUS & GRUPPIERUNG BESTIMMEN
+## SCHRITT 2: ORIENTIERUNG
 
 Analysiere `$ARGUMENTS` und den Inhalt von `raw/`:
 
-- **Modus A**: Neues Fach anlegen — Benutzer erwähnt ein neues Fach
-- **Modus B**: Raw-Dateien verarbeiten — Dateien vorhanden
-- **Modus C**: Beides
-
-### 2.1 DATEI-ZUORDNUNG (MAPPING)
-Ordne jede Datei in `raw/` einem Fach zu:
-1. Prüfe Dateinamen (z.B. "MAA_V01.pdf" -> MAA).
-2. Falls unklar: Lese Seite 1 der Datei und identifiziere das Fach inhaltlich.
-3. Falls immer noch unklar: Nutze das `question`-Tool und frage den Benutzer.
+- Muss ich ein neues Fach anlegen? — Benutzer erwähnt ein neues Fach
+- Muss ich ein neues Semester anlegen? — Benutzer erwähnt ein neues Semester
+- Wenn der Benutzer nichts spezifiziert, ordne in die bereits existierende Struktur ein
+- alle Dateien in `raw/` gehören in der Regel zum selben Fach
+- ermittle dieses aus den Benutzerargumenten, wenn nichts angegeben durch Dateinamen, dem Inhalt der jeweils ersten Seite oder wenn immer noch unklar: Nutze das `question`-Tool und frage den Benutzer
 
 ---
 
-## SCHRITT 3: NEUES FACH ANLEGEN (falls Modus A/C)
+## SCHRITT 3: WENN NÖTIG NEUES FACH ANLEGEN
 
 1. Emoji wählen (passend zum Fach)
 2. Ordner: `wiki/SEM{n}/{emoji} {KÜRZEL}/`
@@ -51,30 +44,30 @@ Ordne jede Datei in `raw/` einem Fach zu:
 
 ---
 
-## SCHRITT 4: DATEIEN VERARBEITEN (falls Modus B/C)
+## SCHRITT 4: DATEIEN VERARBEITEN
+
+>**WICHTIG bei mehreren Dateien**: Falls mehrere Dateien in `raw/` liegen, scanne erst alle Dateien um Zusammenhänge zu verstehen (z.B. Teil 1 & Teil 2 einer Vorlesung, oder Vorlesung + Übungsblatt). Verarbeite sie als logische Einheit, anstatt blind eine Datei nach der anderen abzuarbeiten.
 
 ### 4.1 JEDE DATEI SEITE FÜR SEITE LESEN
 
 **Das ist der KRITISCHE Schritt. Befolge diese Anweisungen EXAKT:**
 
-1. **PDFs**: Lese jede Seite einzeln. Bei mehreren Seiten: lese Seite 1, dann Seite 2, dann Seite 3 usw. Überspringe keine Seite.
-   - **WICHTIG**: Nutze beim Lesen von PDFs unbedingt die **Multimodalität** (die Screenshots im Read-Tool).
+1. **Dokumente (bspw. PDFs)**:
+   - Lese jede Seite einzeln. Bei mehreren Seiten: lese Seite 1, dann Seite 2, dann Seite 3 usw. Überspringe keine Seite.
+   - **WICHTIG**: Nutze beim Lesen von PDFs unbedingt die **Multimodalität** (die Screenshots im Read-Tool) für jede Seite.
    - Verlasse dich **NIEMALS nur auf den extrahierten Text (OCR)**.
    - Viele Informationen (Diagramme, Formeln in Formen, Skizzen) sind nur visuell erkennbar. Analysiere jeden Screenshot exakt.
-
-2. **Bilder in PDFs**: Nach dem Extrahieren: Prüfe ob eingebettete Bilder vorhanden sind.
-
+   Danach:
+   - **Bilder in PDFs**: Nach dem Extrahieren: Prüfe ob eingebettete Bilder vorhanden sind.
    - **Eigenständige Grafiken/Diagramme** → Speichere nach `images/{fach}/{N}-{bildname}.png` und bette ein mit `![[bildname.png]]`
-   - **Tafel-Fotos / eingescannte Folien** → Extrahiere Text/Formeln und schreibe sie in die Notizen (wie regulären Seiteninhalt). Rekonstruiere Diagramme ggf. als Mermaid
 
-3. **Direkte Bilddateien** (Fotos von Tafel, Whiteboard, Skizzen, Handschrift):
-   - Unterstützte Formate: .png, .jpg, .jpeg, .gif, .webp
-   - Beschreibe JEDES Bild vollständig: Objekte, Beschriftungen, Pfeile, Farben
+ 2. **Direkte Bilddateien** (Fotos von Tafel, Whiteboard, Skizzen, Handschrift):
+   - Analysiere JEDES Bild vollständig: Texte, Objekte, Beschriftungen, Pfeile, Farben
    - **Text auf Tafel/Folien/Handschrift** → Extrahiere jeden Text, jede Formel in die Notizen
    - **Diagramme/Strukturen** → Rekonstruiere als Mermaid (flowchart, classDiagram, etc.)
-   - **Skizzen/Komplexe Grafiken** → Falls Mermaid zu komplex ist oder Details verloren gehen: Speichere Bild nach `images/` und bette es ein. Beschreibe trotzdem den Inhalt.
+   - **Skizzen/Komplexe Grafiken** → Falls Mermaid zu komplex ist oder Details verloren gehen: Speichere Bild nach `images/` und bette es ein.
 
-4. **Für JEDE einzelne Seite musst du erfassen:**
+3. **Überall musst du erfassen:**
    - Jeden Titel und jede Überschrift
    - Jeden Absatz, jeden Satz, jede Zeile Text
    - Jede Formel, Gleichung, jedes Symbol
@@ -85,9 +78,9 @@ Ordne jede Datei in `raw/` einem Fach zu:
    - Jede Randnotiz, jeder Stern-Hinweis, jeder "Merke:"-Kasten
    - Jedes Diagramm, jeder Box-Titel
 
-3. **NICHTS weglassen.** Wenn du dir nicht sicher bist ob etwas wichtig ist — nimm es auf. Im Zweifel lieber zu viel als zu wenig.
+4. **NICHTS weglassen.** Wenn du dir nicht sicher bist ob etwas wichtig ist — nimm es auf. Im Zweifel lieber zu viel als zu wenig.
 
-4. **OCR/Extraktionsfehler korrigieren**: Wenn bei der PDF-Extraktion Zeichen falsch erscheinen (z.B. "热血" oder "?"), ersetze sie durch das korrekte Zeichen basierend auf dem Kontext.
+5. **OCR/Extraktionsfehler korrigieren**: Wenn bei der PDF-Extraktion Zeichen falsch erscheinen (z.B. "热血" oder "?"), ersetze sie durch das korrekte Zeichen basierend auf dem Kontext.
 
 ### 4.2 EINE PDF = EINE NOTIZ (ODER UPDATE)
 **Wichtig:** 
@@ -148,7 +141,7 @@ updated: {YYYY-MM-DD}
 
 **Regeln für den Inhalt:**
 
-1. **JEDE Information aus den Folien MUSS in den Notizen sein.** Keine Ausnahme. Keine Zeile darf fehlen.
+1. **JEDE Information aus den zuvor eingelesene Material MUSS in den Notizen sein.** Keine Ausnahme. Keine Zeile darf fehlen.
 
 2. **Umformulieren ist erlaubt und erwünscht.** Du darfst Sätze umbauen, Synonyme verwenden, Sätze kürzen ABER nur wenn dabei KEINE Information verloren geht. "Kürzen" bedeutet: gleiche Information, weniger Worte. NICHT: weniger Information.
 
@@ -280,23 +273,18 @@ In `{emoji} {KÜRZEL}.md`:
 
 ### 5.3 In-Text Verlinkung (Kontextuelles Linking)
 
-**KEINE "Siehe auch" Sektion am Ende der Notiz erstellen.** Das Ziel ist ein integrierter Lesefluss.
-
 Befolge dieses **Linking-Protokoll**:
 1.  **Begriffs-Scan**: Während du den Inhalt schreibst, identifiziere Fachbegriffe, zu denen bereits Notizen existieren (z.B. "Potenzmenge", "Vollständige Induktion", "Pointer", "Komplexität").
 2.  **Präzise Platzierung**: Setze den Wikilink (`[[Notiz]]`) direkt beim ersten Vorkommen im Text oder — noch besser — innerhalb einer Definition oder Überschrift.
 3.  **Kontextuelle Aliase**: Nutze Aliase `[[Zieltitel|Anzeigetext]]`, damit der Link perfekt in den Satz passt (z.B. "...wird mittels [[4. Die vollständige Induktion|vollständiger Induktion]] bewiesen").
-4.  **Anwendungs-Verweise**: Wenn in einer mathematischen Notiz (MAA) ein Verfahren erklärt wird, das in der Informatik (TGI/IMPP) angewendet wird, füge einen "Anwendungen"-Abschnitt oder einen inline Hinweis ein (z.B. "Beweis der Mächtigkeit in [[5. Die Potenzmenge]]").
-5.  **Kontext-Ergänzung**: Füge bei Bedarf das Fachkürzel in Klammern hinter den Link an, wenn der Link in ein anderes Fach führt: `[[6. Pointer]] (IMPP)`.
+4.  **Anwendungs-Verweise**: Wenn bspw. in einer mathematischen Notiz (MAA) ein Verfahren erklärt wird, das in der Informatik (TGI/IMPP) angewendet wird, füge einen "Anwendungen"-Abschnitt oder einen inline Hinweis ein (z.B. "Beweis der Mächtigkeit in [[5. Die Potenzmenge]]").
 
 ### 5.4 Bidirektionale Verlinkung (Back-Linking)
-
-**DAS IST DER ENTSCHEIDENDE SCHRITT FÜR EIN "SECOND BRAIN"**: Eine Verlinkung ist erst vollständig, wenn sie in beide Richtungen existiert.
 
 1.  **Bestand scannen**: Nutze `grep` oder die Suchfunktion, um im gesamten `wiki/`-Ordner nach dem Titel oder den Kernbegriffen der **neuen** Notiz zu suchen.
 2.  **Referenzen nachpflegen**: Wenn die neue Notiz ein Thema vertieft, das in einer alten Notiz nur am Rand erwähnt wurde (z.B. neue Notiz "Dijkstra-Algorithmus" wird erstellt -> alte Notiz "Algorithmik" erwähnt Dijkstra nur als Stichpunkt), dann **editiere die alte Notiz** und setze dort den Link auf die neue Notiz.
 3.  **Top-of-File Info**: Falls die neue Notiz ein identisches oder sehr ähnliches Thema in einem anderen Fach behandelt (siehe 5.2), füge auch in der **alten Notiz** ganz oben die Info-Box hinzu, die auf die neue Notiz verweist.
-4.  **Konsistenz**: Achte darauf, dass auch in den alten Notizen die Links kontextuell (inline) gesetzt werden und keine neuen "Siehe auch" Sektionen entstehen. Entferne dabei ggf. vorhandene "Siehe auch" Reste in den editierten Dateien.
+4.  **Konsistenz**: Achte darauf, dass auch in den alten Notizen die Links kontextuell (inline) gesetzt werden und keine neuen "Siehe auch" Sektionen entstehen.
 
 ---
 
