@@ -79,7 +79,7 @@ Lies die Datei stückweise (oder ganz, wenn sie klein genug ist) und schreibe si
    - Ändere die Überschriften-Ebenen (`#`, `##`, `###`) so, dass sie bei `.1` beginnen, z.B.:
      `## {N}.1 {Themenblock}`
      `### {N}.1.1 {Unterpunkt}`
-   - Flache Überschriften aus dem Marker-Output müssen aktiv in eine tiefere Struktur (`{N}.X.Y` oder `{N}.X.Y.Z`) umstrukturiert oder als einfache fette Zwischenüberschriften (`**Text**`) formatiert werden, um das Inhaltsverzeichnis kompakt und lesbar zu halten.
+   - Flache Überschriften aus dem Marker-Output müssen aktiv in eine tiefere Struktur (`{N}.X.Y` oder `{N}.X.Y.Z`) umstrukturiert oder (ohne jegliche Nummerierung) als einfache fette Zwischenüberschriften (`**Text**`) formatiert werden, um das Inhaltsverzeichnis kompakt und lesbar zu halten. Nur echte Markdown-Überschriften (`##`, `###`) dürfen nummeriert werden.
 4. **Callouts (Obsidian-Stil):**
    - Marker macht oft `> Definition:` oder ähnliches. Wandle dies um in:
      `> [!abstract] Definition: ...`
