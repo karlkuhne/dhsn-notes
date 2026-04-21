@@ -47,10 +47,10 @@ Kläre die Zuordnung (ggf. durch das `question` Tool, falls unklar):
 Marker generiert kryptische Bildnamen (z.B. `_page_10_Figure_5.jpeg`). Das muss an die Vault-Konventionen angepasst werden!
 
 1. Erstelle ein Mapping der vorhandenen Bilder.
-2. Verschiebe alle Bilder aus dem Marker-Ordner nach `images/{KÜRZEL}/{N}. {Titel}/{N}-{beschreibender_name}.jpeg` (oder übernimm den Originalnamen, falls schwer beschreibbar, aber setze `{N}-` davor, um Namenskonflikte zu vermeiden).
+2. Verschiebe alle Bilder aus dem Marker-Ordner nach `images/{KÜRZEL}/{N}. {Titel}/{KÜRZEL}-{N}-{beschreibender_name}.jpeg` (oder übernimm den Originalnamen, falls schwer beschreibbar, aber setze `{KÜRZEL}-{N}-` davor, um Namenskonflikte in der gesamten Vault zu vermeiden).
 3. **WICHTIG:** Passe alle Bild-Links im Marker-Markdown an das Obsidian-Wikilink-Format an:
    - *Alt:* `![](_page_10_Figure_5.jpeg)`
-   - *Neu:* `![[{N}. {Titel}/{N}-page_10_Figure_5.jpeg]]` (bzw. der neue Name inklusive dem Ordnerpfad relativ zum `images`-Root oder wie Obsidian konfiguriert ist. In Obsidian reicht oft nur der Dateiname, aber um sicher zu sein, dass keine Konflikte entstehen, speichere sie isoliert in dem Unterordner. Der Link muss `![[{N}-page_10_Figure_5.jpeg]]` lauten, Obsidian findet die Datei im Unterordner automatisch, solange der Name einzigartig ist!)
+   - *Neu:* `![[{N}. {Titel}/{KÜRZEL}-{N}-page_10_Figure_5.jpeg]]`
 
 Nutze hierfür ein Python-Skript (Inline oder im `/tmp/` Verzeichnis!) oder `sed`, um die Links in der `.md` Datei massenhaft und sicher zu ersetzen.
 
