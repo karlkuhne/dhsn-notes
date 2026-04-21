@@ -74,11 +74,12 @@ Lies die Datei stückweise (oder ganz, wenn sie klein genug ist) und schreibe si
    ---
    ```
 2. **Datum:** Unter dem Frontmatter das Datum als fettgedruckten Text: `**{DD.MM.YY}**`
-3. **Überschriften (Nummerierung):**
+3. **Überschriften (Logische Gruppierung & Nummerierung):**
+   - **SEHR WICHTIG:** Vermeide extrem flache Hierarchien (wie z.B. von `1.1` bis `1.60`). Gruppiere thematisch zusammenhängende Abschnitte stattdessen unter neuen, logischen Oberbegriffen (`## {N}.X`), sodass die eigentlichen Abschnitte zu Unterpunkten (`### {N}.X.Y`) werden.
    - Ändere die Überschriften-Ebenen (`#`, `##`, `###`) so, dass sie bei `.1` beginnen, z.B.:
      `## {N}.1 {Themenblock}`
      `### {N}.1.1 {Unterpunkt}`
-   - Flache Überschriften ohne logische Hierarchie müssen in die `{N}.X.Y` Struktur gezwungen oder als fette Zwischenüberschriften (`**Text**`) formatiert werden.
+   - Flache Überschriften aus dem Marker-Output müssen aktiv in eine tiefere Struktur (`{N}.X.Y` oder `{N}.X.Y.Z`) umstrukturiert oder als einfache fette Zwischenüberschriften (`**Text**`) formatiert werden, um das Inhaltsverzeichnis kompakt und lesbar zu halten.
 4. **Callouts (Obsidian-Stil):**
    - Marker macht oft `> Definition:` oder ähnliches. Wandle dies um in:
      `> [!abstract] Definition: ...`
