@@ -1,49 +1,77 @@
 # Skill: DHSN/BA Logos aus Marker-Outputs entfernen
 
 ## Beschreibung
-Dieser Skill wird verwendet, um nach einer PDF-zu-Markdown-Konvertierung (z.B. via `marker`) die redundanten Logos der Dualen Hochschule Sachsen (DHSN) / BA Sachsen aus dem Export zu entfernen. Da das Logo auf nahezu jeder Folie auftaucht, generiert der Exporter für jede Seite ein eigenes Bild, was den Ordner zumüllt und den Lesefluss im Markdown stört.
+Dieser Skill wird verwendet, um nach einer PDF-zu-Markdown-Konvertierung (z.B. via `marker`) redundante Logos (DHSN/BA Sachsen) aus dem `/marker/output/...` Ordner zu entfernen. Diese treten oft in verschiedenen Variationen auf und "müllen" den Ordner zu.
 
 ## Voraussetzungen
-- Der Zielordner enthält eine `.md`-Datei und viele generierte Bilder (meist `.jpeg` oder `.png`).
-- Python 3 und das Paket `Pillow` (`PIL`) sind verfügbar, um Bilddimensionen auszulesen.
+- Der Zielordner enthält eine `.md`-Datei und viele generierte Bilder (`.jpeg` oder `.png`).
+- Python 3 und `Pillow` (`PIL`) sind verfügbar.
 
 ## Workflow
 
-Der Agent soll diese Schritte strictly befolgen:
-
-### Wichtige Regel zu Skripten
-**Mülle niemals das Projektverzeichnis des Nutzers zu!** Verwende für alle in diesem Skill beschriebenen Schritte entweder Inline-Python (`python3 -c '...'`) oder lege temporäre Skript-Dateien ausschließlich im System-Temp-Ordner (z.B. `/tmp/`) an. Hinterlasse keine `.py` Dateien im Workspace.
-
 ### 1. Analysephase (Dynamische Erkennung)
-Bevor Bilder gelöscht werden, müssen die genauen Dimensionen der Logos im aktuellen Foliensatz analysiert werden. Logos zeichnen sich dadurch aus, dass sie **sehr häufig** vorkommen und meist eine **geringe Höhe** aufweisen.
-
-Führe ein Inline-Python-Skript (mit `python3 -c`) aus, um die häufigsten Bildgrößen zu finden:
+Lade **alle** Bilddimensionen in eine Liste, um Cluster zu erkennen. Führe dieses Skript aus:
 ```python
 import os
 from PIL import Image
+from collections import Counter
 
 dir_path = "PFAD_ZUM_ORDNER"
-counts = {}
+sizes = []
 
 for filename in os.listdir(dir_path):
     if filename.endswith((".jpeg", ".png")):
         try:
             with Image.open(os.path.join(dir_path, filename)) as img:
-                dims = img.size
-                counts[dims] = counts.get(dims, 0) + 1
+                sizes.append(img.size)
         except: pass
 
-for dims, count in sorted(counts.items(), key=lambda x: x[1], reverse=True)[:10]:
-    print(f"Dimension {dims[0]}x{dims[1]}: {count} Bilder")
+# Zeige alle Größen sortiert nach Breite und Höhe
+for size, count in sorted(Counter(sizes).items(), key=lambda x: x[0]):
+    print(f"{size[0]}x{size[1]}: {count} Bilder")
 ```
-*Leite aus dem Ergebnis die maximalen Logo-Dimensionen ab.*
+**Wichtig:** Logos erscheinen oft als kleine Cluster oder Ausreißer. Untersuche die Liste nach Clustern von Bildern, die logisch wie Logos aussehen (oft sehr häufig vorkommend). **Prüfe stichprobenartig ein Bild aus einem Cluster, bevor du es löschst.**
 
 ### 2. Bereinigungsphase (Bilder & Markdown)
-Schreibe und führe ein Inline-Python-Skript aus, das Folgendes tut:
-1. Identifiziert alle Bilder, die unterhalb der in Schritt 1 definierten Schwellenwerte (Breite/Höhe) liegen.
-2. Liest die `.md`-Datei ein.
-3. Sucht nach den Markdown-Bildreferenzen der erkannten Logos (z.B. `![](_page_10_Picture_5.jpeg)`) und entfernt sie restlos aus dem Text, ohne Leerzeilen-Artefakte zu hinterlassen.
-4. Löscht die identifizierten Logo-Dateien von der Festplatte.
+Wenn Logos identifiziert wurden, nutze für **jeden identifizierten Cluster** ein dediziertes Lösch-Skript, um keine inhaltlich wichtigen Grafiken zu löschen.
+```python
+import os
+import re
+from PIL import Image
+
+dir_path = "PFAD_ZUM_ORDNER"
+md_file_path = os.path.join(dir_path, "DATEINAME.md")
+
+# Ziel-Dimensionen (Toleranzbereich angeben!)
+target_w, target_h = (BREITE, HOEHE)
+TOLERANZ = 10
+
+def is_logo(w, h):
+    return abs(w - target_w) <= TOLERANZ and abs(h - target_h) <= TOLERANZ
+
+# Identifikation
+to_delete = []
+for filename in os.listdir(dir_path):
+    if filename.endswith((".jpeg", ".png")):
+        try:
+            with Image.open(os.path.join(dir_path, filename)) as img:
+                if is_logo(*img.size):
+                    to_delete.append(filename)
+        except: pass
+
+# Löschen & MD Update
+if os.path.exists(md_file_path):
+    with open(md_file_path, "r", encoding="utf-8") as f:
+        content = f.read()
+    for f_name in to_delete:
+        content = re.sub(rf"!\[\]\({re.escape(f_name)}\)", "", content)
+    with open(md_file_path, "w", encoding="utf-8") as f:
+        f.write(re.sub(r"\n\s*\n", "\n\n", content))
+
+for f_name in to_delete:
+    os.remove(os.path.join(dir_path, f_name))
+    print(f"Deleted {f_name}")
+```
 
 ### 3. Verifizierung
-Führe nach dem Cleanup einen Bash-Befehl aus, um die **Anzahl und Größen** der verbleibenden Bilder zu prüfen (`find . -name "*.jpeg" -ls | awk '{print $7, $11}' | sort -n | head -n 10`). So stellst du sicher, dass keine wichtigen, großen Inhaltsbilder (wie Vorlesungs-Diagramme) versehentlich gelöscht wurden.
+Prüfe nach dem Cleanup die verbleibenden Bildgrößen erneut, um sicherzustellen, dass keine wichtigen Diagramme gelöscht wurden (`find ...` Befehl oder erneut das Analyse-Skript).
