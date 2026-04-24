@@ -23,6 +23,11 @@ This is an **Obsidian vault** containing university lecture notes (DHSN — Dual
 - Subject abbreviations are uppercase (IMPP, MAA, TGI, MG)
 - Topic files are numbered sequentially (e.g. `1. Variablen.md`, `2. Gleitkommazahlen.md`)
 
+## Marker Import Best Practices
+
+- **OCR-Cleanup:** Beim Import von Marker-Outputs immer nach `$\bullet$`-Artefakten, doppelten Leerzeichen und redundanten Kopf-/Fußzeilen (z.B. wiederholte Fachnamen) scannen und diese entfernen.
+- **Hierarchie:** Flache Hierarchien (1.1 bis 1.60) vermeiden; stattdessen thematisch unter `## {N}.X` gruppieren.
+
 ## Workflow
 
 1. Rohmaterialien (PDFs, Fotos, Textdateien) in `raw/` ablegen

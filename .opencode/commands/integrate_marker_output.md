@@ -79,7 +79,7 @@ Lies die Datei stückweise (oder ganz, wenn sie klein genug ist) und schreibe si
    - Ändere die Überschriften-Ebenen (`#`, `##`, `###`) so, dass sie bei `.1` beginnen, z.B.:
      `## {N}.1 {Themenblock}`
      `### {N}.1.1 {Unterpunkt}`
-   - Flache Überschriften aus dem Marker-Output müssen aktiv in eine tiefere Struktur (`{N}.X.Y` oder `{N}.X.Y.Z`) umstrukturiert oder (ohne jegliche Nummerierung) als einfache fette Zwischenüberschriften (`**Text**`) formatiert werden, um das Inhaltsverzeichnis kompakt und lesbar zu halten. Nur echte Markdown-Überschriften (`##`, `###`) dürfen nummeriert werden.
+   - Flache Überschriften aus dem Marker-Output müssen aktiv in eine tiefere Struktur (`{N}.X.Y` oder `{N}.X.Y.Z`) umstrukturiert werden. Wenn sie nicht Teil der nummerierten Hierarchie sein sollen, **müssen sie zwingend als einfache fette Zwischenüberschriften (`**Text**`) formatiert werden**. Sie dürfen keinesfalls als Markdown-Headings (`#`, `##`, `###`, `####`) ohne Nummerierung im Dokument verbleiben. Nur echte, nummerierte Markdown-Überschriften (`##`, `###`) sind erlaubt.
 4. **Callouts (Obsidian-Stil):**
    - Marker macht oft `> Definition:` oder ähnliches. Wandle dies um in:
      `> [!abstract] Definition: ...`
@@ -88,7 +88,12 @@ Lies die Datei stückweise (oder ganz, wenn sie klein genug ist) und schreibe si
 5. **Mathematik:** Überprüfe, dass Inline-Math `$ ... $` und Block-Math `$$ ... $$` korrekt von Marker übernommen wurden und in Obsidian rendern. Repariere offensichtliche OCR-Fehler. Nichts vereinfachen, LaTeX exakt übernehmen!
 6. **Code-Blöcke:** Kontrolliere generierte Code-Blöcke. Füge die korrekte Sprache hinzu (` ```python `) und formatiere wenn nötig nach.
 7. **Tabellen:** Stelle sicher, dass Tabellen nicht durch den PDF-Parser zerstört wurden. Sie müssen vollständig und als echtes Markdown formatiert sein.
-8. **Zusammenfassung:** Füge am Ende der Datei zwingend die Review-Sektion an:
+8. **Bereinigung von OCR-Artefakten & Cleanup (WICHTIG):**
+   - Entferne systematisch `$\bullet$` (Marker-Bullet-Artefakt).
+   - Entferne redundante Kopf- oder Fußzeilen, die sich auf jeder Seite wiederholen (z.B. der Fachname "**Bildbearbeitung**" oder Seitennummern).
+   - Bereinige doppelte Leerzeichen und entferne Leerzeichen am Zeilenende (Trailing Whitespace).
+   - Fixe OCR-Fehler wie falsche Sonderzeichen (z.B. `·` am Zeilenanfang durch `- ` ersetzen).
+9. **Zusammenfassung:** Füge am Ende der Datei zwingend die Review-Sektion an:
    ```markdown
    ---
    ## Review & Learning
