@@ -7,3 +7,6 @@
 - [[3. Chroma-Subsampling]]
 
 ## Übungen
+
+- [[4. Aufgaben Bildbearbeitung]]
+
