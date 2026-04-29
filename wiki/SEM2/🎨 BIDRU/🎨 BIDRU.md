@@ -8,5 +8,5 @@
 
 ## Übungen
 
-- [[4. Aufgaben Bildbearbeitung]]
+- [[Aufgaben Bildbearbeitung]]
 

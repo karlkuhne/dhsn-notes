@@ -5,7 +5,6 @@ sources: ["Aufgaben_BB.pdf"]
 date: 2026-04-29
 updated: 2026-04-29
 ---
-
 **29.04.26**
 
 # Aufgaben zur Bildbearbeitung
@@ -13,18 +12,51 @@ updated: 2026-04-29
 > [!info] Dieses Thema existiert auch in: [[1. Digitale Bilder Grundbegriffe]] (BIDRU)
 > Theoretische Grundlagen zu diesem Thema: [[2. Bildformate]], [[3. Chroma-Subsampling]]
 
-## 4.1 Grundlagen & Kompression
+## Grundlagen & Kompression
 
-### 4.1.1 Digitale Bilder: Grundbegriffe
+### Digitale Bilder: Grundbegriffe
 
 - (1) Was versteht man unter Bildgröße und Auflösung?
+> [!success] Lösung
+> - **Bildgröße:** Die Abmessungen eines Bildes, für die Bildschirmdarstellung typischerweise in Pixel angegeben (Breite x Höhe).
+> - **Auflösung:** Die Anzahl der Pixel pro Längeneinheit auf einem Ausgabegerät (typischerweise in **ppi** - pixels per inch). Sie bestimmt den Zusammenhang zwischen der digitalen Pixelanzahl und der physischen Druckgröße.
+
 - (2) Was versteht man unter Farbauflösung (bzw. Farbtiefe), Farbkanal und indizierter Speicherung?
+> [!success] Lösung
+> - **Farbtiefe (Farbauflösung):** Die Anzahl der Farben, die pro Pixel gespeichert werden können, ausgedrückt in Bit (z. B. 24 Bit für True Color).
+> - **Farbkanal:** Ein Teil der Bildinformation, der sich auf eine Primärkomponente eines Farbmodells bezieht (z. B. Rot-, Grün- oder Blau-Kanal im RGB-Modell).
+> - **Indizierte Speicherung:** Ein Verfahren, bei dem eine Farbtabelle (**Palette**) mit den im Bild vorkommenden Farben erstellt wird. Pro Pixel wird dann nur noch der Index in dieser Tabelle gespeichert (platzsparend).
+
 - (3) Berechnen Sie den Speicherplatzbedarf eines Bildes der Größe $1440 \times 960$ Pixel mit 56 Farben (RGB, 24 Bit/Pixel) in Byte
   - a) ohne Verwendung einer Farbtabelle
   - b) mit Verwendung einer Farbtabelle
   - c) Wie ist die Druckgröße des Bildes in cm bei einer Auflösung von 192 ppi?
+> [!success] Lösung
+> Pixelanzahl = $1440 \times 960 = 1.382.400$ Pixel
+> 
+> **a) Ohne Farbtabelle (24 Bit/Pixel):**
+> $1.382.400 \text{ px} \times 24 \text{ Bit/px} = 33.177.600 \text{ Bit}$
+> $33.177.600 / 8 = \mathbf{4.147.200 \text{ Byte}}$ (~3,95 MB)
+> 
+> **b) Mit Farbtabelle (Index-Speicherung):**
+> Für 56 Farben werden $\lceil \log_2(56) \rceil = 6 \text{ Bit}$ pro Pixel benötigt.
+> Index-Daten: $1.382.400 \times 6 = 8.294.400 \text{ Bit}$
+> Palette: $56 \text{ Farben} \times 24 \text{ Bit} = 1.344 \text{ Bit}$
+> Gesamt: $8.295.744 \text{ Bit} / 8 = \mathbf{1.036.968 \text{ Byte}}$ (~0,99 MB)
+> 
+> **c) Druckgröße bei 192 ppi:**
+> Breite: $1440 / 192 = 7,5 \text{ Zoll} \times 2,54 = \mathbf{19,05 \text{ cm}}$
+> Höhe: $960 / 192 = 5 \text{ Zoll} \times 2,54 = \mathbf{12,7 \text{ cm}}$
+
 - (4) Was ist Dithering?
+> [!success] Lösung
+> **Dithering** ist eine Technik zur Darstellung von Farbverläufen bei reduzierter Farbpalette. Dabei werden verfügbare Farben in Punktmustern so angeordnet, dass das Auge aus der Entfernung den Eindruck einer Mischfarbe oder eines sanften Übergangs erhält (optische Farbmischung).
+
 - (5) Wozu dient der Alphakanal? In welchem Farbformat wird er unterstützt? Wieviel Bit pro Pixel sind notwendig, wenn zusätzlich zu Echtfarben auch der Alphakanal mit 8 Bit berücksichtigt werden soll?
+> [!success] Lösung
+> - **Zweck:** Speicherung des Grades der Deckkraft bzw. Transparenz eines Pixels.
+> - **Formate:** Unterstützt z. B. in PNG, TIFF oder im RGBA-Modell.
+> - **Bits pro Pixel:** $24 \text{ Bit (RGB)} + 8 \text{ Bit (Alpha)} = \mathbf{32 \text{ Bit pro Pixel}}$.
 
 ### 4.1.2 Chroma-Subsampling
 
