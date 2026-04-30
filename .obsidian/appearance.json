@@ -3,5 +3,6 @@
   "showViewHeader": true,
   "enabledCssSnippets": [
     "desmos"
-  ]
+  ],
+  "cssTheme": "Modern GenZ Vibedose"
 }

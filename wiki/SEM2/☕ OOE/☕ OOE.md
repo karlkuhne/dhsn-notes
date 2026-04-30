@@ -5,5 +5,6 @@ Vorlesungsnotizen zur objektorientierten Programmierung in Java: Grundkonzepte d
 ## Vorlesungen
 
 - [[0. Java Einführung]]
+- [[1. Vererbung]]
 
 ## Übungen
