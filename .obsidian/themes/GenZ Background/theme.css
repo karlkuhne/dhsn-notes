@@ -1,0 +1,17 @@
+.theme-dark {
+	--background-primary: #151515;
+	--background-secondary: #151515;
+	--ribbon-background: #151515;
+	--status-bar-background: #151515;
+	--titlebar-background: #151515;
+	--titlebar-background-focused: #151515;
+}
+
+.theme-light {
+	--background-primary: #fff;
+	--background-secondary: #fff;
+	--ribbon-background: #fff;
+	--status-bar-background: #fff;
+	--titlebar-background: #fff;
+	--titlebar-background-focused: #fff;
+}
