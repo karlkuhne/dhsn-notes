@@ -7,11 +7,11 @@ updated: 2026-05-05
 ---
 > [!abstract] Übungsaufgaben zu den Themen aus: [[0. Physik Einführung]], [[1. Mechanik]]
 
-## 1. Kinematik (AB1)
+## Kinematik (AB1)
 
 BA Dresden, D. Gembris
 
-### 1.1 Aufgabe 1: Geschwindigkeit
+### Aufgabe 1: Geschwindigkeit
 
 > [!info] Aufgabenstellung
 > a) Berechnen Sie, wie viel m/s 100 km/h und wie viel km/h 10 m/s sind.
@@ -26,7 +26,7 @@ BA Dresden, D. Gembris
 >
 > e) Ein 300 m langer Zug überquert mit 72 km/h eine 200 m lange Brücke. Berechnen Sie, wie lange es dauert, bis der gesamte Zug die Brücke passiert hat. Formulieren Sie diese umgangssprachlich vage gestellte Frage zunächst exakt und berechnen Sie dann das Ergebnis.
 >
-### 1.2 Aufgabe 2: geradlinig gleichförmige Bewegung
+### Aufgabe 2: geradlinig gleichförmige Bewegung
 
 > [!info] Aufgabenstellung
 > Zeichnen Sie jeweils das x-t-Diagramm und das v-t-Diagramm für die folgenden Bewegungen:
@@ -37,7 +37,7 @@ BA Dresden, D. Gembris
 >
 > c) C benötigt 3 Sekunden, um vom Ursprung aus 3 m nach vorne zu gehen, bewegt sich dann mit 2 m/s für 2 Sekunden nach hinten und geht schließlich in einer Sekunde wieder 1 m nach vorne.
 >
-### 1.3 Aufgabe 3: Graphische Integration
+### Aufgabe 3: Graphische Integration
 
 > [!info] Aufgabenstellung
 > Rekonstruieren Sie das x-t-Diagramm durch graphische Integration:
@@ -48,9 +48,9 @@ Weitere Aufgaben zur Kinematik: http://www.poenitz-net.de/Physik/ 1.Mechanik/1.2
 
 
 **05.05.26**
-## 2. Dynamik (AB2)
+## Dynamik (AB2)
 
-### 2.1 Aufgabe 1: 2. Newtonsches Axiom
+### Aufgabe 1: 2. Newtonsches Axiom
 
 > [!info] Aufgabenstellung
 > a) Berechnen Sie die Kraft, die benötigt wird, um einen 1 kg schweren Körper in 3 Sekunden von 0 auf 2 m/s zu beschleunigen.
@@ -71,7 +71,7 @@ $$F = m \cdot a = 1 \text{ kg} \cdot \frac{2}{3} \text{ m/s}^2 = \frac{2}{3} \te
 
 > [!info] Aufgabenstellung
 > b) Berechnen Sie, wie schnell wird 1,5 t schweres Auto nach 10 Sekunden ist, wenn seine Reifen jede Sekunde eine Kraft von 2 kN auf die Straße übertragen.
->
+
 **Gegeben & Gesucht**
 Gegeben:
 - Masse $m=1.5 \text{ t} = 1500 \text{ kg}$
@@ -97,7 +97,7 @@ Das Auto ist nach 10 Sekunden also $13,33 \text{ m/s}$ (das entspricht etwa $48 
 
 > [!info] Aufgabenstellung
 > c) Berechnen Sie die Kraft, die auf ein 2 t schweres Fahrzeug wirkt, das mit 54 km/h auf einen Brückenpfeiler prallt und dabei in 0,1 s zum Stillstand kommt.
->
+
 **Gegeben & Gesucht**
 Gegeben:
 - Masse $m = 2 \text{ t} = 2000 \text{ kg}$
@@ -107,13 +107,12 @@ Gegeben:
 
 Gesucht: Kraft $F$
 
-> [!info] Aufgabenstellung
-> 1. Geschwindigkeitsänderung und Beschleunigung berechnen:
+
+ 1. Geschwindigkeitsänderung und Beschleunigung berechnen:
 $$\Delta v = v_1 - v_0 = 0 \text{ m/s} - 15 \text{ m/s} = -15 \text{ m/s}$$
 $$a = \frac{\Delta v}{\Delta t} = \frac{-15 \text{ m/s}}{0,1 \text{ s}} = -150 \text{ m/s}^2$$
-> [!info] Aufgabenstellung
-> *(Das Minuszeichen gibt an, dass es sich um eine Abbremsung handelt.)*
->
+(Das Minuszeichen gibt an, dass es sich um eine Abbremsung handelt.)*
+
 2. Kraft berechnen (2. Newtonsches Axiom):
 $$F = m \cdot a = 2000 \text{ kg} \cdot (-150 \text{ m/s}^2) = -300.000 \text{ N}$$
 
@@ -122,7 +121,7 @@ Die auf das Fahrzeug wirkende Kraft hat also einen Betrag von **$300.000 \text{ 
 
 > [!info] Aufgabenstellung
 > d) Berechnen Sie die Masse eines Körpers, der durch eine konstante Kraft von 10 N gleichmäßig aus der Ruhe heraus beschleunigt wird und dabei in 20 Sekunden eine Strecke von 200 m zurücklegt.
->
+
 **Gegeben & Gesucht**
 Gegeben:
 - Kraft $F = 10 \text{ N}$
@@ -133,8 +132,8 @@ Gegeben:
 Gesucht: Masse $m$
 
 1. Beschleunigung über das Weg-Zeit-Gesetz berechnen:
-> [!info] Aufgabenstellung
-> Da der Körper aus der Ruhe startet ($s_0=0, v_0=0$), gilt für die gleichmäßig beschleunigte Bewegung:
+
+Da der Körper aus der Ruhe startet ($s_0=0, v_0=0$), gilt für die gleichmäßig beschleunigte Bewegung:
 $$s = \frac{1}{2} \cdot a \cdot t^2$$
 
 Nach $a$ umstellen:
@@ -143,8 +142,7 @@ $$a = \frac{2 \cdot s}{t^2}$$
 Werte einsetzen:
 $$a = \frac{2 \cdot 200 \text{ m}}{(20 \text{ s})^2} = \frac{400 \text{ m}}{400 \text{ s}^2} = 1 \text{ m/s}^2$$
 
-> [!info] Aufgabenstellung
-> 2. Masse über das 2. Newtonsche Axiom berechnen:
+2. Masse über das 2. Newtonsche Axiom berechnen:
 $$F = m \cdot a$$
 
 Nach $m$ umstellen:
@@ -155,43 +153,43 @@ $$m = \frac{10 \text{ N}}{1 \text{ m/s}^2} = \frac{10 \text{ kg} \cdot \text{m/s
 
 Der Körper hat eine Masse von **$10 \text{ kg}$**.
 
-### 2.2 Aufgabe 2: Newtonsche Axiome
+### Aufgabe 2: Newtonsche Axiome
 
 > [!info] Aufgabenstellung
 > In einem Aufzug wirken auf eine 70 kg schwere Person die Gewichtskraft $F_G$ und die Kraft F des Bodens, auf dem die Person steht. Berechnen Sie den Betrag von F für den Fall, dass der Aufzug
 >
 > a) stillsteht, b) mit 2 m/s<sup>2</sup> nach oben beschleunigt, c) mit 2 m/s<sup>2</sup> nach unten beschleunigt, d) frei fällt.
 >
-### 2.3 Aufgabe 3: Newtonsche Axiome
+### Aufgabe 3: Newtonsche Axiome
 
 > [!info] Aufgabenstellung
 > Die beiden durch einen Faden verbundenen Gewichte rechts werden mit 20 N nach oben gezogen. Berechnen Sie die Beschleunigung und die Fadenkräfte im oberen und im unteren Faden (unter Vernachlässigung der Gewichtskraft).
 >
-### 2.4 Aufgabe 4: Newtonsche Axiome
+### Aufgabe 4: Newtonsche Axiome
 
 > [!info] Aufgabenstellung
 > Berechnen Sie jeweils die Beschleunigung der beiden reibungsfrei gelagerten und über eine Schnur auf einer ebenfalls reibungsfreien Rolle verbundenen Körper, wenn sie sich unter dem Einfluss der Gravitationskraft anfangen zu bewegen.
 >
 ![[Übungen/Übungen-_page_2_Figure_14.jpeg]]
 
-### 2.5 Aufgabe 5: Schiefe Ebene
+### Aufgabe 5: Schiefe Ebene
 
 > [!info] Aufgabenstellung
 > Auf dem einen Ende eines 1 m langen Brettes liegt ein Holzklotz mit Haftreibungszahl $\mu_{HR}$ = 0,8 und Gleitreibungszahl $\mu_{GR}$ = 0,6. Berechnen Sie, wie hoch man das Brett auf der Seite anheben kann, bis der Klotz ins Rutschen gerät und welche Geschwindigkeit er dann am unteren Ende besitzt.
 >
-### 2.6 Aufgabe 6: Schiefe Ebene (6)
+### Aufgabe 6: Schiefe Ebene (6)
 
 > [!info] Aufgabenstellung
 > Die beiden rechts abgebildeten Körper sind mit einem Seil über eine feste Rolle miteinander verbunden. Der rechte Körper sitzt mit der Gleitreibungszahl $\mu$ = 0,3 auf der um $\alpha$ = 30° geneigten Ebene und ist fünfmal so schwer wie der linke. Berechnen Sie die Beschleunigung, mit der sich der rechte Körper nach unten bewegt.
 >
-### 2.7 Aufgabe 7: Bremsweg
+### Aufgabe 7: Bremsweg
 
 > [!info] Aufgabenstellung
 > a) Berechnen Sie den Bremsweg bei einer Geschwindigkeit von 126 km/h,
 >
 > einer Reaktionszeit von einer Sekunde und einer Haftreibungszahl $\mu_{HR}$ = 0,5? Zeichnen Sie ein v-t-Diagramm. b) Berechnen Sie, wie schnell darf ein Zug fahren darf, wenn der Gleitreibungskoeffizient $\mu_{GR}$ = 0,06 beträgt und eine Bremsstrecke von höchstens 500 m vorgeschrieben ist.
 >
-### 2.8 Aufgabe 8: Beschleunigung und Inertialsysteme
+### Aufgabe 8: Beschleunigung und Inertialsysteme
 
 > [!info] Aufgabenstellung
 > Ein 40 t schweres Flugzeug mit einer Startgeschwindigkeit von 216 km/h soll von dem 100 m langen Katapult eines Flugzeugträgers abfliegen. Das riesige Schiff dreht dazu jedes Mal zusammen mit allen Begleitschiffen in den 36 km/h schnellen Wind und beschleunigt auf 54 km um zusätzlichen Auftrieb zu erzeugen.
@@ -216,7 +214,7 @@ Der Körper hat eine Masse von **$10 \text{ kg}$**.
 
 ![[Übungen/Übungen-_page_2_Picture_30.jpeg]]
 
-## 3. Kinematik (AB3)
+## Kinematik (AB3)
 
 > [!info] Aufgabenstellung
 > - 1. Ein Elektromotor beschleunigt während der ersten 40 Umdrehungen gleichmäßig aus dem Stillstand auf eine Drehzahl von 2000 Umdrehungen pro Minute.
@@ -257,26 +255,26 @@ Ergebnisse:
 | b. $s = 323.23$ m | c. $a = 5.0$ m/s <sup>2</sup> |
 | C. $W_{\text{Reibung}} = 118.515.24$ J | |
 
-## 4. Energie (AB4)
+## Energie (AB4)
 
 > [!info] Aufgabenstellung
 > Informationstechnologie-Medieninformatik; BA Dresden, D. Gembris
 >
-### 4.1 Aufgabe 1: Federspannarbeit
+### Aufgabe 1: Federspannarbeit
 
 > [!info] Aufgabenstellung
 > Zum weiteren Dehnen einer vorgespannten Feder auf 4 cm Gesamtverlängerung wird die Spannarbeit 0,06 J aufgebracht. Die Federkonstante beträgt 1 N/cm. Berechnen Sie, um welche Länge gegenüber ihrer Ruhelage die Feder anfangs gespannt war.
 >
 Zur Kontrolle: $\Delta x_1 = 2$ cm
 
-### 4.2 Aufgabe 2: Federspannarbeit
+### Aufgabe 2: Federspannarbeit
 
 > [!info] Aufgabenstellung
 > Eine Feder ist durch die Kraft $F_1 = 1.5$ N vorgespannt. Berechnen Sie die Endkraft, wenn für ein weiteres Spannen um 10 cm die Arbeit 0,25 J erforderlich ist.
 >
 Zur Kontrolle: $F_2 = 3.5$ N.
 
-### 4.3 Aufgabe 3: Jo-jo
+### Aufgabe 3: Jo-jo
 
 > [!info] Aufgabenstellung
 > Ein Jo-Jo besteht aus zwei Scheiben (Radius R<sub>s</sub> = 2,5 cm, Masse jeweils m<sub>s</sub> = 10 g) und einer Achse aus einem dünnwandigen Hohlzylinder ( $R_A = 0.5$ cm, $m_A = 2.5$ g). Die Schnur ist $L = 1$ m lang.
@@ -287,7 +285,7 @@ Zur Kontrolle: $F_2 = 3.5$ N.
 >
 Zur Kontrolle: a) $J_{ges} = 6{,}3125 \cdot 10^{-6}$ kg · m<sup>2</sup>b) $v \approx 1{,}3\frac{\text{m}}{\text{s}}$ ; $n \approx 2530 \frac{1}{\text{min}}$
 
-### 4.4 Aufgabe 4
+### Aufgabe 4
 
 > [!info] Aufgabenstellung
 > Die folgenden Aussagen sind der Alltagssprache entnommen und entsprechen nicht der physikalischen Fachsprache. Überlegen Sie zunächst jeweils, was aus physikalischer Sicht eigentlich ausgesagt werden soll; dabei kann eine Mindmap zu den Begriffen Energie, Arbeit, Leistung, Kraft, Beschleunigung, Höhenenergie, kinetische Energie, Geschwindigkeit und Masse von Nutzen sein. Übersetzen Sie dann jede Aussage in "physikalisch korrekte Sprache" - Sie werden feststellen, dass solche fachlich korrekten Formulierungen sich in der Regel nicht sehr "alltagstauglich" anhören.
@@ -316,12 +314,12 @@ Zur Kontrolle: a) $J_{ges} = 6{,}3125 \cdot 10^{-6}$ kg · m<sup>2</sup>b) $v \a
 >
 > Weitere Aufgaben zu den Themen Arbeit, Energie: http://www.mathe-physik-aufgaben.de/aufgaben\_physik1/Arb\_energ\_01A.pdf
 >
-## 5. Schwingungen (AB5)
+## Schwingungen (AB5)
 
 > [!info] Aufgabenstellung
 > Informationstechnologie-Medieninformatik; BA Dresden, D. Gembris
 >
-### 5.1 Aufgabe 1: Gedämpfte Schwingung
+### Aufgabe 1: Gedämpfte Schwingung
 
 > [!info] Aufgabenstellung
 > An einer Feder mit der Federhärte 20 N/m hängt eine Kugel der Masse 100 g. Die Kugel wird um 10 cm nach unten ausgelenkt und dann losgelassen. Reibungseffekte sollen zunächst vernachlässigt werden.
@@ -332,7 +330,7 @@ Zur Kontrolle: a) $J_{ges} = 6{,}3125 \cdot 10^{-6}$ kg · m<sup>2</sup>b) $v \a
 >
 > c) Pro Schwingungsdauer gehen etwa 5% der mechanischen Energie auf Grund von Reibungseffekten verloren. Bestimmen Sie die Abnahme der Amplitude pro Schwingungsdauer und berechnen Sie, wie groß die Amplitude nach 10 Sekunden ist.
 >
-### 5.2 Aufgabe 2: Harmonische Schwingung am Seil
+### Aufgabe 2: Harmonische Schwingung am Seil
 
 > [!info] Aufgabenstellung
 > Ein Seil wird durch gleichmäßige Auf- und Abbewegung mit f = 2,0 Hz harmonisch angeregt, wobei sich Wellen der Länge 30 cm und der Amplitude 3,0 cm bilden. Zur Zeit to = 0,0 s durchläuft der Anfang des Seils gerade den positiven (von unten nach oben) Nulldurchgang.
@@ -347,7 +345,7 @@ Zur Kontrolle: a) $J_{ges} = 6{,}3125 \cdot 10^{-6}$ kg · m<sup>2</sup>b) $v \a
 >
 > e) Lösen Sie die Teilaufgabe b) für den Fall, dass der Anfang des Wellenträgers zur Zeit $t_0$ = 0,0 s (I.) gerade den negativen Nulldurchgang durchläuft bzw. (II.) gerade maximale positive Auslenkung besitzt.
 >
-### 5.3 Zusatzaufgabe: Effektive Federmasse eines Federpendels (zum Praktikumsexperiment)
+### Zusatzaufgabe: Effektive Federmasse eines Federpendels (zum Praktikumsexperiment)
 
 > [!info] Aufgabenstellung
 > Die Formel für die Schwingungsdauer eines Federpendels, $T=2\pi\sqrt{\frac{m}{D}}$ , gilt für den Fall, dass die Masse der Feder vernachlässigbar klein ist. Wenn sie berücksichtigt wird, erfolgt dies in der Regel durch eine effektive Federmasse, die einen Bruchteil der tatsächlichen Federmasse ausmacht: $(m_F)_{eff} = b \cdot m_F$ . Mit der Schwingungsfrequenz $f = \omega_0/2\pi$ und der Schwingungsdauer $T = 2\pi/\omega_0$ ergibt sich bei Einbeziehung der effektiven Federmasse:
@@ -414,7 +412,7 @@ $$
 >
 > Quelle: http://theissenonline.de/Physik/Federpendel\_Effektive\_Federmasse.pdf
 >
-## 6. Optik (AB6)
+## Optik (AB6)
 
 > [!info] Aufgabenstellung
 > Medieninformatik, BA Dresden, D. Gembris
@@ -440,7 +438,7 @@ $$
 >
 > Weitere Aufgaben zur Optik: https://physikaufgaben.de/index.php?&tab=7
 >
-## 7. Elektrotechnik (AB7)
+## Elektrotechnik (AB7)
 
 > [!info] Aufgabenstellung
 > Medieninformatik, BA Dresden, D. Gembris
@@ -514,7 +512,7 @@ $$
 >
 > **A7.2**) aus Aluminium ( $\rho_{Al} = 30 \cdot 10^{-3} \frac{\Omega \text{mm}^2}{\text{m}}$ , $d_{Al} = 2.7 \frac{\text{g}}{\text{cm}^3}$ ) hergestellt wird.
 >
-## 8. Elektrotechnik (AB8)
+## Elektrotechnik (AB8)
 
 > [!info] Aufgabenstellung
 > Medieninformatik, BA Dresden, D. Gembris
@@ -555,7 +553,7 @@ $$
 >
 > d) Erläutern Sie, wie die Ladung, die Feldstärke und die Spannung ändert, wenn die Vergrößerung des Plattenabstandes nach Abklemmen der Spannungsquelle erfolgt.
 >
-## 9. Magnetische Felder (AB9)
+## Magnetische Felder (AB9)
 
 > [!info] Aufgabenstellung
 > A1) (\*/\*\*\*) Geben Sie die Eigenschaften eines auf einer schlanken Spule basierenden Elektromagneten an, damit er ein möglichst starkes Magnetfeld erzeugt
@@ -590,7 +588,7 @@ $$
 >
 > Quelle: https://physikaufgaben.de
 >
-## 10. Übungsblatt (AB10)
+## Übungsblatt (AB10)
 
 MI, BA Dresden, D. Gembris
 
@@ -608,7 +606,7 @@ MI, BA Dresden, D. Gembris
 > [!info] Aufgabenstellung
 > Zusätzlich: s. Arbeitsblatt "Netzwerk-Berechnung\_Aufgaben.pdf"
 >
-## 11. Übungsblatt (AB11)
+## Übungsblatt (AB11)
 
 MI, BA Dresden, D. Gembris
 
@@ -632,7 +630,7 @@ MI, BA Dresden, D. Gembris
 >
 ![[Übungen/Übungen-_page_20_Figure_11.jpeg]]
 
-## 12. Übungsblatt (AB12)
+## Übungsblatt (AB12)
 
 > [!info] Aufgabenstellung
 > Wechselstrom, MI, D. Gembris, BA Dresden
@@ -673,7 +671,7 @@ $2T$
 >
 > c) den Effektivwert
 >
-### 12.1 A3) Berechnen Sie für die in den
+### A3) Berechnen Sie für die in den
 
 > [!info] Aufgabenstellung
 > folgenden Abbildungen dargestellten, periodisch verlaufenden Spannungen den Effektivwert!
