@@ -1,22 +1,16 @@
 ---
-tags: [sem2, ooe]
-type: lecture
-sources: ["Übungen.md"]
-date: 2026-05-08
-updated: 2026-05-08
+tags:
+  - sem2
+  - ooe
+type: exercise
+date: 2026-05-07
+updated: 2026-05-07
 ---
-
-> [!info] Dieses Thema baut auf folgenden Grundlagen auf:
-> - [[1. Konzepte#1.1 Interfaces|Interfaces]] (OOE)
-> - [[1. Konzepte#1.6 Aggregation und Komposition|Vererbung vs. Komposition]] (OOE)
-> - [[1. Konzepte#1.7 Generics|Generics]] (OOE)
-> - [[../SEM1/⚙️ TGI/0. Informatik-Grundbegriffe#OOP|OOP Grundbegriffe]] (TGI)
-
 **08.05.26**
 
 ## 2.1 Erwärmung 1: Vererbung vs. Komposition
 
-> [!abstract] Aufgabe: Kategorisieren Sie die folgenden Beziehungen als Vererbung (Ist-ein) oder Komposition (Hat-ein):
+> [!info] Aufgabe: Kategorisieren Sie die folgenden Beziehungen als Vererbung (Ist-ein) oder Komposition (Hat-ein):
 
 - **Küche und Toaster**: Komposition
 - **Toaster und Küchengerät**: Vererbung
@@ -28,14 +22,14 @@ updated: 2026-05-08
 
 Stellen Sie sich vor, es gibt ein Interface `FernBedienbar` (`RemoteControllable`).
 
-> [!question] Nennen Sie drei sehr unterschiedliche Dinge, die das Interface implementieren würden, vielleicht je eines aus dem Haushalt, aus einer Fabrik, aus einer Webapplikation.
+> [!info] Nennen Sie drei sehr unterschiedliche Dinge, die das Interface implementieren würden, vielleicht je eines aus dem Haushalt, aus einer Fabrik, aus einer Webapplikation.
 
 Das Interface `FernBedienbar` bedient verschiedene Klassen von:
 - Smart-Lampen (Haushalt)
 - Türen (Drehtür, Schiebetür, Tore - Fabrik)
 - Interface reload / Component remount (Webapplikation)
 
-> [!question] Was wären Methoden, die alle Dinge, die Fernbedienbar sind, gemeinsam haben?
+> [!info] Was wären Methoden, die alle Dinge, die Fernbedienbar sind, gemeinsam haben?
 
 - `toggle()`
 - `bewegen()` / `action()`
@@ -84,7 +78,7 @@ item.print(msg);
 item.print(text);
 ```
 
-> [!question] Was ist die Konsolenausgabe?
+> [!info] Was ist die Konsolenausgabe?
 
 ```text
 Beta-Show
@@ -99,7 +93,7 @@ Alpha-Obj
 2. **`item.print(msg)`**: Kompilierzeit (Early-Binding), da Overloading (Überladen) statisch aufgelöst wird.
 3. **`item.print(text)`**: Kompilierzeit, da der statische Typ von `item` `Alpha` ist und `Alpha` nur `print(Object)` kennt.
 
-> [!question] Änderung auf `Beta item = new Beta();`
+> [!info] Änderung auf `Beta item = new Beta();`
 > Was passiert jetzt bei `item.print(text)`?
 > - Ausgabe: `Beta-String`. Da der statische Typ nun `Beta` ist, wird die passendere Methode `print(String)` beim Kompilieren gewählt.
 
@@ -135,13 +129,3 @@ class FrachtZone<T extends Verderblich> {
     }
 }
 ```
-
----
-## Review & Learning
-> [!summary] Zusammenfassung
-> Diese Übung behandelt Kernkonzepte der objektorientierten Programmierung in Java, insbesondere den Unterschied zwischen Vererbung und Komposition, die Nutzung von Interfaces zur Entkopplung (Fernbedienung, Payment) und die Mechanismen von statischem vs. dynamischem Binding. Zudem wird die Typsicherheit durch Generics am Beispiel eines Frachtsystems vertieft.
-
-> [!question] Mögliche Prüfungsfragen
-> - Erklären Sie das Liskovsche Substitutionsprinzip am Beispiel von Heater/Thermometer.
-> - Was ist der Unterschied zwischen Early-Binding und Late-Binding bei überladenen vs. überschriebenen Methoden?
-> - Wie schränkt man in Java einen generischen Typen auf ein Interface ein (Bounded Type Parameters)?

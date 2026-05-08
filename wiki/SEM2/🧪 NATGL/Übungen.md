@@ -1,12 +1,13 @@
 ---
-tags: [sem2, natgl]
-type: lecture
-sources: ["Aufgaben_Sammlung_Medieninformatik_Stud.pdf"]
+tags:
+  - sem2
+  - natgl
+type: exercise
+sources:
+  - Aufgaben_Sammlung_Medieninformatik_Stud.pdf
 date: 2026-05-05
 updated: 2026-05-05
 ---
-> [!abstract] Übungsaufgaben zu den Themen aus: [[0. Physik Einführung]], [[1. Mechanik]]
-
 ## Kinematik (AB1)
 
 BA Dresden, D. Gembris

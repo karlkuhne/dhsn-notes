@@ -1,7 +1,10 @@
 ---
-tags: [sem2, bidru]
-type: lecture
-sources: ["Aufgaben_BB.pdf"]
+tags:
+  - sem2
+  - bidru
+type: exercise
+sources:
+  - Aufgaben_BB.pdf
 date: 2026-04-29
 updated: 2026-04-29
 ---
