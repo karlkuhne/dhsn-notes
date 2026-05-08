@@ -9,4 +9,4 @@ Vorlesungsnotizen zur objektorientierten Programmierung in Java: Grundkonzepte d
 
 ## Übungen
 
-- [[2. Übungen OOE]]
+- [[Übungen]]
