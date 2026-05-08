@@ -1,3 +1,3 @@
 ```bash
-marker_single marker/input/2-Farbe.pdf --output_dir marker/output --force_ocr
+marker_single marker/input/3-Drucktechnik.pdf --output_dir marker/output --force_ocr
 ```
