@@ -55,7 +55,6 @@ Weitere Aufgaben zur Kinematik: http://www.poenitz-net.de/Physik/ 1.Mechanik/1.2
 > [!info] Aufgabenstellung
 > a) Berechnen Sie die Kraft, die benötigt wird, um einen 1 kg schweren Körper in 3 Sekunden von 0 auf 2 m/s zu beschleunigen.
 
-**Gegeben & Gesucht**
 Gegeben:
 - Masse $m = 1 \text{ kg}$
 - Zeit $\Delta t = 3 \text{ s}$
@@ -72,7 +71,6 @@ $$F = m \cdot a = 1 \text{ kg} \cdot \frac{2}{3} \text{ m/s}^2 = \frac{2}{3} \te
 > [!info] Aufgabenstellung
 > b) Berechnen Sie, wie schnell wird 1,5 t schweres Auto nach 10 Sekunden ist, wenn seine Reifen jede Sekunde eine Kraft von 2 kN auf die Straße übertragen.
 
-**Gegeben & Gesucht**
 Gegeben:
 - Masse $m=1.5 \text{ t} = 1500 \text{ kg}$
 - Zeit $\Delta t = 10 \text{ s}$
@@ -98,7 +96,6 @@ Das Auto ist nach 10 Sekunden also $13,33 \text{ m/s}$ (das entspricht etwa $48 
 > [!info] Aufgabenstellung
 > c) Berechnen Sie die Kraft, die auf ein 2 t schweres Fahrzeug wirkt, das mit 54 km/h auf einen Brückenpfeiler prallt und dabei in 0,1 s zum Stillstand kommt.
 
-**Gegeben & Gesucht**
 Gegeben:
 - Masse $m = 2 \text{ t} = 2000 \text{ kg}$
 - Anfangsgeschwindigkeit $v_0 = 54 \text{ km/h} = \frac{54}{3,6} \text{ m/s} = 15 \text{ m/s}$
@@ -122,7 +119,6 @@ Die auf das Fahrzeug wirkende Kraft hat also einen Betrag von **$300.000 \text{ 
 > [!info] Aufgabenstellung
 > d) Berechnen Sie die Masse eines Körpers, der durch eine konstante Kraft von 10 N gleichmäßig aus der Ruhe heraus beschleunigt wird und dabei in 20 Sekunden eine Strecke von 200 m zurücklegt.
 
-**Gegeben & Gesucht**
 Gegeben:
 - Kraft $F = 10 \text{ N}$
 - Zeit $t = 20 \text{ s}$
@@ -160,28 +156,207 @@ Der Körper hat eine Masse von **$10 \text{ kg}$**.
 >
 > a) stillsteht, b) mit 2 m/s<sup>2</sup> nach oben beschleunigt, c) mit 2 m/s<sup>2</sup> nach unten beschleunigt, d) frei fällt.
 >
+
+Gegeben:
+- Masse der Person $m = 70 \text{ kg}$
+- Fallbeschleunigung $g \approx 9,81 \text{ m/s}^2$
+
+Gesucht:
+- Kraft des Bodens $F$ in vier verschiedenen Fällen
+
+**Lösungsansatz:**
+Nach dem 2. Newtonschen Axiom gilt für die resultierende Kraft: $F_{\text{res}} = m \cdot a$
+Auf die Person wirken zwei Kräfte entlang der vertikalen Achse:
+1. Die Gewichtskraft $F_G = m \cdot g$ (wirkt stets nach unten)
+2. Die Normalkraft / Kraft des Bodens $F$ (wirkt nach oben)
+
+Die Kräftebilanz lautet: (Gewichtskraft negativ weil diese nach unten wirkt)
+$F_{\text{res}} = F - F_G$
+
+Wir setzen dies in das Newtonsche Axiom ein und stellen nach der gesuchten Kraft $F$ um:
+
+1. $F_{\text{res}} = F - F_G$ einsetzen in $F_{\text{res}} = m \cdot a$
+   $$F - F_G = m \cdot a$$$$F = F_G + m \cdot a$$
+2. $F_G = m \cdot g$ einsetzen
+   $$F = m \cdot g + m \cdot a$$
+   $$F = m \cdot (g + a)$$
+
+**a) Aufzug stillsteht:**
+- Die Beschleunigung ist $a = 0 \text{ m/s}^2$.
+- $F = m \cdot (g + 0) = 70 \text{ kg} \cdot 9,81 \text{ m/s}^2 = 686,7 \text{ N}$
+
+**b) Aufzug beschleunigt mit $2 \text{ m/s}^2$ nach oben:**
+- Die Beschleunigung ist $a = +2 \text{ m/s}^2$.
+- $F = 70 \text{ kg} \cdot (9,81 \text{ m/s}^2 + 2 \text{ m/s}^2) = 70 \text{ kg} \cdot 11,81 \text{ m/s}^2 = 826,7 \text{ N}$
+- *(Tipp: Die Person drückt stärker auf den Boden und fühlt sich "schwerer")*
+
+**c) Aufzug beschleunigt mit $2 \text{ m/s}^2$ nach unten:**
+- Die Beschleunigung ist $a = -2 \text{ m/s}^2$.
+- $F = 70 \text{ kg} \cdot (9,81 \text{ m/s}^2 - 2 \text{ m/s}^2) = 70 \text{ kg} \cdot 7,81 \text{ m/s}^2 = 546,7 \text{ N}$
+- *(Tipp: Die Person fühlt sich "leichter")*
+
+**d) Aufzug fällt frei:**
+- Im freien Fall ist die Beschleunigung des Aufzugs gleich der Fallbeschleunigung nach unten, also $a = -g = -9,81 \text{ m/s}^2$.
+- $F = 70 \text{ kg} \cdot (9,81 \text{ m/s}^2 - 9,81 \text{ m/s}^2) = 70 \text{ kg} \cdot 0 \text{ m/s}^2 = 0 \text{ N}$
+- *(Die Person hebt vom Boden ab bzw. ist schwerelos)*
+
+
 ### Aufgabe 3: Newtonsche Axiome
 
 > [!info] Aufgabenstellung
-> Die beiden durch einen Faden verbundenen Gewichte rechts werden mit 20 N nach oben gezogen. Berechnen Sie die Beschleunigung und die Fadenkräfte im oberen und im unteren Faden (unter Vernachlässigung der Gewichtskraft).
->
+> Die beiden durch einen Faden verbundenen Gewichte werden mit 20 N nach oben gezogen. Berechnen Sie die Beschleunigung und die Fadenkräfte im oberen und im unteren Faden (unter Vernachlässigung der Gewichtskraft).
+> 
+>![[Pasted image 20260505094435.png]]
+
+Gegeben (aus Bildinformationen im Dokument):
+- Zugkraft $F_{zug} = 20 \text{ N}$ nach oben
+- Masse 1 (oben) $m_1 = 6 \text{ kg}$
+- Masse 2 (unten) $m_2 = 4 \text{ kg}$
+- Gewichtskraft wird vernachlässigt ($g = 0$)
+
+Gesucht: 
+- Beschleunigung $a$
+- Kraft im oberen Faden $F_{oben}$
+- Kraft im unteren Faden $F_{unten}$
+
+**Lösung:**
+
+1. **Beschleunigung berechnen:**
+
+Da die Gewichtskraft vernachlässigt wird, ist die einzige von außen wirkende Kraft die Zugkraft von $20 \text{ N}$. Diese Kraft beschleunigt das gesamte System, also beide Massen zusammen ($m_{ges} = m_1 + m_2 = 6 \text{ kg} + 4 \text{ kg} = 10 \text{ kg}$).
+
+Nach dem 2. Newtonschen Axiom ($F = m \cdot a$) gilt:
+$$a = \frac{F_{zug}}{m_{ges}} = \frac{20 \text{ N}}{10 \text{ kg}} = 2 \text{ m/s}^2$$
+Die Massen werden mit $2 \text{ m/s}^2$ nach oben beschleunigt.
+
+2. **Fadenkraft im oberen Faden:**
+Der obere Faden greift am gesamten System an und überträgt die vorgegebene Zugkraft.
+$$F_{oben} = F_{zug} = 20 \text{ N}$$
+
+3. **Fadenkraft im unteren Faden:**
+Der untere Faden verbindet die beiden Massen. Er muss nur die Kraft aufbringen, um die untere Masse ($m_2 = 4 \text{ kg}$) mit der Systembeschleunigung ($a = 2 \text{ m/s}^2$) zu bewegen.
+Nach dem 2. Newtonschen Axiom für die untere Masse gilt:
+$$F_{unten} = m_2 \cdot a = 4 \text{ kg} \cdot 2 \text{ m/s}^2 = 8 \text{ N}$$
+
+
 ### Aufgabe 4: Newtonsche Axiome
 
 > [!info] Aufgabenstellung
 > Berechnen Sie jeweils die Beschleunigung der beiden reibungsfrei gelagerten und über eine Schnur auf einer ebenfalls reibungsfreien Rolle verbundenen Körper, wenn sie sich unter dem Einfluss der Gravitationskraft anfangen zu bewegen.
->
-![[Übungen/Übungen-_page_2_Figure_14.jpeg]]
+> 
+> ![[Pasted image 20260505094522.png]]
+
+**Lösung:**
+
+In beiden Fällen (a und b) verwenden wir das 2. Newtonsche Axiom ($F_{res} = m_{ges} \cdot a$) für das Gesamtsystem, um die Beschleunigung zu berechnen. Die zu beschleunigende Gesamtmasse ist jeweils $m_{ges} = m_1 + m_2$. Wir nehmen die Erdbeschleunigung $g \approx 9,81 \text{ m/s}^2$ an.
+
+**Fall a) Tisch und hängende Masse**
+- Masse auf dem Tisch: $m_1 = 15 \text{ kg}$
+- Hängende Masse: $m_2 = 5 \text{ kg}$
+
+Da die Auflagefläche reibungsfrei ist, ist die einzige antreibende Kraft für das Gesamtsystem die Gewichtskraft der hängenden Masse $m_2$.
+$F_{res} = m_2 \cdot g$
+
+Die resultierende Beschleunigung ist:
+$$a = \frac{F_{res}}{m_{ges}} = \frac{m_2 \cdot g}{m_1 + m_2}$$
+$$a = \frac{5 \text{ kg} \cdot 9,81 \text{ m/s}^2}{15 \text{ kg} + 5 \text{ kg}} = \frac{49,05 \text{ N}}{20 \text{ kg}} = 2,4525 \text{ m/s}^2 \approx 2,45 \text{ m/s}^2$$
+
+**Fall b) Atwoodsche Fallmaschine (zwei hängende Massen)**
+- Linke Masse: $m_1 = 5 \text{ kg}$
+- Rechte Masse: $m_2 = 15 \text{ kg}$
+
+Hier wirken die Gewichtskräfte beider Massen in entgegengesetzte Richtungen bezogen auf die Seilbewegung. Die resultierende antreibende Kraft ist die Differenz der beiden Gewichtskräfte.
+$F_{res} = m_2 \cdot g - m_1 \cdot g = (m_2 - m_1) \cdot g$
+
+Die resultierende Beschleunigung ist:
+$$a = \frac{F_{res}}{m_{ges}} = \frac{(m_2 - m_1) \cdot g}{m_1 + m_2}$$
+$$a = \frac{(15 \text{ kg} - 5 \text{ kg}) \cdot 9,81 \text{ m/s}^2}{15 \text{ kg} + 5 \text{ kg}} = \frac{10 \text{ kg} \cdot 9,81 \text{ m/s}^2}{20 \text{ kg}} = \frac{98,1 \text{ N}}{20 \text{ kg}} = 4,905 \text{ m/s}^2 \approx 4,91 \text{ m/s}^2$$
 
 ### Aufgabe 5: Schiefe Ebene
 
 > [!info] Aufgabenstellung
 > Auf dem einen Ende eines 1 m langen Brettes liegt ein Holzklotz mit Haftreibungszahl $\mu_{HR}$ = 0,8 und Gleitreibungszahl $\mu_{GR}$ = 0,6. Berechnen Sie, wie hoch man das Brett auf der Seite anheben kann, bis der Klotz ins Rutschen gerät und welche Geschwindigkeit er dann am unteren Ende besitzt.
->
+> 
+> ![[Pasted image 20260505102326.png]]
+
+Gegeben:
+- Länge der schiefen Ebene $l = 1 \text{ m}$
+- Haftreibungszahl $\mu_{HR} = 0,8$
+- Gleitreibungszahl $\mu_{GR} = 0,6$
+- Erdbeschleunigung $g = 9,81 \text{ m/s}^2$
+
+Gesucht:
+- Höhe $h$ des Brettendes, bei der der Klotz zu rutschen beginnt
+- Geschwindigkeit $v$ am unteren Ende
+
+**Lösung:**
+
+**1. Höhe bestimmen (Grenzfall Haftung)**
+
+Der Klotz beginnt genau dann zu rutschen, wenn die Hangabtriebskraft $F_H$ gleich der maximalen Haftreibungskraft $F_{HR}$ ist.
+- Hangabtriebskraft: $F_H = m \cdot g \cdot \sin(\alpha)$
+- Haftreibungskraft: $F_{HR} = \mu_{HR} \cdot F_N = \mu_{HR} \cdot m \cdot g \cdot \cos(\alpha)$
+
+Gleichsetzen:
+$$m \cdot g \cdot \sin(\alpha) = \mu_{HR} \cdot m \cdot g \cdot \cos(\alpha)$$
+
+Durch $m \cdot g$ und $\cos(\alpha)$ teilen ergibt:
+$$\tan(\alpha) = \mu_{HR}$$
+
+Den kritischen Winkel $\alpha$ berechnen:
+$$\alpha = \arctan(0,8) \approx 38,66^\circ$$
+
+Nun können wir mit der Länge des Brettes ($l = 1 \text{ m}$) und dem Winkel die Höhe $h$ berechnen. Im rechtwinkligen Dreieck gilt: $\sin(\alpha) = \frac{h}{l}$
+$$h = l \cdot \sin(\alpha) = 1 \text{ m} \cdot \sin(38,66^\circ) \approx 0,625 \text{ m}$$
+
+Man kann das Brett also ca. **$62,5 \text{ cm}$** anheben, bevor der Klotz ins Rutschen gerät.
+
+```tikz
+\begin{document}
+\begin{tikzpicture}
+
+  \draw[thick] (0,0) -- (4,0) -- (4,3) -- cycle;
+
+  \draw (3.8,0) -- (3.8,0.2) -- (4,0.2);
+
+  \draw (1,0) arc[start angle=0, end angle=36.87, radius=1];
+
+  \node[above left] at (2,1.5) {$l = 1$ m};
+  \node[right] at (4,1.5) {$h \approx 62.5$ cm};
+  \node[below] at (2,0) {Boden};
+  \node[above right] at (4,3) {Angehobenes Ende};
+  \node[below] at (0.5,0) {$\alpha \approx 38.7^\circ$};
+
+\end{tikzpicture}
+\end{document}
+```
+
+
+**2. Endgeschwindigkeit bestimmen**
+
+Sobald der Klotz rutscht, wirkt die Gleitreibung. Wir berechnen die resultierende Kraft parallel zur schiefen Ebene:
+$$F_{res} = F_H - F_{GR} = m \cdot g \cdot \sin(\alpha) - \mu_{GR} \cdot m \cdot g \cdot \cos(\alpha)$$
+
+Daraus ergibt sich die Beschleunigung $a = \frac{F_{res}}{m}$:
+$$a = g \cdot (\sin(\alpha) - \mu_{GR} \cdot \cos(\alpha))$$
+
+Werte einsetzen ($\alpha \approx 38,66^\circ$):
+$$a = 9,81 \text{ m/s}^2 \cdot (\sin(38,66^\circ) - 0,6 \cdot \cos(38,66^\circ))$$
+Da wir wissen, dass $\sin(\alpha) = 0,625$ und $\cos(\alpha) = \sqrt{1 - \sin^2(\alpha)} = \sqrt{1 - 0,625^2} \approx 0,781$:
+$$a = 9,81 \cdot (0,625 - 0,6 \cdot 0,781) = 9,81 \cdot (0,625 - 0,4686) = 9,81 \cdot 0,1564 \approx 1,53 \text{ m/s}^2$$
+
+Der Klotz bewegt sich gleichmäßig beschleunigt aus der Ruhe ($v_0 = 0$). Wir nutzen die Formel $v^2 = 2 \cdot a \cdot s$, wobei der zurückgelegte Weg $s$ der Länge des Brettes $l = 1 \text{ m}$ entspricht:
+$$v = \sqrt{2 \cdot a \cdot l}$$
+$$v = \sqrt{2 \cdot 1,53 \text{ m/s}^2 \cdot 1 \text{ m}} = \sqrt{3,06 \text{ m}^2/\text{s}^2} \approx 1,75 \text{ m/s}$$
+
+Die Geschwindigkeit des Klotzes am unteren Ende beträgt ca. **$1,75 \text{ m/s}$**.
+
 ### Aufgabe 6: Schiefe Ebene (6)
 
 > [!info] Aufgabenstellung
 > Die beiden rechts abgebildeten Körper sind mit einem Seil über eine feste Rolle miteinander verbunden. Der rechte Körper sitzt mit der Gleitreibungszahl $\mu$ = 0,3 auf der um $\alpha$ = 30° geneigten Ebene und ist fünfmal so schwer wie der linke. Berechnen Sie die Beschleunigung, mit der sich der rechte Körper nach unten bewegt.
->
+> 
+>![[Pasted image 20260505094701.png]]
 ### Aufgabe 7: Bremsweg
 
 > [!info] Aufgabenstellung
@@ -201,71 +376,188 @@ Der Körper hat eine Masse von **$10 \text{ kg}$**.
 > c) Berechnen Sie die notwendige Beschleunigung auf dem Katapult.
 >
 > d) Berechnen Sie die Kraft, die das Vorderrad des Flugzeuges übertragen muss, an dem der Katapultschlitten festgehakt ist.
->
-![[Übungen/Übungen-_page_2_Figure_28.jpeg]]
 
-20 N
+Gegeben:
+- Masse Flugzeug $m = 40 \text{ t} = 40.000 \text{ kg}$
+- Nötige Startgeschwindigkeit (Airspeed) $v_{start} = 216 \text{ km/h} = 60 \text{ m/s}$
+- Länge des Katapults $s = 100 \text{ m}$
+- Windgeschwindigkeit (absolut) $v_{wind} = 36 \text{ km/h} = 10 \text{ m/s}$
+- Schiffsgeschwindigkeit (absolut) $v_{schiff} = 54 \text{ km/h} = 15 \text{ m/s}$ *(Anmerkung: Im Text fehlt " /h", was aber logisch ist)*
 
-6 kg
+**Lösung:**
 
-4 kg
+**a) Windgeschwindigkeit auf dem Flugdeck (relativ)**
+Das Schiff fährt direkt gegen den Wind. Aus Sicht eines Beobachters auf dem Deck addieren sich daher die Geschwindigkeiten.
+$$v_{deckwind} = v_{wind} + v_{schiff} = 36 \text{ km/h} + 54 \text{ km/h} = 90 \text{ km/h} = 25 \text{ m/s}$$
+Die relative Windgeschwindigkeit auf dem Flugdeck beträgt **$90 \text{ km/h}$** (bzw. $25 \text{ m/s}$).
 
-![[Übungen/Übungen-_page_2_Picture_29.jpeg]]
+**b) Geschwindigkeit des Flugzeugs relativ zum Flugdeck**
+Um abzuheben, braucht das Flugzeug eine Geschwindigkeit relativ zur umgebenden Luft von $216 \text{ km/h}$. Da der Wind bereits mit $90 \text{ km/h}$ über das Deck weht, muss das Katapult nur noch die Differenz aufbringen.
+$$v_{relativ} = v_{start} - v_{deckwind} = 216 \text{ km/h} - 90 \text{ km/h} = 126 \text{ km/h} = 35 \text{ m/s}$$
+Das Flugzeug muss relativ zum Deck eine Geschwindigkeit von **$126 \text{ km/h}$** (bzw. $35 \text{ m/s}$) erreichen.
 
-![[Übungen/Übungen-_page_2_Picture_30.jpeg]]
+**c) Notwendige Beschleunigung auf dem Katapult**
+Das Flugzeug wird aus dem Stillstand ($v_0 = 0$) über die Strecke $s = 100 \text{ m}$ auf $v_{relativ} = 35 \text{ m/s}$ (vgl. b) beschleunigt. Wir nutzen die Formel der gleichmäßig beschleunigten Bewegung ohne Anfangsgeschwindigkeit: $v^2 = 2 \cdot a \cdot s$.
+Nach $a$ umgestellt:
+$$a = \frac{v^2}{2 \cdot s}$$
+$$a = \frac{(35 \text{ m/s})^2}{2 \cdot 100 \text{ m}} = \frac{1225 \text{ m}^2/\text{s}^2}{200 \text{ m}} = 6,125 \text{ m/s}^2$$
+Die notwendige Beschleunigung auf dem Katapult beträgt **$6,125 \text{ m/s}^2$**.
+
+**d) Kraft am Vorderrad**
+Die benötigte Kraft berechnet sich aus dem 2. Newtonschen Axiom ($F = m \cdot a$).
+$$F = 40.000 \text{ kg} \cdot 6,125 \text{ m/s}^2 = 245.000 \text{ N} = 245 \text{ kN}$$
+Der Katapultschlitten muss eine Kraft von **$245 \text{ kN}$** auf das Vorderrad übertragen.
 
 ## Kinematik (AB3)
 
-> [!info] Aufgabenstellung
-> - 1. Ein Elektromotor beschleunigt während der ersten 40 Umdrehungen gleichmäßig aus dem Stillstand auf eine Drehzahl von 2000 Umdrehungen pro Minute.
-> - a. Berechnen Sie die Winkelbeschleunigung des Elektromotors!
-> - b. Berechnen Sie die Zeit, die der Elektromotor benötigt, um die o.g. Drehzahl zu erreichen!
-> - 2. Ein Kraftfahrzeug mit einer Masse von 1200 kg beschleunigt gleichmäßig mit 1,1 m/s<sup>2</sup> von 0 km/h auf 96 km/h (Frage: gelingt dies mit einer festen Einstellung des Gaspedals?). Die Rollreibungskraft beträgt 240 N. Für die Luftreibungskraft (turbulente Reibung) gilt die Gleichung $|\vec{F}_{Luff}| = \frac{1}{2} \cdot \rho_{Luff} \cdot c_w \cdot A \cdot v^2$ (mit einer Luftdichte $\rho_{Luff} = 1,293$ kg/m<sup>3</sup>, einem Luftwiderstandsbeiwert $c_w$ = 0,29 und A = 1,9m<sup>2</sup>, der Frontfläche des Fahrzeugs). Berechnen Sie..
-> - a. .. die Zeitdauer des Beschleunigungsvorgangs!
-> - b. .. die während des Beschleunigungsvorgangs zurückgelegte Strecke!
-> - c. .. die während des Beschleunigungsvorgangs verrichtete Reibungsarbeit (für Rollreibung und turbulente Reibung)!
-> - 3. Auf einer sich drehenden Schreibe liegt im Abstand von 50 cm von der Drehachse (=Symmetrieachse) eine (punktförmige) Masse von 1 kg. Berechnen Sie die Drehzahl, bis zu welcher die Masse im o.g. Abstand auf der Scheibe unverändert liegen bleibt, wenn die Haftreibungszahl 0,3 beträgt!
->
-> 4. In der Fahrschule lernt man folgende Formel für den Bremsweg in Metern bei einer normalen Bremsung:
->
-> $\frac{\text{Geschwindigkeit in km/h}}{10} \times \frac{\text{Geschwindigkeit in km/h}}{10}$
->
-> Berechnen Sie den zugrundeliegenden Reibungskoeffizienten, der als konstant angenommen wird, und interpretieren Sie das Ergebnis
->
-> 5. Impuls: Eine Rakete mit einer Masse von 200 t soll von der Erdoberfläche aus senkrecht starten.
->
-> a) Berechnen Sie die Schubkraft, die auf die Rakete wirken muss, damit sie gerade abhebt.
->
-> b) In einer Sekunde werden Verbrennungsgase der Masse 0,74 t mit der Geschwindigkeit
->
-> 4.0 km/s ausgestoßen. Berechnen Sie die mittlere Schubkraft, die dadurch hervorgerufen wird.
->
-> c) Berechnen Sie die mittlere Beschleunigung, mit der die Rakete gehoben wird.
->
-> D. Gembris, BA Dresden
->
-Ergebnisse:
+### Aufgabe 1: Winkelbeschleunigung
 
-| LIKEDIIISSE. | 3 $n < 23,17 \cdot 1/min$ |
-|----------------------------------------|-------------------------------|
-| 1 a. $\alpha$ = 87,27 s <sup>-2</sup> | |
-| b. $t_{\text{Ende}} = 2.4$ s | $4 \mu = 0.39$ |
-| 2 a. $t = 24,24$ s | 5 a. $F_{min}$ = 1.96 MN |
-| | b. $F = 3.0$ MN |
-| b. $s = 323.23$ m | c. $a = 5.0$ m/s <sup>2</sup> |
-| C. $W_{\text{Reibung}} = 118.515.24$ J | |
+> [!info] Aufgabenstellung
+> Ein Elektromotor beschleunigt während der ersten 40 Umdrehungen gleichmäßig aus dem Stillstand auf eine Drehzahl von 2000 Umdrehungen pro Minute.
+> 
+> a) Berechnen Sie die Winkelbeschleunigung des Elektromotors!
+> b) Berechnen Sie die Zeit, die der Elektromotor benötigt, um die o.g. Drehzahl zu erreichen!
+
+**Lösung a) Winkelbeschleunigung:**
+
+Gegeben:
+- Anfangswinkelgeschwindigkeit $\omega_0 = 0 \text{ s}^{-1}$ (Da der Motor aus dem *Stillstand* anläuft)
+- Anzahl Umdrehungen $N = 40$
+- Enddrehzahl $n = 2000 \text{ min}^{-1}$ (Das ist die Frequenz der Drehung am Ende der Beschleunigungsphase)
+
+Gesucht: Winkelbeschleunigung $\alpha$ (Gibt an, wie schnell die Drehgeschwindigkeit zunimmt, Einheit $\text{s}^{-2}$)
+
+**Schritt 1: Alle Werte in das physikalische Standardsystem (SI-Einheiten) und ins Bogenmaß (Radiant) umrechnen.**
+Um mit den physikalischen Formeln rechnen zu können, müssen wir Umdrehungen in Winkel und Minuten in Sekunden umwandeln.
+
+- **Zurückgelegter Drehwinkel $\varphi$:** 
+  Ein Vollkreis (eine Umdrehung) entspricht einem Winkel von $360^\circ$ oder im Bogenmaß $2\pi$ Radiant. Bei 40 Umdrehungen ist der Gesamtwinkel also das 40-fache von $2\pi$.
+  $$\varphi = N \cdot 2\pi = 40 \cdot 2\pi = 80\pi \text{ rad}$$
+  
+- **Endwinkelgeschwindigkeit $\omega$:**
+  Zuerst rechnen wir die Drehzahl $n$ von Umdrehungen pro Minute in Umdrehungen pro Sekunde um (durch 60 teilen):
+  $$n = \frac{2000}{60} \text{ s}^{-1} = \frac{100}{3} \text{ s}^{-1}$$
+  Da jede Umdrehung einem Winkel von $2\pi$ entspricht, multiplizieren wir diese Frequenz mit $2\pi$, um die Winkelgeschwindigkeit $\omega$ (Winkel pro Sekunde) zu erhalten:
+  $$\omega = 2\pi \cdot n = 2\pi \cdot \frac{100}{3} \text{ s}^{-1} = \frac{200\pi}{3} \text{ s}^{-1} \approx 209,44 \text{ s}^{-1}$$
+
+**Schritt 2: Die passende Formel auswählen.**
+Wir suchen die Winkelbeschleunigung $\alpha$, kennen aber die Zeit nicht. Dafür kennen wir den Weg (den Winkel $\varphi$). Hier hilft uns eine Formel, die aus der linearen Bewegung bekannt ist (Weg-Geschwindigkeit-Gesetz: $v^2 - v_0^2 = 2 \cdot a \cdot s$).
+
+>Der Winkel $\varphi$ ist der Weg, wie weit sich ein Punkt auf einem Kreisbogen bewegt
+
+Für die *Drehbewegung* lautet die exakt analoge Formel:
+$$\omega^2 - \omega_0^2 = 2 \cdot \alpha \cdot \varphi$$
+Da der Motor aus dem Stillstand startet ($\omega_0 = 0$), vereinfacht sich die Formel zu:
+$$\omega^2 = 2 \cdot \alpha \cdot \varphi$$
+
+**Schritt 3: Formel umstellen und ausrechnen.**
+$$\alpha = \frac{\omega^2}{2 \cdot \varphi}$$
+$$\alpha = \frac{\left(\frac{200\pi}{3} \text{ s}^{-1}\right)^2}{2 \cdot 80\pi \text{ rad}}$$
+$$\alpha = \frac{\frac{40000\pi^2}{9} \text{ s}^{-2}}{160\pi}$$
+$$\alpha = \frac{40000\pi^2}{9 \cdot 160\pi} \text{ s}^{-2} = \frac{40000\pi}{1440} \text{ s}^{-2}$$
+$$\alpha = \frac{250\pi}{9} \text{ s}^{-2}$$
+$$\alpha \approx 87,266 \text{ s}^{-2}$$
+
+Die Winkelbeschleunigung des Elektromotors beträgt also ca. **$87,27 \text{ s}^{-2}$**.
+
+
+**Lösung b) Zeitdauer der Beschleunigung:**
+
+Gegeben (aus Aufgabenteil a):
+- Anfangswinkelgeschwindigkeit $\omega_0 = 0 \text{ s}^{-1}$
+- Endwinkelgeschwindigkeit $\omega = \frac{200\pi}{3} \text{ s}^{-1}$
+- Winkelbeschleunigung $\alpha = \frac{250\pi}{9} \text{ s}^{-2}$
+
+Gesucht: Zeitdauer $t$ (Gibt an, wie lange der Motor braucht, um auf die Enddrehzahl zu kommen, Einheit $\text{s}$)
+
+**Schritt 1: Die passende Formel auswählen.**
+Wir suchen die Zeit $t$, kennen die Anfangs- und Endwinkelgeschwindigkeit sowie die Winkelbeschleunigung. 
+Die grundlegende Formel für die Beschleunigung gibt an, wie sich die Geschwindigkeit in einer bestimmten Zeit ändert: 
+$$\alpha = \frac{\Delta\omega}{\Delta t} = \frac{\omega - \omega_0}{t}$$
+Da der Motor aus dem Stillstand startet ($\omega_0 = 0$), vereinfacht sich das zu:
+$$\alpha = \frac{\omega}{t}$$
+
+**Schritt 2: Formel umstellen und ausrechnen.**
+Wir wollen $t$ berechnen. Dazu multiplizieren wir die Gleichung mit $t$ und teilen durch $\alpha$:
+$$t = \frac{\omega}{\alpha}$$
+
+Nun setzen wir unsere genauen Werte (als Brüche) aus Teil a) ein:
+$$t = \frac{\frac{200\pi}{3} \text{ s}^{-1}}{\frac{250\pi}{9} \text{ s}^{-2}}$$
+$$t = \frac{200\pi}{3} \cdot \frac{9}{250\pi} \text{ s}$$
+$$t = \frac{200 \cdot 3}{250} \text{ s} = \frac{600}{250} \text{ s}$$
+$$t = \frac{12}{5} \text{ s} = 2,4 \text{ s}$$
+
+Der Elektromotor benötigt also genau **$2,4 \text{ s}$**, um diese Drehzahl zu erreichen.
+
+### Aufgabe 2: Beschleunigung und Reibung
+
+> [!info] Aufgabenstellung
+> Ein Kraftfahrzeug mit einer Masse von 1200 kg beschleunigt gleichmäßig mit $1,1 \text{ m/s}^2$ von $0 \text{ km/h}$ auf $96 \text{ km/h}$ (Frage: gelingt dies mit einer festen Einstellung des Gaspedals?). Die Rollreibungskraft beträgt $240 \text{ N}$. Für die Luftreibungskraft (turbulente Reibung) gilt die Gleichung $|\vec{F}_{Luft}| = \frac{1}{2} \cdot \rho_{Luft} \cdot c_w \cdot A \cdot v^2$ (mit einer Luftdichte $\rho_{Luft} = 1,293 \text{ kg/m}^3$, einem Luftwiderstandsbeiwert $c_w = 0,29$ und $A = 1,9 \text{ m}^2$, der Frontfläche des Fahrzeugs). Berechnen Sie:
+> 
+> a) die Zeitdauer des Beschleunigungsvorgangs!
+> b) die während des Beschleunigungsvorgangs zurückgelegte Strecke!
+> c) die während des Beschleunigungsvorgangs verrichtete Reibungsarbeit (für Rollreibung und turbulente Reibung)!
+
+### Aufgabe 3: Kreisbewegung und Haftreibung
+
+> [!info] Aufgabenstellung
+> Auf einer sich drehenden Scheibe liegt im Abstand von $50 \text{ cm}$ von der Drehachse (=Symmetrieachse) eine (punktförmige) Masse von $1 \text{ kg}$. Berechnen Sie die Drehzahl, bis zu welcher die Masse im o.g. Abstand auf der Scheibe unverändert liegen bleibt, wenn die Haftreibungszahl $0,3$ beträgt!
+
+### Aufgabe 4: Bremsweg
+
+> [!info] Aufgabenstellung
+> In der Fahrschule lernt man folgende Formel für den Bremsweg in Metern bei einer normalen Bremsung:
+> 
+> $$s_{Brems} = \left(\frac{\text{Geschwindigkeit in km/h}}{10}\right) \times \left(\frac{\text{Geschwindigkeit in km/h}}{10}\right)$$
+> 
+> Berechnen Sie den zugrundeliegenden Reibungskoeffizienten, der als konstant angenommen wird, und interpretieren Sie das Ergebnis.
+
+### Aufgabe 5: Impuls und Raketenantrieb
+
+> [!info] Aufgabenstellung
+> Eine Rakete mit einer Masse von $200 \text{ t}$ soll von der Erdoberfläche aus senkrecht starten.
+> 
+> a) Berechnen Sie die Schubkraft, die auf die Rakete wirken muss, damit sie gerade abhebt.
+> b) In einer Sekunde werden Verbrennungsgase der Masse $0,74 \text{ t}$ mit der Geschwindigkeit $4,0 \text{ km/s}$ ausgestoßen. Berechnen Sie die mittlere Schubkraft, die dadurch hervorgerufen wird.
+> c) Berechnen Sie die mittlere Beschleunigung, mit der die Rakete gehoben wird.
+
+**Ergebnisse:**
+- **1a)** $\alpha = 87,27 \text{ s}^{-2}$
+- **1b)** $t_{\text{Ende}} = 2,4 \text{ s}$
+- **2a)** $t = 24,24 \text{ s}$
+- **2b)** $s = 323,23 \text{ m}$
+- **2c)** $W_{\text{Reibung}} = 118.515,24 \text{ J}$
+- **3)** $n < 23,17 \text{ min}^{-1}$
+- **4)** $\mu = 0,39$
+- **5a)** $F_{\text{min}} = 1,96 \text{ MN}$
+- **5b)** $F = 3,0 \text{ MN}$
+- **5c)** $a = 5,0 \text{ m/s}^2$
 
 ## Energie (AB4)
 
-> [!info] Aufgabenstellung
-> Informationstechnologie-Medieninformatik; BA Dresden, D. Gembris
->
 ### Aufgabe 1: Federspannarbeit
 
 > [!info] Aufgabenstellung
 > Zum weiteren Dehnen einer vorgespannten Feder auf 4 cm Gesamtverlängerung wird die Spannarbeit 0,06 J aufgebracht. Die Federkonstante beträgt 1 N/cm. Berechnen Sie, um welche Länge gegenüber ihrer Ruhelage die Feder anfangs gespannt war.
->
-Zur Kontrolle: $\Delta x_1 = 2$ cm
+
+Gegeben:
+- $W = 0,06 \text{ J}$
+- $D = 1 \text{ N/cm} = 100 \text{ N/m}$
+- $x_2 = 4 \text{ cm} = 0,04 \text{ m}$
+
+Gesucht: $x_1$
+
+Lösung:
+$$W = W_2 - W_1 = \frac{1}{2} \cdot D \cdot x_2^2 - \frac{1}{2} \cdot D \cdot x_1^2$$
+$$W = \frac{1}{2} D (x_2^2 - x_1^2)$$
+$$0,06 \text{ J} = 0,06 \text{ Nm} \quad = \quad 50 \text{ N/m} \cdot (0,0016 \text{ m}^2 - x_1^2)$$
+$/ \  50 \text{ N/m}$
+$$0,0012 \text{ m}^2 = 0,0016 \text{ m}^2 - x_1^2$$
+$$x_1^2 = 0,0004 \text{ m}^2 \implies x_1 = 0,02 \text{ m} = \underline{\underline{2 \text{ cm}}}$$
+
+
+Es gilt: Da $1 \text{ J} = 1 \text{ Nm}$ ist, ergibt sich:
+$$\frac{\text{Nm}}{\text{N/m}} = \text{Nm} \cdot \frac{\text{m}}{\text{N}} = \text{m}^2$$
 
 ### Aufgabe 2: Federspannarbeit
 
@@ -274,6 +566,23 @@ Zur Kontrolle: $\Delta x_1 = 2$ cm
 >
 Zur Kontrolle: $F_2 = 3.5$ N.
 
+**Gegeben:**
+- Vorspannkraft: $F_1 = 1{,}5\,\text{N}$
+- Zusätzlicher Weg: $\Delta x = 10\,\text{cm} = 0{,}1\,\text{m}$
+- Verrichtete Spannarbeit: $W = 0{,}25\,\text{J}$
+
+**Gesucht:** $F_2$
+
+**Lösung:**
+
+Da die Feder bereits vorgespannt ist, gilt für die Spannarbeit:
+
+$$W = \frac{F_1 + F_2}{2} \cdot \Delta x$$
+Umformen nach $F_2$:
+$$F_1 + F_2 = \frac{2W}{\Delta x}$$
+$$\frac{2 \cdot 0{,}25\,\text{J}}{0{,}1\,\text{m}} = 5\,\text{N}$$
+
+$$F_2 = 5\,\text{N} - F_1 = 5\,\text{N} - 1{,}5\,\text{N} = 3{,}5\,\text{N}$$
 ### Aufgabe 3: Jo-jo
 
 > [!info] Aufgabenstellung

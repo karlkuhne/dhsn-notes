@@ -6,4 +6,4 @@ Naturwissenschaftliche Grundlagen (NATGL)
 - [[1. Mechanik]]
 
 ## Übungen
-- [[Übungen]]
+- [[wiki/SEM2/🧪 NATGL/Übungen]]

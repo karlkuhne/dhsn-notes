@@ -2,5 +2,7 @@
   "execute-code",
   "obsidian-charts",
   "convert-url-to-iframe",
-  "obsidian-desmos"
+  "obsidian-desmos",
+  "obsidian-tikzjax",
+  "obsidian-hider"
 ]
