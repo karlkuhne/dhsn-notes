@@ -5,6 +5,7 @@
 - [[1. Digitale Bilder Grundbegriffe]]
 - [[2. Bildformate]]
 - [[3. Chroma-Subsampling]]
+- [[4. Wahrnehmung]]
 
 ## Übungen
 
