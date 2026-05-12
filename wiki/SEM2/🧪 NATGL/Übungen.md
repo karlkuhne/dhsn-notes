@@ -595,6 +595,84 @@ $$F_2 = 5\,\text{N} - F_1 = 5\,\text{N} - 1{,}5\,\text{N} = 3{,}5\,\text{N}$$
 >
 Zur Kontrolle: a) $J_{ges} = 6{,}3125 \cdot 10^{-6}$ kg · m<sup>2</sup>b) $v \approx 1{,}3\frac{\text{m}}{\text{s}}$ ; $n \approx 2530 \frac{1}{\text{min}}$
 
+**Gegeben:**
+- Radien: $R_s = 2,5 \text{ cm}$, $R_A = 0,5 \text{ cm}$
+- Massen: $m_s = 10 \text{ g}$ (pro Scheibe), $m_A = 2,5 \text{ g}$
+- Schnurlänge: $L = 1 \text{ m}$
+
+**Gesucht:**
+- a) Trägheitsmoment $J_{ges}$
+- b) Endgeschwindigkeit $v$ und Drehzahl $n$
+
+```tikz
+\begin{document}
+\begin{tikzpicture}
+
+  \draw[thick] (2,0) arc[start angle=0, end angle=360, radius=2];
+
+  \draw[thick] (0,0) -- (1.4,1.4);
+
+  \node[above left] at (0.7,0.7) {$R_s$};
+
+  \draw[thick] (0.4,0) arc[start angle=0, end angle=360, radius=0.4];
+
+  \draw[thick] (0,0) -- (0,-0.4);
+
+  \node[right] at (0.1,-0.2) {$R_A$};
+
+  \draw[thick] (0.4,0) -- (0.4,4);
+
+  \node[above] at (0.4,4.2) {Fixpunkt};
+
+  \draw[thick] (0.8,0) -- (0.8,4);
+
+  \node[right] at (0.8,2) {$L = 1$ m};
+
+\end{tikzpicture}
+\end{document}
+```
+
+**Lösung:**
+a)
+Das Gesamtträgheitsmoment setzt sich aus den beiden Scheiben (Vollzylinder) und der Achse (dünnwandiger Hohlzylinder) zusammen:
+$$J_{ges} = 2 \cdot J_s + J_A$$
+
+1. **Trägheitsmoment der Scheiben (Vollzylinder):**
+$$J_s = \frac{1}{2} m_s \cdot R_s^2$$
+$$J_s = \frac{1}{2} \cdot 0,01 \text{ kg} \cdot (0,025 \text{ m})^2 = 3,125 \cdot 10^{-6} \text{ kg}\cdot\text{m}^2$$
+
+2. **Trägheitsmoment der Achse (dünnwandiger Hohlzylinder):**
+$$J_A = m_A \cdot R_A^2$$
+$$J_A = 0,0025 \text{ kg} \cdot (0,005 \text{ m})^2 = 0,0625 \cdot 10^{-6} \text{ kg}\cdot\text{m}^2$$
+
+3. **Gesamtträgheitsmoment:**
+$$J_{ges} = 2 \cdot (3,125 \cdot 10^{-6} \text{ kg}\cdot\text{m}^2) + 0,0625 \cdot 10^{-6} \text{ kg}\cdot\text{m}^2$$
+$$J_{ges} = 6,25 \cdot 10^{-6} \text{ kg}\cdot\text{m}^2 + 0,0625 \cdot 10^{-6} \text{ kg}\cdot\text{m}^2 = \underline{\underline{6,3125 \cdot 10^{-6} \text{ kg}\cdot\text{m}^2}}$$
+
+b)
+
+**Energieerhaltungssatz:** Die potentielle Energie am Start wird in kinetische Energie (Translation) und Rotationsenergie umgewandelt.
+$$E_{pot} = E_{kin} + E_{rot}$$
+$$m_{ges} \cdot g \cdot L = \frac{1}{2} m_{ges} v^2 + \frac{1}{2} J_{ges} \omega^2$$
+
+Da die Schnur auf der Achse abrollt, gilt der Zusammenhang zwischen Bahngeschwindigkeit $v$ und Winkelgeschwindigkeit $\omega$:
+$$v = \omega \cdot R_A \implies \omega = \frac{v}{R_A}$$
+
+Einsetzen in die Energiegleichung:
+$$m_{ges} \cdot g \cdot L = \frac{1}{2} m_{ges} v^2 + \frac{1}{2} J_{ges} \left(\frac{v}{R_A}\right)^2$$
+$$m_{ges} \cdot g \cdot L = \frac{1}{2} v^2 \left(m_{ges} + \frac{J_{ges}}{R_A^2}\right)$$
+
+**1. Geschwindigkeit $v$ berechnen:**
+$$v = \sqrt{\frac{2 \cdot m_{ges} \cdot g \cdot L}{m_{ges} + \frac{J_{ges}}{R_A^2}}}$$
+Mit $m_{ges} = 22,5 \text{ g} = 0,0225 \text{ kg}$ und $g = 9,81 \text{ m/s}^2$:
+$$v = \sqrt{\frac{2 \cdot 0,0225 \text{ kg} \cdot 9,81 \text{ m/s}^2 \cdot 1 \text{ m}}{0,0225 \text{ kg} + \frac{6,3125 \cdot 10^{-6} \text{ kg}\cdot\text{m}^2}{(0,005 \text{ m})^2}}}$$
+$$v = \sqrt{\frac{0,44145 \text{ J}}{0,0225 \text{ kg} + 0,2525 \text{ kg}}} = \sqrt{\frac{0,44145}{0,275}} \approx \underline{\underline{1,27 \text{ m/s}}}$$
+
+**2. Drehzahl $n$ berechnen:**
+$$\omega = \frac{v}{R_A} = \frac{1,27 \text{ m/s}}{0,005 \text{ m}} = 254 \text{ rad/s}$$
+$$n = \frac{\omega}{2\pi} = \frac{254}{2\pi} \approx 40,4 \text{ s}^{-1}$$
+$$n_{min} = 40,4 \cdot 60 \approx \underline{\underline{2424 \text{ min}^{-1}}}$$
+
 ### Aufgabe 4
 
 > [!info] Aufgabenstellung
@@ -621,9 +699,50 @@ Zur Kontrolle: a) $J_{ges} = 6{,}3125 \cdot 10^{-6}$ kg · m<sup>2</sup>b) $v \a
 > (10) Der Aufstieg auf den Gipfel war eine enorme Kraftleistung
 >
 > Finden Sie weitere Beispiele aus der Alltagssprache oder Medienveröffentlichungen. Untersuchen Sie diese wie die oben aufgeführten und formulieren Sie diese physikalisch korrekt
->
-> Weitere Aufgaben zu den Themen Arbeit, Energie: http://www.mathe-physik-aufgaben.de/aufgaben\_physik1/Arb\_energ\_01A.pdf
->
+
+**Lösung: Mindmap der Begriffe**
+
+```markmap
+---
+markmap:
+  height: 400
+---
+# Physikalische Grundbegriffe
+## Energie (E)
+- Fähigkeit, Arbeit zu verrichten
+- Einheit: Joule [J]
+- **Höhenenergie** ($E_{pot} = m \cdot g \cdot h$)
+- **kinetische Energie** ($E_{kin} = \frac{1}{2} m \cdot v^2$)
+- Energieerhaltungssatz
+## Arbeit (W)
+- $W = F \cdot s$ (Kraft $\cdot$ Weg)
+- Prozess der Energieumwandlung
+- Einheit: Joule [J]
+## Leistung (P)
+- $P = \frac{W}{t}$ (Arbeit pro Zeit)
+- Einheit: Watt [W]
+## Dynamik (Kraft & Masse)
+- **Kraft** ($F = m \cdot a$)
+- **Masse** (Trägheit eines Körpers)
+- **Beschleunigung** (Wirkung einer Kraft)
+## Kinematik (Bewegung)
+- **Geschwindigkeit** ($v = \frac{s}{t}$)
+- **Beschleunigung** ($a = \frac{\Delta v}{\Delta t}$)
+```
+
+**Physikalische Korrektur der Aussagen:**
+
+1. Das Wasserkraftwerk liefert jährlich eine **Energie** von 200 MWh (Leistung wäre MW ohne Zeitbezug).
+2. In einem schnell fahrenden Auto steckt eine enorme **kinetische Energie** (Kraft wirkt nur bei Änderung des Impulses).
+3. Das Auto beschleunigt mit einer **Leistung** von 115 kW (Beschleunigung ist $m/s^2$).
+4. Solarenergie – **Energie** aus der Natur.
+5. Mit letzter **Energie** (Kraft ist die momentane Einwirkung).
+6. Ihnen ist die **Energie** ausgegangen (Antriebskraft ist die Folge der Energie).
+7. Wandeln Windenergie in **elektrische Energie** um (Strom ist die Ladungsbewegung).
+8. Das ist eine ordentliche **Arbeit** (Leistung wäre es nur, wenn man die Zeit betrachtet).
+9. (Physikalisch weitgehend korrekt, "Wasserkraft" -> Wasserenergie).
+10. Enorme **Arbeit** bzw. **Leistung**.
+
 ## Schwingungen (AB5)
 
 > [!info] Aufgabenstellung
