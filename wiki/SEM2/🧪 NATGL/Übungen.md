@@ -744,10 +744,6 @@ markmap:
 10. Enorme **Arbeit** bzw. **Leistung**.
 
 ## Schwingungen (AB5)
-
-> [!info] Aufgabenstellung
-> Informationstechnologie-Medieninformatik; BA Dresden, D. Gembris
->
 ### Aufgabe 1: Gedämpfte Schwingung
 
 > [!info] Aufgabenstellung
@@ -758,7 +754,58 @@ markmap:
 > b) Bestimmen Sie die maximale Geschwindigkeit und die maximale Beschleunigung der Kugel und geben Sie dann die Geschwindigkeit v(t) und die Beschleunigung $a(t)$ in Abhängigkeit von der Zeit an.
 >
 > c) Pro Schwingungsdauer gehen etwa 5% der mechanischen Energie auf Grund von Reibungseffekten verloren. Bestimmen Sie die Abnahme der Amplitude pro Schwingungsdauer und berechnen Sie, wie groß die Amplitude nach 10 Sekunden ist.
->
+
+**Lösung:**
+
+**1. Was ist gegeben?**
+- **Federhärte ($D$)** = $20 \text{ N/m}$ (Wie stark die Feder zieht)
+- **Masse ($m$)** = $100 \text{ g} = 0,1 \text{ kg}$ (Das Gewicht an der Feder)
+- **Amplitude ($A$)** = $10 \text{ cm} = 0,1 \text{ m}$ (Wie weit wir am Anfang ziehen)
+
+**2. Wichtige Hilfsgröße berechnen: $\omega$ (Omega)**
+In der Physik nutzt man $\omega$ (die "Kreisfrequenz"), um zu beschreiben, wie schnell die Schwingung abläuft. Sie verbindet die Federkraft mit der Masse:
+$$\omega = \sqrt{\frac{D}{m}} = \sqrt{\frac{20}{0,1}} = \sqrt{200} \approx 14,14 \text{ s}^{-1}$$
+
+**a) Schwingungsdauer ($T$) und Ort ($x(t)$)**
+- **Schwingungsdauer ($T$):** Das ist die Zeit für ein Mal hin und her.
+  $$T = \frac{2\pi}{\omega} = \frac{2\pi}{14,14} \approx 0,444 \text{ s}$$
+- **Ortsfunktion ($x(t)$):** Eine Formel, die uns sagt, wo die Kugel zu jedem Zeitpunkt $t$ ist. Da wir sie zum Start ($t=0$) loslassen, nutzen wir den Cosinus:
+  $$x(t) = A \cdot \cos(\omega \cdot t) = 0,1 \cdot \cos(14,14 \cdot t)$$
+
+**b) Geschwindigkeit und Beschleunigung (über Ableitungen)**
+Um die Geschwindigkeit $v(t)$ und die Beschleunigung $a(t)$ zu finden, leiten wir den Ort $x(t)$ nach der Zeit $t$ ab:
+
+1. **Geschwindigkeit $v(t)$:** (1. Ableitung des Ortes)
+   $$v(t) = \dot{x}(t) = \frac{d}{dt} [A \cdot \cos(\omega \cdot t)] = -A \cdot \omega \cdot \sin(\omega \cdot t)$$
+   Einsetzen der Werte ($0,1 \cdot 14,14$):
+   $$v(t) \approx -1,41 \cdot \sin(14,14 \cdot t) \text{ m/s}$$
+   Der maximale Wert (**$v_{max}$**) ist einfach der Faktor vor dem Sinus: **$1,41 \text{ m/s}$**.
+
+2. **Beschleunigung $a(t)$:** (2. Ableitung des Ortes)
+   $$a(t) = \dot{v}(t) = \frac{d}{dt} [-A \cdot \omega \cdot \sin(\omega \cdot t)] = -A \cdot \omega^2 \cdot \cos(\omega \cdot t)$$
+   Einsetzen der Werte ($0,1 \cdot 14,14^2$ bzw. $0,1 \cdot 200$):
+   $$a(t) = -20 \cdot \cos(14,14 \cdot t) \text{ m/s}^2$$
+   Der maximale Wert (**$a_{max}$**) ist der Faktor vor dem Cosinus: **$20 \text{ m/s}^2$**.
+
+**c) Energieverlust und neue Amplitude**
+
+Hier müssen wir in drei einfachen Schritten denken:
+
+1. **Wie schrumpft die Amplitude ($A$)?**
+   Die Energie ($E$) einer Feder hängt vom **Quadrat** der Auslenkung ab ($E \sim A^2$). 
+   - Wenn wir $5\%$ Energie verlieren, bleiben $95\%$ ($0,95$) übrig.
+   - Weil $A$ im Quadrat steht, müssen wir die **Wurzel ziehen**, um zu wissen, wie die Amplitude schrumpft:
+   $$\text{Schrumpf-Faktor} = \sqrt{0,95} \approx 0,975$$
+   *(Das heißt: Nach jeder Schwingung ist die Amplitude noch $97,5\%$ vom vorherigen Wert.)*
+
+2. **Wie viele Schwingungen passieren in 10 Sekunden?**
+   Wir wissen aus Teil a), dass eine Schwingung $T \approx 0,444 \text{ s}$ dauert.
+   $$n = \frac{10 \text{ s}}{0,444 \text{ s}} \approx 22,5 \text{ Schwingungen}$$
+
+3. **Berechnung der End-Amplitude nach 10 Sekunden:**
+   Wir nehmen die Start-Amplitude ($0,1 \text{ m}$) und lassen sie $22,5$-mal schrumpfen:
+   $$A_{10s} = A_{Start} \cdot 0,975^{22,5} = 0,1 \text{ m} \cdot 0,56 \approx \mathbf{5,6 \text{ cm}}$$
+
 ### Aufgabe 2: Harmonische Schwingung am Seil
 
 > [!info] Aufgabenstellung
