@@ -1,0 +1,8 @@
+{
+  "inputFolder": "images",
+  "serverPort": "1337",
+  "imagePath": "",
+  "outputFolder": "images",
+  "randomID": true,
+  "croppedImage": ""
+}
