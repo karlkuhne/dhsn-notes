@@ -6,9 +6,7 @@
 - [[2. Bildformate]]
 - [[3. Chroma-Subsampling]]
 - [[4. Verlustbehaftete Bildkompression]]
-
-## Übungen
-
+- [[5. Bildformate (verlustbehaftet)]]
 - [[Aufgaben Bildbearbeitung]]
 
 ## Verwandte Themen
