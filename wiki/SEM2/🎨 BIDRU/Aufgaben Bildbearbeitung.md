@@ -137,6 +137,8 @@ Bei der **Quantisierung**. Hier werden die DCT-Koeffizienten durch Division mit 
 
 ### 4.2.1 Histogramme
 
+> [!info] Theoretische Grundlagen: [[6. Histogramme]]
+
 > [!todo]
 > (1) Mit welcher Datenstruktur kann man ein Histogramm im Speicher des Computers am einfachsten repräsentieren?
 

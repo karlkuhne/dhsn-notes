@@ -7,6 +7,7 @@
 - [[3. Chroma-Subsampling]]
 - [[4. Verlustbehaftete Bildkompression]]
 - [[5. Bildformate (verlustbehaftet)]]
+- [[6. Histogramme]]
 - [[Aufgaben Bildbearbeitung]]
 
 ## Verwandte Themen
