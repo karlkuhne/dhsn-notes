@@ -108,17 +108,27 @@ $5.760.000 \text{ Pixel } \cdot 12 \text{ Bit } = 69.120.000 \text{ Bit } = 8.64
 > [!todo]
 > (4) Was sind Ortsfrequenzen?
 
+Ortsfrequenzen beschreiben, wie schnell sich Helligkeitswerte **im Raum** (also über die Pixelpositionen hinweg) ändern. Niedrige Ortsfrequenzen = langsamer Helligkeitswechsel (große gleichmäßige Flächen), hohe Ortsfrequenzen = schnelle Wechsel (Kanten, feine Details).
+
 > [!todo]
 > (5) Welche Aufgabe hat die Discrete Cosinus Transformation?
+
+Die **DCT** transformiert die Pixelwerte eines Bildblocks (Ortsraum) in Frequenzkoeffizienten (Frequenzraum). Jeder Koeffizient gibt an, wie stark eine bestimmte Ortsfrequenz im Bildblock vertreten ist: niedrige Koeffizienten stehen für gleichmäßige Flächen, hohe für Kanten und feine Details.
 
 > [!todo]
 > (6) Warum wird ein Bild für die Kompression zunächst in den Frequenzraum überführt?
 
+Im Frequenzraum lassen sich die Koeffizienten nach ihrer Wahrnehmungsrelevanz trennen: Das menschliche Auge ist für die höchsten Frequenzen (feinste Texturen, einzelnes Pixelrauschen, winzige Helligkeitsschwankungen) wenig empfindlich. Durch die Überführung in den Frequenzraum können gezielt die hochfrequenten Koeffizienten stärker quantisiert werden, während niedrige (Helligkeit, Flächen) und mittlere (Kanten) weitgehend erhalten bleiben. Das spart Speicherplatz, ohne den visuellen Eindruck stark zu beeinträchtigen.
+
 > [!todo]
 > (7) Bei welchem Schritt der JPEG-Kompression treten Verluste auf?
 
+Bei der **Quantisierung**. Hier werden die DCT-Koeffizienten durch Division mit einer Quantisierungsmatrix gerundet, wodurch Informationen irreversibel verloren gehen. Alle anderen Schritte (Farbraumkonvertierung, DCT, Entropiekodierung) sind verlustfrei bzw. umkehrbar.
+
 > [!todo]
 > (8) Für welches Bild ist JPEG besser geeignet: Für ein Cartoon-Bild mit vielen einfarbigen Flächen (A) oder ein Foto eines Laubbaumes (B)? Begründen Sie kurz!
+
+**B (Foto eines Laubbaumes).** Fotos enthalten natürliche, kontinuierliche Übergänge mit vielen feinen Texturen — hier sind die hochfrequenten Anteile, die bei der Quantisierung verloren gehen, weniger auffällig. Cartoons haben scharfe Kanten und große einfarbige Flächen; hier fallen Quantisierungsartefakte (Blockartefakte, Ringing an Kanten) deutlich auf.
 
 > [!todo]
 > (9) Welche alternativen Formate gibt es für die verlustbehaftete Bildkompression?
