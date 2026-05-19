@@ -504,6 +504,30 @@ Der Elektromotor benötigt also genau **$2,4 \text{ s}$**, um diese Drehzahl zu 
 > [!info] Aufgabenstellung
 > Auf einer sich drehenden Scheibe liegt im Abstand von $50 \text{ cm}$ von der Drehachse (=Symmetrieachse) eine (punktförmige) Masse von $1 \text{ kg}$. Berechnen Sie die Drehzahl, bis zu welcher die Masse im o.g. Abstand auf der Scheibe unverändert liegen bleibt, wenn die Haftreibungszahl $0,3$ beträgt!
 
+Gegeben:
+- Abstand (Radius) $r = 50 \text{ cm} = 0,5 \text{ m}$
+- Masse $m = 1 \text{ kg}$
+- Haftreibungszahl $\mu = 0,3$
+- Erdbeschleunigung $g \approx 9,81 \text{ m/s}^2$
+
+Gesucht: Maximale Drehzahl $n$
+
+**Lösung:**
+
+1. **Physikalisches Gleichgewicht:**
+Damit die Masse nicht rutscht, muss die Zentripetalkraft $F_Z$ durch die Haftreibungskraft $F_{HR}$ aufgebracht werden.
+$$F_Z = F_{HR}$$
+$$m \cdot \omega^2 \cdot r = \mu \cdot m \cdot g$$
+
+2. **Winkelgeschwindigkeit $\omega$ berechnen:**
+$$\omega = \sqrt{\frac{\mu \cdot g}{r}} = \sqrt{\frac{0,3 \cdot 9,81 \text{ m/s}^2}{0,5 \text{ m}}} \approx 2,426 \text{ s}^{-1}$$
+
+3. **Drehzahl $n$ berechnen:**
+$$n = \frac{\omega \cdot 60}{2\pi} = \frac{2,426 \cdot 60}{2\pi} \approx 23,17 \text{ min}^{-1}$$
+
+Die maximale Drehzahl beträgt ca. **$23,17 \text{ min}^{-1}$**.
+
+
 ### Aufgabe 4: Bremsweg
 
 > [!info] Aufgabenstellung
@@ -513,6 +537,7 @@ Der Elektromotor benötigt also genau **$2,4 \text{ s}$**, um diese Drehzahl zu 
 > 
 > Berechnen Sie den zugrundeliegenden Reibungskoeffizienten, der als konstant angenommen wird, und interpretieren Sie das Ergebnis.
 
+TODO
 ### Aufgabe 5: Impuls und Raketenantrieb
 
 > [!info] Aufgabenstellung
@@ -522,17 +547,6 @@ Der Elektromotor benötigt also genau **$2,4 \text{ s}$**, um diese Drehzahl zu 
 > b) In einer Sekunde werden Verbrennungsgase der Masse $0,74 \text{ t}$ mit der Geschwindigkeit $4,0 \text{ km/s}$ ausgestoßen. Berechnen Sie die mittlere Schubkraft, die dadurch hervorgerufen wird.
 > c) Berechnen Sie die mittlere Beschleunigung, mit der die Rakete gehoben wird.
 
-**Ergebnisse:**
-- **1a)** $\alpha = 87,27 \text{ s}^{-2}$
-- **1b)** $t_{\text{Ende}} = 2,4 \text{ s}$
-- **2a)** $t = 24,24 \text{ s}$
-- **2b)** $s = 323,23 \text{ m}$
-- **2c)** $W_{\text{Reibung}} = 118.515,24 \text{ J}$
-- **3)** $n < 23,17 \text{ min}^{-1}$
-- **4)** $\mu = 0,39$
-- **5a)** $F_{\text{min}} = 1,96 \text{ MN}$
-- **5b)** $F = 3,0 \text{ MN}$
-- **5c)** $a = 5,0 \text{ m/s}^2$
 
 ## Energie (AB4)
 

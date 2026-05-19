@@ -1,3 +1,3 @@
 ```bash
-marker_single marker/input/03_BB_Histogramme.pdf --output_dir marker/output --force_ocr
+marker_single marker/input/NatGl_MI_Optik.pdf --output_dir marker/output --force_ocr
 ```
