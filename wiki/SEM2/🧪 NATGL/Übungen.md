@@ -547,6 +547,53 @@ TODO
 > b) In einer Sekunde werden Verbrennungsgase der Masse $0,74 \text{ t}$ mit der Geschwindigkeit $4,0 \text{ km/s}$ ausgestoßen. Berechnen Sie die mittlere Schubkraft, die dadurch hervorgerufen wird.
 > c) Berechnen Sie die mittlere Beschleunigung, mit der die Rakete gehoben wird.
 
+**a) Schubkraft zum Abheben**
+
+Gegeben:
+- Masse $m = 200 \text{ t} = 200.000 \text{ kg}$
+- Erdbeschleunigung $g = 9,81 \text{ m/s}^2$
+
+Gesucht: Schubkraft $F_S$
+
+Damit die Rakete abhebt, muss die Schubkraft $F_S$ mindestens so groß sein wie die Gewichtskraft $F_G$.
+$$F_G = m \cdot g$$
+$$F_G = 200.000 \text{ kg} \cdot 9,81 \text{ m/s}^2 = 1.962.000 \text{ N} = 1,962 \text{ MN}$$
+
+Die Schubkraft muss also **größer als $1,962 \text{ MN}$** sein.
+
+**b) Mittlere Schubkraft durch Gasausstoß**
+
+Gegeben:
+- Massenstrom $\dot{m} = \frac{\Delta m}{\Delta t} = 0,74 \text{ t/s} = 740 \text{ kg/s}$
+- Austrittsgeschwindigkeit $v_e = 4,0 \text{ km/s} = 4000 \text{ m/s}$
+
+Gesucht: mittlere Schubkraft $F_S$
+
+Die Schubkraft ergibt sich aus der Impulsänderung der ausgestoßenen Gase (Raketengleichung):
+$$F_S = \dot{m} \cdot v_e$$
+$$F_S = 740 \text{ kg/s} \cdot 4000 \text{ m/s} = 2.960.000 \text{ N} = 2,96 \text{ MN}$$
+
+Die mittlere Schubkraft beträgt **$2,96 \text{ MN}$**.
+
+**c) Mittlere Beschleunigung**
+
+Gegeben:
+- Schubkraft $F_S = 2,96 \text{ MN} = 2.960.000 \text{ N}$
+- Gewichtskraft $F_G = 1,962 \text{ MN} = 1.962.000 \text{ N}$
+- Masse $m = 200.000 \text{ kg}$
+
+Gesucht: Beschleunigung $a$
+
+Die resultierende Kraft $F_{res}$ ist die Differenz aus Schubkraft und Gewichtskraft:
+$$F_{res} = F_S - F_G$$
+$$F_{res} = 2.960.000 \text{ N} - 1.962.000 \text{ N} = 998.000 \text{ N}$$
+
+Nach dem 2. Newtonschen Axiom ($F = m \cdot a$) gilt für die Beschleunigung:
+$$a = \frac{F_{res}}{m}$$
+$$a = \frac{998.000 \text{ N}}{200.000 \text{ kg}} = 4,99 \text{ m/s}^2$$
+
+Die Rakete wird mit einer mittleren Beschleunigung von **$4,99 \text{ m/s}^2$** gehoben.
+
 
 ## Energie (AB4)
 
@@ -902,32 +949,240 @@ $$
 >
 > Quelle: http://theissenonline.de/Physik/Federpendel\_Effektive\_Federmasse.pdf
 >
+
 ## Optik (AB6)
 
-> [!info] Aufgabenstellung
-> Medieninformatik, BA Dresden, D. Gembris
->
-> A1) Mit einer dünnen Sammellinse soll ein Gegenstand auf einem Schirm vergrößert abgebildet werden.
->
-> - Skizzieren Sie den Strahlenverlauf! $\sim$
-> - Wo muss sich der Gegenstand befinden?
-> - Geben Sie Art, Lage und Ort des entstehenden Bildes an! $\omega_{\rm{max}}$
->
-> A2) dünne Linsen: Mit einer Linse der Brennweite 120 mm wird ein Dia mit den Abmessungen 6,0 cm × 6,0 cm auf einer Projektionswand, die 2,5 m von der Linse entfernt ist, scharf abgebildet. Berechnen Sie die Abmessungen des Bildes!
->
-> A3) Der Einfallswinkel eines Lichtstrahls auf eine ebene Grenzfläche beträgt 55°. Wie groß ist der Winkel zwischen dem reflektierten und dem gebrochenen Strahl, wenn die Brechzahl n = 1,5 ist?
->
-> A4) Wie groß ist die Querverschiebung q eines schräg durch eine Parallelplatte von der Dicke d laufenden Lichtstrahls?
->
-> a) Geben Sie eine allgemeine Formel an (q als Funktion von d, $\alpha$ und $\beta$ ; $q = f(d, \alpha, \beta)$ ) b) Berechnen Sie q für $d = 6$ mm, $\alpha = 40^{\circ}$ und $n = 1.5$ .
->
-![[Übungen/Übungen-_page_10_Figure_10.jpeg]]
+### Aufgabe 1: Sammellinse
 
 > [!info] Aufgabenstellung
-> A5) Die Empfindlichkeitsschwelle des menschlichen Auges liegt im günstigsten Fall bei etwa 100 Photonen/s. Das Auge ist bei einer Wellenlänge von etwa 550 nm am empfindlichsten. Welche minimale Lichtleistung kann das Auge demnach detektieren?
+> Mit einer dünnen Sammellinse soll ein Gegenstand auf einem Schirm vergrößert abgebildet werden.
 >
-> Weitere Aufgaben zur Optik: https://physikaufgaben.de/index.php?&tab=7
+> - Skizzieren Sie den Strahlenverlauf!
+> - Wo muss sich der Gegenstand befinden?
+> - Geben Sie Art, Lage und Ort des entstehenden Bildes an!
+
+**Lösung:**
+
+Damit eine Sammellinse ein **vergrößertes, reelles Bild** auf einem Schirm erzeugen kann, muss der Gegenstand innerhalb der einfachen und doppelten Brennweite platziert werden.
+
+- **Ort des Gegenstands:** Zwischen $f$ und $2f$ ($f < g < 2f$).
+- **Bildart:** Reell (kann auf Schirm aufgefangen werden), umgekehrt/seitenverkehrt und vergrößert.
+- **Bildort:** Jenseits der doppelten Brennweite auf der anderen Linsenseite ($b > 2f$).
+
+```tikz
+\begin{document}
+\begin{tikzpicture}[scale=0.8, font=\small]
+  % Optische Achse
+  \draw[->] (-5,0) -- (8,0) node[right] {opt. Achse};
+  
+  % Linse (Symbolisch als Doppelpfeil)
+  \draw[thick, <->] (0,-3) -- (0,3) node[above] {Sammellinse};
+  
+  % Brennpunkte markieren
+  \filldraw (-2,0) circle (2pt) node[below] {f};
+  \filldraw (2,0) circle (2pt) node[below] {f'};
+  \filldraw (-4,0) circle (2pt) node[below] {2 f};
+  \filldraw (4,0) circle (2pt) node[below] {2 f'};
+  
+  % Gegenstand (zwischen F und 2F)
+  % g = 3, f = 2 -> b = 6
+  \draw[thick, ->, blue] (-3,0) -- (-3,1.5) node[above] {Gegenstand};
+  
+  % Strahlenverlauf
+  % 1. Parallelstrahl wird zum Brennpunktstrahl
+  \draw[red] (-3,1.5) -- (0,1.5);
+  \draw[red, ->] (0,1.5) -- (6,-3);
+  
+  % 2. Mittelpunktstrahl (geht ungebrochen durch)
+  \draw[green!60!black, ->] (-3,1.5) -- (6,-3);
+  
+  % 3. Brennpunktstrahl wird zum Parallelstrahl
+  \draw[orange] (-3,1.5) -- (0,-3);
+  \draw[orange, ->] (0,-3) -- (6,-3);
+  
+  % Bild
+  \draw[thick, ->, blue] (6,0) -- (6,-3) node[below] {Bild};
+  
+  % Abstände markieren
+  \draw[|<->|] (-3,-0.8) -- (0,-0.8) node[midway, fill=white] {Gegenstandsweite};
+  \draw[|<->|] (0,-0.8) -- (6,-0.8) node[midway, fill=white] {Bildweite};
+\end{tikzpicture}
+\end{document}
+```
+
+> [!abstract] Erklärung zur Sammellinse
+> Um ein Bild auf einem **Schirm** zu sehen, muss es **reell** sein. Das bedeutet, die Lichtstrahlen müssen sich hinter der Linse tatsächlich in einem Punkt treffen.
 >
+> Hier ist die einfache Logik dahinter:
+>
+> **1. Warum muss der Gegenstand dort stehen?**
+> Es gibt bei einer Sammellinse (Konvexlinse) drei wichtige Bereiche für den Gegenstand:
+> * **Weit weg ($g > 2f$):** Das Bild wird klein (wie bei einer Kamera oder im Auge).
+> * **Sehr nah ($g < f$):** Das Bild wird riesig, aber **virtuell**. Man kann es nur *durch* die Linse sehen (wie bei einer Lupe), aber nicht auf eine Wand projizieren.
+> * **Dazwischen ($f < g < 2f$):** Das ist unser Fall! Hier wird das Bild **größer als das Original** und bleibt **reell** (projektionsfähig).
+>
+> **2. Die drei Strahlen in der Zeichnung**
+> Um zu zeigen, wo das Bild entsteht, nutzt man drei Standard-Strahlen, die vom Kopf des Gegenstands ausgehen:
+> 1. **Parallelstrahl (rot):** Läuft gerade zur Linse und wird dort so gebrochen, dass er auf der anderen Seite genau durch den **Brennpunkt** geht.
+> 2. **Mittelpunktstrahl (grün):** Läuft genau durch die Mitte der Linse. Da die Linse dort "flach" wirkt, geht dieser Strahl einfach schnurgerade weiter.
+> 3. **Brennpunktstrahl (orange):** Läuft erst durch den vorderen Brennpunkt zur Linse und wird dort so gebrochen, dass er danach **parallel** zur Achse weiterläuft.
+>
+> **Das Ergebnis:** Dort, wo sich diese drei Strahlen hinter der Linse kreuzen, entsteht das Bild. In diesem Fall ist es weiter entfernt (Bildweite > $2f$) und deutlich größer als der ursprüngliche Gegenstand.
+>
+> **Zusammenfassung der Begriffe:**
+> * **Gegenstandsweite ($g$):** Abstand vom Ding zur Linse.
+> * **Bildweite ($b$):** Abstand von der Linse zum Schirm.
+> * **Brennpunkt ($f$):** Der Punkt, an dem die Linse paralleles Licht sammelt.
+> * **Reell:** "Echt" – die Strahlen treffen sich wirklich (Schirm-tauglich).
+> * **Umgekehrt:** Das Bild steht auf dem Kopf (sieht man in der Grafik an der Pfeilspitze, die nach unten zeigt).
+
+
+### Aufgabe 2: Dünne Linsen
+
+> [!info] Aufgabenstellung
+> Mit einer Linse der Brennweite 120 mm wird ein Dia mit den Abmessungen 6,0 cm × 6,0 cm auf einer Projektionswand, die 2,5 m von der Linse entfernt ist, scharf abgebildet. Berechnen Sie die Abmessungen des Bildes!
+
+**Skizze des Aufbaus:**
+
+```tikz
+\begin{document}
+\begin{tikzpicture}[scale=0.8, font=\small]
+  % Optische Achse
+  \draw[->] (-4,0) -- (8,0) node[right] {opt. Achse};
+  
+  % Linse
+  \draw[thick, <->] (0,-2.5) -- (0,2.5) node[above] {Linse};
+  
+  % Brennpunkte
+  \filldraw (-2,0) circle (1.5pt) node[below] {$F$};
+  \filldraw (2,0) circle (1.5pt) node[below] {$F'$};
+  
+  % Gegenstand (Dia)
+  \draw[thick, ->, blue] (-2.8,0) -- (-2.8,1) node[above] {Dia ($G$)};
+  
+  % Bild (Projektionswand)
+  \draw[thick, ->, red] (7,0) -- (7,-2.5) node[below] {Bild ($B$)};
+  
+  % Hilfslinien für Abstände
+  \draw[|<->|] (-2.8, 2.8) -- (0, 2.8) node[midway, fill=white] {Gegenstandsweite $g$};
+  \draw[|<->|] (0, 2.8) -- (7, 2.8) node[midway, fill=white] {Bildweite $b$};
+  \draw[|<->|] (0, -0.8) -- (2, -0.8) node[midway, below] {120 mm};
+  
+  % Strahlen (physikalisch korrekt für f=2, g=2.8 -> b=7)
+  % 1. Parallelstrahl -> Brennpunktstrahl
+  \draw[gray, dashed] (-2.8,1) -- (0,1) -- (7,-2.5);
+  % 2. Mittelpunktstrahl
+  \draw[gray, dashed] (-2.8,1) -- (0,0) -- (7,-2.5);
+  % 3. Brennpunktstrahl -> Parallelstrahl
+  \draw[gray, dashed] (-2.8,1) -- (-2,0) -- (0,-2.5) -- (7,-2.5);
+\end{tikzpicture}
+\end{document}
+```
+
+**1. Gegeben und Gesucht:**
+- Brennweite $f = 120 \text{ mm} = 0,12 \text{ m}$
+- Bildweite $b = 2,5 \text{ m}$ (Abstand zum Schirm)
+- Gegenstandsgröße $G = 6,0 \text{ cm} = 0,06 \text{ m}$
+- Gesucht: Bildgröße $B$
+
+**2. Gegenstandsweite $g$ berechnen:**
+Mit der Abbildungsgleichung $\frac{1}{f} = \frac{1}{g} + \frac{1}{b}$ stellen wir nach $\frac{1}{g}$ um:
+$$\frac{1}{g} = \frac{1}{f} - \frac{1}{b}$$
+$$\frac{1}{g} = \frac{1}{0,12 \text{ m}} - \frac{1}{2,5 \text{ m}} \approx 8,333 \text{ m}^{-1} - 0,4 \text{ m}^{-1} = 7,933 \text{ m}^{-1}$$
+$$g = \frac{1}{7,933 \text{ m}^{-1}} \approx 0,126 \text{ m} = 126 \text{ mm}$$
+
+**3. Abbildungsmaßstab $A$ und Bildgröße $B$ berechnen:**
+Der Abbildungsmaßstab ergibt sich aus dem Verhältnis von Bild- zu Gegenstandsweite:
+$$A = \frac{b}{g} = \frac{2,5 \text{ m}}{0,126 \text{ m}} \approx 19,84$$
+Das Bild ist also fast 20-mal so groß wie das Original.
+
+Die Bildgröße $B$ berechnet sich nun durch:
+$$B = G \cdot A = 6,0 \text{ cm} \cdot 19,84 \approx 119 \text{ cm} = 1,19 \text{ m}$$
+
+**Ergebnis:**
+Das Bild auf der Projektionswand hat die Abmessungen **$1,19 \text{ m} \times 1,19 \text{ m}$**.
+
+
+### Aufgabe 3: Brechung
+
+> [!info] Aufgabenstellung
+> Der Einfallswinkel eines Lichtstrahls auf eine ebene Grenzfläche beträgt 55°. Wie groß ist der Winkel zwischen dem reflektierten und dem gebrochenen Strahl, wenn die Brechzahl $n = 1,5$ ist?
+
+
+```tikz
+\begin{document}
+\begin{tikzpicture}[scale=1.5, font=\small]
+  % Grenzfläche
+  \fill[blue!10] (-2,-2) rectangle (2,0);
+  \draw[thick] (-2,0) -- (2,0) node[right] {Grenzfläche ($n=1,5$)};
+  
+  % Lot
+  \draw[dashed] (0,-2) -- (0,1.5) node[above] {Lot};
+  
+  % Einfallender Strahl (alpha = 55°)
+  % In TikZ sind 0° rechts, also ist 90° das Lot. 90 + 55 = 145
+  \draw[red, thick, ->] (145:2) -- (0,0);
+  \draw (0,0.5) arc[start angle=90, end angle=145, radius=0.5];
+  \node at (117:0.7) {$\alpha = 55^\circ$};
+  
+  % Reflektierter Strahl (alpha' = 55°)
+  % 90 - 55 = 35
+  \draw[orange, thick, ->] (0,0) -- (35:2);
+  \draw (0,0.5) arc[start angle=90, end angle=35, radius=0.5];
+  \node at (63:0.7) {$\alpha' = 55^\circ$};
+  
+  % Gebrochener Strahl (beta approx 33°)
+  % Im Medium: Lot ist nach unten (270°). 270 - 33 = 237
+  \draw[green!60!black, thick, ->] (0,0) -- (237:1.5);
+  \draw (0,-0.5) arc[start angle=270, end angle=237, radius=0.5];
+  \node at (253:0.8) {$\beta \approx 33^\circ$};
+  
+  % Gesuchter Winkel gamma
+  \draw[<->, thick, purple] (35:1.2) arc[start angle=35, end angle=-123, radius=1.2];
+  \node[purple, right] at (-10:1.3) {gesuchter Winkel $\gamma$};
+
+\end{tikzpicture}
+\end{document}
+```
+
+**1. Reflexionswinkel $\alpha'$ bestimmen:**
+Nach dem Reflexionsgesetz ist der Einfallswinkel gleich dem Reflexionswinkel:
+$$\alpha' = \alpha = 55^\circ$$
+
+**2. Brechungswinkel $\beta$ berechnen:**
+Wir nutzen das Brechungsgesetz von Snellius ($n_1 \cdot \sin \alpha = n_2 \cdot \sin \beta$). Wir nehmen Luft als erstes Medium an ($n_1 \approx 1,0$):
+$$1,0 \cdot \sin(55^\circ) = 1,5 \cdot \sin(\beta)$$
+$$\sin(\beta) = \frac{\sin(55^\circ)}{1,5} \approx \frac{0,8192}{1,5} \approx 0,5461$$
+$$\beta = \arcsin(0,5461) \approx 33,1^\circ$$
+
+**3. Winkel $\gamma$ zwischen den Strahlen berechnen:**
+Der reflektierte Strahl befindet sich oberhalb der Grenzfläche (Winkel $\alpha'$ zum Lot), der gebrochene Strahl unterhalb (Winkel $\beta$ zum Lot). Da das Lot eine gerade Linie (180°) bildet, berechnet sich der Winkel dazwischen wie folgt:
+$$\gamma = 180^\circ - \alpha' - \beta$$
+$$\gamma = 180^\circ - 55^\circ - 33,1^\circ = 91,9^\circ$$
+
+**Ergebnis:**
+Der Winkel zwischen dem reflektierten und dem gebrochenen Strahl beträgt **$91,9^\circ$**.
+
+
+### Aufgabe 4: Parallelplatte
+
+> [!info] Aufgabenstellung
+> Wie groß ist die Querverschiebung $q$ eines schräg durch eine Parallelplatte von der Dicke $d$ laufenden Lichtstrahls?
+>
+> a) Geben Sie eine allgemeine Formel an ($q$ als Funktion von $d$, $\alpha$ und $\beta$; $q = f(d, \alpha, \beta)$).
+>
+> b) Berechnen Sie $q$ für $d = 6$ mm, $\alpha = 40^{\circ}$ und $n = 1,5$.
+
+![[Übungen/Übungen-_page_10_Figure_10.jpeg]]
+
+### Aufgabe 5: Auge
+
+> [!info] Aufgabenstellung
+> Die Empfindlichkeitsschwelle des menschlichen Auges liegt im günstigsten Fall bei etwa 100 Photonen/s. Das Auge ist bei einer Wellenlänge von etwa 550 nm am empfindlichsten. Welche minimale Lichtleistung kann das Auge demnach detektieren?
+
+
+![[Übungen/Übungen-_page_10_Figure_10.jpeg]]
+
 ## Elektrotechnik (AB7)
 
 > [!info] Aufgabenstellung
