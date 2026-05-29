@@ -1,0 +1,212 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Pakete ----
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+% ---- Metadaten ----
+\title{Listen in \LaTeX}
+\author{SEM2 -- Skript}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+% ============================================================
+\section{Aufzählungen (itemize)}
+\label{sec:itemize}
+% ============================================================
+
+\subsection{Standard-Aufzählung}
+
+Eine einfache Aufzählung mit Standard-Bullet-Punkten:
+
+\begin{itemize}
+    \item Erster Punkt
+    \item Zweiter Punkt
+    \item Dritter Punkt
+\end{itemize}
+
+\subsection{Aufzählung mit eigenem Label}
+
+Mit optionalen Labels lassen sich eigene Symbole verwenden:
+
+\begin{itemize}
+    \item[$\star$] Mit Sternchen
+    \item[$\rightarrow$] Mit Pfeil
+    \item[$\checkmark$] Mit Häkchen
+    \item[$\diamond$] Mit Diamant
+\end{itemize}
+
+\subsection{Verschachtelte Aufzählung}
+
+Aufzählungen können verschachtelt werden -- die Symbole ändern sich pro Ebene:
+
+\begin{itemize}
+    \item Oberste Ebene
+    \begin{itemize}
+        \item Zweite Ebene
+        \begin{itemize}
+            \item Dritte Ebene
+        \end{itemize}
+        \item Zurück auf Ebene 2
+    \end{itemize}
+    \item Zurück auf Ebene 1
+\end{itemize}
+
+% ============================================================
+\section{Nummerierungen (enumerate)}
+\label{sec:enumerate}
+% ============================================================
+
+\subsection{Standard-Nummerierung}
+
+\begin{enumerate}
+    \item Erster Schritt
+    \item Zweiter Schritt
+    \item Dritter Schritt
+\end{enumerate}
+
+\subsection{Verschiedene Nummerierungsstile}
+
+\paragraph{Arabische Ziffern (1, 2, 3\ldots):}
+\begin{enumerate}[label=\arabic*.]
+    \item Eins
+    \item Zwei
+    \item Drei
+\end{enumerate}
+
+\paragraph{Kleine Buchstaben (a, b, c\ldots):}
+\begin{enumerate}[label=\alph*.]
+    \item Alpha
+    \item Beta
+    \item Gamma
+\end{enumerate}
+
+\paragraph{Große Buchstaben (A, B, C\ldots):}
+\begin{enumerate}[label=\Alph*.]
+    \item Erster Buchstabe
+    \item Zweiter Buchstabe
+    \item Dritter Buchstabe
+\end{enumerate}
+
+\paragraph{Römische Ziffern (I, II, III\ldots):}
+\begin{enumerate}[label=\Roman*.]
+    \item Primus
+    \item Secundus
+    \item Tertius
+\end{enumerate}
+
+\subsection{Nummerierung mit Klammern und Prefix}
+
+\begin{enumerate}[label=\textbf{Aufgabe~\arabic*:}]
+    \item Konfiguration laden
+    \item Daten validieren
+    \item Ergebnis speichern
+\end{enumerate}
+
+\subsection{Verschachtelte Nummerierung mit Referenz}
+
+\begin{enumerate}[label=\arabic*]
+    \item Hauptpunkt
+    \begin{enumerate}[label=\theenumi.\alph*]
+        \item Unterpunkt a
+        \item Unterpunkt b
+    \end{enumerate}
+    \item Hauptpunkt
+    \begin{enumerate}[label=\theenumi.\alph*]
+        \item Unterpunkt a
+        \item Unterpunkt b
+        \item Unterpunkt c
+    \end{enumerate}
+\end{enumerate}
+
+% ============================================================
+\section{Definitionslisten (description)}
+\label{sec:description}
+% ============================================================
+
+\subsection{Standard-Definitionsliste}
+
+\begin{description}
+    \item[\LaTeX] Ein Textsatzsystem für professionelle Dokumente
+    \item[PDF] Portable Document Format
+    \item[Bib\TeX] Ein Literaturverwaltungssystem
+\end{description}
+
+\subsection{Definitionsliste mit Stil-Anpassung}
+
+\begin{description}[style=nextline]
+    \item[Itemize] Unnummerierte Aufzählung mit Bullet-Punkten
+    \item[Enumerate] Nummerierte Aufzählung mit verschiedenen Zählstilen
+    \item[Description] Definitionsliste mit hervorgehobenen Begriffen
+\end{description}
+
+% ============================================================
+\section{Abstand und Formatierung}
+\label{sec:abstand}
+% ============================================================
+
+\subsection{Einzug und Abstand anpassen}
+
+Mit \texttt{enumitem} lassen sich Einzug und vertikaler Abstand steuern:
+
+\begin{itemize}[leftmargin=2cm, itemsep=12pt]
+    \item Großer Einzug (2\,cm) und großer Zeilenabstand (12\,pt)
+    \item Zweiter Punkt mit gleichem Abstand
+    \item Dritter Punkt
+\end{itemize}
+
+\subsection{Kompakte Listen}
+
+Für platzsparende Darstellung:
+
+\begin{itemize}[nosep]
+    \item Kein zusätzlicher Abstand zwischen den Punkten
+    \item Ideal für Randnotizen oder Fußnoten
+    \item Dritte Zeile direkt darunter
+\end{itemize}
+
+\subsection{Fortlaufende Nummerierung}
+
+Zähler über mehrere Listen hinweg weiterführen:
+
+\begin{enumerate}[label=\arabic*., series=beispiel]
+    \item Erstes Listenelement
+    \item Zweites Listenelement
+\end{enumerate}
+
+Hier steht ein Absatz Text zwischen den Listen.
+
+\begin{enumerate}[label=\arabic*., resume=beispiel]
+    \item Drittes Listenelement -- Nummerierung wird fortgesetzt
+    \item Viertes Listenelement
+\end{enumerate}
+
+% ============================================================
+\section{Farbige Listen}
+\label{sec:farbig}
+% ============================================================
+
+Mit \texttt{xcolor} lassen sich einzelne Labels einfärben:
+
+\begin{itemize}
+    \item[\textcolor{red}{$\bullet$}] Roter Punkt
+    \item[\textcolor{green!60!black}{$\bullet$}] Grüner Punkt
+    \item[\textcolor{blue}{$\bullet$}] Blauer Punkt
+\end{itemize}
+
+\begin{enumerate}[label=\textcolor{orange}{\textbf{\Alph*.}}]
+    \item Orange hervorgehoben
+    \item Auch orange
+    \item Ebenfalls orange
+\end{enumerate}
+
+\end{document}

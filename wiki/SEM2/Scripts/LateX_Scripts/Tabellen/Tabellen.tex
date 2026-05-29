@@ -1,0 +1,308 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Pakete ----
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+% ---- Metadaten ----
+\title{Tabellen in \LaTeX}
+\author{SEM2 -- Skript}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+% ============================================================
+\section{Grundlegende Tabellen}
+\label{sec:grundlagen}
+% ============================================================
+
+\subsection{Einfache Tabelle}
+
+Eine minimale Tabelle mit zentrierten Spalten:
+
+\begin{table}[htbp]
+    \centering
+    \caption{Eine einfache Tabelle}
+    \label{tab:einfach}
+    \begin{tabular}{ccc}
+        \hline
+        Name & Alter & Stadt \\
+        \hline
+        Anna & 25 & Berlin \\
+        Ben & 30 & Hamburg \\
+        Clara & 28 & München \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\subsection{Spaltenausrichtung}
+
+Die drei Standard-Ausrichtungen:
+
+\begin{table}[htbp]
+    \centering
+    \caption{Spaltenausrichtungen: links, zentriert, rechts}
+    \label{tab:ausrichtung}
+    \begin{tabular}{lcr}
+        \hline
+        Linksbündig & Zentriert & Rechtsbündig \\
+        \hline
+        Text & Mitte & 42 \\
+        Noch mehr & Hier & 7 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+% ============================================================
+\section{Professionelle Tabellen mit booktabs}
+\label{sec:booktabs}
+% ============================================================
+
+Das Paket \texttt{booktabs} bietet horizontale Linien in verschiedenen Dicken:
+
+\begin{table}[htbp]
+    \centering
+    \caption{Professionelle Tabelle mit \texttt{booktabs}}
+    \label{tab:booktabs}
+    \begin{tabular}{lrr}
+        \toprule
+        Fachsemester & Studierende & Anteil (\%) \\
+        \midrule
+        1.\ Semester & 432 & 24{,}0 \\
+        2.\ Semester & 387 & 21{,}5 \\
+        3.\ Semester & 341 & 18{,}9 \\
+        4.\ Semester & 298 & 16{,}6 \\
+        Höher & 344 & 19{,}1 \\
+        \midrule
+        Gesamt & 1802 & 100{,}0 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{Teilstriche mit booktabs}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Tabelle mit \texttt{cmidrule}}
+    \label{tab:cmidrule}
+    \begin{tabular}{llrr}
+        \toprule
+        Kategorie & Fach & Teilnehmer & Bestanden (\%) \\
+        \midrule
+        \multirow{3}{*}{Pflicht}
+            & Mathematik & 120 & 78 \\
+            & Physik & 95 & 82 \\
+            & Informatik & 110 & 91 \\
+        \cmidrule(lr){2-4}
+        \multirow{2}{*}{Wahl}
+            & Philosophie & 34 & 88 \\
+            & Kunst & 28 & 95 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+% ============================================================
+\section{Zellen verbinden}
+\label{sec:verbinden}
+% ============================================================
+
+\subsection{Spalten verbinden (multicolumn)}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Spalten mit \texttt{multicolumn} verbunden}
+    \label{tab:multicolumn}
+    \begin{tabular}{llll}
+        \toprule
+        \multicolumn{2}{c}{Name} & Vorname & Note \\
+        \midrule
+        Müller & Anna & Informatik & 1{,}3 \\
+        Schmidt & Ben & Physik & 2{,}0 \\
+        Weber & Clara & Mathematik & 1{,}7 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{Zeilen verbinden (multirow)}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Zeilen mit \texttt{multirow} verbunden}
+    \label{tab:multirow}
+    \begin{tabular}{llr}
+        \toprule
+        Gruppe & Aufgabe & Punkte \\
+        \midrule
+        \multirow{3}{*}{Gruppe A}
+            & Aufgabe 1 & 15 \\
+            & Aufgabe 2 & 18 \\
+            & Aufgabe 3 & 12 \\
+        \midrule
+        \multirow{3}{*}{Gruppe B}
+            & Aufgabe 1 & 20 \\
+            & Aufgabe 2 & 14 \\
+            & Aufgabe 3 & 16 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{Zeilen und Spalten gleichzeitig}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Kombination aus \texttt{multirow} und \texttt{multicolumn}}
+    \label{tab:kombiniert}
+    \begin{tabular}{llcc}
+        \toprule
+        & & \multicolumn{2}{c}{Prüfung} \\
+        \cmidrule(lr){3-4}
+        Fach & Dozent & Klausur & Mündlich \\
+        \midrule
+        \multirow{2}{*}{Mathematik}
+            & Prof.\ A & 1{,}7 & 2{,}0 \\
+            & Prof.\ B & 2{,}3 & 1{,}9 \\
+        \midrule
+        Physik & Prof.\ C & 2{,}0 & 1{,}5 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+% ============================================================
+\section{Farbige Tabellen}
+\label{sec:farbig}
+% ============================================================
+
+\subsection{Farbige Zeilen}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Tabelle mit farbigen Zeilen}
+    \label{tab:farbige-zeilen}
+    \begin{tabular}{lrr}
+        \toprule
+        \rowcolor{blue!15}
+        Semester & Studierende & Anteil (\%) \\
+        \midrule
+        WiSe 24/25 & 420 & 23{,}3 \\
+        \rowcolor{gray!10}
+        SoSe 25 & 380 & 21{,}1 \\
+        WiSe 25/26 & 410 & 22{,}8 \\
+        \rowcolor{gray!10}
+        SoSe 26 & 350 & 19{,}4 \\
+        \midrule
+        \rowcolor{blue!8}
+        Gesamt & 1560 & 86{,}6 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{Farbige Spalten}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Tabelle mit farbiger Spalte}
+    \label{tab:farbige-spalte}
+    \begin{tabular}{l >{\columncolor{green!10}}r r}
+        \toprule
+        Fach & Punkte & Bestanden \\
+        \midrule
+        Mathe & 85 & Ja \\
+        Physik & 72 & Ja \\
+        Chemie & 48 & Nein \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+% ============================================================
+\section{Spaltenbreite und Textumbruch}
+\label{sec:spaltenbreite}
+% ============================================================
+
+\subsection{Feste Spaltenbreite mit Umbruch}
+
+Mit \texttt{p\{...\}} wird der Text in der Spalte umgebrochen:
+
+\begin{table}[htbp]
+    \centering
+    \caption{Tabelle mit fester Spaltenbreite}
+    \label{tab:breite}
+    \begin{tabular}{p{3cm} p{5cm} r}
+        \toprule
+        Fach & Beschreibung & ECTS \\
+        \midrule
+        Mathematik I & Analysis, Lineare Algebra und numerische Methoden & 8 \\
+        Physik & Mechanik, Thermodynamik und Elektrodynamik & 6 \\
+        Informatik & Programmierung, Algorithmen und Datenstrukturen & 7 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{Zentrierter Umbruch mit m-Spalten}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Vertikal zentrierte \texttt{m}-Spalten}
+    \label{tab:m-spalten}
+    \begin{tabular}{m{3cm} m{5cm} r}
+        \toprule
+        Fach & Beschreibung & ECTS \\
+        \midrule
+        Mathe & Lange Beschreibung die umbricht & 8 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+% ============================================================
+\section{Lange Tabellen}
+\label{sec:longtable}
+% ============================================================
+
+Für Tabellen, die über mehrere Seiten gehen, eignet sich \texttt{longtable}:
+
+\begin{longtable}{lrr}
+    \toprule
+    Fach & Teilnehmer & Bestanden (\%) \\
+    \midrule
+    \endfirsthead
+
+    \toprule
+    Fach & Teilnehmer & Bestanden (\%) \\
+    \midrule
+    \endhead
+
+    \midrule
+    \multicolumn{3}{r}{\textit{Fortsetzung auf der nächsten Seite}} \\
+    \endfoot
+
+    \bottomrule
+    \endlastfoot
+
+    Mathematik I & 120 & 78 \\
+    Mathematik II & 95 & 72 \\
+    Physik I & 110 & 80 \\
+    Physik II & 85 & 75 \\
+    Informatik I & 150 & 85 \\
+    Informatik II & 130 & 82 \\
+    Chemie & 70 & 70 \\
+    Biologie & 65 & 88 \\
+    Philosophie & 40 & 92 \\
+    Kunstgeschichte & 35 & 95 \\
+    Geschichte & 45 & 90 \\
+    Soziologie & 55 & 87 \\
+    Psychologie & 80 & 83 \\
+    Wirtschaft & 100 & 79 \\
+    Recht & 90 & 76 \\
+\end{longtable}
+
+\end{document}

@@ -1,0 +1,18 @@
+\babel@toc {ngerman}{}\relax 
+\contentsline {section}{\numberline {1}Bildgrößen und Skalierung}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Bild mit fester Breite}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Bild mit fester Höhe}{2}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Bild mit Skalierungsfaktor}{2}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Breite und Höhe gleichzeitig}{3}{subsection.1.4}%
+\contentsline {section}{\numberline {2}Bildtransformationen}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Gedrehtes Bild}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Bild mit Rahmen}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Gespiegeltes Bild}{3}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Bildanordnung}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Mehrere Bilder nebeneinander}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Drei Bilder in einer Zeile}{5}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Von Text umflossenes Bild}{5}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Float-Positionierung}{6}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Positionierungsangaben}{6}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Bild erzwingen (H)}{6}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Referenzen auf Abbildungen}{6}{section.5}%

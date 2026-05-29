@@ -1,0 +1,229 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Pakete ----
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{wrapfig}
+
+% ---- Metadaten ----
+\title{Bilder in \LaTeX}
+\author{SEM2 -- Skript}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+% ============================================================
+\section{Bildgrößen und Skalierung}
+\label{sec:groesse}
+% ============================================================
+
+\subsection{Bild mit fester Breite}
+
+Ein Bild, das auf 60\% der Textbreite skaliert wird:
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{example-image}
+    \caption{Ein Beispielbild mit 60\,\% Textbreite}
+    \label{fig:breite60}
+\end{figure}
+
+\subsection{Bild mit fester Höhe}
+
+Ein Bild, dessen Höhe festgelegt wird:
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[height=4cm]{example-image}
+    \caption{Ein Beispielbild mit 4\,cm Höhe}
+    \label{fig:hoehe4}
+\end{figure}
+
+\subsection{Bild mit Skalierungsfaktor}
+
+Skalierung um den Faktor 0{,}4:
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[scale=0.4]{example-image}
+    \caption{Ein Beispielbild mit Skalierungsfaktor 0{,}4}
+    \label{fig:scale04}
+\end{figure}
+
+\subsection{Breite und Höhe gleichzeitig}
+
+Wenn beide angegeben werden, wird das Bild proportional so skaliert,
+dass es in den Rahmen passt:
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.4\textwidth, height=3cm, keepaspectratio]{example-image}
+    \caption{Bild mit \texttt{keepaspectratio} -- verzerrungsfrei}
+    \label{fig:keepaspect}
+\end{figure}
+
+% ============================================================
+\section{Bildtransformationen}
+\label{sec:transformation}
+% ============================================================
+
+\subsection{Gedrehtes Bild}
+
+Ein um 15\,Grad gedrehtes Bild:
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth, angle=15]{example-image}
+    \caption{Ein um 15\textdegree\ gedrehtes Bild}
+    \label{fig:gedreht}
+\end{figure}
+
+\subsection{Bild mit Rahmen}
+
+Ein Bild mit einem Rahmen versehen:
+
+\begin{figure}[htbp]
+    \centering
+    \fbox{\includegraphics[width=0.5\textwidth]{example-image}}
+    \caption{Ein gerahmtes Beispielbild}
+    \label{fig:rahmen}
+\end{figure}
+
+\subsection{Gespiegeltes Bild}
+
+Horizontal gespiegelt (\texttt{scale=-1}):
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.4\textwidth, scale=-1]{example-image}
+    \caption{Horizontal gespiegeltes Bild}
+    \label{fig:gespiegelt}
+\end{figure}
+
+% ============================================================
+\section{Bildanordnung}
+\label{sec:anordnung}
+% ============================================================
+
+\subsection{Mehrere Bilder nebeneinander}
+
+Zwei Bilder mit Untertiteln nebeneinander:
+
+\begin{figure}[htbp]
+    \centering
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{example-image-a}
+        \subcaption{Variante A}
+        \label{fig:nebeneinander-a}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{example-image-b}
+        \subcaption{Variante B}
+        \label{fig:nebeneinander-b}
+    \end{minipage}
+    \caption{Zwei Bilder nebeneinander}
+    \label{fig:nebeneinander}
+\end{figure}
+
+\subsection{Drei Bilder in einer Zeile}
+
+Drei Bilder gleichmäßig verteilt:
+
+\begin{figure}[htbp]
+    \centering
+    \begin{minipage}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{example-image-a}
+        \subcaption{Bild 1}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{example-image-b}
+        \subcaption{Bild 2}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{example-image-c}
+        \subcaption{Bild 3}
+    \end{minipage}
+    \caption{Drei Bilder nebeneinander}
+    \label{fig:drei-nebeneinander}
+\end{figure}
+
+\subsection{Von Text umflossenes Bild}
+
+Mit dem Paket \texttt{wrapfig} lässt sich Text um ein Bild fließen:
+
+\begin{wrapfigure}{r}{0.4\textwidth}
+    \centering
+    \includegraphics[width=0.38\textwidth]{example-image}
+    \caption{Von Text umflossen}
+    \label{fig:wrapfig}
+\end{wrapfigure}
+
+Hier steht nun Fließtext, der das Bild auf der rechten Seite umfließt.
+Dies ist nützlich, wenn man Platz sparen möchte und das Bild nicht die
+ganze Breite einnehmen soll. Der Text läuft automatisch um das Bild herum
+und setzt sich danach wieder über die gesamte Breite fort.
+
+Weitere Zeilen Text, um den Umfluss-Effekt zu demonstrieren.
+\LaTeX\ sorgt dafür, dass der Abstand zwischen Text und Bild angenehm
+ist und kein Text über das Bild ragt.
+
+% ============================================================
+\section{Float-Positionierung}
+\label{sec:float}
+% ============================================================
+
+\subsection{Positionierungsangaben}
+
+\LaTeX\ bietet verschiedene Optionen für die Platzierung von Gleitobjekten:
+
+\begin{description}
+    \item[\texttt{h}] \textbf{h}ere -- möglichst an der aktuellen Stelle
+    \item[\texttt{t}] \textbf{t}op -- oben auf der Seite
+    \item[\texttt{b}] \textbf{b}ottom -- unten auf der Seite
+    \item[\texttt{p}] floating \textbf{p}age -- auf einer separaten Gleitseite
+    \item[\texttt{H}] \textbf{H}ere -- genau hier (erfordert Paket \texttt{float})
+\end{description}
+
+\subsection{Bild erzwingen (H)}
+
+\begin{figure}[H]  % H = genau hier
+    \centering
+    \includegraphics[width=0.4\textwidth]{example-image}
+    \caption{Dieses Bild wird genau hier eingefügt}
+    \label{fig:erzwungen}
+\end{figure}
+
+% ============================================================
+\section{Referenzen auf Abbildungen}
+\label{sec:referenzen}
+% ============================================================
+
+Abbildungen lassen sich mit \texttt{\textbackslash label} und
+\texttt{\textbackslash ref} referenzieren:
+
+\begin{itemize}
+    \item Abbildung~\ref{fig:breite60}: Bild mit 60\,\% Textbreite
+    \item Abbildung~\ref{fig:gedreht}: Gedrehtes Bild
+    \item Abbildung~\ref{fig:nebeneinander}: Zwei Bilder nebeneinander
+    \item Abbildung~\ref{fig:wrapfig}: Von Text umflossenes Bild
+\end{itemize}
+
+\end{document}

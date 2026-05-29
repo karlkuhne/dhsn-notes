@@ -1,0 +1,61 @@
+\documentclass{article}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{xurl}
+\usepackage{hyperref}
+
+\title{p-q-Formel und Differenzierbarkeit}
+\author{Karl Kuhne}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{p-q-Formel}
+Eine quadratische Gleichung in Normalform lautet
+\[
+  x^2 + px + q = 0.
+\]
+Ihre Lösungen berechnet man mit der p-q-Formel:
+\[
+  x_{1,2} = -\frac{p}{2} \pm \sqrt{\left(\frac{p}{2}\right)^2 - q}.
+\]
+Der Ausdruck unter der Wurzel entscheidet, ob es zwei, eine oder keine reelle Lösung gibt.
+
+\subsection{Beispiel}
+Für
+\[
+  x^2 - 4x + 3 = 0
+\]
+gilt $p=-4$ und $q=3$. Also:
+\[
+  x_{1,2}=2 \pm \sqrt{4-3}=2 \pm 1.
+\]
+Damit erhält man $x_1=3$ und $x_2=1$.
+
+\section{Differenzierbarkeit}
+Eine Funktion ist an einer Stelle differenzierbar, wenn dort der Grenzwert des Differenzenquotienten existiert:
+\[
+  f'(x)=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}.
+\]
+Die Ableitung beschreibt die Steigung der Tangente an den Graphen der Funktion.
+
+\subsection{Zusammenhang mit Stetigkeit}
+Jede differenzierbare Funktion ist an der betrachteten Stelle stetig. Umgekehrt muss eine stetige Funktion aber nicht differenzierbar sein.
+
+\subsection{Beispiel}
+Für $f(x)=x^2$ gilt:
+\[
+  f'(x)=2x.
+\]
+An der Stelle $x=3$ ist die Steigung also $f'(3)=6$.
+
+\section*{Quellen}
+\begin{itemize}
+  \item \url{https://de.wikipedia.org/wiki/Quadratische_Gleichung#p-q-Formel}
+  \item \url{https://de.wikipedia.org/wiki/Differentialrechnung#Differenzierbarkeit}
+\end{itemize}
+
+\end{document}

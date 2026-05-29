@@ -1,0 +1,293 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---- Pakete ----
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+% ---- Metadaten ----
+\title{Mathematik in \LaTeX}
+\author{SEM2 -- Skript}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+% ============================================================
+\section{Inline- und Display-Modus}
+\label{sec:modi}
+% ============================================================
+
+\subsection{Inline-Mathematik}
+
+Mathematische Ausdrücke im Fließtext werden mit \texttt{\$...\$} gesetzt:
+Die Gleichung $E = mc^2$ ist wohl die bekannteste Formel der Physik.
+Der Satz des Pythagoras lautet $a^2 + b^2 = c^2$.
+
+\subsection{Display-Modus}
+
+Abgesetzte Formeln mit \texttt{\textbackslash[...\textbackslash]}:
+\[
+    E = mc^2
+\]
+
+Nummerierte Gleichungen mit der \texttt{equation}-Umgebung:
+\begin{equation}
+    a^2 + b^2 = c^2
+    \label{eq:pythagoras}
+\end{equation}
+
+% ============================================================
+\section{Hoch- und Tiefstellungen}
+\label{sec:stellen}
+% ============================================================
+
+\subsection{Exponenten und Indizes}
+
+\begin{itemize}
+    \item Exponent: $x^2$, $x^{10}$, $e^{i\pi}$
+    \item Index: $a_1$, $a_{n+1}$, $x_{\max}$
+    \item Beides: $x_i^2$, $a_{i,j}^{(k)}$
+\end{itemize}
+
+\subsection{Summen, Produkte und Integrale}
+
+\[
+    \sum_{i=1}^{n} i = \frac{n(n+1)}{2}
+\]
+
+\[
+    \prod_{k=1}^{n} k = n!
+\]
+
+\[
+    \int_{0}^{\infty} e^{-x^2}\, dx = \frac{\sqrt{\pi}}{2}
+\]
+
+\subsection{Grenzwerte}
+
+\[
+    \lim_{n \to \infty} \left(1 + \frac{1}{n}\right)^n = e
+\]
+
+% ============================================================
+\section{Brüche und Wurzeln}
+\label{sec:brueche}
+% ============================================================
+
+\subsection{Verschiedene Brucharten}
+
+\begin{equation}
+    \frac{a}{b} \qquad \dfrac{a}{b} \qquad \tfrac{a}{b}
+    \label{eq:brucharten}
+\end{equation}
+
+\begin{itemize}
+    \item \texttt{\textbackslash frac} -- Standardbruch
+    \item \texttt{\textbackslash dfrac} -- Großer Bruch (Display-Stil)
+    \item \texttt{\textbackslash tfrac} -- Kleiner Bruch (Text-Stil)
+\end{itemize}
+
+\subsection{Geschachtelte Brüche}
+
+\begin{equation}
+    1 + \frac{1}{1 + \frac{1}{1 + \frac{1}{1 + \cdots}}}
+    \label{eq:kettenbruch}
+\end{equation}
+
+\subsection{Wurzeln}
+
+\[
+    \sqrt{2} \approx 1{,}414 \qquad
+    \sqrt[3]{8} = 2 \qquad
+    \sqrt[n]{a} = a^{1/n}
+\]
+
+% ============================================================
+\section{Matrizen}
+\label{sec:matrizen}
+% ============================================================
+
+\subsection{Einfache Matrix}
+
+\[
+    \begin{matrix}
+        1 & 2 & 3 \\
+        4 & 5 & 6 \\
+        7 & 8 & 9
+    \end{matrix}
+\]
+
+\subsection{Matrix mit Klammern}
+
+Verschiedene Klammerarten:
+
+\[
+    \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}
+    \quad
+    \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}
+    \quad
+    \begin{vmatrix} a & b \\ c & d \end{vmatrix}
+    \quad
+    \begin{Vmatrix} 1 & 0 \\ 0 & 1 \end{Vmatrix}
+\]
+
+\begin{itemize}
+    \item \texttt{pmatrix} -- runde Klammern
+    \item \texttt{bmatrix} -- eckige Klammern
+    \item \texttt{vmatrix} -- einfache Striche (Determinante)
+    \item \texttt{Vmatrix} -- doppelte Striche
+\end{itemize}
+
+\subsection{Große Matrix mit Punkten}
+
+\[
+    A = \begin{pmatrix}
+        a_{11} & a_{12} & \cdots & a_{1n} \\
+        a_{21} & a_{22} & \cdots & a_{2n} \\
+        \vdots & \vdots & \ddots & \vdots \\
+        a_{n1} & a_{n2} & \cdots & a_{nn}
+    \end{pmatrix}
+\]
+
+% ============================================================
+\section{Mehrzeilige Gleichungen}
+\label{sec:mehrzeilig}
+% ============================================================
+
+\subsection{align -- ausgerichtete Gleichungen}
+
+\begin{align}
+    (a + b)^2 &= a^2 + 2ab + b^2 \label{eq:binom1} \\
+    (a - b)^2 &= a^2 - 2ab + b^2 \label{eq:binom2} \\
+    a^2 - b^2 &= (a+b)(a-b) \label{eq:binom3}
+\end{align}
+
+\subsection{alignat -- mehrfache Ausrichtung}
+
+\begin{alignat*}{2}
+    &\text{Addition:} &\quad a + b &= c \\
+    &\text{Subtraktion:} &\quad a - b &= d \\
+    &\text{Multiplikation:} &\quad a \cdot b &= e
+\end{alignat*}
+
+\subsection{cases -- Fallunterscheidungen}
+
+\begin{equation}
+    |x| = \begin{cases}
+        x & \text{falls } x \geq 0 \\
+        -x & \text{falls } x < 0
+    \end{cases}
+    \label{eq:absolut}
+\end{equation}
+
+\subsection{split -- lange Gleichung}
+
+\begin{equation}
+    \begin{split}
+        (a+b)^3 &= a^3 + 3a^2b + 3ab^2 + b^3 \\
+                 &= a^3 + b^3 + 3ab(a+b)
+    \end{split}
+    \label{eq:binom3d}
+\end{equation}
+
+% ============================================================
+\section{Griechische Buchstaben und Symbole}
+\label{sec:symbole}
+% ============================================================
+
+\subsection{Griechische Buchstaben}
+
+\begin{align*}
+    &\alpha \quad \beta \quad \gamma \quad \delta \quad \epsilon \quad \varepsilon \\
+    &\zeta \quad \eta \quad \theta \quad \vartheta \quad \iota \quad \kappa \\
+    &\lambda \quad \mu \quad \nu \quad \xi \quad \pi \quad \varpi \\
+    &\rho \quad \varrho \quad \sigma \quad \varsigma \quad \tau \quad \upsilon \\
+    &\phi \quad \varphi \quad \chi \quad \psi \quad \omega \\
+    &\Gamma \quad \Delta \quad \Theta \quad \Lambda \quad \Xi \quad \Pi \\
+    &\Sigma \quad \Upsilon \quad \Phi \quad \Psi \quad \Omega
+\end{align*}
+
+\subsection{Häufige Operatoren und Symbole}
+
+\[
+    \forall \quad \exists \quad \nexists \quad \in \quad \notin \quad \subset \quad \subseteq
+\]
+\[
+    \cup \quad \cap \quad \setminus \quad \emptyset \quad \mathbb{N} \quad \mathbb{Z} \quad \mathbb{R}
+\]
+\[
+    \Rightarrow \quad \Leftrightarrow \quad \iff \quad \implies \quad \approx \quad \equiv \quad \neq
+\]
+\[
+    \leq \quad \geq \quad \ll \quad \gg \quad \propto \quad \perp \quad \parallel
+\]
+
+\subsection{Pfeile}
+
+\[
+    \leftarrow \quad \rightarrow \quad \Leftarrow \quad \Rightarrow \quad
+    \leftrightarrow \quad \Leftrightarrow
+\]
+\[
+    \mapsto \quad \longmapsto \quad \hookrightarrow \quad \uparrow \quad \downarrow
+\]
+
+% ============================================================
+\section{Auszüge und Theoreme}
+\label{sec:theoreme}
+% ============================================================
+
+\subsection{Mathematische Umgebungen}
+
+\newtheorem{definition}{Definition}
+\newtheorem{satz}{Satz}
+\newtheorem{beweis}{Beweis}
+
+\begin{definition}
+Eine Funktion $f\colon \mathbb{R} \to \mathbb{R}$ heißt \emph{stetig}
+an der Stelle $x_0$, wenn gilt:
+\[
+    \lim_{x \to x_0} f(x) = f(x_0)
+\]
+\end{definition}
+
+\begin{satz}[Satz von Pythagoras]
+In einem rechtwinkligen Dreieck mit den Katheten $a$ und $b$ und der
+Hypotenuse $c$ gilt:
+\begin{equation}
+    a^2 + b^2 = c^2
+\end{equation}
+\end{satz}
+
+\subsection{Beweisumgebung}
+
+\begin{beweis}
+Sei $ABC$ ein rechtwinkliges Dreieck mit dem rechten Winkel bei $C$.
+Dann gilt nach dem Kathetensatz die Behauptung.
+\end{beweis}
+
+% ============================================================
+\section{Referenzen auf Gleichungen}
+\label{sec:referenzen}
+% ============================================================
+
+Wie in den vorherigen Abschnitten gezeigt, lassen sich Gleichungen
+referenzieren:
+
+\begin{itemize}
+    \item Gleichung~\ref{eq:pythagoras}: Der Satz des Pythagoras
+    \item Gleichung~\ref{eq:kettenbruch}: Ein Kettenbruch
+    \item Gleichungen~\ref{eq:binom1}--\ref{eq:binom3}: Binomische Formeln
+    \item Gleichung~\ref{eq:absolut}: Die Betragsfunktion
+\end{itemize}
+
+\end{document}
