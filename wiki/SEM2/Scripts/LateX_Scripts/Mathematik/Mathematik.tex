@@ -1,56 +1,40 @@
-\documentclass[12pt,a4paper]{article}
-
-% ---- Pakete ----
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[ngerman]{babel}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{mathtools}
-\usepackage{xcolor}
-\usepackage{hyperref}
-
-% ---- Metadaten ----
-\title{Mathematik in \LaTeX}
-\author{SEM2 -- Skript}
-\date{\today}
-
-\begin{document}
-
-\maketitle
-\tableofcontents
-\newpage
-
+% !TEX root = ../Hauptdatei.tex
 % ============================================================
-\section{Inline- und Display-Modus}
+% Kapitel: Inline- und Display-Modus
+% ============================================================
+
+\chapter{Inline- und Display-Modus}
 \label{sec:modi}
-% ============================================================
+\index{Mathematikmodus}
 
-\subsection{Inline-Mathematik}
+\section{Inline-Mathematik}
+\index{Inline-Mathematik}
 
-Mathematische Ausdrücke im Fließtext werden mit \texttt{\$...\$} gesetzt:
+Mathematische Ausdrücke im Fließtext werden mit \texttt{\$...\$}\index{\$ (Inline-Mathematik)} gesetzt:
 Die Gleichung $E = mc^2$ ist wohl die bekannteste Formel der Physik.
 Der Satz des Pythagoras lautet $a^2 + b^2 = c^2$.
 
-\subsection{Display-Modus}
+\section{Display-Modus}
+\index{Display-Modus}
 
 Abgesetzte Formeln mit \texttt{\textbackslash[...\textbackslash]}:
 \[
     E = mc^2
 \]
 
-Nummerierte Gleichungen mit der \texttt{equation}-Umgebung:
+Nummerierte Gleichungen mit der \texttt{equation}-Umgebung\index{equation (Umgebung)} \cite{mittelbach2004}:
 \begin{equation}
     a^2 + b^2 = c^2
     \label{eq:pythagoras}
 \end{equation}
 
 % ============================================================
-\section{Hoch- und Tiefstellungen}
+\chapter{Hoch- und Tiefstellungen}
 \label{sec:stellen}
+\index{Hochstellung}\index{Tiefstellung}
 % ============================================================
 
-\subsection{Exponenten und Indizes}
+\section{Exponenten und Indizes}
 
 \begin{itemize}
     \item Exponent: $x^2$, $x^{10}$, $e^{i\pi}$
@@ -58,7 +42,7 @@ Nummerierte Gleichungen mit der \texttt{equation}-Umgebung:
     \item Beides: $x_i^2$, $a_{i,j}^{(k)}$
 \end{itemize}
 
-\subsection{Summen, Produkte und Integrale}
+\section{Summen, Produkte und Integrale}
 
 \[
     \sum_{i=1}^{n} i = \frac{n(n+1)}{2}
@@ -72,18 +56,20 @@ Nummerierte Gleichungen mit der \texttt{equation}-Umgebung:
     \int_{0}^{\infty} e^{-x^2}\, dx = \frac{\sqrt{\pi}}{2}
 \]
 
-\subsection{Grenzwerte}
+\section{Grenzwerte}
+\index{Grenzwert}
 
 \[
     \lim_{n \to \infty} \left(1 + \frac{1}{n}\right)^n = e
 \]
 
 % ============================================================
-\section{Brüche und Wurzeln}
+\chapter{Brüche und Wurzeln}
 \label{sec:brueche}
+\index{Bruch}\index{Wurzel}
 % ============================================================
 
-\subsection{Verschiedene Brucharten}
+\section{Verschiedene Brucharten}
 
 \begin{equation}
     \frac{a}{b} \qquad \dfrac{a}{b} \qquad \tfrac{a}{b}
@@ -91,19 +77,19 @@ Nummerierte Gleichungen mit der \texttt{equation}-Umgebung:
 \end{equation}
 
 \begin{itemize}
-    \item \texttt{\textbackslash frac} -- Standardbruch
-    \item \texttt{\textbackslash dfrac} -- Großer Bruch (Display-Stil)
-    \item \texttt{\textbackslash tfrac} -- Kleiner Bruch (Text-Stil)
+    \item \texttt{\textbackslash frac}\index{frac} -- Standardbruch
+    \item \texttt{\textbackslash dfrac}\index{dfrac} -- Großer Bruch (Display-Stil)
+    \item \texttt{\textbackslash tfrac}\index{tfrac} -- Kleiner Bruch (Text-Stil)
 \end{itemize}
 
-\subsection{Geschachtelte Brüche}
+\section{Geschachtelte Brüche}
 
 \begin{equation}
     1 + \frac{1}{1 + \frac{1}{1 + \frac{1}{1 + \cdots}}}
     \label{eq:kettenbruch}
 \end{equation}
 
-\subsection{Wurzeln}
+\section{Wurzeln}
 
 \[
     \sqrt{2} \approx 1{,}414 \qquad
@@ -112,11 +98,12 @@ Nummerierte Gleichungen mit der \texttt{equation}-Umgebung:
 \]
 
 % ============================================================
-\section{Matrizen}
+\chapter{Matrizen}
 \label{sec:matrizen}
+\index{Matrix}
 % ============================================================
 
-\subsection{Einfache Matrix}
+\section{Einfache Matrix}
 
 \[
     \begin{matrix}
@@ -126,7 +113,7 @@ Nummerierte Gleichungen mit der \texttt{equation}-Umgebung:
     \end{matrix}
 \]
 
-\subsection{Matrix mit Klammern}
+\section{Matrix mit Klammern}
 
 Verschiedene Klammerarten:
 
@@ -141,13 +128,13 @@ Verschiedene Klammerarten:
 \]
 
 \begin{itemize}
-    \item \texttt{pmatrix} -- runde Klammern
-    \item \texttt{bmatrix} -- eckige Klammern
-    \item \texttt{vmatrix} -- einfache Striche (Determinante)
-    \item \texttt{Vmatrix} -- doppelte Striche
+    \item \texttt{pmatrix}\index{pmatrix} -- runde Klammern
+    \item \texttt{bmatrix}\index{bmatrix} -- eckige Klammern
+    \item \texttt{vmatrix}\index{vmatrix} -- einfache Striche (Determinante)
+    \item \texttt{Vmatrix}\index{Vmatrix} -- doppelte Striche
 \end{itemize}
 
-\subsection{Große Matrix mit Punkten}
+\section{Große Matrix mit Punkten}
 
 \[
     A = \begin{pmatrix}
@@ -159,11 +146,12 @@ Verschiedene Klammerarten:
 \]
 
 % ============================================================
-\section{Mehrzeilige Gleichungen}
+\chapter{Mehrzeilige Gleichungen}
 \label{sec:mehrzeilig}
+\index{Gleichung!mehrzeilig}
 % ============================================================
 
-\subsection{align -- ausgerichtete Gleichungen}
+\section{align -- ausgerichtete Gleichungen}
 
 \begin{align}
     (a + b)^2 &= a^2 + 2ab + b^2 \label{eq:binom1} \\
@@ -171,7 +159,7 @@ Verschiedene Klammerarten:
     a^2 - b^2 &= (a+b)(a-b) \label{eq:binom3}
 \end{align}
 
-\subsection{alignat -- mehrfache Ausrichtung}
+\section{alignat -- mehrfache Ausrichtung}
 
 \begin{alignat*}{2}
     &\text{Addition:} &\quad a + b &= c \\
@@ -179,7 +167,7 @@ Verschiedene Klammerarten:
     &\text{Multiplikation:} &\quad a \cdot b &= e
 \end{alignat*}
 
-\subsection{cases -- Fallunterscheidungen}
+\section{cases -- Fallunterscheidungen}
 
 \begin{equation}
     |x| = \begin{cases}
@@ -189,7 +177,7 @@ Verschiedene Klammerarten:
     \label{eq:absolut}
 \end{equation}
 
-\subsection{split -- lange Gleichung}
+\section{split -- lange Gleichung}
 
 \begin{equation}
     \begin{split}
@@ -200,11 +188,12 @@ Verschiedene Klammerarten:
 \end{equation}
 
 % ============================================================
-\section{Griechische Buchstaben und Symbole}
+\chapter{Griechische Buchstaben und Symbole}
 \label{sec:symbole}
+\index{Griechische Buchstaben}\index{Symbol}
 % ============================================================
 
-\subsection{Griechische Buchstaben}
+\section{Griechische Buchstaben}
 
 \begin{align*}
     &\alpha \quad \beta \quad \gamma \quad \delta \quad \epsilon \quad \varepsilon \\
@@ -216,7 +205,7 @@ Verschiedene Klammerarten:
     &\Sigma \quad \Upsilon \quad \Phi \quad \Psi \quad \Omega
 \end{align*}
 
-\subsection{Häufige Operatoren und Symbole}
+\section{Häufige Operatoren und Symbole}
 
 \[
     \forall \quad \exists \quad \nexists \quad \in \quad \notin \quad \subset \quad \subseteq
@@ -231,7 +220,7 @@ Verschiedene Klammerarten:
     \leq \quad \geq \quad \ll \quad \gg \quad \propto \quad \perp \quad \parallel
 \]
 
-\subsection{Pfeile}
+\section{Pfeile}
 
 \[
     \leftarrow \quad \rightarrow \quad \Leftarrow \quad \Rightarrow \quad
@@ -242,15 +231,12 @@ Verschiedene Klammerarten:
 \]
 
 % ============================================================
-\section{Auszüge und Theoreme}
+\chapter{Auszüge und Theoreme}
 \label{sec:theoreme}
+\index{Theorem}\index{Definition}\index{Beweis}
 % ============================================================
 
-\subsection{Mathematische Umgebungen}
-
-\newtheorem{definition}{Definition}
-\newtheorem{satz}{Satz}
-\newtheorem{beweis}{Beweis}
+\section{Mathematische Umgebungen}
 
 \begin{definition}
 Eine Funktion $f\colon \mathbb{R} \to \mathbb{R}$ heißt \emph{stetig}
@@ -268,7 +254,7 @@ Hypotenuse $c$ gilt:
 \end{equation}
 \end{satz}
 
-\subsection{Beweisumgebung}
+\section{Beweisumgebung}
 
 \begin{beweis}
 Sei $ABC$ ein rechtwinkliges Dreieck mit dem rechten Winkel bei $C$.
@@ -276,8 +262,9 @@ Dann gilt nach dem Kathetensatz die Behauptung.
 \end{beweis}
 
 % ============================================================
-\section{Referenzen auf Gleichungen}
-\label{sec:referenzen}
+\chapter{Referenzen auf Gleichungen}
+\label{sec:math-referenzen}
+\index{Referenz!Gleichung}
 % ============================================================
 
 Wie in den vorherigen Abschnitten gezeigt, lassen sich Gleichungen
@@ -289,5 +276,3 @@ referenzieren:
     \item Gleichungen~\ref{eq:binom1}--\ref{eq:binom3}: Binomische Formeln
     \item Gleichung~\ref{eq:absolut}: Die Betragsfunktion
 \end{itemize}
-
-\end{document}

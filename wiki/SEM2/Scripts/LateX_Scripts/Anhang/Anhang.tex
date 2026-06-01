@@ -1,0 +1,162 @@
+% !TEX root = ../Hauptdatei.tex
+% ============================================================
+% Anhang
+% ============================================================
+
+\chapter{Sonderzeichen in \LaTeX}
+\label{anhang:sonderzeichen}
+\index{Sonderzeichen}
+
+Die folgenden Zeichen haben in \LaTeX\ eine besondere Bedeutung und
+müssen mit einem Backslash oder in einer speziellen Umgebung eingegeben werden \cite{lamport1994}:
+
+\begin{table}[htbp]
+    \centering
+    \caption{Sonderzeichen und ihre Eingabe}
+    \label{tab:sonderzeichen}
+    \begin{tabular}{lll}
+        \toprule
+        Zeichen & Eingabe & Bedeutung \\
+        \midrule
+        \#  & \texttt{\textbackslash\#}  & Raute \\
+        \$  & \texttt{\textbackslash\$}  & Dollar \\
+        \%  & \texttt{\textbackslash\%}  & Prozent \\
+        \&  & \texttt{\textbackslash\&}  & Kaufmännisches Und \\
+        \_  & \texttt{\textbackslash\_}  & Unterstrich \\
+        \{  & \texttt{\textbackslash\{}  & Öffnende Klammer \\
+        \}  & \texttt{\textbackslash\}}  & Schließende Klammer \\
+        \textasciitilde     & \texttt{\textbackslash\textasciitilde} & Tilde \\
+        \textasciicircum     & \texttt{\textasciicircum}     & Zirkumflex \\
+        \textbackslash      & \texttt{\textbackslash textbackslash} & Backslash \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+% ============================================================
+\chapter{Wichtige \LaTeX-Befehle}
+\label{anhang:befehle}
+\index{Befehl!Übersicht}
+
+\section{Dokumentstruktur}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Befehle zur Dokumentstruktur}
+    \label{tab:befehle-struktur}
+    \begin{tabular}{lp{7cm}}
+        \toprule
+        Befehl & Beschreibung \\
+        \midrule
+        \texttt{\textbackslash documentclass[...]\{...\}} & Dokumentklasse festlegen \\
+        \texttt{\textbackslash usepackage[...]\{...\}} & Paket einbinden \\
+        \texttt{\textbackslash begin\{document\}} & Dokument beginnen \\
+        \texttt{\textbackslash end\{document\}} & Dokument beenden \\
+        \texttt{\textbackslash maketitle} & Titelseite erzeugen \\
+        \texttt{\textbackslash tableofcontents} & Inhaltsverzeichnis erzeugen \\
+        \texttt{\textbackslash appendix} & Anhang beginnen \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\section{Gliederungsbefehle}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Gliederungsebenen}
+    \label{tab:befehle-gliederung}
+    \begin{tabular}{lll}
+        \toprule
+        Ebene & Befehl & Nummerierung \\
+        \midrule
+        $-1$ & \texttt{\textbackslash part\{...\}} & Teil \\
+        $0$  & \texttt{\textbackslash chapter\{...\}} & Kapitel \\
+        $1$  & \texttt{\textbackslash section\{...\}} & Abschnitt \\
+        $2$  & \texttt{\textbackslash subsection\{...\}} & Unterabschnitt \\
+        $3$  & \texttt{\textbackslash subsubsection\{...\}} & Unterunterabschnitt \\
+        $4$  & \texttt{\textbackslash paragraph\{...\}} & Paragraph \\
+        $5$  & \texttt{\textbackslash subparagraph\{...\}} & Unterparagraph \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\section{Querverweise}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Querverweis-Befehle}
+    \label{tab:befehle-referenzen}
+    \begin{tabular}{lp{7cm}}
+        \toprule
+        Befehl & Beschreibung \\
+        \midrule
+        \texttt{\textbackslash label\{key\}} & Marke setzen \\
+        \texttt{\textbackslash ref\{key\}} & Nummer referenzieren \\
+        \texttt{\textbackslash pageref\{key\}} & Seitennummer referenzieren \\
+        \texttt{\textbackslash eqref\{key\}} & Gleichungsnummer mit Klammern \\
+        \texttt{\textbackslash cite\{key\}} & Literaturverweis \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+% ============================================================
+\chapter{Dokumentklassen}
+\label{anhang:klassen}
+\index{Dokumentklasse}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Standard-Dokumentklassen}
+    \label{tab:klassen}
+    \begin{tabular}{lp{8cm}}
+        \toprule
+        Klasse & Verwendung \\
+        \midrule
+        \texttt{article} & Kurze Dokumente, Übungen, Skripte \\
+        \texttt{report} & Längere Berichte, Bachelorarbeiten \\
+        \texttt{book} & Bücher, Dissertationen \\
+        \texttt{letter} & Briefe \\
+        \texttt{beamer} & Präsentationen \\
+        \texttt{scrartcl} & KOMA-Script Artikel (deutsche Konventionen) \\
+        \texttt{scrreprt} & KOMA-Script Bericht \\
+        \texttt{scrbook} & KOMA-Script Buch \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+% ============================================================
+\chapter{Nützliche Pakete}
+\label{anhang:pakete}
+\index{Paket!Übersicht}
+
+Eine ausführliche Beschreibung aller Pakete findet sich im \LaTeX{} Companion \cite{mittelbach2004} und auf CTAN \cite{ctan2024}.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Wichtige \LaTeX-Pakete}
+    \label{tab:pakete}
+    \begin{tabular}{lp{6cm}}
+        \toprule
+        Paket & Funktion \\
+        \midrule
+        \texttt{graphicx} & Bilder einbinden \\
+        \texttt{enumitem} & Listen anpassen \\
+        \texttt{booktabs} & Professionelle Tabellenlinien \\
+        \texttt{array}     & Erweiterte Tabellenspalten \\
+        \texttt{longtable} & Tabellen über Seitengrenzen \\
+        \texttt{multirow}  & Zellen über mehrere Zeilen \\
+        \texttt{subcaption} & Unterabbildungen \\
+        \texttt{float}     & Erzwungene Gleitobjektplatzierung \\
+        \texttt{wrapfig}   & Textumflossene Bilder \\
+        \texttt{amsmath}   & Erweiterte Mathematik \\
+        \texttt{amssymb}   & Mathematische Symbole \\
+        \texttt{mathtools} & Weitere Mathematik-Werkzeuge \\
+        \texttt{xcolor}    & Farben und Farbtabellen \\
+        \texttt{hyperref}  & Hyperlinks und Querverweise \\
+        \texttt{biblatex}  & Literaturverwaltung \\
+        \texttt{makeidx}   & Stichwortverzeichnis \\
+        \texttt{geometry}  & Seitenränder und Papierformat \\
+        \texttt{fancyhdr}  & Kopf- und Fußzeilen \\
+        \texttt{caption}   & Beschriftungsstil anpassen \\
+        \bottomrule
+    \end{tabular}
+\end{table}

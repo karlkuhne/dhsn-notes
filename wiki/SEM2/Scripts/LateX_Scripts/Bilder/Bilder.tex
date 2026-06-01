@@ -1,33 +1,13 @@
-\documentclass[12pt,a4paper]{article}
-
-% ---- Pakete ----
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[ngerman]{babel}
-\usepackage{graphicx}
-\usepackage{subcaption}
-\usepackage{float}
-\usepackage{xcolor}
-\usepackage{hyperref}
-\usepackage{wrapfig}
-
-% ---- Metadaten ----
-\title{Bilder in \LaTeX}
-\author{SEM2 -- Skript}
-\date{\today}
-
-\begin{document}
-
-\maketitle
-\tableofcontents
-\newpage
-
+% !TEX root = ../Hauptdatei.tex
 % ============================================================
-\section{Bildgrößen und Skalierung}
+% Kapitel: Bilder
+% ============================================================
+
+\chapter{Bildgrößen und Skalierung}
 \label{sec:groesse}
-% ============================================================
+\index{Bild!Skalierung}
 
-\subsection{Bild mit fester Breite}
+\section{Bild mit fester Breite}
 
 Ein Bild, das auf 60\% der Textbreite skaliert wird:
 
@@ -38,7 +18,7 @@ Ein Bild, das auf 60\% der Textbreite skaliert wird:
     \label{fig:breite60}
 \end{figure}
 
-\subsection{Bild mit fester Höhe}
+\section{Bild mit fester Höhe}
 
 Ein Bild, dessen Höhe festgelegt wird:
 
@@ -49,7 +29,7 @@ Ein Bild, dessen Höhe festgelegt wird:
     \label{fig:hoehe4}
 \end{figure}
 
-\subsection{Bild mit Skalierungsfaktor}
+\section{Bild mit Skalierungsfaktor}
 
 Skalierung um den Faktor 0{,}4:
 
@@ -60,7 +40,7 @@ Skalierung um den Faktor 0{,}4:
     \label{fig:scale04}
 \end{figure}
 
-\subsection{Breite und Höhe gleichzeitig}
+\section{Breite und Höhe gleichzeitig}
 
 Wenn beide angegeben werden, wird das Bild proportional so skaliert,
 dass es in den Rahmen passt:
@@ -68,16 +48,18 @@ dass es in den Rahmen passt:
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.4\textwidth, height=3cm, keepaspectratio]{example-image}
-    \caption{Bild mit \texttt{keepaspectratio} -- verzerrungsfrei}
+    \caption{Bild mit \texttt{keepaspectratio}\index{keepaspectratio} -- verzerrungsfrei}
     \label{fig:keepaspect}
 \end{figure}
 
 % ============================================================
-\section{Bildtransformationen}
+\chapter{Bildtransformationen}
 \label{sec:transformation}
+\index{Bild!Transformation}
 % ============================================================
 
-\subsection{Gedrehtes Bild}
+\section{Gedrehtes Bild}
+\index{Bild!Drehen}
 
 Ein um 15\,Grad gedrehtes Bild:
 
@@ -88,7 +70,8 @@ Ein um 15\,Grad gedrehtes Bild:
     \label{fig:gedreht}
 \end{figure}
 
-\subsection{Bild mit Rahmen}
+\section{Bild mit Rahmen}
+\index{Bild!Rahmen}
 
 Ein Bild mit einem Rahmen versehen:
 
@@ -99,7 +82,8 @@ Ein Bild mit einem Rahmen versehen:
     \label{fig:rahmen}
 \end{figure}
 
-\subsection{Gespiegeltes Bild}
+\section{Gespiegeltes Bild}
+\index{Bild!Spiegeln}
 
 Horizontal gespiegelt (\texttt{scale=-1}):
 
@@ -111,11 +95,12 @@ Horizontal gespiegelt (\texttt{scale=-1}):
 \end{figure}
 
 % ============================================================
-\section{Bildanordnung}
+\chapter{Bildanordnung}
 \label{sec:anordnung}
+\index{Bild!Anordnung}
 % ============================================================
 
-\subsection{Mehrere Bilder nebeneinander}
+\section{Mehrere Bilder nebeneinander}
 
 Zwei Bilder mit Untertiteln nebeneinander:
 
@@ -138,7 +123,7 @@ Zwei Bilder mit Untertiteln nebeneinander:
     \label{fig:nebeneinander}
 \end{figure}
 
-\subsection{Drei Bilder in einer Zeile}
+\section{Drei Bilder in einer Zeile}
 
 Drei Bilder gleichmäßig verteilt:
 
@@ -165,7 +150,8 @@ Drei Bilder gleichmäßig verteilt:
     \label{fig:drei-nebeneinander}
 \end{figure}
 
-\subsection{Von Text umflossenes Bild}
+\section{Von Text umflossenes Bild}
+\index{wrapfig (Paket)}
 
 Mit dem Paket \texttt{wrapfig} lässt sich Text um ein Bild fließen:
 
@@ -186,13 +172,14 @@ Weitere Zeilen Text, um den Umfluss-Effekt zu demonstrieren.
 ist und kein Text über das Bild ragt.
 
 % ============================================================
-\section{Float-Positionierung}
+\chapter{Float-Positionierung}
 \label{sec:float}
+\index{Float-Positionierung}
 % ============================================================
 
-\subsection{Positionierungsangaben}
+\section{Positionierungsangaben}
 
-\LaTeX\ bietet verschiedene Optionen für die Platzierung von Gleitobjekten:
+\LaTeX\ bietet verschiedene Optionen für die Platzierung von Gleitobjekten\index{Gleitobjekt} \cite{lamport1994}:
 
 \begin{description}
     \item[\texttt{h}] \textbf{h}ere -- möglichst an der aktuellen Stelle
@@ -202,7 +189,7 @@ ist und kein Text über das Bild ragt.
     \item[\texttt{H}] \textbf{H}ere -- genau hier (erfordert Paket \texttt{float})
 \end{description}
 
-\subsection{Bild erzwingen (H)}
+\section{Bild erzwingen (H)}
 
 \begin{figure}[H]  % H = genau hier
     \centering
@@ -212,12 +199,13 @@ ist und kein Text über das Bild ragt.
 \end{figure}
 
 % ============================================================
-\section{Referenzen auf Abbildungen}
+\chapter{Referenzen auf Abbildungen}
 \label{sec:referenzen}
+\index{Referenz!Abbildung}
 % ============================================================
 
-Abbildungen lassen sich mit \texttt{\textbackslash label} und
-\texttt{\textbackslash ref} referenzieren:
+Abbildungen lassen sich mit \texttt{\textbackslash label}\index{label} und
+\texttt{\textbackslash ref}\index{ref} referenzieren:
 
 \begin{itemize}
     \item Abbildung~\ref{fig:breite60}: Bild mit 60\,\% Textbreite
@@ -225,5 +213,3 @@ Abbildungen lassen sich mit \texttt{\textbackslash label} und
     \item Abbildung~\ref{fig:nebeneinander}: Zwei Bilder nebeneinander
     \item Abbildung~\ref{fig:wrapfig}: Von Text umflossenes Bild
 \end{itemize}
-
-\end{document}

@@ -1,0 +1,15 @@
+[0] Config.pm:328> INFO - This is Biber 2.21
+[0] Config.pm:331> INFO - Logfile is 'Hauptdatei.blg'
+[30] biber-darwin:342> INFO - === Mon Jun  1, 2026, 07:41:26
+[37] Biber.pm:421> INFO - Reading 'Hauptdatei.bcf'
+[67] Biber.pm:1002> INFO - Found 3 citekeys in bib section 0
+[73] Biber.pm:4487> INFO - Processing section 0
+[77] Biber.pm:4678> INFO - Looking for bibtex file 'Literatur.bib' for section 0
+[78] bibtex.pm:1713> INFO - LaTeX decoding ...
+[80] bibtex.pm:1519> INFO - Found BibTeX data source 'Literatur.bib'
+[107] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[107] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[107] Biber.pm:4307> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'de-DE'
+[107] Biber.pm:4313> INFO - No sort tailoring available for locale 'de-DE'
+[111] bbl.pm:676> INFO - Writing 'Hauptdatei.bbl' with encoding 'UTF-8'
+[112] bbl.pm:779> INFO - Output to Hauptdatei.bbl

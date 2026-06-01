@@ -1,0 +1,88 @@
+\documentclass[12pt,a4paper]{report}
+
+% ---- Pakete ----
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{csquotes}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage[table]{xcolor}
+\usepackage{makeidx}
+\usepackage[backend=biber, style=numeric]{biblatex}
+\addbibresource{Literatur.bib}
+
+% ---- Theorem-Umgebungen ----
+\newtheorem{definition}{Definition}
+\newtheorem{satz}{Satz}
+\newtheorem{beweis}{Beweis}
+
+% ---- Stichwortverzeichnis ----
+\makeindex
+
+% ---- Schnellkompilierung (einkommentieren bei Bedarf) ----
+% \includeonly{Listen/Listen,Tabellen/Tabellen}
+
+% ---- Metadaten ----
+\title{\LaTeX\ -- Skriptsammlung}
+\author{SEM2 -- Skript}
+\date{\today}
+
+\begin{document}
+
+% ============================================================
+% Titelseite
+% ============================================================
+\begin{titlepage}
+    \centering
+    \vspace*{3cm}
+    {\Huge\bfseries \LaTeX\ -- Skriptsammlung\par}
+    \vspace{1cm}
+    {\Large Listen · Bilder · Tabellen · Mathematik\par}
+    \vspace{2cm}
+    {\large SEM2 -- Skript\par}
+    \vfill
+    {\large\today\par}
+\end{titlepage}
+
+% ============================================================
+% Inhaltsverzeichnis
+% ============================================================
+\tableofcontents
+\newpage
+
+% ============================================================
+% Kapitel
+% ============================================================
+\include{Listen/Listen}
+\include{Bilder/Bilder}
+\include{Tabellen/Tabellen}
+\include{Mathematik/Mathematik}
+
+% ============================================================
+% Anhang
+% ============================================================
+\appendix
+\include{Anhang/Anhang}
+
+% ============================================================
+% Literaturverzeichnis
+% ============================================================
+\printbibliography[heading=bibintoc]
+
+% ============================================================
+% Stichwortverzeichnis
+% ============================================================
+\printindex
+
+\end{document}

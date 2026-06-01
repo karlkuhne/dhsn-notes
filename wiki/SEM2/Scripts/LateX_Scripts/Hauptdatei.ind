@@ -1,0 +1,138 @@
+\begin{theindex}
+
+  \item \$ (Inline-Mathematik), 29
+
+  \indexspace
+
+  \item Abstand, 10
+
+  \indexspace
+
+  \item Befehl
+    \subitem Übersicht, 38
+  \item Beweis, 35
+  \item Bild
+    \subitem Anordnung, 17
+    \subitem Drehen, 15
+    \subitem Rahmen, 15
+    \subitem Skalierung, 13
+    \subitem Spiegeln, 16
+    \subitem Transformation, 15
+  \item bmatrix, 32
+  \item booktabs (Paket), 22
+  \item Bruch, 31
+
+  \indexspace
+
+  \item cmidrule, 23
+
+  \indexspace
+
+  \item Definition, 35
+  \item description, 9
+  \item dfrac, 31
+  \item Display-Modus, 29
+  \item Dokumentklasse, 40
+
+  \indexspace
+
+  \item Einzug, 10
+  \item enumerate, 7
+  \item enumitem (Paket), 10
+  \item equation (Umgebung), 29
+
+  \indexspace
+
+  \item Farbige Listen, 12
+  \item Float-Positionierung, 19
+  \item Fortlaufende Nummerierung, 10
+  \item frac, 31
+
+  \indexspace
+
+  \item Gleichung
+    \subitem mehrzeilig, 33
+  \item Gleitobjekt, 19
+  \item Grenzwert, 30
+  \item Griechische Buchstaben, 34
+
+  \indexspace
+
+  \item Hochstellung, 30
+
+  \indexspace
+
+  \item Inline-Mathematik, 29
+  \item itemize, 5
+
+  \indexspace
+
+  \item keepaspectratio, 14
+  \item Kompaktliste, 10
+
+  \indexspace
+
+  \item Label
+    \subitem eigenes, 5
+  \item label, 20
+  \item longtable (Paket), 28
+
+  \indexspace
+
+  \item m-Spalte, 27
+  \item Mathematikmodus, 29
+  \item Matrix, 32
+  \item multicolumn, 24
+  \item multirow, 24
+
+  \indexspace
+
+  \item Nummerierungsstil, 7
+
+  \indexspace
+
+  \item p-Spalte, 27
+  \item Paket
+    \subitem Übersicht, 41
+  \item pmatrix, 32
+
+  \indexspace
+
+  \item ref, 20
+  \item Referenz
+    \subitem Abbildung, 20
+    \subitem Gleichung, 36
+
+  \indexspace
+
+  \item Sonderzeichen, 37
+  \item Symbol, 34
+
+  \indexspace
+
+  \item Tabelle
+    \subitem Farbig, 26
+    \subitem Grundlagen, 21
+    \subitem Spaltenausrichtung, 21
+    \subitem Spaltenbreite, 27
+    \subitem Zellen verbinden, 24
+  \item tfrac, 31
+  \item Theorem, 35
+  \item Tiefstellung, 30
+
+  \indexspace
+
+  \item Verschachtelung, 5, 8
+  \item Vmatrix, 32
+  \item vmatrix, 32
+
+  \indexspace
+
+  \item wrapfig (Paket), 17
+  \item Wurzel, 31
+
+  \indexspace
+
+  \item xcolor (Paket), 12
+
+\end{theindex}

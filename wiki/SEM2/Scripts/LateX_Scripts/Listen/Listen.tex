@@ -1,30 +1,13 @@
-\documentclass[12pt,a4paper]{article}
-
-% ---- Pakete ----
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[ngerman]{babel}
-\usepackage{enumitem}
-\usepackage{xcolor}
-\usepackage{hyperref}
-
-% ---- Metadaten ----
-\title{Listen in \LaTeX}
-\author{SEM2 -- Skript}
-\date{\today}
-
-\begin{document}
-
-\maketitle
-\tableofcontents
-\newpage
-
+% !TEX root = ../Hauptdatei.tex
 % ============================================================
-\section{Aufzählungen (itemize)}
+% Kapitel: Listen
+% ============================================================
+
+\chapter{Aufzählungen (itemize)}
 \label{sec:itemize}
-% ============================================================
+\index{itemize}
 
-\subsection{Standard-Aufzählung}
+\section{Standard-Aufzählung}
 
 Eine einfache Aufzählung mit Standard-Bullet-Punkten:
 
@@ -34,7 +17,8 @@ Eine einfache Aufzählung mit Standard-Bullet-Punkten:
     \item Dritter Punkt
 \end{itemize}
 
-\subsection{Aufzählung mit eigenem Label}
+\section{Aufzählung mit eigenem Label}
+\index{Label!eigenes}
 
 Mit optionalen Labels lassen sich eigene Symbole verwenden:
 
@@ -45,7 +29,8 @@ Mit optionalen Labels lassen sich eigene Symbole verwenden:
     \item[$\diamond$] Mit Diamant
 \end{itemize}
 
-\subsection{Verschachtelte Aufzählung}
+\section{Verschachtelte Aufzählung}
+\index{Verschachtelung}
 
 Aufzählungen können verschachtelt werden -- die Symbole ändern sich pro Ebene:
 
@@ -62,11 +47,12 @@ Aufzählungen können verschachtelt werden -- die Symbole ändern sich pro Ebene
 \end{itemize}
 
 % ============================================================
-\section{Nummerierungen (enumerate)}
+\chapter{Nummerierungen (enumerate)}
 \label{sec:enumerate}
+\index{enumerate}
 % ============================================================
 
-\subsection{Standard-Nummerierung}
+\section{Standard-Nummerierung}
 
 \begin{enumerate}
     \item Erster Schritt
@@ -74,37 +60,38 @@ Aufzählungen können verschachtelt werden -- die Symbole ändern sich pro Ebene
     \item Dritter Schritt
 \end{enumerate}
 
-\subsection{Verschiedene Nummerierungsstile}
+\section{Verschiedene Nummerierungsstile}
+\index{Nummerierungsstil}
 
-\paragraph{Arabische Ziffern (1, 2, 3\ldots):}
+\subsection{Arabische Ziffern (1, 2, 3\ldots):}
 \begin{enumerate}[label=\arabic*.]
     \item Eins
     \item Zwei
     \item Drei
 \end{enumerate}
 
-\paragraph{Kleine Buchstaben (a, b, c\ldots):}
+\subsection{Kleine Buchstaben (a, b, c\ldots):}
 \begin{enumerate}[label=\alph*.]
     \item Alpha
     \item Beta
     \item Gamma
 \end{enumerate}
 
-\paragraph{Große Buchstaben (A, B, C\ldots):}
+\subsection{Große Buchstaben (A, B, C\ldots):}
 \begin{enumerate}[label=\Alph*.]
     \item Erster Buchstabe
     \item Zweiter Buchstabe
     \item Dritter Buchstabe
 \end{enumerate}
 
-\paragraph{Römische Ziffern (I, II, III\ldots):}
+\subsection{Römische Ziffern (I, II, III\ldots):}
 \begin{enumerate}[label=\Roman*.]
     \item Primus
     \item Secundus
     \item Tertius
 \end{enumerate}
 
-\subsection{Nummerierung mit Klammern und Prefix}
+\section{Nummerierung mit Klammern und Prefix}
 
 \begin{enumerate}[label=\textbf{Aufgabe~\arabic*:}]
     \item Konfiguration laden
@@ -112,7 +99,8 @@ Aufzählungen können verschachtelt werden -- die Symbole ändern sich pro Ebene
     \item Ergebnis speichern
 \end{enumerate}
 
-\subsection{Verschachtelte Nummerierung mit Referenz}
+\section{Verschachtelte Nummerierung mit Referenz}
+\index{Verschachtelung}
 
 \begin{enumerate}[label=\arabic*]
     \item Hauptpunkt
@@ -129,11 +117,12 @@ Aufzählungen können verschachtelt werden -- die Symbole ändern sich pro Ebene
 \end{enumerate}
 
 % ============================================================
-\section{Definitionslisten (description)}
+\chapter{Definitionslisten (description)}
 \label{sec:description}
+\index{description}
 % ============================================================
 
-\subsection{Standard-Definitionsliste}
+\section{Standard-Definitionsliste}
 
 \begin{description}
     \item[\LaTeX] Ein Textsatzsystem für professionelle Dokumente
@@ -141,7 +130,7 @@ Aufzählungen können verschachtelt werden -- die Symbole ändern sich pro Ebene
     \item[Bib\TeX] Ein Literaturverwaltungssystem
 \end{description}
 
-\subsection{Definitionsliste mit Stil-Anpassung}
+\section{Definitionsliste mit Stil-Anpassung}
 
 \begin{description}[style=nextline]
     \item[Itemize] Unnummerierte Aufzählung mit Bullet-Punkten
@@ -150,13 +139,15 @@ Aufzählungen können verschachtelt werden -- die Symbole ändern sich pro Ebene
 \end{description}
 
 % ============================================================
-\section{Abstand und Formatierung}
+\chapter{Abstand und Formatierung}
 \label{sec:abstand}
+\index{Abstand}
 % ============================================================
 
-\subsection{Einzug und Abstand anpassen}
+\section{Einzug und Abstand anpassen}
+\index{Einzug}
 
-Mit \texttt{enumitem} lassen sich Einzug und vertikaler Abstand steuern:
+Mit \texttt{enumitem}\index{enumitem (Paket)}\cite{mittelbach2004} lassen sich Einzug und vertikaler Abstand steuern:
 
 \begin{itemize}[leftmargin=2cm, itemsep=12pt]
     \item Großer Einzug (2\,cm) und großer Zeilenabstand (12\,pt)
@@ -164,7 +155,8 @@ Mit \texttt{enumitem} lassen sich Einzug und vertikaler Abstand steuern:
     \item Dritter Punkt
 \end{itemize}
 
-\subsection{Kompakte Listen}
+\section{Kompakte Listen}
+\index{Kompaktliste}
 
 Für platzsparende Darstellung:
 
@@ -174,7 +166,8 @@ Für platzsparende Darstellung:
     \item Dritte Zeile direkt darunter
 \end{itemize}
 
-\subsection{Fortlaufende Nummerierung}
+\section{Fortlaufende Nummerierung}
+\index{Fortlaufende Nummerierung}
 
 Zähler über mehrere Listen hinweg weiterführen:
 
@@ -191,11 +184,12 @@ Hier steht ein Absatz Text zwischen den Listen.
 \end{enumerate}
 
 % ============================================================
-\section{Farbige Listen}
+\chapter{Farbige Listen}
 \label{sec:farbig}
+\index{Farbige Listen}
 % ============================================================
 
-Mit \texttt{xcolor} lassen sich einzelne Labels einfärben:
+Mit \texttt{xcolor}\index{xcolor (Paket)} lassen sich einzelne Labels einfärben:
 
 \begin{itemize}
     \item[\textcolor{red}{$\bullet$}] Roter Punkt
@@ -208,5 +202,3 @@ Mit \texttt{xcolor} lassen sich einzelne Labels einfärben:
     \item Auch orange
     \item Ebenfalls orange
 \end{enumerate}
-
-\end{document}

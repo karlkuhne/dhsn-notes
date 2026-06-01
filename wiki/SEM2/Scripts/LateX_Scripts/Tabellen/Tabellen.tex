@@ -1,33 +1,13 @@
-\documentclass[12pt,a4paper]{article}
-
-% ---- Pakete ----
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[ngerman]{babel}
-\usepackage{booktabs}
-\usepackage{array}
-\usepackage{longtable}
-\usepackage{multirow}
-\usepackage{xcolor}
-\usepackage{hyperref}
-
-% ---- Metadaten ----
-\title{Tabellen in \LaTeX}
-\author{SEM2 -- Skript}
-\date{\today}
-
-\begin{document}
-
-\maketitle
-\tableofcontents
-\newpage
-
+% !TEX root = ../Hauptdatei.tex
 % ============================================================
-\section{Grundlegende Tabellen}
+% Kapitel: Grundlegende Tabellen
+% ============================================================
+
+\chapter{Grundlegende Tabellen}
 \label{sec:grundlagen}
-% ============================================================
+\index{Tabelle!Grundlagen}
 
-\subsection{Einfache Tabelle}
+\section{Einfache Tabelle}
 
 Eine minimale Tabelle mit zentrierten Spalten:
 
@@ -46,9 +26,9 @@ Eine minimale Tabelle mit zentrierten Spalten:
     \end{tabular}
 \end{table}
 
-\subsection{Spaltenausrichtung}
+\section{Spaltenausrichtung}
 
-Die drei Standard-Ausrichtungen:
+Die drei Standard-Ausrichtungen\index{Tabelle!Spaltenausrichtung}:
 
 \begin{table}[htbp]
     \centering
@@ -65,11 +45,12 @@ Die drei Standard-Ausrichtungen:
 \end{table}
 
 % ============================================================
-\section{Professionelle Tabellen mit booktabs}
+\chapter{Professionelle Tabellen mit booktabs}
 \label{sec:booktabs}
+\index{booktabs (Paket)}
 % ============================================================
 
-Das Paket \texttt{booktabs} bietet horizontale Linien in verschiedenen Dicken:
+Das Paket \texttt{booktabs}\cite{mittelbach2004} bietet horizontale Linien in verschiedenen Dicken:
 
 \begin{table}[htbp]
     \centering
@@ -90,11 +71,11 @@ Das Paket \texttt{booktabs} bietet horizontale Linien in verschiedenen Dicken:
     \end{tabular}
 \end{table}
 
-\subsection{Teilstriche mit booktabs}
+\section{Teilstriche mit booktabs}
 
 \begin{table}[htbp]
     \centering
-    \caption{Tabelle mit \texttt{cmidrule}}
+    \caption{Tabelle mit \texttt{cmidrule}\index{cmidrule}}
     \label{tab:cmidrule}
     \begin{tabular}{llrr}
         \toprule
@@ -113,15 +94,16 @@ Das Paket \texttt{booktabs} bietet horizontale Linien in verschiedenen Dicken:
 \end{table}
 
 % ============================================================
-\section{Zellen verbinden}
+\chapter{Zellen verbinden}
 \label{sec:verbinden}
+\index{Tabelle!Zellen verbinden}
 % ============================================================
 
-\subsection{Spalten verbinden (multicolumn)}
+\section{Spalten verbinden (multicolumn)}
 
 \begin{table}[htbp]
     \centering
-    \caption{Spalten mit \texttt{multicolumn} verbunden}
+    \caption{Spalten mit \texttt{multicolumn}\index{multicolumn} verbunden}
     \label{tab:multicolumn}
     \begin{tabular}{llll}
         \toprule
@@ -134,11 +116,11 @@ Das Paket \texttt{booktabs} bietet horizontale Linien in verschiedenen Dicken:
     \end{tabular}
 \end{table}
 
-\subsection{Zeilen verbinden (multirow)}
+\section{Zeilen verbinden (multirow)}
 
 \begin{table}[htbp]
     \centering
-    \caption{Zeilen mit \texttt{multirow} verbunden}
+    \caption{Zeilen mit \texttt{multirow}\index{multirow} verbunden}
     \label{tab:multirow}
     \begin{tabular}{llr}
         \toprule
@@ -157,7 +139,7 @@ Das Paket \texttt{booktabs} bietet horizontale Linien in verschiedenen Dicken:
     \end{tabular}
 \end{table}
 
-\subsection{Zeilen und Spalten gleichzeitig}
+\section{Zeilen und Spalten gleichzeitig}
 
 \begin{table}[htbp]
     \centering
@@ -179,11 +161,12 @@ Das Paket \texttt{booktabs} bietet horizontale Linien in verschiedenen Dicken:
 \end{table}
 
 % ============================================================
-\section{Farbige Tabellen}
-\label{sec:farbig}
+\chapter{Farbige Tabellen}
+\label{sec:tab-farbig}
+\index{Tabelle!Farbig}
 % ============================================================
 
-\subsection{Farbige Zeilen}
+\section{Farbige Zeilen}
 
 \begin{table}[htbp]
     \centering
@@ -207,7 +190,7 @@ Das Paket \texttt{booktabs} bietet horizontale Linien in verschiedenen Dicken:
     \end{tabular}
 \end{table}
 
-\subsection{Farbige Spalten}
+\section{Farbige Spalten}
 
 \begin{table}[htbp]
     \centering
@@ -225,13 +208,14 @@ Das Paket \texttt{booktabs} bietet horizontale Linien in verschiedenen Dicken:
 \end{table}
 
 % ============================================================
-\section{Spaltenbreite und Textumbruch}
+\chapter{Spaltenbreite und Textumbruch}
 \label{sec:spaltenbreite}
+\index{Tabelle!Spaltenbreite}
 % ============================================================
 
-\subsection{Feste Spaltenbreite mit Umbruch}
+\section{Feste Spaltenbreite mit Umbruch}
 
-Mit \texttt{p\{...\}} wird der Text in der Spalte umgebrochen:
+Mit \texttt{p\{...\}}\index{p-Spalte} wird der Text in der Spalte umgebrochen:
 
 \begin{table}[htbp]
     \centering
@@ -248,11 +232,11 @@ Mit \texttt{p\{...\}} wird der Text in der Spalte umgebrochen:
     \end{tabular}
 \end{table}
 
-\subsection{Zentrierter Umbruch mit m-Spalten}
+\section{Zentrierter Umbruch mit m-Spalten}
 
 \begin{table}[htbp]
     \centering
-    \caption{Vertikal zentrierte \texttt{m}-Spalten}
+    \caption{Vertikal zentrierte \texttt{m}-Spalten\index{m-Spalte}}
     \label{tab:m-spalten}
     \begin{tabular}{m{3cm} m{5cm} r}
         \toprule
@@ -264,8 +248,9 @@ Mit \texttt{p\{...\}} wird der Text in der Spalte umgebrochen:
 \end{table}
 
 % ============================================================
-\section{Lange Tabellen}
+\chapter{Lange Tabellen}
 \label{sec:longtable}
+\index{longtable (Paket)}
 % ============================================================
 
 Für Tabellen, die über mehrere Seiten gehen, eignet sich \texttt{longtable}:
@@ -304,5 +289,3 @@ Für Tabellen, die über mehrere Seiten gehen, eignet sich \texttt{longtable}:
     Wirtschaft & 100 & 79 \\
     Recht & 90 & 76 \\
 \end{longtable}
-
-\end{document}

@@ -1,0 +1,91 @@
+\babel@toc {ngerman}{}\relax 
+\contentsline {chapter}{\numberline {1}Aufzählungen (itemize)}{5}{}%
+\contentsline {section}{\numberline {1.1}Standard-Aufzählung}{5}{}%
+\contentsline {section}{\numberline {1.2}Aufzählung mit eigenem Label}{5}{}%
+\contentsline {section}{\numberline {1.3}Verschachtelte Aufzählung}{5}{}%
+\contentsline {chapter}{\numberline {2}Nummerierungen (enumerate)}{7}{}%
+\contentsline {section}{\numberline {2.1}Standard-Nummerierung}{7}{}%
+\contentsline {section}{\numberline {2.2}Verschiedene Nummerierungsstile}{7}{}%
+\contentsline {subsection}{\numberline {2.2.1}Arabische Ziffern (1, 2, 3\ldots ):}{7}{}%
+\contentsline {subsection}{\numberline {2.2.2}Kleine Buchstaben (a, b, c\ldots ):}{7}{}%
+\contentsline {subsection}{\numberline {2.2.3}Große Buchstaben (A, B, C\ldots ):}{8}{}%
+\contentsline {subsection}{\numberline {2.2.4}Römische Ziffern (I, II, III\ldots ):}{8}{}%
+\contentsline {section}{\numberline {2.3}Nummerierung mit Klammern und Prefix}{8}{}%
+\contentsline {section}{\numberline {2.4}Verschachtelte Nummerierung mit Referenz}{8}{}%
+\contentsline {chapter}{\numberline {3}Definitionslisten (description)}{9}{}%
+\contentsline {section}{\numberline {3.1}Standard-Definitionsliste}{9}{}%
+\contentsline {section}{\numberline {3.2}Definitionsliste mit Stil-Anpassung}{9}{}%
+\contentsline {chapter}{\numberline {4}Abstand und Formatierung}{10}{}%
+\contentsline {section}{\numberline {4.1}Einzug und Abstand anpassen}{10}{}%
+\contentsline {section}{\numberline {4.2}Kompakte Listen}{10}{}%
+\contentsline {section}{\numberline {4.3}Fortlaufende Nummerierung}{10}{}%
+\contentsline {chapter}{\numberline {5}Farbige Listen}{12}{}%
+\contentsline {chapter}{\numberline {6}Bildgrößen und Skalierung}{13}{}%
+\contentsline {section}{\numberline {6.1}Bild mit fester Breite}{13}{}%
+\contentsline {section}{\numberline {6.2}Bild mit fester Höhe}{13}{}%
+\contentsline {section}{\numberline {6.3}Bild mit Skalierungsfaktor}{13}{}%
+\contentsline {section}{\numberline {6.4}Breite und Höhe gleichzeitig}{14}{}%
+\contentsline {chapter}{\numberline {7}Bildtransformationen}{15}{}%
+\contentsline {section}{\numberline {7.1}Gedrehtes Bild}{15}{}%
+\contentsline {section}{\numberline {7.2}Bild mit Rahmen}{15}{}%
+\contentsline {section}{\numberline {7.3}Gespiegeltes Bild}{16}{}%
+\contentsline {chapter}{\numberline {8}Bildanordnung}{17}{}%
+\contentsline {section}{\numberline {8.1}Mehrere Bilder nebeneinander}{17}{}%
+\contentsline {section}{\numberline {8.2}Drei Bilder in einer Zeile}{17}{}%
+\contentsline {section}{\numberline {8.3}Von Text umflossenes Bild}{17}{}%
+\contentsline {chapter}{\numberline {9}Float-Positionierung}{19}{}%
+\contentsline {section}{\numberline {9.1}Positionierungsangaben}{19}{}%
+\contentsline {section}{\numberline {9.2}Bild erzwingen (H)}{19}{}%
+\contentsline {chapter}{\numberline {10}Referenzen auf Abbildungen}{20}{}%
+\contentsline {chapter}{\numberline {11}Grundlegende Tabellen}{21}{}%
+\contentsline {section}{\numberline {11.1}Einfache Tabelle}{21}{}%
+\contentsline {section}{\numberline {11.2}Spaltenausrichtung}{21}{}%
+\contentsline {chapter}{\numberline {12}Professionelle Tabellen mit booktabs}{22}{}%
+\contentsline {section}{\numberline {12.1}Teilstriche mit booktabs}{22}{}%
+\contentsline {chapter}{\numberline {13}Zellen verbinden}{24}{}%
+\contentsline {section}{\numberline {13.1}Spalten verbinden (multicolumn)}{24}{}%
+\contentsline {section}{\numberline {13.2}Zeilen verbinden (multirow)}{24}{}%
+\contentsline {section}{\numberline {13.3}Zeilen und Spalten gleichzeitig}{25}{}%
+\contentsline {chapter}{\numberline {14}Farbige Tabellen}{26}{}%
+\contentsline {section}{\numberline {14.1}Farbige Zeilen}{26}{}%
+\contentsline {section}{\numberline {14.2}Farbige Spalten}{26}{}%
+\contentsline {chapter}{\numberline {15}Spaltenbreite und Textumbruch}{27}{}%
+\contentsline {section}{\numberline {15.1}Feste Spaltenbreite mit Umbruch}{27}{}%
+\contentsline {section}{\numberline {15.2}Zentrierter Umbruch mit m-Spalten}{27}{}%
+\contentsline {chapter}{\numberline {16}Lange Tabellen}{28}{}%
+\contentsline {chapter}{\numberline {17}Inline- und Display-Modus}{29}{}%
+\contentsline {section}{\numberline {17.1}Inline-Mathematik}{29}{}%
+\contentsline {section}{\numberline {17.2}Display-Modus}{29}{}%
+\contentsline {chapter}{\numberline {18}Hoch- und Tiefstellungen}{30}{}%
+\contentsline {section}{\numberline {18.1}Exponenten und Indizes}{30}{}%
+\contentsline {section}{\numberline {18.2}Summen, Produkte und Integrale}{30}{}%
+\contentsline {section}{\numberline {18.3}Grenzwerte}{30}{}%
+\contentsline {chapter}{\numberline {19}Brüche und Wurzeln}{31}{}%
+\contentsline {section}{\numberline {19.1}Verschiedene Brucharten}{31}{}%
+\contentsline {section}{\numberline {19.2}Geschachtelte Brüche}{31}{}%
+\contentsline {section}{\numberline {19.3}Wurzeln}{31}{}%
+\contentsline {chapter}{\numberline {20}Matrizen}{32}{}%
+\contentsline {section}{\numberline {20.1}Einfache Matrix}{32}{}%
+\contentsline {section}{\numberline {20.2}Matrix mit Klammern}{32}{}%
+\contentsline {section}{\numberline {20.3}Große Matrix mit Punkten}{32}{}%
+\contentsline {chapter}{\numberline {21}Mehrzeilige Gleichungen}{33}{}%
+\contentsline {section}{\numberline {21.1}align -- ausgerichtete Gleichungen}{33}{}%
+\contentsline {section}{\numberline {21.2}alignat -- mehrfache Ausrichtung}{33}{}%
+\contentsline {section}{\numberline {21.3}cases -- Fallunterscheidungen}{33}{}%
+\contentsline {section}{\numberline {21.4}split -- lange Gleichung}{33}{}%
+\contentsline {chapter}{\numberline {22}Griechische Buchstaben und Symbole}{34}{}%
+\contentsline {section}{\numberline {22.1}Griechische Buchstaben}{34}{}%
+\contentsline {section}{\numberline {22.2}Häufige Operatoren und Symbole}{34}{}%
+\contentsline {section}{\numberline {22.3}Pfeile}{34}{}%
+\contentsline {chapter}{\numberline {23}Auszüge und Theoreme}{35}{}%
+\contentsline {section}{\numberline {23.1}Mathematische Umgebungen}{35}{}%
+\contentsline {section}{\numberline {23.2}Beweisumgebung}{35}{}%
+\contentsline {chapter}{\numberline {24}Referenzen auf Gleichungen}{36}{}%
+\contentsline {chapter}{\numberline {A}Sonderzeichen in \LaTeX }{37}{}%
+\contentsline {chapter}{\numberline {B}Wichtige \LaTeX -Befehle}{38}{}%
+\contentsline {section}{\numberline {B.1}Dokumentstruktur}{38}{}%
+\contentsline {section}{\numberline {B.2}Gliederungsbefehle}{38}{}%
+\contentsline {section}{\numberline {B.3}Querverweise}{38}{}%
+\contentsline {chapter}{\numberline {C}Dokumentklassen}{40}{}%
+\contentsline {chapter}{\numberline {D}Nützliche Pakete}{41}{}%
+\contentsline {chapter}{Literatur}{42}{}%
