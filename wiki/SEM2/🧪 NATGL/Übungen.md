@@ -1173,6 +1173,34 @@ Der Winkel zwischen dem reflektierten und dem gebrochenen Strahl beträgt **$91,
 >
 > b) Berechnen Sie $q$ für $d = 6$ mm, $\alpha = 40^{\circ}$ und $n = 1,5$.
 
+**Lösung:**
+
+**a) Herleitung der allgemeinen Formel**
+
+Ein Lichtstrahl trifft unter dem Einfallswinkel $\alpha$ auf eine Parallelplatte der Dicke $d$ und wird im Inneren unter dem Winkel $\beta$ gebrochen. 
+1. Die im Glas zurückgelegte Strecke $s$ lässt sich über die Dicke $d$ ausdrücken:
+   $$\cos(\beta) = \frac{d}{s} \implies s = \frac{d}{\cos(\beta)}$$
+2. Die Querverschiebung $q$ ist der senkrechte Abstand zwischen dem eintretenden und dem austretenden Strahl. Der Winkel zwischen der ursprünglichen Strahlrichtung und dem gebrochenen Strahl beträgt $(\alpha - \beta)$. Im rechtwinkligen Dreieck mit der Hypotenuse $s$ gilt:
+   $$\sin(\alpha - \beta) = \frac{q}{s} \implies q = s \cdot \sin(\alpha - \beta)$$
+3. Einsetzen von $s$:
+   $$q = d \cdot \frac{\sin(\alpha - \beta)}{\cos(\beta)}$$
+
+**b) Berechnung für die gegebenen Werte**
+
+Gegeben: $d = 6\text{ mm}$, $\alpha = 40^\circ$, $n = 1,5$ (Annahme: $n_{Luft} \approx 1,0$)
+
+1. **Brechungswinkel $\beta$ bestimmen (Snellius):**
+   $$n_1 \cdot \sin(\alpha) = n_2 \cdot \sin(\beta)$$
+   $$1,0 \cdot \sin(40^\circ) = 1,5 \cdot \sin(\beta)$$
+   $$\sin(\beta) = \frac{\sin(40^\circ)}{1,5} \approx \frac{0,6428}{1,5} \approx 0,4285$$
+   $$\beta = \arcsin(0,4285) \approx 25,37^\circ$$
+
+2. **Querverschiebung $q$ berechnen:**
+   $$q = 6\text{ mm} \cdot \frac{\sin(40^\circ - 25,37^\circ)}{\cos(25,37^\circ)}$$
+   $$q = 6\text{ mm} \cdot \frac{\sin(14,63^\circ)}{\cos(25,37^\circ)} \approx 6 \cdot \frac{0,2526}{0,9036} \approx 1,68\text{ mm}$$
+
+Die Querverschiebung beträgt ca. **$1,68\text{ mm}$**.
+
 ![[Übungen/Übungen-_page_10_Figure_10.jpeg]]
 
 ### Aufgabe 5: Auge

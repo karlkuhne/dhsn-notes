@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="TODO-Liste">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/TODO-Liste.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
