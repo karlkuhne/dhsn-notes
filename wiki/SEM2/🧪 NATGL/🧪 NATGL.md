@@ -6,6 +6,7 @@ Naturwissenschaftliche Grundlagen (NATGL)
 - [[0. Physik Einführung]]
 - [[1. Mechanik]]
 - [[2. Optik]]
+- [[3. Elektrotechnik]]
 
 ## Übungen
 - [[wiki/SEM2/🧪 NATGL/Übungen]]
