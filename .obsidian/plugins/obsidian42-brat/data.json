@@ -1,9 +1,14 @@
 {
   "pluginList": [
+    "derek-larson14/obsidian-claude-sidebar",
     "gapmiss/croppie-for-obsidian",
     "mtymek/opencode-obsidian"
   ],
   "pluginSubListFrozenVersion": [
+    {
+      "repo": "derek-larson14/obsidian-claude-sidebar",
+      "version": ""
+    },
     {
       "repo": "gapmiss/croppie-for-obsidian",
       "version": ""

@@ -1213,119 +1213,199 @@ Die Querverschiebung beträgt ca. **$1,68\text{ mm}$**.
 
 ## Elektrotechnik (AB7)
 
-> [!info] Aufgabenstellung
-> Medieninformatik, BA Dresden, D. Gembris
->
-> **Aufgaben zur elektrischen Ladung und elektrischem Strom**
->
-> **E1)** Berechnen die Ladungsmenge Q, die in 3 cm<sup>3</sup> Cu in Form frei verschiebbarer Elektronen vorhanden ist, wenn die Elektronendichte $n = 8.6 \cdot 10^{22}$ cm<sup>-3</sup> beträgt. (Elementarladung: $q_e = 1,602 \cdot 10^{-19}$ C)
->
-> E2) Bestimmen Sie die Strömungsgeschwindigkeit der Elementarladungen nach 1), wenn der Strom 30 A und der Leiterquerschnitt 3 mm<sup>2</sup> beträgt. (Elektronendichte aus 1); fertigen Sie eine Skizze an.)
->
-> E3) Berechnen Sie die Ladungsmenge Q, die durch einen Leiter fließt:
->
-> - E3.1) bei konstantem Strom von 36 mA innerhalb von 2 s,
-> - **E3.2)** bei quadratisch zunehmendem Strom ( $l = 0$ mA für $t = 0$ s; $l = 9$ mA für $t = 1$ s; $l = 36$ mA für $t = 2$ s) innerhalb von 2 s und
-> - **E3.3**) bei mit der dritten Potenz zunehmendem Strom ( $l = 0$ mA für $t = 0$ s; $l = 36$ mA für $t = 2$ s) innerhalb von 2 s. Stellen Sie zunächst den Strom als Funktion der Zeit grafisch dar!
->
-> **Aufgaben zu Strom, Spannung und elektrischem Widerstand**
->
-> A1) Berechnen Sie sie die Länge eines Messingdrahts sein, wenn er bei einem Durchmesser von 0,08 mm einen Widerstand von R = 20 $\Omega$ haben soll. ( $\rho_{Ms} = 0.0655 \frac{\Omega \text{mm}^2}{m}$ ).
->
-> A2) Berechnen sie den Spannungsabfall zwischen zwei 40 cm voneinander entfernten Punkten einer Cu-Leitung von 1 mm Durchmesser, durch welche ein Strom von 2 A fließt.
->
-$$
-> [!info] Aufgabenstellung
-> (\rho_{Cu} = 0.01786 \frac{\Omega \text{mm}^2}{\text{m}})
-$$
+### Aufgabe E1: Ladungsmenge in Kupfer
 
 > [!info] Aufgabenstellung
-> A3) Durch theoretische Überlegungen ergebe sich die folgende Abhängigkeit zwischen dem Spannungsabfall über einem passiven Bauelement (z.B. nichtlinearer Widerstand) und dem Strom durch das Bauelement: $U = U(I) = 10 \frac{V}{A^2} \cdot I^2$
+> Berechnen Sie die Ladungsmenge Q, die in 3 cm³ Cu in Form frei verschiebbarer Elektronen vorhanden ist, wenn die Elektronendichte $n = 8{,}6 \cdot 10^{22}$ cm⁻³ beträgt. (Elementarladung: $q_e = 1{,}602 \cdot 10^{-19}$ C)
+
+Elektronenanzahl:
+$$N = n \cdot V = 8{,}6 \cdot 10^{22}\,\text{cm}^{-3} \cdot 3\,\text{cm}^3 = 25{,}8 \cdot 10^{22}$$
+
+Gesamtladung: 
+$$Q = 25{,}8 \cdot 10^{22} \cdot -1{,}602 \cdot 10^{-19}\,\text{C} = (25{,}8 \cdot -1{,}602) \cdot 10^{3}\,\text{C} = -41{,}3 \cdot 10^{3}\,\text{C} = -41{,}3 \cdot 10^{3}\,\text{As}$$
+
+### Aufgabe E2: Strömungsgeschwindigkeit
+
+> [!info] Aufgabenstellung
+> Bestimmen Sie die Strömungsgeschwindigkeit der Elementarladungen aus E1), wenn der Strom 30 A und der Leiterquerschnitt 3 mm² beträgt. (Elektronendichte aus E1; fertigen Sie eine Skizze an.)
+
+**Gegeben:**
+- Strom: $I = 30\,\text{A}$
+- Leiterquerschnitt: $A = 3\,\text{mm}^2$
+- Elektronendichte (aus E1): $n = 8{,}6 \cdot 10^{22}\,\text{cm}^{-3}$
+- Elementarladung: $q_e = 1{,}602 \cdot 10^{-19}\,\text{C}$
+
+**Gesucht:** Driftgeschwindigkeit $v_d$ der Elektronen (m/s)
+
+**Lösung:**
+
+Formel für Stromstärke:
+$$I = n \cdot A \cdot v_d \cdot q_e \quad \Rightarrow \quad v_d = \frac{I}{n \cdot A \cdot q_e}$$
+
+**Einheitsumrechnung:**
+- Elektronendichte: $n = 8{,}6 \cdot 10^{22}\,\text{cm}^{-3}$ → $8{,}6 \cdot 10^{28}\,\text{m}^{-3}$ (Faktor $10^6$)
+- Querschnittsfläche: $A = 3\,\text{mm}^2$ → $3 \cdot 10^{-6}\,\text{m}^2$ (Faktor $10^{-6}$)
+
+**Berechnung:**
+
+$$v_d = \frac{30\,\text{A}}{8{,}6 \cdot 10^{28}\,\text{m}^{-3} \cdot 3 \cdot 10^{-6}\,\text{m}^2 \cdot 1{,}602 \cdot 10^{-19}\,\text{C}} = \frac{30}{41{,}3 \cdot 10^{3}}\,\text{m/s} \approx 7{,}27 \cdot 10^{-4}\,\text{m/s} = \underline{\underline{0{,}73\,\text{mm/s}}}$$
+
+### Aufgabe E3: Ladungsmenge bei verschiedenen Stromverläufen
+
+> [!info] Aufgabenstellung
+> Berechnen Sie die Ladungsmenge Q, die durch einen Leiter fließt:
 >
-> A3.1) Stellen Sie diese Abhängigkeit grafisch dar ( $0 A \le I \le 6 A$ !
+> - **E3.1)** bei konstantem Strom von 36 mA innerhalb von 2 s
+> - **E3.2)** bei quadratisch zunehmendem Strom ($I = 0$ mA für $t = 0$ s; $I = 9$ mA für $t = 1$ s; $I = 36$ mA für $t = 2$ s) innerhalb von 2 s
+> - **E3.3)** bei mit der dritten Potenz zunehmendem Strom ($I = 0$ mA für $t = 0$ s; $I = 36$ mA für $t = 2$ s) innerhalb von 2 s
+
+**Lösung:**
+
+**E3.1)** Konstanter Strom:
+$$Q = I \cdot t = 0{,}036\,\text{A} \cdot 2\,\text{s} = 0{,}072\,\text{C} = \underline{\underline{72\,\text{mC}}}$$
+
+
+**E3.2)** Quadratisch zunehmender Strom:
+
+**Gegeben:**
+- $I = 0$ mA für $t = 0$ s
+- $I = 9$ mA für $t = 1$ s
+- $I = 36$ mA für $t = 2$ s
+- Zeitraum: $0 \le t \le 2$ s
+
+**Gesucht:** Ladungsmenge $Q$ in mC
+
+**Schritt 1: Formel finden**
+- "Quadratisch" bedeutet: $I(t) = a \cdot t^2$ (irgendeine Zahl mal $t^2$)
+- Punkt einsetzen: $t = 1, I = 9$ → $9 = a \cdot 1^2$ → **$a = 9$**
+- Probe: $I(2) = 9 \cdot 4 = 36$ ✓
+
+**Schritt 2: Integrieren** (Ladung = Integral des Stroms)
+
+$$Q = \int_0^2 9t^2\,dt$$
+Stammfunktion von $9t^2$:
+- Stammfunktion von $t^2$ ist $\frac{t^3}{3}$
+- Mit Koeffizient $9$: $9 \cdot \frac{t^3}{3} = 3t^3$
+
+Grenzen einsetzen (von 0 bis 2):
+$$Q = \left[3t^3\right]_0^2 = 3 \cdot 2^3 - 3 \cdot 0^3 = 3 \cdot 8 - 0 = \underline{\underline{24\,\text{mC}}}$$
+
+w
+**E3.3)** Mit dritter Potenz zunehmendem Strom:
+
+**Gegeben:**
+- $I = 0$ mA für $t = 0$ s
+- $I = 36$ mA für $t = 2$ s
+- Zeitraum: $0 \le t \le 2$ s
+
+**Gesucht:** Ladungsmenge $Q$ in mC
+
+**Schritt 1: Formel finden**
+- "Mit dritter Potenz" bedeutet: $I(t) = b \cdot t^3$ (irgendeine Zahl mal $t^3$)
+- Punkt einsetzen: $t = 2, I = 36$ → $36 = b \cdot 2^3 = b \cdot 8$ → **$b = 4{,}5$**
+- **Formel:** $I(t) = 4{,}5t^3$ mA
+
+**Schritt 2: Integrieren** (Ladung = Integral des Stroms)
+
+$$Q = \int_0^2 4{,}5t^3\,dt$$
+
+Stammfunktion von $4{,}5t^3$:
+- Stammfunktion von $t^3$ ist $\frac{t^4}{4}$
+- Mit Koeffizient $4{,}5$: $4{,}5 \cdot \frac{t^4}{4} = 1{,}125t^4$
+
+Grenzen einsetzen (von 0 bis 2):
+$$Q = \left[1{,}125t^4\right]_0^2 = 1{,}125 \cdot 2^4 - 1{,}125 \cdot 0^4 = 1{,}125 \cdot 16 - 0 = \underline{\underline{18\,\text{mC}}}$$
+
+### Aufgabe A1: Messingdraht
+
+> [!info] Aufgabenstellung
+> Berechnen Sie die Länge eines Messingdrahts, wenn er bei einem Durchmesser von 0,08 mm einen Widerstand von $R = 20\,\Omega$ haben soll. ($\rho_{Ms} = 0{,}0655\,\frac{\Omega\,\text{mm}^2}{\text{m}}$)
+
+### Aufgabe A2: Spannungsabfall Cu-Leitung
+
+> [!info] Aufgabenstellung
+> Berechnen Sie den Spannungsabfall zwischen zwei 40 cm voneinander entfernten Punkten einer Cu-Leitung von 1 mm Durchmesser, durch welche ein Strom von 2 A fließt. ($\rho_{Cu} = 0{,}01786\,\frac{\Omega\,\text{mm}^2}{\text{m}}$)
+
+### Aufgabe A3: Nichtlinearer Widerstand
+
+> [!info] Aufgabenstellung
+> Durch theoretische Überlegungen ergibt sich die folgende Abhängigkeit zwischen Spannungsabfall und Strom eines nichtlinearen Widerstands: $U = U(I) = 10\,\frac{\text{V}}{\text{A}^2} \cdot I^2$
 >
-> A3.2) Stellen Sie den Gleichstromwiderstand grafisch dar!
+> - **A3.1)** Stellen Sie diese Abhängigkeit grafisch dar ($0\,\text{A} \le I \le 6\,\text{A}$)
+> - **A3.2)** Stellen Sie den Gleichstromwiderstand grafisch dar
+> - **A3.3)** Stellen Sie den differentiellen Widerstand grafisch dar
+
+### Aufgabe A4: Glühlampe
+
+> [!info] Aufgabenstellung
+> Der Wolframfaden einer Glühlampe nimmt bei 230 V einen Strom von 340 mA auf (Fadentemperatur 2500 °C). Berechnen Sie:
 >
-> A3.3) Stellen Sie den differentiellen Widerstand grafisch dar!
+> - **A4.1)** die Leistung, die die Lampe aufnimmt
+> - **A4.2)** den Widerstand bei der Arbeitstemperatur
+> - **A4.3)** den Widerstand bei 20 °C ($\alpha_{20} = 0{,}0041\,\text{K}^{-1}$; $\beta_{20} = 10^{-6}\,\text{K}^{-2}$)
+
+### Aufgabe A5: Kabel mit Kurzschluss
+
+> [!info] Aufgabenstellung
+> Ein zweiadriges Kupferkabel ($\rho = 17{,}8\,\text{m}\Omega\,\text{mm}^2/\text{m}$, $d = 0{,}8\,\text{mm}$) liegt auf einer Rolle mit vier zugänglichen Klemmen. Zwischen den Adern hat das Kabel einen Kurzschluss. Die Widerstandsmessung ergibt $R_{AB} = 3{,}55\,\Omega$ und $R_{CD} = 13{,}45\,\Omega$. Berechnen Sie allgemein und für die Zahlenwerte:
 >
-> - A4) Der Wolframfaden einer Glühlampe nimmt bei 230 V einen Strom von 340 mA auf (Fadentemperatur 2500°C). Berechnen Sie ..
-> - A4.1) ..die Leistung, die die Lampe aufnimmt,
-> - A4.2) ..dessen Widerstand bei der Arbeitstemperatur und
->
-> **A4.3**) ..den Widerstand bei 20 °C? ( $\alpha_{20}$ = 0,0041K<sup>-1</sup>; $\beta_{20}$ = 10<sup>-6</sup>K<sup>-2</sup>)
->
-> **A5**) Ein zweiadriges Kupferkabel ( $\rho$ = 17,8 m $\Omega$ mm<sup>2</sup> / m, d = 0,8 mm) befindet sich aufgewickelt auf einer Rolle, wobei die vier Anschlussklemmen zugängig sind. Zwischen den Adern hat das Kabel an einer Stelle einen Kurzschluss. Die Widerstandsmessung an den Klemmen AB ergibt $R_{AB}$ = 3,55 $\Omega$ , an den Klemmen CD hingegen $R_{CD}$ = 13,45 $\Omega$ . Berechnen Sie zunächst allgemein, dann für die Zahlenwerte
->
+> - **A5.1)** die gesamte Kabellänge
+> - **A5.2)** den Abstand des Kurzschlusses von den Klemmen AB
+
 ![[Übungen/Übungen-_page_12_Figure_22.jpeg]]
 
+### Aufgabe A6: Leitungsdimensionierung
+
 > [!info] Aufgabenstellung
-> A5.1) die gesamte Kabellänge,
+> Ein Verbraucher wird über eine 100 m lange zweiadrige Cu-Leitung ($\rho_{Cu} = 17{,}86 \cdot 10^{-3}\,\frac{\Omega\,\text{mm}^2}{\text{m}}$) an das Netz ($U_N = 230\,\text{V}$) angeschlossen. Der maximale Strom beträgt 10 A, der Spannungsabfall darf 2,5 % der Nennspannung nicht überschreiten. Berechnen Sie:
 >
-> A5.2) den Abstand des Kurzschlusses von den Klemmen AB.
->
-> A6) Ein Verbraucher wird über eine 100 m lange zweiadrige Cu- Leitung
->
-> $(\rho_{Cu} = 17.86 \cdot 10^{-3} \frac{\Omega \text{mm}^2}{m})$ an das Netz (U<sub>N</sub> = 230 V) angeschlossen. Berechnen Sie
->
-> - A6.1) .. den Leitungswiderstand, wenn in der Leitung maximal ein Strom von 10 A fließen soll und dabei der Spannungsabfall über der Leitung nicht mehr als 2,5% der Nennspannung von 230 V sein soll.
-> - A6.2) .. den erforderlichen Drahtdurchmesser.
-> - A6.3) .., welche Stromdichte daraus bei I=10 A folgt.
-> - A6.4) .. die elektrische Feldstärke, die sich bei diesem Strom im Leiter ausbildet.
-> - A6.5) .. die Leistung, die im Leiter umgesetzt wird.
-> - A6.6) .. das Verhältnis der im Verbraucher umgesetzten Leistung zur Verlustleistung in der Cu-Leitung.
->
-> A7) Die Energieversorgung eines Grundstückes erfolgt über eine 200 m lange Doppelleitung von der Verteilerstelle aus (U=230 V). Bei einem maximalen Strom von I = 15 A soll der Spannungsabfall über der Leitung 4% der Netzspannung nicht überschreiten. Berechnen Sie den erforderlichen Mindestquerschnitt und die Gesamtmasse der Leitung, wenn diese
->
-> **A7.1**) aus Kupfer (
-$$
-\rho_{Cu}
-$$
+> - **A6.1)** den Leitungswiderstand
+> - **A6.2)** den erforderlichen Drahtdurchmesser
+> - **A6.3)** die Stromdichte bei $I = 10\,\text{A}$
+> - **A6.4)** die elektrische Feldstärke im Leiter
+> - **A6.5)** die Verlustleistung im Leiter
+> - **A6.6)** das Verhältnis der Verbraucherleistung zur Verlustleistung
+
+### Aufgabe A7: Leitungsmaterial Kupfer vs. Aluminium
+
 > [!info] Aufgabenstellung
-> = 17,86 · 10<sup>-3</sup> $\frac{\Omega \text{mm}^2}{\text{m}}$ , $d_{Cu}$ = 8,9 $\frac{\text{g}}{\text{cm}^3}$ )
+> Die Energieversorgung eines Grundstücks erfolgt über eine 200 m lange Doppelleitung ($U = 230\,\text{V}$, $I_{max} = 15\,\text{A}$, Spannungsabfall ≤ 4 %). Berechnen Sie den Mindestquerschnitt und die Gesamtmasse der Leitung für:
 >
-> **A7.2**) aus Aluminium ( $\rho_{Al} = 30 \cdot 10^{-3} \frac{\Omega \text{mm}^2}{\text{m}}$ , $d_{Al} = 2.7 \frac{\text{g}}{\text{cm}^3}$ ) hergestellt wird.
->
+> - **A7.1)** Kupfer ($\rho_{Cu} = 17{,}86 \cdot 10^{-3}\,\frac{\Omega\,\text{mm}^2}{\text{m}}$, $d_{Cu} = 8{,}9\,\frac{\text{g}}{\text{cm}^3}$)
+> - **A7.2)** Aluminium ($\rho_{Al} = 30 \cdot 10^{-3}\,\frac{\Omega\,\text{mm}^2}{\text{m}}$, $d_{Al} = 2{,}7\,\frac{\text{g}}{\text{cm}^3}$)
+
 ## Elektrotechnik (AB8)
 
-> [!info] Aufgabenstellung
-> Medieninformatik, BA Dresden, D. Gembris
->
-> A1) Ein geladenes Staubteilchen mit einer Masse von $1.5 \cdot 10^{-8}$ g schwebt im Feld eines Plattenkondensators, an dem eine Spannung von 500 V angelegt wird. Die Platten sind horizontal in einem Abstand von 5,0 mm angeordnet. Berechnen Sie die Ladung des Staubteilchens.
->
-> A2) Ein Elektron tritt mit einer Anfangsgeschwindigkeit v<sub>0</sub> > 0 in ein homogenes elektrisches Feld ein.
->
-> Formulieren Sie jeweils eine Aussage über Bahnform und Bewegungsart dieses Elektrons für folgende Fälle:
->
-> Der Eintritt des Elektrons in das elektrische Feld erfolgt
->
-> - parallel zu den Feldlinien,
->
-> - senkrecht zu den Feldlinien.
->
-> Begründen Sie Ihre Aussagen.
->
-> Hilfe: Gleichung der Bahnkurve für den Fall "senkrecht zu den Feldlinien":
->
-$$
-> [!info] Aufgabenstellung
-> y = \frac{Q \cdot U}{2mdv^2}x^2
-$$
+### Aufgabe A1: Schwebendes Staubteilchen
 
 > [!info] Aufgabenstellung
-> A3) Die in einem Kondensator bei einer Ladespannung von 6,0 V gespeicherte elektrische Feldenergie soll für die Zündung einer Blitzlichtlampe genutzt werden. Die während der Zeitdauer eines Lichtblitzes von 100 µs abgegebene elektrische Leistung beträgt 200 W.
+> Ein geladenes Staubteilchen mit einer Masse von $1{,}5 \cdot 10^{-8}$ g schwebt im Feld eines Plattenkondensators, an dem eine Spannung von 500 V angelegt wird. Die Platten sind horizontal in einem Abstand von 5,0 mm angeordnet. Berechnen Sie die Ladung des Staubteilchens.
+
+### Aufgabe A2: Elektron im homogenen E-Feld
+
+> [!info] Aufgabenstellung
+> Ein Elektron tritt mit einer Anfangsgeschwindigkeit $v_0 > 0$ in ein homogenes elektrisches Feld ein. Formulieren Sie jeweils eine Aussage über Bahnform und Bewegungsart für folgende Fälle und begründen Sie diese:
 >
-> Berechnen Sie die Kapazität des Kondensators.
+> - Eintritt **parallel** zu den Feldlinien
+> - Eintritt **senkrecht** zu den Feldlinien
 >
-> A4) An einen Plattenkondensator mit der Plattenfläche $A = 500$ cm<sup>2</sup> und dem Plattenabstand d = 4 mm im Vakuum wird die Spannung $U = 400$ V angelegt.
+> Hilfe: Gleichung der Bahnkurve für den Fall „senkrecht zu den Feldlinien":
+> $$y = \frac{Q \cdot U}{2mdv^2}\,x^2$$
+
+### Aufgabe A3: Blitzlicht-Kondensator
+
+> [!info] Aufgabenstellung
+> Die in einem Kondensator bei einer Ladespannung von 6,0 V gespeicherte elektrische Feldenergie soll für die Zündung einer Blitzlichtlampe genutzt werden. Die während der Zeitdauer eines Lichtblitzes von 100 µs abgegebene elektrische Leistung beträgt 200 W. Berechnen Sie die Kapazität des Kondensators.
+
+### Aufgabe A4: Plattenkondensator
+
+> [!info] Aufgabenstellung
+> An einen Plattenkondensator mit der Plattenfläche $A = 500\,\text{cm}^2$ und dem Plattenabstand $d = 4\,\text{mm}$ im Vakuum wird die Spannung $U = 400\,\text{V}$ angelegt.
 >
-> a) Berechnen Sie die Ladung, die der Kondensator aufnimmt.
->
-> b) Berechnen Sie die Feldstärke des elektrischen Feldes im Kondensator.
->
-> c) Geben Sie mit Begründung die Werte für Ladung und Feldstärke an, wenn der Plattenabstand bei Beibehaltung der Verbindung zur Spannungsquelle auf 6 mm vergrößert wird.
->
-> d) Erläutern Sie, wie die Ladung, die Feldstärke und die Spannung ändert, wenn die Vergrößerung des Plattenabstandes nach Abklemmen der Spannungsquelle erfolgt.
->
+> - **a)** Berechnen Sie die Ladung, die der Kondensator aufnimmt.
+> - **b)** Berechnen Sie die Feldstärke des elektrischen Feldes im Kondensator.
+> - **c)** Geben Sie mit Begründung die Werte für Ladung und Feldstärke an, wenn der Plattenabstand bei Beibehaltung der Verbindung zur Spannungsquelle auf 6 mm vergrößert wird.
+> - **d)** Erläutern Sie, wie sich Ladung, Feldstärke und Spannung ändern, wenn die Vergrößerung des Plattenabstandes nach Abklemmen der Spannungsquelle erfolgt.
 ## Magnetische Felder (AB9)
 
 > [!info] Aufgabenstellung
