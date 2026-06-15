@@ -8,6 +8,7 @@
 - [[4. Verlustbehaftete Bildkompression]]
 - [[5. Bildformate (verlustbehaftet)]]
 - [[6. Histogramme]]
+- [[7. Homogene Punktoperationen - Teil A]]
 - [[Aufgaben Bildbearbeitung]]
 
 ## Verwandte Themen
