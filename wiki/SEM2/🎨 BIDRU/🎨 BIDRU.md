@@ -9,6 +9,7 @@
 - [[5. Bildformate (verlustbehaftet)]]
 - [[6. Histogramme]]
 - [[7. Homogene Punktoperationen - Teil A]]
+- [[8. Filter - Teil A+B+C]]
 - [[Aufgaben Bildbearbeitung]]
 
 ## Verwandte Themen
