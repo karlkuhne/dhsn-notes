@@ -8,8 +8,8 @@
 - [[4. Verlustbehaftete Bildkompression]]
 - [[5. Bildformate (verlustbehaftet)]]
 - [[6. Histogramme]]
-- [[7. Homogene Punktoperationen - Teil A]]
-- [[8. Filter - Teil A+B+C]]
+- [[7. Homogene Punktoperationen]]
+- [[8. Filter]]
 - [[Aufgaben Bildbearbeitung]]
 
 ## Verwandte Themen

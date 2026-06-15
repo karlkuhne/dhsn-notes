@@ -258,11 +258,44 @@ for (int v = 0; v < h; v++) {
 > [!todo]
 > (1) Warum ist die Anzahl der Zeilen und Spalten einer Filtermatrix ungerade?
 
+Eine ungerade Anzahl von Zeilen und Spalten ist nötig, um einen **eindeutigen Mittelpunkt (Hot Spot)** zu haben.
+
+**Begründung:**
+- Bei einer ungeraden Matrix (z.B. 3×3, 5×5, 7×7) gibt es immer genau einen zentralen Pixel
+- Dieser zentrale Pixel ist der Referenzpunkt, um den herum die Filterkoeffizenten symmetrisch angeordnet sind
+- Das Koordinatensystem hat seinen Ursprung in der Mitte (z.B. bei 3×3: i,j ∈ {-1, 0, +1})
+
 > [!todo]
 > (2) Warum sollte die Summe der Filterkoeffizienten bei Weich- und Scharfzeichnern Eins sein?
 
+Die Summe sollte 1 sein, um die **Gesamthelligkeit des Bildes zu bewahren**.
+
+**Mathematisch:**
+$$\sum_{i,j} H(i,j) = 1$$
+
+**Begründung:**
+
+Wenn alle Filterkoeffizenten summiert 1 ergeben, bleibt die durchschnittliche Helligkeit eines konstant hellen Bereiches erhalten.
+
+Wenn in einem Bildbereich alle Pixel den Wert 100 haben:
+- Neuer Wert = (100 + 100 + 100 + 100 + 100 + 100 + 100 + 100 + 100) × (1/9) = 100 ✓
+- Die Helligkeit bleibt unverändert
+
 > [!todo]
 > (3) Warum ist bei Filtern keine In-Place-Ausführung möglich?
+
+Bei Filtern muss man **zwei separate Bilder verwenden** (Quellbild und Zielbild), weil der neue Pixelwert von den **Nachbarpixeln abhängt**, die sich während der Berechnung noch ändern würden.
+
+Wenn wir für Pixel (0,1) mit Wert 20 ein 3×3 Filter anwenden:
+- Neuer Wert = Filter(10, 20, 30, 40, 50, 60, 70, 80, 90)
+- Angenommen, neuer Wert ist 45
+- Wir schreiben: `image[0][1] = 45`
+
+Wenn wir dann das nächste Pixel berechnen (0,2) mit Wert 30:
+- Das Filter braucht Pixel (0,1), aber wir haben es schon überschrieben!
+- Neuer Wert = Filter(20, **45**, ?, 50, ?, ?, 80, ?, ?)
+  - Das Pixel in Position (0,1) hat jetzt Wert **45** statt original **20**
+  - Das Ergebnis ist **falsch**!
 
 > [!todo]
 > (4) Testen Sie verschiedene Glättungsfilter mit GIMP, verwenden Sie unterschiedliche Filtergrößen ($3 \times 3, 5 \times 5$).
@@ -270,15 +303,67 @@ for (int v = 0; v < h; v++) {
 > [!todo]
 > (5) Wie müsste beispielhaft eine Filtermatrix aussehen, die ausschließlich senkrechte Kanten im Bild extrahiert?
 
+Das **Laplace-Filter** für Kantenerkennung:
+
+$$
+H = [-1, 2, -1]
+$$
+
+**Wie es funktioniert:**
+- Der Mittelpunkt bekommt Gewicht +2
+- Die Nachbarn bekommen Gewicht -1
+- Das Filter berechnet die **zweite Ableitung** (Unterschied der Unterschiede)
+
+**Praktische Bedeutung:**
+- An Kanten (starke Helligkeitswechsel) → großer Wert
+- In homogenen Bereichen (konstant) → Wert = 0
+- Erkennt abrupte Übergänge sehr gut
+
+(Siehe [[8. Filter|8. Filter]] Abschnitt 8.8.2 — Laplace-Filter)
+
 ### 4.3.2 Lineare & Nichtlineare Filter
 
 > [!todo]
-> (6) Gegeben sei ein Bild der Größe $3 \times 3$ Pixel mit den folgenden Werten:
-> | 55  | 75  | 77  |
-> | --- | --- | --- |
-> | 199 | 40  | 135 |
-> | 91  | 10  | 225 |
-> Filtern Sie das Bild mittels eines linearen Filters der Größe $1 \times 3$ (Spalten $\times$ Zeilen) mit einem Faltungskern $H = [0.25, 0.5, 0.25]^T$.
+> (6) Gegeben sei ein Bild der Größe $3 \times 3$ Pixel mit den folgenden Werten (Graustufen im Intervall [0, 255]):
+> $$\begin{bmatrix}
+> 55 & 75 & 77 \\
+> 199 & 40 & 135 \\
+> 91 & 10 & 225
+> \end{bmatrix}$$
+>
+> Außerhalb des Bildes soll der Wert 0 angenommen werden. Filtern Sie das Bild mittels eines linearen Filters der Größe $1 \times 3$ (Spaltenzahl $\times$ Zeilenzahl, „Hotspot" im Zentrum) mit einem Faltungskern mit den Werten:
+> $$H = \begin{bmatrix} 0.25 \\ 0.5 \\ 0.25 \end{bmatrix}$$
+> Streichen Sie die Nachkommastellen. Tragen Sie das Ergebnis in die Matrix ein.
+
+**Lösung:**
+
+Das ist ein **vertikales Filter** (1 Spalte, 3 Zeilen). Für jede Position berechnen wir:
+$$I'(u,v) = I(u,v-1) \times 0.25 + I(u,v) \times 0.5 + I(u,v+1) \times 0.25$$
+
+**Berechnungen für jede Position:**
+
+| Position | Rechnung | Ergebnis |
+|----------|----------|----------|
+| (0,0) | 0×0.25 + 55×0.5 + 199×0.25 | 77 |
+| (1,0) | 0×0.25 + 75×0.5 + 40×0.25 | 47 |
+| (2,0) | 0×0.25 + 77×0.5 + 135×0.25 | 72 |
+| (0,1) | 55×0.25 + 199×0.5 + 91×0.25 | 136 |
+| (1,1) | 75×0.25 + 40×0.5 + 10×0.25 | 41 |
+| (2,1) | 77×0.25 + 135×0.5 + 225×0.25 | 143 |
+| (0,2) | 199×0.25 + 91×0.5 + 0×0.25 | 95 |
+| (1,2) | 40×0.25 + 10×0.5 + 0×0.25 | 15 |
+| (2,2) | 135×0.25 + 225×0.5 + 0×0.25 | 146 |
+
+**Gefiltertes Bild:**
+$$
+\begin{bmatrix}
+77 & 47 & 72 \\
+136 & 41 & 143 \\
+95 & 15 & 146
+\end{bmatrix}
+$$
+
+
 
 > [!todo]
 > (7) Was bedeutet x/y-Separierbarkeit (bezogen auf einen linearen Filter) and warum ist sie wichtig?
