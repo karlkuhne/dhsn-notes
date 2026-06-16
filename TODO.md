@@ -5,7 +5,6 @@
 
 # Browse Routines
 
-- [ ] Browse Routines Tabs für Based Routines und Community Routines
 - [ ] Routine Vorschau Bilder
 - [ ] für Routinen Tags und Filter
 - [ ] Community: Popular, Recommended, Trending
@@ -17,7 +16,3 @@
 # Add Exercise
 
 - [ ] Zur seite swipen für alternativen
-
-# Exercises
-
-- [ ] satz arten hinzufügen

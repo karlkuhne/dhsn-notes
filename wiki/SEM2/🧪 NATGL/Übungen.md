@@ -1344,6 +1344,27 @@ $$Q = \left[1{,}125t^4\right]_0^2 = 1{,}125 \cdot 2^4 - 1{,}125 \cdot 0^4 = 1{,}
 > - **A4.2)** den Widerstand bei der Arbeitstemperatur
 > - **A4.3)** den Widerstand bei 20 °C ($\alpha_{20} = 0{,}0041\,\text{K}^{-1}$; $\beta_{20} = 10^{-6}\,\text{K}^{-2}$)
 
+**A4.1)** Leistung
+
+Gegeben: $U = 230V \quad , \quad I = 340mA = 0.35A$
+Lösung: $P = UI = 230V \cdot 0.35A = 78.2W$
+
+**A4.2)** Widerstand bei Arbeitstemeperatur
+Gegeben: $2500 °C$
+Lösung: $R = \frac{U}{I} = \frac{230V}{0.35A} = 676,47 \Omega$
+
+**A4.3)** Widerstand bei 20 °C
+
+Gegeben: $R(2500°C) = 676\,\Omega$, $\alpha_{20} = 0{,}0041\,\text{K}^{-1}$, $\beta_{20} = 10^{-6}\,\text{K}^{-2}$
+
+Formel: $R(T) = R_0\left[1 + \alpha_{20}(T-T_0) + \beta_{20}(T-T_0)^2\right]$
+
+Einsetzen mit $\Delta T = 2480\,\text{K}$:
+$$676 = R_0\left[1 + 0{,}0041 \cdot 2480 + 10^{-6} \cdot 2480^2\right]$$
+$$676 = R_0\left[1 + 10{,}168 + 6{,}150\right]$$
+$$676 = R_0 \cdot 17{,}318$$
+$$R_0 = \frac{676}{17{,}318} = \boxed{39\,\Omega}$$
+
 ### Aufgabe A5: Kabel mit Kurzschluss
 
 > [!info] Aufgabenstellung
@@ -1353,6 +1374,39 @@ $$Q = \left[1{,}125t^4\right]_0^2 = 1{,}125 \cdot 2^4 - 1{,}125 \cdot 0^4 = 1{,}
 > - **A5.2)** den Abstand des Kurzschlusses von den Klemmen AB
 
 ![[Übungen/Übungen-_page_12_Figure_22.jpeg]]
+
+**Erklärung der Aufgabe:**
+
+Ein zweiadriges Kabel liegt auf einer Rolle. Man kann an zwei verschiedenen Stellen messen: Bei den Klemmen $AB$ (Start) und bei den Klemmen $CD$ (Ende). Irgendwo dazwischen ist ein Kurzschluss — die beiden Adern berühren sich.
+
+Wenn man bei $AB$ misst, geht der Strom durch beide Adern bis zum Kurzschluss (Distanz $x$). Wenn man bei $CD$ misst, geht der Strom durch beide Adern von $CD$ bis zum Kurzschluss (Distanz $L-x$).
+
+Die Widerstände sind unterschiedlich, weil die Distanzen unterschiedlich sind. Mit den gemessenen Widerständen kann man zurückrechnen, wie lang das Kabel insgesamt ist und wo der Kurzschluss sitzt.
+
+**Lösung:**
+
+Gegeben: $\rho = 17{,}8\,\text{m}\Omega \cdot \text{mm}^2/\text{m} = 0{,}0178\,\Omega \cdot \text{mm}^2/\text{m}$, $d = 0{,}8\,\text{mm}$, $R_{AB} = 3{,}55\,\Omega$, $R_{CD} = 13{,}45\,\Omega$
+
+Querschnittsfläche: $A = \pi(d/2)^2 = \pi(0{,}4)^2 = 0{,}5027\,\text{mm}^2$
+
+**A5.1) Gesamtkabellänge:**
+
+Die Widerstände beider Adern addieren sich (beide durchquert von Strom):
+$$R_{AB} + R_{CD} = 2\rho \frac{L}{A}$$
+
+Nach $L$ auflösen:
+$$L = \frac{(R_{AB} + R_{CD}) \cdot A}{2\rho} = \frac{(3{,}55 + 13{,}45) \cdot 0{,}5027}{2 \cdot 0{,}0178}$$
+$$L = \frac{17 \cdot 0{,}5027}{0{,}0356} = \frac{8{,}546}{0{,}0356} = \boxed{240\,\text{m}}$$
+
+**A5.2) Abstand des Kurzschlusses von AB:**
+
+Das Verhältnis der Widerstände entspricht dem Verhältnis der Distanzen:
+$$\frac{R_{AB}}{R_{CD}} = \frac{x}{L-x}$$
+
+Umstellen nach $x$:
+$$x = \frac{R_{AB} \cdot L}{R_{AB} + R_{CD}} = \frac{3{,}55 \cdot 240}{17} = \frac{852}{17} = \boxed{50{,}1\,\text{m}}$$
+
+Der Kurzschluss liegt ca. $50\,\text{m}$ von den Klemmen $AB$ entfernt.
 
 ### Aufgabe A6: Leitungsdimensionierung
 
@@ -1365,6 +1419,65 @@ $$Q = \left[1{,}125t^4\right]_0^2 = 1{,}125 \cdot 2^4 - 1{,}125 \cdot 0^4 = 1{,}
 > - **A6.4)** die elektrische Feldstärke im Leiter
 > - **A6.5)** die Verlustleistung im Leiter
 > - **A6.6)** das Verhältnis der Verbraucherleistung zur Verlustleistung
+
+**Erklärung der Aufgabe — was ist $\rho$ (Rho)?**
+
+$\rho$ ist der **spezifische Widerstand** (auch Resistivität genannt). Es ist eine Material-Eigenschaft, die angibt: "Wie viel Widerstand bietet dieses Material pro Meter Länge und pro mm² Querschnittsfläche?"
+
+Die Formel lautet: $R = \rho \cdot \frac{l}{A}$
+
+- $\rho$ = spezifischer Widerstand des Materials (hier Kupfer)
+- $l$ = Länge des Drahtes (100 m)
+- $A$ = Querschnittsfläche des Drahtes (gesucht!)
+- $R$ = Gesamtwiderstand
+
+**Was ist das Problem?** Eine lange Leitung hat Widerstand. Der Strom erzeugt einen Spannungsabfall: $U_{Abfall} = I \cdot R$. Das ist Energie-Verschwendung als Wärme. Deshalb muss der Draht dick genug sein (großes $A$), damit der Widerstand klein bleibt und der Spannungsabfall unter 2,5 % bleibt.
+
+**Lösung:**
+
+Gegeben: $l = 100\,\text{m}$, $I = 10\,\text{A}$, $U_N = 230\,\text{V}$, max. Spannungsabfall = $2{,}5\%$ von $230\,\text{V}$, $\rho_{Cu} = 17{,}86 \cdot 10^{-3}\,\frac{\Omega \cdot \text{mm}^2}{\text{m}}$
+
+**A6.1) Leitungswiderstand:**
+
+Der maximal erlaubte Spannungsabfall ist:
+$$U_{max} = 0{,}025 \cdot 230 = 5{,}75\,\text{V}$$
+
+Mit dem Ohmschen Gesetz $R = \frac{U}{I}$:
+$$R = \frac{5{,}75}{10} = \boxed{0{,}575\,\Omega}$$
+
+**A6.2) Erforderlicher Drahtdurchmesser:**
+
+**Schritt 1:** Querschnittsfläche aus $R = \rho \cdot \frac{l}{A}$ berechnen:
+$$A = \rho \cdot \frac{l}{R} = 0{,}01786 \cdot \frac{100}{0{,}575} = 3{,}10\,\text{mm}^2$$
+
+**Schritt 2:** Ein Draht ist rund. Aus Kreisfläche $A = \pi(d/2)^2$ den Durchmesser ausrechnen:
+$$d = 2\sqrt{\frac{A}{\pi}} = 2\sqrt{\frac{3{,}10}{3{,}1416}} = \boxed{1{,}98\,\text{mm} \approx 2\,\text{mm}}$$
+
+**A6.3) Stromdichte:**
+
+Die Stromdichte ist Strom pro Fläche:
+$$J = \frac{I}{A} = \frac{10}{3{,}10} = \boxed{3{,}23\,\text{A/mm}^2}$$
+
+**A6.4) Elektrische Feldstärke:**
+
+Die Feldstärke im Leiter ist proportional zu Stromdichte und spezifischem Widerstand:
+$$E = \rho \cdot J = 0{,}01786 \cdot 3{,}23 = \boxed{0{,}0577\,\text{V/m} = 57{,}7\,\text{mV/m}}$$
+
+**A6.5) Verlustleistung:**
+
+Die Wärme, die in der Leitung entsteht:
+$$P_{loss} = I^2 \cdot R = 10^2 \cdot 0{,}575 = \boxed{57{,}5\,\text{W}}$$
+
+**A6.6) Verhältnis Verbraucherleistung zu Verlustleistung:**
+
+Die nutzbare Leistung beim Verbraucher:
+$$P_{Verbraucher} = U_N \cdot I = 230 \cdot 10 = 2300\,\text{W}$$
+
+Verhältnis:
+$$\frac{P_{Verbraucher}}{P_{loss}} = \frac{2300}{57{,}5} = \boxed{40}$$
+
+Das bedeutet: Die Verbraucherleistung ist 40-mal höher als die Verlustleistung in der Leitung. Das ist akzeptabel.
+
 
 ### Aufgabe A7: Leitungsmaterial Kupfer vs. Aluminium
 
