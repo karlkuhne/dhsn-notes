@@ -1487,12 +1487,157 @@ Das bedeutet: Die Verbraucherleistung ist 40-mal höher als die Verlustleistung 
 > - **A7.1)** Kupfer ($\rho_{Cu} = 17{,}86 \cdot 10^{-3}\,\frac{\Omega\,\text{mm}^2}{\text{m}}$, $d_{Cu} = 8{,}9\,\frac{\text{g}}{\text{cm}^3}$)
 > - **A7.2)** Aluminium ($\rho_{Al} = 30 \cdot 10^{-3}\,\frac{\Omega\,\text{mm}^2}{\text{m}}$, $d_{Al} = 2{,}7\,\frac{\text{g}}{\text{cm}^3}$)
 
+**Erklärung der Aufgabe**
+
+Eine **Doppelleitung** bedeutet: zwei Drähte (Hin- und Rückleitung). Der Strom fließt durch beide Drähte, daher verdoppelt sich die Gesamtlänge für die Widerstandsberechnung: $l_{ges} = 2 \cdot 200 = 400\,\text{m}$.
+
+Das Problem: Ein langer Draht hat Widerstand. Der Strom erzeugt Spannungsabfall. Deshalb brauchen wir einen dicken genug, damit der Spannungsabfall nicht größer als 4% wird.
+
+**Allgemeiner Lösungsweg (gleich für beide Materialien):**
+
+1. **Maximaler Spannungsabfall berechnen:**
+   $$U_{max} = 4\% \cdot 230 = 0{,}04 \cdot 230 = 9{,}2\,\text{V}$$
+
+2. **Benötigter Widerstand (aus Ohmsches Gesetz $R = \frac{U}{I}$):**
+   $$R = \frac{U_{max}}{I_{max}} = \frac{9{,}2}{15} = 0{,}6133\,\Omega$$
+
+3. **Querschnittsfläche (aus Formel $R = \rho \cdot \frac{l}{A}$):**
+   $$A = \rho \cdot \frac{l}{R} = \rho \cdot \frac{400}{0{,}6133}$$
+
+4. **Gesamtvolumen (beide Drähte):**
+   $$V = A \cdot l_{ges} = A \cdot 400$$
+
+5. **Gesamtmasse (mit Dichte $d$):**
+   $$m = d \cdot V$$
+
+---
+
+## **A7.1) Kupfer**
+
+**Gegeben:**
+- $\rho_{Cu} = 17{,}86 \cdot 10^{-3}\,\frac{\Omega\,\text{mm}^2}{\text{m}} = 0{,}01786\,\frac{\Omega\,\text{mm}^2}{\text{m}}$
+- $d_{Cu} = 8{,}9\,\frac{\text{g}}{\text{cm}^3}$
+- $l_{ges} = 400\,\text{m}$ (Doppelleitung!)
+- $R_{max} = 0{,}6133\,\Omega$ (berechnet oben)
+
+**Schritt 1: Erforderliche Querschnittsfläche**
+
+$$A_{Cu} = \rho_{Cu} \cdot \frac{l_{ges}}{R_{max}} = 0{,}01786 \cdot \frac{400}{0{,}6133}$$
+$$A_{Cu} = 0{,}01786 \cdot 651{,}9 = \boxed{11{,}64\,\text{mm}^2}$$
+
+**Schritt 2: Gesamtvolumen**
+
+Das Volumen ist der Querschnitt mal die Länge der Doppelleitung:
+$$V_{Cu} = A_{Cu} \cdot l_{ges} = 11{,}64\,\text{mm}^2 \cdot 400\,\text{m}$$
+
+Einheiten umrechnen: $1\,\text{m} = 1000\,\text{mm}$
+$$V_{Cu} = 11{,}64 \cdot 400 \cdot 10^3\,\text{mm}^3 = 4{,}656 \cdot 10^6\,\text{mm}^3$$
+
+In cm³: $1\,\text{cm} = 10\,\text{mm}$, also $1\,\text{cm}^3 = 1000\,\text{mm}^3$
+$$V_{Cu} = \frac{4{,}656 \cdot 10^6}{1000}\,\text{cm}^3 = 4{,}656 \cdot 10^3\,\text{cm}^3$$
+
+**Schritt 3: Gesamtmasse**
+
+$$m_{Cu} = d_{Cu} \cdot V_{Cu} = 8{,}9\,\frac{\text{g}}{\text{cm}^3} \cdot 4{,}656 \cdot 10^3\,\text{cm}^3$$
+$$m_{Cu} = 8{,}9 \cdot 4656 = \boxed{41{,}44\,\text{kg}} \approx 41{,}4\,\text{kg}$$
+
+---
+
+## **A7.2) Aluminium**
+
+**Gegeben:**
+- $\rho_{Al} = 30 \cdot 10^{-3}\,\frac{\Omega\,\text{mm}^2}{\text{m}} = 0{,}030\,\frac{\Omega\,\text{mm}^2}{\text{m}}$
+- $d_{Al} = 2{,}7\,\frac{\text{g}}{\text{cm}^3}$
+- $l_{ges} = 400\,\text{m}$ (Doppelleitung!)
+- $R_{max} = 0{,}6133\,\Omega$ (berechnet oben)
+
+**Schritt 1: Erforderliche Querschnittsfläche**
+
+Aluminium hat einen höheren spezifischen Widerstand als Kupfer, daher braucht es eine größere Fläche:
+
+$$A_{Al} = \rho_{Al} \cdot \frac{l_{ges}}{R_{max}} = 0{,}030 \cdot \frac{400}{0{,}6133}$$
+$$A_{Al} = 0{,}030 \cdot 651{,}9 = \boxed{19{,}56\,\text{mm}^2}$$
+
+**Schritt 2: Gesamtvolumen**
+
+$$V_{Al} = A_{Al} \cdot l_{ges} = 19{,}56\,\text{mm}^2 \cdot 400\,\text{m}$$
+$$V_{Al} = 19{,}56 \cdot 400 \cdot 10^3\,\text{mm}^3 = 7{,}824 \cdot 10^6\,\text{mm}^3 = 7{,}824 \cdot 10^3\,\text{cm}^3$$
+
+**Schritt 3: Gesamtmasse**
+
+$$m_{Al} = d_{Al} \cdot V_{Al} = 2{,}7\,\frac{\text{g}}{\text{cm}^3} \cdot 7{,}824 \cdot 10^3\,\text{cm}^3$$
+$$m_{Al} = 2{,}7 \cdot 7824 = \boxed{21{,}12\,\text{kg}} \approx 21{,}1\,\text{kg}$$
+
+---
+
+## **Vergleich: Kupfer vs. Aluminium**
+
+| Eigenschaft | Kupfer | Aluminium | Verhältnis |
+|---|---|---|---|
+| Querschnitt | 11,64 mm² | 19,56 mm² | Al: 1,68× größer |
+| Gesamtmasse | 41,4 kg | 21,1 kg | Al: 0,51× (= etwa halb so schwer) |
+
+**Interpretation:**
+- **Aluminium braucht eine dickere Leitung** (wegen des höheren Widerstands), aber
+- **Aluminium ist viel leichter** (2,7 g/cm³ vs. 8,9 g/cm³), daher ist die Gesamtmasse trotzdem kleiner.
+- Kupfer leitet besser, aber ist schwerer → ideal für kurze Strecken.
+- Aluminium ist leichter und billiger → ideal für lange Freileitungen (Stromautobahnenen).
+
+
 ## Elektrotechnik (AB8)
 
 ### Aufgabe A1: Schwebendes Staubteilchen
 
 > [!info] Aufgabenstellung
 > Ein geladenes Staubteilchen mit einer Masse von $1{,}5 \cdot 10^{-8}$ g schwebt im Feld eines Plattenkondensators, an dem eine Spannung von 500 V angelegt wird. Die Platten sind horizontal in einem Abstand von 5,0 mm angeordnet. Berechnen Sie die Ladung des Staubteilchens.
+
+**Erklärung der Aufgabe**
+
+Das Staubteilchen schwebt — das heißt, es bewegt sich nicht nach oben und nicht nach unten. Das ist nur möglich, wenn zwei Kräfte gleich groß sind und sich gegenseitig aufheben:
+
+1. **Gewichtskraft** $F_G = m \cdot g$ (wirkt **nach unten**)
+2. **Elektrische Kraft** $F_E = q \cdot E$ (wirkt **nach oben**, weil das Teilchen geladen ist)
+
+Wenn das Teilchen schwebt, ist: $F_E = F_G$
+
+**Gegeben:**
+- Masse des Staubteilchens: $m = 1{,}5 \cdot 10^{-8}\,\text{g} = 1{,}5 \cdot 10^{-11}\,\text{kg}$
+- Spannung: $U = 500\,\text{V}$
+- Plattenabstand: $d = 5{,}0\,\text{mm} = 5{,}0 \cdot 10^{-3}\,\text{m}$
+- Erdbeschleunigung: $g = 9{,}81\,\text{m/s}^2$
+
+**Gesucht:** Ladung $q$ des Staubteilchens
+
+---
+
+**Lösung:**
+
+**Schritt 1: Elektrische Feldstärke berechnen**
+
+Im Plattenkondensator ist die elektrische Feldstärke zwischen den Platten:
+$$E = \frac{U}{d} = \frac{500\,\text{V}}{5{,}0 \cdot 10^{-3}\,\text{m}} = 100.000\,\text{V/m} = 10^5\,\text{V/m}$$
+
+**Schritt 2: Gewichtskraft berechnen**
+
+$$F_G = m \cdot g = 1{,}5 \cdot 10^{-11}\,\text{kg} \cdot 9{,}81\,\text{m/s}^2 = 1{,}4715 \cdot 10^{-10}\,\text{N}$$
+
+**Schritt 3: Ladung berechnen (aus Gleichgewichtsbedingung)**
+
+Wenn das Staubteilchen schwebt, ist die elektrische Kraft gleich der Gewichtskraft:
+$$F_E = F_G$$
+$$q \cdot E = m \cdot g$$
+
+Nach $q$ auflösen:
+$$q = \frac{m \cdot g}{E} = \frac{1{,}5 \cdot 10^{-11}\,\text{kg} \cdot 9{,}81\,\text{m/s}^2}{10^5\,\text{V/m}}$$
+
+$$q = \frac{1{,}4715 \cdot 10^{-10}\,\text{N}}{10^5\,\text{V/m}} = \frac{1{,}4715 \cdot 10^{-10}}{10^5}\,\text{C}$$
+
+$$q = 1{,}4715 \cdot 10^{-15}\,\text{C} = \boxed{1{,}47 \cdot 10^{-15}\,\text{C}}$$
+
+**Interpretation:**
+
+Die Ladung ist extrem klein — etwa **1,5 Femtocoulomb** (fC). Das Teilchen trägt wahrscheinlich nur wenige überschüssige Elektronen. Da die elektrische Kraft *nach oben* wirken muss (um das Staubteilchen gegen die Schwerkraft zu halten), muss die *obere* Platte *negativ* und die *untere* Platte *positiv* sein (damit das negativ geladene Teilchen angezogen wird).
+
 
 ### Aufgabe A2: Elektron im homogenen E-Feld
 
@@ -1505,10 +1650,109 @@ Das bedeutet: Die Verbraucherleistung ist 40-mal höher als die Verlustleistung 
 > Hilfe: Gleichung der Bahnkurve für den Fall „senkrecht zu den Feldlinien":
 > $$y = \frac{Q \cdot U}{2mdv^2}\,x^2$$
 
+**Grundkonzept:**
+
+Die Bewegung eines geladenen Teilchens in einem elektrischen Feld hängt davon ab, **in welche Richtung das Elektron eintritt** — parallel oder senkrecht zu den Feldlinien. Die elektrische Kraft wirkt immer **entlang der Feldlinien** (für negative Ladungen: entgegen der Feldrichtung).
+
+---
+
+**Fall 1: Eintritt parallel zu den Feldlinien**
+
+**Bahnform:** Der Elektronenstrahl folgt einer **geraden Linie** (keine Ablenkung).
+
+**Bewegungsart:** 
+- **Gleichmäßig beschleunigte Bewegung** (wenn das Elektron gegen das Feld läuft) oder
+- **Gleichmäßig verzögerte Bewegung** (wenn das Elektron mit dem Feld läuft)
+
+**Begründung:**
+
+Wenn das Elektron parallel zu den Feldlinien eintritt, wirkt die elektrische Kraft **in der gleichen Richtung oder entgegengesetzt** zur Bewegungsrichtung.
+
+- **Fall 1a (gegen das Feld):** Die Kraft wirkt bremsend. Das Elektron wird langsamer (Beschleunigung $a < 0$). Es folgt einer geraden Linie, wird aber immer langsamer. Eventually könnte es umkehren.
+- **Fall 1b (mit dem Feld):** Die Kraft wirkt beschleunigend. Das Elektron wird schneller (Beschleunigung $a > 0$), folgt aber einer geraden Linie.
+
+**Keine Ablenkung**, weil die Kraft parallel zur Geschwindigkeit wirkt und daher nicht die Richtung ändert.
+
+---
+
+**Fall 2: Eintritt senkrecht zu den Feldlinien**
+
+**Bahnform:** Der Elektronenstrahl folgt einer **Parabel** (oder allgemeiner: einer gekrümmten Bahn).
+
+**Bewegungsart:** Die Bewegung setzt sich aus zwei Komponenten zusammen:
+- **Längsrichtung (entlang des Eintritts):** Gleichförmige Bewegung mit $v_0$ (keine Kraft in diese Richtung)
+- **Querrichtung (parallel zu den Feldlinien):** Gleichmäßig beschleunigte Bewegung (elektrische Kraft)
+
+**Begründung:**
+
+Die elektrische Kraft wirkt **senkrecht zur Eintrittsrichtung** und **senkrecht zur initialen Geschwindigkeit**. Das Elektron kann also nicht weiter einfach geradeaus gehen — die Kraft zieht es zur Seite.
+
+Das Ergebnis ist eine **parabolische Bahn** — ähnlich wie die Wurfparabel bei einem waagerechten Wurf in der Gravitation:
+- Der Strom fliegt in $x$-Richtung mit konstanter Geschwindigkeit $v_0$
+- Das elektrische Feld beschleunigt es in $y$-Richtung
+
+Die gegebene Formel bestätigt dies:
+$$y = \frac{Q \cdot U}{2mdv^2}\,x^2$$
+
+Das ist die **Gleichung einer Parabel** (Form: $y = \text{const} \cdot x^2$).
+
 ### Aufgabe A3: Blitzlicht-Kondensator
 
 > [!info] Aufgabenstellung
 > Die in einem Kondensator bei einer Ladespannung von 6,0 V gespeicherte elektrische Feldenergie soll für die Zündung einer Blitzlichtlampe genutzt werden. Die während der Zeitdauer eines Lichtblitzes von 100 µs abgegebene elektrische Leistung beträgt 200 W. Berechnen Sie die Kapazität des Kondensators.
+
+**Erklärung der Aufgabe**
+
+Ein Blitzlicht funktioniert so:
+1. Ein Kondensator wird aufgeladen und speichert **Energie**
+2. Wenn der Blitz ausgelöst wird, entlädt sich der Kondensator sehr schnell
+3. Die gespeicherte Energie wird in kurzer Zeit (100 µs) abgegeben — das erzeugt eine hohe **Leistung**
+
+Wir kennen:
+- Die **Spannung** beim Laden: $U = 6{,}0\,\text{V}$
+- Die **Leistung** während des Blitzes: $P = 200\,\text{W}$
+- Die **Zeit** des Blitzes: $\Delta t = 100\,\mu\text{s} = 100 \cdot 10^{-6}\,\text{s}$
+
+Gesucht: Die **Kapazität** $C$ des Kondensators
+
+---
+
+**Lösung:**
+
+**Schritt 1: Energie des Blitzes berechnen**
+
+Die Leistung ist Energie pro Zeit: $P = \frac{W}{t}$
+
+Umgestellt nach Energie:
+$$W = P \cdot \Delta t = 200\,\text{W} \cdot 100 \cdot 10^{-6}\,\text{s}$$
+$$W = 200 \cdot 10^{-4}\,\text{J} = 0{,}02\,\text{J} = \boxed{20\,\text{mJ}}$$
+
+**Schritt 2: Kapazität aus der Kondensator-Energieformel berechnen**
+
+Die Energie, die in einem geladenen Kondensator gespeichert ist, lautet:
+$$W = \frac{1}{2} C \cdot U^2$$
+
+Nach $C$ umgestellt:
+$$C = \frac{2W}{U^2}$$
+
+Werte einsetzen:
+$$C = \frac{2 \cdot 0{,}02\,\text{J}}{(6{,}0\,\text{V})^2} = \frac{0{,}04}{36}\,\text{F}$$
+
+$$C = 0{,}001111...\,\text{F} = \boxed{1{,}11 \cdot 10^{-3}\,\text{F}} = \boxed{1{,}11\,\text{mF}}$$
+
+---
+
+**Interpretation:**
+
+Die Kapazität beträgt etwa **1,1 Millifarad**. Das ist eine relativ große Kapazität (normale Kondensatoren haben meist Mikrofarad oder kleiner). Diese Größe ist notwendig, um in 100 Mikrosekunden genug Energie für einen hellen Blitz bereitzustellen.
+
+---
+
+**Kontrolle der Einheiten:**
+
+$$C = \frac{2W}{U^2} = \frac{[\text{J}]}{[\text{V}^2]} = \frac{[\text{V} \cdot \text{A} \cdot \text{s}]}{[\text{V}^2]} = \frac{[\text{A} \cdot \text{s}]}{[\text{V}]} = [\text{F}] \quad ✓$$
+
+(Denn $1\,\text{F} = 1\,\frac{\text{A} \cdot \text{s}}{\text{V}} = 1\,\frac{\text{C}}{\text{V}}$)
 
 ### Aufgabe A4: Plattenkondensator
 
@@ -1519,6 +1763,111 @@ Das bedeutet: Die Verbraucherleistung ist 40-mal höher als die Verlustleistung 
 > - **b)** Berechnen Sie die Feldstärke des elektrischen Feldes im Kondensator.
 > - **c)** Geben Sie mit Begründung die Werte für Ladung und Feldstärke an, wenn der Plattenabstand bei Beibehaltung der Verbindung zur Spannungsquelle auf 6 mm vergrößert wird.
 > - **d)** Erläutern Sie, wie sich Ladung, Feldstärke und Spannung ändern, wenn die Vergrößerung des Plattenabstandes nach Abklemmen der Spannungsquelle erfolgt.
+
+**Gegeben (alle Teilaufgaben):**
+- Plattenfläche: $A = 500\,\text{cm}^2 = 500 \cdot 10^{-4}\,\text{m}^2 = 0{,}05\,\text{m}^2$
+- Anfänglicher Plattenabstand: $d_1 = 4\,\text{mm} = 4 \cdot 10^{-3}\,\text{m}$
+- Spannung: $U = 400\,\text{V}$ (konstant, solange verbunden)
+- Dielektrizitätskonstante Vakuum: $\varepsilon_0 = 8{,}854 \cdot 10^{-12}\,\frac{\text{F}}{\text{m}}$
+
+---
+
+**a) Ladung beim ursprünglichen Plattenabstand**
+
+**Gegeben:** $A = 0{,}05\,\text{m}^2$, $d_1 = 4 \cdot 10^{-3}\,\text{m}$, $U = 400\,\text{V}$
+
+**Gesucht:** Ladung $Q$
+
+**Schritt 1: Kapazität des Plattenkondensators**
+
+Die Kapazität eines Plattenkondensators ist:
+$$C = \varepsilon_0 \cdot \frac{A}{d} = 8{,}854 \cdot 10^{-12} \cdot \frac{0{,}05}{4 \cdot 10^{-3}}$$
+$$C = 8{,}854 \cdot 10^{-12} \cdot 12{,}5 = 1{,}107 \cdot 10^{-10}\,\text{F} = \boxed{110{,}7\,\text{pF}}$$
+
+**Schritt 2: Ladung aus $Q = C \cdot U$**
+
+$$Q = C \cdot U = 1{,}107 \cdot 10^{-10}\,\text{F} \cdot 400\,\text{V}$$
+$$Q = \boxed{4{,}43 \cdot 10^{-8}\,\text{C}} = \boxed{44{,}3\,\text{nC}}$$
+
+---
+
+**b) Feldstärke beim ursprünglichen Plattenabstand**
+
+**Gegeben:** $U = 400\,\text{V}$, $d_1 = 4 \cdot 10^{-3}\,\text{m}$
+
+**Gesucht:** Elektrische Feldstärke $E$
+
+Die elektrische Feldstärke im Plattenkondensator ist einfach:
+$$E = \frac{U}{d} = \frac{400\,\text{V}}{4 \cdot 10^{-3}\,\text{m}} = \boxed{100.000\,\text{V/m}} = \boxed{10^5\,\text{V/m}}$$
+
+---
+
+**c) Plattenabstand vergrößert auf 6 mm (bei Verbindung zur Spannungsquelle)**
+
+**Neuer Plattenabstand:** $d_2 = 6\,\text{mm} = 6 \cdot 10^{-3}\,\text{m}$
+
+**Wichtig:** Die Spannungsquelle bleibt **verbunden** — daher **bleibt die Spannung konstant** bei $U = 400\,\text{V}$.
+
+**Neue Kapazität:**
+$$C_2 = \varepsilon_0 \cdot \frac{A}{d_2} = 8{,}854 \cdot 10^{-12} \cdot \frac{0{,}05}{6 \cdot 10^{-3}}$$
+$$C_2 = 8{,}854 \cdot 10^{-12} \cdot 8{,}333 = 7{,}378 \cdot 10^{-11}\,\text{F} = \boxed{73{,}8\,\text{pF}}$$
+
+**Neue Ladung:**
+$$Q_2 = C_2 \cdot U = 7{,}378 \cdot 10^{-11} \cdot 400 = \boxed{2{,}95 \cdot 10^{-8}\,\text{C}} = \boxed{29{,}5\,\text{nC}}$$
+
+**Neue Feldstärke:**
+$$E_2 = \frac{U}{d_2} = \frac{400}{6 \cdot 10^{-3}} = \boxed{66.667\,\text{V/m}} \approx \boxed{6{,}67 \cdot 10^4\,\text{V/m}}$$
+
+**Begründung und Interpretation:**
+
+| Größe | Vorher | Nachher | Änderung | Grund |
+|---|---|---|---|---|
+| **Plattenabstand** | 4 mm | 6 mm | ↑ vergrößert | Gegeben |
+| **Spannung** | 400 V | 400 V | → gleich | Quelle verbunden → $U$ konstant |
+| **Kapazität** | 110,7 pF | 73,8 pF | ↓ **sinkt** | $C \propto \frac{1}{d}$ |
+| **Ladung** | 44,3 nC | 29,5 nC | ↓ **sinkt** | $Q = C \cdot U$, und $C$ sinkt |
+| **Feldstärke** | 100 kV/m | 66,7 kV/m | ↓ **sinkt** | $E = \frac{U}{d}$ |
+
+**Zusammenfassung:** Bei vergrößertem Abstand mit verbundener Quelle sinken **Kapazität, Ladung und Feldstärke**, während die Spannung konstant bleibt.
+
+---
+
+**d) Plattenabstand vergrößert nach Abklemmen der Spannungsquelle**
+
+**Ausgangssituation (vor dem Vergrößern):**
+- $d_1 = 4\,\text{mm}$, $U_1 = 400\,\text{V}$, $Q_1 = 44{,}3\,\text{nC}$, $E_1 = 100\,\text{kV/m}$
+- Die Quelle wird **abgeklemmt** — die Ladung auf den Platten ist jetzt "gefangen"
+
+**Nach der Vergrößerung auf 6 mm (ohne Spannungsquelle):**
+
+Da die Quelle abgeklemmt ist, kann keine Ladung zu oder wegfließen:
+$$Q = \text{konstant} = 44{,}3\,\text{nC}$$
+
+**Neue Kapazität (bei größerem Abstand):**
+$$C_2 = \varepsilon_0 \cdot \frac{A}{d_2} = 7{,}378 \cdot 10^{-11}\,\text{F}$$ (gleich wie in Teil c)
+
+**Neue Spannung (aus $U = \frac{Q}{C}$):**
+$$U_2 = \frac{Q}{C_2} = \frac{44{,}3 \cdot 10^{-9}}{7{,}378 \cdot 10^{-11}} = \boxed{600\,\text{V}}$$
+
+(Vorher: 400 V → Jetzt: 600 V — Die Spannung **steigt**!)
+
+**Neue Feldstärke (aus $E = \frac{U}{d}$):**
+$$E_2 = \frac{U_2}{d_2} = \frac{600}{6 \cdot 10^{-3}} = \boxed{100.000\,\text{V/m}} = \boxed{10^5\,\text{V/m}}$$
+
+(Die Feldstärke bleibt **konstant**!)
+
+**Begründung und Interpretation:**
+
+| Größe | Vorher (4 mm, verbunden) | Nachher (6 mm, abgeklemmt) | Änderung | Grund |
+|---|---|---|---|---|
+| **Plattenabstand** | 4 mm | 6 mm | ↑ vergrößert | Gegeben |
+| **Ladung** | 44,3 nC | 44,3 nC | → **konstant** | Quelle abgeklemmt → keine Ladungsfluss |
+| **Kapazität** | 110,7 pF | 73,8 pF | ↓ sinkt | $C \propto \frac{1}{d}$ |
+| **Spannung** | 400 V | 600 V | ↑ **steigt** | $U = \frac{Q}{C}$ und $C$ sinkt |
+| **Feldstärke** | 100 kV/m | 100 kV/m | → **konstant** | $E = \frac{Q}{\varepsilon_0 A}$ (unabhängig von $d$!) |
+
+**Zusammenfassung:** Bei vergrößertem Abstand mit abgeklemmter Quelle bleibt die **Ladung konstant**, während die **Spannung und Kapazität sich ändern**. Die **Feldstärke bleibt gleich**, weil sie nur von der Ladung und Plattenfläche abhängt — nicht vom Abstand!
+
 ## Magnetische Felder (AB9)
 
 > [!info] Aufgabenstellung
