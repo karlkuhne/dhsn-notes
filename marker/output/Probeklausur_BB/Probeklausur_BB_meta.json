@@ -1,0 +1,529 @@
+{
+  "table_of_contents": [
+    {
+      "title": "Probeklausur Bildverarbeitung",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          69.7289177344488,
+          94.75711432099342
+        ],
+        [
+          275.1320248693228,
+          94.75711432099342
+        ],
+        [
+          275.1320248693228,
+          111.92027927935123
+        ],
+        [
+          69.7289177344488,
+          111.92027927935123
+        ]
+      ]
+    },
+    {
+      "title": "1. Speicherplatzbedarf von Bildern, indizierte Bilder, Druckgr\u00f6\u00dfe (8 Punkte)",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          69.7289177344488,
+          152.51578921079636
+        ],
+        [
+          460.36081170915656,
+          152.51578921079636
+        ],
+        [
+          460.36081170915656,
+          166.28743055462837
+        ],
+        [
+          69.7289177344488,
+          166.28743055462837
+        ]
+      ]
+    },
+    {
+      "title": "2. Histogramme (3 Punkte)",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          69.7289177344488,
+          278.7215770483017
+        ],
+        [
+          209.29219007492065,
+          278.7215770483017
+        ],
+        [
+          209.29219007492065,
+          292.69876527786255
+        ],
+        [
+          69.7289177344488,
+          292.69876527786255
+        ]
+      ]
+    },
+    {
+      "title": "3. \"Binned\" Histogramme (2 Punkte)",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          69.7289177344488,
+          504.000963807106
+        ],
+        [
+          256.42247166861813,
+          504.000963807106
+        ],
+        [
+          256.42247166861813,
+          517.1559644937515
+        ],
+        [
+          69.7289177344488,
+          517.1559644937515
+        ]
+      ]
+    },
+    {
+      "title": "4. Histogramme und Bildformate (1 Punkt)",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          69.7289177344488,
+          589.0973744988441
+        ],
+        [
+          287.1631773364934,
+          589.0973744988441
+        ],
+        [
+          287.1631773364934,
+          603.074562728405
+        ],
+        [
+          69.7289177344488,
+          603.074562728405
+        ]
+      ]
+    },
+    {
+      "title": "5. JPEG-Kompression (3 Punkte)",
+      "heading_level": null,
+      "page_id": 1,
+      "polygon": [
+        [
+          69.7289177344488,
+          70.81090213358402
+        ],
+        [
+          235.42881901738625,
+          70.81090213358402
+        ],
+        [
+          235.42881901738625,
+          84.47977003455162
+        ],
+        [
+          69.7289177344488,
+          84.47977003455162
+        ]
+      ]
+    },
+    {
+      "title": "6. Punktoperationen - Autokontrast (2 Punkte)",
+      "heading_level": null,
+      "page_id": 1,
+      "polygon": [
+        [
+          68.97914442547622,
+          171.32332925498486
+        ],
+        [
+          311.15592322361556,
+          171.32332925498486
+        ],
+        [
+          311.15592322361556,
+          185.71161125600338
+        ],
+        [
+          68.97914442547622,
+          185.71161125600338
+        ]
+      ]
+    },
+    {
+      "title": "7. Punktoperationen (2 Punkte)",
+      "heading_level": null,
+      "page_id": 1,
+      "polygon": [
+        [
+          69.7289177344488,
+          385.4004107415676
+        ],
+        [
+          233.92927239944112,
+          385.4004107415676
+        ],
+        [
+          233.92927239944112,
+          400.1997865140438
+        ],
+        [
+          69.7289177344488,
+          400.1997865140438
+        ]
+      ]
+    },
+    {
+      "title": "8. Homogene Punktoperationen - Histogrammanpassung (3 Punkte)",
+      "heading_level": null,
+      "page_id": 1,
+      "polygon": [
+        [
+          68.22937111650366,
+          470.7023683190346
+        ],
+        [
+          417.62373309772016,
+          470.7023683190346
+        ],
+        [
+          417.62373309772016,
+          484.67955654859543
+        ],
+        [
+          68.22937111650366,
+          484.67955654859543
+        ]
+      ]
+    },
+    {
+      "title": "9. Homogene Punktoperationen - Histogrammausgleich (3 Punkte)",
+      "heading_level": null,
+      "page_id": 1,
+      "polygon": [
+        [
+          69.7289177344488,
+          540.5883094668388
+        ],
+        [
+          411.62554662593965,
+          540.5883094668388
+        ],
+        [
+          411.62554662593965,
+          554.5654976963997
+        ],
+        [
+          69.7289177344488,
+          554.5654976963997
+        ]
+      ]
+    },
+    {
+      "title": "10. Homogene Punktoperationen - Klassifizierung (2 Punkte)",
+      "heading_level": null,
+      "page_id": 1,
+      "polygon": [
+        [
+          69.7289177344488,
+          610.4742506146431
+        ],
+        [
+          383.13416088498207,
+          610.4742506146431
+        ],
+        [
+          383.13416088498207,
+          624.451438844204
+        ],
+        [
+          69.7289177344488,
+          624.451438844204
+        ]
+      ]
+    },
+    {
+      "title": "11. Punktoperationen (3 Punkte)",
+      "heading_level": null,
+      "page_id": 2,
+      "polygon": [
+        [
+          69.7289177344488,
+          71.06783574074507
+        ],
+        [
+          239.92745887122166,
+          71.06783574074507
+        ],
+        [
+          239.92745887122166,
+          85.04502397030592
+        ],
+        [
+          69.7289177344488,
+          85.04502397030592
+        ]
+      ]
+    },
+    {
+      "title": "12. Filter (11 Punkte)",
+      "heading_level": null,
+      "page_id": 2,
+      "polygon": [
+        [
+          69.7289177344488,
+          549.6323724389076
+        ],
+        [
+          181.09588113427162,
+          549.6323724389076
+        ],
+        [
+          181.09588113427162,
+          563.6095606684685
+        ],
+        [
+          69.7289177344488,
+          563.6095606684685
+        ]
+      ]
+    },
+    {
+      "title": "13. Bildartefakte (3 Punkte)",
+      "heading_level": null,
+      "page_id": 3,
+      "polygon": [
+        [
+          69.7289177344488,
+          350.4574401676655
+        ],
+        [
+          215.1849396751269,
+          350.4574401676655
+        ],
+        [
+          215.1849396751269,
+          364.845722168684
+        ],
+        [
+          69.7289177344488,
+          364.845722168684
+        ]
+      ]
+    }
+  ],
+  "page_stats": [
+    {
+      "page_id": 0,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Span",
+          31
+        ],
+        [
+          "Line",
+          30
+        ],
+        [
+          "ListItem",
+          10
+        ],
+        [
+          "TableCell",
+          9
+        ],
+        [
+          "SectionHeader",
+          5
+        ],
+        [
+          "Text",
+          5
+        ],
+        [
+          "PageHeader",
+          3
+        ],
+        [
+          "ListGroup",
+          3
+        ],
+        [
+          "Table",
+          1
+        ],
+        [
+          "PageFooter",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 1,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Span",
+          33
+        ],
+        [
+          "Line",
+          27
+        ],
+        [
+          "TableCell",
+          8
+        ],
+        [
+          "SectionHeader",
+          6
+        ],
+        [
+          "Text",
+          4
+        ],
+        [
+          "PageHeader",
+          3
+        ],
+        [
+          "TextInlineMath",
+          2
+        ],
+        [
+          "Figure",
+          1
+        ],
+        [
+          "Table",
+          1
+        ],
+        [
+          "PageFooter",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 2,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Span",
+          69
+        ],
+        [
+          "Line",
+          31
+        ],
+        [
+          "TableCell",
+          9
+        ],
+        [
+          "Text",
+          4
+        ],
+        [
+          "PageHeader",
+          3
+        ],
+        [
+          "SectionHeader",
+          2
+        ],
+        [
+          "Code",
+          1
+        ],
+        [
+          "Table",
+          1
+        ],
+        [
+          "ListItem",
+          1
+        ],
+        [
+          "PageFooter",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    },
+    {
+      "page_id": 3,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          25
+        ],
+        [
+          "Span",
+          21
+        ],
+        [
+          "ListItem",
+          4
+        ],
+        [
+          "PageHeader",
+          3
+        ],
+        [
+          "Figure",
+          2
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "Text",
+          1
+        ],
+        [
+          "PageFooter",
+          1
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0
+      }
+    }
+  ],
+  "debug_data_path": "debug_data/Probeklausur_BB"
+}
