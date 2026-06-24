@@ -2,6 +2,7 @@
 name: reformat-notes
 description: Reformatiert genau einen Block (~100 Zeilen) einer Obsidian-Notiz und speichert den Fortschritt. Erster Aufruf mit Dateipfad, Folgeaufrufe ohne Argumente. Mit /loop /reformat-notes die gesamte Datei automatisch durcharbeiten.
 allowed-tools: Read Edit Bash(grep *) Bash(wc *) Bash(python3 *) Bash(cat *)
+model: haiku
 ---
 
 # Notizen-Reformatierung (Ein Block)
@@ -115,6 +116,18 @@ Formeln IMMER in Callout-Blöcke einbetten:
 > - $Symbol$: Beschreibung (Einheit, Einheitenname)
 ```
 
+### Callouts vs. einfache Blockquotes
+
+`> [!type]`-Callouts (mit Obsidian-Icon) **ausschließlich für Formelboxen** (`[!formula]`). Für Definitionen, Merksätze und Hinweise stattdessen einfaches `>` ohne Typ:
+
+```
+> **Definition:** Eine Kapazität ist ...
+> **Merke:** Die Spule wirkt als Differenzierer.
+> **Hinweis:** Gilt nur für lineare Systeme.
+```
+
+`> [!tip]`, `> [!abstract]`, `> [!warning]`, `> [!info]` etc. **nicht verwenden**.
+
 ### Was zu erhalten ist
 - Alle `![[Bildname.jpeg]]` Einbettungen (nicht verschieben, nur den Kontext drum herum verbessern)
 - Alle mathematisch korrekten Formeln (nur Formatierung ändern, nie Inhalt)
@@ -176,6 +189,9 @@ Wenn sich der Strom durch eine Spule ändert, entsteht eine Spannung. Die **Selb
 
 ## Regeln
 
+- **VOLLSTÄNDIGKEIT IST OBERSTES GEBOT:** Jeder Satz, jeder Stichpunkt, jede Formel, jede Zahl aus dem Original muss im Output vorhanden sein. Nichts weglassen, nichts zusammenfassen, nichts kürzen. Im Zweifel lieber wörtlich übernehmen als riskieren, etwas zu verlieren.
+- **Kein Paraphrasieren zum Kürzen:** Umformulierungen dienen nur der Verständlichkeit, nie der Verdichtung. Ein Abschnitt mit 10 Stichpunkten hat danach immer noch 10 Stichpunkte.
+- **Keine implizite Zusammenfassung:** Formulierungen wie "u.a.", "z.B. …", "unter anderem" dürfen nicht dazu genutzt werden, Listenpunkte wegzulassen. Alle Punkte vollständig ausschreiben.
 - Nie den Inhalt (Formeln, Fakten) verfälschen – nur Formatierung und Sprache verbessern
 - Nie Bilder verschieben oder löschen
 - Immer die Formatvorlage aus dem vorherigen Teil der Datei als Referenz nutzen

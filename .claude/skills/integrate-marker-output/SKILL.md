@@ -2,6 +2,7 @@
 name: integrate-marker-output
 description: Integriert Marker-konvertiertes Markdown strukturiert in die Obsidian-Vault
 triggers: ["marker", "integrate", "wiki"]
+model: sonnet
 ---
 
 # Skill: Marker-Output in Wiki integrieren
