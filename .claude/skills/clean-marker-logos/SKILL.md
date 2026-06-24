@@ -1,3 +1,9 @@
+---
+name: clean-marker-logos
+description: Entfernt redundante Logos aus Marker-Output-Verzeichnissen
+triggers: ["logos", "marker cleanup", "clean"]
+---
+
 # Skill: Logos aus Marker-Outputs entfernen
 
 ## Beschreibung

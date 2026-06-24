@@ -1,3 +1,9 @@
+---
+name: integrate-marker-output
+description: Integriert Marker-konvertiertes Markdown strukturiert in die Obsidian-Vault
+triggers: ["marker", "integrate", "wiki"]
+---
+
 # Skill: Marker-Output in Wiki integrieren
 
 ## Beschreibung
