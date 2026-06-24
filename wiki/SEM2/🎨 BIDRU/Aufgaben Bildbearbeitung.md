@@ -383,13 +383,3 @@ $$
 > - d) Filtern Sie das Bild mittels eines gewichteten Median-Filters der Größe $3 \times 1$ mit der Gewichtsmatrix $W = [1, 3, 1]$.
 
 ![[Aufgaben Bildbearbeitung/4-page_5_Figure_8.jpeg]]
-
----
-## Review & Learning
-> [!summary] Zusammenfassung
-> Diese Übung umfasst die grundlegenden Konzepte der digitalen Bildverarbeitung, angefangen bei Farbtiefe und Speicherplatzberechnung über Kompressionsverfahren wie JPEG und Chroma-Subsampling bis hin zu Bildverbesserungstechniken mittels Punktoperationen (Histogrammanpassung, Autokontrast) und Filtertechniken (Faltung, Median-Filter).
-
-> [!question] Mögliche Prüfungsfragen
-> - Wie berechnet sich die Speicherplatzersparnis bei verschiedenen Chroma-Subsampling-Varianten?
-> - Erklären Sie den Unterschied zwischen homogenen und inhomogenen Punktoperationen.
-> - Warum ist die Separierbarkeit von Filtern für die Recheneffizienz wichtig?
