@@ -106,6 +106,18 @@ Wenn das der letzte Block war (`block_end >= total_lines - 1`):
 - Subsektionen mit `###` Überschriften
 - Nummerierung konsistent zu den bestehenden Überschriften beibehalten
 
+### Überschrifts-Nummerierung
+
+**Vierstellige Nummern für `####` Überschriften:**
+- Alle `####` Überschriften (4 Hash) müssen vierstellig nummeriert sein: `#### 3.9.1.1 Titel`, `#### 3.9.1.2 Titel`, etc.
+- Format: `#### A.B.C.D Titel` wobei A.B.C die übergeordnete `###` Nummerierung ist und D die fortlaufende Nummer unter dieser Sektion
+- Beispiel: Unter `### 3.9.1 Grundbegriffe` → `#### 3.9.1.1 Erstes Thema`, `#### 3.9.1.2 Zweites Thema`
+
+**Fettdruck statt `#####` Überschriften:**
+- `#####` Überschriften (5 Hash) sind NICHT erlaubt
+- Stattdessen: `**Titel**` (Fettdruck) als Inline-Text
+- Dies verhindert unnötige Hierarchie-Tiefe und verbessert die Lesbarkeit
+
 ### Formelboxen (PFLICHT für alle wichtigen Formeln)
 Formeln IMMER in Callout-Blöcke einbetten:
 
@@ -140,6 +152,8 @@ Formeln IMMER in Callout-Blöcke einbetten:
 - Unformatierte Formeln außerhalb von Formelboxen (wenn es wichtige Formeln sind)
 - Schlechte OCR-Artefakte wie abgebrochene Sätze, falsche Zeilenumbrüche in Formeln
 - Überflüssige Punkte `·` oder `•` am Zeilenanfang → in echte Listenpunkte umwandeln
+- `#####` Überschriften (5 Hash) → **Fettdruck** umwandeln
+- Alle `####` Überschriften ohne vierstellige Nummerierung → mit Nummer versehen
 
 ### Struktur-Vorlage
 

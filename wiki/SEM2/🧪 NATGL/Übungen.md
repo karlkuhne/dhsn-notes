@@ -1870,57 +1870,295 @@ $$E_2 = \frac{U_2}{d_2} = \frac{600}{6 \cdot 10^{-3}} = \boxed{100.000\,\text{V/
 
 ## Magnetische Felder (AB9)
 
+### Aufgabe 1: Elektromagnet
+
 > [!info] Aufgabenstellung
-> A1) (\*/\*\*\*) Geben Sie die Eigenschaften eines auf einer schlanken Spule basierenden Elektromagneten an, damit er ein möglichst starkes Magnetfeld erzeugt
->
-> A2) (\*/\*\*\*) Geben Sie die Voraussetzungen an, unter denen ein Strahl positiver Ionen in einem homogenen Magnetfeld eine ablenkende Kraft erfährt und geben Sie den Betrag dieser Kraft an.
->
-> **A3**) (\*\*/\*\*\*) Ein Elektronenstrahl tritt mit einer Geschwindigkeit von $v_0$ = 1,96·10<sup>6</sup> ms<sup>-1</sup> senkrecht zu den Feldlinien in ein homogenes Magnetfeld mit der magnetischen Flussdichte $B = 1.6 \cdot 10^{-3}$ T ein.
+> Geben Sie die Eigenschaften eines auf einer schlanken Spule basierenden Elektromagneten an, damit er ein möglichst starkes Magnetfeld erzeugt.
+
+TODO
+
+### Aufgabe 2: Ionenablenkung im Magnetfeld
+
+> [!info] Aufgabenstellung
+> Geben Sie die Voraussetzungen an, unter denen ein Strahl positiver Ionen in einem homogenen Magnetfeld eine ablenkende Kraft erfährt und geben Sie den Betrag dieser Kraft an.
+
+TODO
+
+### Aufgabe 3: Elektronenstrahl im Magnetfeld
+
+> [!info] Aufgabenstellung
+> Ein Elektronenstrahl tritt mit einer Geschwindigkeit von $v_0 = 1{,}96 \cdot 10^6\,\text{m/s}$ senkrecht zu den Feldlinien in ein homogenes Magnetfeld mit der magnetischen Flussdichte $B = 1{,}6 \cdot 10^{-3}\,\text{T}$ ein.
 >
 > a) Erklären Sie, warum sich der Elektronenstrahl auf einer Kreisbahn weiterbewegt.
 >
 > b) Berechnen Sie den Radius der Kreisbahn.
 >
-> c) Beschreiben Sie mit Hilfe der in b) hergeleiteten Gleichung, wie sich der Radius ändern würde, wenn an Stelle der Elektronen Protonen in das Magnetfeld fliegen (qualitativ)
+> c) Beschreiben Sie mit Hilfe der in b) hergeleiteten Gleichung, wie sich der Radius ändern würde, wenn an Stelle der Elektronen Protonen in das Magnetfeld fliegen (qualitativ).
+
+TODO
+
+### Aufgabe 4: Elektronenstrahlablenkung durch E- und B-Feld
+
+> [!info] Aufgabenstellung
+> Elektronen treten mit der Geschwindigkeit $v_1 = 2{,}0 \cdot 10^5\,\text{m/s}$ in ein homogenes elektrisches Feld ein (dort kein Magnetfeld) und durchlaufen es auf einer Strecke von $s = 20\,\text{cm}$. Die Polung der Platten bewirkt, dass die Elektronen beschleunigt werden. Am Ende der Beschleunigungsstrecke sollen die Elektronen eine Geschwindigkeit von $v_2 = 8{,}0 \cdot 10^6\,\text{m/s}$ haben.
 >
-> A4) (\*\*\*/\*\*\*) Elektronen treten mit der Geschwindigkeit $2.0 \cdot 10^5$ m/s in ein homogenes elektrisches Feld ein (dort kein Magnetfeld) und durchlaufen es auf einer Strecke von s = 20 cm. Die Polung der Platten bewirkt, dass die Elektronen beschleunigt werden.
->
-> Am Ende der Beschleunigungsstrecke sollen die Elektronen eine Geschwindigkeit von 8,0·10<sup>6</sup> m/s haben.
->
-> Anschließend treten die Elektronen senkrecht zu den Feldlinien in ein homogenes Magnetfeld ein (dort kein elektrisches Feld), in der sie um $\alpha$ = 25° zu
->
-> $\times$ $\times$ $\times$ $\times$ $\times$ $\times$ $\times$ $\times$ $\times$ ×Х ◒ $\alpha$ Ś
->
-> ihrer Bewegungsrichtung abgelenkt werden sollen. Das Magnetfeld ist $b = 3.0$ cm breit.
+> Anschließend treten die Elektronen senkrecht zu den Feldlinien in ein homogenes Magnetfeld ein (dort kein elektrisches Feld), in dem sie um $\alpha = 25°$ zu ihrer Bewegungsrichtung abgelenkt werden sollen. Das Magnetfeld ist $b = 3{,}0\,\text{cm}$ breit.
 >
 > a) Berechnen Sie die elektrische Feldstärke des Feldes im Kondensator.
 >
 > b) Berechnen Sie die erforderliche magnetische Flussdichte.
->
-> A5) (\*\*\*/\*\*\*) Eine Leiterschleife rotiert gleichförmig in einem homogenen und zeitlich konstanten Magnetfeld. Die Rotationsachse ist senkrecht zu den Feldlinien gerichtet.
+
+Gegeben:
+- Anfangsgeschwindigkeit: $v_1 = 2{,}0 \cdot 10^5\,\text{m/s}$
+- Endgeschwindigkeit im E-Feld: $v_2 = 8{,}0 \cdot 10^6\,\text{m/s}$
+- Strecke im E-Feld: $s = 20\,\text{cm} = 0{,}2\,\text{m}$
+- Ablenkungswinkel im B-Feld: $\alpha = 25°$
+- Breite des B-Feldes: $b = 3{,}0\,\text{cm} = 0{,}03\,\text{m}$
+- Elektronenmasse: $m_e = 9{,}109 \cdot 10^{-31}\,\text{kg}$
+- Elementarladung: $e = 1{,}602 \cdot 10^{-19}\,\text{C}$
+
+**a) Elektrische Feldstärke im Kondensator**
+
+Nach den Formeln aus der Elektrotechnik-Notiz:
+- **Arbeit/Energie:** $W = e \cdot U$ ($W$ = Arbeit, $e$ = Elementarladung, $U$ = Spannung)
+- **E-Feld und Spannung:** $E = \frac{U}{s}$ ($E$ = Elektrische Feldstärke, $U$ = Spannung, $s$ = Strecke)
+
+
+**Herleitung der Formel: Wie kommt man auf $W = e \cdot U = \Delta E_{kin}$?**
+
+Diese Formel kombiniert drei Konzepte:
+
+**① Arbeit im E-Feld**:
+$$W = e \cdot U$$
+
+**② Kinetische Energie** (aus Mechanik):
+$$E_{kin} = \frac{1}{2}m v^2$$
+Ein bewegtes Teilchen der Masse $m$ mit Geschwindigkeit $v$ hat diese Energie. Die **Änderung** von $v_1$ auf $v_2$ ist:
+$$\Delta E_{kin} = \frac{1}{2}m_e v_2^2 - \frac{1}{2}m_e v_1^2 = \frac{1}{2}m_e(v_2^2 - v_1^2)$$
+
+**③ Arbeits-Energie-Satz** (aus Mechanik):
+$$W = \Delta E_{kin}$$
+Die Arbeit, die eine Kraft verrichtet, wird vollständig in kinetische Energie umgewandelt.
+
+**Zusammenhang:**
+$$\underbrace{e \cdot U}_{\text{Arbeit des E-Feldes}} = \underbrace{\frac{1}{2}m_e(v_2^2 - v_1^2)}_{\text{Änderung der kin. Energie}}$$
+
+
+**Schritt 1: Beschleunigungsspannung aus Energiesatz berechnen**
+
+Ein Elektron wird durch die Potentialdifferenz $U$ beschleunigt. Die Arbeit, die das E-Feld verrichtet, wird in kinetische Energie umgewandelt:
+
+$$W = e \cdot U = \Delta E_{kin} = \frac{1}{2}m_e(v_2^2 - v_1^2)$$
+
+Nach $U$ auflösen:
+$$U = \frac{m_e(v_2^2 - v_1^2)}{2e}$$
+
+Werte einsetzen:
+$$U = \frac{9{,}109 \cdot 10^{-31}\,\text{kg} \cdot [(8{,}0 \cdot 10^6)^2 - (2{,}0 \cdot 10^5)^2]\,(\text{m/s})^2}{2 \cdot 1{,}602 \cdot 10^{-19}\,\text{C}}$$
+
+$$v_2^2 - v_1^2 = 6{,}4 \cdot 10^{13} - 4{,}0 \cdot 10^{10} \approx 6{,}4 \cdot 10^{13}\,(\text{m/s})^2$$
+
+$$U = \frac{9{,}109 \cdot 10^{-31} \cdot 6{,}4 \cdot 10^{13}}{2 \cdot 1{,}602 \cdot 10^{-19}} = \frac{5{,}83 \cdot 10^{-17}}{3{,}204 \cdot 10^{-19}} \approx 182\,\text{V}$$
+
+**Schritt 2: Elektrische Feldstärke berechnen**
+
+Mit der Formel für das homogene E-Feld:
+$$E = \frac{U}{s} = \frac{182\,\text{V}}{0{,}2\,\text{m}} \approx \boxed{910\,\text{V/m}} = \boxed{9{,}1 \cdot 10^5\,\text{V/m}}$$
+
+**b) Erforderliche magnetische Flussdichte**
+
+Im Magnetfeld folgen die Elektronen einer Kreisbahn. Die Ablenkung um $\alpha = 25°$ bedeutet, dass der Elektronenstrahl einen Bogenabschnitt des Kreises beschreibt.
+
+**Geometrie im B-Feld:**
+
+Der Elektronenstrahl tritt senkrecht zu den Feldlinien ein und wird um $\alpha = 25°$ abgelenkt. Der Weg durch das Magnetfeld ist die Breite $b = 0{,}03\,\text{m}$.
+
+Für einen Kreisbogen mit Radius $r$ und Ablenkungswinkel $\alpha$ gilt:
+$$\sin(\alpha) = \frac{b}{r}$$
+
+Nach $r$ auflösen:
+$$r = \frac{b}{\sin(\alpha)} = \frac{0{,}03\,\text{m}}{\sin(25°)} = \frac{0{,}03}{0{,}4226} \approx 0{,}071\,\text{m} = 7{,}1\,\text{cm}$$
+
+Die Lorentz-Kraft bietet die Zentripetalkraft:
+$$e \cdot v_2 \cdot B = \frac{m_e \cdot v_2^2}{r}$$
+
+Nach $B$ auflösen:
+$$B = \frac{m_e \cdot v_2}{e \cdot r}$$
+
+Werte einsetzen:
+$$B = \frac{9{,}109 \cdot 10^{-31}\,\text{kg} \cdot 8{,}0 \cdot 10^6\,\text{m/s}}{1{,}602 \cdot 10^{-19}\,\text{C} \cdot 0{,}071\,\text{m}}$$
+
+$$B = \frac{7{,}287 \cdot 10^{-24}}{1{,}137 \cdot 10^{-20}} \approx \boxed{6{,}4 \cdot 10^{-4}\,\text{T}} = \boxed{0{,}64\,\text{mT}}$$
+
+### Aufgabe 5: Wechselspannung in rotierender Leiterschleife
+
+> [!info] Aufgabenstellung
+> Eine Leiterschleife rotiert gleichförmig in einem homogenen und zeitlich konstanten Magnetfeld. Die Rotationsachse ist senkrecht zu den Feldlinien gerichtet.
 >
 > Begründen Sie formelmäßig, dass mit dieser Anordnung eine Wechselspannung erzeugt werden kann.
->
-> Quelle: https://physikaufgaben.de
->
+
+Wir verwenden das **Faradaysche Induktionsgesetz**:
+
+> [!formula] Faradaysches Induktionsgesetz
+> $$U(t) = -N \cdot \frac{d\Phi(t)}{dt}$$
+> - $U(t)$: Induzierte Spannung [V]
+> - $N$: Anzahl der Windungen
+> - $\Phi(t)$: Magnetischer Fluss [Wb]
+> - $\frac{d\Phi}{dt}$: Änderungsrate des Flusses [Wb/s]
+
+**Schritt 1: Magnetischer Fluss bei rotierender Schleife**
+
+Der magnetische Fluss durch eine Fläche ist:
+$$\Phi = \vec{B} \cdot \vec{A} = B \cdot A \cdot \cos(\alpha)$$
+
+wobei $\alpha$ der Winkel zwischen Magnetfeld $\vec{B}$ und dem Normalenvektor der Fläche $\vec{A}$ ist.
+
+Bei gleichförmiger Rotation mit Winkelgeschwindigkeit $\omega$ ändert sich dieser Winkel mit der Zeit:
+$$\alpha(t) = \omega t$$
+
+Daher ist der zeitabhängige Fluss:
+$$\Phi(t) = B \cdot A \cdot \cos(\omega t)$$
+
+**Schritt 2: Induzierte Spannung berechnen**
+
+Nach dem Faradayschen Induktionsgesetz:
+$$U(t) = -\frac{d\Phi(t)}{dt} = -\frac{d}{dt}[B \cdot A \cdot \cos(\omega t)]$$
+
+Die Ableitung von $\cos(\omega t)$ ist $-\omega \sin(\omega t)$:
+$$U(t) = -B \cdot A \cdot (-\omega \sin(\omega t)) = B \cdot A \cdot \omega \cdot \sin(\omega t)$$
+
+**Schritt 3: Identifikation der Wechselspannung**
+
+Die induzierte Spannung hat die Form:
+$$U(t) = U_0 \cdot \sin(\omega t)$$
+
+mit der **Amplitude:**
+$$U_0 = B \cdot A \cdot \omega$$
+
+**Physikalische Interpretation:**
+
+- **Bei $t = 0$:** Die Schleife liegt in der Ebene des Magnetfeldes ($\alpha = 0°$) → Fluss ist maximal → Änderungsrate ist null → $U = 0$
+- **Bei $\omega t = 90°$:** Die Schleife steht senkrecht zum Magnetfeld ($\alpha = 90°$) → Fluss ist minimal → Änderungsrate ist maximal → $U = U_0$ (Maximum)
+- **Bei $\omega t = 180°$:** Die Schleife liegt wieder in der Feldebene ($\alpha = 180°$) → Fluss ist wieder maximal → $U = 0$
+- **Bei $\omega t = 270°$:** Schleife senkrecht zum Feld (andere Seite) → $U = -U_0$ (Minimum)
+
+**Fazit:** Der zeitlich veränderliche magnetische Fluss erzeugt nach dem Faradayschen Induktionsgesetz eine sinusförmige **Wechselspannung** mit der Amplitude $U_0 = B \cdot A \cdot \omega$.
+
+Dies ist das **Funktionsprinzip von Generatoren und Alterndern** (Stromerzeuger in Kraftwerken).
+
 ## Übungsblatt (AB10)
 
-MI, BA Dresden, D. Gembris
+### Aufgabe 1: Spannungsmesser (Vorwiderstand)
 
 > [!info] Aufgabenstellung
-> A1) Ein Spannungsmesser soll den Messbereich 10 V erhalten. Das zur Verfügung stehende Drehspulmesswerk benötigt einen Messwerksstrom von 100µA für Vollausschlag. Der Widerstand der Drehspule beträgt 1300 $\Omega$ . Berechnen Sie den erforderlichen Vorwiderstand R<sub>v</sub>.
->
-> A2) Ein Strommesser mit dem Innenwiderstand 0,1 $\Omega$ soll ein um den Faktor 10 größeren Messbereich erhalten. Erläutern Sie die Vorgehensweise.
->
-> A3) Ein freies Elektron durchlaufe im Vakuum eine Spannung von 1 V. Berechnen Sie dessen Geschwindigkeit.
->
-> A4) Berechnen Sie die Gesamtkapazitäten C<sub>AB</sub> für die folgenden Schaltungen. Für a) und b): $C_1 = 1$ nF, $C_2 = 2$ nF, $C_3 = 5$ nF.
->
-![[Übungen/Übungen-_page_18_Figure_6.jpeg]]
+> Ein Spannungsmesser soll den Messbereich 10 V erhalten. Das zur Verfügung stehende Drehspulmesswerk benötigt einen Messwerksstrom von 100µA für Vollausschlag. Der Widerstand der Drehspule beträgt 1300 $\Omega$ . Berechnen Sie den erforderlichen Vorwiderstand R<sub>v</sub>.
+
+Gegeben:
+- Messbereich $U = 10 \text{ V}$
+- Vollausschlagstrom $I_g = 100 \text{ µA} = 100 \times 10^{-6} \text{ A}$
+- Spulenwiderstand $R_g = 1300 \text{ Ω}$
+
+Gesucht: Vorwiderstand $R_v$
+
+**Lösung:**
+
+Der Spannungsmesser wird durch einen großen Vorwiderstand in Serie mit dem Drehspulmesswerk aufgebaut. Bei Vollausschlag fließt der Messwerksstrom $I_g$ durch beide Widerstände.
+
+Mit dem Ohmschen Gesetz:
+$$U = I_g \cdot (R_g + R_v)$$
+
+Nach $R_v$ umformen:
+$$R_v = \frac{U}{I_g} - R_g$$
+
+$$R_v = \frac{10 \text{ V}}{100 \times 10^{-6} \text{ A}} - 1300 \text{ Ω}$$
+
+$$R_v = 100.000 \text{ Ω} - 1300 \text{ Ω} = \boxed{98.700 \text{ Ω} = 98,7 \text{ kΩ}}$$
+
+### Aufgabe 2: Strommesser (Messbereicherweiterung)
 
 > [!info] Aufgabenstellung
-> Zusätzlich: s. Arbeitsblatt "Netzwerk-Berechnung\_Aufgaben.pdf"
->
+> Ein Strommesser mit dem Innenwiderstand 0,1 $\Omega$ soll ein um den Faktor 10 größeren Messbereich erhalten. Erläutern Sie die Vorgehensweise.
+
+Gegeben:
+- Innenwiderstand des Messwerks $R_i = 0,1 \text{ Ω}$
+- Erweiterungsfaktor $n = 10$
+
+Gesucht: Shunt-Widerstand $R_s$ und Erklärung der Vorgehensweise
+
+**Lösung:**
+
+**Prinzip der Messbereicherweiterung:**
+
+Um einen Strommesser in seinem Messbereich zu erweitern, wird ein **Shunt-Widerstand parallel** zum Messwerk geschaltet. Der Shunt leitet den überschüssigen Strom um das empfindliche Messwerk herum.
+
+**Physikalische Bedingung:**
+
+Bei Vollausschlag des Messwerks soll der Gesamtstrom das 10-fache des Messwerksstroms betragen. Da beide Widerstände parallel liegen, ist die Spannung gleich:
+$$U_i = U_s$$
+$$I_i \cdot R_i = I_s \cdot R_s$$
+
+Wenn $I_{ges} = 10 \cdot I_i$, dann:
+$$I_s = I_{ges} - I_i = 10 \cdot I_i - I_i = 9 \cdot I_i$$
+
+Einsetzen:
+$$I_i \cdot R_i = 9 \cdot I_i \cdot R_s$$
+
+**Berechnung des Shunt-Widerstands:**
+$$R_s = \frac{R_i}{n-1} = \frac{0,1 \text{ Ω}}{10-1} = \frac{0,1}{9} \text{ Ω} \approx \boxed{0,0111 \text{ Ω} = 11,1 \text{ mΩ}}$$
+
+**Allgemeine Formel für Erweiterungsfaktor $n$:**
+$$R_s = \frac{R_i}{n-1}$$
+
+**Praktische Realisation:**
+
+Der Shunt-Widerstand muss:
+- Ein sehr niedriger Widerstand sein (um große Ströme zu tragen)
+- Eine hohe Stromtragfähigkeit haben
+- Temperaturstabil sein (großer Temperaturkoeffizient würde die Messung verfälschen)
+
+### Aufgabe 3: Elektronenbeschleunigung
+
+> [!info] Aufgabenstellung
+> Ein freies Elektron durchlaufe im Vakuum eine Spannung von 1 V. Berechnen Sie dessen Geschwindigkeit.
+
+Gegeben:
+- Beschleunigungsspannung $U = 1 \text{ V}$
+- Elektronenmasse $m_e = 9,109 \times 10^{-31} \text{ kg}$
+- Elementarladung $e = 1,602 \times 10^{-19} \text{ C}$
+- Anfangsgeschwindigkeit $v_0 = 0$ (das Elektron startet aus dem Stillstand)
+
+Gesucht: Endgeschwindigkeit $v$
+
+**Lösung:**
+
+Das Elektron wird durch die elektrische Spannung beschleunigt. Die von der Spannung verrichtete Arbeit wird vollständig in kinetische Energie umgewandelt (Energieerhaltungssatz):
+
+**Energiebilanz:**
+$$\text{Elektrische Arbeit} = \text{Kinetische Energie}$$
+$$e \cdot U = \frac{1}{2} m_e v^2$$
+
+Nach $v$ auflösen:
+$$v = \sqrt{\frac{2eU}{m_e}}$$
+
+**Werte einsetzen:**
+$$v = \sqrt{\frac{2 \times 1,602 \times 10^{-19} \text{ C} \times 1 \text{ V}}{9,109 \times 10^{-31} \text{ kg}}}$$
+
+$$v = \sqrt{\frac{3,204 \times 10^{-19} \text{ J}}{9,109 \times 10^{-31} \text{ kg}}}$$
+
+$$v = \sqrt{3,516 \times 10^{11} \text{ m}^2/\text{s}^2}$$
+
+$$v \approx \boxed{5,93 \times 10^5 \text{ m/s} \approx 593 \text{ km/s}}$$
+
+**Bemerkung:**
+Diese Geschwindigkeit beträgt etwa 0,2% der Lichtgeschwindigkeit ($c \approx 3 \times 10^8 \text{ m/s}$), daher sind relativistische Effekte noch vernachlässigbar. Die klassische Mechanik ist hier ausreichend.
+
+### Aufgabe 4: Kapazitätsnetzwerk
+
+> [!info] Aufgabenstellung
+> Berechnen Sie die Gesamtkapazitäten C<sub>AB</sub> für die folgenden Schaltungen. Für a) und b): $C_1 = 1$ nF, $C_2 = 2$ nF, $C_3 = 5$ nF.
+> 
+> ![[Übungen/Übungen-_page_18_Figure_6.jpeg|333x355]]
+
 ## Übungsblatt (AB11)
 
 MI, BA Dresden, D. Gembris
@@ -2010,13 +2248,3 @@ $$
 > [!info] Aufgabenstellung
 > 62W.\int (\sin(ax))^2 = \frac{x}{2} - \frac{1}{4a} \sin(2ax)
 $$
-
----
-## Review & Learning
-[!summary] Zusammenfassung
-Sammlung von Übungsaufgaben aus den Bereichen Kinematik, Dynamik, Energie, Schwingungen, Optik und Elektrotechnik (Naturwissenschaftliche Grundlagen).
-
-[!question] Mögliche Prüfungsfragen
-- Wie berechnet sich die Meerestiefe per Echolot?
-- Wie lautet das 2. Newtonsche Axiom und wie wird es angewendet?
-- Wie löst man Aufgaben zur Federspannarbeit?
