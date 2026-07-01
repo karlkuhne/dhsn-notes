@@ -345,6 +345,8 @@ F_B &= m(g+a) \\
 \end{align*}
 $$
 
+$g$ = Erdbeschleunigung (9,81 m/s²)
+
 **b) Beschleunigung $2\,\text{m/s}^2$ nach oben ($a=+2$)**
 
 $$
@@ -808,6 +810,7 @@ $$
 
 $\varphi$ = Winkel in Radiant
 $\omega$ = Winkelgeschwindigkeit
+$\pi$ = Kreiszahl (≈ 3,14159...)
 
 **b) Zeitdauer der Beschleunigung**
 
@@ -1849,6 +1852,8 @@ $$
 
 $\nu$ = Frequenz des Lichts
 $E_{\text{ph}}$ = Energie eines Photons
+$c$ = Lichtgeschwindigkeit (299.800.000 m/s)
+$h$ = Planck-Konstante (6,626×10⁻³⁴ J·s)
 
 ## Elektrotechnik (AB7)
 
