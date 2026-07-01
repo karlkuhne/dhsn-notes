@@ -27,6 +27,141 @@ BA Dresden, D. Gembris
 >
 > e) Ein 300 m langer Zug überquert mit 72 km/h eine 200 m lange Brücke. Berechnen Sie, wie lange es dauert, bis der gesamte Zug die Brücke passiert hat. Formulieren Sie diese umgangssprachlich vage gestellte Frage zunächst exakt und berechnen Sie dann das Ergebnis.
 >
+
+**a) 100 km/h → m/s**
+
+| | Größe | Symbol | Wert |
+|---|---|---|---|
+| Gegeben | Geschwindigkeit | `vkmh` | `100` km/h |
+| Gesucht | Geschwindigkeit (SI) | `vc` | |
+
+$$
+\begin{align*}
+\text{Gegeben:} \\
+v_{\text{kmh}} &= 100 \text{ km/h} \\
+\text{Weg:} \\
+v_c &= \frac{v_{\text{kmh}}}{3.6} \\
+&= \frac{100}{3.6} \\
+&= 27.78 \text{ m/s} \\
+\text{ERG:} \quad v_c &= 27.78 \text{ m/s}
+\end{align*}
+$$
+
+**a) 10 m/s → km/h**
+
+| | Größe | Symbol | Wert |
+|---|---|---|---|
+| Gegeben | Geschwindigkeit (SI) | `vc` | `10` m/s |
+| Gesucht | Geschwindigkeit | `vkmh` | |
+
+$$
+\begin{align*}
+\text{Gegeben:} \\
+v_c &= 10 \text{ m/s} \\
+\text{Weg:} \\
+v_{\text{kmh}} &= v_c \cdot 3.6 \\
+&= 10 \cdot 3.6 \\
+&= 36 \text{ km/h} \\
+\text{ERG:} \quad v_{\text{kmh}} &= 36 \text{ km/h}
+\end{align*}
+$$
+
+**b) Meerestiefe (Echolot)**
+
+|         | Größe                      | Symbol | Wert       |
+| ------- | -------------------------- | ------ | ---------- |
+| Gegeben | Schallgeschwindigkeit      | `cph`  | `1475` m/s |
+|         | Laufzeit (Echo)            | `t`    | `1.4` s    |
+| Gesucht | Entfernung (Laufzeit/Echo) | `sT`   |            |
+
+$$
+\begin{align*}
+\text{Gegeben:} \\
+c_{\text{ph}} &= 1475 \text{ m/s} \\
+t &= 1.4 \text{ s} \\
+\text{Weg:} \\
+s_T &= \frac{c_{\text{ph}} \cdot t}{2} \\
+&= \frac{1475 \cdot 1.4}{2} \\
+&= 1032 \text{ m} \\
+\text{ERG:} \quad s_T &= 1032 \text{ m}
+\end{align*}
+$$
+
+$v_c$ = Geschwindigkeit in SI-Einheiten
+
+**c) Pioneer 11 am Jupiter**
+
+| | Größe | Symbol | Wert |
+|---|---|---|---|
+| Gegeben | Geschwindigkeit | `vkmh` | `171000` km/h |
+| | Strecke (Jupiterdurchmesser) | `s` | `142000000` m |
+| Gesucht | Zeit | `t` | |
+
+$$
+\begin{align*}
+\text{Gegeben:} \\
+s &= 142000000 \text{ m} \\
+v_{\text{kmh}} &= 171000 \text{ km/h} \\
+\text{Weg:} \\
+v_c &= \frac{v_{\text{kmh}}}{3.6} \\
+&= \frac{171000}{3.6} \\
+&= 47500 \text{ m/s} \\
+t &= \frac{s}{v_c} \\
+&= \frac{142000000}{47500} \\
+&= 2989 \text{ s} \\
+\text{ERG:} \quad t &= 2989 \text{ s}
+\end{align*}
+$$
+
+**d) Lichtlaufzeit von der Sonne**
+
+| | Größe | Symbol | Wert |
+|---|---|---|---|
+| Gegeben | Geschwindigkeit (gleichförmig) | `vc` | `300000km/s` (Einheit direkt mit eingeben) |
+| | Strecke | `s` | `150000000000` m |
+| Gesucht | Zeit | `t` | |
+
+$$
+\begin{align*}
+\text{Gegeben:} \\
+s &= 150000000000 \text{ m} \\
+v_c &= 300000000 \text{ m/s} \\
+\text{Weg:} \\
+t &= \frac{s}{v_c} \\
+&= \frac{150000000000}{300000000} \\
+&= 500 \text{ s} \\
+\text{ERG:} \quad t &= 500 \text{ s}
+\end{align*}
+$$
+
+**e) Zug über Brücke**
+
+Exakte Formulierung: Gesucht ist die Zeit von dem Moment, in dem die Zugspitze auf die Brücke fährt, bis zu dem Moment, in dem das Zugende die Brücke verlässt — der Zug legt dabei die Strecke Brückenlänge + Zuglänge zurück.
+
+| | Größe | Symbol | Wert |
+|---|---|---|---|
+| Gegeben | Geschwindigkeit | `vkmh` | `72` km/h |
+| | Strecke (Brücke + Zuglänge, `200+300`) | `s` | `500` m |
+| Gesucht | Zeit | `t` | |
+
+$$
+\begin{align*}
+\text{Gegeben:} \\
+s &= 500 \text{ m} \\
+v_{\text{kmh}} &= 72 \text{ km/h} \\
+\text{Weg:} \\
+v_c &= \frac{v_{\text{kmh}}}{3.6} \\
+&= \frac{72}{3.6} \\
+&= 20 \text{ m/s} \\
+t &= \frac{s}{v_c} \\
+&= \frac{500}{20} \\
+&= 25 \text{ s} \\
+\text{ERG:} \quad t &= 25 \text{ s}
+\end{align*}
+$$
+
+$v_c$ = Geschwindigkeit in SI-Einheiten
+
 ### Aufgabe 2: geradlinig gleichförmige Bewegung
 
 > [!info] Aufgabenstellung
@@ -38,6 +173,7 @@ BA Dresden, D. Gembris
 >
 > c) C benötigt 3 Sekunden, um vom Ursprung aus 3 m nach vorne zu gehen, bewegt sich dann mit 2 m/s für 2 Sekunden nach hinten und geht schließlich in einer Sekunde wieder 1 m nach vorne.
 >
+
 ### Aufgabe 3: Graphische Integration
 
 > [!info] Aufgabenstellung
@@ -45,110 +181,140 @@ BA Dresden, D. Gembris
 >
 ![[Übungen/Übungen-_page_0_Figure_16.jpeg]]
 
-Weitere Aufgaben zur Kinematik: http://www.poenitz-net.de/Physik/ 1.Mechanik/1.2.A.Kinematik.pdf
-
-
-**05.05.26**
 ## Dynamik (AB2)
 
 ### Aufgabe 1: 2. Newtonsches Axiom
 
 > [!info] Aufgabenstellung
 > a) Berechnen Sie die Kraft, die benötigt wird, um einen 1 kg schweren Körper in 3 Sekunden von 0 auf 2 m/s zu beschleunigen.
-
-Gegeben:
-- Masse $m = 1 \text{ kg}$
-- Zeit $\Delta t = 3 \text{ s}$
-- Geschwindigkeitsänderung $\Delta v = 2 \text{ m/s} - 0 \text{ m/s} = 2 \text{ m/s}$
-
-Gesucht: Kraft $F$
-
-1. Beschleunigung berechnen:
-$$a = \frac{\Delta v}{\Delta t} = \frac{2 \text{ m/s}}{3 \text{ s}}$$
-
-2. Kraft berechnen (2. Newtonsches Axiom):
-$$F = m \cdot a = 1 \text{ kg} \cdot \frac{2}{3} \text{ m/s}^2 = \frac{2}{3} \text{ N} \approx 0,667 \text{ N}$$
-
-> [!info] Aufgabenstellung
+>
 > b) Berechnen Sie, wie schnell wird 1,5 t schweres Auto nach 10 Sekunden ist, wenn seine Reifen jede Sekunde eine Kraft von 2 kN auf die Straße übertragen.
-
-Gegeben:
-- Masse $m=1.5 \text{ t} = 1500 \text{ kg}$
-- Zeit $\Delta t = 10 \text{ s}$
-- Kraft $F = 2 \text{ kN}$
-
-Gesucht: Geschwindigkeit $v$ nach $10 \text { s}$
-
-1. Formel aufstellen und umstellen:
-$$F = m \cdot \frac{\Delta v}{\Delta t}$$
-
-2. Multipliziert man beide Seiten mit $\Delta t$, erhält man:
-$$F \cdot \Delta t = m \cdot \Delta v$$
-
-3. Teilt man nun durch $m$, erhält man die Formel für $\Delta v$:
-$$\Delta v = \frac{F \cdot \Delta t}{m}$$
-
-4. Werte einsetzen:
-$$\Delta v = \frac{2000 \text{ N} \cdot 10 \text{ s}}{1500 \text{ kg}} = \frac{20000}{1500} \text{ m/s} = \frac{40}{3} \text{ m/s} \approx 13,33 \text{ m/s}$$
-
-Das Auto ist nach 10 Sekunden also $13,33 \text{ m/s}$ (das entspricht etwa $48 \text{ km/h}$) schnell.
-
-
-> [!info] Aufgabenstellung
+>
 > c) Berechnen Sie die Kraft, die auf ein 2 t schweres Fahrzeug wirkt, das mit 54 km/h auf einen Brückenpfeiler prallt und dabei in 0,1 s zum Stillstand kommt.
-
-Gegeben:
-- Masse $m = 2 \text{ t} = 2000 \text{ kg}$
-- Anfangsgeschwindigkeit $v_0 = 54 \text{ km/h} = \frac{54}{3,6} \text{ m/s} = 15 \text{ m/s}$
-- Endgeschwindigkeit $v_1 = 0 \text{ m/s}$ (Stillstand)
-- Zeitdauer $\Delta t = 0,1 \text{ s}$
-
-Gesucht: Kraft $F$
-
-
- 1. Geschwindigkeitsänderung und Beschleunigung berechnen:
-$$\Delta v = v_1 - v_0 = 0 \text{ m/s} - 15 \text{ m/s} = -15 \text{ m/s}$$
-$$a = \frac{\Delta v}{\Delta t} = \frac{-15 \text{ m/s}}{0,1 \text{ s}} = -150 \text{ m/s}^2$$
-(Das Minuszeichen gibt an, dass es sich um eine Abbremsung handelt.)*
-
-2. Kraft berechnen (2. Newtonsches Axiom):
-$$F = m \cdot a = 2000 \text{ kg} \cdot (-150 \text{ m/s}^2) = -300.000 \text{ N}$$
-
-Die auf das Fahrzeug wirkende Kraft hat also einen Betrag von **$300.000 \text{ N}$** (oder **$300 \text{ kN}$**). Sie wirkt der ursprünglichen Fahrtrichtung entgegen.
-
-
-> [!info] Aufgabenstellung
+>
 > d) Berechnen Sie die Masse eines Körpers, der durch eine konstante Kraft von 10 N gleichmäßig aus der Ruhe heraus beschleunigt wird und dabei in 20 Sekunden eine Strecke von 200 m zurücklegt.
 
-Gegeben:
-- Kraft $F = 10 \text{ N}$
-- Zeit $t = 20 \text{ s}$
-- Strecke $s = 200 \text{ m}$
-- Anfangsgeschwindigkeit $v_0 = 0 \text{ m/s}$ (aus der Ruhe)
+**a) Kraft aus Geschwindigkeitsänderung**
 
-Gesucht: Masse $m$
+| | Größe | Symbol | Wert |
+|---|---|---|---|
+| Gegeben | Masse | `m` | `1` kg |
+| | Endgeschwindigkeit | `v` | `2` m/s |
+| | Anfangsgeschwindigkeit | `v0` | `0` m/s |
+| | Zeit | `t` | `3` s |
+| Gesucht | Kraft | `F` | |
 
-1. Beschleunigung über das Weg-Zeit-Gesetz berechnen:
+$$
+\begin{align*}
+\text{Gegeben:} \\
+m &= 1 \text{ kg} \\
+t &= 3 \text{ s} \\
+v &= 2 \text{ m/s} \\
+v_0 &= 0 \text{ m/s} \\
+\text{Weg:} \\
+a &= \frac{v-v_0}{t} \\
+&= \frac{2-0}{3} \\
+&= 0.6667 \text{ m/s}^2 \\
+F &= m \cdot a \\
+&= 1 \cdot 0.6667 \\
+&= 0.6667 \text{ N} \\
+\text{ERG:} \quad F &= 0.6667 \text{ N}
+\end{align*}
+$$
 
-Da der Körper aus der Ruhe startet ($s_0=0, v_0=0$), gilt für die gleichmäßig beschleunigte Bewegung:
-$$s = \frac{1}{2} \cdot a \cdot t^2$$
+$a$ = Beschleunigung
 
-Nach $a$ umstellen:
-$$a = \frac{2 \cdot s}{t^2}$$
+**b) Endgeschwindigkeit aus Kraft**
 
-Werte einsetzen:
-$$a = \frac{2 \cdot 200 \text{ m}}{(20 \text{ s})^2} = \frac{400 \text{ m}}{400 \text{ s}^2} = 1 \text{ m/s}^2$$
+| | Größe | Symbol | Wert |
+|---|---|---|---|
+| Gegeben | Masse | `m` | `1500` kg |
+| | Kraft | `F` | `2000` N |
+| | Zeit | `t` | `10` s |
+| | Anfangsgeschwindigkeit | `v0` | `0` m/s |
+| Gesucht | Endgeschwindigkeit | `v` | |
 
-2. Masse über das 2. Newtonsche Axiom berechnen:
-$$F = m \cdot a$$
+$$
+\begin{align*}
+\text{Gegeben:} \\
+F &= 2000 \text{ N} \\
+m &= 1500 \text{ kg} \\
+t &= 10 \text{ s} \\
+v_0 &= 0 \text{ m/s} \\
+\text{Weg:} \\
+a &= \frac{F}{m} \\
+&= \frac{2000}{1500} \\
+&= 1.333 \text{ m/s}^2 \\
+v &= v_0 + a \cdot t \\
+&= 0 + 1.333 \cdot 10 \\
+&= 13.33 \text{ m/s} \\
+\text{ERG:} \quad v &= 13.33 \text{ m/s}
+\end{align*}
+$$
 
-Nach $m$ umstellen:
-$$m = \frac{F}{a}$$
+$a$ = Beschleunigung
 
-Werte einsetzen:
-$$m = \frac{10 \text{ N}}{1 \text{ m/s}^2} = \frac{10 \text{ kg} \cdot \text{m/s}^2}{1 \text{ m/s}^2} = 10 \text{ kg}$$
+**c) Aufprallkraft**
 
-Der Körper hat eine Masse von **$10 \text{ kg}$**.
+| | Größe | Symbol | Wert |
+|---|---|---|---|
+| Gegeben | Masse | `m` | `2000` kg |
+| | Anfangsgeschwindigkeit | `v0` | `15` m/s (= 54 km/h) |
+| | Endgeschwindigkeit | `v` | `0` m/s |
+| | Zeit | `t` | `0.1` s |
+| Gesucht | Kraft | `F` | |
+
+$$
+\begin{align*}
+\text{Gegeben:} \\
+m &= 2000 \text{ kg} \\
+t &= 0.1 \text{ s} \\
+v &= 0 \text{ m/s} \\
+v_0 &= 15 \text{ m/s} \\
+\text{Weg:} \\
+a &= \frac{v-v_0}{t} \\
+&= \frac{0-15}{0.1} \\
+&= -150 \text{ m/s}^2 \\
+F &= m \cdot a \\
+&= 2000 \cdot (-150) \\
+&= -300000 \text{ N} \\
+\text{ERG:} \quad F &= -300000 \text{ N}
+\end{align*}
+$$
+
+$a$ = Beschleunigung
+
+Die Kraft hat also einen Betrag von **300.000 N** (300 kN), sie wirkt der ursprünglichen Fahrtrichtung entgegen (negatives Vorzeichen).
+
+**d) Masse aus Weg-Zeit-Gesetz**
+
+| | Größe | Symbol | Wert |
+|---|---|---|---|
+| Gegeben | Kraft | `F` | `10` N |
+| | Zeit | `t` | `20` s |
+| | Strecke | `s` | `200` m |
+| | Anfangsgeschwindigkeit | `v0` | `0` m/s |
+| Gesucht | Masse | `m` | |
+
+$$
+\begin{align*}
+\text{Gegeben:} \\
+F &= 10 \text{ N} \\
+s &= 200 \text{ m} \\
+t &= 20 \text{ s} \\
+v_0 &= 0 \text{ m/s} \\
+\text{Weg:} \\
+a &= \frac{2(s-v_0 \cdot t)}{t^2} \\
+&= \frac{2(200-0 \cdot 20)}{20^2} \\
+&= 1 \text{ m/s}^2 \\
+m &= \frac{F}{a} \\
+&= \frac{10}{1} \\
+&= 10 \text{ kg} \\
+\text{ERG:} \quad m &= 10 \text{ kg}
+\end{align*}
+$$
+
+$a$ = Beschleunigung
 
 ### Aufgabe 2: Newtonsche Axiome
 
@@ -158,49 +324,73 @@ Der Körper hat eine Masse von **$10 \text{ kg}$**.
 > a) stillsteht, b) mit 2 m/s<sup>2</sup> nach oben beschleunigt, c) mit 2 m/s<sup>2</sup> nach unten beschleunigt, d) frei fällt.
 >
 
-Gegeben:
-- Masse der Person $m = 70 \text{ kg}$
-- Fallbeschleunigung $g \approx 9,81 \text{ m/s}^2$
+**a) Aufzug steht still ($a=0$)**
 
-Gesucht:
-- Kraft des Bodens $F$ in vier verschiedenen Fällen
+| | Größe | Symbol | Wert |
+|---|---|---|---|
+| Gegeben | Masse | `m` | `70` kg |
+| | Beschleunigung | `a` | `0` m/s² |
+| Gesucht | Bodenkraft | `FB` | |
 
-**Lösungsansatz:**
-Nach dem 2. Newtonschen Axiom gilt für die resultierende Kraft: $F_{\text{res}} = m \cdot a$
-Auf die Person wirken zwei Kräfte entlang der vertikalen Achse:
-1. Die Gewichtskraft $F_G = m \cdot g$ (wirkt stets nach unten)
-2. Die Normalkraft / Kraft des Bodens $F$ (wirkt nach oben)
+$$
+\begin{align*}
+\text{Gegeben:} \\
+a &= 0 \text{ m/s}^2 \\
+m &= 70 \text{ kg} \\
+\text{Weg:} \\
+F_B &= m(g+a) \\
+&= 70(9.81+0) \\
+&= 686.7 \text{ N} \\
+\text{ERG:} \quad F_B &= 686.7 \text{ N}
+\end{align*}
+$$
 
-Die Kräftebilanz lautet: (Gewichtskraft negativ weil diese nach unten wirkt)
-$F_{\text{res}} = F - F_G$
+**b) Beschleunigung $2\,\text{m/s}^2$ nach oben ($a=+2$)**
 
-Wir setzen dies in das Newtonsche Axiom ein und stellen nach der gesuchten Kraft $F$ um:
+$$
+\begin{align*}
+\text{Gegeben:} \\
+a &= 2 \text{ m/s}^2 \\
+m &= 70 \text{ kg} \\
+\text{Weg:} \\
+F_B &= m(g+a) \\
+&= 70(9.81+2) \\
+&= 826.7 \text{ N} \\
+\text{ERG:} \quad F_B &= 826.7 \text{ N}
+\end{align*}
+$$
 
-1. $F_{\text{res}} = F - F_G$ einsetzen in $F_{\text{res}} = m \cdot a$
-   $$F - F_G = m \cdot a$$$$F = F_G + m \cdot a$$
-2. $F_G = m \cdot g$ einsetzen
-   $$F = m \cdot g + m \cdot a$$
-   $$F = m \cdot (g + a)$$
+**c) Beschleunigung $2\,\text{m/s}^2$ nach unten ($a=-2$)**
 
-**a) Aufzug stillsteht:**
-- Die Beschleunigung ist $a = 0 \text{ m/s}^2$.
-- $F = m \cdot (g + 0) = 70 \text{ kg} \cdot 9,81 \text{ m/s}^2 = 686,7 \text{ N}$
+$$
+\begin{align*}
+\text{Gegeben:} \\
+a &= -2 \text{ m/s}^2 \\
+m &= 70 \text{ kg} \\
+\text{Weg:} \\
+F_B &= m(g+a) \\
+&= 70(9.81-2) \\
+&= 546.7 \text{ N} \\
+\text{ERG:} \quad F_B &= 546.7 \text{ N}
+\end{align*}
+$$
 
-**b) Aufzug beschleunigt mit $2 \text{ m/s}^2$ nach oben:**
-- Die Beschleunigung ist $a = +2 \text{ m/s}^2$.
-- $F = 70 \text{ kg} \cdot (9,81 \text{ m/s}^2 + 2 \text{ m/s}^2) = 70 \text{ kg} \cdot 11,81 \text{ m/s}^2 = 826,7 \text{ N}$
-- *(Tipp: Die Person drückt stärker auf den Boden und fühlt sich "schwerer")*
+**d) Freier Fall ($a=-g=-9.81$)**
 
-**c) Aufzug beschleunigt mit $2 \text{ m/s}^2$ nach unten:**
-- Die Beschleunigung ist $a = -2 \text{ m/s}^2$.
-- $F = 70 \text{ kg} \cdot (9,81 \text{ m/s}^2 - 2 \text{ m/s}^2) = 70 \text{ kg} \cdot 7,81 \text{ m/s}^2 = 546,7 \text{ N}$
-- *(Tipp: Die Person fühlt sich "leichter")*
+$$
+\begin{align*}
+\text{Gegeben:} \\
+a &= -9.81 \text{ m/s}^2 \\
+m &= 70 \text{ kg} \\
+\text{Weg:} \\
+F_B &= m(g+a) \\
+&= 70(9.81-9.81) \\
+&= 0 \text{ N} \\
+\text{ERG:} \quad F_B &= 0 \text{ N}
+\end{align*}
+$$
 
-**d) Aufzug fällt frei:**
-- Im freien Fall ist die Beschleunigung des Aufzugs gleich der Fallbeschleunigung nach unten, also $a = -g = -9,81 \text{ m/s}^2$.
-- $F = 70 \text{ kg} \cdot (9,81 \text{ m/s}^2 - 9,81 \text{ m/s}^2) = 70 \text{ kg} \cdot 0 \text{ m/s}^2 = 0 \text{ N}$
-- *(Die Person hebt vom Boden ab bzw. ist schwerelos)*
-
+Bei d) hebt die Person vom Boden ab (Schwerelosigkeit) — Bodenkraft = 0 N passt genau dazu.
 
 ### Aufgabe 3: Newtonsche Axiome
 
@@ -209,36 +399,49 @@ Wir setzen dies in das Newtonsche Axiom ein und stellen nach der gesuchten Kraft
 > 
 >![[Pasted image 20260505094435.png]]
 
-Gegeben (aus Bildinformationen im Dokument):
-- Zugkraft $F_{zug} = 20 \text{ N}$ nach oben
-- Masse 1 (oben) $m_1 = 6 \text{ kg}$
-- Masse 2 (unten) $m_2 = 4 \text{ kg}$
-- Gewichtskraft wird vernachlässigt ($g = 0$)
+Werte aus der Abbildung: Zugkraft 20 N nach oben, Masse oben $m_1=6$ kg, Masse unten $m_2=4$ kg, Gewichtskraft vernachlässigt.
 
-Gesucht: 
-- Beschleunigung $a$
-- Kraft im oberen Faden $F_{oben}$
-- Kraft im unteren Faden $F_{unten}$
+**Schritt 1 — Beschleunigung des Gesamtsystems**
 
-**Lösung:**
+| | Größe | Symbol | Wert |
+|---|---|---|---|
+| Gegeben | Zugkraft | `F` | `20` N |
+| | Gesamtmasse ($m_1+m_2$) | `m` | `10` kg |
+| Gesucht | Beschleunigung | `a` | |
 
-1. **Beschleunigung berechnen:**
+$$
+\begin{align*}
+\text{Gegeben:} \\
+F &= 20 \text{ N} \\
+m &= 10 \text{ kg} \\
+\text{Weg:} \\
+a &= \frac{F}{m} \\
+&= \frac{20}{10} \\
+&= 2 \text{ m/s}^2 \\
+\text{ERG:} \quad a &= 2 \text{ m/s}^2
+\end{align*}
+$$
 
-Da die Gewichtskraft vernachlässigt wird, ist die einzige von außen wirkende Kraft die Zugkraft von $20 \text{ N}$. Diese Kraft beschleunigt das gesamte System, also beide Massen zusammen ($m_{ges} = m_1 + m_2 = 6 \text{ kg} + 4 \text{ kg} = 10 \text{ kg}$).
+**Schritt 2 — Fadenkraft im unteren Faden** (wirkt nur auf $m_2=4$ kg, die mit der Systembeschleunigung mitgezogen wird)
 
-Nach dem 2. Newtonschen Axiom ($F = m \cdot a$) gilt:
-$$a = \frac{F_{zug}}{m_{ges}} = \frac{20 \text{ N}}{10 \text{ kg}} = 2 \text{ m/s}^2$$
-Die Massen werden mit $2 \text{ m/s}^2$ nach oben beschleunigt.
+| | Größe | Symbol | Wert |
+|---|---|---|---|
+| Gegeben | Masse (unten) | `m` | `4` kg |
+| | Beschleunigung | `a` | `2` m/s² (aus Schritt 1) |
+| Gesucht | Kraft | `F` | |
 
-2. **Fadenkraft im oberen Faden:**
-Der obere Faden greift am gesamten System an und überträgt die vorgegebene Zugkraft.
-$$F_{oben} = F_{zug} = 20 \text{ N}$$
-
-3. **Fadenkraft im unteren Faden:**
-Der untere Faden verbindet die beiden Massen. Er muss nur die Kraft aufbringen, um die untere Masse ($m_2 = 4 \text{ kg}$) mit der Systembeschleunigung ($a = 2 \text{ m/s}^2$) zu bewegen.
-Nach dem 2. Newtonschen Axiom für die untere Masse gilt:
-$$F_{unten} = m_2 \cdot a = 4 \text{ kg} \cdot 2 \text{ m/s}^2 = 8 \text{ N}$$
-
+$$
+\begin{align*}
+\text{Gegeben:} \\
+a &= 2 \text{ m/s}^2 \\
+m &= 4 \text{ kg} \\
+\text{Weg:} \\
+F &= m \cdot a \\
+&= 4 \cdot 2 \\
+&= 8 \text{ N} \\
+\text{ERG:} \quad F &= 8 \text{ N}
+\end{align*}
+$$
 
 ### Aufgabe 4: Newtonsche Axiome
 
@@ -247,31 +450,47 @@ $$F_{unten} = m_2 \cdot a = 4 \text{ kg} \cdot 2 \text{ m/s}^2 = 8 \text{ N}$$
 > 
 > ![[Pasted image 20260505094522.png]]
 
-**Lösung:**
+**a) Tisch (m1=15 kg) + hängende Masse (m2=5 kg)** — Auswahl `1`
 
-In beiden Fällen (a und b) verwenden wir das 2. Newtonsche Axiom ($F_{res} = m_{ges} \cdot a$) für das Gesamtsystem, um die Beschleunigung zu berechnen. Die zu beschleunigende Gesamtmasse ist jeweils $m_{ges} = m_1 + m_2$. Wir nehmen die Erdbeschleunigung $g \approx 9,81 \text{ m/s}^2$ an.
+| | Größe | Symbol | Wert |
+|---|---|---|---|
+| Gegeben | Masse 1 (auf Tisch) | `m1` | `15` kg |
+| | Masse 2 (hängend) | `m2` | `5` kg |
+| Gesucht | Beschleunigung | `a` | |
 
-**Fall a) Tisch und hängende Masse**
-- Masse auf dem Tisch: $m_1 = 15 \text{ kg}$
-- Hängende Masse: $m_2 = 5 \text{ kg}$
+$$
+\begin{align*}
+\text{Gegeben:} \\
+m_1 &= 15 \text{ kg} \\
+m_2 &= 5 \text{ kg} \\
+\text{Weg:} \\
+a &= \frac{m_2 \cdot g}{m_1+m_2} \\
+&= \frac{5 \cdot 9.81}{15+5} \\
+&= 2.453 \text{ m/s}^2 \\
+\text{ERG:} \quad a &= 2.453 \text{ m/s}^2
+\end{align*}
+$$
 
-Da die Auflagefläche reibungsfrei ist, ist die einzige antreibende Kraft für das Gesamtsystem die Gewichtskraft der hängenden Masse $m_2$.
-$F_{res} = m_2 \cdot g$
+**b) Atwoodsche Fallmaschine (m1=5 kg, m2=15 kg, beide hängend)** — Auswahl `2`
 
-Die resultierende Beschleunigung ist:
-$$a = \frac{F_{res}}{m_{ges}} = \frac{m_2 \cdot g}{m_1 + m_2}$$
-$$a = \frac{5 \text{ kg} \cdot 9,81 \text{ m/s}^2}{15 \text{ kg} + 5 \text{ kg}} = \frac{49,05 \text{ N}}{20 \text{ kg}} = 2,4525 \text{ m/s}^2 \approx 2,45 \text{ m/s}^2$$
+| | Größe | Symbol | Wert |
+|---|---|---|---|
+| Gegeben | Masse 1 (leichter) | `m1` | `5` kg |
+| | Masse 2 (schwerer) | `m2` | `15` kg |
+| Gesucht | Beschleunigung | `a` | |
 
-**Fall b) Atwoodsche Fallmaschine (zwei hängende Massen)**
-- Linke Masse: $m_1 = 5 \text{ kg}$
-- Rechte Masse: $m_2 = 15 \text{ kg}$
-
-Hier wirken die Gewichtskräfte beider Massen in entgegengesetzte Richtungen bezogen auf die Seilbewegung. Die resultierende antreibende Kraft ist die Differenz der beiden Gewichtskräfte.
-$F_{res} = m_2 \cdot g - m_1 \cdot g = (m_2 - m_1) \cdot g$
-
-Die resultierende Beschleunigung ist:
-$$a = \frac{F_{res}}{m_{ges}} = \frac{(m_2 - m_1) \cdot g}{m_1 + m_2}$$
-$$a = \frac{(15 \text{ kg} - 5 \text{ kg}) \cdot 9,81 \text{ m/s}^2}{15 \text{ kg} + 5 \text{ kg}} = \frac{10 \text{ kg} \cdot 9,81 \text{ m/s}^2}{20 \text{ kg}} = \frac{98,1 \text{ N}}{20 \text{ kg}} = 4,905 \text{ m/s}^2 \approx 4,91 \text{ m/s}^2$$
+$$
+\begin{align*}
+\text{Gegeben:} \\
+m_1 &= 5 \text{ kg} \\
+m_2 &= 15 \text{ kg} \\
+\text{Weg:} \\
+a &= \frac{(m_2-m_1) \cdot g}{m_1+m_2} \\
+&= \frac{(15-5) \cdot 9.81}{5+15} \\
+&= 4.905 \text{ m/s}^2 \\
+\text{ERG:} \quad a &= 4.905 \text{ m/s}^2
+\end{align*}
+$$
 
 ### Aufgabe 5: Schiefe Ebene
 
@@ -280,77 +499,71 @@ $$a = \frac{(15 \text{ kg} - 5 \text{ kg}) \cdot 9,81 \text{ m/s}^2}{15 \text{ k
 > 
 > ![[Pasted image 20260505102326.png]]
 
-Gegeben:
-- Länge der schiefen Ebene $l = 1 \text{ m}$
-- Haftreibungszahl $\mu_{HR} = 0,8$
-- Gleitreibungszahl $\mu_{GR} = 0,6$
-- Erdbeschleunigung $g = 9,81 \text{ m/s}^2$
+**Lösung mit PhyCalc** (Thema `1`=Mechanik, keine Mehrfachauswahl nötig — der Winkel `alpha` wird aus `muH` abgeleitet, bevor überhaupt ein Zwei-Körper-Szenario in Frage käme):
 
-Gesucht:
-- Höhe $h$ des Brettendes, bei der der Klotz zu rutschen beginnt
-- Geschwindigkeit $v$ am unteren Ende
+**Schritt 1 — Höhe h (Grenzfall Haftung)**
 
-**Lösung:**
+| | Größe | Symbol | Wert |
+|---|---|---|---|
+| Gegeben | Haftreibungszahl | `muH` | `0.8` |
+| | Länge der Ebene | `l` | `1` m |
+| Gesucht | Höhe | `h` | |
 
-**1. Höhe bestimmen (Grenzfall Haftung)**
+$$
+\begin{align*}
+\text{Gegeben:} \\
+l &= 1 \text{ m} \\
+\mu_H &= 0.8 \\
+\text{Weg:} \\
+\alpha &= \arctan(\mu_H) \\
+&= \arctan(0.8) \\
+&= 38.66° \\
+h &= l \cdot \sin(\alpha) \\
+&= 1 \cdot \sin(0.6747) \\
+&= 0.6247 \text{ m} \\
+\text{ERG:} \quad h &= 0.6247 \text{ m}
+\end{align*}
+$$
 
-Der Klotz beginnt genau dann zu rutschen, wenn die Hangabtriebskraft $F_H$ gleich der maximalen Haftreibungskraft $F_{HR}$ ist.
-- Hangabtriebskraft: $F_H = m \cdot g \cdot \sin(\alpha)$
-- Haftreibungskraft: $F_{HR} = \mu_{HR} \cdot F_N = \mu_{HR} \cdot m \cdot g \cdot \cos(\alpha)$
+$\alpha$ = Neigungswinkel
 
-Gleichsetzen:
-$$m \cdot g \cdot \sin(\alpha) = \mu_{HR} \cdot m \cdot g \cdot \cos(\alpha)$$
+Man kann das Brett also ca. **62,5 cm** anheben, bevor der Klotz ins Rutschen gerät.
 
-Durch $m \cdot g$ und $\cos(\alpha)$ teilen ergibt:
-$$\tan(\alpha) = \mu_{HR}$$
+**Schritt 2 — Endgeschwindigkeit v**
 
-Den kritischen Winkel $\alpha$ berechnen:
-$$\alpha = \arctan(0,8) \approx 38,66^\circ$$
+| | Größe | Symbol | Wert |
+|---|---|---|---|
+| Gegeben | Haftreibungszahl | `muH` | `0.8` |
+| | Gleitreibungszahl | `muG` | `0.6` |
+| | Strecke | `s` | `1` m |
+| | Anfangsgeschwindigkeit | `v0` | `0` m/s |
+| Gesucht | Endgeschwindigkeit | `v` | |
 
-Nun können wir mit der Länge des Brettes ($l = 1 \text{ m}$) und dem Winkel die Höhe $h$ berechnen. Im rechtwinkligen Dreieck gilt: $\sin(\alpha) = \frac{h}{l}$
-$$h = l \cdot \sin(\alpha) = 1 \text{ m} \cdot \sin(38,66^\circ) \approx 0,625 \text{ m}$$
+$$
+\begin{align*}
+\text{Gegeben:} \\
+\mu_G &= 0.6 \\
+\mu_H &= 0.8 \\
+s &= 1 \text{ m} \\
+v_0 &= 0 \text{ m/s} \\
+\text{Weg:} \\
+\alpha &= \arctan(\mu_H) \\
+&= \arctan(0.8) \\
+&= 38.66° \\
+a &= g(\sin(\alpha)-\mu_G \cos(\alpha)) \\
+&= 9.81(\sin(0.6747)-0.6 \cos(0.6747)) \\
+&= 1.532 \text{ m/s}^2 \\
+v &= \sqrt{v_0^2+2 a s} \\
+&= \sqrt{0^2+2 \cdot 1.532 \cdot 1} \\
+&= 1.75 \text{ m/s} \\
+\text{ERG:} \quad v &= 1.75 \text{ m/s}
+\end{align*}
+$$
 
-Man kann das Brett also ca. **$62,5 \text{ cm}$** anheben, bevor der Klotz ins Rutschen gerät.
+$\alpha$ = Neigungswinkel
+$a$ = Beschleunigung
 
-```tikz
-\begin{document}
-\begin{tikzpicture}
-
-  \draw[thick] (0,0) -- (4,0) -- (4,3) -- cycle;
-
-  \draw (3.8,0) -- (3.8,0.2) -- (4,0.2);
-
-  \draw (1,0) arc[start angle=0, end angle=36.87, radius=1];
-
-  \node[above left] at (2,1.5) {$l = 1$ m};
-  \node[right] at (4,1.5) {$h \approx 62.5$ cm};
-  \node[below] at (2,0) {Boden};
-  \node[above right] at (4,3) {Angehobenes Ende};
-  \node[below] at (0.5,0) {$\alpha \approx 38.7^\circ$};
-
-\end{tikzpicture}
-\end{document}
-```
-
-
-**2. Endgeschwindigkeit bestimmen**
-
-Sobald der Klotz rutscht, wirkt die Gleitreibung. Wir berechnen die resultierende Kraft parallel zur schiefen Ebene:
-$$F_{res} = F_H - F_{GR} = m \cdot g \cdot \sin(\alpha) - \mu_{GR} \cdot m \cdot g \cdot \cos(\alpha)$$
-
-Daraus ergibt sich die Beschleunigung $a = \frac{F_{res}}{m}$:
-$$a = g \cdot (\sin(\alpha) - \mu_{GR} \cdot \cos(\alpha))$$
-
-Werte einsetzen ($\alpha \approx 38,66^\circ$):
-$$a = 9,81 \text{ m/s}^2 \cdot (\sin(38,66^\circ) - 0,6 \cdot \cos(38,66^\circ))$$
-Da wir wissen, dass $\sin(\alpha) = 0,625$ und $\cos(\alpha) = \sqrt{1 - \sin^2(\alpha)} = \sqrt{1 - 0,625^2} \approx 0,781$:
-$$a = 9,81 \cdot (0,625 - 0,6 \cdot 0,781) = 9,81 \cdot (0,625 - 0,4686) = 9,81 \cdot 0,1564 \approx 1,53 \text{ m/s}^2$$
-
-Der Klotz bewegt sich gleichmäßig beschleunigt aus der Ruhe ($v_0 = 0$). Wir nutzen die Formel $v^2 = 2 \cdot a \cdot s$, wobei der zurückgelegte Weg $s$ der Länge des Brettes $l = 1 \text{ m}$ entspricht:
-$$v = \sqrt{2 \cdot a \cdot l}$$
-$$v = \sqrt{2 \cdot 1,53 \text{ m/s}^2 \cdot 1 \text{ m}} = \sqrt{3,06 \text{ m}^2/\text{s}^2} \approx 1,75 \text{ m/s}$$
-
-Die Geschwindigkeit des Klotzes am unteren Ende beträgt ca. **$1,75 \text{ m/s}$**.
+Die Geschwindigkeit des Klotzes am unteren Ende beträgt ca. **1,75 m/s**.
 
 ### Aufgabe 6: Schiefe Ebene (6)
 
@@ -358,13 +571,141 @@ Die Geschwindigkeit des Klotzes am unteren Ende beträgt ca. **$1,75 \text{ m/s}
 > Die beiden rechts abgebildeten Körper sind mit einem Seil über eine feste Rolle miteinander verbunden. Der rechte Körper sitzt mit der Gleitreibungszahl $\mu$ = 0,3 auf der um $\alpha$ = 30° geneigten Ebene und ist fünfmal so schwer wie der linke. Berechnen Sie die Beschleunigung, mit der sich der rechte Körper nach unten bewegt.
 > 
 >![[Pasted image 20260505094701.png]]
+
+Werte: linker (hängender) Körper $m_1=1$ kg, rechter (auf der Ebene) Körper $m_2=5$ kg (fünfmal so schwer), $\alpha=30°$, $\mu_{GR}=0,3$.
+
+| | Größe | Symbol | Wert |
+|---|---|---|---|
+| Gegeben | Masse 1 (hängend) | `m1` | `1` kg |
+| | Masse 2 (auf Ebene) | `m2` | `5` kg |
+| | Neigungswinkel | `alpha` | `30` (Grad, ohne Einheit = automatisch Grad) |
+| | Gleitreibungszahl | `muG` | `0.3` |
+| Gesucht | Beschleunigung | `a` | |
+
+$$
+\begin{align*}
+\text{Gegeben:} \\
+\alpha &= 30° \\
+m_1 &= 1 \text{ kg} \\
+m_2 &= 5 \text{ kg} \\
+\mu_G &= 0.3 \\
+\text{Weg:} \\
+a &= \frac{m_2 g \sin(\alpha) - \mu_G m_2 g \cos(\alpha) - m_1 g}{m_1+m_2} \\
+&= \frac{5 \cdot 9.81 \cdot \sin(0.5236) - 0.3 \cdot 5 \cdot 9.81 \cdot \cos(0.5236) - 1 \cdot 9.81}{1+5} \\
+&= 0.3286 \text{ m/s}^2 \\
+\text{ERG:} \quad a &= 0.3286 \text{ m/s}^2
+\end{align*}
+$$
+
+Der rechte Körper bewegt sich mit **0,3286 m/s²** nach unten.
+
 ### Aufgabe 7: Bremsweg
 
 > [!info] Aufgabenstellung
-> a) Berechnen Sie den Bremsweg bei einer Geschwindigkeit von 126 km/h,
->
-> einer Reaktionszeit von einer Sekunde und einer Haftreibungszahl $\mu_{HR}$ = 0,5? Zeichnen Sie ein v-t-Diagramm. b) Berechnen Sie, wie schnell darf ein Zug fahren darf, wenn der Gleitreibungskoeffizient $\mu_{GR}$ = 0,06 beträgt und eine Bremsstrecke von höchstens 500 m vorgeschrieben ist.
->
+> a) Berechnen Sie den Bremsweg bei einer Geschwindigkeit von 126 km/h, einer Reaktionszeit von einer Sekunde und einer Haftreibungszahl $\mu_{HR}$ = 0,5? Zeichnen Sie ein v-t-Diagramm.
+> 
+> b) Berechnen Sie, wie schnell darf ein Zug fahren darf, wenn der Gleitreibungskoeffizient $\mu_{GR}$ = 0,06 beträgt und eine Bremsstrecke von höchstens 500 m vorgeschrieben ist.
+
+**a) Reaktionsweg** (gleichförmige Bewegung während der Reaktionszeit)
+
+| | Größe | Symbol | Wert |
+|---|---|---|---|
+| Gegeben | Geschwindigkeit | `vkmh` | `126` km/h |
+| | Reaktionszeit | `t` | `1` s |
+| Gesucht | Reaktionsweg | `s` | |
+
+$$
+\begin{align*}
+\text{Gegeben:} \\
+t &= 1 \text{ s} \\
+v_{\text{kmh}} &= 126 \text{ km/h} \\
+\text{Weg:} \\
+v_c &= \frac{v_{\text{kmh}}}{3.6} \\
+&= \frac{126}{3.6} \\
+&= 35 \text{ m/s} \\
+s &= v_c \cdot t \\
+&= 35 \cdot 1 \\
+&= 35 \text{ m} \\
+\text{ERG:} \quad s &= 35 \text{ m}
+\end{align*}
+$$
+
+$v_c$ = Geschwindigkeit in SI-Einheiten
+
+**a) Bremsweg** (gleichmäßig verzögert mit $a=-\mu_{HR}\cdot g = -0.5 \cdot 9.81 = -4.905\,\text{m/s}^2$, von Hand berechnet und als `a` eingegeben)
+
+| | Größe | Symbol | Wert |
+|---|---|---|---|
+| Gegeben | Anfangsgeschwindigkeit | `v0` | `35` m/s |
+| | Endgeschwindigkeit | `v` | `0` m/s |
+| | Verzögerung | `a` | `-4.905` m/s² |
+| Gesucht | Bremsweg | `s` | |
+
+$$
+\begin{align*}
+\text{Gegeben:} \\
+a &= -4.905 \text{ m/s}^2 \\
+v &= 0 \text{ m/s} \\
+v_0 &= 35 \text{ m/s} \\
+\text{Weg:} \\
+t &= \frac{v-v_0}{a} \\
+&= \frac{0-35}{-4.905} \\
+&= 7.136 \text{ s} \\
+s &= v_0 \cdot t + 0.5 \cdot a \cdot t^2 \\
+&= 35 \cdot 7.136 + 0.5 \cdot (-4.905) \cdot 7.136^2 \\
+&= 124.9 \text{ m} \\
+\text{ERG:} \quad s &= 124.9 \text{ m}
+\end{align*}
+$$
+
+$t$ = Bremszeit
+
+**Anhalteweg gesamt: 35 m + 124,9 m = 159,9 m** (Summe der beiden `s`-Ergebnisse, von Hand addiert — PhyCalc trennt Reaktions- und Bremsweg als zwei separate Rechnungen, weil beide dasselbe Symbol `s` verwenden).
+
+**b) Maximalgeschwindigkeit des Zugs** (Verzögerung $a=-\mu_{GR}\cdot g=-0.06\cdot 9.81=-0.589\,\text{m/s}^2$, von Hand berechnet)
+
+| | Größe | Symbol | Wert |
+|---|---|---|---|
+| Gegeben | Endgeschwindigkeit | `v` | `0` m/s |
+| | Bremsweg (max.) | `s` | `500` m |
+| | Verzögerung | `a` | `-0.589` m/s² |
+| Gesucht | Anfangsgeschwindigkeit | `v0` | |
+
+$$
+\begin{align*}
+\text{Gegeben:} \\
+a &= -0.589 \text{ m/s}^2 \\
+s &= 500 \text{ m} \\
+v &= 0 \text{ m/s} \\
+\text{Weg:} \\
+v_0 &= \sqrt{v^2-2 a s} \\
+&= \sqrt{0^2-2 \cdot (-0.589) \cdot 500} \\
+&= 24.27 \text{ m/s} \\
+\text{ERG:} \quad v_0 &= 24.27 \text{ m/s}
+\end{align*}
+$$
+
+Umrechnung in km/h (Ergebnis erneut eingeben, diesmal als `vc`, um die Einheiten-Brücke zu nutzen):
+
+| | Größe | Symbol | Wert |
+|---|---|---|---|
+| Gegeben | Geschwindigkeit (SI) | `vc` | `24.27` m/s |
+| Gesucht | Geschwindigkeit | `vkmh` | |
+
+$$
+\begin{align*}
+\text{Gegeben:} \\
+v_c &= 24.27 \text{ m/s} \\
+\text{Weg:} \\
+v_{\text{kmh}} &= v_c \cdot 3.6 \\
+&= 24.27 \cdot 3.6 \\
+&= 87.37 \text{ km/h} \\
+\text{ERG:} \quad v_{\text{kmh}} &= 87.37 \text{ km/h}
+\end{align*}
+$$
+
+Der Zug darf höchstens **87,37 km/h** fahren.
+
 ### Aufgabe 8: Beschleunigung und Inertialsysteme
 
 > [!info] Aufgabenstellung
@@ -378,36 +719,55 @@ Die Geschwindigkeit des Klotzes am unteren Ende beträgt ca. **$1,75 \text{ m/s}
 >
 > d) Berechnen Sie die Kraft, die das Vorderrad des Flugzeuges übertragen muss, an dem der Katapultschlitten festgehakt ist.
 
-Gegeben:
-- Masse Flugzeug $m = 40 \text{ t} = 40.000 \text{ kg}$
-- Nötige Startgeschwindigkeit (Airspeed) $v_{start} = 216 \text{ km/h} = 60 \text{ m/s}$
-- Länge des Katapults $s = 100 \text{ m}$
-- Windgeschwindigkeit (absolut) $v_{wind} = 36 \text{ km/h} = 10 \text{ m/s}$
-- Schiffsgeschwindigkeit (absolut) $v_{schiff} = 54 \text{ km/h} = 15 \text{ m/s}$ *(Anmerkung: Im Text fehlt " /h", was aber logisch ist)*
+**a) + b): PhyCalc nicht anwendbar** — reine Vektoraddition/-subtraktion von Geschwindigkeiten (Relativbewegung), kein Formel-Solver-Fall:
+- Windgeschwindigkeit auf Deck: $v_{Deck} = 36 + 54 = 90\,\text{km/h}$
+- Relativgeschwindigkeit Flugzeug↔Deck: $v_{rel} = 216 - 90 = 126\,\text{km/h} = 35\,\text{m/s}$
 
-**Lösung:**
+**c) Beschleunigung auf dem Katapult** — Lösung mit PhyCalc (Thema `1`=Mechanik, keine Mehrfachauswahl nötig):
 
-**a) Windgeschwindigkeit auf dem Flugdeck (relativ)**
-Das Schiff fährt direkt gegen den Wind. Aus Sicht eines Beobachters auf dem Deck addieren sich daher die Geschwindigkeiten.
-$$v_{deckwind} = v_{wind} + v_{schiff} = 36 \text{ km/h} + 54 \text{ km/h} = 90 \text{ km/h} = 25 \text{ m/s}$$
-Die relative Windgeschwindigkeit auf dem Flugdeck beträgt **$90 \text{ km/h}$** (bzw. $25 \text{ m/s}$).
+| | Größe | Symbol | Wert |
+|---|---|---|---|
+| Gegeben | Anfangsgeschwindigkeit | `v0` | `0` m/s |
+| | Endgeschwindigkeit | `v` | `35` m/s |
+| | Strecke | `s` | `100` m |
+| Gesucht | Beschleunigung | `a` | |
 
-**b) Geschwindigkeit des Flugzeugs relativ zum Flugdeck**
-Um abzuheben, braucht das Flugzeug eine Geschwindigkeit relativ zur umgebenden Luft von $216 \text{ km/h}$. Da der Wind bereits mit $90 \text{ km/h}$ über das Deck weht, muss das Katapult nur noch die Differenz aufbringen.
-$$v_{relativ} = v_{start} - v_{deckwind} = 216 \text{ km/h} - 90 \text{ km/h} = 126 \text{ km/h} = 35 \text{ m/s}$$
-Das Flugzeug muss relativ zum Deck eine Geschwindigkeit von **$126 \text{ km/h}$** (bzw. $35 \text{ m/s}$) erreichen.
-
-**c) Notwendige Beschleunigung auf dem Katapult**
-Das Flugzeug wird aus dem Stillstand ($v_0 = 0$) über die Strecke $s = 100 \text{ m}$ auf $v_{relativ} = 35 \text{ m/s}$ (vgl. b) beschleunigt. Wir nutzen die Formel der gleichmäßig beschleunigten Bewegung ohne Anfangsgeschwindigkeit: $v^2 = 2 \cdot a \cdot s$.
-Nach $a$ umgestellt:
-$$a = \frac{v^2}{2 \cdot s}$$
-$$a = \frac{(35 \text{ m/s})^2}{2 \cdot 100 \text{ m}} = \frac{1225 \text{ m}^2/\text{s}^2}{200 \text{ m}} = 6,125 \text{ m/s}^2$$
-Die notwendige Beschleunigung auf dem Katapult beträgt **$6,125 \text{ m/s}^2$**.
+$$
+\begin{align*}
+\text{Gegeben:} \\
+s &= 100 \text{ m} \\
+v &= 35 \text{ m/s} \\
+v_0 &= 0 \text{ m/s} \\
+\text{Weg:} \\
+a &= \frac{v^2-v_0^2}{2s} \\
+&= \frac{35^2-0^2}{2 \cdot 100} \\
+&= 6.125 \text{ m/s}^2 \\
+\text{ERG:} \quad a &= 6.125 \text{ m/s}^2
+\end{align*}
+$$
 
 **d) Kraft am Vorderrad**
-Die benötigte Kraft berechnet sich aus dem 2. Newtonschen Axiom ($F = m \cdot a$).
-$$F = 40.000 \text{ kg} \cdot 6,125 \text{ m/s}^2 = 245.000 \text{ N} = 245 \text{ kN}$$
-Der Katapultschlitten muss eine Kraft von **$245 \text{ kN}$** auf das Vorderrad übertragen.
+
+| | Größe | Symbol | Wert |
+|---|---|---|---|
+| Gegeben | Masse | `m` | `40000` kg |
+| | Beschleunigung | `a` | `6.125` m/s² (aus c) |
+| Gesucht | Kraft | `F` | |
+
+$$
+\begin{align*}
+\text{Gegeben:} \\
+a &= 6.125 \text{ m/s}^2 \\
+m &= 40000 \text{ kg} \\
+\text{Weg:} \\
+F &= m \cdot a \\
+&= 40000 \cdot 6.125 \\
+&= 245000 \text{ N} \\
+\text{ERG:} \quad F &= 245000 \text{ N}
+\end{align*}
+$$
+
+Der Katapultschlitten muss eine Kraft von **245.000 N (245 kN)** auf das Vorderrad übertragen.
 
 ## Kinematik (AB3)
 
@@ -419,76 +779,69 @@ Der Katapultschlitten muss eine Kraft von **$245 \text{ kN}$** auf das Vorderrad
 > a) Berechnen Sie die Winkelbeschleunigung des Elektromotors!
 > b) Berechnen Sie die Zeit, die der Elektromotor benötigt, um die o.g. Drehzahl zu erreichen!
 
-**Lösung a) Winkelbeschleunigung:**
+**a) Winkelbeschleunigung**
 
-Gegeben:
-- Anfangswinkelgeschwindigkeit $\omega_0 = 0 \text{ s}^{-1}$ (Da der Motor aus dem *Stillstand* anläuft)
-- Anzahl Umdrehungen $N = 40$
-- Enddrehzahl $n = 2000 \text{ min}^{-1}$ (Das ist die Frequenz der Drehung am Ende der Beschleunigungsphase)
+| | Größe | Symbol | Wert |
+|---|---|---|---|
+| Gegeben | Anzahl Umdrehungen | `N` | `40` |
+| | Enddrehzahl | `n` | `2000` 1/min |
+| Gesucht | Winkelbeschleunigung | `alphaW` | |
 
-Gesucht: Winkelbeschleunigung $\alpha$ (Gibt an, wie schnell die Drehgeschwindigkeit zunimmt, Einheit $\text{s}^{-2}$)
+$$
+\begin{align*}
+\text{Gegeben:} \\
+N &= 40 \\
+n &= 33.33 \text{ 1/s} \\
+\text{Weg:} \\
+\varphi &= 2\pi N \\
+&= 2\pi \cdot 40 \\
+&= 14400° \\
+\omega &= 2\pi n \\
+&= 2\pi \cdot 33.33 \\
+&= 209.4 \text{ rad/s} \\
+\alpha_W &= \frac{\omega^2}{2\varphi} \\
+&= \frac{209.4^2}{2 \cdot 251.3} \\
+&= 87.27 \text{ rad/s}^2 \\
+\text{ERG:} \quad \alpha_W &= 87.27 \text{ rad/s}^2
+\end{align*}
+$$
 
-**Schritt 1: Alle Werte in das physikalische Standardsystem (SI-Einheiten) und ins Bogenmaß (Radiant) umrechnen.**
-Um mit den physikalischen Formeln rechnen zu können, müssen wir Umdrehungen in Winkel und Minuten in Sekunden umwandeln.
+$\varphi$ = Winkel in Radiant
+$\omega$ = Winkelgeschwindigkeit
 
-- **Zurückgelegter Drehwinkel $\varphi$:** 
-  Ein Vollkreis (eine Umdrehung) entspricht einem Winkel von $360^\circ$ oder im Bogenmaß $2\pi$ Radiant. Bei 40 Umdrehungen ist der Gesamtwinkel also das 40-fache von $2\pi$.
-  $$\varphi = N \cdot 2\pi = 40 \cdot 2\pi = 80\pi \text{ rad}$$
-  
-- **Endwinkelgeschwindigkeit $\omega$:**
-  Zuerst rechnen wir die Drehzahl $n$ von Umdrehungen pro Minute in Umdrehungen pro Sekunde um (durch 60 teilen):
-  $$n = \frac{2000}{60} \text{ s}^{-1} = \frac{100}{3} \text{ s}^{-1}$$
-  Da jede Umdrehung einem Winkel von $2\pi$ entspricht, multiplizieren wir diese Frequenz mit $2\pi$, um die Winkelgeschwindigkeit $\omega$ (Winkel pro Sekunde) zu erhalten:
-  $$\omega = 2\pi \cdot n = 2\pi \cdot \frac{100}{3} \text{ s}^{-1} = \frac{200\pi}{3} \text{ s}^{-1} \approx 209,44 \text{ s}^{-1}$$
+**b) Zeitdauer der Beschleunigung**
 
-**Schritt 2: Die passende Formel auswählen.**
-Wir suchen die Winkelbeschleunigung $\alpha$, kennen aber die Zeit nicht. Dafür kennen wir den Weg (den Winkel $\varphi$). Hier hilft uns eine Formel, die aus der linearen Bewegung bekannt ist (Weg-Geschwindigkeit-Gesetz: $v^2 - v_0^2 = 2 \cdot a \cdot s$).
+| | Größe | Symbol | Wert |
+|---|---|---|---|
+| Gegeben | Anzahl Umdrehungen | `N` | `40` |
+| | Enddrehzahl | `n` | `2000` 1/min |
+| Gesucht | Zeit | `t` | |
 
->Der Winkel $\varphi$ ist der Weg, wie weit sich ein Punkt auf einem Kreisbogen bewegt
+$$
+\begin{align*}
+\text{Gegeben:} \\
+N &= 40 \\
+n &= 33.33 \text{ 1/s} \\
+\text{Weg:} \\
+\varphi &= 2\pi N \\
+&= 2\pi \cdot 40 \\
+&= 14400° \\
+\omega &= 2\pi n \\
+&= 2\pi \cdot 33.33 \\
+&= 209.4 \text{ rad/s} \\
+\alpha_W &= \frac{\omega^2}{2\varphi} \\
+&= \frac{209.4^2}{2 \cdot 251.3} \\
+&= 87.27 \text{ rad/s}^2 \\
+t &= \frac{\omega}{\alpha_W} \\
+&= \frac{209.4}{87.27} \\
+&= 2.4 \text{ s} \\
+\text{ERG:} \quad t &= 2.4 \text{ s}
+\end{align*}
+$$
 
-Für die *Drehbewegung* lautet die exakt analoge Formel:
-$$\omega^2 - \omega_0^2 = 2 \cdot \alpha \cdot \varphi$$
-Da der Motor aus dem Stillstand startet ($\omega_0 = 0$), vereinfacht sich die Formel zu:
-$$\omega^2 = 2 \cdot \alpha \cdot \varphi$$
-
-**Schritt 3: Formel umstellen und ausrechnen.**
-$$\alpha = \frac{\omega^2}{2 \cdot \varphi}$$
-$$\alpha = \frac{\left(\frac{200\pi}{3} \text{ s}^{-1}\right)^2}{2 \cdot 80\pi \text{ rad}}$$
-$$\alpha = \frac{\frac{40000\pi^2}{9} \text{ s}^{-2}}{160\pi}$$
-$$\alpha = \frac{40000\pi^2}{9 \cdot 160\pi} \text{ s}^{-2} = \frac{40000\pi}{1440} \text{ s}^{-2}$$
-$$\alpha = \frac{250\pi}{9} \text{ s}^{-2}$$
-$$\alpha \approx 87,266 \text{ s}^{-2}$$
-
-Die Winkelbeschleunigung des Elektromotors beträgt also ca. **$87,27 \text{ s}^{-2}$**.
-
-
-**Lösung b) Zeitdauer der Beschleunigung:**
-
-Gegeben (aus Aufgabenteil a):
-- Anfangswinkelgeschwindigkeit $\omega_0 = 0 \text{ s}^{-1}$
-- Endwinkelgeschwindigkeit $\omega = \frac{200\pi}{3} \text{ s}^{-1}$
-- Winkelbeschleunigung $\alpha = \frac{250\pi}{9} \text{ s}^{-2}$
-
-Gesucht: Zeitdauer $t$ (Gibt an, wie lange der Motor braucht, um auf die Enddrehzahl zu kommen, Einheit $\text{s}$)
-
-**Schritt 1: Die passende Formel auswählen.**
-Wir suchen die Zeit $t$, kennen die Anfangs- und Endwinkelgeschwindigkeit sowie die Winkelbeschleunigung. 
-Die grundlegende Formel für die Beschleunigung gibt an, wie sich die Geschwindigkeit in einer bestimmten Zeit ändert: 
-$$\alpha = \frac{\Delta\omega}{\Delta t} = \frac{\omega - \omega_0}{t}$$
-Da der Motor aus dem Stillstand startet ($\omega_0 = 0$), vereinfacht sich das zu:
-$$\alpha = \frac{\omega}{t}$$
-
-**Schritt 2: Formel umstellen und ausrechnen.**
-Wir wollen $t$ berechnen. Dazu multiplizieren wir die Gleichung mit $t$ und teilen durch $\alpha$:
-$$t = \frac{\omega}{\alpha}$$
-
-Nun setzen wir unsere genauen Werte (als Brüche) aus Teil a) ein:
-$$t = \frac{\frac{200\pi}{3} \text{ s}^{-1}}{\frac{250\pi}{9} \text{ s}^{-2}}$$
-$$t = \frac{200\pi}{3} \cdot \frac{9}{250\pi} \text{ s}$$
-$$t = \frac{200 \cdot 3}{250} \text{ s} = \frac{600}{250} \text{ s}$$
-$$t = \frac{12}{5} \text{ s} = 2,4 \text{ s}$$
-
-Der Elektromotor benötigt also genau **$2,4 \text{ s}$**, um diese Drehzahl zu erreichen.
+$\varphi$ = Winkel in Radiant
+$\omega$ = Winkelgeschwindigkeit
+$\alpha_W$ = Winkelbeschleunigung
 
 ### Aufgabe 2: Beschleunigung und Reibung
 
@@ -499,34 +852,139 @@ Der Elektromotor benötigt also genau **$2,4 \text{ s}$**, um diese Drehzahl zu 
 > b) die während des Beschleunigungsvorgangs zurückgelegte Strecke!
 > c) die während des Beschleunigungsvorgangs verrichtete Reibungsarbeit (für Rollreibung und turbulente Reibung)!
 
+**a) Zeitdauer**
+
+| | Größe | Symbol | Wert |
+|---|---|---|---|
+| Gegeben | Endgeschwindigkeit | `v` | `96` km/h |
+| | Anfangsgeschwindigkeit | `v0` | `0` m/s |
+| | Beschleunigung | `a` | `1.1` m/s² |
+| Gesucht | Zeit | `t` | |
+
+$$
+\begin{align*}
+\text{Gegeben:} \\
+a &= 1.1 \text{ m/s}^2 \\
+v &= 26.67 \text{ m/s} \\
+v_0 &= 0 \text{ m/s} \\
+\text{Weg:} \\
+t &= \frac{v-v_0}{a} \\
+&= \frac{26.67-0}{1.1} \\
+&= 24.24 \text{ s} \\
+\text{ERG:} \quad t &= 24.24 \text{ s}
+\end{align*}
+$$
+
+**b) Zurückgelegte Strecke**
+
+| | Größe | Symbol | Wert |
+|---|---|---|---|
+| Gegeben | Endgeschwindigkeit | `v` | `96` km/h |
+| | Anfangsgeschwindigkeit | `v0` | `0` m/s |
+| | Beschleunigung | `a` | `1.1` m/s² |
+| Gesucht | Strecke | `s` | |
+
+$$
+\begin{align*}
+\text{Gegeben:} \\
+a &= 1.1 \text{ m/s}^2 \\
+v &= 26.67 \text{ m/s} \\
+v_0 &= 0 \text{ m/s} \\
+\text{Weg:} \\
+t &= \frac{v-v_0}{a} \\
+&= \frac{26.67-0}{1.1} \\
+&= 24.24 \text{ s} \\
+s &= v_0 \cdot t + 0.5 \cdot a \cdot t^2 \\
+&= 0 \cdot 24.24 + 0.5 \cdot 1.1 \cdot 24.24^2 \\
+&= 323.2 \text{ m} \\
+\text{ERG:} \quad s &= 323.2 \text{ m}
+\end{align*}
+$$
+
+$t$ = Zeit
+
+**c) Reibungsarbeit**
+
+Die *Rollreibungskraft* ist konstant (240 N), also einfach Kraft × Weg — als `F` eingeben:
+
+| | Größe | Symbol | Wert |
+|---|---|---|---|
+| Gegeben | Rollreibungskraft | `F` | `240` N |
+| | Strecke | `s` | `323.2` m (aus b) |
+| Gesucht | Arbeit | `W` | |
+
+$$
+\begin{align*}
+\text{Gegeben:} \\
+F &= 240 \text{ N} \\
+s &= 323.2 \text{ m} \\
+\text{Weg:} \\
+W &= F \cdot s \\
+&= 240 \cdot 323.2 \\
+&= 77568 \text{ J} \\
+\text{ERG:} \quad W &= 77568 \text{ J}
+\end{align*}
+$$
+
+Die *Luftreibungskraft* wächst mit $v^2$, also ist die Arbeit ein Integral. Bei gleichmäßiger Beschleunigung aus dem Stillstand gilt $v^2 = 2as$, damit ist $F_{Luft}$ linear im Weg und die Arbeit $W = \frac{1}{4}\,c_w A \rho\, v^2 s$. Dieses Szenario ist im Programm hinterlegt (Eingabe `cw`, `Av`, `rho`, `v`, `s`):
+
+| | Größe | Symbol | Wert |
+|---|---|---|---|
+| Gegeben | Widerstandsbeiwert | `cw` | `0.29` |
+| | Frontfläche | `Av` | `1.9` m² |
+| | Luftdichte | `rho` | `1.293` kg/m³ |
+| | Endgeschwindigkeit | `v` | `96` km/h |
+| | Strecke | `s` | `323.2` m (aus b) |
+| Gesucht | Arbeit | `W` | |
+
+$$
+\begin{align*}
+\text{Gegeben:} \\
+A_v &= 1.9 \text{ m}^2 \\
+c_w &= 0.29 \\
+\rho &= 1.293 \text{ kg/m}^3 \\
+s &= 323.2 \text{ m} \\
+v &= 26.67 \text{ m/s} \\
+\text{Weg:} \\
+W &= 0.25 \cdot c_w \cdot A_v \cdot \rho \cdot v^2 \cdot s \\
+&= 0.25 \cdot 0.29 \cdot 1.9 \cdot 1.293 \cdot 26.67^2 \cdot 323.2 \\
+&= 40935 \text{ J} \\
+\text{ERG:} \quad W &= 40935 \text{ J}
+\end{align*}
+$$
+
+Gesamte Reibungsarbeit: $77568 + 40935 \approx 118{,}5 \text{ kJ}$. (Zusatzfrage „festes Gaspedal": Da die Luftreibung mit $v^2$ steigt, müsste die Antriebskraft mitwachsen — mit fester Gaspedalstellung gelingt die gleichmäßige Beschleunigung **nicht**.)
+
 ### Aufgabe 3: Kreisbewegung und Haftreibung
 
 > [!info] Aufgabenstellung
 > Auf einer sich drehenden Scheibe liegt im Abstand von $50 \text{ cm}$ von der Drehachse (=Symmetrieachse) eine (punktförmige) Masse von $1 \text{ kg}$. Berechnen Sie die Drehzahl, bis zu welcher die Masse im o.g. Abstand auf der Scheibe unverändert liegen bleibt, wenn die Haftreibungszahl $0,3$ beträgt!
 
-Gegeben:
-- Abstand (Radius) $r = 50 \text{ cm} = 0,5 \text{ m}$
-- Masse $m = 1 \text{ kg}$
-- Haftreibungszahl $\mu = 0,3$
-- Erdbeschleunigung $g \approx 9,81 \text{ m/s}^2$
+| | Größe | Symbol | Wert |
+|---|---|---|---|
+| Gegeben | Radius | `r` | `0.5` m |
+| | Masse | `m` | `1` kg |
+| | Haftreibungszahl | `muH` | `0.3` |
+| Gesucht | Drehzahl | `n` | |
 
-Gesucht: Maximale Drehzahl $n$
+$$
+\begin{align*}
+\text{Gegeben:} \\
+m &= 1 \text{ kg} \\
+\mu_H &= 0.3 \\
+r &= 0.5 \text{ m} \\
+\text{Weg:} \\
+\omega &= \sqrt{\frac{\mu_H \cdot g}{r}} \\
+&= \sqrt{\frac{0.3 \cdot 9.81}{0.5}} \\
+&= 2.426 \text{ rad/s} \\
+n &= \frac{\omega}{2\pi} \\
+&= \frac{2.426}{2\pi} \\
+&= 0.3861 \text{ 1/s} \\
+\text{ERG:} \quad n &= 0.3861 \text{ 1/s}
+\end{align*}
+$$
 
-**Lösung:**
-
-1. **Physikalisches Gleichgewicht:**
-Damit die Masse nicht rutscht, muss die Zentripetalkraft $F_Z$ durch die Haftreibungskraft $F_{HR}$ aufgebracht werden.
-$$F_Z = F_{HR}$$
-$$m \cdot \omega^2 \cdot r = \mu \cdot m \cdot g$$
-
-2. **Winkelgeschwindigkeit $\omega$ berechnen:**
-$$\omega = \sqrt{\frac{\mu \cdot g}{r}} = \sqrt{\frac{0,3 \cdot 9,81 \text{ m/s}^2}{0,5 \text{ m}}} \approx 2,426 \text{ s}^{-1}$$
-
-3. **Drehzahl $n$ berechnen:**
-$$n = \frac{\omega \cdot 60}{2\pi} = \frac{2,426 \cdot 60}{2\pi} \approx 23,17 \text{ min}^{-1}$$
-
-Die maximale Drehzahl beträgt ca. **$23,17 \text{ min}^{-1}$**.
-
+$\omega$ = Winkelgeschwindigkeit
 
 ### Aufgabe 4: Bremsweg
 
@@ -537,7 +995,32 @@ Die maximale Drehzahl beträgt ca. **$23,17 \text{ min}^{-1}$**.
 > 
 > Berechnen Sie den zugrundeliegenden Reibungskoeffizienten, der als konstant angenommen wird, und interpretieren Sie das Ergebnis.
 
-TODO
+Physikalisch gilt für den Bremsweg $s_B = \frac{v^2}{2\,\mu\,g}$ (mit $v$ in m/s). Setzt man das mit der Fahrschulformel $s_B = (v_{kmh}/10)^2$ gleich, ergibt sich ein konstantes $\mu$. Das Programm verkettet beides automatisch: nur `vkmh` eingeben, gesucht `muG` — der Bremsweg kommt aus der Fahrschulformel, daraus die Reibungszahl (Beispielwert $v = 100$ km/h; das Ergebnis ist unabhängig von der Geschwindigkeit).
+
+| | Größe | Symbol | Wert |
+|---|---|---|---|
+| Gegeben | Geschwindigkeit | `vkmh` | `100` km/h |
+| Gesucht | Gleitreibungszahl | `muG` | |
+
+$$
+\begin{align*}
+\text{Gegeben:} \\
+v_{\text{kmh}} &= 100 \text{ km/h} \\
+\text{Weg:} \\
+s_B &= \left(\frac{v_{\text{kmh}}}{10}\right)^2 \\
+&= \left(\frac{100}{10}\right)^2 \\
+&= 100 \text{ m} \\
+\mu_G &= \frac{(v_{\text{kmh}}/3.6)^2}{2 g s_B} \\
+&= \frac{(100/3.6)^2}{2 \cdot 9.81 \cdot 100} \\
+&= 0.3933 \\
+\text{ERG:} \quad \mu_G &= 0.3933
+\end{align*}
+$$
+
+$s_B$ = Bremsweg
+
+**Interpretation:** $\mu \approx 0{,}39$ ist ein realistischer Gleitreibungswert für Reifen auf trockener, griffiger Fahrbahn. Die Fahrschulformel entspricht also einer normalen (nicht maximalen) Bremsung; eine Vollbremsung mit ABS erreicht eher $\mu \approx 0{,}7\!-\!0{,}8$ und damit den halben Bremsweg.
+
 ### Aufgabe 5: Impuls und Raketenantrieb
 
 > [!info] Aufgabenstellung
@@ -549,50 +1032,68 @@ TODO
 
 **a) Schubkraft zum Abheben**
 
-Gegeben:
-- Masse $m = 200 \text{ t} = 200.000 \text{ kg}$
-- Erdbeschleunigung $g = 9,81 \text{ m/s}^2$
+| | Größe | Symbol | Wert |
+|---|---|---|---|
+| Gegeben | Masse | `m` | `200` t |
+| Gesucht | Gewichtskraft | `FG` | |
 
-Gesucht: Schubkraft $F_S$
+$$
+\begin{align*}
+\text{Gegeben:} \\
+m &= 200000 \text{ kg} \\
+\text{Weg:} \\
+F_G &= m \cdot g \\
+&= 200000 \cdot 9.81 \\
+&= 1962000 \text{ N} \\
+\text{ERG:} \quad F_G &= 1962000 \text{ N}
+\end{align*}
+$$
 
-Damit die Rakete abhebt, muss die Schubkraft $F_S$ mindestens so groß sein wie die Gewichtskraft $F_G$.
-$$F_G = m \cdot g$$
-$$F_G = 200.000 \text{ kg} \cdot 9,81 \text{ m/s}^2 = 1.962.000 \text{ N} = 1,962 \text{ MN}$$
-
-Die Schubkraft muss also **größer als $1,962 \text{ MN}$** sein.
+Die Schubkraft muss mindestens **1.962.000 N (1,962 MN)** betragen.
 
 **b) Mittlere Schubkraft durch Gasausstoß**
 
-Gegeben:
-- Massenstrom $\dot{m} = \frac{\Delta m}{\Delta t} = 0,74 \text{ t/s} = 740 \text{ kg/s}$
-- Austrittsgeschwindigkeit $v_e = 4,0 \text{ km/s} = 4000 \text{ m/s}$
+| | Größe | Symbol | Wert |
+|---|---|---|---|
+| Gegeben | Massenstrom | `mdot` | `740` kg/s |
+| | Ausströmgeschwindigkeit | `ve` | `4` km/s |
+| Gesucht | Schubkraft | `FS` | |
 
-Gesucht: mittlere Schubkraft $F_S$
-
-Die Schubkraft ergibt sich aus der Impulsänderung der ausgestoßenen Gase (Raketengleichung):
-$$F_S = \dot{m} \cdot v_e$$
-$$F_S = 740 \text{ kg/s} \cdot 4000 \text{ m/s} = 2.960.000 \text{ N} = 2,96 \text{ MN}$$
-
-Die mittlere Schubkraft beträgt **$2,96 \text{ MN}$**.
+$$
+\begin{align*}
+\text{Gegeben:} \\
+\dot{m} &= 740 \text{ kg/s} \\
+v_e &= 4000 \text{ m/s} \\
+\text{Weg:} \\
+F_S &= \dot{m} \cdot v_e \\
+&= 740 \cdot 4000 \\
+&= 2960000 \text{ N} \\
+\text{ERG:} \quad F_S &= 2960000 \text{ N}
+\end{align*}
+$$
 
 **c) Mittlere Beschleunigung**
 
-Gegeben:
-- Schubkraft $F_S = 2,96 \text{ MN} = 2.960.000 \text{ N}$
-- Gewichtskraft $F_G = 1,962 \text{ MN} = 1.962.000 \text{ N}$
-- Masse $m = 200.000 \text{ kg}$
+| | Größe | Symbol | Wert |
+|---|---|---|---|
+| Gegeben | Schubkraft | `FS` | `2960000` N (aus b) |
+| | Gewichtskraft | `FG` | `1962000` N (aus a) |
+| | Masse | `m` | `200000` kg |
+| Gesucht | Beschleunigung | `a` | |
 
-Gesucht: Beschleunigung $a$
-
-Die resultierende Kraft $F_{res}$ ist die Differenz aus Schubkraft und Gewichtskraft:
-$$F_{res} = F_S - F_G$$
-$$F_{res} = 2.960.000 \text{ N} - 1.962.000 \text{ N} = 998.000 \text{ N}$$
-
-Nach dem 2. Newtonschen Axiom ($F = m \cdot a$) gilt für die Beschleunigung:
-$$a = \frac{F_{res}}{m}$$
-$$a = \frac{998.000 \text{ N}}{200.000 \text{ kg}} = 4,99 \text{ m/s}^2$$
-
-Die Rakete wird mit einer mittleren Beschleunigung von **$4,99 \text{ m/s}^2$** gehoben.
+$$
+\begin{align*}
+\text{Gegeben:} \\
+F_G &= 1962000 \text{ N} \\
+F_S &= 2960000 \text{ N} \\
+m &= 200000 \text{ kg} \\
+\text{Weg:} \\
+a &= \frac{F_S-F_G}{m} \\
+&= \frac{2960000-1962000}{200000} \\
+&= 4.99 \text{ m/s}^2 \\
+\text{ERG:} \quad a &= 4.99 \text{ m/s}^2
+\end{align*}
+$$
 
 
 ## Energie (AB4)
@@ -602,24 +1103,26 @@ Die Rakete wird mit einer mittleren Beschleunigung von **$4,99 \text{ m/s}^2$** 
 > [!info] Aufgabenstellung
 > Zum weiteren Dehnen einer vorgespannten Feder auf 4 cm Gesamtverlängerung wird die Spannarbeit 0,06 J aufgebracht. Die Federkonstante beträgt 1 N/cm. Berechnen Sie, um welche Länge gegenüber ihrer Ruhelage die Feder anfangs gespannt war.
 
-Gegeben:
-- $W = 0,06 \text{ J}$
-- $D = 1 \text{ N/cm} = 100 \text{ N/m}$
-- $x_2 = 4 \text{ cm} = 0,04 \text{ m}$
+| | Größe | Symbol | Wert |
+|---|---|---|---|
+| Gegeben | Spannarbeit | `W` | `0.06` J |
+| | Federkonstante | `D` | `1` N/cm |
+| | Endauslenkung | `xe` | `4` cm |
+| Gesucht | Anfangsauslenkung | `xa` | |
 
-Gesucht: $x_1$
-
-Lösung:
-$$W = W_2 - W_1 = \frac{1}{2} \cdot D \cdot x_2^2 - \frac{1}{2} \cdot D \cdot x_1^2$$
-$$W = \frac{1}{2} D (x_2^2 - x_1^2)$$
-$$0,06 \text{ J} = 0,06 \text{ Nm} \quad = \quad 50 \text{ N/m} \cdot (0,0016 \text{ m}^2 - x_1^2)$$
-$/ \  50 \text{ N/m}$
-$$0,0012 \text{ m}^2 = 0,0016 \text{ m}^2 - x_1^2$$
-$$x_1^2 = 0,0004 \text{ m}^2 \implies x_1 = 0,02 \text{ m} = \underline{\underline{2 \text{ cm}}}$$
-
-
-Es gilt: Da $1 \text{ J} = 1 \text{ Nm}$ ist, ergibt sich:
-$$\frac{\text{Nm}}{\text{N/m}} = \text{Nm} \cdot \frac{\text{m}}{\text{N}} = \text{m}^2$$
+$$
+\begin{align*}
+\text{Gegeben:} \\
+D &= 100 \text{ N/m} \\
+W &= 0.06 \text{ J} \\
+x_e &= 0.04 \text{ m} \\
+\text{Weg:} \\
+x_a &= \sqrt{x_e^2-\frac{2W}{D}} \\
+&= \sqrt{0.04^2-\frac{2 \cdot 0.06}{100}} \\
+&= 0.02 \text{ m} \\
+\text{ERG:} \quad x_a &= 0.02 \text{ m}
+\end{align*}
+$$
 
 ### Aufgabe 2: Federspannarbeit
 
@@ -628,24 +1131,27 @@ $$\frac{\text{Nm}}{\text{N/m}} = \text{Nm} \cdot \frac{\text{m}}{\text{N}} = \te
 >
 Zur Kontrolle: $F_2 = 3.5$ N.
 
-**Gegeben:**
-- Vorspannkraft: $F_1 = 1{,}5\,\text{N}$
-- Zusätzlicher Weg: $\Delta x = 10\,\text{cm} = 0{,}1\,\text{m}$
-- Verrichtete Spannarbeit: $W = 0{,}25\,\text{J}$
+| | Größe | Symbol | Wert |
+|---|---|---|---|
+| Gegeben | Vorspannkraft | `F1` | `1.5` N |
+| | Zusätzlicher Weg | `s` | `10` cm |
+| | Spannarbeit | `W` | `0.25` J |
+| Gesucht | Endkraft | `F2` | |
 
-**Gesucht:** $F_2$
-
-**Lösung:**
-
-Da die Feder bereits vorgespannt ist, gilt für die Spannarbeit:
-
-$$W = \frac{F_1 + F_2}{2} \cdot \Delta x$$
-Umformen nach $F_2$:
-$$F_1 + F_2 = \frac{2W}{\Delta x}$$
-$$\frac{2 \cdot 0{,}25\,\text{J}}{0{,}1\,\text{m}} = 5\,\text{N}$$
-
-$$F_2 = 5\,\text{N} - F_1 = 5\,\text{N} - 1{,}5\,\text{N} = 3{,}5\,\text{N}$$
-### Aufgabe 3: Jo-jo
+$$
+\begin{align*}
+\text{Gegeben:} \\
+F_1 &= 1.5 \text{ N} \\
+W &= 0.25 \text{ J} \\
+s &= 0.1 \text{ m} \\
+\text{Weg:} \\
+F_2 &= \frac{2W}{s}-F_1 \\
+&= \frac{2 \cdot 0.25}{0.1}-1.5 \\
+&= 3.5 \text{ N} \\
+\text{ERG:} \quad F_2 &= 3.5 \text{ N}
+\end{align*}
+$$
+### Aufgabe 3: Jo-jo (nicht integriert)
 
 > [!info] Aufgabenstellung
 > Ein Jo-Jo besteht aus zwei Scheiben (Radius R<sub>s</sub> = 2,5 cm, Masse jeweils m<sub>s</sub> = 10 g) und einer Achse aus einem dünnwandigen Hohlzylinder ( $R_A = 0.5$ cm, $m_A = 2.5$ g). Die Schnur ist $L = 1$ m lang.
@@ -655,15 +1161,6 @@ $$F_2 = 5\,\text{N} - F_1 = 5\,\text{N} - 1{,}5\,\text{N} = 3{,}5\,\text{N}$$
 > b) Berechnen Sie die Geschwindigkeit des dünnwandigen Hohlzylinders und die Drehzahl, wenn sich die Schnur (fast) vollständig abgewickelt hat, d.h. kurz vor dem Umkehrpunkt.
 >
 Zur Kontrolle: a) $J_{ges} = 6{,}3125 \cdot 10^{-6}$ kg · m<sup>2</sup>b) $v \approx 1{,}3\frac{\text{m}}{\text{s}}$ ; $n \approx 2530 \frac{1}{\text{min}}$
-
-**Gegeben:**
-- Radien: $R_s = 2,5 \text{ cm}$, $R_A = 0,5 \text{ cm}$
-- Massen: $m_s = 10 \text{ g}$ (pro Scheibe), $m_A = 2,5 \text{ g}$
-- Schnurlänge: $L = 1 \text{ m}$
-
-**Gesucht:**
-- a) Trägheitsmoment $J_{ges}$
-- b) Endgeschwindigkeit $v$ und Drehzahl $n$
 
 ```tikz
 \begin{document}
@@ -693,46 +1190,72 @@ Zur Kontrolle: a) $J_{ges} = 6{,}3125 \cdot 10^{-6}$ kg · m<sup>2</sup>b) $v \a
 \end{document}
 ```
 
-**Lösung:**
-a)
-Das Gesamtträgheitsmoment setzt sich aus den beiden Scheiben (Vollzylinder) und der Achse (dünnwandiger Hohlzylinder) zusammen:
-$$J_{ges} = 2 \cdot J_s + J_A$$
+**a) Trägheitsmoment**
 
-1. **Trägheitsmoment der Scheiben (Vollzylinder):**
-$$J_s = \frac{1}{2} m_s \cdot R_s^2$$
-$$J_s = \frac{1}{2} \cdot 0,01 \text{ kg} \cdot (0,025 \text{ m})^2 = 3,125 \cdot 10^{-6} \text{ kg}\cdot\text{m}^2$$
+| | Größe | Symbol | Wert |
+|---|---|---|---|
+| Gegeben | Radius Scheibe | `Rs` | `2.5` cm |
+| | Masse Scheibe (je) | `ms` | `10` g |
+| | Radius Achse | `RA` | `0.5` cm |
+| | Masse Achse | `mA` | `2.5` g |
+| Gesucht | Gesamtträgheitsmoment | `Jges` | |
 
-2. **Trägheitsmoment der Achse (dünnwandiger Hohlzylinder):**
-$$J_A = m_A \cdot R_A^2$$
-$$J_A = 0,0025 \text{ kg} \cdot (0,005 \text{ m})^2 = 0,0625 \cdot 10^{-6} \text{ kg}\cdot\text{m}^2$$
+$$
+\begin{align*}
+\text{Gegeben:} \\
+R_s &= 0.025 \text{ m} \\
+m_s &= 0.01 \text{ kg} \\
+R_A &= 0.005 \text{ m} \\
+m_A &= 0.0025 \text{ kg} \\
+\text{Weg:} \\
+J_s &= 0.5 \cdot m_s \cdot R_s^2 \\
+&= 0.5 \cdot 0.01 \cdot 0.025^2 \\
+&= 0.000003125 \text{ kg} \cdot \text{m}^2 \\
+J_A &= m_A \cdot R_A^2 \\
+&= 0.0025 \cdot 0.005^2 \\
+&= 0.0000000625 \text{ kg} \cdot \text{m}^2 \\
+J_{\text{ges}} &= 2J_s+J_A \\
+&= 2 \cdot 0.000003125+0.0000000625 \\
+&= 0.0000063125 \text{ kg} \cdot \text{m}^2 \\
+\text{ERG:} \quad J_{\text{ges}} &= 0.0000063125 \text{ kg} \cdot \text{m}^2
+\end{align*}
 
-3. **Gesamtträgheitsmoment:**
-$$J_{ges} = 2 \cdot (3,125 \cdot 10^{-6} \text{ kg}\cdot\text{m}^2) + 0,0625 \cdot 10^{-6} \text{ kg}\cdot\text{m}^2$$
-$$J_{ges} = 6,25 \cdot 10^{-6} \text{ kg}\cdot\text{m}^2 + 0,0625 \cdot 10^{-6} \text{ kg}\cdot\text{m}^2 = \underline{\underline{6,3125 \cdot 10^{-6} \text{ kg}\cdot\text{m}^2}}$$
+$J_s$ = Trägheitsmoment einer Scheibe
+$J_A$ = Trägheitsmoment der Achse
+$$
 
-b)
+**b) Endgeschwindigkeit und Drehzahl**
 
-**Energieerhaltungssatz:** Die potentielle Energie am Start wird in kinetische Energie (Translation) und Rotationsenergie umgewandelt.
-$$E_{pot} = E_{kin} + E_{rot}$$
-$$m_{ges} \cdot g \cdot L = \frac{1}{2} m_{ges} v^2 + \frac{1}{2} J_{ges} \omega^2$$
+| | Größe | Symbol | Wert |
+|---|---|---|---|
+| Gegeben | Gesamtmasse (2·ms+mA) | `mges` | `0.0225` kg |
+| | Schnurlänge | `L` | `1` m |
+| | Gesamtträgheitsmoment | `Jges` | `0.0000063125` kg·m² (aus a) |
+| | Radius Achse | `RA` | `0.5` cm |
+| Gesucht | Geschwindigkeit, Drehzahl | `v`, `n` | |
 
-Da die Schnur auf der Achse abrollt, gilt der Zusammenhang zwischen Bahngeschwindigkeit $v$ und Winkelgeschwindigkeit $\omega$:
-$$v = \omega \cdot R_A \implies \omega = \frac{v}{R_A}$$
+$$
+\begin{align*}
+\text{Gegeben:} \\
+J_{\text{ges}} &= 0.0000063125 \text{ kg} \cdot \text{m}^2 \\
+L &= 1 \text{ m} \\
+R_A &= 0.005 \text{ m} \\
+m_{\text{ges}} &= 0.0225 \text{ kg} \\
+\text{Weg:} \\
+v &= \sqrt{\frac{2 m_{\text{ges}} g L}{m_{\text{ges}}+\frac{J_{\text{ges}}}{R_A^2}}} \\
+&= \sqrt{\frac{2 \cdot 0.0225 \cdot 9.81 \cdot 1}{0.0225+\frac{0.0000063125}{0.005^2}}} \\
+&= 1.267 \text{ m/s} \\
+\omega &= \frac{v}{R_A} \\
+&= \frac{1.267}{0.005} \\
+&= 253.4 \text{ rad/s} \\
+n &= \frac{\omega}{2\pi} \\
+&= \frac{253.4}{2\pi} \\
+&= 40.33 \text{ 1/s} \\
+\text{ERG:} \quad n &= 40.33 \text{ 1/s} \quad (= 2420 \text{ 1/min})
+\end{align*}
+$$
 
-Einsetzen in die Energiegleichung:
-$$m_{ges} \cdot g \cdot L = \frac{1}{2} m_{ges} v^2 + \frac{1}{2} J_{ges} \left(\frac{v}{R_A}\right)^2$$
-$$m_{ges} \cdot g \cdot L = \frac{1}{2} v^2 \left(m_{ges} + \frac{J_{ges}}{R_A^2}\right)$$
-
-**1. Geschwindigkeit $v$ berechnen:**
-$$v = \sqrt{\frac{2 \cdot m_{ges} \cdot g \cdot L}{m_{ges} + \frac{J_{ges}}{R_A^2}}}$$
-Mit $m_{ges} = 22,5 \text{ g} = 0,0225 \text{ kg}$ und $g = 9,81 \text{ m/s}^2$:
-$$v = \sqrt{\frac{2 \cdot 0,0225 \text{ kg} \cdot 9,81 \text{ m/s}^2 \cdot 1 \text{ m}}{0,0225 \text{ kg} + \frac{6,3125 \cdot 10^{-6} \text{ kg}\cdot\text{m}^2}{(0,005 \text{ m})^2}}}$$
-$$v = \sqrt{\frac{0,44145 \text{ J}}{0,0225 \text{ kg} + 0,2525 \text{ kg}}} = \sqrt{\frac{0,44145}{0,275}} \approx \underline{\underline{1,27 \text{ m/s}}}$$
-
-**2. Drehzahl $n$ berechnen:**
-$$\omega = \frac{v}{R_A} = \frac{1,27 \text{ m/s}}{0,005 \text{ m}} = 254 \text{ rad/s}$$
-$$n = \frac{\omega}{2\pi} = \frac{254}{2\pi} \approx 40,4 \text{ s}^{-1}$$
-$$n_{min} = 40,4 \cdot 60 \approx \underline{\underline{2424 \text{ min}^{-1}}}$$
+$\omega$ = Winkelgeschwindigkeit
 
 ### Aufgabe 4
 
@@ -816,56 +1339,111 @@ markmap:
 >
 > c) Pro Schwingungsdauer gehen etwa 5% der mechanischen Energie auf Grund von Reibungseffekten verloren. Bestimmen Sie die Abnahme der Amplitude pro Schwingungsdauer und berechnen Sie, wie groß die Amplitude nach 10 Sekunden ist.
 
-**Lösung:**
+**a) Schwingungsdauer**
 
-**1. Was ist gegeben?**
-- **Federhärte ($D$)** = $20 \text{ N/m}$ (Wie stark die Feder zieht)
-- **Masse ($m$)** = $100 \text{ g} = 0,1 \text{ kg}$ (Das Gewicht an der Feder)
-- **Amplitude ($A$)** = $10 \text{ cm} = 0,1 \text{ m}$ (Wie weit wir am Anfang ziehen)
+| | Größe | Symbol | Wert |
+|---|---|---|---|
+| Gegeben | Federkonstante | `D` | `20` N/m |
+| | Masse | `m` | `100` g |
+| Gesucht | Periodendauer | `T` | |
 
-**2. Wichtige Hilfsgröße berechnen: $\omega$ (Omega)**
-In der Physik nutzt man $\omega$ (die "Kreisfrequenz"), um zu beschreiben, wie schnell die Schwingung abläuft. Sie verbindet die Federkraft mit der Masse:
-$$\omega = \sqrt{\frac{D}{m}} = \sqrt{\frac{20}{0,1}} = \sqrt{200} \approx 14,14 \text{ s}^{-1}$$
+$$
+\begin{align*}
+\text{Gegeben:} \\
+D &= 20 \text{ N/m} \\
+m &= 0.1 \text{ kg} \\
+\text{Weg:} \\
+\omega_0 &= \sqrt{\frac{D}{m}} \\
+&= \sqrt{\frac{20}{0.1}} \\
+&= 14.14 \text{ rad/s} \\
+T &= \frac{2\pi}{\omega_0} \\
+&= \frac{2\pi}{14.14} \\
+&= 0.4443 \text{ s} \\
+\text{ERG:} \quad T &= 0.4443 \text{ s}
+\end{align*}
+$$
 
-**a) Schwingungsdauer ($T$) und Ort ($x(t)$)**
-- **Schwingungsdauer ($T$):** Das ist die Zeit für ein Mal hin und her.
-  $$T = \frac{2\pi}{\omega} = \frac{2\pi}{14,14} \approx 0,444 \text{ s}$$
-- **Ortsfunktion ($x(t)$):** Eine Formel, die uns sagt, wo die Kugel zu jedem Zeitpunkt $t$ ist. Da wir sie zum Start ($t=0$) loslassen, nutzen wir den Cosinus:
-  $$x(t) = A \cdot \cos(\omega \cdot t) = 0,1 \cdot \cos(14,14 \cdot t)$$
+Ortsfunktion (aus $\omega_0$ und Start bei maximaler Auslenkung, also Cosinus):
+$$x(t) = A \cdot \cos(\omega_0 \cdot t) = 0,1 \cdot \cos(14,14 \cdot t) \text{ m}$$
 
-**b) Geschwindigkeit und Beschleunigung (über Ableitungen)**
-Um die Geschwindigkeit $v(t)$ und die Beschleunigung $a(t)$ zu finden, leiten wir den Ort $x(t)$ nach der Zeit $t$ ab:
+$\omega_0$ = Eigenfrequenz
 
-1. **Geschwindigkeit $v(t)$:** (1. Ableitung des Ortes)
-   $$v(t) = \dot{x}(t) = \frac{d}{dt} [A \cdot \cos(\omega \cdot t)] = -A \cdot \omega \cdot \sin(\omega \cdot t)$$
-   Einsetzen der Werte ($0,1 \cdot 14,14$):
-   $$v(t) \approx -1,41 \cdot \sin(14,14 \cdot t) \text{ m/s}$$
-   Der maximale Wert (**$v_{max}$**) ist einfach der Faktor vor dem Sinus: **$1,41 \text{ m/s}$**.
+**b) Maximalgeschwindigkeit und Maximalbeschleunigung**
 
-2. **Beschleunigung $a(t)$:** (2. Ableitung des Ortes)
-   $$a(t) = \dot{v}(t) = \frac{d}{dt} [-A \cdot \omega \cdot \sin(\omega \cdot t)] = -A \cdot \omega^2 \cdot \cos(\omega \cdot t)$$
-   Einsetzen der Werte ($0,1 \cdot 14,14^2$ bzw. $0,1 \cdot 200$):
-   $$a(t) = -20 \cdot \cos(14,14 \cdot t) \text{ m/s}^2$$
-   Der maximale Wert (**$a_{max}$**) ist der Faktor vor dem Cosinus: **$20 \text{ m/s}^2$**.
+| | Größe | Symbol | Wert |
+|---|---|---|---|
+| Gegeben | Federkonstante | `D` | `20` N/m |
+| | Masse | `m` | `100` g |
+| | Amplitude | `A` | `10` cm |
+| Gesucht | Maximalgeschw., -beschl. | `vmax`, `amax` | |
 
-**c) Energieverlust und neue Amplitude**
+$$
+\begin{align*}
+\text{Gegeben:} \\
+A &= 0.1 \text{ m} \\
+D &= 20 \text{ N/m} \\
+m &= 0.1 \text{ kg} \\
+\text{Weg:} \\
+\omega_0 &= \sqrt{\frac{D}{m}} \\
+&= \sqrt{\frac{20}{0.1}} \\
+&= 14.14 \text{ rad/s} \\
+T &= \frac{2\pi}{\omega_0} \\
+&= \frac{2\pi}{14.14} \\
+&= 0.4443 \text{ s} \\
+\omega &= \frac{2\pi}{T} \\
+&= \frac{2\pi}{0.4443} \\
+&= 14.14 \text{ rad/s} \\
+v_{\max} &= A \cdot \omega \\
+&= 0.1 \cdot 14.14 \\
+&= 1.414 \text{ m/s} \\
+a_{\max} &= A \cdot \omega^2 \\
+&= 0.1 \cdot 14.14^2 \\
+&= 20 \text{ m/s}^2 \\
+\text{ERG:} \quad v_{\max} &= 1.414 \text{ m/s} \quad a_{\max} &= 20 \text{ m/s}^2
+\end{align*}
+$$
 
-Hier müssen wir in drei einfachen Schritten denken:
+Damit: $v(t) = -1{,}414 \cdot \sin(14{,}14 \cdot t)$ m/s, $a(t) = -20 \cdot \cos(14{,}14 \cdot t)$ m/s².
 
-1. **Wie schrumpft die Amplitude ($A$)?**
-   Die Energie ($E$) einer Feder hängt vom **Quadrat** der Auslenkung ab ($E \sim A^2$). 
-   - Wenn wir $5\%$ Energie verlieren, bleiben $95\%$ ($0,95$) übrig.
-   - Weil $A$ im Quadrat steht, müssen wir die **Wurzel ziehen**, um zu wissen, wie die Amplitude schrumpft:
-   $$\text{Schrumpf-Faktor} = \sqrt{0,95} \approx 0,975$$
-   *(Das heißt: Nach jeder Schwingung ist die Amplitude noch $97,5\%$ vom vorherigen Wert.)*
+$\omega_0$ = Eigenfrequenz
+$T$ = Periodendauer
+$\omega$ = Kreisfrequenz
 
-2. **Wie viele Schwingungen passieren in 10 Sekunden?**
-   Wir wissen aus Teil a), dass eine Schwingung $T \approx 0,444 \text{ s}$ dauert.
-   $$n = \frac{10 \text{ s}}{0,444 \text{ s}} \approx 22,5 \text{ Schwingungen}$$
+**c) Amplitude nach 10 s (5 % Energieverlust pro Periode)**
 
-3. **Berechnung der End-Amplitude nach 10 Sekunden:**
-   Wir nehmen die Start-Amplitude ($0,1 \text{ m}$) und lassen sie $22,5$-mal schrumpfen:
-   $$A_{10s} = A_{Start} \cdot 0,975^{22,5} = 0,1 \text{ m} \cdot 0,56 \approx \mathbf{5,6 \text{ cm}}$$
+| | Größe | Symbol | Wert |
+|---|---|---|---|
+| Gegeben | Federkonstante | `D` | `20` N/m |
+| | Masse | `m` | `100` g |
+| | Amplitude | `A` | `10` cm |
+| | Energieverlust pro Periode | `pv` | `0.05` |
+| | Zeit | `t` | `10` s |
+| Gesucht | Amplitude nach t | `At` | |
+
+$$
+\begin{align*}
+\text{Gegeben:} \\
+A &= 0.1 \text{ m} \\
+D &= 20 \text{ N/m} \\
+m &= 0.1 \text{ kg} \\
+p_v &= 0.05 \\
+t &= 10 \text{ s} \\
+\text{Weg:} \\
+\omega_0 &= \sqrt{\frac{D}{m}} \\
+&= \sqrt{\frac{20}{0.1}} \\
+&= 14.14 \text{ rad/s} \\
+T &= \frac{2\pi}{\omega_0} \\
+&= \frac{2\pi}{14.14} \\
+&= 0.4443 \text{ s} \\
+A_t &= A \cdot \sqrt{1-p_v}^{t/T} \\
+&= 0.1 \cdot \sqrt{1-0.05}^{10/0.4443} \\
+&= 0.05614 \text{ m} \\
+\text{ERG:} \quad A_t &= 0.05614 \text{ m}
+\end{align*}
+$$
+
+$\omega_0$ = Eigenfrequenz
+$T$ = Periodendauer
 
 ### Aufgabe 2: Harmonische Schwingung am Seil
 
@@ -881,74 +1459,94 @@ Hier müssen wir in drei einfachen Schritten denken:
 > d) Berechnen Sie die Auslenkung des Punktes $x_{15}$ = 15 cm zur Zeit $t_1$ = 625 ms und geben Sie an, zu welchen Zeiten dieser Punkt wieder die gleiche Auslenkung besitzt. Zeigen Sie rechnerisch, wie sich das Ergebnis für $t_1$ = 625 ms ändern würde.
 >
 > e) Lösen Sie die Teilaufgabe b) für den Fall, dass der Anfang des Wellenträgers zur Zeit $t_0$ = 0,0 s (I.) gerade den negativen Nulldurchgang durchläuft bzw. (II.) gerade maximale positive Auslenkung besitzt.
->
+
+**a) Phasengeschwindigkeit**
+
+| | Größe | Symbol | Wert |
+|---|---|---|---|
+| Gegeben | Wellenlänge | `lam` | `30` cm |
+| | Frequenz | `f` | `2` Hz |
+| Gesucht | Phasengeschwindigkeit | `cph` | |
+
+$$
+\begin{align*}
+\text{Gegeben:} \\
+f &= 2 \text{ Hz} \\
+\lambda &= 0.3 \text{ m} \\
+\text{Weg:} \\
+c_{\text{ph}} &= \lambda \cdot f \\
+&= 0.3 \cdot 2 \\
+&= 0.6 \text{ m/s} \\
+\text{ERG:} \quad c_{\text{ph}} &= 0.6 \text{ m/s}
+\end{align*}
+$$
+
+b)-e) verlangen das Aufstellen und Auswerten der Wellenfunktion $y(x,t)$ (Phasenverschiebung, Rückrechnung auf Zeitpunkte) — das ist symbolische Herleitung, kein Einsetzen einzelner Größen, und liegt außerhalb dessen, was der Taschenrechner-Solver abdeckt.
+
 ### Zusatzaufgabe: Effektive Federmasse eines Federpendels (zum Praktikumsexperiment)
 
 > [!info] Aufgabenstellung
-> Die Formel für die Schwingungsdauer eines Federpendels, $T=2\pi\sqrt{\frac{m}{D}}$ , gilt für den Fall, dass die Masse der Feder vernachlässigbar klein ist. Wenn sie berücksichtigt wird, erfolgt dies in der Regel durch eine effektive Federmasse, die einen Bruchteil der tatsächlichen Federmasse ausmacht: $(m_F)_{eff} = b \cdot m_F$ . Mit der Schwingungsfrequenz $f = \omega_0/2\pi$ und der Schwingungsdauer $T = 2\pi/\omega_0$ ergibt sich bei Einbeziehung der effektiven Federmasse:
+> Die Formel für die Schwingungsdauer eines Federpendels, $T=2\pi\sqrt{\frac{m}{D}}$, gilt für den Fall, dass die Masse der Feder vernachlässigbar klein ist. Wenn sie berücksichtigt wird, erfolgt dies in der Regel durch eine effektive Federmasse, die einen Bruchteil der tatsächlichen Federmasse ausmacht: $(m_F)_{eff} = b \cdot m_F$. Mit der Schwingungsfrequenz $f = \omega_0/2\pi$ und der Schwingungsdauer $T = 2\pi/\omega_0$ ergibt sich bei Einbeziehung der effektiven Federmasse:
 >
+> (1) $T = 2\pi \sqrt{\frac{m + b \cdot m_f}{D}}$
+>
+> **Fall 1: Masse Pendelkörper >> Federmasse $m_f$**
+>
+> Für die Gesamtenergie einer harmonischen Schwingung mit der Amplitude A gilt generell: $W = \frac{1}{2} m \omega_0^2 A^2$ (Aufgabe: Herleitung)
+>
+> Die Masse, die gleichmäßig über die Feder verteilt ist, wird gedanklich in Massenelemente der Größe $dm$ unterteilt. Diese schwingen mit gleicher Frequenz, aber unterschiedlicher Amplitude, die nur von der Position $x$ abhängt. Damit gilt: $dW = \frac{1}{2} dm \cdot \omega_0^2 A^2(x)$
+>
+> Wenn die Masse $m$ deutlich größer ist als die Federmasse, ist die Dehnung pro Windung gleich und die Amplitude wächst dann linear mit der Position $x$: $A(x) = \frac{x}{l}A$. Die Masse sei gleichmäßig entlang der Feder verteilt. Bezeichnet man mit $\mu$ die Masse pro Längeneinheit, ergibt sich: $dm = \mu \cdot dx$.
+>
+> ![[Übungen/Übungen-_page_9_Figure_8.jpeg]]
+>
+> Für die gesamte in der Feder befindlichen Energie gilt dann: $W_F = \frac{1}{2} \frac{\mu L}{3} \omega_0^2 A^2$ (Aufgabe: Herleitung) und da $\mu L$ die Masse der Feder ist: $W_F = \frac{1}{2} \frac{m_f}{3} \omega_0^2 A^2$
+>
+> Die Gesamtenergie setzt sich aus der Energie der Feder und des Pendelkörpers zusammen: $W = \frac{1}{2}\left(m + \frac{m_F}{3}\right)\omega_0^2 A^2$
+>
+> Die Energie der Feder lässt sich auch mit der Federkonstanten D in dieser Form ausdrücken: $W=\frac{1}{2}D \cdot A^2$
+>
+> Daraus folgt (Aufgabe: Nachrechnen): $\omega_0^2 = \frac{D}{m + \frac{m_F}{3}}$
+>
+> Mit $\omega_0 = 2\pi / T$ ergibt sich: $T = 2\pi \sqrt{\frac{m + \frac{1}{3} m_f}{D}}$
+>
+> **Fall 2: Masse Pendelkörper << Federmasse $m_f$**
+>
+> Für den Fall $m=0$ lässt sich zeigen, dass die effektive Masse gegeben ist durch: $(m_F)_{eff} = \frac{4}{\pi^2} m_F \approx 0.405 ...$ (Annahme: Schwingungsknoten am oberen Ende, Schwingungsbauch am unteren Ende)
+>
+> **Quelle:** http://theissenonline.de/Physik/Federpendel_Effektive_Federmasse.pdf
+
+**Lösung:**
+
+**Fall 1: Masse Pendelkörper >> Federmasse $m_f$**
+
 $$
-> [!info] Aufgabenstellung
-> (1) T = 2\pi \sqrt{\frac{m + b \cdot m_f}{D}}
+\begin{align*}
+\text{Gesamtenergie der Schwingung:} \\
+W_{\text{Körper}} &= \frac{1}{2} m \omega_0^2 A^2 \\
+W_{\text{Feder}} &= \frac{1}{2} \frac{m_f}{3} \omega_0^2 A^2 \\
+W_{\text{ges}} &= \frac{1}{2}\left(m + \frac{m_F}{3}\right)\omega_0^2 A^2 \\
+\text{Mit } W_{\text{ges}} &= \frac{1}{2}D A^2 \text{ folgt:} \\
+\frac{1}{2}D A^2 &= \frac{1}{2}\left(m + \frac{m_F}{3}\right)\omega_0^2 A^2 \\
+D &= \left(m + \frac{m_F}{3}\right)\omega_0^2 \\
+\omega_0^2 &= \frac{D}{m + \frac{m_F}{3}} \\
+\text{Mit } \omega_0 &= \frac{2\pi}{T} \text{ ergibt sich:} \\
+T &= 2\pi\sqrt{\frac{m + \frac{1}{3}m_f}{D}} \\
+\text{Die effektive Federmasse ist also: } b &= \frac{1}{3}
+\end{align*}
 $$
 
-> [!info] Aufgabenstellung
-> Fall 1: Masse Pendelkörper >>Federmasse $m_f$
->
-> Für die Gesamtenergie einer harmonischen Schwingung mit der Amplitude A gilt generell: $W = 1/2 \cdot m \cdot \omega_0^2 \cdot A^2$ (Aufgabe: Herleitung)
->
-> Die Masse, die gleichmäßig über die Feder verteilt ist, wird gedanklich in Massenelemente der Größe dm unterteilt. Diese schwingen mit gleicher Frequenz, aber unterschiedlicher Amplitude, die (nur) von der Position x abhängt. Damit gilt:
->
-> (2) $dW = 1/2 \cdot dm \cdot \omega_0^2 A^2(x)$
->
-> Wenn die Masse m deutlich größer ist als die Federmasse, ist die Dehnung pro Windung gleich und die Amplitude wächst dann linear mit der Position x: $(3)A(x) = \frac{x}{l}A$ . Die Masse sei gleichmäßig entlang der Feder verteilt. Bezeichnet man mit $\mu$ die Masse pro Längeneinheit ergibt sich: $dm = \mu \cdot dx$ . Damit wird Gleichung (2) zu: d $W = 1/2 \cdot \mu \cdot dx \cdot \omega_0^2 \frac{x^2}{l^2} A^2$
->
-![[Übungen/Übungen-_page_9_Figure_8.jpeg]]
+**Fall 2: Masse Pendelkörper << Federmasse $m_f$**
 
-> [!info] Aufgabenstellung
-> Für die gesamte in der Feder befindlichen Energie gilt dann:
->
-> (4)
 $$
-> [!info] Aufgabenstellung
-> W_F = \frac{1}{2} \frac{\mu L}{3} \omega_0^2 A^2
+\begin{align*}
+\text{Für } m &= 0 \text{ (nur Feder schwingt):} \\
+(m_F)_{\text{eff}} &= \frac{4}{\pi^2} m_F \\
+&\approx 0.405 \cdot m_F \\
+\text{Annahme:} & \quad \text{Schwingungsknoten oben,} \\
+& \quad \text{Schwingungsbauch unten}
+\end{align*}
 $$
-> [!info] Aufgabenstellung
-> (Augabe: Herleitung) und da $\mu L$ die Masse der Feder ist:
-> (5) $W_F = \frac{1}{2} \frac{m_f}{3} \omega_0^2 A^2$
->
-> Die Gesamtenergie setzt sich aus der Energie der Feder und des Pendelkörpers zusammen:
->
-$$
-> [!info] Aufgabenstellung
-> (6)W = \frac{1}{2}\left(m + \frac{m_F}{3}\right)\omega_0^2 A^2
-$$
-
-> [!info] Aufgabenstellung
-> Die Energie der Feder lässt sich auch mit der Federkonstanten D in dieser Form ausdrücken:
->
-$$
-> [!info] Aufgabenstellung
-> (7)W=\frac{1}{2}D\cdot A^2
-$$
-
-> [!info] Aufgabenstellung
-> Daraus folgt (Aufgabe: Nachrechnen):
->
-$$
-\omega_0^2 = D / \left( m + \frac{m_F}{3} \right)
-$$
-
-> [!info] Aufgabenstellung
-> Mit $\omega_0 = 2\pi / T$ ergibt sich:
-> (8) $T = 2\pi \sqrt{\frac{m + \frac{1}{3} \cdot m_f}{D}}$
->
-> Im Fall einer sehr kleinen Federmasse geht sie also mit einem Drittel ihres Wertes in Die Schwingungsdauer ein.
->
-> Fall 2: Masse Pendelkörper <<Federmasse $m_f$ Für den Fall m=0 lässt sich zeigen, dass die effektive Masse gegeben ist durch $(m_F)_{eff} = \frac{4}{\pi^2} \cdot m_F \approx 0.405 ...$ (Annahme: Schwingungsknoten am oberen Ende, Schwingungsbauch am unteren Ende)
->
-> Quelle: http://theissenonline.de/Physik/Federpendel\_Effektive\_Federmasse.pdf
->
 
 ## Optik (AB6)
 
@@ -1010,32 +1608,11 @@ Damit eine Sammellinse ein **vergrößertes, reelles Bild** auf einem Schirm erz
 \end{document}
 ```
 
-> [!abstract] Erklärung zur Sammellinse
-> Um ein Bild auf einem **Schirm** zu sehen, muss es **reell** sein. Das bedeutet, die Lichtstrahlen müssen sich hinter der Linse tatsächlich in einem Punkt treffen.
->
-> Hier ist die einfache Logik dahinter:
->
-> **1. Warum muss der Gegenstand dort stehen?**
+> [!abstract] Warum muss der Gegenstand dort stehen?
 > Es gibt bei einer Sammellinse (Konvexlinse) drei wichtige Bereiche für den Gegenstand:
 > * **Weit weg ($g > 2f$):** Das Bild wird klein (wie bei einer Kamera oder im Auge).
 > * **Sehr nah ($g < f$):** Das Bild wird riesig, aber **virtuell**. Man kann es nur *durch* die Linse sehen (wie bei einer Lupe), aber nicht auf eine Wand projizieren.
 > * **Dazwischen ($f < g < 2f$):** Das ist unser Fall! Hier wird das Bild **größer als das Original** und bleibt **reell** (projektionsfähig).
->
-> **2. Die drei Strahlen in der Zeichnung**
-> Um zu zeigen, wo das Bild entsteht, nutzt man drei Standard-Strahlen, die vom Kopf des Gegenstands ausgehen:
-> 1. **Parallelstrahl (rot):** Läuft gerade zur Linse und wird dort so gebrochen, dass er auf der anderen Seite genau durch den **Brennpunkt** geht.
-> 2. **Mittelpunktstrahl (grün):** Läuft genau durch die Mitte der Linse. Da die Linse dort "flach" wirkt, geht dieser Strahl einfach schnurgerade weiter.
-> 3. **Brennpunktstrahl (orange):** Läuft erst durch den vorderen Brennpunkt zur Linse und wird dort so gebrochen, dass er danach **parallel** zur Achse weiterläuft.
->
-> **Das Ergebnis:** Dort, wo sich diese drei Strahlen hinter der Linse kreuzen, entsteht das Bild. In diesem Fall ist es weiter entfernt (Bildweite > $2f$) und deutlich größer als der ursprüngliche Gegenstand.
->
-> **Zusammenfassung der Begriffe:**
-> * **Gegenstandsweite ($g$):** Abstand vom Ding zur Linse.
-> * **Bildweite ($b$):** Abstand von der Linse zum Schirm.
-> * **Brennpunkt ($f$):** Der Punkt, an dem die Linse paralleles Licht sammelt.
-> * **Reell:** "Echt" – die Strahlen treffen sich wirklich (Schirm-tauglich).
-> * **Umgekehrt:** Das Bild steht auf dem Kopf (sieht man in der Grafik an der Pfeilspitze, die nach unten zeigt).
-
 
 ### Aufgabe 2: Dünne Linsen
 
@@ -1079,28 +1656,37 @@ Damit eine Sammellinse ein **vergrößertes, reelles Bild** auf einem Schirm erz
 \end{document}
 ```
 
-**1. Gegeben und Gesucht:**
-- Brennweite $f = 120 \text{ mm} = 0,12 \text{ m}$
-- Bildweite $b = 2,5 \text{ m}$ (Abstand zum Schirm)
-- Gegenstandsgröße $G = 6,0 \text{ cm} = 0,06 \text{ m}$
-- Gesucht: Bildgröße $B$
+| | Größe | Symbol | Wert |
+|---|---|---|---|
+| Gegeben | Brennweite | `f` | `0.12` m |
+| | Bildweite | `b` | `2.5` m |
+| | Gegenstandsgröße | `G` | `0.06` m |
+| Gesucht | Bildgröße | `B` | |
 
-**2. Gegenstandsweite $g$ berechnen:**
-Mit der Abbildungsgleichung $\frac{1}{f} = \frac{1}{g} + \frac{1}{b}$ stellen wir nach $\frac{1}{g}$ um:
-$$\frac{1}{g} = \frac{1}{f} - \frac{1}{b}$$
-$$\frac{1}{g} = \frac{1}{0,12 \text{ m}} - \frac{1}{2,5 \text{ m}} \approx 8,333 \text{ m}^{-1} - 0,4 \text{ m}^{-1} = 7,933 \text{ m}^{-1}$$
-$$g = \frac{1}{7,933 \text{ m}^{-1}} \approx 0,126 \text{ m} = 126 \text{ mm}$$
+$$
+\begin{align*}
+\text{Gegeben:} \\
+G &= 0.06 \text{ m} \\
+b &= 2.5 \text{ m} \\
+f &= 0.12 \text{ m} \\
+\text{Weg:} \\
+g &= \frac{1}{\frac{1}{f}-\frac{1}{b}} \\
+&= \frac{1}{\frac{1}{0.12}-\frac{1}{2.5}} \\
+&= 0.1261 \text{ m} \\
+V &= \frac{b}{g} \\
+&= \frac{2.5}{0.1261} \\
+&= 19.83 \\
+B &= V \cdot G \\
+&= 19.83 \cdot 0.06 \\
+&= 1.19 \text{ m} \\
+\text{ERG:} \quad B &= 1.19 \text{ m}
+\end{align*}
+$$
 
-**3. Abbildungsmaßstab $A$ und Bildgröße $B$ berechnen:**
-Der Abbildungsmaßstab ergibt sich aus dem Verhältnis von Bild- zu Gegenstandsweite:
-$$A = \frac{b}{g} = \frac{2,5 \text{ m}}{0,126 \text{ m}} \approx 19,84$$
-Das Bild ist also fast 20-mal so groß wie das Original.
-
-Die Bildgröße $B$ berechnet sich nun durch:
-$$B = G \cdot A = 6,0 \text{ cm} \cdot 19,84 \approx 119 \text{ cm} = 1,19 \text{ m}$$
-
-**Ergebnis:**
 Das Bild auf der Projektionswand hat die Abmessungen **$1,19 \text{ m} \times 1,19 \text{ m}$**.
+
+$g$ = Gegenstandsweite (Abstand Gegenstand–Linse)
+$V$ = Vergrößerung (Verhältnis Bildweite zu Gegenstandsweite)
 
 
 ### Aufgabe 3: Brechung
@@ -1145,22 +1731,32 @@ Das Bild auf der Projektionswand hat die Abmessungen **$1,19 \text{ m} \times 1,
 \end{document}
 ```
 
-**1. Reflexionswinkel $\alpha'$ bestimmen:**
-Nach dem Reflexionsgesetz ist der Einfallswinkel gleich dem Reflexionswinkel:
-$$\alpha' = \alpha = 55^\circ$$
+| | Größe | Symbol | Wert |
+|---|---|---|---|
+| Gegeben | Brechungsidx1 (Luft) | `n1` | `1` |
+| | Brechungsidx2 | `n2` | `1.5` |
+| | Einfallswinkel | `alpha` | `55` deg |
+| Gesucht | Brechungswinkel | `beta` | |
 
-**2. Brechungswinkel $\beta$ berechnen:**
-Wir nutzen das Brechungsgesetz von Snellius ($n_1 \cdot \sin \alpha = n_2 \cdot \sin \beta$). Wir nehmen Luft als erstes Medium an ($n_1 \approx 1,0$):
-$$1,0 \cdot \sin(55^\circ) = 1,5 \cdot \sin(\beta)$$
-$$\sin(\beta) = \frac{\sin(55^\circ)}{1,5} \approx \frac{0,8192}{1,5} \approx 0,5461$$
-$$\beta = \arcsin(0,5461) \approx 33,1^\circ$$
+$$
+\begin{align*}
+\text{Gegeben:} \\
+\alpha &= 55 \text{ deg} \\
+n_1 &= 1 \\
+n_2 &= 1.5 \\
+\text{Weg:} \\
+\beta &= \arcsin\left(\frac{n_1}{n_2}\sin(\alpha)\right) \\
+&= \arcsin\left(\frac{1}{1.5}\sin(55^\circ)\right) \\
+&= 33.1 \text{ deg} \\
+\text{ERG:} \quad \beta &= 33.1 \text{ deg}
+\end{align*}
+$$
 
-**3. Winkel $\gamma$ zwischen den Strahlen berechnen:**
-Der reflektierte Strahl befindet sich oberhalb der Grenzfläche (Winkel $\alpha'$ zum Lot), der gebrochene Strahl unterhalb (Winkel $\beta$ zum Lot). Da das Lot eine gerade Linie (180°) bildet, berechnet sich der Winkel dazwischen wie folgt:
-$$\gamma = 180^\circ - \alpha' - \beta$$
-$$\gamma = 180^\circ - 55^\circ - 33,1^\circ = 91,9^\circ$$
+Reflexionswinkel nach dem Reflexionsgesetz: $\alpha' = \alpha = 55^\circ$. Der gesuchte Winkel $\gamma$ zwischen reflektiertem und gebrochenem Strahl ergibt sich, da das Lot eine gerade Linie (180°) bildet:
+$$\gamma = 180^\circ - \alpha' - \beta = 180^\circ - 55^\circ - 33,1^\circ = 91,9^\circ$$
 
-**Ergebnis:**
+$\alpha'$ = Reflexionswinkel
+
 Der Winkel zwischen dem reflektierten und dem gebrochenen Strahl beträgt **$91,9^\circ$**.
 
 
@@ -1187,17 +1783,33 @@ Ein Lichtstrahl trifft unter dem Einfallswinkel $\alpha$ auf eine Parallelplatte
 
 **b) Berechnung für die gegebenen Werte**
 
-Gegeben: $d = 6\text{ mm}$, $\alpha = 40^\circ$, $n = 1,5$ (Annahme: $n_{Luft} \approx 1,0$)
+| | Größe | Symbol | Wert |
+|---|---|---|---|
+| Gegeben | Dicke der Platte | `d` | `6mm` |
+| | Einfallswinkel | `alpha` | `40` deg |
+| | Brechungsidx1 (Luft) | `n1` | `1` |
+| | Brechungsidx2 | `n2` | `1.5` |
+| Gesucht | Querverschiebung | `q` | |
 
-1. **Brechungswinkel $\beta$ bestimmen (Snellius):**
-   $$n_1 \cdot \sin(\alpha) = n_2 \cdot \sin(\beta)$$
-   $$1,0 \cdot \sin(40^\circ) = 1,5 \cdot \sin(\beta)$$
-   $$\sin(\beta) = \frac{\sin(40^\circ)}{1,5} \approx \frac{0,6428}{1,5} \approx 0,4285$$
-   $$\beta = \arcsin(0,4285) \approx 25,37^\circ$$
+$$
+\begin{align*}
+\text{Gegeben:} \\
+\alpha &= 40 \text{ deg} \\
+d &= 0.006 \text{ m} \\
+n_1 &= 1 \\
+n_2 &= 1.5 \\
+\text{Weg:} \\
+\beta &= \arcsin\left(\frac{n_1}{n_2}\sin(\alpha)\right) \\
+&= \arcsin\left(\frac{1}{1.5}\sin(40^\circ)\right) \\
+&= 25.37 \text{ deg} \\
+q &= d \cdot \frac{\sin(\alpha-\beta)}{\cos(\beta)} \\
+&= 0.006 \cdot \frac{\sin(40^\circ-25.37^\circ)}{\cos(25.37^\circ)} \\
+&= 0.001677 \text{ m} \\
+\text{ERG:} \quad q &= 0.001677 \text{ m}
+\end{align*}
+$$
 
-2. **Querverschiebung $q$ berechnen:**
-   $$q = 6\text{ mm} \cdot \frac{\sin(40^\circ - 25,37^\circ)}{\cos(25,37^\circ)}$$
-   $$q = 6\text{ mm} \cdot \frac{\sin(14,63^\circ)}{\cos(25,37^\circ)} \approx 6 \cdot \frac{0,2526}{0,9036} \approx 1,68\text{ mm}$$
+$\beta$ = Brechungswinkel
 
 Die Querverschiebung beträgt ca. **$1,68\text{ mm}$**.
 
@@ -1208,8 +1820,35 @@ Die Querverschiebung beträgt ca. **$1,68\text{ mm}$**.
 > [!info] Aufgabenstellung
 > Die Empfindlichkeitsschwelle des menschlichen Auges liegt im günstigsten Fall bei etwa 100 Photonen/s. Das Auge ist bei einer Wellenlänge von etwa 550 nm am empfindlichsten. Welche minimale Lichtleistung kann das Auge demnach detektieren?
 
-
 ![[Übungen/Übungen-_page_10_Figure_10.jpeg]]
+
+| | Größe | Symbol | Wert |
+|---|---|---|---|
+| Gegeben | Wellenlänge | `lam` | `550nm` |
+| | Photonenrate | `Nph` | `100` 1/s |
+| Gesucht | Lichtleistung | `P` | |
+
+$$
+\begin{align*}
+\text{Gegeben:} \\
+N_{\text{ph}} &= 100 \text{ 1/s} \\
+\lambda &= 0.00000055 \text{ m} \\
+\text{Weg:} \\
+\nu &= \frac{c}{\lambda} \\
+&= \frac{299800000}{0.00000055} \\
+&= 545090909090909 \text{ Hz} \\
+E_{\text{ph}} &= h \cdot \nu \\
+&= 0.0000000000000000000000000000000006626 \cdot 545090909090909 \\
+&= 0.0000000000000000003612 \text{ J} \\
+P &= N_{\text{ph}} \cdot E_{\text{ph}} \\
+&= 100 \cdot 0.0000000000000000003612 \\
+&= 0.00000000000000003612 \text{ W} \\
+\text{ERG:} \quad P &= 0.00000000000000003612 \text{ W}
+\end{align*}
+$$
+
+$\nu$ = Frequenz des Lichts
+$E_{\text{ph}}$ = Energie eines Photons
 
 ## Elektrotechnik (AB7)
 
