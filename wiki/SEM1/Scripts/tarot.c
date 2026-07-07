@@ -7,6 +7,7 @@
 void shuffleDeck(char deck[78][MAX]) {
     for (int i = 77; i > 0; i--) {
         int j = rand() % (i + 1);
+        if (j == i) continue;
         char temp[MAX];
         strcpy(temp, deck[i]);
         strcpy(deck[i], deck[j]);
@@ -18,7 +19,7 @@ int main() {
     srand(time(NULL));
 
     char deck[78][MAX], input[MAX];
-    FILE *file = fopen("C:\\Users\\karlk\\Dokumente\\DHSN\\dhsn-notes\\SEM1\\Scripts\\Files\\tarot.txt", "r");
+    FILE *file = fopen("Files/tarot.txt", "r");
     if (file == NULL) {
         printf("Datei konnte nicht geoeffnet werden!\n");
         return 1;

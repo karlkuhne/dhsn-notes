@@ -9,4 +9,4 @@
 
 ## Übungen
 
-- [[Aufgaben Druckvorstufe]]
+- [[wiki/SEM2/🖼️ BILD/Übungen]]

@@ -1252,33 +1252,7 @@ $$
 >
 Zur Kontrolle: a) $J_{ges} = 6{,}3125 \cdot 10^{-6}$ kg · m<sup>2</sup>b) $v \approx 1{,}3\frac{\text{m}}{\text{s}}$ ; $n \approx 2530 \frac{1}{\text{min}}$
 
-```tikz
-\begin{document}
-\begin{tikzpicture}
-
-  \draw[thick] (2,0) arc[start angle=0, end angle=360, radius=2];
-
-  \draw[thick] (0,0) -- (1.4,1.4);
-
-  \node[above left] at (0.7,0.7) {$R_s$};
-
-  \draw[thick] (0.4,0) arc[start angle=0, end angle=360, radius=0.4];
-
-  \draw[thick] (0,0) -- (0,-0.4);
-
-  \node[right] at (0.1,-0.2) {$R_A$};
-
-  \draw[thick] (0.4,0) -- (0.4,4);
-
-  \node[above] at (0.4,4.2) {Fixpunkt};
-
-  \draw[thick] (0.8,0) -- (0.8,4);
-
-  \node[right] at (0.8,2) {$L = 1$ m};
-
-\end{tikzpicture}
-\end{document}
-```
+![[Übungsaufgaben-1783424391776.webp]]
 
 **a) Trägheitsmoment**
 
@@ -1376,33 +1350,7 @@ $\omega$ = Winkelgeschwindigkeit
 
 **Lösung: Mindmap der Begriffe**
 
-```markmap
----
-markmap:
-  height: 400
----
-# Physikalische Grundbegriffe
-## Energie (E)
-- Fähigkeit, Arbeit zu verrichten
-- Einheit: Joule [J]
-- **Höhenenergie** ($E_{pot} = m \cdot g \cdot h$)
-- **kinetische Energie** ($E_{kin} = \frac{1}{2} m \cdot v^2$)
-- Energieerhaltungssatz
-## Arbeit (W)
-- $W = F \cdot s$ (Kraft $\cdot$ Weg)
-- Prozess der Energieumwandlung
-- Einheit: Joule [J]
-## Leistung (P)
-- $P = \frac{W}{t}$ (Arbeit pro Zeit)
-- Einheit: Watt [W]
-## Dynamik (Kraft & Masse)
-- **Kraft** ($F = m \cdot a$)
-- **Masse** (Trägheit eines Körpers)
-- **Beschleunigung** (Wirkung einer Kraft)
-## Kinematik (Bewegung)
-- **Geschwindigkeit** ($v = \frac{s}{t}$)
-- **Beschleunigung** ($a = \frac{\Delta v}{\Delta t}$)
-```
+![[Übungsaufgaben-1783424669139.webp]]
 
 **Physikalische Korrektur der Aussagen:**
 
@@ -1662,46 +1610,7 @@ Damit eine Sammellinse ein **vergrößertes, reelles Bild** auf einem Schirm erz
 - **Bildart:** Reell (kann auf Schirm aufgefangen werden), umgekehrt/seitenverkehrt und vergrößert.
 - **Bildort:** Jenseits der doppelten Brennweite auf der anderen Linsenseite ($b > 2f$).
 
-```tikz
-\begin{document}
-\begin{tikzpicture}[scale=0.8, font=\small]
-  % Optische Achse
-  \draw[->] (-5,0) -- (8,0) node[right] {opt. Achse};
-  
-  % Linse (Symbolisch als Doppelpfeil)
-  \draw[thick, <->] (0,-3) -- (0,3) node[above] {Sammellinse};
-  
-  % Brennpunkte markieren
-  \filldraw (-2,0) circle (2pt) node[below] {f};
-  \filldraw (2,0) circle (2pt) node[below] {f'};
-  \filldraw (-4,0) circle (2pt) node[below] {2 f};
-  \filldraw (4,0) circle (2pt) node[below] {2 f'};
-  
-  % Gegenstand (zwischen F und 2F)
-  % g = 3, f = 2 -> b = 6
-  \draw[thick, ->, blue] (-3,0) -- (-3,1.5) node[above] {Gegenstand};
-  
-  % Strahlenverlauf
-  % 1. Parallelstrahl wird zum Brennpunktstrahl
-  \draw[red] (-3,1.5) -- (0,1.5);
-  \draw[red, ->] (0,1.5) -- (6,-3);
-  
-  % 2. Mittelpunktstrahl (geht ungebrochen durch)
-  \draw[green!60!black, ->] (-3,1.5) -- (6,-3);
-  
-  % 3. Brennpunktstrahl wird zum Parallelstrahl
-  \draw[orange] (-3,1.5) -- (0,-3);
-  \draw[orange, ->] (0,-3) -- (6,-3);
-  
-  % Bild
-  \draw[thick, ->, blue] (6,0) -- (6,-3) node[below] {Bild};
-  
-  % Abstände markieren
-  \draw[|<->|] (-3,-0.8) -- (0,-0.8) node[midway, fill=white] {Gegenstandsweite};
-  \draw[|<->|] (0,-0.8) -- (6,-0.8) node[midway, fill=white] {Bildweite};
-\end{tikzpicture}
-\end{document}
-```
+![[Übungsaufgaben-1783424414369.webp]]
 
 > [!abstract] Warum muss der Gegenstand dort stehen?
 > Es gibt bei einer Sammellinse (Konvexlinse) drei wichtige Bereiche für den Gegenstand:
@@ -1716,40 +1625,7 @@ Damit eine Sammellinse ein **vergrößertes, reelles Bild** auf einem Schirm erz
 
 **Skizze des Aufbaus:**
 
-```tikz
-\begin{document}
-\begin{tikzpicture}[scale=0.8, font=\small]
-  % Optische Achse
-  \draw[->] (-4,0) -- (8,0) node[right] {opt. Achse};
-  
-  % Linse
-  \draw[thick, <->] (0,-2.5) -- (0,2.5) node[above] {Linse};
-  
-  % Brennpunkte
-  \filldraw (-2,0) circle (1.5pt) node[below] {$F$};
-  \filldraw (2,0) circle (1.5pt) node[below] {$F'$};
-  
-  % Gegenstand (Dia)
-  \draw[thick, ->, blue] (-2.8,0) -- (-2.8,1) node[above] {Dia ($G$)};
-  
-  % Bild (Projektionswand)
-  \draw[thick, ->, red] (7,0) -- (7,-2.5) node[below] {Bild ($B$)};
-  
-  % Hilfslinien für Abstände
-  \draw[|<->|] (-2.8, 2.8) -- (0, 2.8) node[midway, fill=white] {Gegenstandsweite $g$};
-  \draw[|<->|] (0, 2.8) -- (7, 2.8) node[midway, fill=white] {Bildweite $b$};
-  \draw[|<->|] (0, -0.8) -- (2, -0.8) node[midway, below] {120 mm};
-  
-  % Strahlen (physikalisch korrekt für f=2, g=2.8 -> b=7)
-  % 1. Parallelstrahl -> Brennpunktstrahl
-  \draw[gray, dashed] (-2.8,1) -- (0,1) -- (7,-2.5);
-  % 2. Mittelpunktstrahl
-  \draw[gray, dashed] (-2.8,1) -- (0,0) -- (7,-2.5);
-  % 3. Brennpunktstrahl -> Parallelstrahl
-  \draw[gray, dashed] (-2.8,1) -- (-2,0) -- (0,-2.5) -- (7,-2.5);
-\end{tikzpicture}
-\end{document}
-```
+![[Übungsaufgaben-1783424462712.webp]]
 
 | | Größe | Symbol | Wert |
 |---|---|---|---|
@@ -1789,42 +1665,7 @@ $V$ = Vergrößerung (Verhältnis Bildweite zu Gegenstandsweite)
 > [!info] Aufgabenstellung
 > Der Einfallswinkel eines Lichtstrahls auf eine ebene Grenzfläche beträgt 55°. Wie groß ist der Winkel zwischen dem reflektierten und dem gebrochenen Strahl, wenn die Brechzahl $n = 1,5$ ist?
 
-
-```tikz
-\begin{document}
-\begin{tikzpicture}[scale=1.5, font=\small]
-  % Grenzfläche
-  \fill[blue!10] (-2,-2) rectangle (2,0);
-  \draw[thick] (-2,0) -- (2,0) node[right] {Grenzfläche ($n=1,5$)};
-  
-  % Lot
-  \draw[dashed] (0,-2) -- (0,1.5) node[above] {Lot};
-  
-  % Einfallender Strahl (alpha = 55°)
-  % In TikZ sind 0° rechts, also ist 90° das Lot. 90 + 55 = 145
-  \draw[red, thick, ->] (145:2) -- (0,0);
-  \draw (0,0.5) arc[start angle=90, end angle=145, radius=0.5];
-  \node at (117:0.7) {$\alpha = 55^\circ$};
-  
-  % Reflektierter Strahl (alpha' = 55°)
-  % 90 - 55 = 35
-  \draw[orange, thick, ->] (0,0) -- (35:2);
-  \draw (0,0.5) arc[start angle=90, end angle=35, radius=0.5];
-  \node at (63:0.7) {$\alpha' = 55^\circ$};
-  
-  % Gebrochener Strahl (beta approx 33°)
-  % Im Medium: Lot ist nach unten (270°). 270 - 33 = 237
-  \draw[green!60!black, thick, ->] (0,0) -- (237:1.5);
-  \draw (0,-0.5) arc[start angle=270, end angle=237, radius=0.5];
-  \node at (253:0.8) {$\beta \approx 33^\circ$};
-  
-  % Gesuchter Winkel gamma
-  \draw[<->, thick, purple] (35:1.2) arc[start angle=35, end angle=-123, radius=1.2];
-  \node[purple, right] at (-10:1.3) {gesuchter Winkel $\gamma$};
-
-\end{tikzpicture}
-\end{document}
-```
+![[Übungsaufgaben-1783424488462.webp]]
 
 | | Größe | Symbol | Wert |
 |---|---|---|---|

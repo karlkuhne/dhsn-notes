@@ -12,9 +12,6 @@ updated: 2026-07-03
 
 # Aufgaben zur Druckvorstufe
 
-> [!info] Theoretische Grundlagen zu diesem Thema: [[4. Preprint]]
-> Verwandte Grundlagen zu Histogramm, Bit-/Farbtiefe: [[6. Histogramme]], [[1. Digitale Bilder Grundbegriffe]] (BIDRU)
-
 ## 1. Scan
 
 ### 1.1 Basis
@@ -45,7 +42,6 @@ Scanner erfassen Licht additiv über RGB-Sensoren – das ist ihr natives Farbmo
 
 ### 1.2 Mittel
 
-
 **(6) Unterschied interpolierte vs. optische Auflösung?**
 
 - **Optische Auflösung:** durch die Sensorhardware physisch gemessene Auflösung (reale Bildinformation).
@@ -73,7 +69,6 @@ Ein **ICC-Profil** beschreibt, wie die Farbwerte des Scanners in einen geräteun
 
 ### 1.3 Fortgeschritten
 
-
 **(11) Warum ist hohe Bit-Tiefe relevant?**
 
 Höhere Bit-Tiefe (z.B. 16 statt 8 Bit/Kanal) speichert mehr Abstufungen pro Farbkanal. Das reduziert **Tonwertabrisse (Banding)** bei nachträglichen Korrekturen (Gradation, Farbkonvertierung) erheblich, da Rechenungenauigkeiten mehr "Puffer" an Zwischenwerten haben.
@@ -99,12 +94,9 @@ Ein direkter CMYK-Scan legt die Farbwandlung (Scanner-spezifisch, meist qualitat
 
 Die Bildauflösung muss ausreichend hoch relativ zur Rasterweite des Druckverfahrens sein (Faustregel: Scan-ppi ≈ 1,5–2× Rasterweite in L/cm, umgerechnet in ppi), damit beim Rasterprozess (Umwandlung in Halbtonpunkte) genügend echte Bildinformation pro Rasterzelle vorhanden ist. Ist die Auflösung zu gering, wirkt der Druck grob oder matschig; ist sie unnötig hoch, wächst nur die Dateigröße ohne sichtbaren Qualitätsgewinn.
 
+
 ## 2. Retusche
-
-> [!info] Theoretische Grundlagen zu diesem Abschnitt: [[4. Preprint#4.2 Retusche|Retusche]]
-
 ### 2.1 Basis
-
 
 **(16) Was ist destruktive Retusche?**
 
@@ -132,7 +124,6 @@ JPEG verwendet eine **verlustbehaftete Kompression**. Bei wiederholtem Öffnen, 
 
 ### 2.2 Mittel
 
-
 **(21) Mit welchen Hauptkomponenten arbeitet non-destruktive Retusche?**
 
 **Ebenen** (Layers), **Einstellungsebenen** (Adjustment Layers), **Ebenenmasken** und **Smart-Objekte**. Die Bearbeitung erfolgt auf separaten Ebenen oberhalb des Originals, sodass das ursprüngliche Bildmaterial unverändert erhalten bleibt und Schritte jederzeit reversibel sind.
@@ -159,7 +150,6 @@ Bei der **Produktretusche** steht die möglichst exakte, fehlerfreie und oft "pe
 
 ### 2.3 Fortgeschritten
 
-
 **(26) Was sind Risiken starker Retusche?**
 
 Unnatürlich wirkende, "überglättete" Ergebnisse, Verlust von Authentizität und Wiedererkennbarkeit, ethische/rechtliche Probleme bei Bildmanipulation (siehe [[4. Preprint#4.2.2 Beispiel 1: Sowjetische Propaganda|Fotomanipulation]]) sowie technische Artefakte (Halo-Effekte, Texturverlust, sichtbare Retuschekanten).
@@ -184,12 +174,10 @@ Bei großflächigen, strukturierten oder perspektivisch/beleuchtungstechnisch ko
 
 Verlust von feiner Textur und Detailzeichnung, ein "wächserner"/künstlicher Bildeindruck, sowie im Druck ein Verlust an wahrgenommener Schärfe, da feine Hochfrequenzanteile fehlen, die das Auge als Detailschärfe interpretiert.
 
+
 ## 3. Satzherstellung
 
-> [!info] Theoretische Grundlagen zu diesem Abschnitt: [[4. Preprint#4.3 Satzherstellung|Satzherstellung]]
-
 ### 3.1 Basis
-
 
 **(31) Was ist Flattersatz?**
 
@@ -216,7 +204,6 @@ Ziffern in einheitlicher Höhe, die auf der Grundlinie stehen und die Höhe der 
 Ein plattformübergreifendes, von Adobe und Microsoft entwickeltes Schriftartenformat, das umfangreiche typografische Funktionen (Ligaturen, alternative Zeichensätze, Versal-/Mediävalziffern, Sonderzeichen) in einer einzigen Schriftdatei bündeln kann.
 
 ### 3.2 Mittel
-
 
 **(36) Was ist die Laufweite?**
 
@@ -250,7 +237,6 @@ Silbentrennung verhindert zu große Wortzwischenräume im Blocksatz bzw. zu unru
 
 ### 3.3 Fortgeschritten
 
-
 **(42) Warum ist Mikrotypografie wichtig?**
 
 Mikrotypografie (feine Details wie Unterschneidung, Laufweite, korrekte Anführungszeichen/Gedankenstriche, optischer Randausgleich) beeinflusst maßgeblich die Lesbarkeit und die professionelle Wirkung eines Satzes, auch wenn die einzelnen Korrekturen für sich genommen kaum bewusst wahrgenommen werden.
@@ -270,12 +256,10 @@ Die Schriftwahl beeinflusst Lesbarkeit, Textlänge (Laufweite pro Zeichen), Anmu
 
 Print-Satz erfolgt für ein fixes, hochauflösendes Ausgabemedium mit exakter WYSIWYG-Kontrolle über jedes Zeichen, während Websatz responsiv auf unterschiedliche Bildschirmgrößen/-auflösungen reagieren muss und typografische Details oft eingeschränkter kontrollierbar sind. Die **Unterschneidung (Kerning)** ist wichtig, weil bestimmte Zeichenpaare (z.B. "AV", "To") ohne Anpassung optisch zu große oder zu kleine Abstände aufweisen würden, was das Satzbild unruhig und unprofessionell wirken lässt.
 
+
 ## 4. Layouten
 
-> [!info] Theoretische Grundlagen zu diesem Abschnitt: [[4. Preprint#4.4 Layouten|Layouten]]
-
 ### 4.1 Basis
-
 
 **(46) Was ist das Gestaltungsraster?**
 
@@ -303,7 +287,6 @@ Farben lösen beim Betrachter unbewusste emotionale Assoziationen und Erwartunge
 
 ### 4.2 Mittel
 
-
 **(51) Was ist der Unterschied zwischen Raster und freiem Layout?**
 
 Ein **Rasterlayout** ordnet Elemente streng nach einem vordefinierten Spalten-/Zeilenraster – konsistent, gut lesbar, effizient für serielle Publikationen. Ein **freies Layout** verzichtet auf ein starres Gerüst und platziert Elemente gestalterisch frei, was mehr kreativen Ausdruck erlaubt, aber Konsistenz und Wiederverwendbarkeit erschwert.
@@ -330,7 +313,6 @@ Sie legt fest, ob Bild oder Text die primäre Aussage transportiert und in welch
 
 ### 4.3 Fortgeschritten
 
-
 **(56) Was ist Layoutanpassung für Formate?**
 
 Die Anpassung eines bestehenden Layouts (Proportionen, Elementgrößen, Bild-/Textanordnung) an unterschiedliche Ausgabeformate (z.B. Hochformat/Querformat, Print/Web, unterschiedliche Papierformate), ohne die gestalterische Grundidee und Lesbarkeit zu verlieren.
@@ -355,10 +337,8 @@ Weißraum erhöht die wahrgenommene Wertigkeit und Übersichtlichkeit eines Layo
 
 Sie sichert visuelle Konsistenz über mehrere Seiten/Ausgaben hinweg, erleichtert die Wiederverwendung von Layoutvorlagen, unterstützt eine klare Bild-Text-Hierarchie und beschleunigt die redaktionelle Produktion, da Positionen nicht jedes Mal neu definiert werden müssen.
 
+
 ## 5. Ausschießen
-
-> [!info] Theoretische Grundlagen zu diesem Abschnitt: [[4. Preprint#4.5 Ausschießen|Ausschießen]]
-
 ### 5.1 Basis
 
 
@@ -379,7 +359,7 @@ Die Kante eines Druckbogens/Buches, an der die einzelnen Lagen/Seiten miteinande
 
 **(64) Was ist der Beschnitt?**
 
-Der Rand um den eigentlichen Inhaltsbereich, der bewusst über das spätere Endformat hinausgedruckt und nach dem Druck weggeschnitten wird, um randlosen Druck ohne weiße Blitzer am Seitenrand zu ermöglichen.
+Der Rand um den eigentlichen Inhaltsbereich, der bewusst über das spätere Endformat hinausgedruckt wird.
 
 
 **(65) Warum ist die Laufrichtung wichtig?**
@@ -387,7 +367,6 @@ Der Rand um den eigentlichen Inhaltsbereich, der bewusst über das spätere Endf
 Die Papierlaufrichtung (Faserrichtung) beeinflusst die Stabilität, das Falzverhalten und die Planlage des fertigen Produkts. Falsche Laufrichtung führt zu Wellenbildung, schlechteren Falzkanten (Rupfen der Fasern) und Passungenauigkeiten bei mehrseitigen Produkten.
 
 ### 5.2 Mittel
-
 
 **(66) Was ist ein "16-Seiter"?**
 
@@ -412,10 +391,9 @@ Die Bogen-/Seitennummerierung (inkl. Kollationiermarken) stellt sicher, dass Fal
 
 **(70) Was ist der Industriestandard unter den Softwares für das Ausschießen?**
 
-**Kodak Preps** (bzw. dessen Nachfolger) gilt als weit verbreiteter Industriestandard für professionelle Ausschieß-Software in Druckereien.
+InDesign gilt als weit verbreiteter Industriestandard für professionelle Ausschieß-Software in Druckereien.
 
 ### 5.3 Fortgeschritten
-
 
 **(71) Welcher Hauptfehler entsteht bei falschem Ausschießen?**
 
@@ -441,16 +419,13 @@ Die gewählte Bindeart (Rückstichbindung, Klebebindung, Fadenheftung) bestimmt 
 
 Sie beeinflusst maßgeblich die Planlage, das Falzverhalten (glatte vs. rissige Falzkante) und die mechanische Stabilität gebundener Produkte – falsche Laufrichtung im Verhältnis zum Falz bzw. zur Bindekante kann zu Verzug und schlechter Haltbarkeit führen.
 
+
 ## 6. Druckvorlage
-
-> [!info] Theoretische Grundlagen zu diesem Abschnitt: [[4. Preprint#4.6 Druckvorlage|Druckvorlage]]
-
 ### 6.1 Basis
-
 
 **(76) Was ist PDF/X?**
 
-Ein genormtes Subset des PDF-Formats speziell für den professionellen Druckdatenaustausch. PDF/X schreibt bestimmte Anforderungen vor (z.B. eingebettete Schriften, definierte Farbräume, keine unzulässigen Transparenzen), um eine verlässliche, geräteunabhängige Druckvorlage sicherzustellen.
+Ein genormtes Subset des PDF-Formats speziell für den professionellen Druckdatenaustausch. PDF/X schreibt bestimmte Anforderungen vor (z.B. eingebettete Schriften, definierte Farbräume, keine unzulässigen Daten), um eine verlässliche, geräteunabhängige Druckvorlage sicherzustellen.
 
 
 **(77) Wo werden RGB und CMYK verwendet?**
@@ -474,7 +449,6 @@ Der über das Endformat hinausragende Bereich eines Layouts (typischerweise 3 mm
 Eine automatisierte Prüfung der Druckdatei vor der Produktion auf technische Fehler (fehlende Schriften, falscher Farbraum, zu niedrige Bildauflösung, fehlender Beschnitt, problematische Transparenzen), um Druckfehler frühzeitig zu erkennen und zu korrigieren.
 
 ### 6.2 Mittel
-
 
 **(81) Worin unterscheiden sich die Einsätze von PDF/X-1a und PDF/X-4?**
 
@@ -503,7 +477,6 @@ Native Transparenzen (z.B. Schlagschatten, Ebenendeckkraft) müssen für viele A
 
 ### 6.3 Fortgeschritten
 
-
 **(86) Was sind typische PDF-Fehler?**
 
 Fehlende oder nicht eingebettete Schriften, falscher Farbraum (RGB statt CMYK ohne Profil), zu niedrige Bildauflösung, fehlender oder falsch dimensionierter Anschnitt, ungewollte Transparenzen/Überdruckeneinstellungen sowie falsche Seitenreihenfolge/-größe.
@@ -528,12 +501,9 @@ Sie stellt sicher, dass die finale Druckvorlage technisch korrekt, vollständig 
 
 Der **K-Kanal (Key/Schwarz)** liefert Kontrast und Tiefe im Schattenbereich und ermöglicht reines Schwarz, da eine reine CMY-Mischung praktisch nie ein sauberes, tiefes Schwarz ergibt. **Fettes Schwarz** wird erzeugt, indem zusätzlich zu 100 % K weitere Prozessfarben (z.B. C 40/M 30/Y 30/K 100) beigemischt werden, um ein satteres, deckenderes Schwarz zu erhalten (siehe [[4. Preprint#4.6.2 Druckkontrollstreifen|Druckkontrollstreifen]]).
 
+
 ## 7. Druckform
-
-> [!info] Theoretische Grundlagen zu diesem Abschnitt: [[4. Preprint#4.7 Druckformerstellung|Druckformerstellung]]
-
 ### 7.1 Basis
-
 
 **(91) Was ist eine Druckform?**
 
@@ -560,7 +530,6 @@ Die Umwandlung kontinuierlicher Tonwerte (Halbtöne) eines Bildes in ein Muster 
 Die im Offsetdruck (bzw. Flexo-/Hochdruck) verwendete Druckform, meist aus beschichtetem Aluminium (Offset) oder Fotopolymer (Flexo), auf der die druckenden Bildbereiche durch Belichtung (CTP) chemisch/physikalisch von den nicht-druckenden Bereichen unterschieden werden.
 
 ### 7.2 Mittel
-
 
 **(96) Worin unterscheiden sich Positiv- und Negativplatte?**
 
@@ -589,7 +558,6 @@ Ein direktes Hochdruckverfahren mit flexiblen Fotopolymer- oder Gummidruckformen
 
 ### 7.3 Fortgeschritten
 
-
 **(101) Was sind gängige Fehler bei der Belichtung?**
 
 Falsche Belichtungsdauer/-intensität (zu wenig/zu viel Belichtung führt zu zu dünnen oder zugelaufenen Rasterpunkten), Verunreinigungen der Plattenoberfläche, Fokus-/Justagefehler des Belichters sowie Entwicklungsfehler in der Nachbearbeitung der Platte.
@@ -615,7 +583,12 @@ Qualität und Belichtungsgenauigkeit der Druckform, Register-/Passergenauigkeit,
 
 Da die meisten Druckverfahren keine kontinuierlichen Halbtöne, sondern nur volle Farbdeckung erzeugen können, ist das Raster die technische Grundlage, um durch unterschiedlich große/dichte Druckpunkte den Eindruck von Halbtönen und Farbmischungen (durch Überlagerung mehrerer Rasterwinkel) zu erzeugen.
 
+
 ## 8. Aufgaben zur Prüfungsvorbereitung
+
+>16 Bogen in Klausur mitnehmen, ist relevant
+
+>Passa Marken (schwarz, bunt), warum kann man mit schwarzen trotzdem Farbige erkennen, Nutzen (abhängig von Laufrichtung)
 
 ### 8.1 Allgemeines
 

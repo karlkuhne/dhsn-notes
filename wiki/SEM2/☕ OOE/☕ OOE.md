@@ -9,4 +9,4 @@ Vorlesungsnotizen zur objektorientierten Programmierung in Java: Grundkonzepte d
 
 ## Übungen
 
-- [[Übungen]]
+- [[wiki/SEM2/☕ OOE/Übungen]]

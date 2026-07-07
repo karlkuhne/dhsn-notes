@@ -9,4 +9,4 @@ Naturwissenschaftliche Grundlagen (NATGL)
 - [[3. Elektrotechnik]]
 
 ## Übungen
-- [[wiki/SEM2/🧪 NATGL/Übungen]]
+- [[Übungsaufgaben]]

@@ -4,5 +4,6 @@
   "enabledCssSnippets": [
     "desmos"
   ],
-  "cssTheme": "Based"
+  "cssTheme": "Based",
+  "theme": "obsidian"
 }
