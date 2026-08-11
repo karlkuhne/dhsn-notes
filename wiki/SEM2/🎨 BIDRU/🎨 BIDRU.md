@@ -11,6 +11,7 @@
 - [[7. Homogene Punktoperationen]]
 - [[8. Filter]]
 - [[Aufgaben Bildbearbeitung]]
+- [[Klausurvorbereitung Rechenaufgaben]]
 
 ## Verwandte Themen
 - [[3. Drucktechnik]] (BILD) - Druckverfahren Übersicht

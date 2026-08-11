@@ -6723,6 +6723,14 @@ var CLI_BACKENDS = {
     resumeFlag: "resume --last",
     resumeIsSubcommand: true,
   },
+  grok: {
+    label: "Grok Build",
+    binary: "grok",
+    pathHints: ["~/.grok/bin"],
+    yoloFlag: "--always-approve",
+    resumeFlag: "--continue",
+    resumeIsSubcommand: false,
+  },
   opencode: {
     label: "OpenCode",
     binary: "opencode",
@@ -6801,16 +6809,26 @@ var TerminalView = class extends import_obsidian.ItemView {
     this.workingDir = null;
     // YOLO mode (--dangerously-skip-permissions)
     this.yoloMode = false;
+    // Per-tab CLI provider override. null = follow the default in settings.
+    this.backendKey = null;
+    // The provider this tab actually launched with, pinned at startShell().
+    this.activeBackendKey = null;
+  }
+  getBackendKey() {
+    const key = this.backendKey || this.plugin.pluginData.cliBackend || "claude";
+    return CLI_BACKENDS[key] ? key : "claude";
   }
   getBackend() {
-    const key = this.plugin.pluginData.cliBackend || "claude";
-    return CLI_BACKENDS[key] || CLI_BACKENDS.claude;
+    return CLI_BACKENDS[this.getBackendKey()];
   }
   getViewType() {
     return VIEW_TYPE;
   }
   getDisplayText() {
-    return "Claude";
+    // activeBackendKey is pinned when the shell starts, so changing the default
+    // later doesn't relabel a tab that's still running the old provider.
+    const key = this.activeBackendKey || this.getBackendKey();
+    return CLI_BACKENDS[key].label;
   }
   getIcon() {
     return "bot";
@@ -6827,8 +6845,11 @@ var TerminalView = class extends import_obsidian.ItemView {
     if (state?.continueSession) {
       this.continueSession = state.continueSession;
     }
+    if (state?.backendKey && CLI_BACKENDS[state.backendKey]) {
+      this.backendKey = state.backendKey;
+    }
     // If shell already started, restart with new settings
-    if (this.proc && (state?.workingDir || state?.yoloMode || state?.continueSession)) {
+    if (this.proc && (state?.workingDir || state?.yoloMode || state?.continueSession || state?.backendKey)) {
       this.startShell(this.workingDir, this.yoloMode, this.continueSession);
     }
   }
@@ -6836,10 +6857,30 @@ var TerminalView = class extends import_obsidian.ItemView {
     const state = {};
     if (this.workingDir) state.workingDir = this.workingDir;
     if (this.yoloMode) state.yoloMode = this.yoloMode;
+    // Persisted so a one-off provider tab comes back as that provider on restore
+    if (this.backendKey) state.backendKey = this.backendKey;
     // Don't persist continueSession — it's a one-time action
     return state;
   }
   async onOpen() {
+    // Workspace-restore on startup: the sidebar layout isn't settled yet, and
+    // building xterm now trips Obsidian's `recomputeChildrenDimensions` error in
+    // updateLayout, which tears the view back down (close -> unload throws
+    // "reading 'e'") and can abort app load on Linux. Defer the real init until
+    // onLayoutReady so a persisted terminal reopens on startup without crashing.
+    if (!this.plugin.layoutReady && !this._deferredOpen) {
+      this._deferredOpen = true;
+      this.app.workspace.onLayoutReady(() => {
+        setTimeout(() => {
+          try {
+            this.onOpen();
+          } catch (err) {
+            console.error("[Claude Sidebar] Deferred terminal init failed:", err);
+          }
+        }, 50);
+      });
+      return;
+    }
     try {
       // If terminal is still alive from a prior onOpen, just reattach and focus.
       // Obsidian calls onOpen() each time the view becomes visible; without this
@@ -7227,13 +7268,25 @@ var TerminalView = class extends import_obsidian.ItemView {
     fs.writeFileSync(tempPath, buffer);
     return tempPath;
   }
+  applyFontSize(size) {
+    if (!this.term) return;
+    const next = this.plugin.normalizeFontSize(size);
+    if (this.term.options.fontSize === next) return;
+    this.term.options.fontSize = next;
+    // fit() recalcs cols/rows for the new cell size; onResize notifies the PTY.
+    if (this._fitInProgress) {
+      this._pendingResize = true;
+    } else {
+      this.fit();
+    }
+  }
   initTerminal() {
     if (!this.termHost)
       return;
     this.term = new import_xterm.Terminal({
       cursorBlink: true,
       copyOnSelect: true,
-      fontSize: 13,
+      fontSize: this.plugin.getFontSize(),
       fontFamily: "Menlo, Monaco, 'Cascadia Mono', 'Cascadia Code', Consolas, 'Courier New', 'Microsoft YaHei', 'SimHei', 'PingFang SC', 'Noto Sans CJK SC', 'WenQuanYi Micro Hei', monospace",
       theme: this.getThemeColors(),
       scrollback: 10000,
@@ -7486,6 +7539,35 @@ var TerminalView = class extends import_obsidian.ItemView {
           }
           return true;
         }
+        // Ctrl+Shift+C / Ctrl+Shift+V: standard Linux terminal copy/paste (GNOME Terminal,
+        // KDE Konsole, most VTE terminals). Plain Ctrl+C/Ctrl+V stay reserved for control
+        // codes (Ctrl+C = SIGINT), so Linux adds Shift to disambiguate. Additive and harmless
+        // elsewhere: macOS uses Cmd+C/V and Windows Ctrl+C/V, both handled below. Uses the
+        // Electron clipboard like the right-click menu and the #89 Ctrl+C fix (the async
+        // Clipboard API can reject silently in the renderer). ev.code so the Shift-uppercased
+        // key letter is irrelevant.
+        if (ev.code === 'KeyC' && ev.ctrlKey && ev.shiftKey && !ev.altKey && !ev.metaKey) {
+          ev.preventDefault();
+          ev.stopPropagation();
+          const selection = this.term.getSelection();
+          if (selection) {
+            try { require("electron").clipboard.writeText(selection); }
+            catch (_) { navigator.clipboard?.writeText(selection).catch(() => {}); }
+          }
+          return false;
+        }
+        if (ev.code === 'KeyV' && ev.ctrlKey && ev.shiftKey && !ev.altKey && !ev.metaKey) {
+          ev.preventDefault();
+          ev.stopPropagation();
+          let text = "";
+          try { text = require("electron").clipboard.readText() || ""; } catch (_) {}
+          if (text) {
+            this.term.paste(text);
+          } else {
+            navigator.clipboard?.readText?.().then((t) => { if (t) this.term.paste(t); }).catch(() => {});
+          }
+          return false;
+        }
         // Windows Ctrl+V: paste from clipboard (Obsidian intercepts this before xterm sees it)
         if (ev.key === 'v' && ev.ctrlKey && !ev.shiftKey && !ev.altKey && !ev.metaKey) {
           ev.preventDefault();
@@ -7538,7 +7620,11 @@ var TerminalView = class extends import_obsidian.ItemView {
     });
     this.ensureFitWithRetry();
     this.resizeObserver = new ResizeObserver(() => {
-      if (this._fitInProgress) return;
+      // Don't drop a resize that lands mid-fit — remember it so fit()'s release
+      // handler reprocesses it. Otherwise a maximize/restore whose single resize
+      // event coincides with an in-progress fit leaves the terminal at the old
+      // grid (stale/"squished" text — see #94).
+      if (this._fitInProgress) { this._pendingResize = true; return; }
       this.debouncedFit();
     });
     this.resizeObserver.observe(this.termHost);
@@ -7585,6 +7671,11 @@ var TerminalView = class extends import_obsidian.ItemView {
     if (!this.term || !this.fitAddon) return;
     if (this._fitInProgress) return;
     this._fitInProgress = true;
+    // Tie the release to THIS fit. Both release paths below (rAF chain + setTimeout
+    // safety net) capture `gen`; a later fit bumps _fitGen, so a stale release from
+    // an earlier fit can't clear a newer fit's flag mid-fit (which would re-open the
+    // re-entrant fit loop from #80). See PR #94 review.
+    const gen = this._fitGen = (this._fitGen || 0) + 1;
     try {
       const userScrolled = Date.now() - (this.userScrolledAt || 0) < 5000;
       const wasAtBottom = !userScrolled && this.term.buffer.active.baseY === this.term.buffer.active.viewportY;
@@ -7601,21 +7692,80 @@ var TerminalView = class extends import_obsidian.ItemView {
       }
     } catch (e) {}
     // Release on the frame after next so any ResizeObserver callbacks
-    // caused by this fit() are swallowed instead of re-entering.
-    requestAnimationFrame(() => requestAnimationFrame(() => {
+    // caused by this fit() are swallowed instead of re-entering. Use the
+    // terminal's OWN window: in a popout that occludes the main window, the main
+    // window's rAF is halted, which would strand this flag `true` and make the
+    // ResizeObserver ignore all later resizes (#94). The setTimeout is a safety net.
+    const relWin = this.termHost?.ownerDocument?.defaultView || window;
+    const release = () => {
+      if (gen !== this._fitGen || this._fitInProgress === false) return;
       this._fitInProgress = false;
-    }));
+      // Reprocess a resize the ResizeObserver dropped while a fit was in progress.
+      if (this._pendingResize) { this._pendingResize = false; this.debouncedFit(); }
+    };
+    relWin.requestAnimationFrame(() => relWin.requestAnimationFrame(release));
+    this._relTimeoutWin = relWin;
+    this._relTimeout = relWin.setTimeout(release, 250);
   }
   debouncedFit() {
-    if (this.fitTimeout) clearTimeout(this.fitTimeout);
-    this.fitTimeout = setTimeout(() => {
+    // Schedule on the terminal's OWN window: main-window timers are throttled when
+    // a maximized popout occludes the main window, which would otherwise delay the
+    // fit (#94). Clear the pending timer on the window that created it — timer IDs
+    // are per-window small integers, so clearing a popout-minted id on the main
+    // window would likely cancel an unrelated main-window timer.
+    const ownWin = this.termHost?.ownerDocument?.defaultView || window;
+    if (this.fitTimeout) this._fitTimeoutWin?.clearTimeout(this.fitTimeout);
+    this._fitTimeoutWin = ownWin;
+    this.fitTimeout = ownWin.setTimeout(() => {
       this.fitTimeout = null;
       if (!this.term || !this.fitAddon) return;
+      // Keep xterm's renderer bound to the window the terminal is actually shown in.
+      // On an already-open terminal, Terminal.open() does nothing but rebind
+      // CoreBrowserService.window (no DOM work) — the supported way to move a
+      // terminal between windows. Without it a popped-out terminal keeps painting on
+      // the main window's rAF and stops repainting once the maximized popout occludes
+      // that window (#94). Runs here because onLayoutChange (popout) and the
+      // ResizeObserver (maximize) both route through debouncedFit.
+      try { this.term.open(this.termHost); } catch (e) {}
+      // Ensure the popout poll is running (started here, where the terminal's
+      // window is correctly resolved — at onLayoutChange time the leaf may not
+      // have moved into the popout yet). No-op when docked or already running.
+      this._ensurePopoutReconcile();
       const dim = this.fitAddon.proposeDimensions();
       if (!dim || dim.cols <= 0 || dim.rows <= 0) return;
       if (dim.cols === this.term.cols && dim.rows === this.term.rows) return;
       this.fit();
     }, 100);
+  }
+  // Poll-reconcile the fit ONLY while the terminal is popped out (#94 review).
+  // A docked terminal relies on the ResizeObserver + onLayoutChange, which are
+  // reliable when the window isn't occluded — so no poll cost in the common case.
+  // A popped-out window, once maximized, occludes the main window: its timers/rAF
+  // are throttled AND the ResizeObserver doesn't reliably deliver the maximize, so
+  // the grid can strand. The poll runs on the popout's OWN clock (active, not
+  // throttled), re-fits on divergence, and self-stops the moment the leaf re-docks.
+  _ensurePopoutReconcile() {
+    if (this._reconcileTimer || this._isDisposed) return;
+    const isPopout = () => (this.termHost?.ownerDocument?.defaultView || window) !== window;
+    if (!isPopout()) return;
+    const tick = () => {
+      this._reconcileTimer = null;
+      if (this._isDisposed || !isPopout()) return; // re-docked → stop polling
+      const w = this.termHost.ownerDocument.defaultView;
+      try {
+        if (this.term && this.fitAddon && !this._fitInProgress) {
+          const dim = this.fitAddon.proposeDimensions();
+          if (dim && dim.cols > 0 && dim.rows > 0 && (dim.cols !== this.term.cols || dim.rows !== this.term.rows)) {
+            this.debouncedFit();
+          }
+        }
+      } catch (e) {}
+      this._reconcileTimerWin = w;
+      this._reconcileTimer = w.setTimeout(tick, 400);
+    };
+    const w = this.termHost.ownerDocument.defaultView;
+    this._reconcileTimerWin = w;
+    this._reconcileTimer = w.setTimeout(tick, 400);
   }
   async waitForHostReady() {
     if (!this.fitAddon)
@@ -7660,7 +7810,7 @@ var TerminalView = class extends import_obsidian.ItemView {
     // See terminal_pty.py and terminal_win.py for readable source. Rebuild with: ./build.sh
     const PTY_SCRIPT_B64 = "IyEvdXNyL2Jpbi9lbnYgcHl0aG9uMwoiIiJQVFkgd3JhcHBlciB3aXRoIHJlc2l6ZSBzdXBwb3J0IGZvciBPYnNpZGlhbiB0ZXJtaW5hbCBwbHVnaW4uIiIiCmltcG9ydCBvcwppbXBvcnQgc3lzCmltcG9ydCBwdHkKaW1wb3J0IHN0cnVjdAppbXBvcnQgZmNudGwKaW1wb3J0IHRlcm1pb3MKaW1wb3J0IHNlbGVjdAppbXBvcnQgc2lnbmFsCmltcG9ydCB0aW1lCgojIEdsb2JhbCB0byB0cmFjayBjaGlsZCBQSUQgKGFsc28gdGhlIHByb2Nlc3MgZ3JvdXAgSUQpIGZvciBzaWduYWwgaGFuZGxlcgpjaGlsZF9waWQgPSBOb25lCgpkZWYga2lsbF9wcm9jZXNzX2dyb3VwKHBnaWQsIHNpZyk6CiAgICAiIiJLaWxsIGFuIGVudGlyZSBwcm9jZXNzIGdyb3VwLiIiIgogICAgdHJ5OgogICAgICAgIG9zLmtpbGxwZyhwZ2lkLCBzaWcpCiAgICBleGNlcHQgKFByb2Nlc3NMb29rdXBFcnJvciwgUGVybWlzc2lvbkVycm9yLCBPU0Vycm9yKToKICAgICAgICBwYXNzCgpkZWYgY2xlYW51cF9jaGlsZChzaWdudW0sIGZyYW1lKToKICAgICIiIktpbGwgdGhlIGVudGlyZSBwcm9jZXNzIGdyb3VwIHdoZW4gd2UgcmVjZWl2ZSBhIHNpZ25hbC4iIiIKICAgIGdsb2JhbCBjaGlsZF9waWQKICAgIGlmIGNoaWxkX3BpZDoKICAgICAgICAjIEtpbGwgZW50aXJlIHByb2Nlc3MgZ3JvdXAgKGNoaWxkIGlzIGdyb3VwIGxlYWRlcikKICAgICAgICBraWxsX3Byb2Nlc3NfZ3JvdXAoY2hpbGRfcGlkLCBzaWduYWwuU0lHVEVSTSkKICAgICAgICAjIEdpdmUgcHJvY2Vzc2VzIGEgbW9tZW50IHRvIGV4aXQgZ3JhY2VmdWxseQogICAgICAgIGZvciBfIGluIHJhbmdlKDEwKToKICAgICAgICAgICAgdHJ5OgogICAgICAgICAgICAgICAgcGlkLCBfID0gb3Mud2FpdHBpZCgtY2hpbGRfcGlkLCBvcy5XTk9IQU5HKQogICAgICAgICAgICAgICAgaWYgcGlkICE9IDA6CiAgICAgICAgICAgICAgICAgICAgYnJlYWsKICAgICAgICAgICAgZXhjZXB0IENoaWxkUHJvY2Vzc0Vycm9yOgogICAgICAgICAgICAgICAgYnJlYWsKICAgICAgICAgICAgdGltZS5zbGVlcCgwLjEpCiAgICAgICAgZWxzZToKICAgICAgICAgICAgIyBGb3JjZSBraWxsIHRoZSBlbnRpcmUgZ3JvdXAgaWYgc3RpbGwgcnVubmluZwogICAgICAgICAgICBraWxsX3Byb2Nlc3NfZ3JvdXAoY2hpbGRfcGlkLCBzaWduYWwuU0lHS0lMTCkKICAgIHN5cy5leGl0KDApCgpkZWYgc2V0X3NpemUoZmQsIGNvbHMsIHJvd3MpOgogICAgIiIiU2V0IHRoZSBQVFkgd2luZG93IHNpemUuIiIiCiAgICB3aW5zaXplID0gc3RydWN0LnBhY2soJ0hISEgnLCByb3dzLCBjb2xzLCAwLCAwKQogICAgZmNudGwuaW9jdGwoZmQsIHRlcm1pb3MuVElPQ1NXSU5TWiwgd2luc2l6ZSkKCmRlZiBtYWluKCk6CiAgICBnbG9iYWwgY2hpbGRfcGlkCgogICAgIyBQYXJzZSBhcmdzOiB0ZXJtaW5hbF9wdHkucHkgW2NvbHNdIFtyb3dzXSBbc2hlbGxdIFtzaGVsbF9hcmdzLi4uXQogICAgaWYgbGVuKHN5cy5hcmd2KSA8IDQ6CiAgICAgICAgcHJpbnQoZiJVc2FnZToge3N5cy5hcmd2WzBdfSBjb2xzIHJvd3Mgc2hlbGwgW2FyZ3MuLi5dIiwgZmlsZT1zeXMuc3RkZXJyKQogICAgICAgIHN5cy5leGl0KDEpCgogICAgY29scyA9IGludChzeXMuYXJndlsxXSkKICAgIHJvd3MgPSBpbnQoc3lzLmFyZ3ZbMl0pCiAgICBzaGVsbCA9IHN5cy5hcmd2WzNdCiAgICBzaGVsbF9hcmdzID0gc3lzLmFyZ3ZbMzpdICAjIEluY2x1ZGUgc2hlbGwgYXMgYXJndlswXQoKICAgICMgT24gTGludXgsIGFzayB0aGUga2VybmVsIHRvIHNlbmQgdXMgU0lHSFVQIGlmIG91ciBwYXJlbnQgZGllcy4KICAgICMgQ2F0Y2hlcyBwYXRocyB3aGVyZSB0aGUgcGx1Z2luJ3MgdGFiLWNsb3NlIGhhbmRsZXIgZG9lc24ndCBmaXJlCiAgICAjIGFuZCB3ZSdkIG90aGVyd2lzZSBiZSBvcnBoYW5lZCB0byBpbml0IGhvbGRpbmcgYSBsaXZlIFBUWSB0cmVlLgogICAgaWYgc3lzLnBsYXRmb3JtLnN0YXJ0c3dpdGgoJ2xpbnV4Jyk6CiAgICAgICAgdHJ5OgogICAgICAgICAgICBpbXBvcnQgY3R5cGVzCiAgICAgICAgICAgIFBSX1NFVF9QREVBVEhTSUcgPSAxCiAgICAgICAgICAgIGxpYmMgPSBjdHlwZXMuQ0RMTCgnbGliYy5zby42JywgdXNlX2Vycm5vPVRydWUpCiAgICAgICAgICAgIGxpYmMucHJjdGwoUFJfU0VUX1BERUFUSFNJRywgc2lnbmFsLlNJR0hVUCwgMCwgMCwgMCkKICAgICAgICBleGNlcHQgRXhjZXB0aW9uOgogICAgICAgICAgICBwYXNzCgogICAgIyBSZWdpc3RlciBzaWduYWwgaGFuZGxlcnMgZm9yIGNsZWFudXAgQkVGT1JFIGZvcmsgdG8gYXZvaWQgcmFjZSBjb25kaXRpb24KICAgIHNpZ25hbC5zaWduYWwoc2lnbmFsLlNJR1RFUk0sIGNsZWFudXBfY2hpbGQpCiAgICBzaWduYWwuc2lnbmFsKHNpZ25hbC5TSUdJTlQsIGNsZWFudXBfY2hpbGQpCiAgICBzaWduYWwuc2lnbmFsKHNpZ25hbC5TSUdIVVAsIGNsZWFudXBfY2hpbGQpCgogICAgcGlkLCBmZCA9IHB0eS5mb3JrKCkKICAgIGNoaWxkX3BpZCA9IHBpZCAgIyBTdG9yZSBmb3Igc2lnbmFsIGhhbmRsZXIKCiAgICBpZiBwaWQgPT0gMDoKICAgICAgICAjIENoaWxkIHByb2Nlc3MgLSBhbHJlYWR5IGluIGl0cyBvd24gcHJvY2VzcyBncm91cCB2aWEgcHR5LmZvcmsoKS9zZXRzaWQoKQogICAgICAgIG9zLmV4ZWN2cChzaGVsbCwgc2hlbGxfYXJncykKICAgICAgICBzeXMuZXhpdCgxKQoKICAgICMgUGFyZW50IHByb2Nlc3MKCiAgICAjIFNldCBpbml0aWFsIHNpemUKICAgIHNldF9zaXplKGZkLCBjb2xzLCByb3dzKQoKICAgIHN0ZGluX2ZkID0gc3lzLnN0ZGluLmZpbGVubygpCgogICAgIyBNYWtlIHN0ZGluIG5vbi1ibG9ja2luZwogICAgb2xkX2ZsYWdzID0gZmNudGwuZmNudGwoc3RkaW5fZmQsIGZjbnRsLkZfR0VURkwpCiAgICBmY250bC5mY250bChzdGRpbl9mZCwgZmNudGwuRl9TRVRGTCwgb2xkX2ZsYWdzIHwgb3MuT19OT05CTE9DSykKCiAgICBydW5uaW5nID0gVHJ1ZQogICAgdHJ5OgogICAgICAgIHdoaWxlIHJ1bm5pbmc6CiAgICAgICAgICAgIHRyeToKICAgICAgICAgICAgICAgIHJsaXN0LCBfLCBfID0gc2VsZWN0LnNlbGVjdChbZmQsIHN0ZGluX2ZkXSwgW10sIFtdLCAwLjA1KQogICAgICAgICAgICBleGNlcHQgc2VsZWN0LmVycm9yOgogICAgICAgICAgICAgICAgYnJlYWsKCiAgICAgICAgICAgIGZvciByZWFkeV9mZCBpbiBybGlzdDoKICAgICAgICAgICAgICAgIGlmIHJlYWR5X2ZkID09IGZkOgogICAgICAgICAgICAgICAgICAgIHRyeToKICAgICAgICAgICAgICAgICAgICAgICAgZGF0YSA9IG9zLnJlYWQoZmQsIDE2Mzg0KQogICAgICAgICAgICAgICAgICAgICAgICBpZiBub3QgZGF0YToKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHJ1bm5pbmcgPSBGYWxzZQogICAgICAgICAgICAgICAgICAgICAgICAgICAgYnJlYWsKICAgICAgICAgICAgICAgICAgICAgICAgb3Mud3JpdGUoc3lzLnN0ZG91dC5maWxlbm8oKSwgZGF0YSkKICAgICAgICAgICAgICAgICAgICAgICAgc3lzLnN0ZG91dC5mbHVzaCgpCiAgICAgICAgICAgICAgICAgICAgZXhjZXB0IE9TRXJyb3I6CiAgICAgICAgICAgICAgICAgICAgICAgIHJ1bm5pbmcgPSBGYWxzZQogICAgICAgICAgICAgICAgICAgICAgICBicmVhawogICAgICAgICAgICAgICAgZWxpZiByZWFkeV9mZCA9PSBzdGRpbl9mZDoKICAgICAgICAgICAgICAgICAgICB0cnk6CiAgICAgICAgICAgICAgICAgICAgICAgIGRhdGEgPSBvcy5yZWFkKHN0ZGluX2ZkLCAxNjM4NCkKICAgICAgICAgICAgICAgICAgICAgICAgaWYgbm90IGRhdGE6CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAjIHN0ZGluIGNsb3NlZCAtIHBsdWdpbiB0ZXJtaW5hdGVkCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBydW5uaW5nID0gRmFsc2UKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGJyZWFrCiAgICAgICAgICAgICAgICAgICAgICAgIGlmIGRhdGE6CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAjIENoZWNrIGZvciByZXNpemUgZXNjYXBlIHNlcXVlbmNlIGFueXdoZXJlIGluIGRhdGE6IFx4MWJdUkVTSVpFO2NvbHM7cm93c1x4MDcKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHdoaWxlIGInXHgxYl1SRVNJWkU7JyBpbiBkYXRhOgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHN0YXJ0ID0gZGF0YS5pbmRleChiJ1x4MWJdUkVTSVpFOycpCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdHJ5OgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBlbmQgPSBkYXRhLmluZGV4KGInXHgwNycsIHN0YXJ0KQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICByZXNpemVfZGF0YSA9IGRhdGFbc3RhcnQrOTplbmRdLmRlY29kZSgpCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGMsIHIgPSByZXNpemVfZGF0YS5zcGxpdCgnOycpCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHNldF9zaXplKGZkLCBpbnQoYyksIGludChyKSkKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIyBSZW1vdmUgdGhlIHJlc2l6ZSBjb21tYW5kIGZyb20gZGF0YQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBkYXRhID0gZGF0YVs6c3RhcnRdICsgZGF0YVtlbmQrMTpdCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZXhjZXB0IChWYWx1ZUVycm9yLCBJbmRleEVycm9yKToKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgYnJlYWsKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGlmIGRhdGE6CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgb3Mud3JpdGUoZmQsIGRhdGEpCiAgICAgICAgICAgICAgICAgICAgZXhjZXB0IE9TRXJyb3I6CiAgICAgICAgICAgICAgICAgICAgICAgIHJ1bm5pbmcgPSBGYWxzZQogICAgICAgICAgICAgICAgICAgICAgICBicmVhawoKICAgICAgICAgICAgIyBDaGVjayBpZiBjaGlsZCBleGl0ZWQKICAgICAgICAgICAgdHJ5OgogICAgICAgICAgICAgICAgd3BpZCwgc3RhdHVzID0gb3Mud2FpdHBpZChwaWQsIG9zLldOT0hBTkcpCiAgICAgICAgICAgICAgICBpZiB3cGlkID09IHBpZDoKICAgICAgICAgICAgICAgICAgICBzeXMuZXhpdChvcy53YWl0c3RhdHVzX3RvX2V4aXRjb2RlKHN0YXR1cykpCiAgICAgICAgICAgIGV4Y2VwdCBDaGlsZFByb2Nlc3NFcnJvcjoKICAgICAgICAgICAgICAgIGJyZWFrCiAgICBmaW5hbGx5OgogICAgICAgIGZjbnRsLmZjbnRsKHN0ZGluX2ZkLCBmY250bC5GX1NFVEZMLCBvbGRfZmxhZ3MpCiAgICAgICAgIyBFbnN1cmUgZW50aXJlIHByb2Nlc3MgZ3JvdXAgaXMgdGVybWluYXRlZCB3aGVuIHdlIGV4aXQKICAgICAgICBpZiBjaGlsZF9waWQ6CiAgICAgICAgICAgIGtpbGxfcHJvY2Vzc19ncm91cChjaGlsZF9waWQsIHNpZ25hbC5TSUdURVJNKQogICAgICAgICAgICBmb3IgXyBpbiByYW5nZSgxMCk6CiAgICAgICAgICAgICAgICB0cnk6CiAgICAgICAgICAgICAgICAgICAgd3BpZCwgXyA9IG9zLndhaXRwaWQoLWNoaWxkX3BpZCwgb3MuV05PSEFORykKICAgICAgICAgICAgICAgICAgICBpZiB3cGlkICE9IDA6CiAgICAgICAgICAgICAgICAgICAgICAgIGJyZWFrCiAgICAgICAgICAgICAgICBleGNlcHQgQ2hpbGRQcm9jZXNzRXJyb3I6CiAgICAgICAgICAgICAgICAgICAgYnJlYWsKICAgICAgICAgICAgICAgIHRpbWUuc2xlZXAoMC4xKQogICAgICAgICAgICBlbHNlOgogICAgICAgICAgICAgICAga2lsbF9wcm9jZXNzX2dyb3VwKGNoaWxkX3BpZCwgc2lnbmFsLlNJR0tJTEwpCgppZiBfX25hbWVfXyA9PSAnX19tYWluX18nOgogICAgbWFpbigpCg==";
     // Windows PTY script - uses winpty if available, falls back to subprocess
-    const WIN_PTY_SCRIPT_B64 = "IyEvdXNyL2Jpbi9lbnYgcHl0aG9uMwoiIiJXaW5kb3dzIHRlcm1pbmFsIHdyYXBwZXIgdXNpbmcgQ29uUFRZIHZpYSBweXdpbnB0eS4iIiIKaW1wb3J0IHN5cwppbXBvcnQgcmUKaW1wb3J0IHRocmVhZGluZwppbXBvcnQgb3MKaW1wb3J0IG1zdmNydAppbXBvcnQgdGltZQoKIyBQcmUtY29tcGlsZSByZWdleCBwYXR0ZXJucyBmb3IgcGVyZm9ybWFuY2UKUkVTSVpFX1JFID0gcmUuY29tcGlsZShyYidceDFiXF1SRVNJWkU7WzAtOV0rO1swLTldK1x4MDcnLCByZS5JR05PUkVDQVNFKQpGT0NVU19JTl9SRSA9IHJlLmNvbXBpbGUocmInXHgxYlxbSScpCkZPQ1VTX09VVF9SRSA9IHJlLmNvbXBpbGUocmInXHgxYlxbTycpCgojIHB5d2lucHR5LlBUWS5yZWFkKCkgaXMgbm9uLWJsb2NraW5nIG9uIFdpbmRvd3MgYW5kIHJldHVybnMgaW1tZWRpYXRlbHkgd2hlbgojIG5vIGRhdGEgaXMgYXZhaWxhYmxlLiBXaXRob3V0IGEgYmFja29mZiB0aGUgb3V0cHV0IHJlYWRlciB0aHJlYWQgc3BpbnMgYXQKIyAxMDAlIENQVSBvbiBvbmUgY29yZSB3aGVuZXZlciB0aGUgdGVybWluYWwgaXMgaWRsZS4gMTAgbXMga2VlcHMgaW50ZXJhY3RpdmUKIyBsYXRlbmN5IGltcGVyY2VwdGlibGUgd2hpbGUgZHJvcHBpbmcgaWRsZSBDUFUgdG8gbmVhciB6ZXJvLgpJRExFX1NMRUVQX1MgPSAwLjAxCgpkZWYgcmVhZF91dGY4X2NoYXIoYnVmZmVyKToKICAgICIiIlJlYWQgYSBjb21wbGV0ZSBVVEYtOCBjaGFyYWN0ZXIgZnJvbSBidWZmZXIsIGhhbmRsaW5nIG11bHRpLWJ5dGUgc2VxdWVuY2VzLiIiIgogICAgaWYgbm90IGJ1ZmZlcjoKICAgICAgICByZXR1cm4gTm9uZSwgYnVmZmVyCiAgICAKICAgIGZpcnN0X2J5dGUgPSBidWZmZXJbMF0KICAgIAogICAgIyBEZXRlcm1pbmUgdGhlIG51bWJlciBvZiBieXRlcyBpbiB0aGlzIFVURi04IGNoYXJhY3RlcgogICAgaWYgZmlyc3RfYnl0ZSA8IDB4ODA6CiAgICAgICAgIyBBU0NJSSAoMSBieXRlKQogICAgICAgIHJldHVybiBidWZmZXJbMDoxXSwgYnVmZmVyWzE6XQogICAgZWxpZiBmaXJzdF9ieXRlIDwgMHhDMDoKICAgICAgICAjIEludmFsaWQgc3RhcnQgYnl0ZSAoY29udGludWF0aW9uIGJ5dGUpCiAgICAgICAgcmV0dXJuIGJ1ZmZlclswOjFdLCBidWZmZXJbMTpdCiAgICBlbGlmIGZpcnN0X2J5dGUgPCAweEUwOgogICAgICAgICMgMi1ieXRlIHNlcXVlbmNlCiAgICAgICAgbmVlZGVkID0gMgogICAgZWxpZiBmaXJzdF9ieXRlIDwgMHhGMDoKICAgICAgICAjIDMtYnl0ZSBzZXF1ZW5jZSAoQ0pLIGNoYXJhY3RlcnMgZmFsbCBoZXJlKQogICAgICAgIG5lZWRlZCA9IDMKICAgIGVsaWYgZmlyc3RfYnl0ZSA8IDB4Rjg6CiAgICAgICAgIyA0LWJ5dGUgc2VxdWVuY2UKICAgICAgICBuZWVkZWQgPSA0CiAgICBlbHNlOgogICAgICAgICMgSW52YWxpZCBieXRlCiAgICAgICAgcmV0dXJuIGJ1ZmZlclswOjFdLCBidWZmZXJbMTpdCiAgICAKICAgIGlmIGxlbihidWZmZXIpID49IG5lZWRlZDoKICAgICAgICByZXR1cm4gYnVmZmVyWzA6bmVlZGVkXSwgYnVmZmVyW25lZWRlZDpdCiAgICBlbHNlOgogICAgICAgICMgTm90IGVub3VnaCBieXRlcyB5ZXQsIG5lZWQgbW9yZSBkYXRhCiAgICAgICAgcmV0dXJuIE5vbmUsIGJ1ZmZlcgoKZGVmIG1haW4oKToKICAgICMgUGFyc2UgYXJnczogdGVybWluYWxfd2luLnB5IFtjb2xzXSBbcm93c10gW3NoZWxsXQogICAgaWYgbGVuKHN5cy5hcmd2KSA8IDQ6CiAgICAgICAgcHJpbnQoZiJVc2FnZToge3N5cy5hcmd2WzBdfSBjb2xzIHJvd3Mgc2hlbGwiLCBmaWxlPXN5cy5zdGRlcnIpCiAgICAgICAgc3lzLmV4aXQoMSkKCiAgICBjb2xzID0gaW50KHN5cy5hcmd2WzFdKQogICAgcm93cyA9IGludChzeXMuYXJndlsyXSkKICAgIHNoZWxsID0gc3lzLmFyZ3ZbM10KCiAgICAjIHB5d2lucHR5IGlzIHJlcXVpcmVkIGZvciBXaW5kb3dzIFBUWSBzdXBwb3J0CiAgICB0cnk6CiAgICAgICAgZnJvbSB3aW5wdHkgaW1wb3J0IFBUWQogICAgZXhjZXB0IEltcG9ydEVycm9yOgogICAgICAgIHByaW50KGYicHl3aW5wdHkgbm90IGluc3RhbGxlZCBmb3IgdGhpcyBQeXRob24gaW50ZXJwcmV0ZXI6IiwgZmlsZT1zeXMuc3RkZXJyKQogICAgICAgIHByaW50KGYiICB7c3lzLmV4ZWN1dGFibGV9IiwgZmlsZT1zeXMuc3RkZXJyKQogICAgICAgIHByaW50KGYiIiwgZmlsZT1zeXMuc3RkZXJyKQogICAgICAgIHByaW50KGYiSW5zdGFsbCBpdCBpbnRvIFRISVMgaW50ZXJwcmV0ZXIgKG5vdCBqdXN0IGFueSBweXRob24gb24gUEFUSCk6IiwgZmlsZT1zeXMuc3RkZXJyKQogICAgICAgIHByaW50KGYnICAie3N5cy5leGVjdXRhYmxlfSIgLW0gcGlwIGluc3RhbGwgcHl3aW5wdHknLCBmaWxlPXN5cy5zdGRlcnIpCiAgICAgICAgc3lzLmV4aXQoMSkKCiAgICAjIFNldCBzdGRpbiB0byBiaW5hcnkgbW9kZSBvbiBXaW5kb3dzCiAgICBtc3ZjcnQuc2V0bW9kZShzeXMuc3RkaW4uZmlsZW5vKCksIG9zLk9fQklOQVJZKQogICAgbXN2Y3J0LnNldG1vZGUoc3lzLnN0ZG91dC5maWxlbm8oKSwgb3MuT19CSU5BUlkpCgogICAgdHJ5OgogICAgICAgIHB0eSA9IFBUWShjb2xzLCByb3dzKQogICAgICAgIHB0eS5zcGF3bihzaGVsbCkKCiAgICAgICAgcnVubmluZyA9IFRydWUKCiAgICAgICAgZGVmIHJlYWRfb3V0cHV0KCk6CiAgICAgICAgICAgIG5vbmxvY2FsIHJ1bm5pbmcKICAgICAgICAgICAgd2hpbGUgcnVubmluZyBhbmQgcHR5LmlzYWxpdmUoKToKICAgICAgICAgICAgICAgIHRyeToKICAgICAgICAgICAgICAgICAgICBkYXRhID0gcHR5LnJlYWQoKQogICAgICAgICAgICAgICAgICAgIGlmIG5vdCBkYXRhOgogICAgICAgICAgICAgICAgICAgICAgICB0aW1lLnNsZWVwKElETEVfU0xFRVBfUykKICAgICAgICAgICAgICAgICAgICAgICAgY29udGludWUKICAgICAgICAgICAgICAgICAgICAjIHB5d2lucHR5IHJldHVybnMgc3RyaW5ncwogICAgICAgICAgICAgICAgICAgIG91dHB1dCA9IGRhdGEuZW5jb2RlKCd1dGYtOCcpIGlmIGlzaW5zdGFuY2UoZGF0YSwgc3RyKSBlbHNlIGRhdGEKICAgICAgICAgICAgICAgICAgICAjIEZpbHRlciBvdXQgZXNjYXBlIHNlcXVlbmNlcyB0aGF0IGdldCBlY2hvZWQgYmFjawogICAgICAgICAgICAgICAgICAgIG91dHB1dCA9IFJFU0laRV9SRS5zdWIoYicnLCBvdXRwdXQpCiAgICAgICAgICAgICAgICAgICAgb3V0cHV0ID0gRk9DVVNfSU5fUkUuc3ViKGInJywgb3V0cHV0KQogICAgICAgICAgICAgICAgICAgIG91dHB1dCA9IEZPQ1VTX09VVF9SRS5zdWIoYicnLCBvdXRwdXQpCiAgICAgICAgICAgICAgICAgICAgaWYgb3V0cHV0OgogICAgICAgICAgICAgICAgICAgICAgICBzeXMuc3Rkb3V0LmJ1ZmZlci53cml0ZShvdXRwdXQpCiAgICAgICAgICAgICAgICAgICAgICAgIHN5cy5zdGRvdXQuYnVmZmVyLmZsdXNoKCkKICAgICAgICAgICAgICAgIGV4Y2VwdCBFeGNlcHRpb246CiAgICAgICAgICAgICAgICAgICAgIyBBdm9pZCBhIHRpZ2h0IGZhaWx1cmUgbG9vcCBpZiBzb21ldGhpbmcgaXMgcGVyc2lzdGVudGx5CiAgICAgICAgICAgICAgICAgICAgIyB3cm9uZzsgcHR5LmlzYWxpdmUoKSB3aWxsIG5vcm1hbGx5IGRyb3AgdXMgb3V0IHNob3J0bHkuCiAgICAgICAgICAgICAgICAgICAgdGltZS5zbGVlcChJRExFX1NMRUVQX1MpCiAgICAgICAgICAgIHJ1bm5pbmcgPSBGYWxzZQoKICAgICAgICBvdXRwdXRfdGhyZWFkID0gdGhyZWFkaW5nLlRocmVhZCh0YXJnZXQ9cmVhZF9vdXRwdXQsIGRhZW1vbj1UcnVlKQogICAgICAgIG91dHB1dF90aHJlYWQuc3RhcnQoKQoKICAgICAgICBpbnB1dF9idWZmZXIgPSBiJycKICAgICAgICAKICAgICAgICB3aGlsZSBydW5uaW5nIGFuZCBwdHkuaXNhbGl2ZSgpOgogICAgICAgICAgICB0cnk6CiAgICAgICAgICAgICAgICAjIFJlYWQgYXZhaWxhYmxlIGRhdGEgZnJvbSBzdGRpbgogICAgICAgICAgICAgICAgZGF0YSA9IHN5cy5zdGRpbi5idWZmZXIucmVhZCgxKQogICAgICAgICAgICAgICAgaWYgbm90IGRhdGE6CiAgICAgICAgICAgICAgICAgICAgYnJlYWsKICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgaW5wdXRfYnVmZmVyICs9IGRhdGEKICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgIyBDaGVjayBmb3IgZXNjYXBlIHNlcXVlbmNlcy4KICAgICAgICAgICAgICAgICMgV2UgaWRlbnRpZnkgdGhlIHR5cGUgYnkgdGhlIHNlY29uZCBieXRlIGluc3RlYWQgb2YgcmVhZGluZwogICAgICAgICAgICAgICAgIyBhIGZpeGVkIG51bWJlciBvZiBieXRlcyBhaGVhZCwgd2hpY2ggYXZvaWRzIGNvbnN1bWluZyB0aGUKICAgICAgICAgICAgICAgICMgbGVhZGluZyBceDFiIG9mIGEgc3Vic2VxdWVudCBlc2NhcGUgdGhhdCBoYXBwZW5zIHRvIGZhbGwKICAgICAgICAgICAgICAgICMgd2l0aGluIHRoZSBsb29rYWhlYWQgd2luZG93LgogICAgICAgICAgICAgICAgaWYgaW5wdXRfYnVmZmVyLnN0YXJ0c3dpdGgoYidceDFiJyk6CiAgICAgICAgICAgICAgICAgICAgIyBOZWVkIGF0IGxlYXN0IDIgYnl0ZXMgdG8gaWRlbnRpZnkgdGhlIGVzY2FwZSB0eXBlCiAgICAgICAgICAgICAgICAgICAgd2hpbGUgbGVuKGlucHV0X2J1ZmZlcikgPCAyOgogICAgICAgICAgICAgICAgICAgICAgICBtb3JlID0gc3lzLnN0ZGluLmJ1ZmZlci5yZWFkKDEpCiAgICAgICAgICAgICAgICAgICAgICAgIGlmIG5vdCBtb3JlOgogICAgICAgICAgICAgICAgICAgICAgICAgICAgYnJlYWsKICAgICAgICAgICAgICAgICAgICAgICAgaW5wdXRfYnVmZmVyICs9IG1vcmUKCiAgICAgICAgICAgICAgICAgICAgaWYgbGVuKGlucHV0X2J1ZmZlcikgPCAyOgogICAgICAgICAgICAgICAgICAgICAgICAjIEJhcmUgRVNDIGF0IEVPRiDigJQgcGFzcyB0aHJvdWdoCiAgICAgICAgICAgICAgICAgICAgICAgIHB0eS53cml0ZShpbnB1dF9idWZmZXIuZGVjb2RlKCdsYXRpbi0xJykpCiAgICAgICAgICAgICAgICAgICAgICAgIGlucHV0X2J1ZmZlciA9IGInJwogICAgICAgICAgICAgICAgICAgICAgICBjb250aW51ZQoKICAgICAgICAgICAgICAgICAgICBzZWNvbmQgPSBpbnB1dF9idWZmZXJbMToyXQoKICAgICAgICAgICAgICAgICAgICBpZiBzZWNvbmQgPT0gYiddJzoKICAgICAgICAgICAgICAgICAgICAgICAgIyBPU0Mgc2VxdWVuY2UgKFx4MWJdLi4uQkVMKSDigJQgcmVhZCB1bnRpbCBCRUwgKFx4MDcpCiAgICAgICAgICAgICAgICAgICAgICAgIHdoaWxlIGInXHgwNycgbm90IGluIGlucHV0X2J1ZmZlcjoKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGMgPSBzeXMuc3RkaW4uYnVmZmVyLnJlYWQoMSkKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGlmIG5vdCBjOgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGJyZWFrCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBpbnB1dF9idWZmZXIgKz0gYwoKICAgICAgICAgICAgICAgICAgICAgICAgaWYgaW5wdXRfYnVmZmVyLnN0YXJ0c3dpdGgoYidceDFiXVJFU0laRScpIGFuZCBiJ1x4MDcnIGluIGlucHV0X2J1ZmZlcjoKICAgICAgICAgICAgICAgICAgICAgICAgICAgICMgUGFyc2UgdGhlIHJlc2l6ZSBjb21tYW5kOiBceDFiXVJFU0laRTtjb2xzO3Jvd3NceDA3CiAgICAgICAgICAgICAgICAgICAgICAgICAgICBlbmRfaWR4ID0gaW5wdXRfYnVmZmVyLmluZGV4KGInXHgwNycpCiAgICAgICAgICAgICAgICAgICAgICAgICAgICByZXNpemVfY21kID0gaW5wdXRfYnVmZmVyWzg6ZW5kX2lkeF0gICMgQWZ0ZXIgIlx4MWJdUkVTSVpFIgogICAgICAgICAgICAgICAgICAgICAgICAgICAgaW5wdXRfYnVmZmVyID0gaW5wdXRfYnVmZmVyW2VuZF9pZHggKyAxOl0KCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAjIFBhcnNlIDtjb2xzO3Jvd3MKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHBhcnRzID0gcmVzaXplX2NtZC5kZWNvZGUoJ3V0Zi04JywgZXJyb3JzPSdpZ25vcmUnKS5zdHJpcCgnOycpLnNwbGl0KCc7JykKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGlmIGxlbihwYXJ0cykgPT0gMjoKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB0cnk6CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIG5ld19jb2xzLCBuZXdfcm93cyA9IGludChwYXJ0c1swXSksIGludChwYXJ0c1sxXSkKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcHR5LnNldF9zaXplKG5ld19jb2xzLCBuZXdfcm93cykKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBleGNlcHQgVmFsdWVFcnJvcjoKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcGFzcwogICAgICAgICAgICAgICAgICAgICAgICBlbHNlOgogICAgICAgICAgICAgICAgICAgICAgICAgICAgIyBPdGhlciBPU0Mgc2VxdWVuY2Ug4oCUIHBhc3MgdGhyb3VnaCB0byBQVFkKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHB0eS53cml0ZShpbnB1dF9idWZmZXIuZGVjb2RlKCdsYXRpbi0xJykpCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBpbnB1dF9idWZmZXIgPSBiJycKICAgICAgICAgICAgICAgICAgICAgICAgY29udGludWUKCiAgICAgICAgICAgICAgICAgICAgZWxpZiBzZWNvbmQgPT0gYidbJzoKICAgICAgICAgICAgICAgICAgICAgICAgIyBDU0kgc2VxdWVuY2UgKFx4MWJbLi4uZmluYWwpIOKAlCByZWFkIHVudGlsIGZpbmFsIGJ5dGUgKDB4NDDigJMweDdFKQogICAgICAgICAgICAgICAgICAgICAgICB3aGlsZSBUcnVlOgogICAgICAgICAgICAgICAgICAgICAgICAgICAgYyA9IHN5cy5zdGRpbi5idWZmZXIucmVhZCgxKQogICAgICAgICAgICAgICAgICAgICAgICAgICAgaWYgbm90IGM6CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgYnJlYWsKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGlucHV0X2J1ZmZlciArPSBjCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBpZiAweDQwIDw9IGlucHV0X2J1ZmZlclstMV0gPD0gMHg3RToKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBicmVhawoKICAgICAgICAgICAgICAgICAgICAgICAgIyB4dGVybS5qcyBzZW5kcyB0ZXJtaW5hbCBwcm90b2NvbCByZXNwb25zZXMgKERBMSwgREEyLAogICAgICAgICAgICAgICAgICAgICAgICAjIGRldmljZSBzdGF0dXMpIHZpYSB0ZXJtLm9uRGF0YSBpbiByZXBseSB0byBDb25QVFkKICAgICAgICAgICAgICAgICAgICAgICAgIyBjYXBhYmlsaXR5IHF1ZXJpZXMuIFRoZXNlIG11c3Qgbm90IHJlYWNoIGNtZC5leGUuCiAgICAgICAgICAgICAgICAgICAgICAgICMgICBEQTE6ICBceDFiWz8uLi5jICAgKGUuZy4gXHgxYls/MTsyYykKICAgICAgICAgICAgICAgICAgICAgICAgIyAgIERBMjogIFx4MWJbPi4uLmMgICAoZS5nLiBceDFiWz4wOzA7MGMpCiAgICAgICAgICAgICAgICAgICAgICAgICMgICBEU1I6ICBceDFiWy4uLm4gICAgKGUuZy4gXHgxYlswbikKICAgICAgICAgICAgICAgICAgICAgICAgbGFzdCA9IGlucHV0X2J1ZmZlclstMV0gaWYgaW5wdXRfYnVmZmVyIGVsc2UgMAogICAgICAgICAgICAgICAgICAgICAgICB0aGlyZCA9IGlucHV0X2J1ZmZlclsyOjNdCiAgICAgICAgICAgICAgICAgICAgICAgIGlzX3Byb3RvY29sX3Jlc3BvbnNlID0gKAogICAgICAgICAgICAgICAgICAgICAgICAgICAgKGxhc3QgPT0gb3JkKCdjJykgYW5kIHRoaXJkIGluIChiJz8nLCBiJz4nKSkgb3IKICAgICAgICAgICAgICAgICAgICAgICAgICAgIChsYXN0ID09IG9yZCgnbicpKQogICAgICAgICAgICAgICAgICAgICAgICApCiAgICAgICAgICAgICAgICAgICAgICAgIGlmIG5vdCBpc19wcm90b2NvbF9yZXNwb25zZToKICAgICAgICAgICAgICAgICAgICAgICAgICAgICMgTGVnaXRpbWF0ZSB1c2VyIGlucHV0IChjdXJzb3Iga2V5cywgZnVuY3Rpb24ga2V5cywgZXRjLikKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHB0eS53cml0ZShpbnB1dF9idWZmZXIuZGVjb2RlKCdsYXRpbi0xJykpCiAgICAgICAgICAgICAgICAgICAgICAgIGlucHV0X2J1ZmZlciA9IGInJwogICAgICAgICAgICAgICAgICAgICAgICBjb250aW51ZQoKICAgICAgICAgICAgICAgICAgICBlbHNlOgogICAgICAgICAgICAgICAgICAgICAgICAjIE90aGVyIHR3by1ieXRlIGVzY2FwZSAoU1MyLCBTUzMsIGV0Yy4pIOKAlCBwYXNzIHRocm91Z2gKICAgICAgICAgICAgICAgICAgICAgICAgcHR5LndyaXRlKGlucHV0X2J1ZmZlci5kZWNvZGUoJ2xhdGluLTEnKSkKICAgICAgICAgICAgICAgICAgICAgICAgaW5wdXRfYnVmZmVyID0gYicnCiAgICAgICAgICAgICAgICAgICAgICAgIGNvbnRpbnVlCgogICAgICAgICAgICAgICAgIyBQcm9jZXNzIGNvbXBsZXRlIFVURi04IGNoYXJhY3RlcnMgZnJvbSBidWZmZXIKICAgICAgICAgICAgICAgIHdoaWxlIGlucHV0X2J1ZmZlcjoKICAgICAgICAgICAgICAgICAgICBjaGFyX2J5dGVzLCBpbnB1dF9idWZmZXIgPSByZWFkX3V0ZjhfY2hhcihpbnB1dF9idWZmZXIpCiAgICAgICAgICAgICAgICAgICAgaWYgY2hhcl9ieXRlcyBpcyBOb25lOgogICAgICAgICAgICAgICAgICAgICAgICAjIE5lZWQgbW9yZSBieXRlcyB0byBjb21wbGV0ZSB0aGUgY2hhcmFjdGVyCiAgICAgICAgICAgICAgICAgICAgICAgIGJyZWFrCiAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgIyBEZWNvZGUgYW5kIHNlbmQgdG8gUFRZCiAgICAgICAgICAgICAgICAgICAgdHJ5OgogICAgICAgICAgICAgICAgICAgICAgICBjaGFyX3N0ciA9IGNoYXJfYnl0ZXMuZGVjb2RlKCd1dGYtOCcpCiAgICAgICAgICAgICAgICAgICAgICAgIHB0eS53cml0ZShjaGFyX3N0cikKICAgICAgICAgICAgICAgICAgICBleGNlcHQgVW5pY29kZURlY29kZUVycm9yOgogICAgICAgICAgICAgICAgICAgICAgICAjIEludmFsaWQgVVRGLTgsIHNlbmQgYXMtaXMgKGVzY2FwZSBzZXF1ZW5jZXMsIGV0Yy4pCiAgICAgICAgICAgICAgICAgICAgICAgIHB0eS53cml0ZShjaGFyX2J5dGVzLmRlY29kZSgnbGF0aW4tMScpKQogICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgZXhjZXB0IEV4Y2VwdGlvbiBhcyBlOgogICAgICAgICAgICAgICAgYnJlYWsKCiAgICAgICAgcnVubmluZyA9IEZhbHNlCiAgICAgICAgc3lzLmV4aXQoMCkKCiAgICBleGNlcHQgRXhjZXB0aW9uIGFzIGU6CiAgICAgICAgcHJpbnQoZiJFcnJvcjoge2V9IiwgZmlsZT1zeXMuc3RkZXJyKQogICAgICAgIHN5cy5leGl0KDEpCgppZiBfX25hbWVfXyA9PSAnX19tYWluX18nOgogICAgbWFpbigpCg==";
+    const WIN_PTY_SCRIPT_B64 = "IyEvdXNyL2Jpbi9lbnYgcHl0aG9uMwoiIiJXaW5kb3dzIHRlcm1pbmFsIHdyYXBwZXIgdXNpbmcgQ29uUFRZIHZpYSBweXdpbnB0eS4iIiIKaW1wb3J0IHN5cwppbXBvcnQgcmUKaW1wb3J0IHRocmVhZGluZwppbXBvcnQgb3MKaW1wb3J0IG1zdmNydAppbXBvcnQgdGltZQoKIyBQcmUtY29tcGlsZSByZWdleCBwYXR0ZXJucyBmb3IgcGVyZm9ybWFuY2UKUkVTSVpFX1JFID0gcmUuY29tcGlsZShyYidceDFiXF1SRVNJWkU7WzAtOV0rO1swLTldK1x4MDcnLCByZS5JR05PUkVDQVNFKQpGT0NVU19JTl9SRSA9IHJlLmNvbXBpbGUocmInXHgxYlxbSScpCkZPQ1VTX09VVF9SRSA9IHJlLmNvbXBpbGUocmInXHgxYlxbTycpCgojIHB5d2lucHR5LlBUWS5yZWFkKCkgaXMgbm9uLWJsb2NraW5nIG9uIFdpbmRvd3MgYW5kIHJldHVybnMgaW1tZWRpYXRlbHkgd2hlbgojIG5vIGRhdGEgaXMgYXZhaWxhYmxlLiBXaXRob3V0IGEgYmFja29mZiB0aGUgb3V0cHV0IHJlYWRlciB0aHJlYWQgc3BpbnMgYXQKIyAxMDAlIENQVSBvbiBvbmUgY29yZSB3aGVuZXZlciB0aGUgdGVybWluYWwgaXMgaWRsZS4gMTAgbXMga2VlcHMgaW50ZXJhY3RpdmUKIyBsYXRlbmN5IGltcGVyY2VwdGlibGUgd2hpbGUgZHJvcHBpbmcgaWRsZSBDUFUgdG8gbmVhciB6ZXJvLgpJRExFX1NMRUVQX1MgPSAwLjAxCgpkZWYgcmVhZF91dGY4X2NoYXIoYnVmZmVyKToKICAgICIiIlJlYWQgYSBjb21wbGV0ZSBVVEYtOCBjaGFyYWN0ZXIgZnJvbSBidWZmZXIsIGhhbmRsaW5nIG11bHRpLWJ5dGUgc2VxdWVuY2VzLiIiIgogICAgaWYgbm90IGJ1ZmZlcjoKICAgICAgICByZXR1cm4gTm9uZSwgYnVmZmVyCiAgICAKICAgIGZpcnN0X2J5dGUgPSBidWZmZXJbMF0KICAgIAogICAgIyBEZXRlcm1pbmUgdGhlIG51bWJlciBvZiBieXRlcyBpbiB0aGlzIFVURi04IGNoYXJhY3RlcgogICAgaWYgZmlyc3RfYnl0ZSA8IDB4ODA6CiAgICAgICAgIyBBU0NJSSAoMSBieXRlKQogICAgICAgIHJldHVybiBidWZmZXJbMDoxXSwgYnVmZmVyWzE6XQogICAgZWxpZiBmaXJzdF9ieXRlIDwgMHhDMDoKICAgICAgICAjIEludmFsaWQgc3RhcnQgYnl0ZSAoY29udGludWF0aW9uIGJ5dGUpCiAgICAgICAgcmV0dXJuIGJ1ZmZlclswOjFdLCBidWZmZXJbMTpdCiAgICBlbGlmIGZpcnN0X2J5dGUgPCAweEUwOgogICAgICAgICMgMi1ieXRlIHNlcXVlbmNlCiAgICAgICAgbmVlZGVkID0gMgogICAgZWxpZiBmaXJzdF9ieXRlIDwgMHhGMDoKICAgICAgICAjIDMtYnl0ZSBzZXF1ZW5jZSAoQ0pLIGNoYXJhY3RlcnMgZmFsbCBoZXJlKQogICAgICAgIG5lZWRlZCA9IDMKICAgIGVsaWYgZmlyc3RfYnl0ZSA8IDB4Rjg6CiAgICAgICAgIyA0LWJ5dGUgc2VxdWVuY2UKICAgICAgICBuZWVkZWQgPSA0CiAgICBlbHNlOgogICAgICAgICMgSW52YWxpZCBieXRlCiAgICAgICAgcmV0dXJuIGJ1ZmZlclswOjFdLCBidWZmZXJbMTpdCiAgICAKICAgIGlmIGxlbihidWZmZXIpID49IG5lZWRlZDoKICAgICAgICByZXR1cm4gYnVmZmVyWzA6bmVlZGVkXSwgYnVmZmVyW25lZWRlZDpdCiAgICBlbHNlOgogICAgICAgICMgTm90IGVub3VnaCBieXRlcyB5ZXQsIG5lZWQgbW9yZSBkYXRhCiAgICAgICAgcmV0dXJuIE5vbmUsIGJ1ZmZlcgoKZGVmIG1haW4oKToKICAgICMgUGFyc2UgYXJnczogdGVybWluYWxfd2luLnB5IFtjb2xzXSBbcm93c10gW3NoZWxsXQogICAgaWYgbGVuKHN5cy5hcmd2KSA8IDQ6CiAgICAgICAgcHJpbnQoZiJVc2FnZToge3N5cy5hcmd2WzBdfSBjb2xzIHJvd3Mgc2hlbGwiLCBmaWxlPXN5cy5zdGRlcnIpCiAgICAgICAgc3lzLmV4aXQoMSkKCiAgICBjb2xzID0gaW50KHN5cy5hcmd2WzFdKQogICAgcm93cyA9IGludChzeXMuYXJndlsyXSkKICAgIHNoZWxsID0gc3lzLmFyZ3ZbM10KCiAgICAjIHB5d2lucHR5IGlzIHJlcXVpcmVkIGZvciBXaW5kb3dzIFBUWSBzdXBwb3J0CiAgICB0cnk6CiAgICAgICAgZnJvbSB3aW5wdHkgaW1wb3J0IFBUWQogICAgZXhjZXB0IEltcG9ydEVycm9yOgogICAgICAgIHByaW50KGYicHl3aW5wdHkgbm90IGluc3RhbGxlZCBmb3IgdGhpcyBQeXRob24gaW50ZXJwcmV0ZXI6IiwgZmlsZT1zeXMuc3RkZXJyKQogICAgICAgIHByaW50KGYiICB7c3lzLmV4ZWN1dGFibGV9IiwgZmlsZT1zeXMuc3RkZXJyKQogICAgICAgIHByaW50KGYiIiwgZmlsZT1zeXMuc3RkZXJyKQogICAgICAgIHByaW50KGYiSW5zdGFsbCBpdCBpbnRvIFRISVMgaW50ZXJwcmV0ZXIgKG5vdCBqdXN0IGFueSBweXRob24gb24gUEFUSCk6IiwgZmlsZT1zeXMuc3RkZXJyKQogICAgICAgIHByaW50KGYnICAie3N5cy5leGVjdXRhYmxlfSIgLW0gcGlwIGluc3RhbGwgcHl3aW5wdHknLCBmaWxlPXN5cy5zdGRlcnIpCiAgICAgICAgc3lzLmV4aXQoMSkKCiAgICAjIFNldCBzdGRpbiB0byBiaW5hcnkgbW9kZSBvbiBXaW5kb3dzCiAgICBtc3ZjcnQuc2V0bW9kZShzeXMuc3RkaW4uZmlsZW5vKCksIG9zLk9fQklOQVJZKQogICAgbXN2Y3J0LnNldG1vZGUoc3lzLnN0ZG91dC5maWxlbm8oKSwgb3MuT19CSU5BUlkpCgogICAgdHJ5OgogICAgICAgIHB0eSA9IFBUWShjb2xzLCByb3dzKQogICAgICAgIHB0eS5zcGF3bihzaGVsbCkKCiAgICAgICAgcnVubmluZyA9IFRydWUKCiAgICAgICAgZGVmIHJlYWRfb3V0cHV0KCk6CiAgICAgICAgICAgIG5vbmxvY2FsIHJ1bm5pbmcKICAgICAgICAgICAgd2hpbGUgcnVubmluZyBhbmQgcHR5LmlzYWxpdmUoKToKICAgICAgICAgICAgICAgIHRyeToKICAgICAgICAgICAgICAgICAgICBkYXRhID0gcHR5LnJlYWQoKQogICAgICAgICAgICAgICAgICAgIGlmIG5vdCBkYXRhOgogICAgICAgICAgICAgICAgICAgICAgICB0aW1lLnNsZWVwKElETEVfU0xFRVBfUykKICAgICAgICAgICAgICAgICAgICAgICAgY29udGludWUKICAgICAgICAgICAgICAgICAgICAjIHB5d2lucHR5IHJldHVybnMgc3RyaW5ncwogICAgICAgICAgICAgICAgICAgIG91dHB1dCA9IGRhdGEuZW5jb2RlKCd1dGYtOCcpIGlmIGlzaW5zdGFuY2UoZGF0YSwgc3RyKSBlbHNlIGRhdGEKICAgICAgICAgICAgICAgICAgICAjIEZpbHRlciBvdXQgZXNjYXBlIHNlcXVlbmNlcyB0aGF0IGdldCBlY2hvZWQgYmFjawogICAgICAgICAgICAgICAgICAgIG91dHB1dCA9IFJFU0laRV9SRS5zdWIoYicnLCBvdXRwdXQpCiAgICAgICAgICAgICAgICAgICAgb3V0cHV0ID0gRk9DVVNfSU5fUkUuc3ViKGInJywgb3V0cHV0KQogICAgICAgICAgICAgICAgICAgIG91dHB1dCA9IEZPQ1VTX09VVF9SRS5zdWIoYicnLCBvdXRwdXQpCiAgICAgICAgICAgICAgICAgICAgaWYgb3V0cHV0OgogICAgICAgICAgICAgICAgICAgICAgICBzeXMuc3Rkb3V0LmJ1ZmZlci53cml0ZShvdXRwdXQpCiAgICAgICAgICAgICAgICAgICAgICAgIHN5cy5zdGRvdXQuYnVmZmVyLmZsdXNoKCkKICAgICAgICAgICAgICAgIGV4Y2VwdCBFeGNlcHRpb246CiAgICAgICAgICAgICAgICAgICAgIyBBdm9pZCBhIHRpZ2h0IGZhaWx1cmUgbG9vcCBpZiBzb21ldGhpbmcgaXMgcGVyc2lzdGVudGx5CiAgICAgICAgICAgICAgICAgICAgIyB3cm9uZzsgcHR5LmlzYWxpdmUoKSB3aWxsIG5vcm1hbGx5IGRyb3AgdXMgb3V0IHNob3J0bHkuCiAgICAgICAgICAgICAgICAgICAgdGltZS5zbGVlcChJRExFX1NMRUVQX1MpCiAgICAgICAgICAgIHJ1bm5pbmcgPSBGYWxzZQoKICAgICAgICBvdXRwdXRfdGhyZWFkID0gdGhyZWFkaW5nLlRocmVhZCh0YXJnZXQ9cmVhZF9vdXRwdXQsIGRhZW1vbj1UcnVlKQogICAgICAgIG91dHB1dF90aHJlYWQuc3RhcnQoKQoKICAgICAgICBpbnB1dF9idWZmZXIgPSBiJycKICAgICAgICAKICAgICAgICB3aGlsZSBydW5uaW5nIGFuZCBwdHkuaXNhbGl2ZSgpOgogICAgICAgICAgICB0cnk6CiAgICAgICAgICAgICAgICAjIFJlYWQgYXZhaWxhYmxlIGRhdGEgZnJvbSBzdGRpbgogICAgICAgICAgICAgICAgZGF0YSA9IHN5cy5zdGRpbi5idWZmZXIucmVhZCgxKQogICAgICAgICAgICAgICAgaWYgbm90IGRhdGE6CiAgICAgICAgICAgICAgICAgICAgYnJlYWsKICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgaW5wdXRfYnVmZmVyICs9IGRhdGEKICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgIyBDaGVjayBmb3IgZXNjYXBlIHNlcXVlbmNlcy4KICAgICAgICAgICAgICAgICMgV2UgaWRlbnRpZnkgdGhlIHR5cGUgYnkgdGhlIHNlY29uZCBieXRlIGluc3RlYWQgb2YgcmVhZGluZwogICAgICAgICAgICAgICAgIyBhIGZpeGVkIG51bWJlciBvZiBieXRlcyBhaGVhZCwgd2hpY2ggYXZvaWRzIGNvbnN1bWluZyB0aGUKICAgICAgICAgICAgICAgICMgbGVhZGluZyBceDFiIG9mIGEgc3Vic2VxdWVudCBlc2NhcGUgdGhhdCBoYXBwZW5zIHRvIGZhbGwKICAgICAgICAgICAgICAgICMgd2l0aGluIHRoZSBsb29rYWhlYWQgd2luZG93LgogICAgICAgICAgICAgICAgaWYgaW5wdXRfYnVmZmVyLnN0YXJ0c3dpdGgoYidceDFiJyk6CiAgICAgICAgICAgICAgICAgICAgIyBOZWVkIGF0IGxlYXN0IDIgYnl0ZXMgdG8gaWRlbnRpZnkgdGhlIGVzY2FwZSB0eXBlCiAgICAgICAgICAgICAgICAgICAgd2hpbGUgbGVuKGlucHV0X2J1ZmZlcikgPCAyOgogICAgICAgICAgICAgICAgICAgICAgICBtb3JlID0gc3lzLnN0ZGluLmJ1ZmZlci5yZWFkKDEpCiAgICAgICAgICAgICAgICAgICAgICAgIGlmIG5vdCBtb3JlOgogICAgICAgICAgICAgICAgICAgICAgICAgICAgYnJlYWsKICAgICAgICAgICAgICAgICAgICAgICAgaW5wdXRfYnVmZmVyICs9IG1vcmUKCiAgICAgICAgICAgICAgICAgICAgaWYgbGVuKGlucHV0X2J1ZmZlcikgPCAyOgogICAgICAgICAgICAgICAgICAgICAgICAjIEJhcmUgRVNDIGF0IEVPRiDigJQgcGFzcyB0aHJvdWdoCiAgICAgICAgICAgICAgICAgICAgICAgIHB0eS53cml0ZShpbnB1dF9idWZmZXIuZGVjb2RlKCdsYXRpbi0xJykpCiAgICAgICAgICAgICAgICAgICAgICAgIGlucHV0X2J1ZmZlciA9IGInJwogICAgICAgICAgICAgICAgICAgICAgICBjb250aW51ZQoKICAgICAgICAgICAgICAgICAgICBzZWNvbmQgPSBpbnB1dF9idWZmZXJbMToyXQoKICAgICAgICAgICAgICAgICAgICBpZiBzZWNvbmQgPT0gYiddJzoKICAgICAgICAgICAgICAgICAgICAgICAgIyBPU0Mgc2VxdWVuY2UgKFx4MWJdLi4uQkVMIG9yIFx4MWJdLi4uU1QpIOKAlCByZWFkIHVudGlsCiAgICAgICAgICAgICAgICAgICAgICAgICMgZWl0aGVyIHRlcm1pbmF0b3IuIFRlcm1pbmFsIHJlcGxpZXMgdG8gY29sb3IgcXVlcmllcwogICAgICAgICAgICAgICAgICAgICAgICAjIChPU0MgMTEpIGNvbWUgYmFjayBTVC10ZXJtaW5hdGVkLCBhbmQgd2FpdGluZyBvbiBhIEJFTAogICAgICAgICAgICAgICAgICAgICAgICAjIHRoYXQgbmV2ZXIgYXJyaXZlcyBzd2FsbG93cyBhbGwgc3Vic2VxdWVudCBpbnB1dC4KICAgICAgICAgICAgICAgICAgICAgICAgd2hpbGUgYidceDA3JyBub3QgaW4gaW5wdXRfYnVmZmVyIGFuZCBiJ1x4MWJcXCcgbm90IGluIGlucHV0X2J1ZmZlcjoKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGMgPSBzeXMuc3RkaW4uYnVmZmVyLnJlYWQoMSkKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGlmIG5vdCBjOgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGJyZWFrCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBpbnB1dF9idWZmZXIgKz0gYwoKICAgICAgICAgICAgICAgICAgICAgICAgaWYgaW5wdXRfYnVmZmVyLnN0YXJ0c3dpdGgoYidceDFiXVJFU0laRScpIGFuZCBiJ1x4MDcnIGluIGlucHV0X2J1ZmZlcjoKICAgICAgICAgICAgICAgICAgICAgICAgICAgICMgUGFyc2UgdGhlIHJlc2l6ZSBjb21tYW5kOiBceDFiXVJFU0laRTtjb2xzO3Jvd3NceDA3CiAgICAgICAgICAgICAgICAgICAgICAgICAgICBlbmRfaWR4ID0gaW5wdXRfYnVmZmVyLmluZGV4KGInXHgwNycpCiAgICAgICAgICAgICAgICAgICAgICAgICAgICByZXNpemVfY21kID0gaW5wdXRfYnVmZmVyWzg6ZW5kX2lkeF0gICMgQWZ0ZXIgIlx4MWJdUkVTSVpFIgogICAgICAgICAgICAgICAgICAgICAgICAgICAgaW5wdXRfYnVmZmVyID0gaW5wdXRfYnVmZmVyW2VuZF9pZHggKyAxOl0KCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAjIFBhcnNlIDtjb2xzO3Jvd3MKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHBhcnRzID0gcmVzaXplX2NtZC5kZWNvZGUoJ3V0Zi04JywgZXJyb3JzPSdpZ25vcmUnKS5zdHJpcCgnOycpLnNwbGl0KCc7JykKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGlmIGxlbihwYXJ0cykgPT0gMjoKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB0cnk6CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIG5ld19jb2xzLCBuZXdfcm93cyA9IGludChwYXJ0c1swXSksIGludChwYXJ0c1sxXSkKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcHR5LnNldF9zaXplKG5ld19jb2xzLCBuZXdfcm93cykKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBleGNlcHQgVmFsdWVFcnJvcjoKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcGFzcwogICAgICAgICAgICAgICAgICAgICAgICBlbHNlOgogICAgICAgICAgICAgICAgICAgICAgICAgICAgIyBPdGhlciBPU0Mgc2VxdWVuY2Ug4oCUIHBhc3MgdGhyb3VnaCB0byBQVFkKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHB0eS53cml0ZShpbnB1dF9idWZmZXIuZGVjb2RlKCdsYXRpbi0xJykpCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBpbnB1dF9idWZmZXIgPSBiJycKICAgICAgICAgICAgICAgICAgICAgICAgY29udGludWUKCiAgICAgICAgICAgICAgICAgICAgZWxpZiBzZWNvbmQgPT0gYidbJzoKICAgICAgICAgICAgICAgICAgICAgICAgIyBDU0kgc2VxdWVuY2UgKFx4MWJbLi4uZmluYWwpIOKAlCByZWFkIHVudGlsIGZpbmFsIGJ5dGUgKDB4NDDigJMweDdFKQogICAgICAgICAgICAgICAgICAgICAgICB3aGlsZSBUcnVlOgogICAgICAgICAgICAgICAgICAgICAgICAgICAgYyA9IHN5cy5zdGRpbi5idWZmZXIucmVhZCgxKQogICAgICAgICAgICAgICAgICAgICAgICAgICAgaWYgbm90IGM6CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgYnJlYWsKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGlucHV0X2J1ZmZlciArPSBjCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBpZiAweDQwIDw9IGlucHV0X2J1ZmZlclstMV0gPD0gMHg3RToKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBicmVhawoKICAgICAgICAgICAgICAgICAgICAgICAgIyB4dGVybS5qcyBzZW5kcyB0ZXJtaW5hbCBwcm90b2NvbCByZXNwb25zZXMgKERBMSwgREEyLAogICAgICAgICAgICAgICAgICAgICAgICAjIGRldmljZSBzdGF0dXMpIHZpYSB0ZXJtLm9uRGF0YSBpbiByZXBseSB0byBDb25QVFkKICAgICAgICAgICAgICAgICAgICAgICAgIyBjYXBhYmlsaXR5IHF1ZXJpZXMuIFRoZXNlIG11c3Qgbm90IHJlYWNoIGNtZC5leGUuCiAgICAgICAgICAgICAgICAgICAgICAgICMgICBEQTE6ICBceDFiWz8uLi5jICAgKGUuZy4gXHgxYls/MTsyYykKICAgICAgICAgICAgICAgICAgICAgICAgIyAgIERBMjogIFx4MWJbPi4uLmMgICAoZS5nLiBceDFiWz4wOzA7MGMpCiAgICAgICAgICAgICAgICAgICAgICAgICMgICBEU1I6ICBceDFiWy4uLm4gICAgKGUuZy4gXHgxYlswbikKICAgICAgICAgICAgICAgICAgICAgICAgbGFzdCA9IGlucHV0X2J1ZmZlclstMV0gaWYgaW5wdXRfYnVmZmVyIGVsc2UgMAogICAgICAgICAgICAgICAgICAgICAgICB0aGlyZCA9IGlucHV0X2J1ZmZlclsyOjNdCiAgICAgICAgICAgICAgICAgICAgICAgIGlzX3Byb3RvY29sX3Jlc3BvbnNlID0gKAogICAgICAgICAgICAgICAgICAgICAgICAgICAgKGxhc3QgPT0gb3JkKCdjJykgYW5kIHRoaXJkIGluIChiJz8nLCBiJz4nKSkgb3IKICAgICAgICAgICAgICAgICAgICAgICAgICAgIChsYXN0ID09IG9yZCgnbicpKQogICAgICAgICAgICAgICAgICAgICAgICApCiAgICAgICAgICAgICAgICAgICAgICAgIGlmIG5vdCBpc19wcm90b2NvbF9yZXNwb25zZToKICAgICAgICAgICAgICAgICAgICAgICAgICAgICMgTGVnaXRpbWF0ZSB1c2VyIGlucHV0IChjdXJzb3Iga2V5cywgZnVuY3Rpb24ga2V5cywgZXRjLikKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHB0eS53cml0ZShpbnB1dF9idWZmZXIuZGVjb2RlKCdsYXRpbi0xJykpCiAgICAgICAgICAgICAgICAgICAgICAgIGlucHV0X2J1ZmZlciA9IGInJwogICAgICAgICAgICAgICAgICAgICAgICBjb250aW51ZQoKICAgICAgICAgICAgICAgICAgICBlbHNlOgogICAgICAgICAgICAgICAgICAgICAgICAjIE90aGVyIHR3by1ieXRlIGVzY2FwZSAoU1MyLCBTUzMsIGV0Yy4pIOKAlCBwYXNzIHRocm91Z2gKICAgICAgICAgICAgICAgICAgICAgICAgcHR5LndyaXRlKGlucHV0X2J1ZmZlci5kZWNvZGUoJ2xhdGluLTEnKSkKICAgICAgICAgICAgICAgICAgICAgICAgaW5wdXRfYnVmZmVyID0gYicnCiAgICAgICAgICAgICAgICAgICAgICAgIGNvbnRpbnVlCgogICAgICAgICAgICAgICAgIyBQcm9jZXNzIGNvbXBsZXRlIFVURi04IGNoYXJhY3RlcnMgZnJvbSBidWZmZXIKICAgICAgICAgICAgICAgIHdoaWxlIGlucHV0X2J1ZmZlcjoKICAgICAgICAgICAgICAgICAgICBjaGFyX2J5dGVzLCBpbnB1dF9idWZmZXIgPSByZWFkX3V0ZjhfY2hhcihpbnB1dF9idWZmZXIpCiAgICAgICAgICAgICAgICAgICAgaWYgY2hhcl9ieXRlcyBpcyBOb25lOgogICAgICAgICAgICAgICAgICAgICAgICAjIE5lZWQgbW9yZSBieXRlcyB0byBjb21wbGV0ZSB0aGUgY2hhcmFjdGVyCiAgICAgICAgICAgICAgICAgICAgICAgIGJyZWFrCiAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgIyBEZWNvZGUgYW5kIHNlbmQgdG8gUFRZCiAgICAgICAgICAgICAgICAgICAgdHJ5OgogICAgICAgICAgICAgICAgICAgICAgICBjaGFyX3N0ciA9IGNoYXJfYnl0ZXMuZGVjb2RlKCd1dGYtOCcpCiAgICAgICAgICAgICAgICAgICAgICAgIHB0eS53cml0ZShjaGFyX3N0cikKICAgICAgICAgICAgICAgICAgICBleGNlcHQgVW5pY29kZURlY29kZUVycm9yOgogICAgICAgICAgICAgICAgICAgICAgICAjIEludmFsaWQgVVRGLTgsIHNlbmQgYXMtaXMgKGVzY2FwZSBzZXF1ZW5jZXMsIGV0Yy4pCiAgICAgICAgICAgICAgICAgICAgICAgIHB0eS53cml0ZShjaGFyX2J5dGVzLmRlY29kZSgnbGF0aW4tMScpKQogICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgZXhjZXB0IEV4Y2VwdGlvbiBhcyBlOgogICAgICAgICAgICAgICAgYnJlYWsKCiAgICAgICAgcnVubmluZyA9IEZhbHNlCiAgICAgICAgc3lzLmV4aXQoMCkKCiAgICBleGNlcHQgRXhjZXB0aW9uIGFzIGU6CiAgICAgICAgcHJpbnQoZiJFcnJvcjoge2V9IiwgZmlsZT1zeXMuc3RkZXJyKQogICAgICAgIHN5cy5leGl0KDEpCgppZiBfX25hbWVfXyA9PSAnX19tYWluX18nOgogICAgbWFpbigpCg==";
     // Decode and write PTY script to temp file
     const os = require("os");
     const scriptB64 = isWindows ? WIN_PTY_SCRIPT_B64 : PTY_SCRIPT_B64;
@@ -7697,8 +7847,9 @@ var TerminalView = class extends import_obsidian.ItemView {
         cmd = "python";
       }
     }
-    const backend = this.getBackend();
-    const backendKey = this.plugin.pluginData.cliBackend || "claude";
+    const backendKey = this.getBackendKey();
+    const backend = CLI_BACKENDS[backendKey];
+    this.activeBackendKey = backendKey;
     let cliCmd = backend.binary;
     if (yoloMode && backend.yoloFlag) cliCmd += " " + backend.yoloFlag;
     const flagsByProvider = this.plugin.pluginData.flagsByProvider || {};
@@ -7885,9 +8036,20 @@ var TerminalView = class extends import_obsidian.ItemView {
     this.plugin?._trackedTerminalViews?.delete(this);
     this.resizeObserver?.disconnect();
     this.themeObserver?.disconnect();
+    // Clear pending timers on the window that created them (they may be
+    // popout-minted; a bare clearTimeout would run on the main window and could
+    // cancel an unrelated timer that happens to share the id — see #94 review).
     if (this.fitTimeout) {
-      clearTimeout(this.fitTimeout);
+      (this._fitTimeoutWin || window).clearTimeout(this.fitTimeout);
       this.fitTimeout = null;
+    }
+    if (this._relTimeout) {
+      (this._relTimeoutWin || window).clearTimeout(this._relTimeout);
+      this._relTimeout = null;
+    }
+    if (this._reconcileTimer) {
+      (this._reconcileTimerWin || window).clearTimeout(this._reconcileTimer);
+      this._reconcileTimer = null;
     }
     if (this.ctrlOFocusIn) {
       this.containerEl.removeEventListener('focusin', this.ctrlOFocusIn);
@@ -7941,11 +8103,14 @@ var TerminalView = class extends import_obsidian.ItemView {
     this.fitAddon = null;
   }
 };
+// mode "default": change the saved default provider, then open a tab with it.
+// mode "once":    open a tab with the chosen provider and leave the default alone.
 var CliProviderSwitchModal = class extends import_obsidian.SuggestModal {
-  constructor(app, plugin) {
+  constructor(app, plugin, mode = "default") {
     super(app);
     this.plugin = plugin;
-    this.setPlaceholder("Switch CLI provider…");
+    this.mode = mode;
+    this.setPlaceholder(mode === "once" ? "Open a tab with…" : "Switch default CLI provider…");
   }
   getSuggestions(query) {
     const q = query.toLowerCase();
@@ -7955,12 +8120,20 @@ var CliProviderSwitchModal = class extends import_obsidian.SuggestModal {
       .filter(({ backend }) => backend.label.toLowerCase().includes(q) || backend.binary.toLowerCase().includes(q));
   }
   renderSuggestion(item, el) {
-    el.createEl("div", { text: item.backend.label + (item.isCurrent ? "  (current)" : "") });
+    const suffix = item.isCurrent ? (this.mode === "once" ? "  (default)" : "  (current)") : "";
+    el.createEl("div", { text: item.backend.label + suffix });
     el.createEl("small", { text: item.backend.binary, cls: "vault-terminal-suggest-binary" });
   }
   async onChooseSuggestion(item) {
+    if (this.mode === "once") {
+      // Pass the key explicitly even when it matches the default, so the tab
+      // keeps running that provider if the default changes later.
+      this.plugin.createNewTab(null, false, false, item.key);
+      return;
+    }
     this.plugin.pluginData.cliBackend = item.key;
     await this.plugin.saveData(this.plugin.pluginData);
+    this.plugin.refreshRibbonTooltip();
     this.plugin.createNewTab();
   }
 };
@@ -7985,13 +8158,14 @@ var ClaudeSidebarSettingsTab = class extends import_obsidian.PluginSettingTab {
         drop.onChange(async (value) => {
           this.plugin.pluginData.cliBackend = value;
           await this.plugin.saveData(this.plugin.pluginData);
+          this.plugin.refreshRibbonTooltip();
           this.display();
         });
       });
     if (process.platform === "win32") {
       new import_obsidian.Setting(containerEl)
         .setName("Shell")
-        .setDesc("wsl.exe runs Claude inside WSL and translates vault paths to Linux paths via wslpath. cmd.exe runs Claude on Windows natively.")
+        .setDesc("wsl.exe runs the CLI inside WSL and translates vault paths to Linux paths via wslpath. cmd.exe runs it on Windows natively.")
         .addDropdown(drop => {
           drop.addOption("cmd", "cmd.exe");
           drop.addOption("wsl", "wsl.exe (WSL)");
@@ -8052,6 +8226,27 @@ var ClaudeSidebarSettingsTab = class extends import_obsidian.PluginSettingTab {
         setTimeout(grow, 0);
       });
     envSetting.settingEl.addClass("claude-sidebar-env-setting");
+    new import_obsidian.Setting(containerEl)
+      .setName("Terminal font size")
+      .setDesc("Size of the terminal text in pixels (6–32). Default is 13. Applies to open tabs immediately.")
+      .addText(text => {
+        text.inputEl.type = "number";
+        text.inputEl.min = "6";
+        text.inputEl.max = "32";
+        text.inputEl.step = "1";
+        text.inputEl.style.width = "4.5em";
+        text
+          .setPlaceholder("13")
+          .setValue(String(this.plugin.getFontSize()))
+          .onChange(async (value) => {
+            const n = parseInt(value, 10);
+            // Ignore empty/partial while typing; only save valid in-range values.
+            if (!Number.isFinite(n) || n < 6 || n > 32) return;
+            this.plugin.pluginData.fontSize = n;
+            await this.plugin.saveData(this.plugin.pluginData);
+            this.plugin.applyFontSizeToOpenTerminals(n);
+          });
+      });
   }
 };
 var VaultTerminalPlugin = class extends import_obsidian.Plugin {
@@ -8060,10 +8255,29 @@ var VaultTerminalPlugin = class extends import_obsidian.Plugin {
     this.lastRibbonClick = 0;
     this.pluginData = {};
   }
+  // Soft floor/ceiling so values can't go absurd. Floor is 6; ceiling is just
+  // a stop for runaway spinner clicks — not a hard product limit.
+  normalizeFontSize(value) {
+    const n = Number(value);
+    if (!Number.isFinite(n)) return 13;
+    return Math.min(32, Math.max(6, Math.round(n)));
+  }
+  getFontSize() {
+    return this.normalizeFontSize(this.pluginData.fontSize ?? 13);
+  }
+  applyFontSizeToOpenTerminals(size) {
+    const next = this.normalizeFontSize(size);
+    for (const view of this._trackedTerminalViews || []) {
+      try { view.applyFontSize?.(next); } catch (_) {}
+    }
+  }
   async onload() {
     this.registerView(VIEW_TYPE, (leaf) => new TerminalView(leaf, this));
     this._trackedTerminalViews = new Set();
     this.pluginData = await this.loadData() || {};
+    if (this.pluginData.fontSize != null) {
+      this.pluginData.fontSize = this.normalizeFontSize(this.pluginData.fontSize);
+    }
     if (this.pluginData.additionalFlags && !this.pluginData.flagsByProvider) {
       const key = this.pluginData.cliBackend || "claude";
       this.pluginData.flagsByProvider = { [key]: this.pluginData.additionalFlags };
@@ -8103,17 +8317,18 @@ var VaultTerminalPlugin = class extends import_obsidian.Plugin {
         }
       })
     );
-    const ribbonIcon = this.addRibbonIcon("bot", "New Claude Tab", () => {
+    const ribbonIcon = this.addRibbonIcon("bot", `New ${this.getDefaultBackend().label} Tab`, () => {
       const now = Date.now();
       if (now - this.lastRibbonClick < 1500) return; // 1.5s throttle to prevent accidental double-clicks
       this.lastRibbonClick = now;
       this.createNewTab();
     });
+    this.ribbonIcon = ribbonIcon;
     // Right-click context menu
     ribbonIcon.addEventListener("contextmenu", (e) => {
       e.preventDefault();
       const menu = new import_obsidian.Menu();
-      const activeBackend = CLI_BACKENDS[this.pluginData.cliBackend || "claude"];
+      const activeBackend = this.getDefaultBackend();
       if (activeBackend.yoloFlag) {
         menu.addItem((item) => {
           item.setTitle("Open in YOLO mode")
@@ -8160,24 +8375,29 @@ var VaultTerminalPlugin = class extends import_obsidian.Plugin {
     });
     this.addCommand({
       id: "open-claude",
-      name: "Open Claude Code",
+      name: "Open terminal",
       callback: () => this.activateView()
     });
     this.addCommand({
       id: "switch-cli-provider",
-      name: "Switch CLI provider…",
-      callback: () => new CliProviderSwitchModal(this.app, this).open()
+      name: "Switch default CLI provider…",
+      callback: () => new CliProviderSwitchModal(this.app, this, "default").open()
+    });
+    this.addCommand({
+      id: "new-tab-with-cli-provider",
+      name: "New agent tab (other CLI)…",
+      callback: () => new CliProviderSwitchModal(this.app, this, "once").open()
     });
     this.addCommand({
       id: "new-claude-tab",
-      name: "New Claude Tab",
+      name: "New agent tab",
       callback: () => this.createNewTab()
     });
     this.addCommand({
       id: "new-claude-tab-yolo",
-      name: "New Tab (YOLO mode)",
+      name: "New agent tab (YOLO mode)",
       checkCallback: (checking) => {
-        const backend = CLI_BACKENDS[this.pluginData.cliBackend || "claude"];
+        const backend = this.getDefaultBackend();
         if (!backend?.yoloFlag) return false;
         if (!checking) this.createNewTab(null, true);
         return true;
@@ -8185,7 +8405,7 @@ var VaultTerminalPlugin = class extends import_obsidian.Plugin {
     });
     this.addCommand({
       id: "close-claude-tab",
-      name: "Close Claude Tab",
+      name: "Close agent tab",
       checkCallback: (checking) => {
         const view = this.app.workspace.getActiveViewOfType(TerminalView);
         if (view) {
@@ -8197,12 +8417,12 @@ var VaultTerminalPlugin = class extends import_obsidian.Plugin {
     });
     this.addCommand({
       id: "toggle-claude-focus",
-      name: "Toggle Focus: Editor ↔ Claude",
+      name: "Toggle Focus: Editor ↔ Agent",
       callback: () => this.toggleFocus()
     });
     this.addCommand({
       id: "send-file-to-claude",
-      name: "Send File Path to Claude",
+      name: "Send file path to agent",
       checkCallback: (checking) => {
         const file = this.app.workspace.getActiveFile();
         if (!file) return false;
@@ -8216,7 +8436,7 @@ var VaultTerminalPlugin = class extends import_obsidian.Plugin {
     });
     this.addCommand({
       id: "send-selection-to-claude",
-      name: "Send Selection to Claude",
+      name: "Send selection to agent",
       checkCallback: (checking) => {
         const editor = this.app.workspace.activeEditor?.editor;
         if (!editor) return false;
@@ -8234,7 +8454,7 @@ var VaultTerminalPlugin = class extends import_obsidian.Plugin {
 
     this.addCommand({
       id: "run-claude-from-folder",
-      name: "Run Claude from this folder",
+      name: "Run agent from this folder",
       callback: () => {
         const file = this.app.workspace.getActiveFile();
         let dir = null;
@@ -8250,7 +8470,7 @@ var VaultTerminalPlugin = class extends import_obsidian.Plugin {
       id: "resume-claude",
       name: "Resume last conversation",
       checkCallback: (checking) => {
-        const backend = CLI_BACKENDS[this.pluginData.cliBackend || "claude"];
+        const backend = this.getDefaultBackend();
         if (!backend?.resumeFlag) return false;
         if (!checking) {
           const lastCwd = this.pluginData.lastCwd || null;
@@ -8264,20 +8484,20 @@ var VaultTerminalPlugin = class extends import_obsidian.Plugin {
     this.registerEvent(
       this.app.workspace.on('file-menu', (menu, file, source) => {
         if (file instanceof import_obsidian.TFolder) {
+          const folderBackend = this.getDefaultBackend();
           menu.addItem(item =>
             item
-              .setTitle('Open Claude here')
+              .setTitle(`Open ${folderBackend.label} here`)
               .setIcon('bot')
               .onClick(() => {
                 const absolutePath = this.app.vault.adapter.getFullPath(file.path);
                 this.createNewTab(absolutePath);
               })
           );
-          const folderBackend = CLI_BACKENDS[this.pluginData.cliBackend || "claude"];
           if (folderBackend.yoloFlag) {
             menu.addItem(item =>
               item
-                .setTitle('Open Claude here (YOLO)')
+                .setTitle(`Open ${folderBackend.label} here (YOLO)`)
                 .setIcon('zap')
                 .onClick(() => {
                   const absolutePath = this.app.vault.adapter.getFullPath(file.path);
@@ -8288,7 +8508,7 @@ var VaultTerminalPlugin = class extends import_obsidian.Plugin {
         } else if (file instanceof import_obsidian.TFile) {
           menu.addItem(item =>
             item
-              .setTitle('Send file path to Claude')
+              .setTitle(`Send file path to ${this.getDefaultBackend().label}`)
               .setIcon('bot')
               .onClick(() => {
                 const absolutePath = `"${this.getPath(this.getVaultPath() + '/' + file.path)}" `;
@@ -8305,7 +8525,7 @@ var VaultTerminalPlugin = class extends import_obsidian.Plugin {
         if (selection) {
           menu.addItem(item =>
             item
-              .setTitle('Send selection to Claude')
+              .setTitle(`Send selection to ${this.getDefaultBackend().label}`)
               .setIcon('bot')
               .onClick(() => {
                 const enriched = this.buildSelectionContext(editor, selection);
@@ -8398,7 +8618,16 @@ var VaultTerminalPlugin = class extends import_obsidian.Plugin {
     }
     await this.createNewTab();
   }
-  async createNewTab(workingDir = null, yoloMode = false, continueSession = false) {
+  getDefaultBackend() {
+    return CLI_BACKENDS[this.pluginData.cliBackend] || CLI_BACKENDS.claude;
+  }
+  // Labels built at display time (ribbon, context menus) name the actual
+  // provider. Command names can't — they're registered once at load — so those
+  // stay provider-neutral rather than re-registering on every settings change.
+  refreshRibbonTooltip() {
+    this.ribbonIcon?.setAttribute("aria-label", `New ${this.getDefaultBackend().label} Tab`);
+  }
+  async createNewTab(workingDir = null, yoloMode = false, continueSession = false, backendKey = null) {
     if (!this.layoutReady) return;
     const leaf = this.app.workspace.getRightLeaf(false);
     if (leaf) {
@@ -8406,6 +8635,7 @@ var VaultTerminalPlugin = class extends import_obsidian.Plugin {
       if (workingDir) state.workingDir = workingDir;
       if (yoloMode) state.yoloMode = yoloMode;
       if (continueSession) state.continueSession = continueSession;
+      if (backendKey) state.backendKey = backendKey;
       await leaf.setViewState({
         type: VIEW_TYPE,
         active: true,
