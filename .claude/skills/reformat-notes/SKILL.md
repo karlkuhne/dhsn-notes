@@ -101,7 +101,8 @@ Wenn das der letzte Block war (`block_end >= total_lines - 1`):
 - Analogien und Beispiele zur Veranschaulichung einsetzen (z.B. "ähnlich wie ein Wassertank")
 
 ### Struktur
-- Jeder Abschnitt beginnt mit einem **Konzeptsatz** (bold oder als Intro-Absatz)
+- Ein Abschnitt kann mit einem kurzen **Einleitungssatz** als normalem Absatz beginnen – **ohne** Label wie `**Konzept:**` und ohne Blockquote
+- Einleitungssatz **nur, wenn er echten Mehrwert bringt** (Einordnung, Zusammenhang, das *Warum*). Wiederholt er nur, was direkt darunter in Definition, Liste oder Erklärung steht → weglassen
 - Dann Erklärung, dann Formel(n), dann Intuition/Bedeutung
 - Subsektionen mit `###` Überschriften
 - Nummerierung konsistent zu den bestehenden Überschriften beibehalten
@@ -160,9 +161,7 @@ Formeln IMMER in Callout-Blöcke einbetten:
 ```markdown
 ### 3.X.Y Titel
 
->**Konzept:** Kurzer Intro-Satz, der das Thema einführt.
-
-Erklärung in 1-3 Sätzen was passiert und warum es wichtig ist.
+Erklärung in 1-3 Sätzen was passiert und warum es wichtig ist (optionaler Einleitungssatz nur bei Mehrwert, ohne Label).
 
 > [!formula] Name der Formel
 > $$ Formel $$
