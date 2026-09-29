@@ -5,5 +5,6 @@ Vorlesungsnotizen zu Betriebssystemen und Rechnernetzen: Theorie der Betriebssys
 ## Vorlesungen
 
 - [[1. Einführung Betriebssysteme]]
+- [[2. Einfache Computer]]
 
 ## Übungen
