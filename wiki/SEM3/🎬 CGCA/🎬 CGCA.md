@@ -4,5 +4,6 @@ Vorlesungsnotizen zu Computergrafik und Computeranimation (Dozent: Arnd Vitzthum
 ## Vorlesungen
 
 - [[1. Einführung in die Computergrafik]]
+- [[2. Historie und Anwendungsfelder]]
 
 ## Übungen
