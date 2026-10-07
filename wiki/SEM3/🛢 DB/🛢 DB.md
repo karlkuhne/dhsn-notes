@@ -4,5 +4,6 @@ Vorlesungsnotizen zu Datenbanken (Dozent: Dr. Harald Pfefferkorn): Datenbankansa
 ## Vorlesungen
 
 - [[1. Einführung in Datenbanken]]
+- [[2. Historische Datenmodelle]]
 
 ## Übungen
