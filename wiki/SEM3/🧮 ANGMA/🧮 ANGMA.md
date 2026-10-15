@@ -9,3 +9,6 @@ Stochastik (deskriptive Statistik, Wahrscheinlichkeitstheorie, schließende Stat
 ### Püstow
 
 ## Übungen
+
+### Gembris
+- [[wiki/SEM3/🧮 ANGMA/Gembris/Übungen]]
