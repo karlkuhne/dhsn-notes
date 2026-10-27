@@ -1,0 +1,697 @@
+{
+	"nodes": [
+		{
+			"id": "g_sagt",
+			"type": "group",
+			"x": 0,
+			"y": 300,
+			"width": 1000,
+			"height": 740,
+			"label": ""
+		},
+		{
+			"id": "g_denkt",
+			"type": "group",
+			"x": 1040,
+			"y": 300,
+			"width": 1000,
+			"height": 740,
+			"label": ""
+		},
+		{
+			"id": "g_tut",
+			"type": "group",
+			"x": 0,
+			"y": 1080,
+			"width": 1000,
+			"height": 740,
+			"label": ""
+		},
+		{
+			"id": "g_fuehlt",
+			"type": "group",
+			"x": 1040,
+			"y": 1080,
+			"width": 1000,
+			"height": 740,
+			"label": ""
+		},
+		{
+			"id": "g_pains",
+			"type": "group",
+			"x": 0,
+			"y": 1920,
+			"width": 1000,
+			"height": 550,
+			"label": ""
+		},
+		{
+			"id": "g_gains",
+			"type": "group",
+			"x": 1040,
+			"y": 1920,
+			"width": 1000,
+			"height": 550,
+			"label": ""
+		},
+		{
+			"id": "titel",
+			"type": "text",
+			"x": 0,
+			"y": 0,
+			"width": 2040,
+			"height": 250,
+			"text": "# Empathy Map – Museumsbesucher*in\n22.10.2026 · **Annahmen-Map**, noch ohne Interviews (Methode: [[2. Nutzer spezifizieren#2.3.5 Empathy Map|2.3.5]]). Jede farbige Karte ist eine Annahme; die Fußzeile nennt die Interviewfrage, die sie prüft, die betroffene Zielgruppe (sonst alle) und den Cluster im [[Affinity Diagram]], aus dem der Anlass stammt. Grau: Beleg aus den Quellen."
+		},
+		{
+			"id": "h_sagt",
+			"type": "text",
+			"x": 30,
+			"y": 330,
+			"width": 940,
+			"height": 110,
+			"color": "5",
+			"text": "## Sagt\nWas sagt die Person laut, zur Begleitung?"
+		},
+		{
+			"id": "sagt_0",
+			"type": "text",
+			"x": 30,
+			"y": 460,
+			"width": 300,
+			"height": 170,
+			"text": "„Boah, sind die riesig!“\n\n*Annahme · [[2. Nutzer spezifizieren#2.3.1 Kurzinterviews|Frage 3]]*",
+			"color": "5"
+		},
+		{
+			"id": "sagt_1",
+			"type": "text",
+			"x": 350,
+			"y": 460,
+			"width": 300,
+			"height": 170,
+			"text": "„Wer sind denn die ganzen Leute da?“\n\n*Annahme · [[2. Nutzer spezifizieren#2.3.1 Kurzinterviews|Frage 3]] · [[Affinity Diagram – nachher.canvas|Cluster G]]*",
+			"color": "5"
+		},
+		{
+			"id": "sagt_2",
+			"type": "text",
+			"x": 670,
+			"y": 460,
+			"width": 300,
+			"height": 170,
+			"text": "„Was macht der Hund da?“\n\n*Annahme (Familien) · [[2. Nutzer spezifizieren#2.3.1 Kurzinterviews|Frage 3]] · [[Affinity Diagram – nachher.canvas|Cluster G]]*",
+			"color": "5"
+		},
+		{
+			"id": "sagt_3",
+			"type": "text",
+			"x": 30,
+			"y": 650,
+			"width": 300,
+			"height": 170,
+			"text": "„Steht irgendwo, worum es geht?“\n\n*Annahme · [[2. Nutzer spezifizieren#2.3.1 Kurzinterviews|Frage 5]]*",
+			"color": "5"
+		},
+		{
+			"id": "sagt_4",
+			"type": "text",
+			"x": 350,
+			"y": 650,
+			"width": 300,
+			"height": 170,
+			"text": "„Ganz schön dunkel, die Bilder.“\n\n*Annahme · [[2. Nutzer spezifizieren#2.3.1 Kurzinterviews|Frage 3]] · [[Affinity Diagram – nachher.canvas|Cluster I]]*",
+			"color": "5"
+		},
+		{
+			"id": "sagt_5",
+			"type": "text",
+			"x": 670,
+			"y": 650,
+			"width": 300,
+			"height": 170,
+			"text": "„Komm, wir wollen noch zur Sixtinischen Madonna.“\n\n*Annahme (Tourist*innen) · [[2. Nutzer spezifizieren#2.3.1 Kurzinterviews|Frage 1]]*",
+			"color": "5"
+		},
+		{
+			"id": "h_denkt",
+			"type": "text",
+			"x": 1070,
+			"y": 330,
+			"width": 940,
+			"height": 110,
+			"color": "6",
+			"text": "## Denkt\nWas geht ihr durch den Kopf, ohne es auszusprechen?"
+		},
+		{
+			"id": "denkt_0",
+			"type": "text",
+			"x": 1070,
+			"y": 460,
+			"width": 300,
+			"height": 170,
+			"text": "„Wofür malt man so breite, niedrige Bilder?“\n\n*Annahme · [[2. Nutzer spezifizieren#2.3.1 Kurzinterviews|Frage 4]] · [[Affinity Diagram – nachher.canvas|Cluster C]]*",
+			"color": "6"
+		},
+		{
+			"id": "denkt_1",
+			"type": "text",
+			"x": 1390,
+			"y": 460,
+			"width": 300,
+			"height": 170,
+			"text": "„Bestimmt waren die für eine Kirche.“\n\n*Annahme · [[2. Nutzer spezifizieren#2.3.1 Kurzinterviews|Frage 4]] · [[Affinity Diagram – nachher.canvas|Cluster C]]*",
+			"color": "6"
+		},
+		{
+			"id": "denkt_2",
+			"type": "text",
+			"x": 1710,
+			"y": 460,
+			"width": 300,
+			"height": 170,
+			"text": "„Welche Bibelgeschichte ist das? Kenne ich nicht.“\n\n*Annahme · [[2. Nutzer spezifizieren#2.3.1 Kurzinterviews|Frage 6]] · [[Affinity Diagram – nachher.canvas|Cluster D]]*",
+			"color": "6"
+		},
+		{
+			"id": "denkt_3",
+			"type": "text",
+			"x": 1070,
+			"y": 650,
+			"width": 300,
+			"height": 170,
+			"text": "„Warum malen sich reiche Leute neben die Madonna?“\n\n*Annahme · [[2. Nutzer spezifizieren#2.3.1 Kurzinterviews|Frage 3]] · [[Affinity Diagram – nachher.canvas|Cluster F]]*",
+			"color": "6"
+		},
+		{
+			"id": "denkt_4",
+			"type": "text",
+			"x": 1390,
+			"y": 650,
+			"width": 300,
+			"height": 170,
+			"text": "„Dafür müsste ich mehr wissen.“\n\n*Annahme · [[2. Nutzer spezifizieren#2.3.1 Kurzinterviews|Frage 6]]*",
+			"color": "6"
+		},
+		{
+			"id": "denkt_5",
+			"type": "text",
+			"x": 1710,
+			"y": 650,
+			"width": 300,
+			"height": 170,
+			"text": "„Lohnt sich hier der Audioguide, oder gehe ich weiter?“\n\n*Annahme · [[2. Nutzer spezifizieren#2.3.1 Kurzinterviews|Frage 5]]*",
+			"color": "6"
+		},
+		{
+			"id": "h_tut",
+			"type": "text",
+			"x": 30,
+			"y": 1680,
+			"width": 940,
+			"height": 110,
+			"color": "2",
+			"text": "## Tut\nWas macht sie vor den Bildern?"
+		},
+		{
+			"id": "tut_0",
+			"type": "text",
+			"x": 670,
+			"y": 1490,
+			"width": 300,
+			"height": 170,
+			"text": "Bleibt kurz stehen und geht weiter in den nächsten Saal\n\n*Annahme · [[2. Nutzer spezifizieren#2.3.1 Kurzinterviews|Frage 2]] / Beobachtung*",
+			"color": "2"
+		},
+		{
+			"id": "tut_1",
+			"type": "text",
+			"x": 350,
+			"y": 1490,
+			"width": 300,
+			"height": 170,
+			"text": "Liest den Bildtitel, selten den ganzen Wandtext\n\n*Annahme · [[2. Nutzer spezifizieren#2.3.1 Kurzinterviews|Frage 5]] / Beobachtung*",
+			"color": "2"
+		},
+		{
+			"id": "tut_2",
+			"type": "text",
+			"x": 30,
+			"y": 1490,
+			"width": 300,
+			"height": 170,
+			"text": "Geht nah ran, um Gesichter und Stoffe zu sehen\n\n*Annahme · [[2. Nutzer spezifizieren#2.3.1 Kurzinterviews|Frage 3]] / Beobachtung · [[Affinity Diagram – nachher.canvas|Cluster F]]*",
+			"color": "2"
+		},
+		{
+			"id": "tut_3",
+			"type": "text",
+			"x": 670,
+			"y": 1300,
+			"width": 300,
+			"height": 170,
+			"text": "Rät mit dem Kind, wer auf dem Familienbild wer ist\n\n*Annahme (Familien) · [[2. Nutzer spezifizieren#2.3.1 Kurzinterviews|Frage 3]] · [[Affinity Diagram – nachher.canvas|Cluster G]]*",
+			"color": "2"
+		},
+		{
+			"id": "tut_4",
+			"type": "text",
+			"x": 350,
+			"y": 1300,
+			"width": 300,
+			"height": 170,
+			"text": "Fotografiert ein Detail mit dem Handy\n\n*Annahme (junge Erwachsene) · Beobachtung*",
+			"color": "2"
+		},
+		{
+			"id": "tut_5",
+			"type": "text",
+			"x": 30,
+			"y": 1300,
+			"width": 300,
+			"height": 170,
+			"text": "Hält Ausschau nach einer Sitzbank\n\n*Annahme (Senior*innen) · [[2. Nutzer spezifizieren#2.3.1 Kurzinterviews|Frage 2]] / Beobachtung*",
+			"color": "2"
+		},
+		{
+			"id": "h_fuehlt",
+			"type": "text",
+			"x": 1070,
+			"y": 1680,
+			"width": 940,
+			"height": 110,
+			"color": "3",
+			"text": "## Fühlt\nWie geht es ihr dabei?"
+		},
+		{
+			"id": "fuehlt_0",
+			"type": "text",
+			"x": 1710,
+			"y": 1490,
+			"width": 300,
+			"height": 170,
+			"text": "Beeindruckt von Größe und Pracht\n\n*Annahme · [[2. Nutzer spezifizieren#2.3.1 Kurzinterviews|Frage 3]]*",
+			"color": "3"
+		},
+		{
+			"id": "fuehlt_1",
+			"type": "text",
+			"x": 1390,
+			"y": 1490,
+			"width": 300,
+			"height": 170,
+			"text": "Überfordert von vielen Figuren ohne Namen\n\n*Annahme · [[2. Nutzer spezifizieren#2.3.1 Kurzinterviews|Frage 3]] · [[Affinity Diagram – nachher.canvas|Cluster G]]*",
+			"color": "3"
+		},
+		{
+			"id": "fuehlt_2",
+			"type": "text",
+			"x": 1070,
+			"y": 1490,
+			"width": 300,
+			"height": 170,
+			"text": "Ausgeschlossen, weil Wissen zu Kunst und Bibel fehlt\n\n*Annahme · [[2. Nutzer spezifizieren#2.3.1 Kurzinterviews|Frage 6]] · [[Affinity Diagram – nachher.canvas|Cluster D]]*",
+			"color": "3"
+		},
+		{
+			"id": "fuehlt_3",
+			"type": "text",
+			"x": 1710,
+			"y": 1300,
+			"width": 300,
+			"height": 170,
+			"text": "Müde nach vielen Sälen\n\n*Annahme · [[2. Nutzer spezifizieren#2.3.1 Kurzinterviews|Frage 2]]*",
+			"color": "3"
+		},
+		{
+			"id": "fuehlt_4",
+			"type": "text",
+			"x": 1390,
+			"y": 1300,
+			"width": 300,
+			"height": 170,
+			"text": "Neugierig, sobald ein Detail auffällt (Hund, Baby mit Amme)\n\n*Annahme · [[2. Nutzer spezifizieren#2.3.1 Kurzinterviews|Frage 3]] · [[Affinity Diagram – nachher.canvas|Cluster G]]*",
+			"color": "3"
+		},
+		{
+			"id": "fuehlt_5",
+			"type": "text",
+			"x": 1070,
+			"y": 1300,
+			"width": 300,
+			"height": 170,
+			"text": "Schon 1830 war August von Goethe nach Veronese-Bildern erschöpft und ging zum Fischmarkt.\n\n*Beleg: [[5. Palazzo Barbarigo della Terrazza#5.6 Berühmte Besucher|Bergdolt]]*"
+		},
+		{
+			"id": "h_pains",
+			"type": "text",
+			"x": 30,
+			"y": 1950,
+			"width": 940,
+			"height": 110,
+			"color": "1",
+			"text": "## Pains\nWas frustriert, was hält ab?"
+		},
+		{
+			"id": "pains_0",
+			"type": "text",
+			"x": 30,
+			"y": 2080,
+			"width": 300,
+			"height": 170,
+			"text": "Lange Wandtexte, kleine Schrift, keine Zeit\n\n*Annahme · [[2. Nutzer spezifizieren#2.3.1 Kurzinterviews|Frage 5]]*",
+			"color": "1"
+		},
+		{
+			"id": "pains_1",
+			"type": "text",
+			"x": 350,
+			"y": 2080,
+			"width": 300,
+			"height": 170,
+			"text": "Kunst- und Bibelwissen wird vorausgesetzt\n\n*Annahme · [[2. Nutzer spezifizieren#2.3.1 Kurzinterviews|Frage 6]] · [[Affinity Diagram – nachher.canvas|Cluster D]]*",
+			"color": "1"
+		},
+		{
+			"id": "pains_2",
+			"type": "text",
+			"x": 670,
+			"y": 2080,
+			"width": 300,
+			"height": 170,
+			"text": "Der Festsaal fehlt: Man sieht nicht, wofür die Bilder gemalt wurden\n\n*Annahme · [[2. Nutzer spezifizieren#2.3.1 Kurzinterviews|Frage 4]] · [[Affinity Diagram – nachher.canvas|Cluster C]]*",
+			"color": "1"
+		},
+		{
+			"id": "pains_3",
+			"type": "text",
+			"x": 30,
+			"y": 2270,
+			"width": 300,
+			"height": 170,
+			"text": "Verbräunte, dunkle Farben verschlucken Details\n\n*Annahme · [[2. Nutzer spezifizieren#2.3.1 Kurzinterviews|Frage 3]] · [[Affinity Diagram – nachher.canvas|Cluster I]]*",
+			"color": "1"
+		},
+		{
+			"id": "pains_4",
+			"type": "text",
+			"x": 350,
+			"y": 2270,
+			"width": 300,
+			"height": 170,
+			"text": "Viele Personen, aber keine Namen am Bild\n\n*Annahme · [[2. Nutzer spezifizieren#2.3.1 Kurzinterviews|Frage 3]] · [[Affinity Diagram – nachher.canvas|Cluster G]]*",
+			"color": "1"
+		},
+		{
+			"id": "pains_5",
+			"type": "text",
+			"x": 670,
+			"y": 2270,
+			"width": 300,
+			"height": 170,
+			"text": "Interaktive Stationen: Warten, komplizierte Bedienung\n\n*Annahme · [[2. Nutzer spezifizieren#2.3.1 Kurzinterviews|Frage 7]]*",
+			"color": "1"
+		},
+		{
+			"id": "h_gains",
+			"type": "text",
+			"x": 1070,
+			"y": 1950,
+			"width": 940,
+			"height": 110,
+			"color": "4",
+			"text": "## Gains\nWas würde helfen, was wäre ein Gewinn?"
+		},
+		{
+			"id": "gains_0",
+			"type": "text",
+			"x": 1070,
+			"y": 2080,
+			"width": 300,
+			"height": 170,
+			"text": "Ein „Aha“ in 30 Sekunden, ohne zu lesen\n\n*Annahme · [[2. Nutzer spezifizieren#2.3.1 Kurzinterviews|Frage 2]] / [[2. Nutzer spezifizieren#2.3.1 Kurzinterviews|Frage 6]]*",
+			"color": "4"
+		},
+		{
+			"id": "gains_1",
+			"type": "text",
+			"x": 1390,
+			"y": 2080,
+			"width": 300,
+			"height": 170,
+			"text": "Selbst entdecken statt belehrt werden\n\n*Annahme · [[2. Nutzer spezifizieren#2.3.1 Kurzinterviews|Frage 7]] · [[Affinity Diagram – nachher.canvas|Cluster G]]*",
+			"color": "4"
+		},
+		{
+			"id": "gains_2",
+			"type": "text",
+			"x": 1710,
+			"y": 2080,
+			"width": 300,
+			"height": 170,
+			"text": "Sich vorstellen können, wo die Bilder einst hingen\n\n*Annahme · [[2. Nutzer spezifizieren#2.3.1 Kurzinterviews|Frage 4]] · [[Affinity Diagram – nachher.canvas|Cluster C]]*",
+			"color": "4"
+		},
+		{
+			"id": "gains_3",
+			"type": "text",
+			"x": 1070,
+			"y": 2270,
+			"width": 300,
+			"height": 170,
+			"text": "Etwas sehen, was man allein nicht sieht, z. B. die Farben von 1571\n\n*Annahme · [[2. Nutzer spezifizieren#2.3.1 Kurzinterviews|Frage 6]] · [[Affinity Diagram – nachher.canvas|Cluster I]]*",
+			"color": "4"
+		},
+		{
+			"id": "gains_4",
+			"type": "text",
+			"x": 1390,
+			"y": 2270,
+			"width": 300,
+			"height": 170,
+			"text": "Geschichten über Menschen statt Fachbegriffe\n\n*Annahme · [[2. Nutzer spezifizieren#2.3.1 Kurzinterviews|Frage 6]] · [[Affinity Diagram – nachher.canvas|Cluster F]]*",
+			"color": "4"
+		},
+		{
+			"id": "gains_5",
+			"type": "text",
+			"x": 1710,
+			"y": 2270,
+			"width": 300,
+			"height": 170,
+			"text": "Etwas zum Mitnehmen oder Teilen\n\n*Annahme (junge Erwachsene) · [[2. Nutzer spezifizieren#2.3.1 Kurzinterviews|Frage 7]]*",
+			"color": "4"
+		},
+		{
+			"id": "persona",
+			"type": "text",
+			"x": 800,
+			"y": 910,
+			"width": 440,
+			"height": 300,
+			"text": "### Museumsbesucher*in (allgemein)\n**Situation:** Rundgang durch die Gemäldegalerie Alte Meister, steht vor dem Cuccina-Zyklus: vier Bilder, je über 4 m breit, voller Figuren\n\n**Annahme:** kein Fachwissen zu Kunst oder Bibel, wenig Zeit"
+		},
+		{
+			"id": "naechste",
+			"type": "text",
+			"x": 0,
+			"y": 2530,
+			"width": 2040,
+			"height": 150,
+			"text": "**Nach den Interviews** (→ [[2. Nutzer spezifizieren#2.3.1 Kurzinterviews|2.3.1]]): bestätigte Karten um ein wörtliches Zitat ergänzen, widerlegte löschen, Neues in die freien Plätze; dasselbe in den Proto-Personas rechts. Danach die primäre Persona wählen."
+		},
+		{
+			"id": "p_titel",
+			"type": "text",
+			"x": 2240,
+			"y": 0,
+			"width": 1200,
+			"height": 250,
+			"text": "# Proto-Personas\nAus den Annahmen der Empathy Map verdichtet, **noch ohne Daten**: jede Angabe ist eine Annahme. Steckbrief nach [[2. Nutzer spezifizieren#2.3.3 Personas|2.3.3]]. Die primäre Persona ist noch offen (→ unten)."
+		},
+		{
+			"id": "p_g_familie",
+			"type": "group",
+			"x": 2240,
+			"y": 300,
+			"width": 1200,
+			"height": 840,
+			"label": ""
+		},
+		{
+			"id": "p_familie_kopf",
+			"type": "text",
+			"x": 2270,
+			"y": 330,
+			"width": 1140,
+			"height": 130,
+			"color": "6",
+			"text": "## 👨‍👧 Daniel Weber, 39 · mit Tochter Ella, 7\n*„Wenn sie fragt, was das ist, und ich es nicht weiß, gehen wir weiter.“*"
+		},
+		{
+			"id": "p_familie_profil",
+			"type": "text",
+			"x": 2270,
+			"y": 480,
+			"width": 560,
+			"height": 440,
+			"text": "**Lebenssituation:** Elektriker aus Freiberg, zwei Kinder\n**Anlass, Begleitung:** verregneter Samstag in Dresden; Ellas erster Besuch in einem Kunstmuseum\n**Zeitbudget:** 1,5 Stunden fürs ganze Museum, pro Raum wenige Minuten\n**Vorwissen:** kaum Kunstgeschichte, Bibel nur grob; Ella kennt die Heiligen Drei Könige aus der Weihnachtsgeschichte\n**Technik:** Smartphone im Alltag, Ella spielt auf dem Tablet\n\n*Annahmen · prüfen: [[2. Nutzer spezifizieren#2.3.1 Kurzinterviews|Fragen 1, 2, 5, 7, 8; Eltern im Umfeld befragen]]*"
+		},
+		{
+			"id": "p_familie_ziele",
+			"type": "text",
+			"x": 2850,
+			"y": 480,
+			"width": 560,
+			"height": 210,
+			"color": "4",
+			"text": "**Ziele**\n- Ella soll Spaß haben und etwas mitnehmen\n- gemeinsam entdecken statt vorlesen\n- nicht selbst Experte sein müssen"
+		},
+		{
+			"id": "p_familie_frust",
+			"type": "text",
+			"x": 2850,
+			"y": 710,
+			"width": 560,
+			"height": 210,
+			"color": "1",
+			"text": "**Frustrationen**\n- Wandtexte zu lang zum Vorlesen\n- „Bitte nicht berühren“ überall\n- Ella wird nach zwei Minuten ungeduldig"
+		},
+		{
+			"id": "p_familie_bedeutung",
+			"type": "text",
+			"x": 2270,
+			"y": 940,
+			"width": 1140,
+			"height": 170,
+			"color": "5",
+			"text": "**Bedeutung für uns:** Einstieg ohne Lesen; Suchspiel im Familienbild (Hund, Baby mit Amme → [[Affinity Diagram – nachher.canvas|Cluster G]]); an Bekanntes anknüpfen, die drei Könige ([[Affinity Diagram – nachher.canvas|Cluster D]]); Eltern brauchen kein Vorwissen."
+		},
+		{
+			"id": "p_g_jung",
+			"type": "group",
+			"x": 2240,
+			"y": 1220,
+			"width": 1200,
+			"height": 840,
+			"label": ""
+		},
+		{
+			"id": "p_jung_kopf",
+			"type": "text",
+			"x": 2270,
+			"y": 1250,
+			"width": 1140,
+			"height": 130,
+			"color": "6",
+			"text": "## 🧑‍🎓 Aylin Demir, 23 · Studentin\n*„Wenn das eine gute Story ist, schick ich's in die Gruppe.“*"
+		},
+		{
+			"id": "p_jung_profil",
+			"type": "text",
+			"x": 2270,
+			"y": 1400,
+			"width": 560,
+			"height": 440,
+			"text": "**Lebenssituation:** studiert Maschinenbau an der TU Dresden\n**Anlass, Begleitung:** zeigt zwei Freundinnen von zu Hause Dresden\n**Zeitbudget:** etwa 1 Stunde, will vor allem die Highlights\n**Vorwissen:** Kunst aus der Schule, Bibel kaum\n**Technik:** hoch; Smartphone immer dabei, erwartet flüssige Bedienung\n\n*Annahmen · prüfen: [[2. Nutzer spezifizieren#2.3.1 Kurzinterviews|Fragen 1, 2, 5, 7; Kommiliton*innen befragen]]*"
+		},
+		{
+			"id": "p_jung_ziele",
+			"type": "text",
+			"x": 2850,
+			"y": 1400,
+			"width": 560,
+			"height": 210,
+			"color": "4",
+			"text": "**Ziele**\n- etwas Überraschendes erleben\n- eine Geschichte, die man weitererzählen kann\n- nicht belehrt werden"
+		},
+		{
+			"id": "p_jung_frust",
+			"type": "text",
+			"x": 2850,
+			"y": 1630,
+			"width": 560,
+			"height": 210,
+			"color": "1",
+			"text": "**Frustrationen**\n- veraltete Touchscreens\n- Audioguide erst ausleihen müssen\n- Kunst-Fachsprache"
+		},
+		{
+			"id": "p_jung_bedeutung",
+			"type": "text",
+			"x": 2270,
+			"y": 1860,
+			"width": 1140,
+			"height": 170,
+			"color": "5",
+			"text": "**Bedeutung für uns:** Überraschende Fakten als Story: die Farben von 1571 ([[Affinity Diagram – nachher.canvas|Cluster I]]), das Cochenille-Rot ([[Affinity Diagram – nachher.canvas|Cluster H]]); ein Ergebnis zum Teilen; Technik muss sofort funktionieren."
+		},
+		{
+			"id": "p_g_tourist",
+			"type": "group",
+			"x": 2240,
+			"y": 2140,
+			"width": 1200,
+			"height": 840,
+			"label": ""
+		},
+		{
+			"id": "p_tourist_kopf",
+			"type": "text",
+			"x": 2270,
+			"y": 2170,
+			"width": 1140,
+			"height": 130,
+			"color": "6",
+			"text": "## 🧳 Elaine Brooks, 64 · Touristin aus Manchester\n*„We came for the Raphael – but who are all these people?“*"
+		},
+		{
+			"id": "p_tourist_profil",
+			"type": "text",
+			"x": 2270,
+			"y": 2320,
+			"width": 560,
+			"height": 440,
+			"text": "**Lebenssituation:** Rentnerin, Städtereise Berlin, Dresden, Prag mit ihrem Mann\n**Anlass, Begleitung:** das Museum steht wegen der Sixtinischen Madonna im Reiseführer\n**Zeitbudget:** ein Vormittag, aber die Füße sind müde\n**Vorwissen:** christlich geprägt, kennt die Bibelgeschichten; spricht kein Deutsch\n**Technik:** Smartphone für Fotos, im Urlaub keine Apps installieren\n\n*Annahmen · prüfen: [[2. Nutzer spezifizieren#2.3.1 Kurzinterviews|Fragen 1, 2, 5; schwer zu erreichen, nur im Museum befragbar]]*"
+		},
+		{
+			"id": "p_tourist_ziele",
+			"type": "text",
+			"x": 2850,
+			"y": 2320,
+			"width": 560,
+			"height": 210,
+			"color": "4",
+			"text": "**Ziele**\n- die Highlights in Ruhe sehen\n- verstehen, ohne Deutsch zu können\n- zwischendurch sitzen"
+		},
+		{
+			"id": "p_tourist_frust",
+			"type": "text",
+			"x": 2850,
+			"y": 2550,
+			"width": 560,
+			"height": 210,
+			"color": "1",
+			"text": "**Frustrationen**\n- Texte nur auf Deutsch\n- kleine Schrift\n- Gedränge, keine Sitzbank"
+		},
+		{
+			"id": "p_tourist_bedeutung",
+			"type": "text",
+			"x": 2270,
+			"y": 2780,
+			"width": 1140,
+			"height": 170,
+			"color": "5",
+			"text": "**Bedeutung für uns:** Mindestens Englisch, große Schrift, Sitzplatz; Kernbotschaft in 30 Sekunden; ihr Bibelwissen als Brücke zur Familie, die sich neben die Madonna malen ließ ([[Affinity Diagram – nachher.canvas|Cluster F]])."
+		},
+		{
+			"id": "p_primaer",
+			"type": "text",
+			"x": 2240,
+			"y": 3060,
+			"width": 1200,
+			"height": 230,
+			"text": "### Primäre Persona: offen\nNach den Interviews wählen. Kriterien: Wen erreichen die heutigen Wandtexte am schlechtesten? Wessen Pains passen zu den stärksten Clustern? Wen könnt ihr für den Prototyp-Test mit 3–5 Personen erreichen (→ [[5. Prototyp und Video#5.5 Kurz testen|5.5]])? Daniel und Aylin findet ihr im Umfeld, Elaine nur im Museum."
+		}
+	],
+	"edges": []
+}

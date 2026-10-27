@@ -8,4 +8,4 @@ E0079151@edu.dhsn.de
 
 > __Wahrnehmung__: Menschen suchen automatisch nach: Mustern, Vereinfachung, Wiedererkennung,  Struktur
 
-> **Hinweis:** Fortsetzung im 3. Semester: [[🖥️ WEBDE]] (Projekt interaktive Museumsinstallation)
+> **Hinweis:** Fortsetzung im 3. Semester: [[🎨 WEBDE]] (Projekt interaktive Museumsinstallation)

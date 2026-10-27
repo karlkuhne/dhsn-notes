@@ -11,7 +11,9 @@ Web- und Printdesign (3MI-WEBDE-MI): der Designprozess von der Analyse über Nut
 
 - [[0. Projekt-Kompass]]
 - [[1. Informationen sammeln und strukturieren]]
+	- [[Affinity Diagram]] (Ergebnis 1.3)
 - [[2. Nutzer spezifizieren]]
+	- [[Empathy Map – Museumsbesucher.canvas|Empathy Map und Proto-Personas]] (Annahmen, vor den Interviews)
 - [[3. Ideenfindung]]
 - [[4. Konzeption und Varianten]]
 - [[5. Prototyp und Video]]
