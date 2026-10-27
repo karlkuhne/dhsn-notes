@@ -11,5 +11,6 @@ Vorlesungsnotizen zu Rechnernetzen (Modul BERN-30, Prof. Dr. habil. Luntovskyy):
 - [[5. Lokale Netze]]
 - [[6. Weitverkehrsnetze]]
 - [[7. Sicherungsschicht]]
+- [[8. Vermittlungsschicht]]
 
 ## Übungen
