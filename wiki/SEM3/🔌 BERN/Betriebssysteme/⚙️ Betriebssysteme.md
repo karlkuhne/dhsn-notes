@@ -8,5 +8,6 @@ Vorlesungsnotizen zu Betriebssystemen und Rechnernetzen: Theorie der Betriebssys
 - [[2. Einfache Computer]]
 - [[3. Einfache Betriebssysteme]]
 - [[4. Einfache Systeme - Praxis]]
+- [[5. Computer der 1960er-Jahre]]
 
 ## Übungen
