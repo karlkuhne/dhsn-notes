@@ -33,6 +33,16 @@ Führe die Schritte **sequenziell** aus. Stoppe bei einem Fehler und berichte wa
 marker_single marker/input/<dateiname.pdf> --output_dir marker/output --force_ocr
 ```
 
+**Große PDFs aufteilen:** Lange PDFs (ab ca. 60 Seiten) laufen sonst nicht durch (`MPS backend out of memory`, auch nicht mit kleineren Batch-Größen). Seitenzahl prüfen (`mdls -name kMDItemNumberOfPages <pdf>`) und in Blöcken von ca. 30 Seiten konvertieren, jeweils in ein eigenes Ausgabeverzeichnis:
+
+```bash
+for r in 0-31 32-63 64-93; do
+  marker_single marker/input/<dateiname.pdf> --output_dir /tmp/<name>/$r --force_ocr --page_range $r
+done
+```
+
+Danach Bilder (Seitenzahlen in den Dateinamen bleiben absolut) und `.md`-Dateien der Teile in der Reihenfolge zu einem Ordner `marker/output/<name>/` zusammenführen.
+
 Warte auf Abschluss. Prüfe danach ob ein Unterordner in `marker/output/` entstanden ist:
 ```bash
 ls marker/output/
