@@ -16,5 +16,6 @@ Vorlesungsnotizen zu Rechnernetzen (Modul BERN-30, Prof. Dr. habil. Luntovskyy):
 - [[10. Transportschicht]]
 - [[11. Verarbeitungsorientierte Schichten]]
 - [[12. Anwendungsschicht]]
+- [[13. Ausblick]]
 
 ## Übungen
