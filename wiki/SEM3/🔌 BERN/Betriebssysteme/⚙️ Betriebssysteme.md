@@ -16,3 +16,13 @@ Vorlesungsnotizen zu Betriebssystemen und Rechnernetzen: Theorie der Betriebssys
 - [[10. Virtueller Speicher]]
 
 ## Übungen
+
+- [[1. Übung J. v. Neumann-Architektur]]
+- [[3. Übung Einfache Betriebssysteme]]
+- [[4. Übung Einfache Systeme - Praxis]]
+- [[5. Übung Computer der 1960er Jahre]]
+- [[6. Übung Einführung Multitasking]]
+- [[7. Übung Prozessverwaltung]]
+- [[8. Übung Prozesskommunikation]]
+- [[9. Übung Dateisystem]]
+- [[10. Übung Virtueller Speicher]]
