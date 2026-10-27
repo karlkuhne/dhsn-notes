@@ -4,6 +4,10 @@ Vorlesungsnotizen zu Rechnernetzen (Modul BERN-30, Prof. Dr. habil. Luntovskyy):
 
 ## Vorlesungen
 
-- [[1. Rechnernetze]]
+- [[1. Motivation]]
+- [[2. Grundkonzepte]]
+- [[3. Bitübertragung]]
+- [[4. Mobilfunknetze]]
+- [[5. Lokale Netze]]
 
 ## Übungen
