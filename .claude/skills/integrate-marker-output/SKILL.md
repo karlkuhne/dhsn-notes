@@ -100,16 +100,7 @@ Lies die Datei stückweise (oder ganz, wenn sie klein genug ist) und schreibe si
    - Entferne redundante Kopf- oder Fußzeilen, die sich auf jeder Seite wiederholen (z.B. der Fachname "**Bildbearbeitung**" oder Seitennummern).
    - Bereinige doppelte Leerzeichen und entferne Leerzeichen am Zeilenende (Trailing Whitespace).
    - Fixe OCR-Fehler wie falsche Sonderzeichen (z.B. `·` am Zeilenanfang durch `- ` ersetzen).
-9. **Zusammenfassung:** Füge am Ende der Datei zwingend die Review-Sektion an:
-   ```markdown
-   ---
-   ## Review & Learning
-   > [!summary] Zusammenfassung
-   > ... (aus dem Text generiert)
-   
-   > [!question] Mögliche Prüfungsfragen
-   > - ...
-   ```
+9. **Keine Review-Sektion:** Hänge am Ende der Datei **keine** Zusammenfassung, "Review & Learning"-Sektion oder Prüfungsfragen an. Die Notiz endet mit dem letzten inhaltlichen Abschnitt.
 
 ---
 
