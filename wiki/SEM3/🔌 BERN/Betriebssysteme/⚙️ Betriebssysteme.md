@@ -13,5 +13,6 @@ Vorlesungsnotizen zu Betriebssystemen und Rechnernetzen: Theorie der Betriebssys
 - [[7. Prozessverwaltung]]
 - [[8. Prozesskommunikation]]
 - [[9. Dateisystem]]
+- [[10. Virtueller Speicher]]
 
 ## Übungen
