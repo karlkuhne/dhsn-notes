@@ -10,5 +10,6 @@ Vorlesungsnotizen zu Betriebssystemen und Rechnernetzen: Theorie der Betriebssys
 - [[4. Einfache Systeme - Praxis]]
 - [[5. Computer der 1960er-Jahre]]
 - [[6. Einführung Multitasking]]
+- [[7. Prozessverwaltung]]
 
 ## Übungen
