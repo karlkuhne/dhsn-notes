@@ -14,5 +14,6 @@ Vorlesungsnotizen zu Rechnernetzen (Modul BERN-30, Prof. Dr. habil. Luntovskyy):
 - [[8. Vermittlungsschicht]]
 - [[9. Netzkopplung]]
 - [[10. Transportschicht]]
+- [[11. Verarbeitungsorientierte Schichten]]
 
 ## Übungen
