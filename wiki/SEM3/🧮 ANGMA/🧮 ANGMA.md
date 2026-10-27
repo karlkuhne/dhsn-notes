@@ -5,6 +5,7 @@ Stochastik (deskriptive Statistik, Wahrscheinlichkeitstheorie, schließende Stat
 
 ### Gembris
 - [[1. Deskriptive Statistik]]
+- [[2. Numerik]]
 
 ### Püstow
 
