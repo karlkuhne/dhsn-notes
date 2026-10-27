@@ -9,5 +9,7 @@ Vorlesungsnotizen zu Rechnernetzen (Modul BERN-30, Prof. Dr. habil. Luntovskyy):
 - [[3. Bitübertragung]]
 - [[4. Mobilfunknetze]]
 - [[5. Lokale Netze]]
+- [[6. Weitverkehrsnetze]]
+- [[7. Sicherungsschicht]]
 
 ## Übungen
