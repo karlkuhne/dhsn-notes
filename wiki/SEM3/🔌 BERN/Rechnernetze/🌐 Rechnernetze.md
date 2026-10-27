@@ -19,3 +19,14 @@ Vorlesungsnotizen zu Rechnernetzen (Modul BERN-30, Prof. Dr. habil. Luntovskyy):
 - [[13. Ausblick]]
 
 ## Übungen
+
+- [[1. Übung Einführung]]
+- [[2. Übung Bitübertragungsschicht]]
+- [[3. Übung Lokale Netze]]
+- [[4. Übung Weitverkehrsnetze]]
+- [[5. Übung Sicherungsschicht]]
+- [[6. Übung Vermittlungsschicht]]
+- [[7. Übung Netzkopplung]]
+- [[8. Übung Transportschicht]]
+- [[9. Übung Verarbeitungsorientierte Schichten]]
+- [[10. Übung Internetdienste, Applikationen und Apps]]
