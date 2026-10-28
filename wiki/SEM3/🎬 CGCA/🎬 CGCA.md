@@ -8,3 +8,5 @@ Vorlesungsnotizen zu Computergrafik und Computeranimation (Dozent: Arnd Vitzthum
 - [[3. 2D-Vektorgrafik]]
 
 ## Übungen
+
+- [[1. Aufgabenblatt Transformationen]]
