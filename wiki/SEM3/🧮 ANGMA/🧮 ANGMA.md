@@ -8,6 +8,9 @@ Stochastik (deskriptive Statistik, Wahrscheinlichkeitstheorie, schließende Stat
 - [[2. Numerik]]
 
 ### Püstow
+- [[9. Satz von Bayes]]
+- [[10. Stochastische Unabhängigkeit]]
+- [[11. Wahrscheinlichkeitsverteilungen]]
 
 ## Übungen
 

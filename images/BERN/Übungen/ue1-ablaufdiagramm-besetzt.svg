@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1335" width="1400" height="1335" font-family="Helvetica, Arial, sans-serif" font-size="40">
+<defs><marker id="pfeil" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="20" markerHeight="20" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f2fa6"/></marker></defs>
+<rect width="100%" height="100%" fill="white"/>
+<text x="215" y="80" font-size="48" fill="black">Prozess  A</text>
+<text x="960" y="80" font-size="48" fill="black">Prozess  B</text>
+<line x1="300" y1="150" x2="300" y2="1305" stroke="black" stroke-width="12"/>
+<line x1="1075" y1="150" x2="1075" y2="1305" stroke="black" stroke-width="12"/>
+<line x1="305" y1="215" x2="1070" y2="275" stroke="#1f2fa6" stroke-width="4" marker-end="url(#pfeil)"/>
+<text x="330" y="193" fill="black">Wählen</text>
+<text x="40" y="227" fill="black">ConReq</text>
+<text x="1150" y="283" fill="black">Belegt</text>
+<line x1="1070" y1="350" x2="305" y2="410" stroke="#1f2fa6" stroke-width="4" marker-end="url(#pfeil)"/>
+<text x="330" y="382" fill="black">Besetztzeichen</text>
+<text x="40" y="418" fill="black">ConCnf neg.</text>
+<line x1="305" y1="485" x2="1070" y2="545" stroke="#1f2fa6" stroke-width="4" marker-end="url(#pfeil)"/>
+<text x="330" y="463" fill="black">Wählen</text>
+<text x="40" y="497" fill="black">ConReq</text>
+<text x="1050" y="517" text-anchor="end" fill="black">Läuten</text>
+<text x="1150" y="553" fill="black">ConInd</text>
+<line x1="1070" y1="620" x2="305" y2="680" stroke="#1f2fa6" stroke-width="4" marker-end="url(#pfeil)"/>
+<text x="1050" y="598" text-anchor="end" fill="black">Hörer abnehmen</text>
+<text x="1150" y="632" fill="black">ConRsp</text>
+<text x="330" y="652" fill="black">Ende Läuten</text>
+<text x="40" y="688" fill="black">ConCnf</text>
+<line x1="305" y1="755" x2="1070" y2="815" stroke="#1f2fa6" stroke-width="4" marker-end="url(#pfeil)"/>
+<text x="330" y="733" fill="black">Sprechen</text>
+<text x="40" y="767" fill="black">DatReq</text>
+<text x="1050" y="787" text-anchor="end" fill="black">Hören</text>
+<text x="1150" y="823" fill="black">DatInd</text>
+<line x1="305" y1="890" x2="1070" y2="950" stroke="#1f2fa6" stroke-width="4" marker-end="url(#pfeil)"/>
+<text x="40" y="902" fill="black">DatReq</text>
+<text x="1150" y="958" fill="black">DatInd</text>
+<line x1="1070" y1="1025" x2="305" y2="1085" stroke="#1f2fa6" stroke-width="4" marker-end="url(#pfeil)"/>
+<text x="1050" y="1003" text-anchor="end" fill="black">Sprechen</text>
+<text x="1150" y="1037" fill="black">DatReq</text>
+<text x="330" y="1057" fill="black">Hören</text>
+<text x="40" y="1093" fill="black">DatInd</text>
+<line x1="305" y1="1160" x2="1070" y2="1220" stroke="#1f2fa6" stroke-width="4" marker-end="url(#pfeil)"/>
+<text x="330" y="1138" fill="black">Auflegen</text>
+<text x="40" y="1172" fill="black">DisReq</text>
+<text x="1050" y="1192" text-anchor="end" fill="black">Auflegen</text>
+<text x="1150" y="1228" fill="black">DisInd</text>
+</svg>
