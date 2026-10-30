@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 210" font-family="sans-serif" font-size="12">
+  <defs>
+    <marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#8a8f98"/></marker>
+    <marker id="b" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto"><path d="M0 0L10 5L0 10z" fill="#3b82c4"/></marker>
+    <marker id="o" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto"><path d="M0 0L10 5L0 10z" fill="#e08a2e"/></marker>
+  </defs>
+
+  <!-- Raster (Einheit = 40 px) -->
+  <g stroke="#8a8f98" stroke-opacity="0.25">
+    <line x1="80" y1="30" x2="80" y2="170"/><line x1="120" y1="30" x2="120" y2="170"/>
+    <line x1="160" y1="30" x2="160" y2="170"/><line x1="200" y1="30" x2="200" y2="170"/>
+    <line x1="240" y1="30" x2="240" y2="170"/><line x1="280" y1="30" x2="280" y2="170"/>
+    <line x1="320" y1="30" x2="320" y2="170"/>
+    <line x1="40" y1="130" x2="320" y2="130"/><line x1="40" y1="90" x2="320" y2="90"/>
+    <line x1="40" y1="50" x2="320" y2="50"/>
+  </g>
+  <line x1="40" y1="170" x2="330" y2="170" stroke="#8a8f98" stroke-width="1.5" marker-end="url(#g)"/>
+  <line x1="40" y1="170" x2="40" y2="25" stroke="#8a8f98" stroke-width="1.5" marker-end="url(#g)"/>
+
+  <!-- 3·v₁ und 3·v₂ als gestrichelter Weg -->
+  <polyline points="40,170 280,170 280,50" fill="none" stroke="#3b82c4" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="160" y="187" text-anchor="middle" fill="#3b82c4">3 · v₁</text>
+  <text x="292" y="114" fill="#3b82c4">3 · v₂</text>
+
+  <!-- Basisvektoren -->
+  <line x1="40" y1="170" x2="118" y2="170" stroke="#3b82c4" stroke-width="3" marker-end="url(#b)"/>
+  <line x1="40" y1="170" x2="40" y2="132" stroke="#3b82c4" stroke-width="3" marker-end="url(#b)"/>
+  <text x="76" y="162" fill="#3b82c4" font-weight="bold">v₁</text>
+  <text x="14" y="154" fill="#3b82c4" font-weight="bold">v₂</text>
+
+  <!-- v -->
+  <line x1="40" y1="170" x2="278" y2="52" stroke="#e08a2e" stroke-width="3" marker-end="url(#o)"/>
+  <circle cx="280" cy="50" r="3.5" fill="#e08a2e"/>
+  <text x="62" y="82" fill="#e08a2e" font-weight="bold">v = 3 · v₁ + 3 · v₂</text>
+</svg>

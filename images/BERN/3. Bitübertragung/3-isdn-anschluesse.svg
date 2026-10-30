@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 400" font-family="sans-serif" font-size="13">
+<text x="20" y="28" text-anchor="start" fill="#8a8f98" font-size="14" font-weight="bold">Basisanschluss (S0): 2 B + 1 D = 144 kbit/s</text>
+<rect x="20" y="44" width="320" height="60" rx="6" fill="#3b82c4" fill-opacity="0.22" stroke="#3b82c4" stroke-width="1.8"/>
+<text x="180.0" y="72" text-anchor="middle" fill="#3b82c4" font-size="15" font-weight="bold">B1</text>
+<text x="180.0" y="90" text-anchor="middle" fill="#8a8f98" font-size="11">64 kbit/s, Nutzdaten</text>
+<rect x="348" y="44" width="320" height="60" rx="6" fill="#3b82c4" fill-opacity="0.22" stroke="#3b82c4" stroke-width="1.8"/>
+<text x="508.0" y="72" text-anchor="middle" fill="#3b82c4" font-size="15" font-weight="bold">B2</text>
+<text x="508.0" y="90" text-anchor="middle" fill="#8a8f98" font-size="11">64 kbit/s, Nutzdaten</text>
+<rect x="676" y="44" width="80" height="60" rx="6" fill="#e08a2e" fill-opacity="0.22" stroke="#e08a2e" stroke-width="1.8"/>
+<text x="716.0" y="72" text-anchor="middle" fill="#e08a2e" font-size="15" font-weight="bold">D</text>
+<text x="716.0" y="90" text-anchor="middle" fill="#8a8f98" font-size="11">16 kbit/s</text>
+<text x="716" y="120" text-anchor="middle" fill="#8a8f98" font-size="11">Signalisierung</text>
+<text x="20" y="170" text-anchor="start" fill="#8a8f98" font-size="14" font-weight="bold">Primärmultiplexanschluss (PMX, E1): 32 Zeitschlitze zu je 64 kbit/s = 2048 kbit/s</text>
+<rect x="20.0" y="190" width="22.4" height="50" rx="3" fill="#7a6ad8" fill-opacity="0.25" stroke="#7a6ad8" stroke-width="1.3"/>
+<text x="31.2" y="220" text-anchor="middle" fill="#7a6ad8" font-size="11" font-weight="bold">Sy</text>
+<rect x="43.4" y="190" width="22.4" height="50" rx="3" fill="#3b82c4" fill-opacity="0.25" stroke="#3b82c4" stroke-width="1.3"/>
+<rect x="66.8" y="190" width="22.4" height="50" rx="3" fill="#3b82c4" fill-opacity="0.25" stroke="#3b82c4" stroke-width="1.3"/>
+<rect x="90.2" y="190" width="22.4" height="50" rx="3" fill="#3b82c4" fill-opacity="0.25" stroke="#3b82c4" stroke-width="1.3"/>
+<rect x="113.6" y="190" width="22.4" height="50" rx="3" fill="#3b82c4" fill-opacity="0.25" stroke="#3b82c4" stroke-width="1.3"/>
+<rect x="137.0" y="190" width="22.4" height="50" rx="3" fill="#3b82c4" fill-opacity="0.25" stroke="#3b82c4" stroke-width="1.3"/>
+<rect x="160.4" y="190" width="22.4" height="50" rx="3" fill="#3b82c4" fill-opacity="0.25" stroke="#3b82c4" stroke-width="1.3"/>
+<rect x="183.8" y="190" width="22.4" height="50" rx="3" fill="#3b82c4" fill-opacity="0.25" stroke="#3b82c4" stroke-width="1.3"/>
+<rect x="207.2" y="190" width="22.4" height="50" rx="3" fill="#3b82c4" fill-opacity="0.25" stroke="#3b82c4" stroke-width="1.3"/>
+<rect x="230.6" y="190" width="22.4" height="50" rx="3" fill="#3b82c4" fill-opacity="0.25" stroke="#3b82c4" stroke-width="1.3"/>
+<rect x="254.0" y="190" width="22.4" height="50" rx="3" fill="#3b82c4" fill-opacity="0.25" stroke="#3b82c4" stroke-width="1.3"/>
+<rect x="277.4" y="190" width="22.4" height="50" rx="3" fill="#3b82c4" fill-opacity="0.25" stroke="#3b82c4" stroke-width="1.3"/>
+<rect x="300.8" y="190" width="22.4" height="50" rx="3" fill="#3b82c4" fill-opacity="0.25" stroke="#3b82c4" stroke-width="1.3"/>
+<rect x="324.2" y="190" width="22.4" height="50" rx="3" fill="#3b82c4" fill-opacity="0.25" stroke="#3b82c4" stroke-width="1.3"/>
+<rect x="347.6" y="190" width="22.4" height="50" rx="3" fill="#3b82c4" fill-opacity="0.25" stroke="#3b82c4" stroke-width="1.3"/>
+<rect x="371.0" y="190" width="22.4" height="50" rx="3" fill="#3b82c4" fill-opacity="0.25" stroke="#3b82c4" stroke-width="1.3"/>
+<rect x="394.4" y="190" width="22.4" height="50" rx="3" fill="#e08a2e" fill-opacity="0.25" stroke="#e08a2e" stroke-width="1.3"/>
+<text x="405.59999999999997" y="220" text-anchor="middle" fill="#e08a2e" font-size="11" font-weight="bold">Si</text>
+<rect x="417.8" y="190" width="22.4" height="50" rx="3" fill="#3b82c4" fill-opacity="0.25" stroke="#3b82c4" stroke-width="1.3"/>
+<rect x="441.2" y="190" width="22.4" height="50" rx="3" fill="#3b82c4" fill-opacity="0.25" stroke="#3b82c4" stroke-width="1.3"/>
+<rect x="464.6" y="190" width="22.4" height="50" rx="3" fill="#3b82c4" fill-opacity="0.25" stroke="#3b82c4" stroke-width="1.3"/>
+<rect x="488.0" y="190" width="22.4" height="50" rx="3" fill="#3b82c4" fill-opacity="0.25" stroke="#3b82c4" stroke-width="1.3"/>
+<rect x="511.4" y="190" width="22.4" height="50" rx="3" fill="#3b82c4" fill-opacity="0.25" stroke="#3b82c4" stroke-width="1.3"/>
+<rect x="534.8" y="190" width="22.4" height="50" rx="3" fill="#3b82c4" fill-opacity="0.25" stroke="#3b82c4" stroke-width="1.3"/>
+<rect x="558.2" y="190" width="22.4" height="50" rx="3" fill="#3b82c4" fill-opacity="0.25" stroke="#3b82c4" stroke-width="1.3"/>
+<rect x="581.6" y="190" width="22.4" height="50" rx="3" fill="#3b82c4" fill-opacity="0.25" stroke="#3b82c4" stroke-width="1.3"/>
+<rect x="605.0" y="190" width="22.4" height="50" rx="3" fill="#3b82c4" fill-opacity="0.25" stroke="#3b82c4" stroke-width="1.3"/>
+<rect x="628.4" y="190" width="22.4" height="50" rx="3" fill="#3b82c4" fill-opacity="0.25" stroke="#3b82c4" stroke-width="1.3"/>
+<rect x="651.8" y="190" width="22.4" height="50" rx="3" fill="#3b82c4" fill-opacity="0.25" stroke="#3b82c4" stroke-width="1.3"/>
+<rect x="675.2" y="190" width="22.4" height="50" rx="3" fill="#3b82c4" fill-opacity="0.25" stroke="#3b82c4" stroke-width="1.3"/>
+<rect x="698.6" y="190" width="22.4" height="50" rx="3" fill="#3b82c4" fill-opacity="0.25" stroke="#3b82c4" stroke-width="1.3"/>
+<rect x="722.0" y="190" width="22.4" height="50" rx="3" fill="#3b82c4" fill-opacity="0.25" stroke="#3b82c4" stroke-width="1.3"/>
+<rect x="745.4" y="190" width="22.4" height="50" rx="3" fill="#3b82c4" fill-opacity="0.25" stroke="#3b82c4" stroke-width="1.3"/>
+<text x="20" y="262" text-anchor="start" fill="#8a8f98" font-size="12">Zeitmultiplex: Die Zeitschlitze kommen reihum dran (siehe 3.4).</text>
+<rect x="20" y="290" width="13" height="13" rx="2" fill="#3b82c4"/>
+<text x="39" y="301" text-anchor="start" fill="#8a8f98" font-size="12">30 B-Kanäle: 30 Gespräche, 1920 kbit/s</text>
+<rect x="270" y="290" width="13" height="13" rx="2" fill="#e08a2e"/>
+<text x="289" y="301" text-anchor="start" fill="#8a8f98" font-size="12">Si = Signalisierung, 64 kbit/s</text>
+<rect x="500" y="290" width="13" height="13" rx="2" fill="#7a6ad8"/>
+<text x="519" y="301" text-anchor="start" fill="#8a8f98" font-size="12">Sy = Synchronisation, 64 kbit/s</text>
+<text x="20" y="346" text-anchor="start" fill="#8a8f98" font-size="12">B-Kanal = Nutzdaten (Gespräch oder Daten), D-Kanal = Steuerung (z.B. Rufaufbau)</text>
+</svg>

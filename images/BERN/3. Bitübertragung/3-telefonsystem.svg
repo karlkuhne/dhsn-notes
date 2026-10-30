@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 590" font-family="sans-serif" font-size="13">
+<defs><marker id="pfeil" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8a8f98"/></marker></defs>
+<line x1="200" y1="120" x2="390" y2="210" stroke="#8a8f98" stroke-width="2.5"/>
+<line x1="390" y1="210" x2="590" y2="110" stroke="#8a8f98" stroke-width="2.5"/>
+<line x1="200" y1="120" x2="590" y2="110" stroke="#8a8f98" stroke-width="2.5"/>
+<line x1="70" y1="80" x2="200" y2="120" stroke="#8a8f98" stroke-width="2"/>
+<line x1="70" y1="80" x2="38" y2="28" stroke="#8a8f98" stroke-width="1.5"/>
+<circle cx="38" cy="28" r="10" fill="#b4d0ee" stroke="#3b82c4" stroke-width="1.5"/>
+<line x1="70" y1="80" x2="102" y2="28" stroke="#8a8f98" stroke-width="1.5"/>
+<circle cx="102" cy="28" r="10" fill="#b4d0ee" stroke="#3b82c4" stroke-width="1.5"/>
+<line x1="120" y1="230" x2="200" y2="120" stroke="#8a8f98" stroke-width="2"/>
+<line x1="120" y1="230" x2="88" y2="282" stroke="#8a8f98" stroke-width="1.5"/>
+<circle cx="88" cy="282" r="10" fill="#b4d0ee" stroke="#3b82c4" stroke-width="1.5"/>
+<line x1="120" y1="230" x2="152" y2="282" stroke="#8a8f98" stroke-width="1.5"/>
+<circle cx="152" cy="282" r="10" fill="#b4d0ee" stroke="#3b82c4" stroke-width="1.5"/>
+<line x1="300" y1="340" x2="390" y2="210" stroke="#8a8f98" stroke-width="2"/>
+<line x1="300" y1="340" x2="268" y2="392" stroke="#8a8f98" stroke-width="1.5"/>
+<circle cx="268" cy="392" r="10" fill="#b4d0ee" stroke="#3b82c4" stroke-width="1.5"/>
+<line x1="300" y1="340" x2="332" y2="392" stroke="#8a8f98" stroke-width="1.5"/>
+<circle cx="332" cy="392" r="10" fill="#b4d0ee" stroke="#3b82c4" stroke-width="1.5"/>
+<line x1="500" y1="330" x2="390" y2="210" stroke="#8a8f98" stroke-width="2"/>
+<line x1="500" y1="330" x2="468" y2="382" stroke="#8a8f98" stroke-width="1.5"/>
+<circle cx="468" cy="382" r="10" fill="#b4d0ee" stroke="#3b82c4" stroke-width="1.5"/>
+<line x1="500" y1="330" x2="532" y2="382" stroke="#8a8f98" stroke-width="1.5"/>
+<circle cx="532" cy="382" r="10" fill="#b4d0ee" stroke="#3b82c4" stroke-width="1.5"/>
+<line x1="690" y1="50" x2="590" y2="110" stroke="#8a8f98" stroke-width="2"/>
+<line x1="690" y1="50" x2="658" y2="-2" stroke="#8a8f98" stroke-width="1.5"/>
+<circle cx="658" cy="-2" r="10" fill="#b4d0ee" stroke="#3b82c4" stroke-width="1.5"/>
+<line x1="690" y1="50" x2="722" y2="-2" stroke="#8a8f98" stroke-width="1.5"/>
+<circle cx="722" cy="-2" r="10" fill="#b4d0ee" stroke="#3b82c4" stroke-width="1.5"/>
+<line x1="690" y1="200" x2="590" y2="110" stroke="#8a8f98" stroke-width="2"/>
+<line x1="690" y1="200" x2="658" y2="252" stroke="#8a8f98" stroke-width="1.5"/>
+<circle cx="658" cy="252" r="10" fill="#b4d0ee" stroke="#3b82c4" stroke-width="1.5"/>
+<line x1="690" y1="200" x2="722" y2="252" stroke="#8a8f98" stroke-width="1.5"/>
+<circle cx="722" cy="252" r="10" fill="#b4d0ee" stroke="#3b82c4" stroke-width="1.5"/>
+<rect x="155" y="94" width="90" height="52" rx="6" fill="#9fd4b0" stroke="#2e9e4f" stroke-width="2"/>
+<rect x="345" y="184" width="90" height="52" rx="6" fill="#9fd4b0" stroke="#2e9e4f" stroke-width="2"/>
+<rect x="545" y="84" width="90" height="52" rx="6" fill="#9fd4b0" stroke="#2e9e4f" stroke-width="2"/>
+<rect x="50" y="67" width="40" height="26" rx="4" fill="#c9e6a8" stroke="#7bc043" stroke-width="2"/>
+<rect x="100" y="217" width="40" height="26" rx="4" fill="#c9e6a8" stroke="#7bc043" stroke-width="2"/>
+<rect x="280" y="327" width="40" height="26" rx="4" fill="#c9e6a8" stroke="#7bc043" stroke-width="2"/>
+<rect x="480" y="317" width="40" height="26" rx="4" fill="#c9e6a8" stroke="#7bc043" stroke-width="2"/>
+<rect x="670" y="37" width="40" height="26" rx="4" fill="#c9e6a8" stroke="#7bc043" stroke-width="2"/>
+<rect x="670" y="187" width="40" height="26" rx="4" fill="#c9e6a8" stroke="#7bc043" stroke-width="2"/>
+<circle cx="40" cy="418" r="9" fill="#b4d0ee" stroke="#3b82c4" stroke-width="1.5"/><text x="58" y="422" fill="#8a8f98" font-size="12">Telefon (Teilnehmer)</text>
+<rect x="200" y="410" width="26" height="16" rx="3" fill="#c9e6a8" stroke="#7bc043" stroke-width="2"/><text x="234" y="422" fill="#8a8f98" font-size="12">Ortsvermittlung</text>
+<rect x="360" y="410" width="26" height="16" rx="3" fill="#9fd4b0" stroke="#2e9e4f" stroke-width="2"/><text x="394" y="422" fill="#8a8f98" font-size="12">Fernvermittlung</text>
+<line x1="20" y1="445" x2="740" y2="445" stroke="#8a8f98" stroke-opacity="0.4"/>
+<text x="30" y="472" fill="#8a8f98" font-weight="bold" font-size="14">Weg eines Gesprächs</text>
+<line x1="50" y1="525" x2="710" y2="525" stroke="#8a8f98" stroke-width="2"/>
+<line x1="270" y1="515" x2="490" y2="515" stroke="#8a8f98" stroke-width="2"/><line x1="270" y1="535" x2="490" y2="535" stroke="#8a8f98" stroke-width="2"/>
+<circle cx="40" cy="525" r="11" fill="#b4d0ee" stroke="#3b82c4" stroke-width="1.5"/>
+<circle cx="720" cy="525" r="11" fill="#b4d0ee" stroke="#3b82c4" stroke-width="1.5"/>
+<rect x="150" y="512" width="40" height="26" rx="4" fill="#c9e6a8" stroke="#7bc043" stroke-width="2"/>
+<rect x="570" y="512" width="40" height="26" rx="4" fill="#c9e6a8" stroke="#7bc043" stroke-width="2"/>
+<rect x="240" y="501" width="60" height="48" rx="6" fill="#9fd4b0" stroke="#2e9e4f" stroke-width="2"/>
+<rect x="460" y="501" width="60" height="48" rx="6" fill="#9fd4b0" stroke="#2e9e4f" stroke-width="2"/>
+<text x="40" y="571" text-anchor="middle" fill="#8a8f98" font-size="12">Telefon</text>
+<text x="170" y="571" text-anchor="middle" fill="#8a8f98" font-size="12">Orts-</text>
+<text x="270" y="571" text-anchor="middle" fill="#8a8f98" font-size="12">Fern-</text>
+<text x="490" y="571" text-anchor="middle" fill="#8a8f98" font-size="12">Fern-</text>
+<text x="590" y="571" text-anchor="middle" fill="#8a8f98" font-size="12">Orts-</text>
+<text x="720" y="571" text-anchor="middle" fill="#8a8f98" font-size="12">Telefon</text>
+<text x="170" y="586" text-anchor="middle" fill="#8a8f98" font-size="12">vermittlung</text>
+<text x="270" y="586" text-anchor="middle" fill="#8a8f98" font-size="12">vermittlung</text>
+<text x="490" y="586" text-anchor="middle" fill="#8a8f98" font-size="12">vermittlung</text>
+<text x="590" y="586" text-anchor="middle" fill="#8a8f98" font-size="12">vermittlung</text>
+<text x="105" y="511" text-anchor="middle" fill="#8a8f98" font-size="12">Zweidraht</text>
+<text x="655" y="511" text-anchor="middle" fill="#8a8f98" font-size="12">Zweidraht</text>
+<text x="380" y="495" text-anchor="middle" fill="#3b82c4" font-weight="bold" font-size="13">LWL (Glasfaser)</text>
+</svg>

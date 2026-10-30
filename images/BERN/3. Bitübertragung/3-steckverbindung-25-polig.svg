@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 270" font-family="sans-serif" font-size="13">
+<path d="M75,60 L725,60 L695,205 L105,205 Z" fill="#8a8f98" fill-opacity="0.1" stroke="#8a8f98" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="40" cy="132" r="14" fill="none" stroke="#8a8f98" stroke-width="2"/>
+<circle cx="760" cy="132" r="14" fill="none" stroke="#8a8f98" stroke-width="2"/>
+<circle cx="690" cy="105" r="9" fill="#8a8f98" fill-opacity="0.35" stroke="#8a8f98" stroke-width="2"/>
+<text x="690" y="92" text-anchor="middle" fill="#8a8f98" font-weight="bold" font-size="13">1</text>
+<circle cx="644" cy="105" r="9" fill="#3b82c4" fill-opacity="0.35" stroke="#3b82c4" stroke-width="2"/>
+<text x="644" y="92" text-anchor="middle" fill="#3b82c4" font-weight="bold" font-size="13">2</text>
+<circle cx="598" cy="105" r="9" fill="#3b82c4" fill-opacity="0.35" stroke="#3b82c4" stroke-width="2"/>
+<text x="598" y="92" text-anchor="middle" fill="#3b82c4" font-weight="bold" font-size="13">3</text>
+<circle cx="552" cy="105" r="9" fill="#e08a2e" fill-opacity="0.35" stroke="#e08a2e" stroke-width="2"/>
+<text x="552" y="92" text-anchor="middle" fill="#e08a2e" font-weight="bold" font-size="13">4</text>
+<circle cx="506" cy="105" r="9" fill="#e08a2e" fill-opacity="0.35" stroke="#e08a2e" stroke-width="2"/>
+<text x="506" y="92" text-anchor="middle" fill="#e08a2e" font-weight="bold" font-size="13">5</text>
+<circle cx="460" cy="105" r="9" fill="#e08a2e" fill-opacity="0.35" stroke="#e08a2e" stroke-width="2"/>
+<text x="460" y="92" text-anchor="middle" fill="#e08a2e" font-weight="bold" font-size="13">6</text>
+<circle cx="414" cy="105" r="9" fill="#8a8f98" fill-opacity="0.35" stroke="#8a8f98" stroke-width="2"/>
+<text x="414" y="92" text-anchor="middle" fill="#8a8f98" font-weight="bold" font-size="13">7</text>
+<circle cx="368" cy="105" r="9" fill="#3aa675" fill-opacity="0.35" stroke="#3aa675" stroke-width="2"/>
+<text x="368" y="92" text-anchor="middle" fill="#3aa675" font-weight="bold" font-size="13">8</text>
+<circle cx="322" cy="105" r="9" fill="none" stroke="#8a8f98" stroke-opacity="0.6" stroke-width="1.5"/>
+<text x="322" y="92" text-anchor="middle" fill="#8a8f98" font-weight="normal" font-size="13">9</text>
+<circle cx="276" cy="105" r="9" fill="none" stroke="#8a8f98" stroke-opacity="0.6" stroke-width="1.5"/>
+<text x="276" y="92" text-anchor="middle" fill="#8a8f98" font-weight="normal" font-size="13">10</text>
+<circle cx="230" cy="105" r="9" fill="#7a6ad8" fill-opacity="0.35" stroke="#7a6ad8" stroke-width="2"/>
+<text x="230" y="92" text-anchor="middle" fill="#7a6ad8" font-weight="bold" font-size="13">11</text>
+<circle cx="184" cy="105" r="9" fill="none" stroke="#8a8f98" stroke-opacity="0.6" stroke-width="1.5"/>
+<text x="184" y="92" text-anchor="middle" fill="#8a8f98" font-weight="normal" font-size="13">12</text>
+<circle cx="138" cy="105" r="9" fill="none" stroke="#8a8f98" stroke-opacity="0.6" stroke-width="1.5"/>
+<text x="138" y="92" text-anchor="middle" fill="#8a8f98" font-weight="normal" font-size="13">13</text>
+<circle cx="667" cy="158" r="9" fill="none" stroke="#8a8f98" stroke-opacity="0.6" stroke-width="1.5"/>
+<text x="667" y="190" text-anchor="middle" fill="#8a8f98" font-weight="normal" font-size="13">14</text>
+<circle cx="621" cy="158" r="9" fill="#c9569a" fill-opacity="0.35" stroke="#c9569a" stroke-width="2"/>
+<text x="621" y="190" text-anchor="middle" fill="#c9569a" font-weight="bold" font-size="13">15</text>
+<circle cx="575" cy="158" r="9" fill="none" stroke="#8a8f98" stroke-opacity="0.6" stroke-width="1.5"/>
+<text x="575" y="190" text-anchor="middle" fill="#8a8f98" font-weight="normal" font-size="13">16</text>
+<circle cx="529" cy="158" r="9" fill="#c9569a" fill-opacity="0.35" stroke="#c9569a" stroke-width="2"/>
+<text x="529" y="190" text-anchor="middle" fill="#c9569a" font-weight="bold" font-size="13">17</text>
+<circle cx="483" cy="158" r="9" fill="#7a6ad8" fill-opacity="0.35" stroke="#7a6ad8" stroke-width="2"/>
+<text x="483" y="190" text-anchor="middle" fill="#7a6ad8" font-weight="bold" font-size="13">18</text>
+<circle cx="437" cy="158" r="9" fill="none" stroke="#8a8f98" stroke-opacity="0.6" stroke-width="1.5"/>
+<text x="437" y="190" text-anchor="middle" fill="#8a8f98" font-weight="normal" font-size="13">19</text>
+<circle cx="391" cy="158" r="9" fill="#e08a2e" fill-opacity="0.35" stroke="#e08a2e" stroke-width="2"/>
+<text x="391" y="190" text-anchor="middle" fill="#e08a2e" font-weight="bold" font-size="13">20</text>
+<circle cx="345" cy="158" r="9" fill="#3aa675" fill-opacity="0.35" stroke="#3aa675" stroke-width="2"/>
+<text x="345" y="190" text-anchor="middle" fill="#3aa675" font-weight="bold" font-size="13">21</text>
+<circle cx="299" cy="158" r="9" fill="#e08a2e" fill-opacity="0.35" stroke="#e08a2e" stroke-width="2"/>
+<text x="299" y="190" text-anchor="middle" fill="#e08a2e" font-weight="bold" font-size="13">22</text>
+<circle cx="253" cy="158" r="9" fill="#7a6ad8" fill-opacity="0.35" stroke="#7a6ad8" stroke-width="2"/>
+<text x="253" y="190" text-anchor="middle" fill="#7a6ad8" font-weight="bold" font-size="13">23</text>
+<circle cx="207" cy="158" r="9" fill="#c9569a" fill-opacity="0.35" stroke="#c9569a" stroke-width="2"/>
+<text x="207" y="190" text-anchor="middle" fill="#c9569a" font-weight="bold" font-size="13">24</text>
+<circle cx="161" cy="158" r="9" fill="none" stroke="#8a8f98" stroke-opacity="0.6" stroke-width="1.5"/>
+<text x="161" y="190" text-anchor="middle" fill="#8a8f98" font-weight="normal" font-size="13">25</text>
+<rect x="60" y="232" width="12" height="12" rx="2" fill="#8a8f98"/><text x="77" y="243" fill="#8a8f98" font-size="12">Erde</text>
+<rect x="136" y="232" width="12" height="12" rx="2" fill="#3b82c4"/><text x="153" y="243" fill="#8a8f98" font-size="12">Daten</text>
+<rect x="220" y="232" width="12" height="12" rx="2" fill="#e08a2e"/><text x="237" y="243" fill="#8a8f98" font-size="12">Steuerung</text>
+<rect x="332" y="232" width="12" height="12" rx="2" fill="#3aa675"/><text x="349" y="243" fill="#8a8f98" font-size="12">Empfang</text>
+<rect x="430" y="232" width="12" height="12" rx="2" fill="#7a6ad8"/><text x="447" y="243" fill="#8a8f98" font-size="12">Bitrate / Träger</text>
+<rect x="593" y="232" width="12" height="12" rx="2" fill="#c9569a"/><text x="610" y="243" fill="#8a8f98" font-size="12">Takt</text>
+<circle cx="669" cy="238" r="7" fill="none" stroke="#8a8f98" stroke-width="1.5"/><text x="683" y="243" fill="#8a8f98" font-size="12">nicht belegt</text>
+</svg>

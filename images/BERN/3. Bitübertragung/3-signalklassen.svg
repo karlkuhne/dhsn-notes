@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 540" font-family="sans-serif" font-size="13">
+<defs><marker id="pfeil" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a8f98"/></marker></defs>
+<text x="265" y="24" text-anchor="middle" fill="#8a8f98" font-weight="bold" font-size="15">Zeit kontinuierlich</text>
+<text x="635" y="24" text-anchor="middle" fill="#8a8f98" font-weight="bold" font-size="15">Zeit diskret</text>
+<text transform="translate(30,170) rotate(-90)" text-anchor="middle" fill="#8a8f98" font-weight="bold" font-size="15">Wert kontinuierlich</text>
+<text transform="translate(30,410) rotate(-90)" text-anchor="middle" fill="#8a8f98" font-weight="bold" font-size="15">Wert diskret</text>
+<line x1="75" y1="285" x2="810" y2="285" stroke="#8a8f98" stroke-opacity="0.4"/>
+<line x1="450" y1="36" x2="450" y2="530" stroke="#8a8f98" stroke-opacity="0.4"/>
+<text x="265" y="72" text-anchor="middle" fill="#3b82c4" font-weight="bold" font-size="14">Eingangssignal</text>
+<line x1="120" y1="215" x2="425" y2="215" stroke="#8a8f98" stroke-width="2" marker-end="url(#pfeil)"/>
+<line x1="120" y1="215" x2="120" y2="85" stroke="#8a8f98" stroke-width="2" marker-end="url(#pfeil)"/>
+<text x="112" y="89" text-anchor="end" fill="#8a8f98" font-size="12">S</text>
+<text x="432" y="219" fill="#8a8f98" font-size="12">t</text>
+<path d="M120.0,141.5 L121.5,139.1 L122.9,136.7 L124.3,134.3 L125.8,132.0 L127.2,129.7 L128.7,127.5 L130.2,125.3 L131.6,123.2 L133.1,121.2 L134.5,119.3 L135.9,117.5 L137.4,115.7 L138.8,114.1 L140.3,112.6 L141.8,111.2 L143.2,109.9 L144.7,108.7 L146.1,107.7 L147.6,106.7 L149.0,105.9 L150.4,105.2 L151.9,104.7 L153.3,104.2 L154.8,103.9 L156.2,103.7 L157.7,103.7 L159.2,103.7 L160.6,103.9 L162.1,104.2 L163.5,104.5 L164.9,105.0 L166.4,105.6 L167.8,106.3 L169.3,107.0 L170.8,107.8 L172.2,108.8 L173.7,109.7 L175.1,110.8 L176.6,111.9 L178.0,113.0 L179.4,114.2 L180.9,115.5 L182.3,116.8 L183.8,118.0 L185.2,119.4 L186.7,120.7 L188.1,122.0 L189.6,123.4 L191.1,124.7 L192.5,126.1 L193.9,127.4 L195.4,128.7 L196.9,130.0 L198.3,131.3 L199.8,132.6 L201.2,133.8 L202.6,135.0 L204.1,136.2 L205.6,137.3 L207.0,138.5 L208.4,139.6 L209.9,140.6 L211.3,141.7 L212.8,142.7 L214.2,143.7 L215.7,144.6 L217.2,145.6 L218.6,146.5 L220.1,147.4 L221.5,148.3 L222.9,149.2 L224.4,150.1 L225.8,151.0 L227.3,151.9 L228.8,152.8 L230.2,153.7 L231.7,154.6 L233.1,155.5 L234.6,156.5 L236.0,157.4 L237.4,158.4 L238.9,159.5 L240.3,160.5 L241.8,161.6 L243.2,162.7 L244.7,163.8 L246.2,165.0 L247.6,166.2 L249.1,167.5 L250.5,168.8 L252.0,170.1 L253.4,171.5 L254.8,172.9 L256.3,174.3 L257.8,175.7 L259.2,177.2 L260.6,178.7 L262.1,180.2 L263.6,181.8 L265.0,183.3 L266.4,184.8 L267.9,186.4 L269.4,187.9 L270.8,189.4 L272.2,191.0 L273.7,192.4 L275.1,193.9 L276.6,195.3 L278.1,196.7 L279.5,198.0 L281.0,199.3 L282.4,200.5 L283.9,201.6 L285.3,202.7 L286.8,203.7 L288.2,204.6 L289.6,205.4 L291.1,206.1 L292.5,206.7 L294.0,207.1 L295.4,207.5 L296.9,207.8 L298.4,207.9 L299.8,207.9 L301.2,207.8 L302.7,207.6 L304.1,207.2 L305.6,206.8 L307.1,206.1 L308.5,205.4 L310.0,204.5 L311.4,203.5 L312.9,202.4 L314.3,201.2 L315.8,199.8 L317.2,198.3 L318.6,196.8 L320.1,195.1 L321.5,193.3 L323.0,191.5 L324.4,189.5 L325.9,187.5 L327.4,185.4 L328.8,183.2 L330.2,181.0 L331.7,178.7 L333.1,176.4 L334.6,174.0 L336.1,171.6 L337.5,169.2 L338.9,166.8 L340.4,164.4 L341.9,162.0 L343.3,159.6 L344.8,157.3 L346.2,154.9 L347.6,152.6 L349.1,150.4 L350.6,148.1 L352.0,146.0 L353.5,143.9 L354.9,141.9 L356.4,139.9 L357.8,138.0 L359.2,136.2 L360.7,134.5 L362.1,132.8 L363.6,131.3 L365.0,129.8 L366.5,128.5 L367.9,127.2 L369.4,126.0 L370.9,124.9 L372.3,123.9 L373.8,122.9 L375.2,122.1 L376.6,121.3 L378.1,120.7 L379.6,120.1 L381.0,119.6 L382.4,119.1 L383.9,118.7 L385.4,118.4 L386.8,118.2 L388.2,118.0 L389.7,117.8 L391.2,117.7 L392.6,117.6 L394.1,117.6 L395.5,117.6 L396.9,117.7 L398.4,117.7 L399.8,117.8 L401.3,117.9 L402.8,118.0 L404.2,118.2 L405.6,118.3 L407.1,118.4 L408.6,118.6 L410.0,118.7" fill="none" stroke="#3b82c4" stroke-width="2.5"/>
+<text x="265" y="255" text-anchor="middle" fill="#8a8f98" font-size="12">z.B. analoges Telefon</text>
+<text x="635" y="72" text-anchor="middle" fill="#e08a2e" font-weight="bold" font-size="14">nach Abtastung</text>
+<line x1="490" y1="215" x2="795" y2="215" stroke="#8a8f98" stroke-width="2" marker-end="url(#pfeil)"/>
+<line x1="490" y1="215" x2="490" y2="85" stroke="#8a8f98" stroke-width="2" marker-end="url(#pfeil)"/>
+<text x="482" y="89" text-anchor="end" fill="#8a8f98" font-size="12">S</text>
+<text x="802" y="219" fill="#8a8f98" font-size="12">t</text>
+<line x1="490.0" y1="215" x2="490.0" y2="95.0" stroke="#8a8f98" stroke-opacity="0.35" stroke-dasharray="2 3"/>
+<line x1="522.2" y1="215" x2="522.2" y2="95.0" stroke="#8a8f98" stroke-opacity="0.35" stroke-dasharray="2 3"/>
+<line x1="554.4" y1="215" x2="554.4" y2="95.0" stroke="#8a8f98" stroke-opacity="0.35" stroke-dasharray="2 3"/>
+<line x1="586.7" y1="215" x2="586.7" y2="95.0" stroke="#8a8f98" stroke-opacity="0.35" stroke-dasharray="2 3"/>
+<line x1="618.9" y1="215" x2="618.9" y2="95.0" stroke="#8a8f98" stroke-opacity="0.35" stroke-dasharray="2 3"/>
+<line x1="651.1" y1="215" x2="651.1" y2="95.0" stroke="#8a8f98" stroke-opacity="0.35" stroke-dasharray="2 3"/>
+<line x1="683.3" y1="215" x2="683.3" y2="95.0" stroke="#8a8f98" stroke-opacity="0.35" stroke-dasharray="2 3"/>
+<line x1="715.6" y1="215" x2="715.6" y2="95.0" stroke="#8a8f98" stroke-opacity="0.35" stroke-dasharray="2 3"/>
+<line x1="747.8" y1="215" x2="747.8" y2="95.0" stroke="#8a8f98" stroke-opacity="0.35" stroke-dasharray="2 3"/>
+<line x1="780.0" y1="215" x2="780.0" y2="95.0" stroke="#8a8f98" stroke-opacity="0.35" stroke-dasharray="2 3"/>
+<line x1="490.0" y1="117.3" x2="522.2" y2="117.3" stroke="#e08a2e" stroke-width="3.5"/>
+<line x1="522.2" y1="106.5" x2="554.4" y2="106.5" stroke="#e08a2e" stroke-width="3.5"/>
+<line x1="554.4" y1="133.2" x2="586.7" y2="133.2" stroke="#e08a2e" stroke-width="3.5"/>
+<line x1="586.7" y1="155.3" x2="618.9" y2="155.3" stroke="#e08a2e" stroke-width="3.5"/>
+<line x1="618.9" y1="183.3" x2="651.1" y2="183.3" stroke="#e08a2e" stroke-width="3.5"/>
+<line x1="651.1" y1="207.8" x2="683.3" y2="207.8" stroke="#e08a2e" stroke-width="3.5"/>
+<line x1="683.3" y1="182.2" x2="715.6" y2="182.2" stroke="#e08a2e" stroke-width="3.5"/>
+<line x1="715.6" y1="133.4" x2="747.8" y2="133.4" stroke="#e08a2e" stroke-width="3.5"/>
+<line x1="747.8" y1="117.6" x2="780.0" y2="117.6" stroke="#e08a2e" stroke-width="3.5"/>
+<text x="635" y="255" text-anchor="middle" fill="#8a8f98" font-size="12">z.B. Messwerte in festen Abständen</text>
+<text x="265" y="312" text-anchor="middle" fill="#7a6ad8" font-weight="bold" font-size="14">nur Stufen, beliebige Zeitpunkte</text>
+<line x1="120" y1="455" x2="425" y2="455" stroke="#8a8f98" stroke-width="2" marker-end="url(#pfeil)"/>
+<line x1="120" y1="455" x2="120" y2="325" stroke="#8a8f98" stroke-width="2" marker-end="url(#pfeil)"/>
+<text x="112" y="329" text-anchor="end" fill="#8a8f98" font-size="12">S</text>
+<text x="432" y="459" fill="#8a8f98" font-size="12">t</text>
+<line x1="120" y1="455.0" x2="410" y2="455.0" stroke="#8a8f98" stroke-opacity="0.45" stroke-dasharray="2 3"/>
+<line x1="120" y1="415.0" x2="410" y2="415.0" stroke="#8a8f98" stroke-opacity="0.45" stroke-dasharray="2 3"/>
+<line x1="120" y1="375.0" x2="410" y2="375.0" stroke="#8a8f98" stroke-opacity="0.45" stroke-dasharray="2 3"/>
+<line x1="120" y1="335.0" x2="410" y2="335.0" stroke="#8a8f98" stroke-opacity="0.45" stroke-dasharray="2 3"/>
+<line x1="120.0" y1="375.0" x2="138.1" y2="375.0" stroke="#7a6ad8" stroke-width="3.5"/>
+<line x1="138.1" y1="335.0" x2="180.9" y2="335.0" stroke="#7a6ad8" stroke-width="3.5"/>
+<line x1="180.9" y1="375.0" x2="232.4" y2="375.0" stroke="#7a6ad8" stroke-width="3.5"/>
+<line x1="232.4" y1="415.0" x2="276.6" y2="415.0" stroke="#7a6ad8" stroke-width="3.5"/>
+<line x1="276.6" y1="455.0" x2="320.8" y2="455.0" stroke="#7a6ad8" stroke-width="3.5"/>
+<line x1="320.8" y1="415.0" x2="346.2" y2="415.0" stroke="#7a6ad8" stroke-width="3.5"/>
+<line x1="346.2" y1="375.0" x2="410.0" y2="375.0" stroke="#7a6ad8" stroke-width="3.5"/>
+<text x="265" y="495" text-anchor="middle" fill="#8a8f98" font-size="12">z.B. digitaler Tachometer</text>
+<text x="635" y="312" text-anchor="middle" fill="#3aa675" font-weight="bold" font-size="14">nach Quantisierung</text>
+<line x1="490" y1="455" x2="795" y2="455" stroke="#8a8f98" stroke-width="2" marker-end="url(#pfeil)"/>
+<line x1="490" y1="455" x2="490" y2="325" stroke="#8a8f98" stroke-width="2" marker-end="url(#pfeil)"/>
+<text x="482" y="329" text-anchor="end" fill="#8a8f98" font-size="12">S</text>
+<text x="802" y="459" fill="#8a8f98" font-size="12">t</text>
+<line x1="490" y1="455.0" x2="780" y2="455.0" stroke="#8a8f98" stroke-opacity="0.45" stroke-dasharray="2 3"/>
+<line x1="490" y1="415.0" x2="780" y2="415.0" stroke="#8a8f98" stroke-opacity="0.45" stroke-dasharray="2 3"/>
+<line x1="490" y1="375.0" x2="780" y2="375.0" stroke="#8a8f98" stroke-opacity="0.45" stroke-dasharray="2 3"/>
+<line x1="490" y1="335.0" x2="780" y2="335.0" stroke="#8a8f98" stroke-opacity="0.45" stroke-dasharray="2 3"/>
+<line x1="490.0" y1="455" x2="490.0" y2="335.0" stroke="#8a8f98" stroke-opacity="0.35" stroke-dasharray="2 3"/>
+<line x1="522.2" y1="455" x2="522.2" y2="335.0" stroke="#8a8f98" stroke-opacity="0.35" stroke-dasharray="2 3"/>
+<line x1="554.4" y1="455" x2="554.4" y2="335.0" stroke="#8a8f98" stroke-opacity="0.35" stroke-dasharray="2 3"/>
+<line x1="586.7" y1="455" x2="586.7" y2="335.0" stroke="#8a8f98" stroke-opacity="0.35" stroke-dasharray="2 3"/>
+<line x1="618.9" y1="455" x2="618.9" y2="335.0" stroke="#8a8f98" stroke-opacity="0.35" stroke-dasharray="2 3"/>
+<line x1="651.1" y1="455" x2="651.1" y2="335.0" stroke="#8a8f98" stroke-opacity="0.35" stroke-dasharray="2 3"/>
+<line x1="683.3" y1="455" x2="683.3" y2="335.0" stroke="#8a8f98" stroke-opacity="0.35" stroke-dasharray="2 3"/>
+<line x1="715.6" y1="455" x2="715.6" y2="335.0" stroke="#8a8f98" stroke-opacity="0.35" stroke-dasharray="2 3"/>
+<line x1="747.8" y1="455" x2="747.8" y2="335.0" stroke="#8a8f98" stroke-opacity="0.35" stroke-dasharray="2 3"/>
+<line x1="780.0" y1="455" x2="780.0" y2="335.0" stroke="#8a8f98" stroke-opacity="0.35" stroke-dasharray="2 3"/>
+<line x1="490.0" y1="375.0" x2="522.2" y2="375.0" stroke="#3aa675" stroke-width="3.5"/>
+<line x1="522.2" y1="335.0" x2="554.4" y2="335.0" stroke="#3aa675" stroke-width="3.5"/>
+<line x1="554.4" y1="375.0" x2="586.7" y2="375.0" stroke="#3aa675" stroke-width="3.5"/>
+<line x1="586.7" y1="415.0" x2="618.9" y2="415.0" stroke="#3aa675" stroke-width="3.5"/>
+<line x1="618.9" y1="415.0" x2="651.1" y2="415.0" stroke="#3aa675" stroke-width="3.5"/>
+<line x1="651.1" y1="455.0" x2="683.3" y2="455.0" stroke="#3aa675" stroke-width="3.5"/>
+<line x1="683.3" y1="415.0" x2="715.6" y2="415.0" stroke="#3aa675" stroke-width="3.5"/>
+<line x1="715.6" y1="375.0" x2="747.8" y2="375.0" stroke="#3aa675" stroke-width="3.5"/>
+<line x1="747.8" y1="375.0" x2="780.0" y2="375.0" stroke="#3aa675" stroke-width="3.5"/>
+<text x="635" y="495" text-anchor="middle" fill="#8a8f98" font-size="12">z.B. digitale Sprachübertragung</text>
+</svg>

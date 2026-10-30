@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 737" font-family="sans-serif" font-size="13">
+<defs><marker id="m0" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8a8f98"/></marker><marker id="m1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#3b82c4"/></marker><marker id="m2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#e08a2e"/></marker><marker id="m3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#3aa675"/></marker><marker id="m4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#7a6ad8"/></marker><marker id="m5" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#c9569a"/></marker></defs>
+<rect x="20" y="60" width="140" height="613" rx="8" fill="#3b82c4" fill-opacity="0.2" stroke="#3b82c4" stroke-width="2"/>
+<rect x="600" y="60" width="140" height="613" rx="8" fill="#3aa675" fill-opacity="0.2" stroke="#3aa675" stroke-width="2"/>
+<text x="90" y="362.5" text-anchor="middle" fill="#3b82c4" font-weight="bold" font-size="22">DEE</text><text x="90" y="382.5" text-anchor="middle" fill="#8a8f98" font-size="12">Rechner</text>
+<text x="670" y="362.5" text-anchor="middle" fill="#3aa675" font-weight="bold" font-size="22">DÜE</text><text x="670" y="382.5" text-anchor="middle" fill="#8a8f98" font-size="12">Modem</text>
+<line x1="160" y1="100" x2="600" y2="100" stroke="#8a8f98" stroke-width="3.5"/>
+<text x="380" y="95" text-anchor="middle" fill="#8a8f98" font-size="13"><tspan font-weight="bold">1</tspan>  <tspan fill="#8a8f98">Schutzerde</tspan></text>
+<line x1="160" y1="129" x2="600" y2="129" stroke="#8a8f98" stroke-width="3.5"/>
+<text x="380" y="124" text-anchor="middle" fill="#8a8f98" font-size="13"><tspan font-weight="bold">7</tspan>  <tspan fill="#8a8f98">Signalerde</tspan></text>
+<line x1="160" y1="171" x2="598" y2="171" stroke="#3b82c4" stroke-width="1.8" marker-end="url(#m1)"/>
+<text x="380" y="166" text-anchor="middle" fill="#3b82c4" font-size="13"><tspan font-weight="bold">2</tspan>  <tspan fill="#8a8f98">Sendedaten</tspan></text>
+<line x1="600" y1="200" x2="162" y2="200" stroke="#3b82c4" stroke-width="1.8" marker-end="url(#m1)"/>
+<text x="380" y="195" text-anchor="middle" fill="#3b82c4" font-size="13"><tspan font-weight="bold">3</tspan>  <tspan fill="#8a8f98">Empfangsdaten</tspan></text>
+<line x1="160" y1="242" x2="598" y2="242" stroke="#e08a2e" stroke-width="1.8" marker-end="url(#m2)"/>
+<text x="380" y="237" text-anchor="middle" fill="#e08a2e" font-size="13"><tspan font-weight="bold">4</tspan>  <tspan fill="#8a8f98">Sendeanforderung</tspan></text>
+<line x1="600" y1="271" x2="162" y2="271" stroke="#e08a2e" stroke-width="1.8" marker-end="url(#m2)"/>
+<text x="380" y="266" text-anchor="middle" fill="#e08a2e" font-size="13"><tspan font-weight="bold">5</tspan>  <tspan fill="#8a8f98">Bereit zum Senden</tspan></text>
+<line x1="600" y1="300" x2="162" y2="300" stroke="#e08a2e" stroke-width="1.8" marker-end="url(#m2)"/>
+<text x="380" y="295" text-anchor="middle" fill="#e08a2e" font-size="13"><tspan font-weight="bold">6</tspan>  <tspan fill="#8a8f98">Netzseite ist funktionsbereit</tspan></text>
+<line x1="160" y1="329" x2="598" y2="329" stroke="#e08a2e" stroke-width="1.8" marker-end="url(#m2)"/>
+<text x="380" y="324" text-anchor="middle" fill="#e08a2e" font-size="13"><tspan font-weight="bold">20</tspan>  <tspan fill="#8a8f98">Endgerät ist funktionsbereit</tspan></text>
+<line x1="600" y1="358" x2="162" y2="358" stroke="#e08a2e" stroke-width="1.8" marker-end="url(#m2)"/>
+<text x="380" y="353" text-anchor="middle" fill="#e08a2e" font-size="13"><tspan font-weight="bold">22</tspan>  <tspan fill="#8a8f98">Ankommender Ruf</tspan></text>
+<line x1="600" y1="400" x2="162" y2="400" stroke="#3aa675" stroke-width="1.8" marker-end="url(#m3)"/>
+<text x="380" y="395" text-anchor="middle" fill="#3aa675" font-size="13"><tspan font-weight="bold">8</tspan>  <tspan fill="#8a8f98">Empfangssignale vorhanden</tspan></text>
+<line x1="600" y1="429" x2="162" y2="429" stroke="#3aa675" stroke-width="1.8" marker-end="url(#m3)"/>
+<text x="380" y="424" text-anchor="middle" fill="#3aa675" font-size="13"><tspan font-weight="bold">21</tspan>  <tspan fill="#8a8f98">Empfangssignale schwach</tspan></text>
+<line x1="160" y1="471" x2="598" y2="471" stroke="#7a6ad8" stroke-width="1.8" marker-end="url(#m4)"/>
+<text x="380" y="466" text-anchor="middle" fill="#7a6ad8" font-size="13"><tspan font-weight="bold">23</tspan>  <tspan fill="#8a8f98">Bitrate hoch/niedrig</tspan></text>
+<line x1="600" y1="500" x2="162" y2="500" stroke="#7a6ad8" stroke-width="1.8" marker-end="url(#m4)"/>
+<text x="380" y="495" text-anchor="middle" fill="#7a6ad8" font-size="13"><tspan font-weight="bold">18</tspan>  <tspan fill="#8a8f98">Bitrate hoch/niedrig</tspan></text>
+<line x1="160" y1="529" x2="598" y2="529" stroke="#7a6ad8" stroke-width="1.8" marker-end="url(#m4)"/>
+<text x="380" y="524" text-anchor="middle" fill="#7a6ad8" font-size="13"><tspan font-weight="bold">11</tspan>  <tspan fill="#8a8f98">Hohe Sende-Trägerfrequenz</tspan></text>
+<line x1="160" y1="571" x2="598" y2="571" stroke="#c9569a" stroke-width="1.8" marker-end="url(#m5)"/>
+<text x="380" y="566" text-anchor="middle" fill="#c9569a" font-size="13"><tspan font-weight="bold">24</tspan>  <tspan fill="#8a8f98">Sendesignal-Takt von Endgerät</tspan></text>
+<line x1="600" y1="600" x2="162" y2="600" stroke="#c9569a" stroke-width="1.8" marker-end="url(#m5)"/>
+<text x="380" y="595" text-anchor="middle" fill="#c9569a" font-size="13"><tspan font-weight="bold">15</tspan>  <tspan fill="#8a8f98">Sendesignal-Takt von DÜE</tspan></text>
+<line x1="600" y1="629" x2="162" y2="629" stroke="#c9569a" stroke-width="1.8" marker-end="url(#m5)"/>
+<text x="380" y="624" text-anchor="middle" fill="#c9569a" font-size="13"><tspan font-weight="bold">17</tspan>  <tspan fill="#8a8f98">Empfangssignal-Takt</tspan></text>
+<rect x="20" y="688" width="12" height="12" rx="2" fill="#8a8f98"/>
+<text x="37" y="699" fill="#8a8f98" font-size="12">Erde</text>
+<rect x="96" y="688" width="12" height="12" rx="2" fill="#3b82c4"/>
+<text x="113" y="699" fill="#8a8f98" font-size="12">Daten</text>
+<rect x="180" y="688" width="12" height="12" rx="2" fill="#e08a2e"/>
+<text x="197" y="699" fill="#8a8f98" font-size="12">Steuerung</text>
+<rect x="292" y="688" width="12" height="12" rx="2" fill="#3aa675"/>
+<text x="309" y="699" fill="#8a8f98" font-size="12">Empfang</text>
+<rect x="390" y="688" width="12" height="12" rx="2" fill="#7a6ad8"/>
+<text x="407" y="699" fill="#8a8f98" font-size="12">Bitrate / Träger</text>
+<rect x="553" y="688" width="12" height="12" rx="2" fill="#c9569a"/>
+<text x="570" y="699" fill="#8a8f98" font-size="12">Takt</text>
+<text x="20" y="723" fill="#8a8f98" font-size="12">Pfeil = Richtung des Signals. Zahl = Pin-Nummer am 25-poligen Stecker.</text>
+</svg>

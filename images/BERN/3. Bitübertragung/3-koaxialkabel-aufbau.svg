@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 310" font-family="sans-serif" font-size="13">
+  <!-- Querschnitt: von außen nach innen -->
+  <circle cx="150" cy="155" r="125" fill="#8a8f98" fill-opacity="0.22" stroke="#8a8f98" stroke-width="2"/>
+  <circle cx="150" cy="155" r="105" fill="#d1495b" fill-opacity="0.55" stroke="#d1495b" stroke-width="2"/>
+  <circle cx="150" cy="155" r="80" fill="#3b82c4" fill-opacity="0.35" stroke="#3b82c4" stroke-width="2"/>
+  <circle cx="150" cy="155" r="30" fill="#e08a2e" stroke="#e08a2e" stroke-width="2"/>
+
+  <!-- Beschriftungen mit Linien -->
+  <g stroke="#8a8f98" stroke-width="1.5" fill="#8a8f98">
+    <line x1="150" y1="155" x2="332" y2="52"/><circle cx="150" cy="155" r="3"/>
+    <line x1="206" y1="125" x2="332" y2="122"/><circle cx="206" cy="125" r="3"/>
+    <line x1="226" y1="200" x2="332" y2="192"/><circle cx="226" cy="200" r="3"/>
+    <line x1="219" y1="247" x2="332" y2="262"/><circle cx="219" cy="247" r="3"/>
+  </g>
+  <text x="340" y="48" fill="#e08a2e" font-weight="bold" font-size="14">Kupfer (Innenleiter)</text>
+  <text x="340" y="65" fill="#8a8f98" font-size="12">trägt das Signal</text>
+  <text x="340" y="118" fill="#3b82c4" font-weight="bold" font-size="14">Isolierung</text>
+  <text x="340" y="135" fill="#8a8f98" font-size="12">trennt Innen- und Außenleiter</text>
+  <text x="340" y="188" fill="#d1495b" font-weight="bold" font-size="14">Außenleiter</text>
+  <text x="340" y="205" fill="#8a8f98" font-size="12">schirmt Störungen ab</text>
+  <text x="340" y="258" fill="#8a8f98" font-weight="bold" font-size="14">Schutzschicht</text>
+  <text x="340" y="275" fill="#8a8f98" font-size="12">äußerer Mantel</text>
+</svg>

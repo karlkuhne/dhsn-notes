@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 530" font-family="sans-serif" font-size="13">
+  <defs>
+    <marker id="pfeil" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8a8f98"/>
+    </marker>
+  </defs>
+
+  <!-- Reihe 1: Weg der Bits -->
+  <rect x="20" y="40" width="130" height="90" rx="8" fill="#8a8f98" fill-opacity="0.12" stroke="#8a8f98" stroke-width="1.5"/>
+  <text x="85" y="64" text-anchor="middle" fill="#8a8f98" font-weight="bold" font-size="14">Sender</text>
+  <text x="85" y="104" text-anchor="middle" fill="#8a8f98" font-size="22" font-weight="bold" letter-spacing="4">1011</text>
+
+  <line x1="152" y1="85" x2="208" y2="85" stroke="#8a8f98" stroke-width="2" marker-end="url(#pfeil)"/>
+
+  <rect x="210" y="40" width="190" height="90" rx="8" fill="#3b82c4" fill-opacity="0.12" stroke="#3b82c4" stroke-width="1.5"/>
+  <text x="305" y="60" text-anchor="middle" fill="#3b82c4" font-weight="bold" font-size="14">Signal mit S Stufen</text>
+  <path d="M225,112 H255 V76 H285 V100 H315 V88 H345 V112 H385" fill="none" stroke="#3b82c4" stroke-width="2.5"/>
+  <text x="305" y="125" text-anchor="middle" fill="#3b82c4" font-size="11">jede Stufe = ein Schritt</text>
+
+  <line x1="402" y1="85" x2="448" y2="85" stroke="#8a8f98" stroke-width="2" marker-end="url(#pfeil)"/>
+
+  <rect x="450" y="40" width="170" height="90" rx="8" fill="#e08a2e" fill-opacity="0.12" stroke="#e08a2e" stroke-width="1.5"/>
+  <text x="535" y="64" text-anchor="middle" fill="#e08a2e" font-weight="bold" font-size="14">Kanal</text>
+  <text x="535" y="88" text-anchor="middle" fill="#e08a2e" font-size="13">Bandbreite B begrenzt</text>
+  <text x="535" y="108" text-anchor="middle" fill="#e08a2e" font-size="13">Rauschen stört</text>
+
+  <line x1="622" y1="85" x2="648" y2="85" stroke="#8a8f98" stroke-width="2" marker-end="url(#pfeil)"/>
+
+  <rect x="650" y="40" width="90" height="90" rx="8" fill="#8a8f98" fill-opacity="0.12" stroke="#8a8f98" stroke-width="1.5"/>
+  <text x="695" y="64" text-anchor="middle" fill="#8a8f98" font-weight="bold" font-size="14">Empfänger</text>
+  <text x="695" y="104" text-anchor="middle" fill="#8a8f98" font-size="22" font-weight="bold" letter-spacing="4">1011</text>
+
+  <!-- Reihe 2: Baudrate und Bitrate -->
+  <rect x="20" y="155" width="720" height="70" rx="8" fill="#3b82c4" fill-opacity="0.08" stroke="#3b82c4" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <text x="380" y="182" text-anchor="middle" fill="#3b82c4" font-weight="bold" font-size="15">Bitrate b = Baudrate · ld S</text>
+  <text x="380" y="208" text-anchor="middle" fill="#8a8f98" font-size="13">Baudrate = Schritte pro Sekunde · ld S = Bits pro Schritt · z.B. 4 Stufen, 1000 Baud: 2 Bit · 1000 = 2000 bit/s</text>
+
+  <!-- Reihe 3: die zwei Grenzen -->
+  <text x="380" y="256" text-anchor="middle" fill="#8a8f98" font-weight="bold" font-size="14">Warum nicht beliebig schnell? Zwei Grenzen:</text>
+
+  <rect x="20" y="270" width="350" height="125" rx="8" fill="#3b82c4" fill-opacity="0.12" stroke="#3b82c4" stroke-width="1.5"/>
+  <text x="195" y="294" text-anchor="middle" fill="#3b82c4" font-weight="bold" font-size="14">Grenze 1: Bandbreite B</text>
+  <text x="195" y="318" text-anchor="middle" fill="#8a8f98" font-size="13">Kanal schafft höchstens 2B Schritte pro Sekunde</text>
+  <text x="195" y="350" text-anchor="middle" fill="#3b82c4" font-weight="bold" font-size="17">b &lt; 2B · ld S</text>
+  <text x="195" y="377" text-anchor="middle" fill="#8a8f98" font-size="13">Mehr Stufen: mehr Bits pro Schritt</text>
+
+  <rect x="390" y="270" width="350" height="125" rx="8" fill="#e08a2e" fill-opacity="0.12" stroke="#e08a2e" stroke-width="1.5"/>
+  <text x="565" y="294" text-anchor="middle" fill="#e08a2e" font-weight="bold" font-size="14">Grenze 2: Rauschen (SNR)</text>
+  <text x="565" y="318" text-anchor="middle" fill="#8a8f98" font-size="13">Stufen zu eng: Empfänger verwechselt sie</text>
+  <text x="565" y="350" text-anchor="middle" fill="#e08a2e" font-weight="bold" font-size="17">b &lt; B · ld(1 + SNR)</text>
+  <text x="565" y="377" text-anchor="middle" fill="#8a8f98" font-size="13">Unabhängig von der Zahl der Stufen S</text>
+
+  <line x1="195" y1="397" x2="195" y2="428" stroke="#8a8f98" stroke-width="2" marker-end="url(#pfeil)"/>
+  <line x1="565" y1="397" x2="565" y2="428" stroke="#8a8f98" stroke-width="2" marker-end="url(#pfeil)"/>
+
+  <!-- Ergebnis -->
+  <rect x="20" y="430" width="720" height="85" rx="8" fill="#3aa675" fill-opacity="0.14" stroke="#3aa675" stroke-width="2"/>
+  <text x="380" y="456" text-anchor="middle" fill="#3aa675" font-weight="bold" font-size="15">Es gilt die kleinere Grenze: b &lt; min( 2B · ld S ; B · ld(1 + SNR) )</text>
+  <text x="380" y="484" text-anchor="middle" fill="#8a8f98" font-size="13">Beispiel B = 5 MHz: Grenze 1 = 90 Mbit/s, Grenze 2 = 55 Mbit/s</text>
+  <text x="380" y="503" text-anchor="middle" fill="#3aa675" font-weight="bold" font-size="13">Ergebnis: höchstens 55 Mbit/s</text>
+</svg>

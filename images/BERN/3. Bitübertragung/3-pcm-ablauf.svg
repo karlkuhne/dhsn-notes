@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 480" font-family="sans-serif" font-size="13">
+<defs><marker id="pfeil" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8a8f98"/></marker></defs>
+<rect x="30" y="14" width="220" height="48" rx="8" fill="#3b82c4" fill-opacity="0.14" stroke="#3b82c4" stroke-width="1.5"/>
+<text x="140" y="34" text-anchor="middle" fill="#3b82c4" font-weight="bold" font-size="14">1  Abtasten</text>
+<text x="140" y="52" text-anchor="middle" fill="#8a8f98" font-size="12">Messpunkte in festen Abständen</text>
+<rect x="270" y="14" width="220" height="48" rx="8" fill="#e08a2e" fill-opacity="0.14" stroke="#e08a2e" stroke-width="1.5"/>
+<text x="380" y="34" text-anchor="middle" fill="#e08a2e" font-weight="bold" font-size="14">2  Quantisieren</text>
+<text x="380" y="52" text-anchor="middle" fill="#8a8f98" font-size="12">auf nächste Stufe runden</text>
+<rect x="510" y="14" width="220" height="48" rx="8" fill="#3aa675" fill-opacity="0.14" stroke="#3aa675" stroke-width="1.5"/>
+<text x="620" y="34" text-anchor="middle" fill="#3aa675" font-weight="bold" font-size="14">3  Codieren</text>
+<text x="620" y="52" text-anchor="middle" fill="#8a8f98" font-size="12">Stufe als Bits schreiben</text>
+<line x1="90" y1="310.0" x2="710" y2="310.0" stroke="#8a8f98" stroke-opacity="0.35" stroke-dasharray="2 4"/>
+<text x="82" y="314.0" text-anchor="end" fill="#8a8f98" font-size="11">0</text>
+<line x1="90" y1="280.7" x2="710" y2="280.7" stroke="#8a8f98" stroke-opacity="0.35" stroke-dasharray="2 4"/>
+<text x="82" y="284.7" text-anchor="end" fill="#8a8f98" font-size="11">1</text>
+<line x1="90" y1="251.4" x2="710" y2="251.4" stroke="#8a8f98" stroke-opacity="0.35" stroke-dasharray="2 4"/>
+<text x="82" y="255.4" text-anchor="end" fill="#8a8f98" font-size="11">2</text>
+<line x1="90" y1="222.1" x2="710" y2="222.1" stroke="#8a8f98" stroke-opacity="0.35" stroke-dasharray="2 4"/>
+<text x="82" y="226.1" text-anchor="end" fill="#8a8f98" font-size="11">3</text>
+<line x1="90" y1="192.9" x2="710" y2="192.9" stroke="#8a8f98" stroke-opacity="0.35" stroke-dasharray="2 4"/>
+<text x="82" y="196.9" text-anchor="end" fill="#8a8f98" font-size="11">4</text>
+<line x1="90" y1="163.6" x2="710" y2="163.6" stroke="#8a8f98" stroke-opacity="0.35" stroke-dasharray="2 4"/>
+<text x="82" y="167.6" text-anchor="end" fill="#8a8f98" font-size="11">5</text>
+<line x1="90" y1="134.3" x2="710" y2="134.3" stroke="#8a8f98" stroke-opacity="0.35" stroke-dasharray="2 4"/>
+<text x="82" y="138.3" text-anchor="end" fill="#8a8f98" font-size="11">6</text>
+<line x1="90" y1="105.0" x2="710" y2="105.0" stroke="#8a8f98" stroke-opacity="0.35" stroke-dasharray="2 4"/>
+<text x="82" y="109.0" text-anchor="end" fill="#8a8f98" font-size="11">7</text>
+<line x1="90" y1="320" x2="90" y2="95" stroke="#8a8f98" stroke-width="1.5" marker-end="url(#pfeil)"/>
+<line x1="90" y1="320" x2="720" y2="320" stroke="#8a8f98" stroke-width="1.5" marker-end="url(#pfeil)"/>
+<path d="M90.0,190.2 L93.1,187.6 L96.2,185.0 L99.3,182.5 L102.4,180.1 L105.5,177.8 L108.6,175.5 L111.7,173.4 L114.8,171.4 L117.9,169.6 L121.0,167.8 L124.1,166.1 L127.2,164.5 L130.3,163.1 L133.4,161.7 L136.5,160.5 L139.6,159.4 L142.7,158.3 L145.8,157.4 L148.9,156.6 L152.0,155.9 L155.1,155.2 L158.2,154.7 L161.3,154.2 L164.4,153.8 L167.5,153.5 L170.6,153.2 L173.7,153.0 L176.8,152.9 L179.9,152.8 L183.0,152.8 L186.1,152.8 L189.2,152.8 L192.3,152.9 L195.4,153.0 L198.5,153.1 L201.6,153.2 L204.7,153.3 L207.8,153.5 L210.9,153.6 L214.0,153.7 L217.1,153.8 L220.2,153.9 L223.3,153.9 L226.4,153.9 L229.5,153.9 L232.6,153.9 L235.7,153.8 L238.8,153.6 L241.9,153.5 L245.0,153.2 L248.1,153.0 L251.2,152.7 L254.3,152.3 L257.4,151.9 L260.5,151.4 L263.6,150.9 L266.7,150.3 L269.8,149.7 L272.9,149.0 L276.0,148.3 L279.1,147.6 L282.2,146.8 L285.3,146.0 L288.4,145.2 L291.5,144.3 L294.6,143.4 L297.7,142.5 L300.8,141.6 L303.9,140.7 L307.0,139.8 L310.1,138.9 L313.2,138.0 L316.3,137.1 L319.4,136.3 L322.5,135.5 L325.6,134.7 L328.7,133.9 L331.8,133.2 L334.9,132.6 L338.0,132.0 L341.1,131.5 L344.2,131.1 L347.3,130.7 L350.4,130.5 L353.5,130.3 L356.6,130.2 L359.7,130.2 L362.8,130.4 L365.9,130.6 L369.0,131.0 L372.1,131.4 L375.2,132.0 L378.3,132.7 L381.4,133.6 L384.5,134.5 L387.6,135.6 L390.7,136.8 L393.8,138.2 L396.9,139.6 L400.0,141.2 L403.1,143.0 L406.2,144.8 L409.3,146.8 L412.4,148.9 L415.5,151.1 L418.6,153.4 L421.7,155.9 L424.8,158.4 L427.9,161.1 L431.0,163.8 L434.1,166.6 L437.2,169.5 L440.3,172.5 L443.4,175.6 L446.5,178.7 L449.6,181.9 L452.7,185.1 L455.8,188.4 L458.9,191.7 L462.0,195.1 L465.1,198.4 L468.2,201.8 L471.3,205.2 L474.4,208.5 L477.5,211.9 L480.6,215.2 L483.7,218.5 L486.8,221.8 L489.9,225.0 L493.0,228.2 L496.1,231.3 L499.2,234.3 L502.3,237.3 L505.4,240.2 L508.5,243.0 L511.6,245.7 L514.7,248.4 L517.8,250.9 L520.9,253.3 L524.0,255.6 L527.1,257.8 L530.2,259.9 L533.3,261.9 L536.4,263.8 L539.5,265.5 L542.6,267.1 L545.7,268.6 L548.8,270.0 L551.9,271.3 L555.0,272.4 L558.1,273.4 L561.2,274.3 L564.3,275.1 L567.4,275.7 L570.5,276.3 L573.6,276.7 L576.7,277.1 L579.8,277.3 L582.9,277.4 L586.0,277.5 L589.1,277.5 L592.2,277.4 L595.3,277.2 L598.4,276.9 L601.5,276.6 L604.6,276.2 L607.7,275.8 L610.8,275.3 L613.9,274.8 L617.0,274.3 L620.1,273.7 L623.2,273.1 L626.3,272.5 L629.4,271.9 L632.5,271.2 L635.6,270.6 L638.7,270.0 L641.8,269.4 L644.9,268.8 L648.0,268.3 L651.1,267.8 L654.2,267.3 L657.3,266.8 L660.4,266.4 L663.5,266.0 L666.6,265.7 L669.7,265.4 L672.8,265.1 L675.9,264.9 L679.0,264.7 L682.1,264.6 L685.2,264.6 L688.3,264.6 L691.4,264.6 L694.5,264.7 L697.6,264.8 L700.7,265.0 L703.8,265.2 L706.9,265.4 L710.0,265.7" fill="none" stroke="#8a8f98" stroke-width="2" stroke-opacity="0.8"/>
+<line x1="121.0" y1="320" x2="121.0" y2="167.8" stroke="#3b82c4" stroke-width="1" stroke-opacity="0.5" stroke-dasharray="3 3"/>
+<circle cx="121.0" cy="167.8" r="4.5" fill="#3b82c4"/>
+<line x1="94.0" y1="163.6" x2="148.0" y2="163.6" stroke="#e08a2e" stroke-width="4"/>
+<text x="121.0" y="346" text-anchor="middle" fill="#3aa675" font-weight="bold" font-size="13">101</text>
+<line x1="183.0" y1="320" x2="183.0" y2="152.8" stroke="#3b82c4" stroke-width="1" stroke-opacity="0.5" stroke-dasharray="3 3"/>
+<circle cx="183.0" cy="152.8" r="4.5" fill="#3b82c4"/>
+<line x1="156.0" y1="163.6" x2="210.0" y2="163.6" stroke="#e08a2e" stroke-width="4"/>
+<text x="183.0" y="346" text-anchor="middle" fill="#3aa675" font-weight="bold" font-size="13">101</text>
+<line x1="245.0" y1="320" x2="245.0" y2="153.2" stroke="#3b82c4" stroke-width="1" stroke-opacity="0.5" stroke-dasharray="3 3"/>
+<circle cx="245.0" cy="153.2" r="4.5" fill="#3b82c4"/>
+<line x1="218.0" y1="163.6" x2="272.0" y2="163.6" stroke="#e08a2e" stroke-width="4"/>
+<text x="245.0" y="346" text-anchor="middle" fill="#3aa675" font-weight="bold" font-size="13">101</text>
+<line x1="307.0" y1="320" x2="307.0" y2="139.8" stroke="#3b82c4" stroke-width="1" stroke-opacity="0.5" stroke-dasharray="3 3"/>
+<circle cx="307.0" cy="139.8" r="4.5" fill="#3b82c4"/>
+<line x1="280.0" y1="134.3" x2="334.0" y2="134.3" stroke="#e08a2e" stroke-width="4"/>
+<text x="307.0" y="346" text-anchor="middle" fill="#3aa675" font-weight="bold" font-size="13">110</text>
+<line x1="369.0" y1="320" x2="369.0" y2="131.0" stroke="#3b82c4" stroke-width="1" stroke-opacity="0.5" stroke-dasharray="3 3"/>
+<circle cx="369.0" cy="131.0" r="4.5" fill="#3b82c4"/>
+<line x1="342.0" y1="134.3" x2="396.0" y2="134.3" stroke="#e08a2e" stroke-width="4"/>
+<text x="369.0" y="346" text-anchor="middle" fill="#3aa675" font-weight="bold" font-size="13">110</text>
+<line x1="431.0" y1="320" x2="431.0" y2="163.8" stroke="#3b82c4" stroke-width="1" stroke-opacity="0.5" stroke-dasharray="3 3"/>
+<circle cx="431.0" cy="163.8" r="4.5" fill="#3b82c4"/>
+<line x1="404.0" y1="163.6" x2="458.0" y2="163.6" stroke="#e08a2e" stroke-width="4"/>
+<text x="431.0" y="346" text-anchor="middle" fill="#3aa675" font-weight="bold" font-size="13">101</text>
+<line x1="493.0" y1="320" x2="493.0" y2="228.2" stroke="#3b82c4" stroke-width="1" stroke-opacity="0.5" stroke-dasharray="3 3"/>
+<circle cx="493.0" cy="228.2" r="4.5" fill="#3b82c4"/>
+<line x1="466.0" y1="222.1" x2="520.0" y2="222.1" stroke="#e08a2e" stroke-width="4"/>
+<text x="493.0" y="346" text-anchor="middle" fill="#3aa675" font-weight="bold" font-size="13">011</text>
+<line x1="555.0" y1="320" x2="555.0" y2="272.4" stroke="#3b82c4" stroke-width="1" stroke-opacity="0.5" stroke-dasharray="3 3"/>
+<circle cx="555.0" cy="272.4" r="4.5" fill="#3b82c4"/>
+<line x1="528.0" y1="280.7" x2="582.0" y2="280.7" stroke="#e08a2e" stroke-width="4"/>
+<text x="555.0" y="346" text-anchor="middle" fill="#3aa675" font-weight="bold" font-size="13">001</text>
+<line x1="617.0" y1="320" x2="617.0" y2="274.3" stroke="#3b82c4" stroke-width="1" stroke-opacity="0.5" stroke-dasharray="3 3"/>
+<circle cx="617.0" cy="274.3" r="4.5" fill="#3b82c4"/>
+<line x1="590.0" y1="280.7" x2="644.0" y2="280.7" stroke="#e08a2e" stroke-width="4"/>
+<text x="617.0" y="346" text-anchor="middle" fill="#3aa675" font-weight="bold" font-size="13">001</text>
+<line x1="679.0" y1="320" x2="679.0" y2="264.7" stroke="#3b82c4" stroke-width="1" stroke-opacity="0.5" stroke-dasharray="3 3"/>
+<circle cx="679.0" cy="264.7" r="4.5" fill="#3b82c4"/>
+<line x1="652.0" y1="251.4" x2="706.0" y2="251.4" stroke="#e08a2e" stroke-width="4"/>
+<text x="679.0" y="346" text-anchor="middle" fill="#3aa675" font-weight="bold" font-size="13">010</text>
+<text x="724" y="324" fill="#8a8f98" font-size="12">t</text>
+<text x="50" y="89" fill="#8a8f98" font-size="11">Stufe</text>
+<text x="82" y="350" text-anchor="end" fill="#3aa675" font-size="11">Bits</text>
+<text x="380" y="372" text-anchor="middle" fill="#8a8f98" font-size="12">Hier vereinfacht mit 8 Stufen = 3 Bit pro Messpunkt. Beim Telefon sind es 256 Stufen = 8 Bit.</text>
+<rect x="30" y="402" width="700" height="58" rx="8" fill="#3aa675" fill-opacity="0.14" stroke="#3aa675" stroke-width="1.5"/>
+<text x="380" y="426" text-anchor="middle" fill="#3aa675" font-weight="bold" font-size="14">Telefon: 8000 Messpunkte pro Sekunde (alle 125 µs)</text>
+<text x="380" y="448" text-anchor="middle" fill="#3aa675" font-weight="bold" font-size="15">8000 · 8 Bit = 64 kbit/s</text>
+</svg>

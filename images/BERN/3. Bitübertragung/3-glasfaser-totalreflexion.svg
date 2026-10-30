@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 270" font-family="sans-serif" font-size="13">
+  <defs>
+    <marker id="pfeil" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8a8f98"/>
+    </marker>
+  </defs>
+
+  <!-- Sender -->
+  <rect x="10" y="85" width="100" height="70" rx="8" fill="#e08a2e" fill-opacity="0.14" stroke="#e08a2e" stroke-width="1.5"/>
+  <text x="60" y="114" text-anchor="middle" fill="#e08a2e" font-weight="bold" font-size="14">LED oder</text>
+  <text x="60" y="132" text-anchor="middle" fill="#e08a2e" font-weight="bold" font-size="14">Laserdiode</text>
+
+  <!-- Faser: Mantel außen, Kern innen -->
+  <rect x="120" y="70" width="480" height="100" rx="10" fill="#8a8f98" fill-opacity="0.15" stroke="#8a8f98" stroke-width="1.5"/>
+  <rect x="120" y="90" width="480" height="60" fill="#3b82c4" fill-opacity="0.16" stroke="#3b82c4" stroke-width="1.5"/>
+
+  <!-- Lichtstrahl: zickzack im Kern -->
+  <path d="M120,120 L190,90 L260,150 L330,90 L400,150 L470,90 L540,150 L600,120" fill="none" stroke="#e08a2e" stroke-width="2.5" stroke-linejoin="round"/>
+  <g fill="#e08a2e">
+    <circle cx="190" cy="90" r="4"/><circle cx="260" cy="150" r="4"/><circle cx="330" cy="90" r="4"/>
+    <circle cx="400" cy="150" r="4"/><circle cx="470" cy="90" r="4"/><circle cx="540" cy="150" r="4"/>
+  </g>
+
+  <!-- Empfänger -->
+  <rect x="610" y="85" width="100" height="70" rx="8" fill="#3b82c4" fill-opacity="0.14" stroke="#3b82c4" stroke-width="1.5"/>
+  <text x="660" y="125" text-anchor="middle" fill="#3b82c4" font-weight="bold" font-size="14">Photodiode</text>
+
+  <!-- Beschriftungen -->
+  <text x="190" y="52" text-anchor="middle" fill="#8a8f98" font-size="12">Mantel</text>
+  <text x="190" y="118" text-anchor="middle" fill="#3b82c4" font-size="12" font-weight="bold">Kern</text>
+  <text x="400" y="200" text-anchor="middle" fill="#e08a2e" font-weight="bold" font-size="13">Totalreflexion an der Grenze Kern / Mantel</text>
+  <line x1="400" y1="188" x2="400" y2="156" stroke="#8a8f98" stroke-width="1.5" marker-end="url(#pfeil)"/>
+  <text x="360" y="236" text-anchor="middle" fill="#8a8f98" font-size="12">Der Kern bricht Licht stärker als der Mantel, deshalb bleibt der Strahl im Kern gefangen.</text>
+  <text x="360" y="256" text-anchor="middle" fill="#8a8f98" font-size="12">Licht: ca. 3 · 10⁸ MHz (= 300 THz)</text>
+</svg>

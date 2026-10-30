@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 330" font-family="sans-serif" font-size="13">
+<defs><marker id="pfeil" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8a8f98"/></marker></defs>
+<text x="195.0" y="28" text-anchor="middle" fill="#3aa675" font-weight="bold" font-size="14">Schnell genug abgetastet</text>
+<line x1="30" y1="150" x2="370" y2="150" stroke="#8a8f98" stroke-width="1.5" marker-end="url(#pfeil)"/>
+<line x1="30" y1="220" x2="30" y2="80" stroke="#8a8f98" stroke-width="1.5" marker-end="url(#pfeil)"/>
+<path d="M30.0,150.0 L33.3,138.1 L36.6,126.9 L39.9,117.1 L43.2,109.5 L46.5,104.3 L49.8,102.1 L53.1,102.9 L56.4,106.6 L59.7,113.0 L63.0,121.8 L66.3,132.3 L69.6,144.0 L72.9,156.0 L76.2,167.7 L79.5,178.2 L82.8,187.0 L86.1,193.4 L89.4,197.1 L92.7,197.9 L96.0,195.7 L99.3,190.5 L102.6,182.9 L105.9,173.1 L109.2,161.9 L112.5,150.0 L115.8,138.1 L119.1,126.9 L122.4,117.1 L125.7,109.5 L129.0,104.3 L132.3,102.1 L135.6,102.9 L138.9,106.6 L142.2,113.0 L145.5,121.8 L148.8,132.3 L152.1,144.0 L155.4,156.0 L158.7,167.7 L162.0,178.2 L165.3,187.0 L168.6,193.4 L171.9,197.1 L175.2,197.9 L178.5,195.7 L181.8,190.5 L185.1,182.9 L188.4,173.1 L191.7,161.9 L195.0,150.0 L198.3,138.1 L201.6,126.9 L204.9,117.1 L208.2,109.5 L211.5,104.3 L214.8,102.1 L218.1,102.9 L221.4,106.6 L224.7,113.0 L228.0,121.8 L231.3,132.3 L234.6,144.0 L237.9,156.0 L241.2,167.7 L244.5,178.2 L247.8,187.0 L251.1,193.4 L254.4,197.1 L257.7,197.9 L261.0,195.7 L264.3,190.5 L267.6,182.9 L270.9,173.1 L274.2,161.9 L277.5,150.0 L280.8,138.1 L284.1,126.9 L287.4,117.1 L290.7,109.5 L294.0,104.3 L297.3,102.1 L300.6,102.9 L303.9,106.6 L307.2,113.0 L310.5,121.8 L313.8,132.3 L317.1,144.0 L320.4,156.0 L323.7,167.7 L327.0,178.2 L330.3,187.0 L333.6,193.4 L336.9,197.1 L340.2,197.9 L343.5,195.7 L346.8,190.5 L350.1,182.9 L353.4,173.1 L356.7,161.9 L360.0,150.0" fill="none" stroke="#8a8f98" stroke-width="2" stroke-opacity="0.8"/>
+<line x1="30.0" y1="150" x2="30.0" y2="150.0" stroke="#3aa675" stroke-width="1.2" stroke-opacity="0.6"/>
+<circle cx="30.0" cy="150.0" r="4.5" fill="#3aa675"/>
+<line x1="50.6" y1="150" x2="50.6" y2="102.0" stroke="#3aa675" stroke-width="1.2" stroke-opacity="0.6"/>
+<circle cx="50.6" cy="102.0" r="4.5" fill="#3aa675"/>
+<line x1="71.2" y1="150" x2="71.2" y2="150.0" stroke="#3aa675" stroke-width="1.2" stroke-opacity="0.6"/>
+<circle cx="71.2" cy="150.0" r="4.5" fill="#3aa675"/>
+<line x1="91.9" y1="150" x2="91.9" y2="198.0" stroke="#3aa675" stroke-width="1.2" stroke-opacity="0.6"/>
+<circle cx="91.9" cy="198.0" r="4.5" fill="#3aa675"/>
+<line x1="112.5" y1="150" x2="112.5" y2="150.0" stroke="#3aa675" stroke-width="1.2" stroke-opacity="0.6"/>
+<circle cx="112.5" cy="150.0" r="4.5" fill="#3aa675"/>
+<line x1="133.1" y1="150" x2="133.1" y2="102.0" stroke="#3aa675" stroke-width="1.2" stroke-opacity="0.6"/>
+<circle cx="133.1" cy="102.0" r="4.5" fill="#3aa675"/>
+<line x1="153.8" y1="150" x2="153.8" y2="150.0" stroke="#3aa675" stroke-width="1.2" stroke-opacity="0.6"/>
+<circle cx="153.8" cy="150.0" r="4.5" fill="#3aa675"/>
+<line x1="174.4" y1="150" x2="174.4" y2="198.0" stroke="#3aa675" stroke-width="1.2" stroke-opacity="0.6"/>
+<circle cx="174.4" cy="198.0" r="4.5" fill="#3aa675"/>
+<line x1="195.0" y1="150" x2="195.0" y2="150.0" stroke="#3aa675" stroke-width="1.2" stroke-opacity="0.6"/>
+<circle cx="195.0" cy="150.0" r="4.5" fill="#3aa675"/>
+<line x1="215.6" y1="150" x2="215.6" y2="102.0" stroke="#3aa675" stroke-width="1.2" stroke-opacity="0.6"/>
+<circle cx="215.6" cy="102.0" r="4.5" fill="#3aa675"/>
+<line x1="236.2" y1="150" x2="236.2" y2="150.0" stroke="#3aa675" stroke-width="1.2" stroke-opacity="0.6"/>
+<circle cx="236.2" cy="150.0" r="4.5" fill="#3aa675"/>
+<line x1="256.9" y1="150" x2="256.9" y2="198.0" stroke="#3aa675" stroke-width="1.2" stroke-opacity="0.6"/>
+<circle cx="256.9" cy="198.0" r="4.5" fill="#3aa675"/>
+<line x1="277.5" y1="150" x2="277.5" y2="150.0" stroke="#3aa675" stroke-width="1.2" stroke-opacity="0.6"/>
+<circle cx="277.5" cy="150.0" r="4.5" fill="#3aa675"/>
+<line x1="298.1" y1="150" x2="298.1" y2="102.0" stroke="#3aa675" stroke-width="1.2" stroke-opacity="0.6"/>
+<circle cx="298.1" cy="102.0" r="4.5" fill="#3aa675"/>
+<line x1="318.8" y1="150" x2="318.8" y2="150.0" stroke="#3aa675" stroke-width="1.2" stroke-opacity="0.6"/>
+<circle cx="318.8" cy="150.0" r="4.5" fill="#3aa675"/>
+<line x1="339.4" y1="150" x2="339.4" y2="198.0" stroke="#3aa675" stroke-width="1.2" stroke-opacity="0.6"/>
+<circle cx="339.4" cy="198.0" r="4.5" fill="#3aa675"/>
+<line x1="360.0" y1="150" x2="360.0" y2="150.0" stroke="#3aa675" stroke-width="1.2" stroke-opacity="0.6"/>
+<circle cx="360.0" cy="150.0" r="4.5" fill="#3aa675"/>
+<text x="195.0" y="250" text-anchor="middle" fill="#8a8f98" font-size="12">Signal: 1 Schwingung pro Zeiteinheit, 4 Messpunkte pro Schwingung.</text>
+<text x="195.0" y="270" text-anchor="middle" fill="#8a8f98" font-size="12">Aus den Punkten lässt sich die Kurve eindeutig zurückgewinnen.</text>
+<text x="565.0" y="28" text-anchor="middle" fill="#d1495b" font-weight="bold" font-size="14">Zu langsam abgetastet</text>
+<line x1="400" y1="150" x2="740" y2="150" stroke="#8a8f98" stroke-width="1.5" marker-end="url(#pfeil)"/>
+<line x1="400" y1="220" x2="400" y2="80" stroke="#8a8f98" stroke-width="1.5" marker-end="url(#pfeil)"/>
+<path d="M400.0,150.0 L403.3,138.1 L406.6,126.9 L409.9,117.1 L413.2,109.5 L416.5,104.3 L419.8,102.1 L423.1,102.9 L426.4,106.6 L429.7,113.0 L433.0,121.8 L436.3,132.3 L439.6,144.0 L442.9,156.0 L446.2,167.7 L449.5,178.2 L452.8,187.0 L456.1,193.4 L459.4,197.1 L462.7,197.9 L466.0,195.7 L469.3,190.5 L472.6,182.9 L475.9,173.1 L479.2,161.9 L482.5,150.0 L485.8,138.1 L489.1,126.9 L492.4,117.1 L495.7,109.5 L499.0,104.3 L502.3,102.1 L505.6,102.9 L508.9,106.6 L512.2,113.0 L515.5,121.8 L518.8,132.3 L522.1,144.0 L525.4,156.0 L528.7,167.7 L532.0,178.2 L535.3,187.0 L538.6,193.4 L541.9,197.1 L545.2,197.9 L548.5,195.7 L551.8,190.5 L555.1,182.9 L558.4,173.1 L561.7,161.9 L565.0,150.0 L568.3,138.1 L571.6,126.9 L574.9,117.1 L578.2,109.5 L581.5,104.3 L584.8,102.1 L588.1,102.9 L591.4,106.6 L594.7,113.0 L598.0,121.8 L601.3,132.3 L604.6,144.0 L607.9,156.0 L611.2,167.7 L614.5,178.2 L617.8,187.0 L621.1,193.4 L624.4,197.1 L627.7,197.9 L631.0,195.7 L634.3,190.5 L637.6,182.9 L640.9,173.1 L644.2,161.9 L647.5,150.0 L650.8,138.1 L654.1,126.9 L657.4,117.1 L660.7,109.5 L664.0,104.3 L667.3,102.1 L670.6,102.9 L673.9,106.6 L677.2,113.0 L680.5,121.8 L683.8,132.3 L687.1,144.0 L690.4,156.0 L693.7,167.7 L697.0,178.2 L700.3,187.0 L703.6,193.4 L706.9,197.1 L710.2,197.9 L713.5,195.7 L716.8,190.5 L720.1,182.9 L723.4,173.1 L726.7,161.9 L730.0,150.0" fill="none" stroke="#8a8f98" stroke-width="2" stroke-opacity="0.8"/>
+<path d="M400.0,150.0 L403.3,153.0 L406.6,156.0 L409.9,159.0 L413.2,161.9 L416.5,164.8 L419.8,167.7 L423.1,170.4 L426.4,173.1 L429.7,175.7 L433.0,178.2 L436.3,180.6 L439.6,182.9 L442.9,185.0 L446.2,187.0 L449.5,188.8 L452.8,190.5 L456.1,192.1 L459.4,193.4 L462.7,194.6 L466.0,195.7 L469.3,196.5 L472.6,197.1 L475.9,197.6 L479.2,197.9 L482.5,198.0 L485.8,197.9 L489.1,197.6 L492.4,197.1 L495.7,196.5 L499.0,195.7 L502.3,194.6 L505.6,193.4 L508.9,192.1 L512.2,190.5 L515.5,188.8 L518.8,187.0 L522.1,185.0 L525.4,182.9 L528.7,180.6 L532.0,178.2 L535.3,175.7 L538.6,173.1 L541.9,170.4 L545.2,167.7 L548.5,164.8 L551.8,161.9 L555.1,159.0 L558.4,156.0 L561.7,153.0 L565.0,150.0 L568.3,147.0 L571.6,144.0 L574.9,141.0 L578.2,138.1 L581.5,135.2 L584.8,132.3 L588.1,129.6 L591.4,126.9 L594.7,124.3 L598.0,121.8 L601.3,119.4 L604.6,117.1 L607.9,115.0 L611.2,113.0 L614.5,111.2 L617.8,109.5 L621.1,107.9 L624.4,106.6 L627.7,105.4 L631.0,104.3 L634.3,103.5 L637.6,102.9 L640.9,102.4 L644.2,102.1 L647.5,102.0 L650.8,102.1 L654.1,102.4 L657.4,102.9 L660.7,103.5 L664.0,104.3 L667.3,105.4 L670.6,106.6 L673.9,107.9 L677.2,109.5 L680.5,111.2 L683.8,113.0 L687.1,115.0 L690.4,117.1 L693.7,119.4 L697.0,121.8 L700.3,124.3 L703.6,126.9 L706.9,129.6 L710.2,132.3 L713.5,135.2 L716.8,138.1 L720.1,141.0 L723.4,144.0 L726.7,147.0 L730.0,150.0" fill="none" stroke="#d1495b" stroke-width="2.5" stroke-dasharray="6 4"/>
+<line x1="400.0" y1="150" x2="400.0" y2="150.0" stroke="#d1495b" stroke-width="1.2" stroke-opacity="0.6"/>
+<circle cx="400.0" cy="150.0" r="4.5" fill="#d1495b"/>
+<line x1="466.0" y1="150" x2="466.0" y2="195.7" stroke="#d1495b" stroke-width="1.2" stroke-opacity="0.6"/>
+<circle cx="466.0" cy="195.7" r="4.5" fill="#d1495b"/>
+<line x1="532.0" y1="150" x2="532.0" y2="178.2" stroke="#d1495b" stroke-width="1.2" stroke-opacity="0.6"/>
+<circle cx="532.0" cy="178.2" r="4.5" fill="#d1495b"/>
+<line x1="598.0" y1="150" x2="598.0" y2="121.8" stroke="#d1495b" stroke-width="1.2" stroke-opacity="0.6"/>
+<circle cx="598.0" cy="121.8" r="4.5" fill="#d1495b"/>
+<line x1="664.0" y1="150" x2="664.0" y2="104.3" stroke="#d1495b" stroke-width="1.2" stroke-opacity="0.6"/>
+<circle cx="664.0" cy="104.3" r="4.5" fill="#d1495b"/>
+<line x1="730.0" y1="150" x2="730.0" y2="150.0" stroke="#d1495b" stroke-width="1.2" stroke-opacity="0.6"/>
+<circle cx="730.0" cy="150.0" r="4.5" fill="#d1495b"/>
+<text x="565.0" y="250" text-anchor="middle" fill="#8a8f98" font-size="12">Weniger als 2 Messpunkte pro Schwingung.</text>
+<text x="565.0" y="270" text-anchor="middle" fill="#8a8f98" font-size="12">Die Punkte passen auch zu einer langsamen falschen Kurve (rot).</text>
+<text x="380" y="310" text-anchor="middle" fill="#3b82c4" font-weight="bold" font-size="14">Abtasttheorem: f_A &gt; 2 · f_Grenz</text>
+</svg>

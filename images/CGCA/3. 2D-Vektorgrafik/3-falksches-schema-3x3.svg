@@ -1,0 +1,434 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810 870" font-family="sans-serif" font-size="12">
+  <g transform="translate(0,0)">
+  <text x="152" y="20" text-anchor="middle" fill="#c9569a" font-weight="bold" font-size="14">Schritt 1: c₁₁</text>
+  <rect x="152" y="140" width="36" height="28" fill="#c9569a" fill-opacity="0.18" stroke="#c9569a" stroke-width="2"/>
+  <rect x="188" y="140" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="224" y="140" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="152" y="168" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="188" y="168" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="224" y="168" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="152" y="196" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="188" y="196" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="224" y="196" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <line x1="44" y1="140" x2="260" y2="140" stroke="#8a8f98" stroke-width="1.5"/>
+  <line x1="152" y1="56" x2="152" y2="224" stroke="#8a8f98" stroke-width="1.5"/>
+  <line x1="71.5" y1="146.6" x2="160.5" y2="77.4" stroke="#c9569a" stroke-width="2" stroke-dasharray="5 3"/>
+  <line x1="107.5" y1="146.6" x2="160.5" y2="105.4" stroke="#c9569a" stroke-width="2" stroke-dasharray="5 3"/>
+  <line x1="143.5" y1="146.6" x2="160.5" y2="133.4" stroke="#c9569a" stroke-width="2" stroke-dasharray="5 3"/>
+  <text x="170.0" y="74.0" text-anchor="middle" fill="#c9569a" font-size="12" font-weight="bold">n₁₁</text>
+  <text x="62.0" y="158.0" text-anchor="middle" fill="#c9569a" font-size="12" font-weight="bold">m₁₁</text>
+  <text x="170.0" y="158.0" text-anchor="middle" fill="#c9569a" font-size="12" font-weight="bold">c₁₁</text>
+  <text x="206.0" y="74.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₁₂</text>
+  <text x="98.0" y="158.0" text-anchor="middle" fill="#c9569a" font-size="12" font-weight="bold">m₁₂</text>
+  <text x="206.0" y="158.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₁₂</text>
+  <text x="242.0" y="74.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₁₃</text>
+  <text x="134.0" y="158.0" text-anchor="middle" fill="#c9569a" font-size="12" font-weight="bold">m₁₃</text>
+  <text x="242.0" y="158.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₁₃</text>
+  <text x="170.0" y="102.0" text-anchor="middle" fill="#c9569a" font-size="12" font-weight="bold">n₂₁</text>
+  <text x="62.0" y="186.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₂₁</text>
+  <text x="170.0" y="186.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₂₁</text>
+  <text x="206.0" y="102.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₂₂</text>
+  <text x="98.0" y="186.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₂₂</text>
+  <text x="206.0" y="186.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₂₂</text>
+  <text x="242.0" y="102.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₂₃</text>
+  <text x="134.0" y="186.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₂₃</text>
+  <text x="242.0" y="186.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₂₃</text>
+  <text x="170.0" y="130.0" text-anchor="middle" fill="#c9569a" font-size="12" font-weight="bold">n₃₁</text>
+  <text x="62.0" y="214.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₃₁</text>
+  <text x="170.0" y="214.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₃₁</text>
+  <text x="206.0" y="130.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₃₂</text>
+  <text x="98.0" y="214.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₃₂</text>
+  <text x="206.0" y="214.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₃₂</text>
+  <text x="242.0" y="130.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₃₃</text>
+  <text x="134.0" y="214.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₃₃</text>
+  <text x="242.0" y="214.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₃₃</text>
+  <text x="206.0" y="48" text-anchor="middle" fill="#8a8f98" font-weight="bold" font-size="12">Matrix B</text>
+  <text transform="translate(34,182.0) rotate(-90)" text-anchor="middle" fill="#8a8f98" font-weight="bold" font-size="12">Matrix A</text>
+  <text x="206.0" y="242" text-anchor="middle" fill="#8a8f98" font-weight="bold" font-size="12">C = A · B</text>
+  <text x="152" y="268" text-anchor="middle" fill="#c9569a" font-size="12">c₁₁ = m₁₁·n₁₁ + m₁₂·n₂₁ + m₁₃·n₃₁</text>
+  </g>
+<g transform="translate(270,0)">
+  <text x="152" y="20" text-anchor="middle" fill="#2f9fb8" font-weight="bold" font-size="14">Schritt 2: c₁₂</text>
+  <rect x="152" y="140" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="188" y="140" width="36" height="28" fill="#2f9fb8" fill-opacity="0.18" stroke="#2f9fb8" stroke-width="2"/>
+  <rect x="224" y="140" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="152" y="168" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="188" y="168" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="224" y="168" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="152" y="196" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="188" y="196" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="224" y="196" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <line x1="44" y1="140" x2="260" y2="140" stroke="#8a8f98" stroke-width="1.5"/>
+  <line x1="152" y1="56" x2="152" y2="224" stroke="#8a8f98" stroke-width="1.5"/>
+  <line x1="72.4" y1="148.0" x2="195.6" y2="76.0" stroke="#2f9fb8" stroke-width="2" stroke-dasharray="5 3"/>
+  <line x1="108.7" y1="148.5" x2="195.3" y2="103.5" stroke="#2f9fb8" stroke-width="2" stroke-dasharray="5 3"/>
+  <line x1="145.2" y1="149.7" x2="194.8" y2="130.3" stroke="#2f9fb8" stroke-width="2" stroke-dasharray="5 3"/>
+  <text x="170.0" y="74.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₁₁</text>
+  <text x="62.0" y="158.0" text-anchor="middle" fill="#2f9fb8" font-size="12" font-weight="bold">m₁₁</text>
+  <text x="170.0" y="158.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₁₁</text>
+  <text x="206.0" y="74.0" text-anchor="middle" fill="#2f9fb8" font-size="12" font-weight="bold">n₁₂</text>
+  <text x="98.0" y="158.0" text-anchor="middle" fill="#2f9fb8" font-size="12" font-weight="bold">m₁₂</text>
+  <text x="206.0" y="158.0" text-anchor="middle" fill="#2f9fb8" font-size="12" font-weight="bold">c₁₂</text>
+  <text x="242.0" y="74.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₁₃</text>
+  <text x="134.0" y="158.0" text-anchor="middle" fill="#2f9fb8" font-size="12" font-weight="bold">m₁₃</text>
+  <text x="242.0" y="158.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₁₃</text>
+  <text x="170.0" y="102.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₂₁</text>
+  <text x="62.0" y="186.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₂₁</text>
+  <text x="170.0" y="186.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₂₁</text>
+  <text x="206.0" y="102.0" text-anchor="middle" fill="#2f9fb8" font-size="12" font-weight="bold">n₂₂</text>
+  <text x="98.0" y="186.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₂₂</text>
+  <text x="206.0" y="186.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₂₂</text>
+  <text x="242.0" y="102.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₂₃</text>
+  <text x="134.0" y="186.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₂₃</text>
+  <text x="242.0" y="186.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₂₃</text>
+  <text x="170.0" y="130.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₃₁</text>
+  <text x="62.0" y="214.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₃₁</text>
+  <text x="170.0" y="214.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₃₁</text>
+  <text x="206.0" y="130.0" text-anchor="middle" fill="#2f9fb8" font-size="12" font-weight="bold">n₃₂</text>
+  <text x="98.0" y="214.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₃₂</text>
+  <text x="206.0" y="214.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₃₂</text>
+  <text x="242.0" y="130.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₃₃</text>
+  <text x="134.0" y="214.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₃₃</text>
+  <text x="242.0" y="214.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₃₃</text>
+  <text x="206.0" y="48" text-anchor="middle" fill="#8a8f98" font-weight="bold" font-size="12">Matrix B</text>
+  <text transform="translate(34,182.0) rotate(-90)" text-anchor="middle" fill="#8a8f98" font-weight="bold" font-size="12">Matrix A</text>
+  <text x="206.0" y="242" text-anchor="middle" fill="#8a8f98" font-weight="bold" font-size="12">C = A · B</text>
+  <text x="152" y="268" text-anchor="middle" fill="#2f9fb8" font-size="12">c₁₂ = m₁₁·n₁₂ + m₁₂·n₂₂ + m₁₃·n₃₂</text>
+  </g>
+<g transform="translate(540,0)">
+  <text x="152" y="20" text-anchor="middle" fill="#e08a2e" font-weight="bold" font-size="14">Schritt 3: c₁₃</text>
+  <rect x="152" y="140" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="188" y="140" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="224" y="140" width="36" height="28" fill="#e08a2e" fill-opacity="0.18" stroke="#e08a2e" stroke-width="2"/>
+  <rect x="152" y="168" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="188" y="168" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="224" y="168" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="152" y="196" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="188" y="196" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="224" y="196" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <line x1="44" y1="140" x2="260" y2="140" stroke="#8a8f98" stroke-width="1.5"/>
+  <line x1="152" y1="56" x2="152" y2="224" stroke="#8a8f98" stroke-width="1.5"/>
+  <line x1="72.9" y1="148.9" x2="231.1" y2="75.1" stroke="#e08a2e" stroke-width="2" stroke-dasharray="5 3"/>
+  <line x1="109.2" y1="149.7" x2="230.8" y2="102.3" stroke="#e08a2e" stroke-width="2" stroke-dasharray="5 3"/>
+  <line x1="145.6" y1="151.0" x2="230.4" y2="129.0" stroke="#e08a2e" stroke-width="2" stroke-dasharray="5 3"/>
+  <text x="170.0" y="74.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₁₁</text>
+  <text x="62.0" y="158.0" text-anchor="middle" fill="#e08a2e" font-size="12" font-weight="bold">m₁₁</text>
+  <text x="170.0" y="158.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₁₁</text>
+  <text x="206.0" y="74.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₁₂</text>
+  <text x="98.0" y="158.0" text-anchor="middle" fill="#e08a2e" font-size="12" font-weight="bold">m₁₂</text>
+  <text x="206.0" y="158.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₁₂</text>
+  <text x="242.0" y="74.0" text-anchor="middle" fill="#e08a2e" font-size="12" font-weight="bold">n₁₃</text>
+  <text x="134.0" y="158.0" text-anchor="middle" fill="#e08a2e" font-size="12" font-weight="bold">m₁₃</text>
+  <text x="242.0" y="158.0" text-anchor="middle" fill="#e08a2e" font-size="12" font-weight="bold">c₁₃</text>
+  <text x="170.0" y="102.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₂₁</text>
+  <text x="62.0" y="186.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₂₁</text>
+  <text x="170.0" y="186.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₂₁</text>
+  <text x="206.0" y="102.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₂₂</text>
+  <text x="98.0" y="186.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₂₂</text>
+  <text x="206.0" y="186.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₂₂</text>
+  <text x="242.0" y="102.0" text-anchor="middle" fill="#e08a2e" font-size="12" font-weight="bold">n₂₃</text>
+  <text x="134.0" y="186.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₂₃</text>
+  <text x="242.0" y="186.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₂₃</text>
+  <text x="170.0" y="130.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₃₁</text>
+  <text x="62.0" y="214.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₃₁</text>
+  <text x="170.0" y="214.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₃₁</text>
+  <text x="206.0" y="130.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₃₂</text>
+  <text x="98.0" y="214.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₃₂</text>
+  <text x="206.0" y="214.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₃₂</text>
+  <text x="242.0" y="130.0" text-anchor="middle" fill="#e08a2e" font-size="12" font-weight="bold">n₃₃</text>
+  <text x="134.0" y="214.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₃₃</text>
+  <text x="242.0" y="214.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₃₃</text>
+  <text x="206.0" y="48" text-anchor="middle" fill="#8a8f98" font-weight="bold" font-size="12">Matrix B</text>
+  <text transform="translate(34,182.0) rotate(-90)" text-anchor="middle" fill="#8a8f98" font-weight="bold" font-size="12">Matrix A</text>
+  <text x="206.0" y="242" text-anchor="middle" fill="#8a8f98" font-weight="bold" font-size="12">C = A · B</text>
+  <text x="152" y="268" text-anchor="middle" fill="#e08a2e" font-size="12">c₁₃ = m₁₁·n₁₃ + m₁₂·n₂₃ + m₁₃·n₃₃</text>
+  </g>
+<g transform="translate(0,290)">
+  <text x="152" y="20" text-anchor="middle" fill="#7a6ad8" font-weight="bold" font-size="14">Schritt 4: c₂₁</text>
+  <rect x="152" y="140" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="188" y="140" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="224" y="140" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="152" y="168" width="36" height="28" fill="#7a6ad8" fill-opacity="0.18" stroke="#7a6ad8" stroke-width="2"/>
+  <rect x="188" y="168" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="224" y="168" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="152" y="196" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="188" y="196" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="224" y="196" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <line x1="44" y1="140" x2="260" y2="140" stroke="#8a8f98" stroke-width="1.5"/>
+  <line x1="152" y1="56" x2="152" y2="224" stroke="#8a8f98" stroke-width="1.5"/>
+  <line x1="70.3" y1="173.4" x2="161.7" y2="78.6" stroke="#7a6ad8" stroke-width="2" stroke-dasharray="5 3"/>
+  <line x1="105.8" y1="172.9" x2="162.2" y2="107.1" stroke="#7a6ad8" stroke-width="2" stroke-dasharray="5 3"/>
+  <line x1="140.5" y1="171.9" x2="163.5" y2="136.1" stroke="#7a6ad8" stroke-width="2" stroke-dasharray="5 3"/>
+  <text x="170.0" y="74.0" text-anchor="middle" fill="#7a6ad8" font-size="12" font-weight="bold">n₁₁</text>
+  <text x="62.0" y="158.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₁₁</text>
+  <text x="170.0" y="158.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₁₁</text>
+  <text x="206.0" y="74.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₁₂</text>
+  <text x="98.0" y="158.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₁₂</text>
+  <text x="206.0" y="158.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₁₂</text>
+  <text x="242.0" y="74.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₁₃</text>
+  <text x="134.0" y="158.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₁₃</text>
+  <text x="242.0" y="158.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₁₃</text>
+  <text x="170.0" y="102.0" text-anchor="middle" fill="#7a6ad8" font-size="12" font-weight="bold">n₂₁</text>
+  <text x="62.0" y="186.0" text-anchor="middle" fill="#7a6ad8" font-size="12" font-weight="bold">m₂₁</text>
+  <text x="170.0" y="186.0" text-anchor="middle" fill="#7a6ad8" font-size="12" font-weight="bold">c₂₁</text>
+  <text x="206.0" y="102.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₂₂</text>
+  <text x="98.0" y="186.0" text-anchor="middle" fill="#7a6ad8" font-size="12" font-weight="bold">m₂₂</text>
+  <text x="206.0" y="186.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₂₂</text>
+  <text x="242.0" y="102.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₂₃</text>
+  <text x="134.0" y="186.0" text-anchor="middle" fill="#7a6ad8" font-size="12" font-weight="bold">m₂₃</text>
+  <text x="242.0" y="186.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₂₃</text>
+  <text x="170.0" y="130.0" text-anchor="middle" fill="#7a6ad8" font-size="12" font-weight="bold">n₃₁</text>
+  <text x="62.0" y="214.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₃₁</text>
+  <text x="170.0" y="214.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₃₁</text>
+  <text x="206.0" y="130.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₃₂</text>
+  <text x="98.0" y="214.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₃₂</text>
+  <text x="206.0" y="214.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₃₂</text>
+  <text x="242.0" y="130.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₃₃</text>
+  <text x="134.0" y="214.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₃₃</text>
+  <text x="242.0" y="214.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₃₃</text>
+  <text x="206.0" y="48" text-anchor="middle" fill="#8a8f98" font-weight="bold" font-size="12">Matrix B</text>
+  <text transform="translate(34,182.0) rotate(-90)" text-anchor="middle" fill="#8a8f98" font-weight="bold" font-size="12">Matrix A</text>
+  <text x="206.0" y="242" text-anchor="middle" fill="#8a8f98" font-weight="bold" font-size="12">C = A · B</text>
+  <text x="152" y="268" text-anchor="middle" fill="#7a6ad8" font-size="12">c₂₁ = m₂₁·n₁₁ + m₂₂·n₂₁ + m₂₃·n₃₁</text>
+  </g>
+<g transform="translate(270,290)">
+  <text x="152" y="20" text-anchor="middle" fill="#3aa675" font-weight="bold" font-size="14">Schritt 5: c₂₂</text>
+  <rect x="152" y="140" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="188" y="140" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="224" y="140" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="152" y="168" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="188" y="168" width="36" height="28" fill="#3aa675" fill-opacity="0.18" stroke="#3aa675" stroke-width="2"/>
+  <rect x="224" y="168" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="152" y="196" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="188" y="196" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="224" y="196" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <line x1="44" y1="140" x2="260" y2="140" stroke="#8a8f98" stroke-width="1.5"/>
+  <line x1="152" y1="56" x2="152" y2="224" stroke="#8a8f98" stroke-width="1.5"/>
+  <line x1="71.5" y1="174.6" x2="196.5" y2="77.4" stroke="#3aa675" stroke-width="2" stroke-dasharray="5 3"/>
+  <line x1="107.5" y1="174.6" x2="196.5" y2="105.4" stroke="#3aa675" stroke-width="2" stroke-dasharray="5 3"/>
+  <line x1="143.5" y1="174.6" x2="196.5" y2="133.4" stroke="#3aa675" stroke-width="2" stroke-dasharray="5 3"/>
+  <text x="170.0" y="74.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₁₁</text>
+  <text x="62.0" y="158.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₁₁</text>
+  <text x="170.0" y="158.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₁₁</text>
+  <text x="206.0" y="74.0" text-anchor="middle" fill="#3aa675" font-size="12" font-weight="bold">n₁₂</text>
+  <text x="98.0" y="158.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₁₂</text>
+  <text x="206.0" y="158.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₁₂</text>
+  <text x="242.0" y="74.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₁₃</text>
+  <text x="134.0" y="158.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₁₃</text>
+  <text x="242.0" y="158.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₁₃</text>
+  <text x="170.0" y="102.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₂₁</text>
+  <text x="62.0" y="186.0" text-anchor="middle" fill="#3aa675" font-size="12" font-weight="bold">m₂₁</text>
+  <text x="170.0" y="186.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₂₁</text>
+  <text x="206.0" y="102.0" text-anchor="middle" fill="#3aa675" font-size="12" font-weight="bold">n₂₂</text>
+  <text x="98.0" y="186.0" text-anchor="middle" fill="#3aa675" font-size="12" font-weight="bold">m₂₂</text>
+  <text x="206.0" y="186.0" text-anchor="middle" fill="#3aa675" font-size="12" font-weight="bold">c₂₂</text>
+  <text x="242.0" y="102.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₂₃</text>
+  <text x="134.0" y="186.0" text-anchor="middle" fill="#3aa675" font-size="12" font-weight="bold">m₂₃</text>
+  <text x="242.0" y="186.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₂₃</text>
+  <text x="170.0" y="130.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₃₁</text>
+  <text x="62.0" y="214.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₃₁</text>
+  <text x="170.0" y="214.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₃₁</text>
+  <text x="206.0" y="130.0" text-anchor="middle" fill="#3aa675" font-size="12" font-weight="bold">n₃₂</text>
+  <text x="98.0" y="214.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₃₂</text>
+  <text x="206.0" y="214.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₃₂</text>
+  <text x="242.0" y="130.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₃₃</text>
+  <text x="134.0" y="214.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₃₃</text>
+  <text x="242.0" y="214.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₃₃</text>
+  <text x="206.0" y="48" text-anchor="middle" fill="#8a8f98" font-weight="bold" font-size="12">Matrix B</text>
+  <text transform="translate(34,182.0) rotate(-90)" text-anchor="middle" fill="#8a8f98" font-weight="bold" font-size="12">Matrix A</text>
+  <text x="206.0" y="242" text-anchor="middle" fill="#8a8f98" font-weight="bold" font-size="12">C = A · B</text>
+  <text x="152" y="268" text-anchor="middle" fill="#3aa675" font-size="12">c₂₂ = m₂₁·n₁₂ + m₂₂·n₂₂ + m₂₃·n₃₂</text>
+  </g>
+<g transform="translate(540,290)">
+  <text x="152" y="20" text-anchor="middle" fill="#d1495b" font-weight="bold" font-size="14">Schritt 6: c₂₃</text>
+  <rect x="152" y="140" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="188" y="140" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="224" y="140" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="152" y="168" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="188" y="168" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="224" y="168" width="36" height="28" fill="#d1495b" fill-opacity="0.18" stroke="#d1495b" stroke-width="2"/>
+  <rect x="152" y="196" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="188" y="196" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="224" y="196" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <line x1="44" y1="140" x2="260" y2="140" stroke="#8a8f98" stroke-width="1.5"/>
+  <line x1="152" y1="56" x2="152" y2="224" stroke="#8a8f98" stroke-width="1.5"/>
+  <line x1="72.2" y1="175.7" x2="231.8" y2="76.3" stroke="#d1495b" stroke-width="2" stroke-dasharray="5 3"/>
+  <line x1="108.4" y1="176.0" x2="231.6" y2="104.0" stroke="#d1495b" stroke-width="2" stroke-dasharray="5 3"/>
+  <line x1="144.7" y1="176.5" x2="231.3" y2="131.5" stroke="#d1495b" stroke-width="2" stroke-dasharray="5 3"/>
+  <text x="170.0" y="74.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₁₁</text>
+  <text x="62.0" y="158.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₁₁</text>
+  <text x="170.0" y="158.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₁₁</text>
+  <text x="206.0" y="74.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₁₂</text>
+  <text x="98.0" y="158.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₁₂</text>
+  <text x="206.0" y="158.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₁₂</text>
+  <text x="242.0" y="74.0" text-anchor="middle" fill="#d1495b" font-size="12" font-weight="bold">n₁₃</text>
+  <text x="134.0" y="158.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₁₃</text>
+  <text x="242.0" y="158.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₁₃</text>
+  <text x="170.0" y="102.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₂₁</text>
+  <text x="62.0" y="186.0" text-anchor="middle" fill="#d1495b" font-size="12" font-weight="bold">m₂₁</text>
+  <text x="170.0" y="186.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₂₁</text>
+  <text x="206.0" y="102.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₂₂</text>
+  <text x="98.0" y="186.0" text-anchor="middle" fill="#d1495b" font-size="12" font-weight="bold">m₂₂</text>
+  <text x="206.0" y="186.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₂₂</text>
+  <text x="242.0" y="102.0" text-anchor="middle" fill="#d1495b" font-size="12" font-weight="bold">n₂₃</text>
+  <text x="134.0" y="186.0" text-anchor="middle" fill="#d1495b" font-size="12" font-weight="bold">m₂₃</text>
+  <text x="242.0" y="186.0" text-anchor="middle" fill="#d1495b" font-size="12" font-weight="bold">c₂₃</text>
+  <text x="170.0" y="130.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₃₁</text>
+  <text x="62.0" y="214.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₃₁</text>
+  <text x="170.0" y="214.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₃₁</text>
+  <text x="206.0" y="130.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₃₂</text>
+  <text x="98.0" y="214.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₃₂</text>
+  <text x="206.0" y="214.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₃₂</text>
+  <text x="242.0" y="130.0" text-anchor="middle" fill="#d1495b" font-size="12" font-weight="bold">n₃₃</text>
+  <text x="134.0" y="214.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₃₃</text>
+  <text x="242.0" y="214.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₃₃</text>
+  <text x="206.0" y="48" text-anchor="middle" fill="#8a8f98" font-weight="bold" font-size="12">Matrix B</text>
+  <text transform="translate(34,182.0) rotate(-90)" text-anchor="middle" fill="#8a8f98" font-weight="bold" font-size="12">Matrix A</text>
+  <text x="206.0" y="242" text-anchor="middle" fill="#8a8f98" font-weight="bold" font-size="12">C = A · B</text>
+  <text x="152" y="268" text-anchor="middle" fill="#d1495b" font-size="12">c₂₃ = m₂₁·n₁₃ + m₂₂·n₂₃ + m₂₃·n₃₃</text>
+  </g>
+<g transform="translate(0,580)">
+  <text x="152" y="20" text-anchor="middle" fill="#3b82c4" font-weight="bold" font-size="14">Schritt 7: c₃₁</text>
+  <rect x="152" y="140" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="188" y="140" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="224" y="140" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="152" y="168" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="188" y="168" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="224" y="168" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="152" y="196" width="36" height="28" fill="#3b82c4" fill-opacity="0.18" stroke="#3b82c4" stroke-width="2"/>
+  <rect x="188" y="196" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="224" y="196" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <line x1="44" y1="140" x2="260" y2="140" stroke="#8a8f98" stroke-width="1.5"/>
+  <line x1="152" y1="56" x2="152" y2="224" stroke="#8a8f98" stroke-width="1.5"/>
+  <line x1="69.3" y1="200.5" x2="162.7" y2="79.5" stroke="#3b82c4" stroke-width="2" stroke-dasharray="5 3"/>
+  <line x1="104.5" y1="199.9" x2="163.5" y2="108.1" stroke="#3b82c4" stroke-width="2" stroke-dasharray="5 3"/>
+  <line x1="138.7" y1="199.0" x2="165.3" y2="137.0" stroke="#3b82c4" stroke-width="2" stroke-dasharray="5 3"/>
+  <text x="170.0" y="74.0" text-anchor="middle" fill="#3b82c4" font-size="12" font-weight="bold">n₁₁</text>
+  <text x="62.0" y="158.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₁₁</text>
+  <text x="170.0" y="158.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₁₁</text>
+  <text x="206.0" y="74.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₁₂</text>
+  <text x="98.0" y="158.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₁₂</text>
+  <text x="206.0" y="158.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₁₂</text>
+  <text x="242.0" y="74.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₁₃</text>
+  <text x="134.0" y="158.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₁₃</text>
+  <text x="242.0" y="158.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₁₃</text>
+  <text x="170.0" y="102.0" text-anchor="middle" fill="#3b82c4" font-size="12" font-weight="bold">n₂₁</text>
+  <text x="62.0" y="186.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₂₁</text>
+  <text x="170.0" y="186.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₂₁</text>
+  <text x="206.0" y="102.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₂₂</text>
+  <text x="98.0" y="186.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₂₂</text>
+  <text x="206.0" y="186.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₂₂</text>
+  <text x="242.0" y="102.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₂₃</text>
+  <text x="134.0" y="186.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₂₃</text>
+  <text x="242.0" y="186.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₂₃</text>
+  <text x="170.0" y="130.0" text-anchor="middle" fill="#3b82c4" font-size="12" font-weight="bold">n₃₁</text>
+  <text x="62.0" y="214.0" text-anchor="middle" fill="#3b82c4" font-size="12" font-weight="bold">m₃₁</text>
+  <text x="170.0" y="214.0" text-anchor="middle" fill="#3b82c4" font-size="12" font-weight="bold">c₃₁</text>
+  <text x="206.0" y="130.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₃₂</text>
+  <text x="98.0" y="214.0" text-anchor="middle" fill="#3b82c4" font-size="12" font-weight="bold">m₃₂</text>
+  <text x="206.0" y="214.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₃₂</text>
+  <text x="242.0" y="130.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₃₃</text>
+  <text x="134.0" y="214.0" text-anchor="middle" fill="#3b82c4" font-size="12" font-weight="bold">m₃₃</text>
+  <text x="242.0" y="214.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₃₃</text>
+  <text x="206.0" y="48" text-anchor="middle" fill="#8a8f98" font-weight="bold" font-size="12">Matrix B</text>
+  <text transform="translate(34,182.0) rotate(-90)" text-anchor="middle" fill="#8a8f98" font-weight="bold" font-size="12">Matrix A</text>
+  <text x="206.0" y="242" text-anchor="middle" fill="#8a8f98" font-weight="bold" font-size="12">C = A · B</text>
+  <text x="152" y="268" text-anchor="middle" fill="#3b82c4" font-size="12">c₃₁ = m₃₁·n₁₁ + m₃₂·n₂₁ + m₃₃·n₃₁</text>
+  </g>
+<g transform="translate(270,580)">
+  <text x="152" y="20" text-anchor="middle" fill="#a3a33a" font-weight="bold" font-size="14">Schritt 8: c₃₂</text>
+  <rect x="152" y="140" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="188" y="140" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="224" y="140" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="152" y="168" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="188" y="168" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="224" y="168" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="152" y="196" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="188" y="196" width="36" height="28" fill="#a3a33a" fill-opacity="0.18" stroke="#a3a33a" stroke-width="2"/>
+  <rect x="224" y="196" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <line x1="44" y1="140" x2="260" y2="140" stroke="#8a8f98" stroke-width="1.5"/>
+  <line x1="152" y1="56" x2="152" y2="224" stroke="#8a8f98" stroke-width="1.5"/>
+  <line x1="70.6" y1="201.6" x2="197.4" y2="78.4" stroke="#a3a33a" stroke-width="2" stroke-dasharray="5 3"/>
+  <line x1="106.3" y1="201.4" x2="197.7" y2="106.6" stroke="#a3a33a" stroke-width="2" stroke-dasharray="5 3"/>
+  <line x1="141.8" y1="200.9" x2="198.2" y2="135.1" stroke="#a3a33a" stroke-width="2" stroke-dasharray="5 3"/>
+  <text x="170.0" y="74.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₁₁</text>
+  <text x="62.0" y="158.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₁₁</text>
+  <text x="170.0" y="158.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₁₁</text>
+  <text x="206.0" y="74.0" text-anchor="middle" fill="#a3a33a" font-size="12" font-weight="bold">n₁₂</text>
+  <text x="98.0" y="158.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₁₂</text>
+  <text x="206.0" y="158.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₁₂</text>
+  <text x="242.0" y="74.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₁₃</text>
+  <text x="134.0" y="158.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₁₃</text>
+  <text x="242.0" y="158.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₁₃</text>
+  <text x="170.0" y="102.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₂₁</text>
+  <text x="62.0" y="186.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₂₁</text>
+  <text x="170.0" y="186.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₂₁</text>
+  <text x="206.0" y="102.0" text-anchor="middle" fill="#a3a33a" font-size="12" font-weight="bold">n₂₂</text>
+  <text x="98.0" y="186.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₂₂</text>
+  <text x="206.0" y="186.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₂₂</text>
+  <text x="242.0" y="102.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₂₃</text>
+  <text x="134.0" y="186.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₂₃</text>
+  <text x="242.0" y="186.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₂₃</text>
+  <text x="170.0" y="130.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₃₁</text>
+  <text x="62.0" y="214.0" text-anchor="middle" fill="#a3a33a" font-size="12" font-weight="bold">m₃₁</text>
+  <text x="170.0" y="214.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₃₁</text>
+  <text x="206.0" y="130.0" text-anchor="middle" fill="#a3a33a" font-size="12" font-weight="bold">n₃₂</text>
+  <text x="98.0" y="214.0" text-anchor="middle" fill="#a3a33a" font-size="12" font-weight="bold">m₃₂</text>
+  <text x="206.0" y="214.0" text-anchor="middle" fill="#a3a33a" font-size="12" font-weight="bold">c₃₂</text>
+  <text x="242.0" y="130.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₃₃</text>
+  <text x="134.0" y="214.0" text-anchor="middle" fill="#a3a33a" font-size="12" font-weight="bold">m₃₃</text>
+  <text x="242.0" y="214.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₃₃</text>
+  <text x="206.0" y="48" text-anchor="middle" fill="#8a8f98" font-weight="bold" font-size="12">Matrix B</text>
+  <text transform="translate(34,182.0) rotate(-90)" text-anchor="middle" fill="#8a8f98" font-weight="bold" font-size="12">Matrix A</text>
+  <text x="206.0" y="242" text-anchor="middle" fill="#8a8f98" font-weight="bold" font-size="12">C = A · B</text>
+  <text x="152" y="268" text-anchor="middle" fill="#a3a33a" font-size="12">c₃₂ = m₃₁·n₁₂ + m₃₂·n₂₂ + m₃₃·n₃₂</text>
+  </g>
+<g transform="translate(540,580)">
+  <text x="152" y="20" text-anchor="middle" fill="#8d6e63" font-weight="bold" font-size="14">Schritt 9: c₃₃</text>
+  <rect x="152" y="140" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="188" y="140" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="224" y="140" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="152" y="168" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="188" y="168" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="224" y="168" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="152" y="196" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="188" y="196" width="36" height="28" fill="none" stroke="#8a8f98" stroke-opacity="0.35"/>
+  <rect x="224" y="196" width="36" height="28" fill="#8d6e63" fill-opacity="0.18" stroke="#8d6e63" stroke-width="2"/>
+  <line x1="44" y1="140" x2="260" y2="140" stroke="#8a8f98" stroke-width="1.5"/>
+  <line x1="152" y1="56" x2="152" y2="224" stroke="#8a8f98" stroke-width="1.5"/>
+  <line x1="71.5" y1="202.6" x2="232.5" y2="77.4" stroke="#8d6e63" stroke-width="2" stroke-dasharray="5 3"/>
+  <line x1="107.5" y1="202.6" x2="232.5" y2="105.4" stroke="#8d6e63" stroke-width="2" stroke-dasharray="5 3"/>
+  <line x1="143.5" y1="202.6" x2="232.5" y2="133.4" stroke="#8d6e63" stroke-width="2" stroke-dasharray="5 3"/>
+  <text x="170.0" y="74.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₁₁</text>
+  <text x="62.0" y="158.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₁₁</text>
+  <text x="170.0" y="158.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₁₁</text>
+  <text x="206.0" y="74.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₁₂</text>
+  <text x="98.0" y="158.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₁₂</text>
+  <text x="206.0" y="158.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₁₂</text>
+  <text x="242.0" y="74.0" text-anchor="middle" fill="#8d6e63" font-size="12" font-weight="bold">n₁₃</text>
+  <text x="134.0" y="158.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₁₃</text>
+  <text x="242.0" y="158.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₁₃</text>
+  <text x="170.0" y="102.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₂₁</text>
+  <text x="62.0" y="186.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₂₁</text>
+  <text x="170.0" y="186.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₂₁</text>
+  <text x="206.0" y="102.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₂₂</text>
+  <text x="98.0" y="186.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₂₂</text>
+  <text x="206.0" y="186.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₂₂</text>
+  <text x="242.0" y="102.0" text-anchor="middle" fill="#8d6e63" font-size="12" font-weight="bold">n₂₃</text>
+  <text x="134.0" y="186.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">m₂₃</text>
+  <text x="242.0" y="186.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₂₃</text>
+  <text x="170.0" y="130.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₃₁</text>
+  <text x="62.0" y="214.0" text-anchor="middle" fill="#8d6e63" font-size="12" font-weight="bold">m₃₁</text>
+  <text x="170.0" y="214.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₃₁</text>
+  <text x="206.0" y="130.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">n₃₂</text>
+  <text x="98.0" y="214.0" text-anchor="middle" fill="#8d6e63" font-size="12" font-weight="bold">m₃₂</text>
+  <text x="206.0" y="214.0" text-anchor="middle" fill="#8a8f98" font-size="12" font-weight="bold">c₃₂</text>
+  <text x="242.0" y="130.0" text-anchor="middle" fill="#8d6e63" font-size="12" font-weight="bold">n₃₃</text>
+  <text x="134.0" y="214.0" text-anchor="middle" fill="#8d6e63" font-size="12" font-weight="bold">m₃₃</text>
+  <text x="242.0" y="214.0" text-anchor="middle" fill="#8d6e63" font-size="12" font-weight="bold">c₃₃</text>
+  <text x="206.0" y="48" text-anchor="middle" fill="#8a8f98" font-weight="bold" font-size="12">Matrix B</text>
+  <text transform="translate(34,182.0) rotate(-90)" text-anchor="middle" fill="#8a8f98" font-weight="bold" font-size="12">Matrix A</text>
+  <text x="206.0" y="242" text-anchor="middle" fill="#8a8f98" font-weight="bold" font-size="12">C = A · B</text>
+  <text x="152" y="268" text-anchor="middle" fill="#8d6e63" font-size="12">c₃₃ = m₃₁·n₁₃ + m₃₂·n₂₃ + m₃₃·n₃₃</text>
+  </g>
+</svg>

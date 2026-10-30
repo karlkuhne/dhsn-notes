@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 540" font-family="sans-serif" font-size="13">
+  <defs>
+    <marker id="pfeil" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8a8f98"/>
+    </marker>
+  </defs>
+
+  <!-- 1. Frequenzmultiplex -->
+  <text x="20" y="24" fill="#8a8f98" font-weight="bold" font-size="15">Frequenzmultiplex (FDM): gleichzeitig, jeder auf eigener Frequenz</text>
+  <line x1="60" y1="150" x2="720" y2="150" stroke="#8a8f98" stroke-width="2" marker-end="url(#pfeil)"/>
+  <line x1="60" y1="150" x2="60" y2="62" stroke="#8a8f98" stroke-width="2" marker-end="url(#pfeil)"/>
+  <text x="68" y="68" fill="#8a8f98" font-size="12">Amplitude</text>
+  <text x="725" y="170" fill="#8a8f98" font-size="12">f</text>
+
+  <path d="M100,150 L116,92 L204,92 L220,150 Z" fill="#3b82c4" fill-opacity="0.25" stroke="#3b82c4" stroke-width="2"/>
+  <path d="M240,150 L256,92 L344,92 L360,150 Z" fill="#3aa675" fill-opacity="0.25" stroke="#3aa675" stroke-width="2"/>
+  <path d="M380,150 L396,92 L484,92 L500,150 Z" fill="#c9569a" fill-opacity="0.25" stroke="#c9569a" stroke-width="2"/>
+  <text x="160" y="130" text-anchor="middle" fill="#3b82c4" font-weight="bold">Kanal 1</text>
+  <text x="300" y="130" text-anchor="middle" fill="#3aa675" font-weight="bold">Kanal 2</text>
+  <text x="440" y="130" text-anchor="middle" fill="#c9569a" font-weight="bold">Kanal 3</text>
+
+  <text x="100" y="170" text-anchor="middle" fill="#8a8f98" font-size="12">60 kHz</text>
+  <line x1="100" y1="176" x2="220" y2="176" stroke="#8a8f98" stroke-width="1.5" marker-start="url(#pfeil)" marker-end="url(#pfeil)"/>
+  <text x="160" y="192" text-anchor="middle" fill="#8a8f98" font-size="12">Kanalbreite z.B. 3 kHz</text>
+  <line x1="220" y1="154" x2="240" y2="154" stroke="#d1495b" stroke-width="3"/>
+  <line x1="230" y1="154" x2="230" y2="202" stroke="#d1495b" stroke-width="1" stroke-dasharray="3 2"/>
+  <text x="236" y="212" fill="#d1495b" font-size="12">Sperrband z.B. 0,5 kHz: Puffer zwischen den Kanälen</text>
+
+  <!-- 2. Zeitmultiplex -->
+  <text x="20" y="232" fill="#8a8f98" font-weight="bold" font-size="15">Zeitmultiplex (TDM): nacheinander, reihum</text>
+  <g stroke-width="2" fill-opacity="0.25">
+    <rect x="80" y="248" width="90" height="56" fill="#3b82c4" stroke="#3b82c4"/>
+    <rect x="178" y="248" width="90" height="56" fill="#3aa675" stroke="#3aa675"/>
+    <rect x="276" y="248" width="90" height="56" fill="#c9569a" stroke="#c9569a"/>
+    <rect x="374" y="248" width="90" height="56" fill="#3b82c4" stroke="#3b82c4"/>
+    <rect x="472" y="248" width="90" height="56" fill="#3aa675" stroke="#3aa675"/>
+    <rect x="570" y="248" width="90" height="56" fill="#c9569a" stroke="#c9569a"/>
+  </g>
+  <g font-weight="bold" text-anchor="middle">
+    <text x="125" y="281" fill="#3b82c4">Kanal 1</text><text x="223" y="281" fill="#3aa675">Kanal 2</text>
+    <text x="321" y="281" fill="#c9569a">Kanal 3</text><text x="419" y="281" fill="#3b82c4">Kanal 1</text>
+    <text x="517" y="281" fill="#3aa675">Kanal 2</text><text x="615" y="281" fill="#c9569a">Kanal 3</text>
+  </g>
+  <text x="680" y="284" fill="#8a8f98" font-size="20" font-weight="bold">…</text>
+  <line x1="60" y1="310" x2="720" y2="310" stroke="#8a8f98" stroke-width="2" marker-end="url(#pfeil)"/>
+  <text x="725" y="314" fill="#8a8f98" font-size="12">t</text>
+  <text x="60" y="330" fill="#8a8f98" font-size="12">Feste Reihenfolge. Hat ein Kanal nichts zu senden, bleibt sein Zeitabschnitt leer.</text>
+
+  <!-- 3. Statistisches Zeitmultiplex -->
+  <text x="20" y="372" fill="#8a8f98" font-weight="bold" font-size="15">Statistisches Zeitmultiplex: nach Bedarf</text>
+  <g stroke-width="2" fill-opacity="0.25">
+    <rect x="80" y="388" width="90" height="56" fill="#3aa675" stroke="#3aa675"/>
+    <rect x="178" y="388" width="90" height="56" fill="#c9569a" stroke="#c9569a"/>
+    <rect x="276" y="388" width="90" height="56" fill="#c9569a" stroke="#c9569a"/>
+    <rect x="374" y="388" width="90" height="56" fill="#3b82c4" stroke="#3b82c4"/>
+    <rect x="472" y="388" width="90" height="56" fill="#3b82c4" stroke="#3b82c4"/>
+    <rect x="570" y="388" width="90" height="56" fill="#c9569a" stroke="#c9569a"/>
+  </g>
+  <g font-weight="bold" text-anchor="middle">
+    <text x="125" y="421" fill="#3aa675">Kanal 2</text><text x="223" y="421" fill="#c9569a">Kanal 3</text>
+    <text x="321" y="421" fill="#c9569a">Kanal 3</text><text x="419" y="421" fill="#3b82c4">Kanal 1</text>
+    <text x="517" y="421" fill="#3b82c4">Kanal 1</text><text x="615" y="421" fill="#c9569a">Kanal 3</text>
+  </g>
+  <text x="680" y="424" fill="#8a8f98" font-size="20" font-weight="bold">…</text>
+  <line x1="60" y1="450" x2="720" y2="450" stroke="#8a8f98" stroke-width="2" marker-end="url(#pfeil)"/>
+  <text x="725" y="454" fill="#8a8f98" font-size="12">t</text>
+  <text x="60" y="470" fill="#8a8f98" font-size="12">Wer gerade Daten hat, bekommt den nächsten Zeitabschnitt. Kein Leerlauf, dafür flexibler.</text>
+
+  <!-- Fazit -->
+  <rect x="20" y="488" width="720" height="40" rx="8" fill="#3aa675" fill-opacity="0.14" stroke="#3aa675" stroke-width="1.5"/>
+  <text x="380" y="513" text-anchor="middle" fill="#3aa675" font-weight="bold" font-size="14">In der Praxis oft kombiniert: FDM + TDM</text>
+</svg>
