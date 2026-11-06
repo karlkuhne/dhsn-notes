@@ -7,6 +7,7 @@ Vorlesungsnotizen zu Computergrafik und Computeranimation (Dozent: Arnd Vitzthum
 - [[2. Historie und Anwendungsfelder]]
 - [[3. 2D-Vektorgrafik]]
 - [[4. Zeichnen von Linien]]
+- [[5. Zeichnen von Kreisen und Kurven]]
 
 ## Übungen
 
