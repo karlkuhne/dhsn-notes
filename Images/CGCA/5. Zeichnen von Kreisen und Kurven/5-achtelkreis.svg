@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 370" font-family="sans-serif" font-size="13">
+<defs><marker id="o" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#e08a2e"/></marker></defs>
+<text x="40" y="22" fill="#8a8f98" font-weight="bold">Achtelkreis und Spiegelung auf acht Punkte</text>
+<path d="M225 175 L225.0 45.0 A130 130 0 0 1 316.9 83.1 Z" fill="#e08a2e" fill-opacity="0.25"/>
+<line x1="70" y1="175" x2="380" y2="175" stroke="#8a8f98" stroke-opacity="0.5"/><line x1="225" y1="30" x2="225" y2="320" stroke="#8a8f98" stroke-opacity="0.5"/>
+<circle cx="225" cy="175" r="130" fill="none" stroke="#3b82c4" stroke-width="2.5"/>
+<line x1="225" y1="175" x2="316.9" y2="83.1" stroke="#8a8f98" stroke-width="1.5"/>
+<text x="283.6" y="138.4" fill="#8a8f98" font-style="italic">R</text>
+<circle cx="279.9" cy="57.2" r="6" fill="#e08a2e"/>
+<text x="279.9" y="45.2" text-anchor="middle" fill="#e08a2e" font-weight="bold">(x, y)</text>
+<circle cx="170.1" cy="57.2" r="5" fill="#3b82c4"/>
+<text x="170.1" y="48.2" text-anchor="middle" fill="#8a8f98">(−x, y)</text>
+<circle cx="342.8" cy="120.1" r="5" fill="#3b82c4"/>
+<text x="354.8" y="124.1" text-anchor="start" fill="#8a8f98">(y, x)</text>
+<circle cx="107.2" cy="120.1" r="5" fill="#3b82c4"/>
+<text x="95.2" y="124.1" text-anchor="end" fill="#8a8f98">(−y, x)</text>
+<circle cx="107.2" cy="229.9" r="5" fill="#3b82c4"/>
+<text x="95.2" y="233.9" text-anchor="end" fill="#8a8f98">(−y, −x)</text>
+<circle cx="342.8" cy="229.9" r="5" fill="#3b82c4"/>
+<text x="354.8" y="233.9" text-anchor="start" fill="#8a8f98">(y, −x)</text>
+<circle cx="170.1" cy="292.8" r="5" fill="#3b82c4"/>
+<text x="170.1" y="312.8" text-anchor="middle" fill="#8a8f98">(−x, −y)</text>
+<circle cx="279.9" cy="292.8" r="5" fill="#3b82c4"/>
+<text x="279.9" y="312.8" text-anchor="middle" fill="#8a8f98">(x, −y)</text>
+<text x="231" y="191" fill="#8a8f98">(0, 0)</text>
+</svg>
