@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 260" font-family="sans-serif" font-size="13">
+<defs><marker id="o" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#e08a2e"/></marker></defs>
+<text x="40" y="22" fill="#8a8f98" font-weight="bold">Entscheidung anhand von D</text>
+<line x1="60" y1="80" x2="400" y2="80" stroke="#8a8f98" stroke-opacity="0.35"/><line x1="60" y1="170" x2="400" y2="170" stroke="#8a8f98" stroke-opacity="0.35"/>
+<line x1="90" y1="50" x2="90" y2="210" stroke="#8a8f98" stroke-opacity="0.35"/><line x1="230" y1="50" x2="230" y2="210" stroke="#8a8f98" stroke-opacity="0.35"/>
+<circle cx="90" cy="80" r="9" fill="#3b82c4"/><text x="90" y="64" text-anchor="middle" fill="#3b82c4" font-weight="bold">P</text>
+<circle cx="230" cy="80" r="9" fill="none" stroke="#8a8f98" stroke-width="2"/><text x="248" y="76" fill="#8a8f98">O</text>
+<circle cx="230" cy="170" r="9" fill="none" stroke="#8a8f98" stroke-width="2"/><text x="248" y="190" fill="#8a8f98">SO</text>
+<line x1="102" y1="80" x2="216" y2="80" stroke="#e08a2e" stroke-width="2.5" marker-end="url(#o)"/>
+<line x1="100" y1="88" x2="219" y2="164" stroke="#e08a2e" stroke-width="2.5" marker-end="url(#o)"/>
+<text x="262" y="100" fill="#e08a2e">D &lt; 0: O, Δ = 2x<tspan font-size="10" dy="3">p</tspan><tspan dy="-3"> + 3</tspan></text>
+<text x="262" y="150" fill="#e08a2e">D ≥ 0: SO, Δ = 2x<tspan font-size="10" dy="3">p</tspan><tspan dy="-3"> − 2y</tspan><tspan font-size="10" dy="3">p</tspan><tspan dy="-3"> + 5</tspan></text>
+<text x="40" y="240" font-size="12" fill="#8a8f98">M innen (D &lt; 0) → O; außen oder auf dem Kreis (D ≥ 0) → SO</text>
+</svg>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 300" font-family="sans-serif" font-size="13">
+<defs><marker id="o" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#e08a2e"/></marker></defs>
+<text x="40" y="22" fill="#8a8f98" font-weight="bold">Kurve als Polygonzug gerundeter Funktionswerte</text>
+<line x1="60" y1="45" x2="60" y2="270" stroke="#8a8f98" stroke-opacity="0.35"/>
+<text x="60" y="288" text-anchor="middle" fill="#8a8f98">x₀</text>
+<line x1="120" y1="45" x2="120" y2="270" stroke="#8a8f98" stroke-opacity="0.35"/>
+<text x="120" y="288" text-anchor="middle" fill="#8a8f98">x₀+1</text>
+<line x1="180" y1="45" x2="180" y2="270" stroke="#8a8f98" stroke-opacity="0.35"/>
+<text x="180" y="288" text-anchor="middle" fill="#8a8f98">x₀+2</text>
+<line x1="240" y1="45" x2="240" y2="270" stroke="#8a8f98" stroke-opacity="0.35"/>
+<text x="240" y="288" text-anchor="middle" fill="#8a8f98">x₀+3</text>
+<line x1="300" y1="45" x2="300" y2="270" stroke="#8a8f98" stroke-opacity="0.35"/>
+<text x="300" y="288" text-anchor="middle" fill="#8a8f98">x₀+4</text>
+<line x1="360" y1="45" x2="360" y2="270" stroke="#8a8f98" stroke-opacity="0.35"/>
+<text x="360" y="288" text-anchor="middle" fill="#8a8f98">x₀+5</text>
+<line x1="420" y1="45" x2="420" y2="270" stroke="#8a8f98" stroke-opacity="0.35"/>
+<text x="420" y="288" text-anchor="middle" fill="#8a8f98">x₀+6</text>
+<polyline points="60.0,138.4 66.0,133.1 72.0,127.8 78.0,122.6 84.0,117.4 90.0,112.3 96.0,107.4 102.0,102.6 108.0,98.0 114.0,93.6 120.0,89.4 126.0,85.4 132.0,81.7 138.0,78.2 144.0,75.0 150.0,72.1 156.0,69.6 162.0,67.3 168.0,65.4 174.0,63.8 180.0,62.6 186.0,61.6 192.0,61.1 198.0,60.8 204.0,61.0 210.0,61.4 216.0,62.2 222.0,63.2 228.0,64.6 234.0,66.3 240.0,68.3 246.0,70.5 252.0,73.0 258.0,75.7 264.0,78.7 270.0,81.8 276.0,85.1 282.0,88.5 288.0,92.0 294.0,95.7 300.0,99.4 306.0,103.2 312.0,107.0 318.0,110.8 324.0,114.6 330.0,118.3 336.0,121.9 342.0,125.4 348.0,128.8 354.0,132.1 360.0,135.2 366.0,138.0 372.0,140.7 378.0,143.1 384.0,145.3 390.0,147.2 396.0,148.8 402.0,150.2 408.0,151.2 414.0,151.9 420.0,152.2" fill="none" stroke="#8a8f98" stroke-width="2" stroke-dasharray="5 4"/>
+<polyline points="60,146 120,108 180,70 240,70 300,108 360,146 420,146" fill="none" stroke="#3b82c4" stroke-width="2.5"/>
+<circle cx="60" cy="146" r="6" fill="#3b82c4"/>
+<circle cx="120" cy="108" r="6" fill="#3b82c4"/>
+<circle cx="180" cy="70" r="6" fill="#3b82c4"/>
+<circle cx="240" cy="70" r="6" fill="#3b82c4"/>
+<circle cx="300" cy="108" r="6" fill="#3b82c4"/>
+<circle cx="360" cy="146" r="6" fill="#3b82c4"/>
+<circle cx="420" cy="146" r="6" fill="#3b82c4"/>
+<text x="60" y="232" fill="#8a8f98">f(x) (gestrichelt)</text>
+<text x="60" y="250" fill="#3b82c4">drawLine(x, yRound1, x+1, yRound2)</text>
+</svg>
