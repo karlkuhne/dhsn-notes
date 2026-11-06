@@ -8,6 +8,7 @@ Vorlesungsnotizen zu Computergrafik und Computeranimation (Dozent: Arnd Vitzthum
 - [[3. 2D-Vektorgrafik]]
 - [[4. Zeichnen von Linien]]
 - [[5. Zeichnen von Kreisen und Kurven]]
+- [[6. Linienstile, dicke Linien und Antialiasing]]
 
 ## Übungen
 

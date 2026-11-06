@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 280" font-family="sans-serif" font-size="13">
+<text x="20" y="22" fill="#8a8f98" font-weight="bold">Weighted Area Sampling: Querschnitt durch den Kegel</text>
+<line x1="40" y1="220" x2="420" y2="220" stroke="#8a8f98"/>
+<rect x="238.5" y="60" width="110.0" height="160" fill="#e08a2e" fill-opacity="0.15"/>
+<polygon points="90,220 200,80 310,220" fill="none" stroke="#3b82c4" stroke-width="2.5"/>
+<polygon points="238.5,220 238.5,129.0 310,220" fill="#e08a2e" fill-opacity="0.6"/>
+<circle cx="200" cy="220" r="4" fill="#3b82c4"/><text x="200" y="240" text-anchor="middle" fill="#3b82c4">Pixelzentrum</text>
+<text x="192" y="72" text-anchor="end" fill="#3b82c4" font-size="12">w am größten</text>
+<text x="242.5" y="75" fill="#e08a2e" font-size="12">Linienrechteck</text>
+<text x="315.5" y="206" fill="#e08a2e" font-size="12">überdeckter Anteil</text><text x="315.5" y="220" fill="#e08a2e" font-size="12" dy="-0"> </text>
+<text x="20" y="262" fill="#8a8f98" font-size="12">Intensität = Teilvolumen über dem Linienrechteck / Gesamtvolumen des Kegels</text>
+</svg>

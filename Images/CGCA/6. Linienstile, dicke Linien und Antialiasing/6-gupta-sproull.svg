@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 320" font-family="sans-serif" font-size="13">
+<text x="20" y="22" fill="#8a8f98" font-weight="bold">Gupta-Sproull: Kegel pro Pixel, Distanz D zur Linie</text>
+<g transform="rotate(-26.6 170 170)">
+<rect x="20" y="140" width="280" height="60" fill="#e08a2e" fill-opacity="0.15"/>
+<line x1="20" y1="170" x2="300" y2="170" stroke="#e08a2e" stroke-dasharray="6 4"/>
+</g>
+<circle cx="170" cy="128" r="60" fill="none" stroke="#3b82c4" stroke-width="1.8"/>
+<circle cx="170" cy="128" r="3" fill="#3b82c4"/>
+<circle cx="170" cy="188" r="60" fill="none" stroke="#3b82c4" stroke-width="1.8"/>
+<circle cx="170" cy="188" r="3" fill="#3b82c4"/>
+<circle cx="170" cy="248" r="60" fill="none" stroke="#3b82c4" stroke-width="1.8"/>
+<circle cx="170" cy="248" r="3" fill="#3b82c4"/>
+<line x1="170" y1="188" x2="162.8" y2="173.6" stroke="#e08a2e" stroke-width="2.5"/>
+<text x="178" y="184.8" fill="#e08a2e" font-weight="bold">D</text>
+<text x="242" y="152" fill="#3b82c4" font-size="12">Glättungskern, r = 1 Pixel</text>
+<text x="320" y="60" fill="#8a8f98" font-size="12">höchstens 3 Pixel</text><text x="320" y="76" fill="#8a8f98" font-size="12">pro Spalte betroffen</text>
+<text x="20" y="300" fill="#8a8f98" font-size="12">D → 24 Distanzstufen → Intensität aus der Lookup-Table</text>
+</svg>
