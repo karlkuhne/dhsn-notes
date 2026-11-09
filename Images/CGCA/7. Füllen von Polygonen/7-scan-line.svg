@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 240" font-family="sans-serif" font-size="13">
+<text x="190" y="22" text-anchor="middle" fill="#8a8f98" font-weight="bold">Scan-Line-Verfahren: Zeile y</text>
+<polygon points="50,190 90,50 170,120 250,40 330,190 200,150" fill="#3b82c4" fill-opacity="0.2" stroke="#3b82c4" stroke-opacity="1" stroke-width="2" stroke-linejoin="round"/>
+<line x1="10" y1="100" x2="370" y2="100" stroke="#8a8f98" stroke-width="1.5" stroke-opacity="1" stroke-dasharray="6 4"/>
+<line x1="75.71428571428572" y1="100" x2="147.14285714285714" y2="100" stroke="#e08a2e" stroke-width="6" stroke-opacity="0.85"/>
+<line x1="190.0" y1="100" x2="282.0" y2="100" stroke="#e08a2e" stroke-width="6" stroke-opacity="0.85"/>
+<circle cx="75.7" cy="100" r="5" fill="#d9534f" fill-opacity="1"/>
+<text x="65.7" y="88" text-anchor="middle" fill="#8a8f98">x<tspan baseline-shift="sub" font-size="10">1</tspan></text>
+<circle cx="147.1" cy="100" r="5" fill="#d9534f" fill-opacity="1"/>
+<text x="147.1" y="88" text-anchor="middle" fill="#8a8f98">x<tspan baseline-shift="sub" font-size="10">2</tspan></text>
+<circle cx="190.0" cy="100" r="5" fill="#d9534f" fill-opacity="1"/>
+<text x="190.0" y="88" text-anchor="middle" fill="#8a8f98">x<tspan baseline-shift="sub" font-size="10">3</tspan></text>
+<circle cx="282.0" cy="100" r="5" fill="#d9534f" fill-opacity="1"/>
+<text x="282.0" y="88" text-anchor="middle" fill="#8a8f98">x<tspan baseline-shift="sub" font-size="10">4</tspan></text>
+<text x="190" y="225" text-anchor="middle" fill="#8a8f98">Färbe x₁ bis x₂ und x₃ bis x₄ (Schnittpunkte sortiert)</text>
+</svg>

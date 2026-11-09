@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 490 220" font-family="sans-serif" font-size="13">
+<text x="135" y="22" text-anchor="middle" fill="#8a8f98" font-weight="bold">Erst Füllung, dann Kontur</text>
+<text x="385" y="22" text-anchor="middle" fill="#8a8f98" font-weight="bold">Erst Kontur, dann Füllung</text>
+<polygon points="40,170 120,40 200,170" fill="#3b82c4" fill-opacity="0.8" stroke="none" stroke-opacity="1" stroke-width="0" stroke-linejoin="round"/>
+<polygon points="40,170 120,40 200,170" fill="none" stroke="#e08a2e" stroke-opacity="1" stroke-width="14" stroke-linejoin="round"/>
+<polygon points="290,170 370,40 450,170" fill="none" stroke="#e08a2e" stroke-opacity="1" stroke-width="14" stroke-linejoin="round"/>
+<polygon points="290,170 370,40 450,170" fill="#3b82c4" fill-opacity="0.8" stroke="none" stroke-opacity="1" stroke-width="0" stroke-linejoin="round"/>
+<text x="120" y="205" text-anchor="middle" fill="#8a8f98">Kontur bleibt vollständig sichtbar</text>
+<text x="370" y="205" text-anchor="middle" fill="#8a8f98">Füllung verdeckt die innere Konturhälfte</text>
+</svg>
