@@ -11,6 +11,7 @@ Stochastik (deskriptive Statistik, Wahrscheinlichkeitstheorie, schließende Stat
 - [[9. Satz von Bayes]]
 - [[10. Stochastische Unabhängigkeit]]
 - [[11. Wahrscheinlichkeitsverteilungen]]
+- [[12. Binomialverteilung]]
 
 ## Übungen
 

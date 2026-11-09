@@ -1,0 +1,10 @@
+v1:1.0,2.0,3.0
+v2:4.0,5.0,6.0
+Ergebnis der Addition:5.0,7.0,9.0
+Ergebnis der Skalierung:2.0,4.0,6.0
+Länge von v1:3.7416573867739413
+Skalarprodukt von v1 und v2:32.0
+v1 normalisiert:0.2672612419124244,0.5345224838248488,0.8017837257372732
+Winkel zwischen Kreuzprodukt v1xv2 und v1:90.0
+Winkel zwischen Kreuzprodukt v1xv2 und v2:90.0
+Abstand von v1 und v2:5.196152422706632
